@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedRestaurants,
       title: "Best Restaurants French Riviera | Gourmet Guide",
       description: "Discover the best restaurants on the French Riviera. Complete guide to Michelin-starred and gourmet restaurants.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/en/${categorySlug}`
     }}
   />
 

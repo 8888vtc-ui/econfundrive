@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedBeaches,
       title: "Plus Belles Plages Côte d'Azur | Guide Complet",
       description: "Découvrez les plus belles plages de la Côte d'Azur. Guide complet des plages privées et beach clubs.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/fr/${categorySlug}`
     }}
   />
 

@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedHotels,
       title: "Best Luxury Hotels French Riviera | Accommodation Guide",
       description: "Discover the best luxury hotels on the French Riviera. Complete guide to palaces and boutique hotels.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/en/${categorySlug}`
     }}
   />
 

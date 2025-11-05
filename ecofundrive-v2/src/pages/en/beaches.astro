@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedBeaches,
       title: "Best Beaches French Riviera | Complete Guide",
       description: "Discover the most beautiful beaches on the French Riviera. Complete guide to private beaches and beach clubs.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/en/${categorySlug}`
     }}
   />
 

@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedYachts,
       title: "Location Yacht Côte d'Azur | Guide Complet",
       description: "Découvrez les meilleures options de location de yacht sur la Côte d'Azur. Guide complet des yacht charters.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/fr/${categorySlug}`
     }}
   />
 

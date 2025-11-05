@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedYachts,
       title: "Yacht Charter French Riviera | Complete Guide",
       description: "Discover the best yacht charter options on the French Riviera. Complete guide to luxury yachts.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/en/${categorySlug}`
     }}
   />
 

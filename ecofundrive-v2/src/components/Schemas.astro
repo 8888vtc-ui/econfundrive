@@ -6,7 +6,7 @@
 import { siteConfig } from '../lib/config';
 
 interface Props {
-  type: 'article' | 'service' | 'faq' | 'breadcrumb' | 'rating' | 'organization' | 'person';
+  type: 'article' | 'service' | 'faq' | 'breadcrumb' | 'rating' | 'organization' | 'person' | 'collection';
   data?: any;
 }
 
@@ -146,6 +146,24 @@ const ratingSchema = {
   "worstRating": "1"
 };
 
+// CollectionPage Schema
+const collectionSchema = data?.items ? {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": data.title,
+  "description": data.description,
+  "url": data.url || siteUrl,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": data.items.map((item: any, index: number) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${siteUrl}/${item.language}/${item.keyword}`,
+      "name": item.keyword.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())
+    }))
+  }
+} : null;
+
 // Select schema based on type
 const schema = {
   article: articleSchema,
@@ -154,7 +172,8 @@ const schema = {
   breadcrumb: breadcrumbSchema,
   rating: ratingSchema,
   organization: organizationSchema,
-  person: personSchema
+  person: personSchema,
+  collection: collectionSchema
 }[type];
 ---
 

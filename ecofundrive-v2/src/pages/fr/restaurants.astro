@@ -103,12 +103,12 @@ const breadcrumbs = [
   
   <!-- CollectionPage Schema -->
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedRestaurants,
       title: "Meilleurs Restaurants Côte d'Azur | Guide Gastronomique",
       description: "Découvrez les meilleurs restaurants de la Côte d'Azur. Guide complet des tables étoilées et restaurants gastronomiques.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/fr/${categorySlug}`
     }}
   />
 

@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedHotels,
       title: "Meilleurs Hôtels Côte d'Azur | Guide Hébergement Luxe",
       description: "Découvrez les meilleurs hôtels de luxe de la Côte d'Azur. Guide complet des palaces et boutique-hotels.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/fr/${categorySlug}`
     }}
   />
 

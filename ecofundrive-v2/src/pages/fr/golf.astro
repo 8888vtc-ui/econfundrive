@@ -91,12 +91,12 @@ const breadcrumbs = [
   />
 
   <Schemas
-    type="article"
+    type="collection"
     data={{
+      items: sortedGolf,
       title: "Meilleurs Golfs Côte d'Azur | Guide Complet",
       description: "Découvrez les meilleurs golfs de la Côte d'Azur. Guide complet des parcours prestigieux.",
-      datePublished: "2024-01-01T00:00:00Z",
-      dateModified: new Date().toISOString()
+      url: `${siteConfig.siteUrl}/fr/${categorySlug}`
     }}
   />
 
