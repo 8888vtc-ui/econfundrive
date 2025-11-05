@@ -16,8 +16,20 @@ import { generatePageContent } from '../../lib/claude';
 import { generateHeroImage } from '../../lib/fluxpro';
 import { sanitizeHtml } from '../../lib/sanitize';
 
-// Import keywords (TEST MODE - single keyword)
-import keywordsData from '../../content/keywords/keywords-test.json';
+// Import keywords based on CONTENT_MODE environment variable
+import keywordsTest from '../../content/keywords/keywords-test.json';
+import keywordsSeed from '../../content/keywords/keywords-15-test.json';
+import keywordsFull from '../../content/keywords/keywords-70.json';
+
+const CONTENT_MODE = import.meta.env.CONTENT_MODE || 'test';
+
+const keywordsData = CONTENT_MODE === 'seed' 
+  ? keywordsSeed 
+  : CONTENT_MODE === 'full' 
+    ? keywordsFull 
+    : keywordsTest;
+
+console.log(`🔧 CONTENT_MODE: ${CONTENT_MODE} - Generating ${keywordsData.keywords.length} pages`);
 
 // Generate static paths
 export async function getStaticPaths() {
