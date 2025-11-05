@@ -15,25 +15,14 @@ import { siteConfig } from '../../lib/config';
 import { generatePageContent } from '../../lib/claude';
 import { generateHeroImage } from '../../lib/fluxpro';
 import { sanitizeHtml } from '../../lib/sanitize';
+import { getActiveKeywords, buildCanonical, validateInternalLinks, findRelated } from '../../lib/keywords';
 
-// Import keywords based on CONTENT_MODE environment variable
-import keywordsTest from '../../content/keywords/keywords-test.json';
-import keywordsSeed from '../../content/keywords/keywords-15-test.json';
-import keywordsFull from '../../content/keywords/keywords-70.json';
-
-const CONTENT_MODE = import.meta.env.CONTENT_MODE || 'test';
-
-const keywordsData = CONTENT_MODE === 'seed' 
-  ? keywordsSeed 
-  : CONTENT_MODE === 'full' 
-    ? keywordsFull 
-    : keywordsTest;
-
-console.log(`🔧 CONTENT_MODE: ${CONTENT_MODE} - Generating ${keywordsData.keywords.length} pages`);
-
-// Generate static paths
+// Generate static paths using keywords helper
 export async function getStaticPaths() {
-  const paths = keywordsData.keywords.map((keyword) => ({
+  const keywords = getActiveKeywords();
+  console.log(`🔧 Generating ${keywords.length} pages from active keyword set`);
+  
+  const paths = keywords.map((keyword) => ({
     params: {
       lang: keyword.language,
       slug: keyword.keyword
@@ -65,15 +54,37 @@ try {
   };
 }
 
-// Use pre-generated images (3 images generated separately with npm run generate-images)
+// Use pre-generated images with fallbacks to generic Riviera images
 const heroImagePath = `/images/hero/${keyword.keyword}.jpg`;
 const midImagePath = `/images/content/${keyword.keyword}-mid.jpg`;
 const endImagePath = `/images/content/${keyword.keyword}-end.jpg`;
 
-console.log(`🖼️ Using pre-generated images:`, {
+// Fallback images for when specific images aren't generated yet
+const heroImageFallback = '/images/hero/shared/homepage-riviera-1920w.webp';
+const contentImageFallback = '/images/hero/shared/homepage-riviera-1920w.webp';
+
+console.log(`🖼️ Using images for ${keyword.keyword}:`, {
   hero: heroImagePath,
   mid: midImagePath,
   end: endImagePath
+});
+
+// Validate and filter internal links to prevent broken links
+if (pageContent.internal_links && pageContent.internal_links.length > 0) {
+  const validatedLinks = validateInternalLinks(pageContent.internal_links);
+  const removedCount = pageContent.internal_links.length - validatedLinks.length;
+  if (removedCount > 0) {
+    console.warn(`⚠️ Removed ${removedCount} broken internal links for ${keyword.keyword}`);
+  }
+  pageContent.internal_links = validatedLinks;
+}
+
+// Find related pages for deterministic internal linking
+const relatedPages = findRelated(keyword, {
+  sameCategory: true,
+  sameLocation: false,
+  modeBias: keyword.mode === 'A' ? 'B' : undefined, // Mode A pages should link to Mode B for conversions
+  limit: 6
 });
 
 // Breadcrumb items
@@ -98,7 +109,7 @@ const optimizedMetaDescription = keyword.meta_description || pageContent.meta_de
   metaTitle={optimizedMetaTitle}
   metaDescription={optimizedMetaDescription}
   lang={keyword.language}
-  canonical={`https://ecofundrive.com${keyword.url}`}
+  canonical={buildCanonical(keyword.language, keyword.keyword)}
   ogImage={heroImagePath}
 >
   <!-- Hero Section -->
@@ -202,6 +213,38 @@ const optimizedMetaDescription = keyword.meta_description || pageContent.meta_de
       items={faqItems}
       lang={keyword.language}
     />
+  )}
+
+  <!-- Related Pages Section (Deterministic Internal Linking) -->
+  {relatedPages.length > 0 && (
+    <ContentSection>
+      <h2>{keyword.language === 'fr' ? 'Articles Connexes' : 'Related Articles'}</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        {relatedPages.map((related) => (
+          <a 
+            href={`/${related.language}/${related.keyword}`}
+            style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;"
+            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+          >
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.85rem; padding: 0.25rem 0.75rem; background: {related.mode === 'B' ? 'var(--accent)' : 'var(--accent-blue)'}; color: white; border-radius: 4px; font-weight: 600;">
+                {related.mode === 'B' ? (keyword.language === 'fr' ? 'SERVICE' : 'SERVICE') : (keyword.language === 'fr' ? 'GUIDE' : 'GUIDE')}
+              </span>
+              {related.authority && (
+                <span style="font-size: 0.85rem; color: #FFD700;">⭐</span>
+              )}
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text);">
+              {related.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">
+              📍 {related.location}
+            </p>
+          </a>
+        ))}
+      </div>
+    </ContentSection>
   )}
 
   <!-- CTA End (All pages) -->
