@@ -1,0 +1,125 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CATEGORY INDEX: RESTAURANTS (FR)
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { filterByCategory, getCategorySlug } from '../../lib/keywords';
+import { siteConfig } from '../../lib/config';
+
+const lang = 'fr';
+const category = 'restaurant';
+const categorySlug = getCategorySlug(category, lang);
+
+// Get all restaurant pages
+const restaurants = filterByCategory(lang, category);
+
+// Sort: authority pages first, then by location
+const sortedRestaurants = restaurants.sort((a, b) => {
+  if (a.authority !== b.authority) return b.authority ? 1 : -1;
+  return a.location.localeCompare(b.location);
+});
+
+const breadcrumbs = [
+  { label: 'Accueil', href: '/fr' },
+  { label: 'Restaurants' }
+];
+---
+
+<PageLayout
+  title="Meilleurs Restaurants Côte d'Azur | Guide Gastronomique"
+  metaTitle="Restaurants Gastronomiques Côte d'Azur | Monaco, Nice, Cannes"
+  metaDescription="Découvrez les meilleurs restaurants de la Côte d'Azur. Guide complet des tables étoilées, restaurants gastronomiques et adresses secrètes à Monaco, Nice, Cannes, Saint-Tropez."
+  lang={lang}
+  canonical={`https://ecofundrive.com/fr/${categorySlug}`}
+>
+  <!-- Hero Section -->
+  <Hero
+    title="Restaurants Côte d'Azur"
+    subtitle={`Découvrez ${sortedRestaurants.length} restaurants d'exception sur la French Riviera. Guide complet par David Chemla, Local Guide Google Niveau 6.`}
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+  />
+
+  <!-- Breadcrumb -->
+  <Breadcrumb items={breadcrumbs} lang={lang} />
+
+  <!-- Introduction -->
+  <ContentSection alignment="center">
+    <h2>Guide des Meilleurs Restaurants</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      De Monaco à Saint-Tropez, découvrez une sélection rigoureuse des meilleures tables de la Côte d'Azur. 
+      Restaurants étoilés, bistrots authentiques et adresses confidentielles testés et approuvés par notre expert local.
+    </p>
+  </ContentSection>
+
+  <!-- Restaurant Cards Grid -->
+  <ContentSection>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {sortedRestaurants.map((restaurant) => (
+        <a 
+          href={`/${restaurant.language}/${restaurant.keyword}`}
+          style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;"
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+        >
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.85rem; padding: 0.25rem 0.75rem; background: {restaurant.mode === 'B' ? 'var(--accent)' : 'var(--accent-blue)'}; color: white; border-radius: 4px; font-weight: 600;">
+              {restaurant.mode === 'B' ? 'RÉSERVATION VTC' : 'GUIDE'}
+            </span>
+            {restaurant.authority && (
+              <span style="font-size: 0.85rem; color: #FFD700;" title="Page autorité">⭐</span>
+            )}
+          </div>
+          
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3;">
+            {restaurant.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </h3>
+          
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1;">
+            📍 {restaurant.location}
+          </p>
+          
+          <div style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+            En savoir plus →
+          </div>
+        </a>
+      ))}
+    </div>
+  </ContentSection>
+
+  <!-- CTA Section -->
+  <CTA
+    title="Besoin d'un chauffeur pour vos sorties gastronomiques ?"
+    subtitle="Profitez de nos services VTC Tesla pour vos réservations dans les meilleurs restaurants de la Côte d'Azur."
+    location="end"
+    lang={lang}
+  />
+
+  <!-- JSON-LD Schemas -->
+  
+  <!-- CollectionPage Schema -->
+  <Schemas
+    type="article"
+    data={{
+      title: "Meilleurs Restaurants Côte d'Azur | Guide Gastronomique",
+      description: "Découvrez les meilleurs restaurants de la Côte d'Azur. Guide complet des tables étoilées et restaurants gastronomiques.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString()
+    }}
+  />
+
+  <!-- Organization Schema -->
+  <Schemas type="organization" />
+
+  <!-- Breadcrumb Schema -->
+  <Schemas
+    type="breadcrumb"
+    data={{ breadcrumbs }}
+  />
+</PageLayout>

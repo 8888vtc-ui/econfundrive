@@ -1,0 +1,111 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CATEGORY INDEX: VTC (FR)
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { filterByCategory, getCategorySlug } from '../../lib/keywords';
+
+const lang = 'fr';
+const category = 'vtc';
+const categorySlug = getCategorySlug(category, lang);
+
+const vtcPages = filterByCategory(lang, category);
+const sortedVtc = vtcPages.sort((a, b) => {
+  if (a.authority !== b.authority) return b.authority ? 1 : -1;
+  return a.location.localeCompare(b.location);
+});
+
+const breadcrumbs = [
+  { label: 'Accueil', href: '/fr' },
+  { label: 'Services VTC' }
+];
+---
+
+<PageLayout
+  title="VTC Tesla Premium Côte d'Azur | Chauffeur Privé"
+  metaTitle="VTC Tesla Côte d'Azur | Monaco, Nice, Cannes, Saint-Tropez"
+  metaDescription="Service VTC Tesla premium sur la Côte d'Azur. Chauffeur privé électrique pour Monaco, Nice, Cannes, Saint-Tropez. Transferts aéroport, événements, tourisme. Réservation 24/7."
+  lang={lang}
+  canonical={`https://ecofundrive.com/fr/${categorySlug}`}
+>
+  <Hero
+    title="Services VTC Tesla Premium"
+    subtitle={`Découvrez nos ${sortedVtc.length} services de chauffeur privé Tesla sur la Côte d'Azur. Transport premium 100% électrique.`}
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+  />
+
+  <Breadcrumb items={breadcrumbs} lang={lang} />
+
+  <ContentSection alignment="center">
+    <h2>Tous nos Services VTC</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      Transferts aéroport, déplacements professionnels, sorties touristiques. 
+      Découvrez tous nos services de chauffeur privé Tesla sur la French Riviera.
+    </p>
+  </ContentSection>
+
+  <ContentSection>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {sortedVtc.map((service) => (
+        <a 
+          href={`/${service.language}/${service.keyword}`}
+          style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;"
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+        >
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.85rem; padding: 0.25rem 0.75rem; background: {service.mode === 'B' ? 'var(--accent)' : 'var(--accent-blue)'}; color: white; border-radius: 4px; font-weight: 600;">
+              {service.mode === 'B' ? 'RÉSERVATION' : 'GUIDE'}
+            </span>
+            {service.authority && (
+              <span style="font-size: 0.85rem; color: #FFD700;" title="Page autorité">⭐</span>
+            )}
+          </div>
+          
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3;">
+            {service.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </h3>
+          
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1;">
+            📍 {service.location}
+          </p>
+          
+          <div style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+            {service.mode === 'B' ? 'Réserver maintenant →' : 'En savoir plus →'}
+          </div>
+        </a>
+      ))}
+    </div>
+  </ContentSection>
+
+  <CTA
+    title="Besoin d'un chauffeur Tesla maintenant ?"
+    subtitle="Réservation simple et rapide via WhatsApp. Service disponible 24/7 sur toute la Côte d'Azur."
+    location="end"
+    lang={lang}
+  />
+
+  <Schemas
+    type="article"
+    data={{
+      title: "VTC Tesla Premium Côte d'Azur | Chauffeur Privé",
+      description: "Service VTC Tesla premium sur la Côte d'Azur. Chauffeur privé électrique pour tous vos déplacements.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString()
+    }}
+  />
+
+  <Schemas type="organization" />
+
+  <Schemas
+    type="breadcrumb"
+    data={{ breadcrumbs }}
+  />
+</PageLayout>

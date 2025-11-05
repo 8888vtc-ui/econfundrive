@@ -1,0 +1,111 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CATEGORY INDEX: PLAGES (FR)
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { filterByCategory, getCategorySlug } from '../../lib/keywords';
+
+const lang = 'fr';
+const category = 'beach';
+const categorySlug = getCategorySlug(category, lang);
+
+const beaches = filterByCategory(lang, category);
+const sortedBeaches = beaches.sort((a, b) => {
+  if (a.authority !== b.authority) return b.authority ? 1 : -1;
+  return a.location.localeCompare(b.location);
+});
+
+const breadcrumbs = [
+  { label: 'Accueil', href: '/fr' },
+  { label: 'Plages' }
+];
+---
+
+<PageLayout
+  title="Plus Belles Plages Côte d'Azur | Guide Complet"
+  metaTitle="Plages Privées & Publiques Côte d'Azur | Monaco, Nice, Cannes"
+  metaDescription="Découvrez les plus belles plages de la Côte d'Azur. Guide complet des plages privées, beach clubs et criques secrètes à Monaco, Nice, Cannes, Saint-Tropez, Antibes."
+  lang={lang}
+  canonical={`https://ecofundrive.com/fr/${categorySlug}`}
+>
+  <Hero
+    title="Plages Côte d'Azur"
+    subtitle={`Découvrez ${sortedBeaches.length} plages d'exception sur la French Riviera. Guide complet par David Chemla, Local Guide Google Niveau 6.`}
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+  />
+
+  <Breadcrumb items={breadcrumbs} lang={lang} />
+
+  <ContentSection alignment="center">
+    <h2>Guide des Plus Belles Plages</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      Beach clubs mythiques, plages privées de luxe et criques secrètes. 
+      Découvrez notre sélection des plus belles plages de la Côte d'Azur, de Monaco à Saint-Tropez.
+    </p>
+  </ContentSection>
+
+  <ContentSection>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {sortedBeaches.map((beach) => (
+        <a 
+          href={`/${beach.language}/${beach.keyword}`}
+          style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;"
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+        >
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.85rem; padding: 0.25rem 0.75rem; background: {beach.mode === 'B' ? 'var(--accent)' : 'var(--accent-blue)'}; color: white; border-radius: 4px; font-weight: 600;">
+              {beach.mode === 'B' ? 'RÉSERVATION VTC' : 'GUIDE'}
+            </span>
+            {beach.authority && (
+              <span style="font-size: 0.85rem; color: #FFD700;" title="Page autorité">⭐</span>
+            )}
+          </div>
+          
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3;">
+            {beach.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </h3>
+          
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1;">
+            📍 {beach.location}
+          </p>
+          
+          <div style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+            En savoir plus →
+          </div>
+        </a>
+      ))}
+    </div>
+  </ContentSection>
+
+  <CTA
+    title="Transfert VTC vers les plages"
+    subtitle="Service de navette premium vers tous les beach clubs et plages privées de la Côte d'Azur."
+    location="end"
+    lang={lang}
+  />
+
+  <Schemas
+    type="article"
+    data={{
+      title: "Plus Belles Plages Côte d'Azur | Guide Complet",
+      description: "Découvrez les plus belles plages de la Côte d'Azur. Guide complet des plages privées et beach clubs.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString()
+    }}
+  />
+
+  <Schemas type="organization" />
+
+  <Schemas
+    type="breadcrumb"
+    data={{ breadcrumbs }}
+  />
+</PageLayout>

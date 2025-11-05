@@ -1,0 +1,111 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CATEGORY INDEX: GOLF (FR)
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { filterByCategory, getCategorySlug } from '../../lib/keywords';
+
+const lang = 'fr';
+const category = 'golf';
+const categorySlug = getCategorySlug(category, lang);
+
+const golfPages = filterByCategory(lang, category);
+const sortedGolf = golfPages.sort((a, b) => {
+  if (a.authority !== b.authority) return b.authority ? 1 : -1;
+  return a.location.localeCompare(b.location);
+});
+
+const breadcrumbs = [
+  { label: 'Accueil', href: '/fr' },
+  { label: 'Golf' }
+];
+---
+
+<PageLayout
+  title="Meilleurs Golfs Côte d'Azur | Guide Complet"
+  metaTitle="Golfs Premium Côte d'Azur | Monaco, Nice, Cannes"
+  metaDescription="Découvrez les meilleurs golfs de la Côte d'Azur. Guide complet des parcours prestigieux, golfs 18 trous et clubs privés à Monaco, Nice, Cannes, Grasse."
+  lang={lang}
+  canonical={`https://ecofundrive.com/fr/${categorySlug}`}
+>
+  <Hero
+    title="Golfs Côte d'Azur"
+    subtitle={`Découvrez ${sortedGolf.length} golfs d'exception sur la French Riviera. Guide complet par David Chemla, Local Guide Google Niveau 6.`}
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+  />
+
+  <Breadcrumb items={breadcrumbs} lang={lang} />
+
+  <ContentSection alignment="center">
+    <h2>Guide des Meilleurs Golfs</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      Parcours prestigieux, clubs privés et golfs panoramiques. 
+      Découvrez notre sélection des plus beaux golfs de la Côte d'Azur, de Monaco à Grasse.
+    </p>
+  </ContentSection>
+
+  <ContentSection>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {sortedGolf.map((golf) => (
+        <a 
+          href={`/${golf.language}/${golf.keyword}`}
+          style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;"
+          onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+        >
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.85rem; padding: 0.25rem 0.75rem; background: {golf.mode === 'B' ? 'var(--accent)' : 'var(--accent-blue)'}; color: white; border-radius: 4px; font-weight: 600;">
+              {golf.mode === 'B' ? 'RÉSERVATION VTC' : 'GUIDE'}
+            </span>
+            {golf.authority && (
+              <span style="font-size: 0.85rem; color: #FFD700;" title="Page autorité">⭐</span>
+            )}
+          </div>
+          
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3;">
+            {golf.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </h3>
+          
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1;">
+            📍 {golf.location}
+          </p>
+          
+          <div style="font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+            En savoir plus →
+          </div>
+        </a>
+      ))}
+    </div>
+  </ContentSection>
+
+  <CTA
+    title="Transfert VTC vers les golfs"
+    subtitle="Service de navette premium vers tous les golfs de la Côte d'Azur. Transport de vos clubs inclus."
+    location="end"
+    lang={lang}
+  />
+
+  <Schemas
+    type="article"
+    data={{
+      title: "Meilleurs Golfs Côte d'Azur | Guide Complet",
+      description: "Découvrez les meilleurs golfs de la Côte d'Azur. Guide complet des parcours prestigieux.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString()
+    }}
+  />
+
+  <Schemas type="organization" />
+
+  <Schemas
+    type="breadcrumb"
+    data={{ breadcrumbs }}
+  />
+</PageLayout>
