@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Schemas JSON-LD - ECOFUNDRIVE</title>
+</head>
+<body>
+  <h1>Test des 6 Schemas JSON-LD</h1>
+
+  <!-- 1. Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "VTC Tesla Premium Côte d'Azur",
+    "description": "Service VTC Tesla premium",
+    "author": {
+      "@type": "Person",
+      "name": "David Chemla"
+    }
+  }
+  </script>
+
+  <!-- 2. LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ECOFUNDRIVE",
+    "telephone": "+33 6 16 55 28 11"
+  }
+  </script>
+
+  <!-- 3. Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": []
+  }
+  </script>
+
+  <!-- 4. FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+  </script>
+
+  <!-- 5. AggregateRating Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": 26
+  }
+  </script>
+
+  <!-- 6. Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "VTC Premium Tesla"
+  }
+  </script>
+
+  <script>
+    // Count schemas
+    const schemas = document.querySelectorAll('script[type="application/ld+json"]');
+    console.log(`✅ Total schemas: ${schemas.length}`);
+
+    schemas.forEach((schema, index) => {
+      const data = JSON.parse(schema.textContent);
+      console.log(`Schema ${index + 1}: ${data['@type']}`);
+    });
+  </script>
+</body>
+</html>

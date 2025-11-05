@@ -1,0 +1,156 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - PAGE LAYOUT
+// ═══════════════════════════════════════════════════════════
+
+interface Props {
+  title: string;
+  metaTitle?: string;
+  metaDescription: string;
+  lang?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  metaTitle = title,
+  metaDescription,
+  lang = 'fr',
+  canonical,
+  ogImage = '/images/og-default.jpg'
+} = Astro.props;
+
+const siteUrl = 'https://ecofundrive.com';
+const currentUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
+
+// SEO Optimization: Handle both relative paths and absolute URLs for OG image
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// Keep relative path for actual image src (works in both dev and prod)
+const imagePath = ogImage.startsWith('http') ? ogImage : ogImage;
+
+// SEO Optimization: Fix hreflang URLs - remove language prefix from pathname
+const pathWithoutLang = Astro.url.pathname.replace(/^\/(fr|en)\//, '/');
+const hreflangFr = `${siteUrl}/fr${pathWithoutLang}`;
+const hreflangEn = `${siteUrl}/en${pathWithoutLang}`;
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDescription}>
+  <link rel="canonical" href={currentUrl}>
+
+  <!-- Preload Hero Image for LCP optimization -->
+  <link rel="preload" as="image" href={imagePath} fetchpriority="high">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={metaTitle}>
+  <meta property="og:description" content={metaDescription}>
+  <meta property="og:image" content={ogImageUrl}>
+  <meta property="og:url" content={currentUrl}>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ECOFUNDRIVE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={metaTitle}>
+  <meta name="twitter:description" content={metaDescription}>
+  <meta name="twitter:image" content={ogImageUrl}>
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="fr" href={hreflangFr}>
+  <link rel="alternate" hreflang="en" href={hreflangEn}>
+  <link rel="alternate" hreflang="x-default" href={hreflangFr}>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Google Fonts Optimized (Critical CSS inlined, async load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Performance -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://cdn.trustindex.io">
+</head>
+
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Header -->
+  <Header lang={lang} />
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <Footer lang={lang} />
+
+  <!-- WhatsApp Float Button -->
+  <a
+    href="https://wa.me/33616552811"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter via WhatsApp"
+    onclick="trackWhatsAppClick('float')"
+  >
+    📱
+  </a>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: white; padding: 1.5rem; z-index: 10000; text-align: center;">
+    <p style="margin-bottom: 1rem;">
+      {lang === 'fr'
+        ? 'Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de cookies.'
+        : 'We use cookies to improve your experience. By continuing, you accept our cookie policy.'}
+    </p>
+    <button onclick="acceptCookies()" style="background: #25D366; color: white; border: none; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+      {lang === 'fr' ? 'Accepter' : 'Accept'}
+    </button>
+    <button onclick="refuseCookies()" style="background: transparent; color: white; border: 2px solid white; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer;">
+      {lang === 'fr' ? 'Refuser' : 'Decline'}
+    </button>
+  </div>
+
+  <!-- External Scripts -->
+  <script src="/js/cookies.js" defer></script>
+  <script src="/js/tracking.js" defer></script>
+  <script src="/js/trustindex.js" defer></script>
+  <script src="/js/main.js" defer></script>
+
+  <!-- Scroll Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

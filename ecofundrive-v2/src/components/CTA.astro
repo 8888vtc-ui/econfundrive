@@ -1,0 +1,155 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CTA (Call To Action) COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  location?: 'hero' | 'mid' | 'end';
+  variant?: 'primary' | 'secondary' | 'whatsapp';
+  lang?: string;
+}
+
+const {
+  title,
+  subtitle,
+  buttonText,
+  buttonLink = 'https://wa.me/33616552811',
+  location = 'mid',
+  variant = 'whatsapp',
+  lang = 'fr'
+} = Astro.props;
+
+const defaultTitle = lang === 'fr' ? 'Réservez votre chauffeur Tesla' : 'Book your Tesla driver';
+const defaultSubtitle = lang === 'fr'
+  ? 'Service premium disponible 24/7 sur la Côte d\'Azur'
+  : 'Premium service available 24/7 on the French Riviera';
+const defaultButtonText = lang === 'fr' ? 'Réserver maintenant' : 'Book now';
+
+const buttonClass = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  whatsapp: 'btn-whatsapp'
+}[variant];
+---
+
+<section class={`cta cta-${location}`}>
+  <div class="cta-container">
+    <h2 class="cta-title">{title || defaultTitle}</h2>
+
+    {(subtitle || defaultSubtitle) && (
+      <p class="cta-subtitle">{subtitle || defaultSubtitle}</p>
+    )}
+
+    <div class="cta-action">
+      <a
+        href={buttonLink}
+        class={buttonClass}
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick={`trackWhatsAppClick('${location}')`}
+      >
+        {variant === 'whatsapp' && '📱 '}
+        {buttonText || defaultButtonText}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: var(--spacing-xl) 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    text-align: center;
+    margin: var(--spacing-xl) 0;
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .cta-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .cta-action {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--whatsapp);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: var(--fw-semibold);
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all var(--transition-base);
+  }
+
+  .btn-whatsapp:hover {
+    background: var(--whatsapp-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  }
+
+  .btn-whatsapp:active {
+    transform: translateY(-1px);
+  }
+
+  /* Variant styles */
+  .cta-mid {
+    background: linear-gradient(135deg, rgba(0,102,255,0.05) 0%, rgba(0,102,255,0.1) 100%);
+  }
+
+  .cta-mid .cta-title {
+    color: var(--primary);
+    text-shadow: none;
+  }
+
+  .cta-mid .cta-subtitle {
+    color: var(--primary-lighter);
+  }
+
+  @media (max-width: 768px) {
+    .cta {
+      padding: var(--spacing-lg) 1.5rem;
+    }
+
+    .cta-title {
+      font-size: 1.75rem;
+    }
+
+    .cta-subtitle {
+      font-size: 1rem;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      justify-content: center;
+      padding: 1.1rem 2rem;
+    }
+  }
+</style>

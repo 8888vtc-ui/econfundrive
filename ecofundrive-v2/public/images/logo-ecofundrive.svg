@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <!-- Background -->
+  <rect width="300" height="80" fill="#1a1a1a" rx="4"/>
+
+  <!-- Text ECOFUNDRIVE -->
+  <text x="150" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#C9A961" text-anchor="middle">
+    ECOFUNDRIVE
+  </text>
+
+  <!-- Subtitle VTC Premium -->
+  <text x="150" y="58" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.8">
+    VTC TESLA PREMIUM
+  </text>
+</svg>

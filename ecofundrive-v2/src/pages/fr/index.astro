@@ -1,0 +1,195 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - FRENCH HOMEPAGE
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { siteConfig } from '../../lib/config';
+---
+
+<PageLayout
+  title="VTC Tesla Premium Côte d'Azur | ECOFUNDRIVE"
+  metaTitle="VTC Tesla Premium Côte d'Azur | Chauffeur Privé Monaco Nice Cannes"
+  metaDescription="Service VTC premium avec Tesla électrique sur la Côte d'Azur. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez. Réservation 24/7."
+  lang="fr"
+>
+  <!-- Hero Section -->
+  <Hero
+    title="VTC Tesla Premium Côte d'Azur"
+    subtitle="Votre chauffeur privé électrique pour Monaco, Nice, Cannes et toute la French Riviera. Service premium 24/7."
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+    showCTA={true}
+    ctaText="Réserver maintenant"
+  />
+
+  <!-- Introduction -->
+  <ContentSection alignment="center">
+    <h2>Bienvenue chez ECOFUNDRIVE</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      Premier service VTC <strong>100% Tesla électrique</strong> sur la Côte d'Azur.
+      Profitez d'un transport premium, écologique et confortable pour tous vos déplacements
+      entre Monaco, Nice, Cannes, Antibes et Saint-Tropez.
+    </p>
+  </ContentSection>
+
+  <!-- Services Section -->
+  <ContentSection>
+    <h2>Nos Services VTC Premium</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🛫 Transfert Aéroport Nice</h3>
+        <p>Service de navette premium depuis/vers l'aéroport Nice Côte d'Azur. Suivi vol en temps réel.</p>
+        <a href="/fr/vtc-aeroport-nice" style="color: var(--accent-blue); font-weight: 600;">En savoir plus →</a>
+      </div>
+
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🏰 VTC Monaco</h3>
+        <p>Déplacements vers/depuis Monaco. Idéal pour business, événements et tourisme de luxe.</p>
+        <a href="/fr/vtc-monaco" style="color: var(--accent-blue); font-weight: 600;">En savoir plus →</a>
+      </div>
+
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🎬 VTC Cannes</h3>
+        <p>Service VTC premium pour Cannes et environs. Festival, business ou loisirs.</p>
+        <a href="/fr/vtc-nice-cannes" style="color: var(--accent-blue); font-weight: 600;">En savoir plus →</a>
+      </div>
+    </div>
+  </ContentSection>
+
+  <!-- CTA Mid -->
+  <CTA
+    title="Besoin d'un chauffeur Tesla maintenant ?"
+    subtitle="Réservation simple et rapide via WhatsApp. Disponible 24/7."
+    location="mid"
+  />
+
+  <!-- Fleet Section -->
+  <ContentSection>
+    <h2>Notre Flotte Tesla</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {siteConfig.fleet.map(vehicle => (
+        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
+          <h3 style="color: var(--accent); margin-bottom: 1rem;">{vehicle.model}</h3>
+          <ul style="list-style: none; padding: 0; text-align: left;">
+            <li style="margin-bottom: 0.5rem;">👥 {vehicle.capacity}</li>
+            <li style="margin-bottom: 0.5rem;">🧳 {vehicle.luggage}</li>
+            <li style="margin-bottom: 0.5rem;">📦 Coffre: {vehicle.trunk}</li>
+            <li style="margin-bottom: 0.5rem; font-weight: 600; color: var(--accent);">💰 {vehicle.hourlyRate}</li>
+            {vehicle.feature && (
+              <li style="margin-top: 1rem; color: var(--accent-blue); font-weight: 600;">✨ {vehicle.feature}</li>
+            )}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </ContentSection>
+
+  <!-- Why Choose Us -->
+  <ContentSection alignment="center">
+    <h2>Pourquoi Choisir ECOFUNDRIVE ?</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: left;">
+      <div>
+        <h3>🔋 100% Électrique</h3>
+        <p>Flotte Tesla exclusivement. Confort, silence et respect de l'environnement.</p>
+      </div>
+
+      <div>
+        <h3>⭐ Service Premium</h3>
+        <p>26 avis vérifiés 5.0★ sur Trustindex. Chauffeurs professionnels bilingues.</p>
+      </div>
+
+      <div>
+        <h3>📱 Réservation Simple</h3>
+        <p>WhatsApp, téléphone ou email. Disponible 24/7 sur la Côte d'Azur.</p>
+      </div>
+
+      <div>
+        <h3>💰 Tarifs Transparents</h3>
+        <p>Prix fixes affichés. Eau fraîche, WiFi et chargeurs USB inclus.</p>
+      </div>
+    </div>
+  </ContentSection>
+
+  <!-- Coverage Areas -->
+  <ContentSection>
+    <h2>Zones Desservies</h2>
+    <p style="text-align: center; font-size: 1.1rem;">
+      <strong>Monaco</strong> • <strong>Nice</strong> • <strong>Cannes</strong> •
+      <strong>Antibes</strong> • <strong>Juan-les-Pins</strong> • <strong>Saint-Tropez</strong> •
+      <strong>Grasse</strong> • <strong>Valbonne</strong> • <strong>Èze</strong> •
+      <strong>Cap Ferrat</strong> • <strong>Villefranche-sur-Mer</strong>
+    </p>
+  </ContentSection>
+
+  <!-- Final CTA -->
+  <CTA
+    title="Prêt à voyager en Tesla ?"
+    subtitle={`Contactez-nous au ${siteConfig.contact.phone} ou réservez directement via WhatsApp`}
+    location="end"
+  />
+
+  <!-- JSON-LD Schemas (6 required for SEO) -->
+
+  <!-- 1. Article Schema -->
+  <Schemas
+    type="article"
+    data={{
+      title: "VTC Tesla Premium Côte d'Azur | ECOFUNDRIVE",
+      description: "Service VTC premium avec Tesla électrique sur la Côte d'Azur. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez. Réservation 24/7.",
+      datePublished: "2024-01-01T00:00:00Z",
+      dateModified: new Date().toISOString()
+    }}
+  />
+
+  <!-- 2. LocalBusiness Schema -->
+  <Schemas type="organization" />
+
+  <!-- 3. Breadcrumb Schema -->
+  <Schemas
+    type="breadcrumb"
+    data={{
+      breadcrumbs: [
+        { label: "Accueil", href: "/fr" }
+      ]
+    }}
+  />
+
+  <!-- 4. FAQ Schema -->
+  <Schemas
+    type="faq"
+    data={{
+      faqItems: [
+        {
+          question: "Quels sont vos tarifs VTC Tesla sur la Côte d'Azur ?",
+          answer: "Nos tarifs varient selon le véhicule : Tesla Model 3 à partir de 70€/h, Tesla Model S à 100€/h, Tesla Model X à 120€/h. Tous nos tarifs incluent eau, WiFi et chargeurs."
+        },
+        {
+          question: "Couvrez-vous Monaco, Nice et Cannes ?",
+          answer: "Oui, nous desservons toute la Côte d'Azur : Monaco, Nice, Cannes, Antibes, Saint-Tropez, Juan-les-Pins et tous les transferts aéroport Nice."
+        },
+        {
+          question: "Comment réserver un VTC Tesla ECOFUNDRIVE ?",
+          answer: "Réservation facile via WhatsApp au +33 6 16 55 28 11, par téléphone ou email. Service disponible 24/7."
+        },
+        {
+          question: "Pourquoi choisir ECOFUNDRIVE pour vos trajets VTC ?",
+          answer: "100% flotte Tesla électrique, 5.0★ sur 26 avis Trustindex, chauffeurs professionnels bilingues, tarifs transparents, service premium écologique."
+        }
+      ]
+    }}
+  />
+
+  <!-- 5. AggregateRating Schema -->
+  <Schemas type="rating" />
+
+  <!-- 6. Service Schema -->
+  <Schemas type="service" />
+</PageLayout>

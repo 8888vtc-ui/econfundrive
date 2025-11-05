@@ -1,0 +1,107 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CONTENT SECTION COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface Props {
+  title?: string;
+  content?: string;
+  alignment?: 'left' | 'center';
+  width?: 'normal' | 'wide' | 'full';
+}
+
+const {
+  title,
+  content,
+  alignment = 'left',
+  width = 'normal'
+} = Astro.props;
+
+const widthClass = {
+  normal: 'max-w-[900px]',
+  wide: 'max-w-[1200px]',
+  full: 'max-w-full'
+}[width];
+---
+
+<section class={`content-section ${alignment === 'center' ? 'text-center' : ''}`}>
+  <div class={`container ${widthClass}`}>
+    {title && <h2>{title}</h2>}
+
+    {content && (
+      <div class="content-body" set:html={content} />
+    )}
+
+    <!-- Slot for custom content -->
+    <slot />
+  </div>
+</section>
+
+<style>
+  .content-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content-section .container {
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .content-body {
+    line-height: 1.8;
+    color: var(--primary);
+  }
+
+  .content-body h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-body h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .content-body ul,
+  .content-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .content-body li {
+    margin-bottom: 0.75rem;
+  }
+
+  .content-body strong {
+    font-weight: var(--fw-semibold);
+    color: var(--primary);
+  }
+
+  .content-body a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+  }
+
+  .content-body a:hover {
+    color: var(--accent-blue-dark);
+  }
+
+  @media (max-width: 768px) {
+    .content-section {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .content-section .container {
+      padding: 0 1.5rem;
+    }
+  }
+</style>

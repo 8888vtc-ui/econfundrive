@@ -1,0 +1,134 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - FAQ COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title?: string;
+  items: FAQItem[];
+  lang?: string;
+}
+
+const {
+  title,
+  items,
+  lang = 'fr'
+} = Astro.props;
+
+const defaultTitle = lang === 'fr' ? 'Questions Fréquentes' : 'Frequently Asked Questions';
+---
+
+<section class="faq">
+  <div class="container">
+    <h2>{title || defaultTitle}</h2>
+
+    <div class="faq-list">
+      {items.map((item) => (
+        <div class="faq-item">
+          <h3 class="faq-question">{item.question}</h3>
+          <div class="faq-answer" set:html={item.answer} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    margin: var(--spacing-xl) 0;
+    background: var(--off-white);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .faq .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .faq h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all var(--transition-base);
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 20px var(--shadow-hover);
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+  }
+
+  .faq-question {
+    font-family: var(--font-heading);
+    font-weight: var(--fw-semibold);
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .faq-question::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .faq-answer {
+    color: var(--primary-lighter);
+    line-height: 1.8;
+    padding-left: 2.5rem;
+  }
+
+  .faq-answer p {
+    margin-bottom: 1rem;
+  }
+
+  .faq-answer a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  .faq-answer a:hover {
+    color: var(--accent-blue-dark);
+  }
+
+  @media (max-width: 768px) {
+    .faq .container {
+      padding: 0 1.5rem;
+    }
+
+    .faq-item {
+      padding: 1.5rem;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+    }
+
+    .faq-answer {
+      padding-left: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,146 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - HERO COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  imageAlt?: string;
+  showCTA?: boolean;
+  ctaText?: string;
+  ctaLink?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const {
+  title,
+  subtitle,
+  image = '/images/hero/default-hero.webp',
+  imageAlt = 'VTC Tesla Premium Côte d\'Azur',
+  showCTA = true,
+  ctaText = 'Réserver maintenant',
+  ctaLink = 'https://wa.me/33616552811',
+  loading = 'eager',
+  fetchpriority = 'high'
+} = Astro.props;
+---
+
+<section class="hero">
+  <!-- Optimized background image with explicit dimensions to prevent CLS -->
+  <img
+    src={image}
+    alt={imageAlt}
+    class="hero-bg-image"
+    width="1920"
+    height="1080"
+    loading={loading}
+    fetchpriority={fetchpriority}
+  />
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>{title}</h1>
+
+    {subtitle && (
+      <p class="hero-subtitle">{subtitle}</p>
+    )}
+
+    {showCTA && (
+      <div class="hero-cta">
+        <a
+          href={ctaLink}
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="trackWhatsAppClick('hero')"
+        >
+          📱 {ctaText}
+        </a>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--white);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 50vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

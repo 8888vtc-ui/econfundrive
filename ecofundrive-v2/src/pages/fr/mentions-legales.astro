@@ -1,0 +1,102 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - MENTIONS LÉGALES
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import { siteConfig } from '../../lib/config';
+---
+
+<PageLayout
+  title="Mentions Légales | ECOFUNDRIVE"
+  metaTitle="Mentions Légales - ECOFUNDRIVE VTC Tesla Côte d'Azur"
+  metaDescription="Mentions légales du site ECOFUNDRIVE - Service VTC Tesla premium sur la Côte d'Azur."
+  lang="fr"
+>
+  <Hero
+    title="Mentions Légales"
+    showCTA={false}
+  />
+
+  <ContentSection>
+    <h2>Informations Légales</h2>
+
+    <h3>Éditeur du site</h3>
+    <p>
+      <strong>Nom commercial :</strong> {siteConfig.company.name}<br>
+      <strong>Forme juridique :</strong> {siteConfig.company.legalForm}<br>
+      <strong>SIRET :</strong> {siteConfig.company.siret}<br>
+      <strong>SIREN :</strong> {siteConfig.company.siren}<br>
+      <strong>Activité :</strong> {siteConfig.company.activity}
+    </p>
+
+    <h3>Siège social</h3>
+    <p>
+      {siteConfig.headquarters.address}<br>
+      {siteConfig.headquarters.postalCode} {siteConfig.headquarters.city}<br>
+      {siteConfig.headquarters.country}
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+      <strong>Téléphone :</strong> <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a><br>
+      <strong>Email :</strong> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+    </p>
+
+    <h3>Directeur de la publication</h3>
+    <p>{siteConfig.author.name}</p>
+
+    <h3>Hébergement</h3>
+    <p>
+      <strong>Netlify, Inc.</strong><br>
+      2325 3rd Street, Suite 296<br>
+      San Francisco, CA 94107<br>
+      États-Unis
+    </p>
+
+    <h3>Propriété intellectuelle</h3>
+    <p>
+      L'ensemble du contenu de ce site (textes, images, logos, graphismes) est la propriété exclusive d'ECOFUNDRIVE,
+      sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, même partielle,
+      est interdite sans autorisation préalable écrite.
+    </p>
+
+    <h3>Protection des données personnelles</h3>
+    <p>
+      Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification
+      et de suppression des données vous concernant. Pour exercer ce droit, contactez-nous à l'adresse :
+      <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+    </p>
+    <p>
+      Pour plus d'informations, consultez notre
+      <a href="/fr/politique-confidentialite">Politique de Confidentialité</a>.
+    </p>
+
+    <h3>Cookies</h3>
+    <p>
+      Ce site utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic.
+      Consultez notre <a href="/fr/cookies">Politique de Cookies</a> pour plus d'informations.
+    </p>
+
+    <h3>Responsabilité</h3>
+    <p>
+      ECOFUNDRIVE s'efforce de fournir des informations exactes et à jour. Toutefois, nous ne pouvons garantir
+      l'exactitude, la complétude ou l'actualité des informations diffusées. En conséquence, l'utilisateur reconnaît
+      utiliser ces informations sous sa responsabilité exclusive.
+    </p>
+
+    <h3>Liens hypertextes</h3>
+    <p>
+      Les liens hypertextes présents sur ce site peuvent renvoyer vers des sites tiers. ECOFUNDRIVE n'exerce aucun
+      contrôle sur ces sites et décline toute responsabilité quant à leur contenu.
+    </p>
+
+    <h3>Droit applicable</h3>
+    <p>
+      Les présentes mentions légales sont soumises au droit français. En cas de litige, et après tentative de recherche
+      d'une solution amiable, les tribunaux français seront seuls compétents.
+    </p>
+  </ContentSection>
+</PageLayout>

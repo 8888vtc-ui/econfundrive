@@ -1,0 +1,169 @@
+{
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "vtc-monaco",
+      "url": "/fr/vtc-monaco.html",
+      "language": "fr",
+      "category": "vtc",
+      "location": "Monaco",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 2,
+      "keyword": "vtc-nice-cannes",
+      "url": "/fr/vtc-nice-cannes.html",
+      "language": "fr",
+      "category": "vtc",
+      "location": "Cannes",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 3,
+      "keyword": "vtc-aeroport-nice",
+      "url": "/fr/vtc-aeroport-nice.html",
+      "language": "fr",
+      "category": "vtc",
+      "location": "Nice",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 4,
+      "keyword": "restaurant-gastronomique-cannes",
+      "url": "/fr/restaurant-gastronomique-cannes.html",
+      "language": "fr",
+      "category": "restaurant",
+      "location": "Cannes",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 5,
+      "keyword": "plage-privee-saint-tropez",
+      "url": "/fr/plage-privee-saint-tropez.html",
+      "language": "fr",
+      "category": "beach",
+      "location": "Saint-Tropez",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 6,
+      "keyword": "luxury-hotel-monaco",
+      "url": "/en/luxury-hotel-monaco.html",
+      "language": "en",
+      "category": "hotel",
+      "location": "Monaco",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 7,
+      "keyword": "private-driver-cannes",
+      "url": "/en/private-driver-cannes.html",
+      "language": "en",
+      "category": "vtc",
+      "location": "Cannes",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 8,
+      "keyword": "golf-premium-cote-azur",
+      "url": "/fr/golf-premium-cote-azur.html",
+      "language": "fr",
+      "category": "golf",
+      "location": "Côte d'Azur",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 9,
+      "keyword": "vtc-nice-monaco",
+      "url": "/fr/vtc-nice-monaco.html",
+      "language": "fr",
+      "category": "vtc",
+      "location": "Monaco",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 10,
+      "keyword": "restaurant-michelin-monaco",
+      "url": "/fr/restaurant-michelin-monaco.html",
+      "language": "fr",
+      "category": "restaurant",
+      "location": "Monaco",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 11,
+      "keyword": "beach-club-antibes",
+      "url": "/en/beach-club-antibes.html",
+      "language": "en",
+      "category": "beach",
+      "location": "Antibes",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 12,
+      "keyword": "hotel-luxe-saint-tropez",
+      "url": "/fr/hotel-luxe-saint-tropez.html",
+      "language": "fr",
+      "category": "hotel",
+      "location": "Saint-Tropez",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 13,
+      "keyword": "vtc-airport-nice",
+      "url": "/en/vtc-airport-nice.html",
+      "language": "en",
+      "category": "vtc",
+      "location": "Nice",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    },
+    {
+      "id": 14,
+      "keyword": "yacht-charter-monaco",
+      "url": "/en/yacht-charter-monaco.html",
+      "language": "en",
+      "category": "yacht",
+      "location": "Monaco",
+      "authority": true,
+      "mode": "B",
+      "wordcount": 2500
+    },
+    {
+      "id": 15,
+      "keyword": "chauffeur-prive-antibes",
+      "url": "/fr/chauffeur-prive-antibes.html",
+      "language": "fr",
+      "category": "vtc",
+      "location": "Antibes",
+      "authority": false,
+      "mode": "A",
+      "wordcount": 2200
+    }
+  ]
+}

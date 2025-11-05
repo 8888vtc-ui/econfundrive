@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(find:*)",
+      "Bash(awk:*)",
+      "Bash(dir:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsx generate-15-pages.ts)",
+      "Bash(node:*)",
+      "Bash(git checkout:*)",
+      "Bash(cat:*)",
+      "Bash(test:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

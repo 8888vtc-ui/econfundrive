@@ -1,0 +1,141 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - JSON-LD SCHEMAS COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+import { siteConfig } from '../lib/config';
+
+interface Props {
+  type: 'article' | 'service' | 'faq' | 'breadcrumb' | 'rating' | 'organization';
+  data?: any;
+}
+
+const { type, data } = Astro.props;
+
+const siteUrl = 'https://ecofundrive.com';
+
+// Organization Schema (global)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": siteConfig.company.name,
+  "image": `${siteUrl}/images/logo-ecofundrive.png`,
+  "description": "VTC Tesla Premium sur la Côte d'Azur - Service de chauffeur privé électrique",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteConfig.headquarters.address,
+    "addressLocality": siteConfig.headquarters.city,
+    "postalCode": siteConfig.headquarters.postalCode,
+    "addressCountry": "FR"
+  },
+  "telephone": siteConfig.contact.phone,
+  "email": siteConfig.contact.email,
+  "url": siteUrl,
+  "priceRange": "€€€",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": siteConfig.reviews.rating,
+    "reviewCount": siteConfig.reviews.total,
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+// Article Schema
+const articleSchema = data ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": data.title,
+  "description": data.description,
+  "image": data.image || `${siteUrl}/images/og-default.jpg`,
+  "datePublished": data.datePublished || new Date().toISOString(),
+  "dateModified": data.dateModified || new Date().toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": siteConfig.author.name,
+    "url": siteConfig.author.profileUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.company.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/images/logo-ecofundrive.png`
+    }
+  }
+} : null;
+
+// Service Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "VTC Premium Tesla",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.company.name
+  },
+  "areaServed": [
+    "Monaco",
+    "Nice",
+    "Cannes",
+    "Antibes",
+    "Saint-Tropez",
+    "French Riviera"
+  ],
+  "description": "Service VTC premium avec véhicules Tesla électriques sur la Côte d'Azur"
+};
+
+// FAQ Schema
+const faqSchema = data?.faqItems ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faqItems.map((item: any) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+
+// Breadcrumb Schema
+const breadcrumbSchema = data?.breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": data.breadcrumbs.map((item: any, index: number) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": item.href ? `${siteUrl}${item.href}` : undefined
+  }))
+} : null;
+
+// Rating Schema
+const ratingSchema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": siteConfig.company.name
+  },
+  "ratingValue": siteConfig.reviews.rating,
+  "reviewCount": siteConfig.reviews.total,
+  "bestRating": "5",
+  "worstRating": "1"
+};
+
+// Select schema based on type
+const schema = {
+  article: articleSchema,
+  service: serviceSchema,
+  faq: faqSchema,
+  breadcrumb: breadcrumbSchema,
+  rating: ratingSchema,
+  organization: organizationSchema
+}[type];
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

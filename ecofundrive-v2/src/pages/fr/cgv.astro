@@ -1,0 +1,138 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - CONDITIONS GÉNÉRALES DE VENTE
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import { siteConfig } from '../../lib/config';
+---
+
+<PageLayout
+  title="Conditions Générales de Vente | ECOFUNDRIVE"
+  metaTitle="CGV - ECOFUNDRIVE VTC Tesla Côte d'Azur"
+  metaDescription="Conditions générales de vente du service VTC ECOFUNDRIVE. Tarifs, réservation, annulation."
+  lang="fr"
+>
+  <Hero
+    title="Conditions Générales de Vente"
+    showCTA={false}
+  />
+
+  <ContentSection>
+    <h2>Article 1 - Champ d'application</h2>
+    <p>
+      Les présentes Conditions Générales de Vente (CGV) s'appliquent à toutes les prestations de transport
+      de personnes réalisées par ECOFUNDRIVE (SIRET: {siteConfig.company.siret}).
+    </p>
+
+    <h2>Article 2 - Services proposés</h2>
+    <p>ECOFUNDRIVE propose les services suivants :</p>
+    <ul>
+      <li>Transfert aéroport Nice Côte d'Azur</li>
+      <li>Transferts entre villes (Monaco, Nice, Cannes, Antibes, Saint-Tropez...)</li>
+      <li>Mise à disposition avec chauffeur (minimum 3 heures)</li>
+      <li>Transport événementiel et professionnel</li>
+    </ul>
+
+    <h2>Article 3 - Réservation</h2>
+    <p>
+      La réservation peut s'effectuer par :
+    </p>
+    <ul>
+      <li>WhatsApp : <a href={siteConfig.contact.whatsapp}>{siteConfig.contact.phone}</a></li>
+      <li>Téléphone : <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a></li>
+      <li>Email : <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
+    </ul>
+    <p>
+      Toute réservation est confirmée par email ou SMS. Il est recommandé de réserver au moins 24h à l'avance.
+    </p>
+
+    <h2>Article 4 - Tarifs</h2>
+    <p>
+      Les tarifs sont indiqués en euros TTC. Ils comprennent :
+    </p>
+    <ul>
+      {siteConfig.inclusions.map(item => <li>{item}</li>)}
+    </ul>
+    <p>
+      <strong>Attention :</strong> Les tarifs pour Saint-Tropez sont sur devis uniquement en raison
+      de la distance variable et de la saisonnalité.
+    </p>
+
+    <h2>Article 5 - Paiement</h2>
+    <p>
+      Le paiement s'effectue :
+    </p>
+    <ul>
+      <li>En espèces (euros uniquement)</li>
+      <li>Par carte bancaire (terminal mobile)</li>
+      <li>Par virement bancaire (entreprises uniquement, sur demande)</li>
+    </ul>
+    <p>
+      Le paiement est dû à l'issue de la prestation, sauf accord commercial préalable pour les entreprises.
+    </p>
+
+    <h2>Article 6 - Annulation et modification</h2>
+    <p>
+      <strong>Annulation gratuite :</strong> Jusqu'à 24h avant l'heure de prise en charge.<br>
+      <strong>Annulation tardive :</strong> Moins de 24h : facturation de 50% du montant total.<br>
+      <strong>No-show :</strong> En cas d'absence du client sans annulation : facturation de 100%.
+    </p>
+    <p>
+      Les modifications de réservation sont acceptées jusqu'à 12h avant la prise en charge, sous réserve de disponibilité.
+    </p>
+
+    <h2>Article 7 - Retard et attente</h2>
+    <p>
+      <strong>Transfert aéroport :</strong> Le chauffeur surveille le vol en temps réel.
+      15 minutes d'attente gratuites après l'atterrissage réel.<br>
+      <strong>Autres services :</strong> 15 minutes d'attente gratuites. Au-delà : 1€/minute.
+    </p>
+
+    <h2>Article 8 - Bagages</h2>
+    <p>
+      Chaque véhicule dispose d'une capacité de bagages spécifique (voir détails flotte).
+      Le client doit signaler tout bagage volumineux ou surdimensionné lors de la réservation.
+      ECOFUNDRIVE décline toute responsabilité en cas de perte ou vol de bagages laissés dans le véhicule.
+    </p>
+
+    <h2>Article 9 - Comportement</h2>
+    <p>
+      Le client s'engage à adopter un comportement respectueux envers le chauffeur et le véhicule.
+      ECOFUNDRIVE se réserve le droit de refuser ou d'interrompre une course en cas de comportement
+      inapproprié, sans remboursement.
+    </p>
+
+    <h2>Article 10 - Responsabilité</h2>
+    <p>
+      ECOFUNDRIVE est assuré en responsabilité civile professionnelle pour tous ses véhicules et services.
+      Notre responsabilité ne saurait être engagée en cas de force majeure (grève, intempéries, accident...).
+    </p>
+
+    <h2>Article 11 - Réclamations</h2>
+    <p>
+      Toute réclamation doit être adressée par email à <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+      dans les 48h suivant la prestation. Nous nous engageons à répondre sous 7 jours ouvrés.
+    </p>
+
+    <h2>Article 12 - Données personnelles</h2>
+    <p>
+      Les données collectées sont utilisées uniquement pour la gestion des réservations et la facturation.
+      Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression.
+      Consultez notre <a href="/fr/politique-confidentialite">Politique de Confidentialité</a>.
+    </p>
+
+    <h2>Article 13 - Droit applicable</h2>
+    <p>
+      Les présentes CGV sont soumises au droit français. En cas de litige, et après tentative de solution amiable,
+      les tribunaux de Grasse seront seuls compétents.
+    </p>
+
+    <p style="margin-top: 3rem; font-size: 0.9rem; color: #666;">
+      <strong>Dernière mise à jour :</strong> Novembre 2025<br>
+      <strong>ECOFUNDRIVE</strong> - SIRET: {siteConfig.company.siret}
+    </p>
+  </ContentSection>
+</PageLayout>

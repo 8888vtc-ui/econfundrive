@@ -1,0 +1,133 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - FOOTER COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'fr' } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+
+const content = lang === 'fr' ? {
+  company: {
+    title: 'ECOFUNDRIVE',
+    items: [
+      { label: 'À propos', href: '/fr/a-propos' },
+      { label: 'Notre flotte Tesla', href: '/fr/flotte-tesla' },
+      { label: 'Nos services', href: '/fr/services' },
+      { label: 'Zones desservies', href: '/fr/zones' }
+    ]
+  },
+  services: {
+    title: 'Services VTC',
+    items: [
+      { label: 'Transfert aéroport Nice', href: '/fr/vtc-aeroport-nice' },
+      { label: 'VTC Monaco', href: '/fr/vtc-monaco' },
+      { label: 'VTC Cannes', href: '/fr/vtc-cannes' },
+      { label: 'Mise à disposition', href: '/fr/mise-a-disposition' }
+    ]
+  },
+  legal: {
+    title: 'Informations légales',
+    items: [
+      { label: 'Mentions légales', href: '/fr/mentions-legales' },
+      { label: 'CGV', href: '/fr/cgv' },
+      { label: 'Politique de confidentialité', href: '/fr/politique-confidentialite' },
+      { label: 'Cookies', href: '/fr/cookies' }
+    ]
+  },
+  contact: {
+    title: 'Contact',
+    phone: '+33 6 16 55 28 11',
+    email: '8888vtc@gmail.com',
+    whatsapp: 'WhatsApp'
+  },
+  copyright: `© ${currentYear} ECOFUNDRIVE - SIRET: 91224469600015 - Tous droits réservés`
+} : {
+  company: {
+    title: 'ECOFUNDRIVE',
+    items: [
+      { label: 'About', href: '/en/about' },
+      { label: 'Tesla Fleet', href: '/en/tesla-fleet' },
+      { label: 'Services', href: '/en/services' },
+      { label: 'Coverage Areas', href: '/en/areas' }
+    ]
+  },
+  services: {
+    title: 'VTC Services',
+    items: [
+      { label: 'Nice Airport Transfer', href: '/en/nice-airport-transfer' },
+      { label: 'Monaco VTC', href: '/en/monaco-vtc' },
+      { label: 'Cannes VTC', href: '/en/cannes-vtc' },
+      { label: 'Hourly Service', href: '/en/hourly-service' }
+    ]
+  },
+  legal: {
+    title: 'Legal',
+    items: [
+      { label: 'Legal Notice', href: '/en/legal-notice' },
+      { label: 'Terms & Conditions', href: '/en/terms' },
+      { label: 'Privacy Policy', href: '/en/privacy-policy' },
+      { label: 'Cookies', href: '/en/cookies' }
+    ]
+  },
+  contact: {
+    title: 'Contact',
+    phone: '+33 6 16 55 28 11',
+    email: '8888vtc@gmail.com',
+    whatsapp: 'WhatsApp'
+  },
+  copyright: `© ${currentYear} ECOFUNDRIVE - SIRET: 91224469600015 - All rights reserved`
+};
+---
+
+<footer>
+  <div class="footer-container">
+    <!-- Column 1: Company -->
+    <div class="footer-column">
+      <h3>{content.company.title}</h3>
+      {content.company.items.map(item => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+
+    <!-- Column 2: Services -->
+    <div class="footer-column">
+      <h3>{content.services.title}</h3>
+      {content.services.items.map(item => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+
+    <!-- Column 3: Legal -->
+    <div class="footer-column">
+      <h3>{content.legal.title}</h3>
+      {content.legal.items.map(item => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-column">
+      <h3>{content.contact.title}</h3>
+      <a href={`tel:${content.contact.phone}`}>{content.contact.phone}</a>
+      <a href={`mailto:${content.contact.email}`}>{content.contact.email}</a>
+      <a href="https://wa.me/33616552811" target="_blank" rel="noopener noreferrer">
+        📱 {content.contact.whatsapp}
+      </a>
+    </div>
+  </div>
+
+  <!-- Legal Footer -->
+  <div class="footer-legal">
+    <p>{content.copyright}</p>
+    <div>
+      <a href="/fr/mentions-legales">{lang === 'fr' ? 'Mentions légales' : 'Legal'}</a>
+      <a href="/fr/cgv">{lang === 'fr' ? 'CGV' : 'Terms'}</a>
+      <a href="/fr/politique-confidentialite">{lang === 'fr' ? 'Confidentialité' : 'Privacy'}</a>
+    </div>
+  </div>
+</footer>

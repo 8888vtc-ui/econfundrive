@@ -1,0 +1,117 @@
+{
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "club-55-saint-tropez",
+      "url": "/fr/club-55-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "meta_title": "Club 55 Saint-Tropez | VTC Tesla Premium depuis Nice Monaco Cannes",
+      "meta_description": "Transfert VTC Tesla vers Club 55 Saint-Tropez. Service premium avec chauffeur bilingue. Réservation simple par WhatsApp 24/7.",
+      "h1": "Club 55 Saint-Tropez : Transfert VTC Tesla Premium",
+      "wordcount": 2400
+    },
+    {
+      "id": 2,
+      "keyword": "tahiti-beach-saint-tropez",
+      "url": "/fr/tahiti-beach-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 3,
+      "keyword": "nikki-beach-saint-tropez",
+      "url": "/fr/nikki-beach-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 181,
+      "keyword": "vtc-tesla-nice",
+      "url": "/fr/vtc-tesla-nice.html",
+      "language": "fr",
+      "category": "vtc_services",
+      "location": "nice",
+      "authority": false,
+      "mode": "B",
+      "wordcount": 2200
+    },
+    {
+      "id": 182,
+      "keyword": "vtc-tesla-monaco",
+      "url": "/fr/vtc-tesla-monaco.html",
+      "language": "fr",
+      "category": "vtc_services",
+      "location": "monaco",
+      "authority": false,
+      "mode": "B",
+      "wordcount": 2200
+    },
+    {
+      "id": 183,
+      "keyword": "vtc-tesla-cannes",
+      "url": "/fr/vtc-tesla-cannes.html",
+      "language": "fr",
+      "category": "vtc_services",
+      "location": "cannes",
+      "authority": false,
+      "mode": "B",
+      "wordcount": 2200
+    },
+    {
+      "id": 226,
+      "keyword": "plage-beau-rivage-nice",
+      "url": "/en/plage-beau-rivage-nice.html",
+      "language": "en",
+      "category": "beaches",
+      "location": "nice",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 237,
+      "keyword": "buddha-bar-monaco",
+      "url": "/en/buddha-bar-monaco.html",
+      "language": "en",
+      "category": "restaurants",
+      "location": "monaco",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 254,
+      "keyword": "hotel-metropole-monaco",
+      "url": "/en/hotel-metropole-monaco.html",
+      "language": "en",
+      "category": "hotels",
+      "location": "monaco",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 256,
+      "keyword": "hotel-negresco-nice",
+      "url": "/en/hotel-negresco-nice.html",
+      "language": "en",
+      "category": "hotels",
+      "location": "nice",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - POLITIQUE DE CONFIDENTIALITÉ
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import { siteConfig } from '../../lib/config';
+---
+
+<PageLayout
+  title="Politique de Confidentialité | ECOFUNDRIVE"
+  metaTitle="Politique de Confidentialité - ECOFUNDRIVE VTC Tesla"
+  metaDescription="Politique de confidentialité et protection des données personnelles ECOFUNDRIVE conforme au RGPD."
+  lang="fr"
+>
+  <Hero
+    title="Politique de Confidentialité"
+    showCTA={false}
+  />
+
+  <ContentSection>
+    <p style="font-size: 1.1rem; background: #f8f9fa; padding: 1.5rem; border-left: 4px solid var(--accent); margin-bottom: 2rem;">
+      <strong>ECOFUNDRIVE</strong> s'engage à protéger vos données personnelles conformément au Règlement Général
+      sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
+    </p>
+
+    <h2>1. Responsable du traitement</h2>
+    <p>
+      <strong>Nom :</strong> {siteConfig.company.name}<br>
+      <strong>SIRET :</strong> {siteConfig.company.siret}<br>
+      <strong>Adresse :</strong> {siteConfig.headquarters.address}, {siteConfig.headquarters.postalCode} {siteConfig.headquarters.city}<br>
+      <strong>Email :</strong> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a><br>
+      <strong>Téléphone :</strong> <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a>
+    </p>
+
+    <h2>2. Données collectées</h2>
+    <p>Nous collectons les données suivantes :</p>
+
+    <h3>2.1 Données de réservation</h3>
+    <ul>
+      <li>Nom et prénom</li>
+      <li>Numéro de téléphone</li>
+      <li>Adresse email</li>
+      <li>Adresses de prise en charge et destination</li>
+      <li>Date et heure de la course</li>
+      <li>Informations de vol (pour transferts aéroport)</li>
+    </ul>
+
+    <h3>2.2 Données de navigation</h3>
+    <ul>
+      <li>Adresse IP</li>
+      <li>Type de navigateur</li>
+      <li>Pages visitées</li>
+      <li>Temps passé sur le site</li>
+      <li>Cookies (avec votre consentement)</li>
+    </ul>
+
+    <h2>3. Finalités du traitement</h2>
+    <p>Vos données sont utilisées pour :</p>
+    <ul>
+      <li>Gérer vos réservations et prestations VTC</li>
+      <li>Vous contacter pour confirmer ou modifier une réservation</li>
+      <li>Établir des factures</li>
+      <li>Améliorer nos services</li>
+      <li>Respecter nos obligations légales et comptables</li>
+      <li>Analyser le trafic du site (Google Analytics - avec consentement)</li>
+    </ul>
+
+    <h2>4. Base légale</h2>
+    <p>Le traitement de vos données repose sur :</p>
+    <ul>
+      <li><strong>Exécution du contrat :</strong> Gestion de votre réservation et prestation</li>
+      <li><strong>Obligation légale :</strong> Conservation des factures (10 ans)</li>
+      <li><strong>Consentement :</strong> Cookies analytics et marketing</li>
+      <li><strong>Intérêt légitime :</strong> Amélioration du service</li>
+    </ul>
+
+    <h2>5. Destinataires des données</h2>
+    <p>Vos données peuvent être transmises à :</p>
+    <ul>
+      <li>Nos chauffeurs (uniquement informations nécessaires à la course)</li>
+      <li>Notre comptable (pour facturation)</li>
+      <li>Autorités fiscales et administratives (si requis légalement)</li>
+      <li>Google Analytics (données anonymisées - avec consentement)</li>
+      <li>Netlify (hébergement du site)</li>
+    </ul>
+    <p><strong>Nous ne vendons ni ne louons vos données à des tiers.</strong></p>
+
+    <h2>6. Durée de conservation</h2>
+    <ul>
+      <li><strong>Données de réservation :</strong> 3 ans après la dernière course</li>
+      <li><strong>Factures :</strong> 10 ans (obligation légale)</li>
+      <li><strong>Cookies analytics :</strong> 13 mois maximum</li>
+      <li><strong>Données de prospects :</strong> 3 ans sans interaction</li>
+    </ul>
+
+    <h2>7. Vos droits</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul>
+      <li><strong>Droit d'accès :</strong> Obtenir une copie de vos données</li>
+      <li><strong>Droit de rectification :</strong> Corriger des données inexactes</li>
+      <li><strong>Droit à l'effacement :</strong> Supprimer vos données (sauf obligations légales)</li>
+      <li><strong>Droit à la limitation :</strong> Limiter le traitement de vos données</li>
+      <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
+      <li><strong>Droit d'opposition :</strong> Vous opposer au traitement (sauf base légale impérative)</li>
+      <li><strong>Droit de retirer votre consentement :</strong> Pour les cookies notamment</li>
+    </ul>
+
+    <p>
+      <strong>Pour exercer vos droits :</strong><br>
+      Envoyez un email à <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+      avec une copie de votre pièce d'identité. Nous répondrons sous 1 mois maximum.
+    </p>
+
+    <h2>8. Cookies</h2>
+    <p>Ce site utilise des cookies pour :</p>
+    <ul>
+      <li><strong>Cookies essentiels :</strong> Fonctionnement du site (pas de consentement requis)</li>
+      <li><strong>Cookies analytics :</strong> Google Analytics (avec consentement)</li>
+      <li><strong>Cookies de préférences :</strong> Mémoriser vos choix (langue, consentement cookies)</li>
+    </ul>
+    <p>
+      Vous pouvez gérer vos préférences cookies via le bandeau lors de votre première visite.
+      Consultez notre <a href="/fr/cookies">Politique de Cookies</a> pour plus de détails.
+    </p>
+
+    <h2>9. Sécurité</h2>
+    <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données :</p>
+    <ul>
+      <li>Chiffrement HTTPS (SSL/TLS)</li>
+      <li>Hébergement sécurisé (Netlify - certifié ISO 27001)</li>
+      <li>Accès limité aux données (personnel autorisé uniquement)</li>
+      <li>Sauvegardes régulières</li>
+      <li>Mots de passe sécurisés</li>
+    </ul>
+
+    <h2>10. Transferts hors UE</h2>
+    <p>
+      Certains services utilisés (Google Analytics, Netlify) peuvent transférer des données hors Union Européenne.
+      Ces transferts respectent les clauses contractuelles types de la Commission Européenne.
+    </p>
+
+    <h2>11. Modifications</h2>
+    <p>
+      Cette politique peut être mise à jour. La date de dernière modification est indiquée ci-dessous.
+      Les modifications importantes vous seront notifiées par email si possible.
+    </p>
+
+    <h2>12. Réclamation</h2>
+    <p>
+      Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la CNIL :
+    </p>
+    <p>
+      <strong>CNIL</strong><br>
+      3 Place de Fontenoy<br>
+      TSA 80715<br>
+      75334 PARIS CEDEX 07<br>
+      Téléphone : 01 53 73 22 22<br>
+      Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>
+    </p>
+
+    <h2>13. Contact</h2>
+    <p>
+      Pour toute question concernant cette politique de confidentialité ou vos données personnelles :
+    </p>
+    <p>
+      <strong>Email :</strong> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a><br>
+      <strong>Téléphone :</strong> <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a><br>
+      <strong>Courrier :</strong> {siteConfig.headquarters.address}, {siteConfig.headquarters.postalCode} {siteConfig.headquarters.city}
+    </p>
+
+    <p style="margin-top: 3rem; font-size: 0.9rem; color: #666;">
+      <strong>Dernière mise à jour :</strong> Novembre 2025<br>
+      <strong>Version :</strong> 2.0
+    </p>
+  </ContentSection>
+</PageLayout>

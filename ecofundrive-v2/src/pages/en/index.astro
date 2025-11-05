@@ -1,0 +1,107 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - ENGLISH HOMEPAGE
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import CTA from '../../components/CTA.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { siteConfig } from '../../lib/config';
+---
+
+<PageLayout
+  title="Premium Tesla VTC French Riviera | ECOFUNDRIVE"
+  metaTitle="Premium Tesla VTC French Riviera | Private Driver Monaco Nice Cannes"
+  metaDescription="Premium VTC service with electric Tesla on the French Riviera. Nice airport transfers, Monaco, Cannes, Saint-Tropez. 24/7 booking."
+  lang="en"
+>
+  <!-- Hero Section -->
+  <Hero
+    title="Premium Tesla VTC French Riviera"
+    subtitle="Your electric private driver for Monaco, Nice, Cannes and the entire French Riviera. Premium 24/7 service."
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+    showCTA={true}
+    ctaText="Book now"
+  />
+
+  <!-- Introduction -->
+  <ContentSection alignment="center">
+    <h2>Welcome to ECOFUNDRIVE</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+      First <strong>100% Tesla electric</strong> VTC service on the French Riviera.
+      Enjoy premium, eco-friendly and comfortable transportation for all your trips
+      between Monaco, Nice, Cannes, Antibes and Saint-Tropez.
+    </p>
+  </ContentSection>
+
+  <!-- Services Section -->
+  <ContentSection>
+    <h2>Our Premium VTC Services</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🛫 Nice Airport Transfer</h3>
+        <p>Premium shuttle service from/to Nice Côte d'Azur airport. Real-time flight tracking.</p>
+        <a href="/en/nice-airport-transfer" style="color: var(--accent-blue); font-weight: 600;">Learn more →</a>
+      </div>
+
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🏰 Monaco VTC</h3>
+        <p>Transfers to/from Monaco. Perfect for business, events and luxury tourism.</p>
+        <a href="/en/monaco-vtc" style="color: var(--accent-blue); font-weight: 600;">Learn more →</a>
+      </div>
+
+      <div style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h3>🎬 Cannes VTC</h3>
+        <p>Premium VTC service for Cannes and surroundings. Festival, business or leisure.</p>
+        <a href="/en/nice-cannes-vtc" style="color: var(--accent-blue); font-weight: 600;">Learn more →</a>
+      </div>
+    </div>
+  </ContentSection>
+
+  <!-- CTA Mid -->
+  <CTA
+    title="Need a Tesla driver now?"
+    subtitle="Simple and fast booking via WhatsApp. Available 24/7."
+    location="mid"
+    lang="en"
+  />
+
+  <!-- Fleet Section -->
+  <ContentSection>
+    <h2>Our Tesla Fleet</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      {siteConfig.fleet.map(vehicle => (
+        <div style="background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
+          <h3 style="color: var(--accent); margin-bottom: 1rem;">{vehicle.model}</h3>
+          <ul style="list-style: none; padding: 0; text-align: left;">
+            <li style="margin-bottom: 0.5rem;">👥 {vehicle.capacity}</li>
+            <li style="margin-bottom: 0.5rem;">🧳 {vehicle.luggage}</li>
+            <li style="margin-bottom: 0.5rem;">📦 Trunk: {vehicle.trunk}</li>
+            <li style="margin-bottom: 0.5rem; font-weight: 600; color: var(--accent);">💰 {vehicle.hourlyRate}</li>
+            {vehicle.feature && (
+              <li style="margin-top: 1rem; color: var(--accent-blue); font-weight: 600;">✨ {vehicle.feature}</li>
+            )}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </ContentSection>
+
+  <!-- Final CTA -->
+  <CTA
+    title="Ready to travel in a Tesla?"
+    subtitle={`Contact us at ${siteConfig.contact.phone} or book directly via WhatsApp`}
+    location="end"
+    lang="en"
+  />
+
+  <!-- Schemas -->
+  <Schemas type="organization" />
+  <Schemas type="service" />
+  <Schemas type="rating" />
+</PageLayout>

@@ -1,0 +1,40 @@
+{
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "club-55-saint-tropez",
+      "url": "/fr/club-55-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "meta_title": "Club 55 Saint-Tropez | VTC Tesla Premium",
+      "meta_description": "Transfert VTC Tesla vers Club 55 Saint-Tropez. Service premium, chauffeur bilingue. Réservation 24/7.",
+      "h1": "Club 55 Saint-Tropez : Transfert VTC Tesla Premium",
+      "wordcount": 2400
+    },
+    {
+      "id": 2,
+      "keyword": "tahiti-beach-saint-tropez",
+      "url": "/fr/tahiti-beach-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    },
+    {
+      "id": 3,
+      "keyword": "nikki-beach-saint-tropez",
+      "url": "/fr/nikki-beach-saint-tropez.html",
+      "language": "fr",
+      "category": "beaches",
+      "location": "saint-tropez",
+      "authority": true,
+      "mode": "A",
+      "wordcount": 2400
+    }
+  ]
+}

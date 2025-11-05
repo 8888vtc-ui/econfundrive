@@ -1,0 +1,32 @@
+{
+  "keywords": [
+    {
+      "id": 1,
+      "keyword": "hotel-negresco-nice",
+      "url": "/fr/hotel-negresco-nice.html",
+      "language": "fr",
+      "category": "hotels",
+      "location": "Nice",
+      "authority": true,
+      "mode": "A",
+      "meta_title": "Hôtel Negresco Nice | Guide Complet & VTC Tesla",
+      "meta_description": "Découvrez l'Hôtel Negresco Nice : palace mythique de la Promenade des Anglais. Histoire, luxe et transfert VTC Tesla premium.",
+      "h1": "Hôtel Negresco Nice : Le Palace Mythique de la Côte d'Azur",
+      "wordcount": 2400
+    },
+    {
+      "id": 2,
+      "keyword": "vtc-nice-cannes",
+      "url": "/fr/vtc-nice-cannes.html",
+      "language": "fr",
+      "category": "vtc_services",
+      "location": "Nice - Cannes",
+      "authority": true,
+      "mode": "A",
+      "meta_title": "VTC Nice Cannes | Tesla Model S Premium ECOFUNDRIVE",
+      "meta_description": "Transfert VTC Tesla Nice-Cannes. Service premium écologique, chauffeur bilingue, réservation 24/7. À partir de 90€.",
+      "h1": "VTC Nice Cannes : Transfert Tesla Premium ECOFUNDRIVE",
+      "wordcount": 2400
+    }
+  ]
+}

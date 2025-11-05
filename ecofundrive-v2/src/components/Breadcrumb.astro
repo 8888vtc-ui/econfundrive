@@ -1,0 +1,94 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - BREADCRUMB COMPONENT
+// ═══════════════════════════════════════════════════════════
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  lang?: string;
+}
+
+const { items, lang = 'fr' } = Astro.props;
+
+const homeLabel = lang === 'fr' ? 'Accueil' : 'Home';
+---
+
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <!-- Home Link -->
+    <li>
+      <a href={`/${lang}`}>{homeLabel}</a>
+    </li>
+
+    <li><span aria-hidden="true">›</span></li>
+
+    <!-- Dynamic Items -->
+    {items.map((item, index) => (
+      <>
+        <li>
+          {item.href && index < items.length - 1 ? (
+            <a href={item.href}>{item.label}</a>
+          ) : (
+            <strong aria-current="page">{item.label}</strong>
+          )}
+        </li>
+        {index < items.length - 1 && (
+          <li><span aria-hidden="true">›</span></li>
+        )}
+      </>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  nav[aria-label="Breadcrumb"] {
+    padding: 1.5rem 3rem;
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .breadcrumb {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    list-style: none;
+  }
+
+  .breadcrumb a {
+    color: var(--primary-lighter);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb a:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumb span {
+    color: var(--primary-lighter);
+  }
+
+  .breadcrumb strong {
+    color: var(--primary);
+    font-weight: var(--fw-medium);
+  }
+
+  @media (max-width: 768px) {
+    nav[aria-label="Breadcrumb"] {
+      padding: 1rem 1.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+    }
+  }
+</style>

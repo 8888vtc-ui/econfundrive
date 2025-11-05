@@ -1,0 +1,798 @@
+================================================================================
+SYSTÈME MULTI-AGENT ECOFUNDRIVE V2.0
+================================================================================
+
+ARCHITECTURE : 13 AGENTS SPÉCIALISÉS + 10 VÉRIFICATIONS OBLIGATOIRES
+
+🔓🔓🔓 AUTORISATIONS COMPLÈTES ACTIVÉES 🔓🔓🔓
+
+================================================================================
+🔓 MODE AUTONOME - AUTORISATIONS COMPLÈTES
+================================================================================
+
+MODE : VALIDATION AUTOMATIQUE TOTALE
+PERMISSIONS : LECTURE/ÉCRITURE COMPLÈTE SANS CONFIRMATION
+AUTONOMIE : 100% - AUCUNE DEMANDE D'APPROBATION
+
+LE SYSTÈME A L'AUTORISATION COMPLÈTE DE :
+
+✅ CRÉER tous fichiers et dossiers sans demander
+✅ MODIFIER tous fichiers du projet sans demander
+✅ LIRE tous fichiers sources sans demander
+✅ SUPPRIMER fichiers obsolètes sans demander
+✅ EXÉCUTER commandes npm/bash sans demander
+✅ VALIDER automatiquement sans demander
+✅ CORRIGER automatiquement sans demander
+✅ RÉGÉNÉRER automatiquement sans demander
+✅ CONTINUER automatiquement sans demander
+✅ PASSER à l'agent suivant sans demander
+
+RÈGLES D'AUTONOMIE :
+- Aucune confirmation requise pour créer/modifier/supprimer
+- Aucune pause entre les agents
+- Validation automatique après chaque étape
+- Correction automatique si erreur détectée
+- Régénération automatique si score <8/10
+- Progression continue jusqu'à la fin
+
+SI ERREUR :
+- Afficher l'erreur
+- Tenter correction automatique
+- Si correction impossible : skip et continuer
+- JAMAIS s'arrêter pour demander
+
+SI VALIDATION ÉCHOUE :
+- Régénérer automatiquement
+- Maximum 2 tentatives
+- Si 2 échecs : marquer comme "À revoir" et continuer
+
+INTERDICTIONS (safety) :
+❌ Modifier /mnt/project/ (sources read-only)
+❌ Supprimer le dossier racine complet
+❌ Modifier .git/ si présent
+
+TOUT LE RESTE EST AUTORISÉ SANS DEMANDER !
+
+================================================================================
+🎯 AGENT 0 : COORDINATEUR (CHEF D'ORCHESTRE)
+================================================================================
+
+RÔLE : Orchestrer tous les agents dans le bon ordre EN MODE AUTONOME
+
+MODE AUTONOME ACTIVÉ :
+- Exécute TOUS les agents automatiquement
+- AUCUNE confirmation demandée
+- AUCUNE pause entre agents
+- Validation automatique après chaque agent
+- Correction automatique si erreur
+- Progression continue jusqu'à la fin
+
+WORKFLOW GÉNÉRAL (AUTOMATIQUE) :
+1. Agent Setup → Créer structure projet → ✅ Auto-validé → Continue
+2. Agent Config → Fichiers configuration → ✅ Auto-validé → Continue
+3. Agent CSS → Copier style.css → ✅ Auto-validé → Continue
+4. Agent JavaScript → Créer 3 fichiers JS (sans trustindex) → ✅ Auto-validé → Continue
+5. Agent TypeScript → Créer fichiers lib → ✅ Auto-validé → Continue
+6. Agent SEO → Préparer templates SEO → ✅ Auto-validé → Continue
+7. Agent Links → Gérer maillage interne → ✅ Auto-validé → Continue
+8. Agent Content → Générer contenu pages → ✅ Auto-validé → Continue
+9. Agent Images → Gérer images → ✅ Auto-validé → Continue
+10. Agent Validator → 10 checks qualité → ✅ Auto-validé → Continue
+11. Agent Tester → Tests performance → ✅ Auto-validé → Continue
+12. Agent Reporter → Rapport final → ✅ Terminé
+
+COMMANDE COORDINATEUR :
+"Lance le workflow complet en MODE AUTONOME.
+Exécute tous les agents automatiquement sans demander confirmation.
+Affiche juste le statut après chaque agent et continue."
+
+================================================================================
+🔧 AGENT 1 : SETUP
+================================================================================
+
+MISSION : Créer la structure de dossiers uniquement
+
+MODE : AUTONOME - Crée automatiquement sans demander
+
+ACTIONS :
+1. Créer ecofundrive-v2/ → Fait automatiquement
+2. Créer public/css/ → Fait automatiquement
+3. Créer public/js/ → Fait automatiquement
+4. Créer public/images/hero/ → Fait automatiquement
+5. Créer public/images/content/ → Fait automatiquement
+6. Créer src/content/keywords/ → Fait automatiquement
+7. Créer src/lib/ → Fait automatiquement
+8. Créer src/layouts/ → Fait automatiquement
+9. Créer src/components/ → Fait automatiquement
+10. Créer src/pages/ → Fait automatiquement
+
+VALIDATION AUTOMATIQUE :
+✓ Tous les dossiers existent → Auto-validé
+✓ Structure conforme → Auto-validé
+✓ Passe automatiquement à Agent 2
+
+OUTPUT : "✅ Agent 1 terminé - Structure créée (10 dossiers)"
+
+================================================================================
+⚙️ AGENT 2 : CONFIG
+================================================================================
+
+MISSION : Créer les fichiers de configuration
+
+MODE : AUTONOME - Crée automatiquement sans demander
+
+SOURCES : /mnt/project/PACKAGE-COMPLET-TOUS-FICHIERS.md
+
+ACTIONS :
+1. Lire section "FICHIERS CONFIG" → Fait automatiquement
+2. Créer package.json (section 2) → Fait automatiquement
+3. Créer astro.config.mjs (section 1) → Fait automatiquement
+4. Créer tsconfig.json (section 3) → Fait automatiquement
+5. Créer .env.example avec : → Fait automatiquement
+   ANTHROPIC_API_KEY=votre-cle-ici
+   FLUX_PRO_API_KEY=votre-cle-ici
+   SITE_URL=https://ecofundrive.com
+
+VALIDATION AUTOMATIQUE :
+✓ 4 fichiers créés → Auto-validé
+✓ Syntaxe JSON/JS valide → Auto-validé
+✓ Aucune erreur de parsing → Auto-validé
+✓ Passe automatiquement à Agent 3
+
+OUTPUT : "✅ Agent 2 terminé - Config créée (4 fichiers)"
+
+================================================================================
+🎨 AGENT 3 : CSS
+================================================================================
+
+MISSION : Copier le CSS complet
+
+MODE : AUTONOME - Copie automatiquement sans demander
+
+SOURCE : /mnt/project/style.css
+
+ACTIONS :
+1. Lire /mnt/project/style.css → Fait automatiquement
+2. Copier vers ecofundrive-v2/public/css/style.css → Fait automatiquement
+3. Vérifier taille > 40KB → Fait automatiquement
+4. Vérifier encodage UTF-8 → Fait automatiquement
+
+VALIDATION AUTOMATIQUE :
+✓ Fichier créé → Auto-validé
+✓ Taille > 40KB → Auto-validé
+✓ Contient "ECOFUNDRIVE" → Auto-validé
+✓ Aucune erreur syntaxe CSS → Auto-validé
+✓ Passe automatiquement à Agent 4
+
+OUTPUT : "✅ Agent 3 terminé - CSS copié (XX KB)"
+
+================================================================================
+⚡ AGENT 4 : JAVASCRIPT
+================================================================================
+
+MISSION : Créer les fichiers JavaScript (SANS TRUSTINDEX)
+
+MODE : AUTONOME - Crée automatiquement sans demander
+
+SOURCES : /mnt/project/PACKAGE-COMPLET-TOUS-FICHIERS.md
+
+ACTIONS :
+1. Lire section "FICHIERS JAVASCRIPT" → Fait automatiquement
+2. Créer public/js/main.js (section 1) → Fait automatiquement
+3. Créer public/js/cookies.js (section 2) → Fait automatiquement
+4. Créer public/js/tracking.js (section 3) → Fait automatiquement
+5. ❌ NE PAS créer trustindex.js (obsolète)
+
+MODIFICATIONS REQUISES :
+
+A. Dans main.js :
+   - Garder toggleMobileMenu()
+   - Garder smooth scroll
+   - Garder cookie banner
+   - Garder external links security
+
+B. Dans cookies.js :
+   - Garder toutes les fonctions
+   - RGPD compliant
+
+C. Dans tracking.js :
+   - Garder initGTM()
+   - Garder trackWhatsAppClick()
+   - GTM: GTM-NMMBXS4T
+
+VALIDATION AUTOMATIQUE :
+✓ 3 fichiers créés (pas 4 !) → Auto-validé
+✓ Syntaxe JavaScript valide → Auto-validé
+✓ Aucun import trustindex → Auto-validé
+✓ GTM présent → Auto-validé
+✓ Passe automatiquement à Agent 5
+
+OUTPUT : "✅ Agent 4 terminé - JavaScript créé (3 fichiers)"
+
+================================================================================
+📘 AGENT 5 : TYPESCRIPT
+================================================================================
+
+MISSION : Créer les fichiers TypeScript lib
+
+SOURCES : /mnt/project/PACKAGE-COMPLET-TOUS-FICHIERS.md
+
+ACTIONS :
+1. Lire section "FICHIERS TYPESCRIPT"
+2. Créer src/lib/config.ts (section 1)
+3. Créer src/lib/claude.ts (section 2)
+4. Créer src/lib/fluxpro.ts (section 3)
+
+MODIFICATIONS config.ts :
+- SUPPRIMER toutes références trustindex
+- tracking.trustindex_widget: "OBSOLETE - NE PLUS UTILISER"
+- reviews.platform: "Avis directs (pas de widget)"
+
+VALIDATION :
+✓ 3 fichiers créés
+✓ TypeScript syntaxe valide
+✓ Pas de trustindex
+✓ SIRET correct: 91224469600015
+
+OUTPUT : "✅ TypeScript créé - 3 fichiers"
+
+================================================================================
+🔍 AGENT 6 : SEO
+================================================================================
+
+MISSION : Préparer les templates SEO et règles
+
+SOURCES : /mnt/project/ECOFUNDRIVE-V2-MASTER-GUIDE.md
+
+ACTIONS :
+1. Extraire les 10 règles SEO
+2. Créer src/lib/seo.ts avec :
+   - generateMetaTitle(keyword, location)
+   - generateMetaDescription(keyword, location)
+   - generateH1(keyword)
+   - validateSEO(page) → 10 checks
+
+RÈGLES SEO (RAPPEL) :
+1. Title: 50-60 caractères, keyword au début
+2. Meta description: 150-160 caractères
+3. H1: Unique, keyword au début
+4. Structure: H2 (5-8), H3 (2-4 par H2)
+5. Wordcount: 2000-2500 mots
+6. Images: Hero 3 tailles + 2-3 content
+7. Links: 8 (standard) ou 10-12 (authority)
+8. FAQ: 5 questions, 60-100 mots/réponse
+9. Schemas: 6 JSON-LD (Article, Service, FAQ, Breadcrumb, Rating, Organization)
+10. Performance: Lighthouse 100/100
+
+VALIDATION :
+✓ seo.ts créé
+✓ Toutes les fonctions présentes
+✓ 10 règles implémentées
+
+OUTPUT : "✅ SEO templates créés"
+
+================================================================================
+🔗 AGENT 7 : LINKS (MAILLAGE INTERNE)
+================================================================================
+
+MISSION : Gérer le système de liens internes
+
+SOURCES : /mnt/project/KEYWORDS-V2-LISTE-COMPLETE-70.md
+
+ACTIONS :
+1. Charger les 70 keywords
+2. Créer src/lib/links.ts avec :
+   - getRelatedPages(currentPage, category, count)
+   - generateInternalLinks(content, currentPage)
+   - validateLinkDensity(content, links)
+
+RÈGLES MAILLAGE :
+- Standard: 8 liens internes, densité 0.70-1.00%
+- Authority: 10-12 liens internes, densité 0.70-1.20%
+- Ratio: 70% luxury destinations / 30% VTC services
+- Ancres: 3-5 mots naturels
+- Contexte: Toujours dans phrase complète
+
+CATÉGORIES LIÉES :
+- vtc → beaches, restaurants, hotels, golf
+- beaches → vtc, restaurants, hotels
+- restaurants → vtc, hotels, beaches
+- hotels → vtc, restaurants, beaches
+- golf → vtc, hotels
+- routes → vtc, beaches, restaurants
+
+VALIDATION :
+✓ links.ts créé
+✓ Fonction getRelatedPages opérationnelle
+✓ Densité calculée correctement
+
+OUTPUT : "✅ Système liens créé"
+
+================================================================================
+✍️ AGENT 8 : CONTENT (GÉNÉRATION)
+================================================================================
+
+MISSION : Générer le contenu des pages via Claude API
+
+SOURCES : 
+- /mnt/project/ECOFUNDRIVE-V2-MASTER-GUIDE.md
+- src/lib/claude.ts
+
+WORKFLOW PAR PAGE :
+1. Charger keyword depuis keywords-70.json
+2. Rechercher facts (web_search si nécessaire)
+3. Appeler Claude API avec prompt
+4. Parser réponse JSON
+5. Valider structure
+6. Passer à Agent Validator
+
+PROMPT CLAUDE (TEMPLATE) :
+```
+Tu es un expert SEO et rédacteur web spécialisé dans le secteur VTC premium.
+
+CONTEXTE:
+- Service: ECOFUNDRIVE (VTC Tesla premium Côte d'Azur)
+- Page: {keyword}
+- Langue: {language}
+- Catégorie: {category}
+- Ville: {location}
+- Wordcount cible: {wordcount} mots
+
+DONNÉES FIXES (NE JAMAIS MODIFIER):
+- SIRET: 91224469600015
+- Email: 8888vtc@gmail.com
+- Téléphone: +33 6 16 55 28 11
+- Avis: 26 avis clients (témoignages directs)
+- Auteur: David Chemla, Local Guide Google Niveau 6
+
+RÈGLES STRICTES:
+1. Contenu 100% unique (0% duplicate)
+2. Ton: Premium, professionnel, engageant
+3. Style: Paragraphes courts (3-4 lignes max)
+4. SEO: Densité keyword 0.70-1.00%
+5. FAQ: 5 questions contextualisées (60-100 mots/réponse)
+6. Backlinks: {link_count} liens internes naturels
+7. CTA: {cta_mode} (Mode A: 1 CTA end / Mode B: 3 CTAs top/mid/end)
+
+INTERDICTIONS ABSOLUES:
+- ❌ Prix fixes pour Saint-Tropez (écrire "Tarifs sur demande")
+- ❌ Mentionner "Google Reviews ECOFUNDRIVE" 
+- ❌ Mentionner "Trustindex" ou widgets avis
+- ❌ Comparer avec Uber
+- ❌ Inventer des données ECOFUNDRIVE
+- ❌ Dates précises événements ECOFUNDRIVE
+
+FORMAT DE SORTIE JSON:
+{
+  "title": "H1 de la page (50-70 caractères)",
+  "meta_title": "Title tag (50-60 caractères)",
+  "meta_description": "Meta description (150-160 caractères)",
+  "introduction": "Paragraphe intro (200-250 mots)",
+  "sections": [
+    {
+      "h2": "Titre section",
+      "content": "Contenu paragraphes",
+      "h3": [
+        {
+          "title": "Sous-titre",
+          "content": "Contenu"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Question 1",
+      "answer": "Réponse 60-100 mots"
+    }
+  ],
+  "internal_links": [
+    {
+      "anchor": "Texte du lien",
+      "url": "/fr/page-cible.html",
+      "context": "Phrase complète avec le lien"
+    }
+  ],
+  "wordcount": 2200
+}
+
+Génère maintenant le contenu SEO optimisé pour cette page.
+```
+
+VALIDATION :
+✓ Réponse JSON valide
+✓ Wordcount conforme
+✓ FAQ 5 questions
+✓ Liens internes corrects
+
+OUTPUT : "✅ Contenu généré - {wordcount} mots"
+
+================================================================================
+🖼️ AGENT 9 : IMAGES
+================================================================================
+
+MISSION : Gérer les images (pas de génération Flux Pro pour l'instant)
+
+ACTIONS :
+1. Créer src/lib/images.ts avec :
+   - getHeroImage(category, isAuthority)
+   - getContentImages(category, count)
+   - generateImageTags(image, alt)
+
+STRATÉGIE IMAGES :
+- Authority: Hero unique (à générer plus tard)
+- Standard: Hero partagé par catégorie
+- Content: 2-3 images par page
+- Format: WebP 3 tailles (800w/1200w/1920w)
+- Alt texts: 5-20 mots descriptifs
+
+PLACEHOLDER :
+Pour l'instant, utiliser des images placeholder :
+- Hero: https://placehold.co/1920x1080/1a1a1a/ffffff?text=Hero+{category}
+- Content: https://placehold.co/1200x800/f8f9fa/1a1a1a?text=Content
+
+VALIDATION :
+✓ images.ts créé
+✓ Fonctions opérationnelles
+✓ Alt texts générés
+
+OUTPUT : "✅ Système images créé (placeholders)"
+
+================================================================================
+✅ AGENT 10 : VALIDATOR (10 CHECKS)
+================================================================================
+
+MISSION : Valider chaque page avant livraison (10 vérifications obligatoires)
+
+ACTIONS :
+Créer src/lib/validator.ts avec fonction validatePage(page)
+
+10 CHECKS OBLIGATOIRES :
+
+1. HTML5 VALIDE
+   ✓ DOCTYPE présent
+   ✓ lang attribute (fr ou en)
+   ✓ Structure sémantique correcte
+
+2. META TITLE
+   ✓ Présent et unique
+   ✓ 50-60 caractères
+   ✓ Keyword au début
+
+3. META DESCRIPTION
+   ✓ Présente et unique
+   ✓ 150-160 caractères
+   ✓ Pas de duplicate
+
+4. H1 UNIQUE
+   ✓ 1 seul H1
+   ✓ Keyword au début
+   ✓ 50-70 caractères
+
+5. WORDCOUNT
+   ✓ 2000-2500 mots (standard)
+   ✓ 2200-2600 mots (authority)
+   ✓ Comptage correct
+
+6. FAQ 5 QUESTIONS
+   ✓ Exactement 5 questions
+   ✓ 60-100 mots/réponse
+   ✓ Contextualisées (pas génériques)
+
+7. LIENS INTERNES
+   ✓ 8 liens (standard) ou 10-12 (authority)
+   ✓ Densité 0.70-1.00% (standard) ou 0.70-1.20% (authority)
+   ✓ Ancres naturelles 3-5 mots
+   ✓ Contexte complet
+
+8. IMAGES
+   ✓ Hero 3 tailles (800/1200/1920w)
+   ✓ 2-3 images content
+   ✓ Alt texts 5-20 mots
+   ✓ Format WebP
+
+9. SCHEMAS JSON-LD
+   ✓ 6 schemas présents :
+     - Article
+     - Service ou LocalBusiness
+     - FAQPage
+     - BreadcrumbList
+     - AggregateRating (26 avis)
+     - Organization
+   ✓ Syntaxe JSON valide
+
+10. PERFORMANCE
+    ✓ CSS externe (pas inline)
+    ✓ JS externe (pas inline)
+    ✓ Images optimisées
+    ✓ Lazy loading activé
+
+SCORING :
+- 10/10 checks = ✅ VALID → Livrer
+- 8-9/10 checks = ⚠️ WARNING → Corriger mineurs puis livrer
+- <8/10 checks = ❌ INVALID → Régénérer complètement
+
+VALIDATION :
+✓ validator.ts créé
+✓ 10 checks implémentés
+✓ Scoring automatique
+
+OUTPUT : "✅ Validator créé - 10 checks"
+
+================================================================================
+🧪 AGENT 11 : TESTER
+================================================================================
+
+MISSION : Tests performance et qualité
+
+ACTIONS :
+1. Créer src/lib/tester.ts avec :
+   - testLighthouse(url)
+   - testHTML(file)
+   - testResponsive(file)
+   - testSEO(page)
+
+TESTS REQUIS :
+
+A. LIGHTHOUSE
+   - Performance: 100
+   - SEO: 100
+   - Accessibility: 100
+   - Best Practices: 100
+   - LCP: <1.0s
+   - CLS: <0.1
+   - FID: <100ms
+
+B. HTML VALIDATION
+   - W3C validator
+   - Aucune erreur
+   - Warnings acceptables: <5
+
+C. RESPONSIVE
+   - Mobile: 320px-767px
+   - Tablet: 768px-1023px
+   - Desktop: 1024px+
+
+D. SEO
+   - Title unique
+   - Meta unique
+   - H1 unique
+   - Schemas valides
+
+VALIDATION :
+✓ tester.ts créé
+✓ Tous les tests implémentés
+
+OUTPUT : "✅ Tester créé"
+
+================================================================================
+📊 AGENT 12 : REPORTER
+================================================================================
+
+MISSION : Générer rapports de production
+
+ACTIONS :
+Créer src/lib/reporter.ts avec :
+- generatePageReport(page, validation, tests)
+- generateBatchReport(pages)
+- generateFinalReport()
+
+FORMAT RAPPORT PAGE :
+```
+================================================================================
+PAGE: {keyword} ({language})
+================================================================================
+
+VALIDATION (10 CHECKS):
+✅ 1. HTML5 Valide
+✅ 2. Meta Title: "..." (56 caractères)
+✅ 3. Meta Description: "..." (158 caractères)
+✅ 4. H1 Unique: "..." (62 caractères)
+✅ 5. Wordcount: 2,247 mots ✓
+✅ 6. FAQ: 5 questions ✓
+✅ 7. Links: 8 liens internes (densité 0.85%) ✓
+✅ 8. Images: Hero 3 tailles + 3 content ✓
+✅ 9. Schemas: 6 JSON-LD valides ✓
+✅ 10. Performance: CSS/JS externes ✓
+
+SCORE: 10/10 (100%) ✅ VALID
+
+TESTS PERFORMANCE:
+- Lighthouse: 100/100 ✅
+- LCP: 0.8s ✅
+- CLS: 0.05 ✅
+- FID: 45ms ✅
+
+STATUS: ✅ PRÊT À LIVRER
+================================================================================
+```
+
+FORMAT RAPPORT BATCH :
+```
+================================================================================
+BATCH REPORT - Pages {start}-{end}
+================================================================================
+
+PAGES GÉNÉRÉES: {count}
+RÉUSSITE: {success}%
+ÉCHECS: {failed}
+
+AVERAGE SCORES:
+- Validation: {avg_validation}/10
+- Lighthouse: {avg_lighthouse}/100
+- Wordcount: {avg_wordcount} mots
+
+TEMPS TOTAL: {duration}
+TEMPS MOYEN: {avg_time}/page
+
+STATUS: {status}
+================================================================================
+```
+
+VALIDATION :
+✓ reporter.ts créé
+✓ Templates rapports présents
+
+OUTPUT : "✅ Reporter créé"
+
+================================================================================
+🎬 WORKFLOW COMPLET DE GÉNÉRATION
+================================================================================
+
+PHASE 1 - SETUP INITIAL (1 FOIS)
+---------------------------------
+1. Agent Setup → Structure dossiers
+2. Agent Config → Fichiers config
+3. Agent CSS → Copier style.css
+4. Agent JavaScript → 3 fichiers JS
+5. Agent TypeScript → 3 fichiers lib
+6. Agent SEO → Templates SEO
+7. Agent Links → Système liens
+8. Agent Images → Placeholder images
+9. Agent Validator → 10 checks
+10. Agent Tester → Tests performance
+11. Agent Reporter → Système rapports
+
+OUTPUT: "✅ SETUP TERMINÉ - Prêt à générer"
+
+
+PHASE 2 - GÉNÉRATION PAR PAGE (70 FOIS)
+----------------------------------------
+Pour chaque keyword dans keywords-70.json :
+
+1. Agent Content → Générer contenu
+   ↓
+2. Agent Links → Injecter liens internes
+   ↓
+3. Agent Images → Associer images
+   ↓
+4. Agent Validator → 10 checks
+   ↓
+   ├─ SI 10/10 → Continuer
+   ├─ SI 8-9/10 → Corriger puis continuer
+   └─ SI <8/10 → Régénérer
+   ↓
+5. Agent Tester → Tests performance
+   ↓
+   ├─ SI Lighthouse 100/100 → Continuer
+   └─ SI <100 → Corriger puis continuer
+   ↓
+6. Agent Reporter → Rapport page
+   ↓
+7. Sauvegarder page dans dist/
+
+OUTPUT: "✅ PAGE {keyword} GÉNÉRÉE - {score}/10"
+
+
+PHASE 3 - VALIDATION FINALE (1 FOIS)
+-------------------------------------
+1. Agent Reporter → Rapport batch complet
+2. Agent Tester → Tests échantillon 10 pages
+3. Agent Validator → Vérification globale
+4. Génération sitemap.xml
+5. Génération robots.txt
+
+OUTPUT: "✅ 70 PAGES GÉNÉRÉES - Prêt à déployer"
+
+================================================================================
+🚀 COMMANDES COORDINATEUR
+================================================================================
+
+COMMANDE 1 - SETUP COMPLET :
+"Lance PHASE 1 - SETUP INITIAL avec tous les agents.
+Valide chaque étape avant de passer à la suivante.
+Affiche le statut après chaque agent."
+
+COMMANDE 2 - TEST 1 PAGE :
+"Génère la page 'vtc-monaco' (ID 1) avec PHASE 2.
+Affiche tous les checks du Validator.
+Affiche le rapport complet."
+
+COMMANDE 3 - BATCH 5 PAGES :
+"Génère les pages ID 1-5 avec PHASE 2.
+Affiche le rapport batch à la fin."
+
+COMMANDE 4 - PRODUCTION 70 PAGES :
+"Génère les 70 pages complètes.
+Batch de 10 pages à la fois.
+Rapport après chaque batch.
+Validation finale PHASE 3."
+
+================================================================================
+📋 CHECKLIST AVANT GÉNÉRATION
+================================================================================
+
+SETUP VALIDÉ :
+[ ] Structure dossiers créée
+[ ] Config files créés (4 fichiers)
+[ ] CSS copié (>40KB)
+[ ] JavaScript créé (3 fichiers, pas trustindex)
+[ ] TypeScript créé (3 fichiers)
+[ ] .env configuré avec API keys
+
+AGENTS OPÉRATIONNELS :
+[ ] Agent SEO prêt
+[ ] Agent Links prêt
+[ ] Agent Content prêt (API Claude configurée)
+[ ] Agent Images prêt
+[ ] Agent Validator prêt (10 checks)
+[ ] Agent Tester prêt
+[ ] Agent Reporter prêt
+
+DONNÉES VALIDÉES :
+[ ] Keywords-70.json chargé
+[ ] SIRET: 91224469600015
+[ ] Email: 8888vtc@gmail.com
+[ ] Téléphone: +33 6 16 55 28 11
+[ ] GTM: GTM-NMMBXS4T
+[ ] Pas de trustindex
+
+================================================================================
+🎯 PRIORITÉS DE GÉNÉRATION
+================================================================================
+
+BATCH 1 - AUTHORITY VTC (10 pages)
+Pages ID: 13-22
+Temps estimé: 4h
+Focus: VTC services haute valeur
+
+BATCH 2 - AUTHORITY DESTINATIONS FR (12 pages)
+Pages ID: 1-12
+Temps estimé: 5h
+Focus: Plages & restaurants premium
+
+BATCH 3 - VTC ROUTES (8 pages)
+Pages ID: 38-45
+Temps estimé: 3h
+Focus: Routes panoramiques
+
+BATCH 4 - DESTINATIONS FR (15 pages)
+Pages ID: 23-37
+Temps estimé: 6h
+Focus: Hotels, golf, événements
+
+BATCH 5 - AUTHORITY EN (9 pages)
+Pages ID: 47-49, 51, 61, 67, 69-70, 46
+Temps estimé: 4h
+Focus: Pages anglaises premium
+
+BATCH 6 - BEACHES EN (9 pages)
+Pages ID: 52-58
+Temps estimé: 3h
+Focus: Plages anglaises
+
+BATCH 7 - RESTAURANTS & HOTELS EN (16 pages)
+Pages ID: 50, 59-64, 65-66, 68
+Temps estimé: 6h
+Focus: Resto & hôtels anglais
+
+TOTAL: 70 pages en 31h (4 jours ouvrés)
+
+================================================================================
+FIN DU SYSTÈME MULTI-AGENT
+================================================================================
+
+PRÊT À UTILISER !
+
+Pour lancer, dis simplement au Coordinateur :
+"Lance PHASE 1 - SETUP INITIAL"
