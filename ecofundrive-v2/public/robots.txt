@@ -1,0 +1,14 @@
+# ECOFUNDRIVE - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ecofundrive.com/sitemap-index.xml
+
+# Disallow admin/private areas (if any)
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow all content pages
+Allow: /fr/
+Allow: /en/

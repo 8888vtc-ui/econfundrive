@@ -89,7 +89,7 @@ import Footer from '../components/Footer.astro';
 
   <!-- Performance -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://cdn.trustindex.io">
+  <link rel="dns-prefetch" href="https://www.facebook.com">
 </head>
 
 <body>
@@ -114,7 +114,7 @@ import Footer from '../components/Footer.astro';
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contacter via WhatsApp"
-    onclick="trackWhatsAppClick('float')"
+    data-track="whatsapp-float"
   >
     📱
   </a>
@@ -126,10 +126,10 @@ import Footer from '../components/Footer.astro';
         ? 'Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de cookies.'
         : 'We use cookies to improve your experience. By continuing, you accept our cookie policy.'}
     </p>
-    <button onclick="acceptCookies()" style="background: #25D366; color: white; border: none; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+    <button id="accept-cookies" style="background: #25D366; color: white; border: none; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
       {lang === 'fr' ? 'Accepter' : 'Accept'}
     </button>
-    <button onclick="refuseCookies()" style="background: transparent; color: white; border: 2px solid white; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer;">
+    <button id="refuse-cookies" style="background: transparent; color: white; border: 2px solid white; padding: 0.75rem 2rem; margin: 0 0.5rem; border-radius: 8px; cursor: pointer;">
       {lang === 'fr' ? 'Refuser' : 'Decline'}
     </button>
   </div>
@@ -137,20 +137,8 @@ import Footer from '../components/Footer.astro';
   <!-- External Scripts -->
   <script src="/js/cookies.js" defer></script>
   <script src="/js/tracking.js" defer></script>
-  <script src="/js/trustindex.js" defer></script>
+  <script src="/js/header.js" defer></script>
+  <script src="/js/scroll-progress.js" defer></script>
   <script src="/js/main.js" defer></script>
-
-  <!-- Scroll Progress Script -->
-  <script>
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      const progressBar = document.getElementById('scroll-progress');
-      if (progressBar) {
-        progressBar.style.width = scrolled + '%';
-      }
-    });
-  </script>
 </body>
 </html>

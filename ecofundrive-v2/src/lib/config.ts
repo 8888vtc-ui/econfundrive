@@ -29,6 +29,11 @@ export const siteConfig = {
     whatsapp: 'https://wa.me/33616552811'
   },
   
+  social: {
+    facebook: 'https://www.facebook.com/ecofundrive/',
+    facebookPageId: 'ecofundrive'
+  },
+  
   // Tracking (NO TRUSTINDEX)
   tracking: {
     gtm: 'GTM-NMMBXS4T'
@@ -39,15 +44,19 @@ export const siteConfig = {
     name: 'David Chemla',
     title: 'Local Guide Google Niveau 6',
     specialty: 'Expert Côte d\'Azur depuis 15 ans',
-    profileUrl: 'https://maps.app.goo.gl/qPAanSvPmAxxmhZZA'
+    bio: 'Chauffeur VTC premium et Local Guide Google Niveau 6, David Chemla connaît la Côte d\'Azur comme sa poche. Avec plus de 15 ans d\'expérience dans le transport de luxe et des centaines d\'avis sur les meilleurs restaurants et lieux de la région, il partage son expertise locale pour vous offrir une expérience authentique et mémorable.',
+    profileUrl: 'https://maps.app.goo.gl/qPAanSvPmAxxmhZZA',
+    image: '/images/author/david-chemla.jpg'
   },
   
-  // Avis (NO TRUSTINDEX - Direct reviews only)
+  // Avis (NO TRUSTINDEX - Facebook + First-party reviews)
   reviews: {
-    platform: 'Avis directs (pas de widget)',
+    sources: ['facebook', 'onsite'],
+    facebookUrl: 'https://www.facebook.com/ecofundrive/reviews',
     rating: '5.0',
     total: 26,
-    displayText: '26 avis clients vérifiés'
+    displayText: '26 avis clients vérifiés',
+    reviewRequestLink: 'https://www.facebook.com/ecofundrive/reviews'
   },
   
   // Flotte

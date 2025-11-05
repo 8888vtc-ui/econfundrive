@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Sophie M.",
+    "rating": 5,
+    "date": "2024-10-15",
+    "text": "Service exceptionnel ! David connaît parfaitement la région et nous a donné d'excellents conseils pour notre séjour. Tesla impeccable et conduite très professionnelle.",
+    "source": "facebook",
+    "consent": true,
+    "lang": "fr"
+  },
+  {
+    "id": 2,
+    "name": "James R.",
+    "rating": 5,
+    "date": "2024-09-28",
+    "text": "Outstanding service from Nice to Monaco. David is not just a driver, he's a local expert who made our trip unforgettable. Highly recommended!",
+    "source": "onsite",
+    "consent": true,
+    "lang": "en"
+  },
+  {
+    "id": 3,
+    "name": "Marie L.",
+    "rating": 5,
+    "date": "2024-09-12",
+    "text": "Ponctualité parfaite, véhicule luxueux et propre. David nous a recommandé un restaurant incroyable à Cannes. Merci pour cette expérience premium !",
+    "source": "facebook",
+    "consent": true,
+    "lang": "fr"
+  },
+  {
+    "id": 4,
+    "name": "Michael T.",
+    "rating": 5,
+    "date": "2024-08-30",
+    "text": "Best VTC service on the French Riviera! Clean Tesla, professional driver, and great local knowledge. Will definitely book again.",
+    "source": "onsite",
+    "consent": true,
+    "lang": "en"
+  },
+  {
+    "id": 5,
+    "name": "Laurent D.",
+    "rating": 5,
+    "date": "2024-08-15",
+    "text": "Transport impeccable de l'aéroport à notre hôtel. David est très sympathique et de bon conseil. La Tesla Model S est un vrai plaisir !",
+    "source": "facebook",
+    "consent": true,
+    "lang": "fr"
+  },
+  {
+    "id": 6,
+    "name": "Emma W.",
+    "rating": 5,
+    "date": "2024-07-22",
+    "text": "Fantastic experience! David picked us up from Nice airport and gave us a wonderful tour of the coast. His local recommendations were spot on.",
+    "source": "onsite",
+    "consent": true,
+    "lang": "en"
+  }
+]

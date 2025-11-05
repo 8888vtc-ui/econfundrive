@@ -14,6 +14,7 @@ import Schemas from '../../components/Schemas.astro';
 import { siteConfig } from '../../lib/config';
 import { generatePageContent } from '../../lib/claude';
 import { generateHeroImage } from '../../lib/fluxpro';
+import { sanitizeHtml } from '../../lib/sanitize';
 
 // Import keywords (TEST MODE - single keyword)
 import keywordsData from '../../content/keywords/keywords-test.json';
@@ -101,7 +102,7 @@ const optimizedMetaDescription = keyword.meta_description || pageContent.meta_de
 
   <!-- Introduction -->
   <ContentSection>
-    <div set:html={pageContent.introduction} />
+    <div set:html={sanitizeHtml(pageContent.introduction)} />
   </ContentSection>
 
   <!-- CTA Top (Mode B only) -->
@@ -116,12 +117,12 @@ const optimizedMetaDescription = keyword.meta_description || pageContent.meta_de
   {pageContent.sections?.map((section: any, index: number) => (
     <>
       <ContentSection title={section.h2}>
-        <div set:html={section.content} />
+        <div set:html={sanitizeHtml(section.content)} />
 
         {section.h3?.map((subsection: any) => (
           <div>
             <h3>{subsection.title}</h3>
-            <div set:html={subsection.content} />
+            <div set:html={sanitizeHtml(subsection.content)} />
           </div>
         ))}
 
@@ -134,10 +135,10 @@ const optimizedMetaDescription = keyword.meta_description || pageContent.meta_de
                 .map((link: any, linkIndex: number) => (
                   <>
                     {linkIndex > 0 && ' '}
-                    <span set:html={link.context.replace(
+                    <span set:html={sanitizeHtml(link.context.replace(
                       link.anchor,
                       `<a href="${link.url}" style="color: #25D366; font-weight: 600; text-decoration: underline;">${link.anchor}</a>`
-                    )} />
+                    ))} />
                   </>
                 ))
               }

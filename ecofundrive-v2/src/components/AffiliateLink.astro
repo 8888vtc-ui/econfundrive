@@ -1,0 +1,37 @@
+---
+interface Props {
+  href: string;
+  name: string;
+  class?: string;
+}
+
+const { href, name, class: className = '' } = Astro.props;
+
+const affiliateUrl = new URL(href);
+affiliateUrl.searchParams.set('utm_source', 'ecofundrive');
+affiliateUrl.searchParams.set('utm_medium', 'affiliate');
+affiliateUrl.searchParams.set('utm_campaign', name);
+---
+
+<a
+  href={affiliateUrl.toString()}
+  class={className}
+  target="_blank"
+  rel="sponsored nofollow noopener noreferrer"
+  data-affiliate={name}
+>
+  <slot />
+</a>
+
+<style>
+  a[data-affiliate] {
+    position: relative;
+  }
+
+  a[data-affiliate]::after {
+    content: '🔗';
+    font-size: 0.8em;
+    margin-left: 0.25rem;
+    opacity: 0.6;
+  }
+</style>

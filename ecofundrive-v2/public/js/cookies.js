@@ -86,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (consent === 'accepted' && typeof initGTM === 'function') {
         initGTM();
     }
+    
+    const acceptBtn = document.getElementById('accept-cookies');
+    const refuseBtn = document.getElementById('refuse-cookies');
+    
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', acceptCookies);
+    }
+    
+    if (refuseBtn) {
+        refuseBtn.addEventListener('click', refuseCookies);
+    }
 });
 
 // Global exposure

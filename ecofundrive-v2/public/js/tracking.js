@@ -77,6 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (getCookie('analytics') === 'true') {
         initGTM();
     }
+    
+    document.querySelectorAll('[data-track]').forEach(element => {
+        element.addEventListener('click', function() {
+            const trackValue = this.getAttribute('data-track');
+            if (trackValue && trackValue.startsWith('whatsapp-')) {
+                const location = trackValue.replace('whatsapp-', '');
+                trackWhatsAppClick(location);
+            }
+        });
+    });
 });
 
 // Global exposure

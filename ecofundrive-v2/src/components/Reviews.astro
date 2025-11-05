@@ -1,0 +1,153 @@
+---
+import { siteConfig } from '../lib/config';
+import testimonials from '../content/testimonials.json';
+
+interface Props {
+  lang?: string;
+  limit?: number;
+}
+
+const { lang = 'fr', limit = 3 } = Astro.props;
+
+const filteredTestimonials = testimonials
+  .filter(t => t.lang === lang)
+  .slice(0, limit);
+
+const reviewsUrl = lang === 'fr' ? '/fr/avis' : '/en/reviews';
+---
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-header">
+      <h2>{lang === 'fr' ? 'Avis Clients' : 'Customer Reviews'}</h2>
+      <div class="reviews-rating">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="rating-text">{siteConfig.reviews.rating}/5 - {siteConfig.reviews.displayText}</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      {filteredTestimonials.map(testimonial => (
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">
+              <strong>{testimonial.name}</strong>
+              <span class="review-date">{new Date(testimonial.date).toLocaleDateString(lang)}</span>
+            </div>
+            <div class="review-stars">
+              {'⭐'.repeat(testimonial.rating)}
+            </div>
+          </div>
+          <p class="review-text">{testimonial.text}</p>
+          <div class="review-source">
+            {testimonial.source === 'facebook' ? '📘 Facebook' : '✓ Vérifié'}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="reviews-cta">
+      <a href={reviewsUrl} class="btn-secondary">
+        {lang === 'fr' ? 'Voir tous les avis' : 'See all reviews'}
+      </a>
+      <a href={siteConfig.reviews.reviewRequestLink} target="_blank" rel="noopener noreferrer" class="btn-primary">
+        {lang === 'fr' ? 'Laisser un avis' : 'Leave a review'}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    padding: 4rem 0;
+    background: var(--bg-light);
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .reviews-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .reviews-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .stars {
+    font-size: 1.5rem;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+
+  .review-author strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary);
+  }
+
+  .review-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .review-stars {
+    font-size: 1.2rem;
+  }
+
+  .review-text {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .review-source {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+
+  .reviews-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

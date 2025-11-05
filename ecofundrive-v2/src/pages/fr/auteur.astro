@@ -1,0 +1,226 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig } from '../../lib/config';
+
+const { author } = siteConfig;
+---
+
+<PageLayout
+  title="À propos de David Chemla"
+  metaTitle="David Chemla - Local Guide Niveau 6 & Expert Côte d'Azur | ECOFUNDRIVE"
+  metaDescription={author.bio}
+  lang="fr"
+>
+  <section class="author-hero">
+    <div class="container">
+      <div class="author-content">
+        <div class="author-image">
+          <img src={author.image} alt={author.name} width="300" height="300" />
+          <div class="author-badge">
+            <span class="badge-icon">⭐</span>
+            <span class="badge-text">{author.title}</span>
+          </div>
+        </div>
+        
+        <div class="author-info">
+          <h1>{author.name}</h1>
+          <p class="author-title">{author.title}</p>
+          <p class="author-specialty">{author.specialty}</p>
+          
+          <div class="author-bio">
+            <p>{author.bio}</p>
+          </div>
+          
+          <div class="author-links">
+            <a href={author.profileUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Voir mon profil Google Local Guide
+            </a>
+            <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              Suivre sur Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="author-expertise">
+    <div class="container">
+      <h2>Mon Expertise Locale</h2>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>🍽️ Restaurants & Gastronomie</h3>
+          <p>Des centaines d'avis sur les meilleurs restaurants de la Côte d'Azur, des tables étoilées aux pépites cachées.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>🏨 Hôtels de Luxe</h3>
+          <p>Connaissance approfondie des palaces et hôtels boutique de Nice, Monaco, Cannes et Saint-Tropez.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>🚗 Transport Premium</h3>
+          <p>Plus de 15 ans d'expérience dans le transport VTC de luxe avec une flotte Tesla 100% électrique.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>🌴 Lieux Incontournables</h3>
+          <p>Tous les spots secrets, plages privées, clubs exclusifs et attractions touristiques de la région.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="author-cta">
+    <div class="container">
+      <h2>Réservez votre trajet avec un expert local</h2>
+      <p>Profitez de mon expertise pour découvrir la Côte d'Azur dans les meilleures conditions.</p>
+      <a href={siteConfig.contact.whatsapp} class="btn-primary btn-large" data-track="whatsapp-author">
+        Réserver maintenant via WhatsApp
+      </a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .author-hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+  }
+
+  .author-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .author-image {
+    position: relative;
+  }
+
+  .author-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .author-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .author-info h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .author-specialty {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+
+  .author-bio {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .author-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .author-expertise {
+    padding: 6rem 0;
+  }
+
+  .author-expertise h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .expertise-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .expertise-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .expertise-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .author-cta {
+    padding: 6rem 0;
+    background: var(--bg-light);
+    text-align: center;
+  }
+
+  .author-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .author-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .author-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .author-image {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .author-info h1 {
+      font-size: 2rem;
+    }
+
+    .author-links {
+      justify-content: center;
+    }
+  }
+</style>

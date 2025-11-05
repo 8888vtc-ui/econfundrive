@@ -6,7 +6,7 @@
 import { siteConfig } from '../lib/config';
 
 interface Props {
-  type: 'article' | 'service' | 'faq' | 'breadcrumb' | 'rating' | 'organization';
+  type: 'article' | 'service' | 'faq' | 'breadcrumb' | 'rating' | 'organization' | 'person';
   data?: any;
 }
 
@@ -31,6 +31,10 @@ const organizationSchema = {
   "telephone": siteConfig.contact.phone,
   "email": siteConfig.contact.email,
   "url": siteUrl,
+  "sameAs": [
+    siteConfig.social.facebook,
+    siteConfig.author.profileUrl
+  ],
   "priceRange": "€€€",
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -38,6 +42,23 @@ const organizationSchema = {
     "reviewCount": siteConfig.reviews.total,
     "bestRating": "5",
     "worstRating": "1"
+  }
+};
+
+// Person Schema (David Chemla)
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": siteConfig.author.name,
+  "jobTitle": siteConfig.author.title,
+  "description": siteConfig.author.bio,
+  "url": `${siteUrl}/fr/auteur`,
+  "sameAs": [
+    siteConfig.author.profileUrl
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": siteConfig.company.name
   }
 };
 
@@ -132,7 +153,8 @@ const schema = {
   faq: faqSchema,
   breadcrumb: breadcrumbSchema,
   rating: ratingSchema,
-  organization: organizationSchema
+  organization: organizationSchema,
+  person: personSchema
 }[type];
 ---
 
