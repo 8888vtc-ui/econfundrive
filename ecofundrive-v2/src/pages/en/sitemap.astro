@@ -1,0 +1,105 @@
+---
+// ═══════════════════════════════════════════════════════════
+// ECOFUNDRIVE V2.0 - HTML SITEMAP (EN)
+// ═══════════════════════════════════════════════════════════
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import Schemas from '../../components/Schemas.astro';
+
+import { getAllKeywords, filterByCategory, getCategorySlug } from '../../lib/keywords';
+import { siteConfig } from '../../lib/config';
+
+const lang = 'en';
+const allPages = getAllKeywords(lang);
+
+// Group by category
+const categories = {
+  restaurant: { name: 'Restaurants', slug: getCategorySlug('restaurant', lang), pages: filterByCategory(lang, 'restaurant') },
+  hotel: { name: 'Hotels', slug: getCategorySlug('hotel', lang), pages: filterByCategory(lang, 'hotel') },
+  beach: { name: 'Beaches', slug: getCategorySlug('beach', lang), pages: filterByCategory(lang, 'beach') },
+  vtc: { name: 'VTC Services', slug: getCategorySlug('vtc', lang), pages: filterByCategory(lang, 'vtc') },
+  golf: { name: 'Golf', slug: getCategorySlug('golf', lang), pages: filterByCategory(lang, 'golf') },
+  yacht: { name: 'Yachts', slug: getCategorySlug('yacht', lang), pages: filterByCategory(lang, 'yacht') }
+};
+
+const breadcrumbs = [
+  { label: 'Home', href: '/en' },
+  { label: 'Sitemap' }
+];
+---
+
+<PageLayout
+  title="Sitemap | ECOFUNDRIVE"
+  metaTitle="Sitemap - ECOFUNDRIVE French Riviera"
+  metaDescription="Complete sitemap of ECOFUNDRIVE: all our guides and Tesla Premium VTC services on the French Riviera."
+  lang={lang}
+  canonical={`${siteConfig.siteUrl}/en/sitemap`}
+>
+  <!-- Hero Section -->
+  <Hero
+    title="Sitemap"
+    subtitle="Quick access to all our guides and Tesla Premium VTC services on the French Riviera"
+    image="/images/hero/shared/homepage-riviera-1920w.webp"
+  />
+
+  <!-- Breadcrumb -->
+  <Breadcrumb items={breadcrumbs} lang={lang} />
+
+  <!-- Sitemap Content -->
+  <ContentSection>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Main Pages -->
+      <div style="margin-bottom: 3rem;">
+        <h2 style="color: var(--accent); margin-bottom: 1.5rem;">Main Pages</h2>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+          <li><a href="/en" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">🏠 Home</a></li>
+          <li><a href="/en/services" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">🚗 Our Services</a></li>
+          <li><a href="/en/tesla-fleet" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">⚡ Tesla Fleet</a></li>
+          <li><a href="/en/rates" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">💰 Rates</a></li>
+          <li><a href="/en/contact" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">📞 Contact</a></li>
+          <li><a href="/en/author" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">👤 About</a></li>
+        </ul>
+      </div>
+
+      <!-- Category Pages -->
+      {Object.entries(categories).map(([key, category]) => (
+        <div style="margin-bottom: 3rem;">
+          <h2 style="color: var(--accent); margin-bottom: 1.5rem;">
+            <a href={`/en/${category.slug}`} style="color: var(--accent); text-decoration: none;">
+              {category.name} ({category.pages.length})
+            </a>
+          </h2>
+          <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem;">
+            {category.pages.map((page) => (
+              <li>
+                <a href={`/en/${page.keyword}`} style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; border-radius: 4px; transition: background 0.2s;">
+                  {page.authority && <span style="color: #FFD700;">⭐</span>}
+                  <span style="font-size: 0.95rem;">{page.keyword.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+                  {page.mode === 'B' && <span style="font-size: 0.75rem; padding: 0.15rem 0.4rem; background: var(--accent); color: white; border-radius: 3px;">VTC</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+    </div>
+  </ContentSection>
+
+  <!-- JSON-LD Schemas -->
+  <Schemas type="organization" />
+  <Schemas
+    type="breadcrumb"
+    data={{ breadcrumbs }}
+  />
+</PageLayout>
+
+<style>
+  a:hover {
+    background: var(--off-white) !important;
+  }
+</style>
