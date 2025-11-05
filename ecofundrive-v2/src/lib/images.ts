@@ -2,6 +2,8 @@
 // ECOFUNDRIVE V2.0 - IMAGES.TS (WebP/AVIF Responsive)
 // ═══════════════════════════════════════════════════════════
 
+import { hashString } from './utils';
+
 export interface HeroImage {
   src: string;
   srcset: string;
@@ -403,16 +405,6 @@ Similar process for content/${category}/${slug}-1.{jpg,webp,avif}
 // ═══════════════════════════════════════════════════════════
 // HELPER FUNCTIONS
 // ═══════════════════════════════════════════════════════════
-
-function hashString(str: string): number {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash;
-  }
-  return Math.abs(hash);
-}
 
 function getImageContexts(category: string): string[] {
   const contexts: Record<string, string[]> = {

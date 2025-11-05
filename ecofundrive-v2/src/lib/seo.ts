@@ -2,6 +2,8 @@
 // ECOFUNDRIVE V2.0 - SEO.TS (Enhanced with Variations)
 // ═══════════════════════════════════════════════════════════
 
+import { hashString } from './utils';
+
 export interface SEOValidation {
   valid: boolean;
   score: number;
@@ -197,20 +199,6 @@ export function generateH1(keyword: string, category: string, location: string, 
   }
 
   return h1;
-}
-
-/**
- * Simple hash function for consistent variations
- * Same keyword always gets same variant (stable across builds)
- */
-function hashString(str: string): number {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32bit integer
-  }
-  return Math.abs(hash);
 }
 
 /**
