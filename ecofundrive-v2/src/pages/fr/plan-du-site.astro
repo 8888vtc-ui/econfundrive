@@ -9,11 +9,11 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import ContentSection from '../../components/ContentSection.astro';
 import Schemas from '../../components/Schemas.astro';
 
-import { getAllKeywords, filterByCategory, getCategorySlug } from '../../lib/keywords';
+import { getKeywordsByLanguage, filterByCategory, getCategorySlug } from '../../lib/keywords';
 import { siteConfig } from '../../lib/config';
 
 const lang = 'fr';
-const allPages = getAllKeywords(lang);
+const allPages = getKeywordsByLanguage(lang);
 
 // Group by category
 const categories = {
