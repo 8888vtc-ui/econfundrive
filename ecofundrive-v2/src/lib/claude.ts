@@ -113,9 +113,9 @@ export async function generatePageContent(keyword: Keyword): Promise<GeneratedCo
     console.log(`🚀 Generating content for: ${keyword.keyword}`);
 
     const response = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-20241022", // Claude 3.5 Sonnet - latest available model
-      max_tokens: 8192, // Maximum for Claude 3.5 Sonnet
-      temperature: 0.6, // Balanced for creativity + structure
+      model: "claude-3-haiku-20240307", // Claude 3 Haiku - only model available with this API key
+      max_tokens: 4096, // Maximum for Claude 3 Haiku
+      temperature: 0.7, // Slightly higher for more creative content
       messages: [{
         role: "user",
         content: prompt
