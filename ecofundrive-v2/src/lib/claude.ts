@@ -113,8 +113,8 @@ export async function generatePageContent(keyword: Keyword): Promise<GeneratedCo
     console.log(`🚀 Generating content for: ${keyword.keyword}`);
 
     const response = await anthropic.messages.create({
-      model: "claude-sonnet-4-5-20250929", // Claude 4.5 Sonnet - latest model
-      max_tokens: 16000, // Supports up to 16384 tokens for 2400-word articles
+      model: "claude-3-5-sonnet-20241022", // Claude 3.5 Sonnet - latest available model
+      max_tokens: 8192, // Maximum for Claude 3.5 Sonnet
       temperature: 0.6, // Balanced for creativity + structure
       messages: [{
         role: "user",
