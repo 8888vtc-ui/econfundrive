@@ -1,7 +1,6 @@
 [build]
   publish = "."
   functions = "netlify/functions"
-  site_id = "2a354129-00a5-4128-9c1e-8236192b5bfa"
 
 [functions]
   node_bundler = "esbuild"
