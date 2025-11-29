@@ -5,6 +5,12 @@ const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
 const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 
+const OpenAI = require('openai');
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+
 exports.handler = async function (event) {
   // CORS de base pour l'appel depuis le front
   if (event.httpMethod === "OPTIONS") {
@@ -64,7 +70,6 @@ exports.handler = async function (event) {
       " Tes réponses sont courtes, claires et pratiques, comme si tu parlais directement au client dans la voiture, avec une touche de chaleur humaine mais jamais de familiarité excessive.";
 
     const deepseekKey = process.env.DEEPSEEK_API_KEY;
-    const openaiKey = process.env.OPENAI_API_KEY;
     const openaiModel = process.env.OPENAI_MODEL || "gpt-4o";
     const anthropicKey = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY;
     const anthropicModel = process.env.ANTHROPIC_MODEL || "claude-3-opus-20240229";
@@ -73,7 +78,7 @@ exports.handler = async function (event) {
     let lastError = null;
 
     // 1) Tentative avec OpenAI (GPT) si une clé est disponible
-    if (openaiKey) {
+    if (openai.apiKey) {
       try {
         const payloadOpenAI = {
           model: openaiModel,
@@ -85,25 +90,17 @@ exports.handler = async function (event) {
           temperature: 0.6,
         };
 
-        const response = await fetch(OPENAI_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${openaiKey}`,
-          },
-          body: JSON.stringify(payloadOpenAI),
-        });
+        const response = await openai.createChatCompletion(payloadOpenAI);
 
-        if (response.ok) {
-          const data = await response.json();
+        if (response.status === 200) {
           answer =
-            (data.choices &&
-              data.choices[0] &&
-              data.choices[0].message &&
-              data.choices[0].message.content) ||
+            (response.data.choices &&
+              response.data.choices[0] &&
+              response.data.choices[0].message &&
+              response.data.choices[0].message.content) ||
             null;
         } else {
-          const errorText = await response.text();
+          const errorText = response.statusText;
           console.error("OpenAI error", errorText);
           lastError = { provider: "openai", details: errorText };
         }
