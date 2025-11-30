@@ -1,12 +1,12 @@
 ---
-// Chatbot VTC - Position fixe, toujours visible, PAS dans le menu
+// Chatbot VTC - Guide touristique, pas fixe
 ---
 
 <button 
   class="chatbot-toggle" 
   type="button" 
   id="chatbot-toggle"
-  aria-label="Ouvrir le chat avec David, votre chauffeur VTC"
+  aria-label="Ouvrir le chat avec David, votre guide touristique"
   aria-expanded="false">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
@@ -32,7 +32,7 @@
       </svg>
     </div>
     <div class="chatbot-info">
-      <h3 id="chatbot-title">David – Chauffeur VTC</h3>
+      <h3 id="chatbot-title">David – Guide Touristique</h3>
       <p class="chatbot-status">En ligne</p>
     </div>
     <button 
@@ -50,7 +50,7 @@
   <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite">
     <div class="message bot" data-role="bot">
       <div class="message-content">
-        Bonjour ! Je suis David, votre chauffeur privé VTC sur la Côte d'Azur. Comment puis-je vous aider aujourd'hui ? Posez-moi une question ou décrivez votre trajet.
+        Bonjour ! Je suis David, votre guide touristique sur la Côte d'Azur. Je peux vous conseiller sur les visites, restaurants, plages et activités. Pour réserver un trajet, contactez-moi sur WhatsApp au 06 16 55 28 11 !
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
       type="text"
       id="chatbot-input"
       class="chatbot-input"
-      placeholder="Ex: Transfert aéroport Nice → Monaco demain 18h"
+      placeholder="Ex: Quels sont les meilleurs restaurants à Nice ?"
       autocomplete="off"
       aria-label="Tapez votre message"
       required>
@@ -169,23 +169,17 @@
           }
           
           const data = await response.json();
-          const answer = data.answer || "Je suis désolé, je n'ai pas pu générer de réponse. Pouvez-vous reformuler ?";
+          const answer = data.answer || "Je suis désolé, je n'ai pas pu générer de réponse. Contactez-moi sur WhatsApp au 06 16 55 28 11 !";
           
           if (messages) {
             const botMsg = document.createElement('div');
             botMsg.className = 'message bot';
             
-            // Si des infos de réservation sont détectées, envoyer automatiquement sur WhatsApp
             if (data.hasBookingInfo && data.whatsappLink) {
-              // Ouvrir WhatsApp automatiquement
               window.open(data.whatsappLink, '_blank');
-              
-              // Afficher le message avec confirmation
-              botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
-            } else {
-              botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
             }
             
+            botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
             messages.appendChild(botMsg);
             messages.scrollTop = messages.scrollHeight;
           }
@@ -194,7 +188,7 @@
           if (messages) {
             const errorMsg = document.createElement('div');
             errorMsg.className = 'message bot';
-            errorMsg.innerHTML = `<div class="message-content">Une erreur s'est produite. Veuillez réessayer ou nous contacter au 06 16 55 28 11.</div>`;
+            errorMsg.innerHTML = `<div class="message-content">Une erreur s'est produite. Contactez-moi sur WhatsApp au 06 16 55 28 11 !</div>`;
             messages.appendChild(errorMsg);
             messages.scrollTop = messages.scrollHeight;
           }
@@ -225,106 +219,65 @@
 </script>
 
 <style>
-  /* CHATBOT - PROPRE, FIXE, TOUJOURS VISIBLE, FLOTTANT - OVERRIDE TOUT */
-  button.chatbot-toggle,
   .chatbot-toggle {
-    position: fixed !important;
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 10000 !important;
-    left: 20px !important;
-    right: auto !important;
-    top: 80px !important; /* Beaucoup plus haut pour ne pas écraser WhatsApp */
-    bottom: auto !important;
-    transform: none !important;
-    will-change: auto !important;
-    backface-visibility: visible !important;
-    margin: 0 !important;
-    float: none !important;
-    clear: both !important;
-    width: auto !important;
-    height: auto !important;
-    min-width: 130px !important;
-    min-height: 44px !important;
-    padding: 10px 16px !important;
-    border-radius: 25px !important;
-    background: linear-gradient(135deg, #d4af37, #b8941f) !important;
-    border: none !important;
-    cursor: pointer !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    color: #0a0a0a !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-    text-align: center !important;
-    transform: translateY(0) !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .chatbot-toggle:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   }
 
   .chatbot-toggle.active {
-    background: linear-gradient(135deg, #b8941f, #d4af37) !important;
+    background: linear-gradient(135deg, #b8941f, #d4af37);
   }
 
   .chatbot-toggle svg {
-    width: 20px !important;
-    height: 20px !important;
-    flex-shrink: 0 !important;
-    display: block !important;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
   }
 
   .chatbot-label-mobile {
-    display: inline-block !important;
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: #0a0a0a !important;
-    white-space: nowrap !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: inline-block;
   }
 
-  /* Chatbot Container */
-  #chatbot-container,
   .chatbot-container {
-    position: fixed !important;
-    left: 20px !important;
-    right: auto !important;
-    top: 140px !important; /* Beaucoup plus haut pour ne pas écraser WhatsApp */
-    bottom: auto !important;
-    transform: none !important;
-    will-change: auto !important;
-    backface-visibility: visible !important;
-    margin: 0 !important;
-    float: none !important;
-    clear: both !important;
-    width: 380px !important;
-    max-width: calc(100vw - 40px) !important;
-    max-height: 500px !important;
-    background: rgba(26, 26, 26, 0.98) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 2px solid rgba(212, 175, 55, 0.3) !important;
-    border-radius: 16px !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
-    z-index: 10000 !important;
-    display: none !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    transform: translateY(0) scale(0.95) !important;
-    opacity: 0 !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 380px;
+    max-width: calc(100vw - 40px);
+    max-height: 500px;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .chatbot-container.open {
-    display: flex !important;
-    transform: translateY(0) scale(1) !important;
-    opacity: 1 !important;
+    display: flex;
   }
 
   .chatbot-header {
@@ -345,11 +298,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-  }
-
-  .chatbot-info {
-    flex: 1;
   }
 
   .chatbot-info h3 {
@@ -363,21 +311,12 @@
     color: #d4af37;
     font-size: 0.85rem;
     margin: 0;
-    display: flex;
-    align-items: center;
   }
 
   .chatbot-status::before {
     content: '●';
     color: #4ade80;
-    font-size: 1rem;
     margin-right: 6px;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
   }
 
   .chatbot-close {
@@ -386,53 +325,26 @@
     color: #9ca3af;
     cursor: pointer;
     padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s, transform 0.2s;
-    border-radius: 4px;
+    margin-left: auto;
   }
 
   .chatbot-close:hover {
     color: #d4af37;
-    transform: rotate(90deg);
   }
 
   .chatbot-messages {
     flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;
     padding: 20px;
-    scroll-behavior: smooth;
-  }
-
-  .chatbot-messages::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .chatbot-messages::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .chatbot-messages::-webkit-scrollbar-thumb {
-    background: rgba(212, 175, 55, 0.3);
-    border-radius: 3px;
   }
 
   .message {
     margin-bottom: 16px;
     max-width: 85%;
-    animation: fadeIn 0.3s ease-out;
   }
 
   .message.user {
     margin-left: auto;
-    margin-right: 0;
-  }
-
-  .message.bot {
-    margin-right: auto;
-    margin-left: 0;
   }
 
   .message-content {
@@ -440,28 +352,22 @@
     border-radius: 18px;
     font-size: 0.9rem;
     line-height: 1.5;
-    word-wrap: break-word;
-    white-space: pre-wrap;
   }
 
   .message.user .message-content {
     background: linear-gradient(135deg, #d4af37, #b8941f);
     color: #0a0a0a;
-    border-bottom-right-radius: 4px;
-    font-weight: 500;
   }
 
   .message.bot .message-content {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    border-bottom-left-radius: 4px;
   }
 
   .chatbot-typing {
     display: none;
     padding: 12px 20px;
     gap: 6px;
-    align-items: center;
   }
 
   .chatbot-typing span {
@@ -469,37 +375,6 @@
     height: 8px;
     border-radius: 50%;
     background: #d4af37;
-    animation: typing 1.4s infinite;
-  }
-
-  .chatbot-typing span:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .chatbot-typing span:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes typing {
-    0%, 60%, 100% {
-      transform: translateY(0);
-      opacity: 0.7;
-    }
-    30% {
-      transform: translateY(-10px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   .chatbot-form {
@@ -508,7 +383,6 @@
     border-top: 2px solid rgba(212, 175, 55, 0.2);
     display: flex;
     gap: 10px;
-    align-items: center;
   }
 
   .chatbot-input {
@@ -519,17 +393,11 @@
     padding: 10px 16px;
     color: #ffffff;
     font-size: 0.9rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   .chatbot-input:focus {
     outline: none;
     border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-  }
-
-  .chatbot-input::placeholder {
-    color: #9ca3af;
   }
 
   .chatbot-send {
@@ -543,18 +411,14 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    flex-shrink: 0;
   }
 
   .chatbot-send:hover:not(:disabled) {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   }
 
   .chatbot-send:disabled {
     opacity: 0.6;
-    cursor: not-allowed;
   }
 
   .sr-only {
@@ -567,6 +431,21 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    .chatbot-toggle {
+      top: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+    }
+
+    .chatbot-container {
+      top: 60px;
+      right: 10px;
+      width: calc(100vw - 20px);
+    }
   }
 </style>
 
