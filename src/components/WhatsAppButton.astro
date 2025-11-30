@@ -15,9 +15,9 @@
 </a>
 
 <style>
-  /* Position relative dans le wrapper FloatingElements */
+  /* Position FIXE DIRECTE - Solution radicale */
   .whatsapp-button {
-    position: absolute !important;
+    position: fixed !important;
     top: 50% !important; /* MILIEU VERTICAL */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
@@ -36,7 +36,7 @@
     font-size: 0.9rem !important;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    z-index: 10001 !important; /* Le plus haut */
+    z-index: 99999 !important; /* TRÈS ÉLEVÉ pour mobile */
     min-height: 44px !important;
     min-width: auto !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
@@ -62,18 +62,22 @@
 
   @media (max-width: 768px) {
     .whatsapp-button {
-      /* Sur mobile, utiliser vh au lieu de % pour éviter les bugs */
-      top: calc((100vh - 44px) / 2) !important;
+      position: fixed !important; /* FIXE DIRECT sur mobile */
+      top: 50% !important; /* MILIEU VERTICAL */
       left: 15px !important;
-      transform: none !important; /* Pas de transform sur mobile */
+      transform: translateY(-50%) !important; /* Centrer verticalement */
       padding: 10px 14px !important;
       font-size: 0.85rem !important;
       min-height: 44px !important;
       gap: 6px !important;
+      z-index: 99999 !important; /* TRÈS ÉLEVÉ */
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
     
     .whatsapp-button:hover {
-      transform: translateY(-2px) !important; /* Pas de translateY(-50%) sur mobile */
+      transform: translateY(-50%) translateY(-2px) !important;
     }
     
     .whatsapp-button svg {

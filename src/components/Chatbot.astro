@@ -220,7 +220,7 @@
 
 <style>
   .chatbot-toggle {
-    position: absolute !important; /* Position absolute dans le wrapper */
+    position: fixed !important; /* FIXE DIRECT - Solution radicale */
     top: calc(50% - 60px) !important; /* MILIEU VERTICAL moins 60px (pour laisser de l'espace avec WhatsApp) */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
@@ -240,7 +240,7 @@
     font-size: 0.9rem !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
-    z-index: 10000 !important; /* Juste en dessous de WhatsApp */
+    z-index: 99998 !important; /* TRÈS ÉLEVÉ pour mobile */
     transition: transform 0.2s, box-shadow 0.2s !important;
     min-height: 44px !important;
     min-width: auto !important;
@@ -278,7 +278,7 @@
   }
 
   .chatbot-container {
-    position: absolute !important; /* Position absolute dans le wrapper */
+    position: fixed !important; /* FIXE DIRECT - Solution radicale */
     top: calc(50% - 20px) !important; /* MILIEU VERTICAL */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
@@ -290,7 +290,7 @@
     border: 2px solid rgba(212, 175, 55, 0.3) !important;
     border-radius: 16px !important;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
-    z-index: 9999 !important; /* Juste en dessous du toggle */
+    z-index: 99997 !important; /* TRÈS ÉLEVÉ pour mobile */
     display: none !important;
     flex-direction: column !important;
     overflow: hidden !important;
@@ -466,22 +466,25 @@
 
          @media (max-width: 768px) {
            .chatbot-toggle {
-             /* Sur mobile, utiliser vh au lieu de % pour éviter les bugs */
-             top: calc((100vh - 44px) / 2 - 60px) !important;
+             position: fixed !important; /* FIXE DIRECT sur mobile */
+             top: calc(50% - 60px) !important; /* MILIEU VERTICAL */
              left: 15px !important;
-             transform: none !important; /* Pas de transform sur mobile */
+             transform: translateY(-50%) !important; /* Centrer verticalement */
              padding: 10px 14px !important;
              font-size: 0.85rem !important;
              min-height: 44px !important;
              gap: 6px !important;
              font-weight: 600 !important;
-             z-index: 10000 !important;
+             z-index: 99998 !important; /* TRÈS ÉLEVÉ */
              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
              border: 2px solid rgba(255, 255, 255, 0.2) !important;
+             display: flex !important;
+             visibility: visible !important;
+             opacity: 1 !important;
            }
            
            .chatbot-toggle:hover {
-             transform: translateY(-2px) !important; /* Pas de translateY(-50%) sur mobile */
+             transform: translateY(-50%) translateY(-2px) !important;
            }
            
            .chatbot-toggle svg {
@@ -490,14 +493,17 @@
            }
 
            .chatbot-container {
-             position: absolute !important; /* Dans le wrapper */
-             top: calc((100vh - 44px) / 2 - 20px) !important; /* Utiliser vh */
+             position: fixed !important; /* FIXE DIRECT sur mobile */
+             top: calc(50% - 20px) !important; /* MILIEU VERTICAL */
              left: 15px !important;
-             transform: none !important; /* Pas de transform sur mobile */
+             transform: translateY(-50%) !important; /* Centrer verticalement */
              width: calc(100vw - 30px) !important;
              max-width: 400px !important;
              max-height: calc(100vh - 90px) !important;
-             z-index: 9999 !important;
+             z-index: 99997 !important; /* TRÈS ÉLEVÉ */
+             display: flex !important; /* Quand ouvert */
+             visibility: visible !important;
+             opacity: 1 !important;
            }
          }
 </style>

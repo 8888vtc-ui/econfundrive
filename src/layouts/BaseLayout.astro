@@ -1,7 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FloatingElements from '../components/FloatingElements.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Chatbot from '../components/Chatbot.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 interface Props {
@@ -147,7 +148,7 @@ if (currentLang === 'fr') {
         z-index: 1000;
       }
       
-      /* Image de fond en div réel - Solution radicale */
+      /* Image de fond en div réel - FOND CLAIR */
       .background-image-fixed {
         position: fixed !important;
         top: 0 !important;
@@ -159,9 +160,9 @@ if (currentLang === 'fr') {
         background-position: center center !important;
         background-attachment: fixed !important;
         background-repeat: no-repeat !important;
-        opacity: 0.7 !important;
+        opacity: 0.95 !important; /* AUGMENTÉ pour fond clair */
         z-index: -2 !important;
-        filter: brightness(0.85) contrast(1.1) saturate(1.2) !important;
+        filter: brightness(1.0) contrast(1.0) saturate(1.0) !important; /* BRIGHTNESS À 1.0 pour fond clair */
         pointer-events: none !important;
         display: block !important;
         visibility: visible !important;
@@ -171,8 +172,8 @@ if (currentLang === 'fr') {
       @media (max-width: 768px) {
         .background-image-fixed {
           background-attachment: scroll !important; /* Pas de fixed sur mobile pour performance */
-          opacity: 0.65 !important;
-          filter: brightness(0.80) contrast(1.1) saturate(1.1) !important;
+          opacity: 0.90 !important; /* AUGMENTÉ pour mobile */
+          filter: brightness(0.95) contrast(1.0) saturate(1.0) !important; /* BRIGHTNESS À 0.95 pour mobile */
         }
       }
     </style>
@@ -297,6 +298,7 @@ if (currentLang === 'fr') {
     <!-- Scripts -->
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/cookies.js" defer></script>
+    <script src="/assets/js/fix-mobile-floating.js" defer></script>
   </head>
   <body data-page={currentPage}>
     <!-- Image de fond en div réel (solution radicale) -->
@@ -311,7 +313,8 @@ if (currentLang === 'fr') {
       <slot />
     </main>
     <Footer />
-    <FloatingElements />
+    <WhatsAppButton />
+    <Chatbot />
   </body>
 </html>
 
