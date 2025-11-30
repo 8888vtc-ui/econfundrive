@@ -1,0 +1,67 @@
+{
+  "index": {
+    "hero": [
+      "hero-main.webp"
+    ],
+    "destinations": [
+      "nice-destination.webp",
+      "cannes-destination.webp",
+      "monaco-destination.webp",
+      "saint-tropez-destination.webp"
+    ]
+  },
+  "vtc-nice": {
+    "hero": [
+      "nice-hero-1.webp",
+      "nice-hero-2.webp"
+    ],
+    "destinations": [
+      "nice-destination-1.webp",
+      "nice-destination-2.webp"
+    ]
+  },
+  "vtc-cannes": {
+    "hero": [
+      "cannes-hero-1.webp",
+      "cannes-hero-2.webp"
+    ],
+    "destinations": [
+      "cannes-destination-1.webp",
+      "cannes-destination-2.webp"
+    ]
+  },
+  "vtc-monaco": {
+    "hero": [
+      "monaco-hero-1.webp",
+      "monaco-hero-2.webp"
+    ],
+    "destinations": [
+      "monaco-destination-1.webp",
+      "monaco-destination-2.webp"
+    ]
+  },
+  "vtc-saint-tropez": {
+    "hero": [
+      "saint-tropez-hero-1.webp",
+      "saint-tropez-hero-2.webp"
+    ],
+    "destinations": [
+      "saint-tropez-destination-1.webp",
+      "saint-tropez-destination-2.webp"
+    ]
+  },
+  "a-propos": {
+    "about": [
+      "about-chauffeur.webp",
+      "about-vehicle.webp",
+      "about-certification.webp"
+    ]
+  },
+  "services": {
+    "services": [
+      "service-airport.webp",
+      "service-business.webp",
+      "service-wedding.webp"
+    ]
+  }
+}

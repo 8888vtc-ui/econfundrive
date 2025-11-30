@@ -1,41 +1,44 @@
 ---
-// Chatbot optimisé - Nouvelle version sans bugs
+// Nouveau chatbot VTC - Code propre et optimisé
 ---
 
 <button 
   class="chatbot-toggle" 
   type="button" 
-  aria-label="Ouvrir l'assistant de réservation VTC" 
-  aria-expanded="false" 
-  aria-controls="chatbot-panel"
-  id="chatbot-toggle-btn">
+  id="chatbot-toggle"
+  aria-label="Ouvrir le chat avec David, votre chauffeur VTC"
+  aria-expanded="false">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.67-.36-3.79-1.01L4 20l1.01-4.21C4.36 14.67 4 13.38 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z" fill="currentColor"/>
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
     <path d="M8 9h8v2H8V9zm0 4h6v2H8v-2z" fill="currentColor"/>
   </svg>
 </button>
 
 <div 
-  id="chatbot-panel" 
-  class="chatbot-panel" 
-  aria-label="Assistant de réservation VTC" 
-  role="dialog" 
-  aria-modal="true" 
+  id="chatbot-container"
+  class="chatbot-container"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="chatbot-title"
   aria-hidden="true">
   
   <div class="chatbot-header">
-    <div class="chatbot-avatar" aria-hidden="true">
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="chatbot-avatar">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="20" cy="20" r="20" fill="#d4af37"/>
         <circle cx="20" cy="16" r="6" fill="#0a0a0a"/>
         <path d="M10 30c0-5.5 4.5-10 10-10s10 4.5 10 10" fill="#0a0a0a"/>
       </svg>
     </div>
     <div class="chatbot-info">
-      <h3>David – guide & chauffeur VTC</h3>
+      <h3 id="chatbot-title">David – Chauffeur VTC</h3>
       <p class="chatbot-status">En ligne</p>
     </div>
-    <button class="chatbot-close" type="button" aria-label="Fermer le chat" id="chatbot-close-btn">
+    <button 
+      class="chatbot-close" 
+      type="button" 
+      id="chatbot-close"
+      aria-label="Fermer le chat">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -43,38 +46,35 @@
     </button>
   </div>
   
-  <div class="chatbot-body">
-    <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite">
-      <div class="chat-msg bot first-message" data-role="bot">
-        <div class="chat-msg-content">
-          Bonjour, je suis David, votre chauffeur privé et guide sur la Côte d'Azur. Posez une question ou indiquez votre trajet (départ, destination, date, heure, passagers) pour une estimation rapide.
-        </div>
+  <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite">
+    <div class="message bot" data-role="bot">
+      <div class="message-content">
+        Bonjour ! Je suis David, votre chauffeur privé VTC sur la Côte d'Azur. Comment puis-je vous aider aujourd'hui ? Posez-moi une question ou décrivez votre trajet.
       </div>
     </div>
   </div>
   
-  <form class="chatbot-footer chatbot-form" aria-label="Formulaire de chat" id="chatbot-form">
+  <div class="chatbot-typing" id="chatbot-typing" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+  
+  <form class="chatbot-form" id="chatbot-form" aria-label="Formulaire de message">
     <label for="chatbot-input" class="sr-only">Votre message</label>
     <input 
+      type="text"
       id="chatbot-input"
-      class="chatbot-input" 
-      type="text" 
-      placeholder="Ex. Nice aéroport → Monaco demain 18h, 2 personnes" 
+      class="chatbot-input"
+      placeholder="Ex: Transfert aéroport Nice → Monaco demain 18h"
       autocomplete="off"
       aria-label="Tapez votre message"
-      aria-required="true"
       required>
-    <button type="submit" class="chatbot-send" aria-label="Envoyer le message" id="chatbot-send-btn">
+    <button type="submit" class="chatbot-send" id="chatbot-send" aria-label="Envoyer">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <line x1="22" y1="2" x2="11" y2="13"></line>
         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
       </svg>
     </button>
   </form>
-  
-  <div class="chatbot-typing-indicator" id="typing-indicator" aria-hidden="true" style="display: none;">
-    <span></span><span></span><span></span>
-  </div>
 </div>
 
 <script>
@@ -82,232 +82,149 @@
     'use strict';
     
     // Éléments DOM
-    const chatbotToggle = document.getElementById('chatbot-toggle-btn');
-    const chatbotPanel = document.getElementById('chatbot-panel');
-    const chatbotForm = document.getElementById('chatbot-form');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotClose = document.getElementById('chatbot-close-btn');
-    const typingIndicator = document.getElementById('typing-indicator');
+    const toggle = document.getElementById('chatbot-toggle');
+    const container = document.getElementById('chatbot-container');
+    const closeBtn = document.getElementById('chatbot-close');
+    const form = document.getElementById('chatbot-form');
+    const input = document.getElementById('chatbot-input');
+    const messages = document.getElementById('chatbot-messages');
+    const typing = document.getElementById('chatbot-typing');
     
-    // État du chatbot
-    const chatState = {
-      isOpen: false,
-      isTyping: false,
-      messageId: 0
-    };
+    // État
+    let isOpen = false;
+    let isProcessing = false;
     
-    // Charger l'historique depuis localStorage
-    function loadHistory() {
-      try {
-        const saved = localStorage.getItem('ecofundrive-chat-history');
-        if (saved) {
-          const history = JSON.parse(saved);
-          // Ne charger que les 10 derniers messages
-          const recentHistory = history.slice(-10);
-          recentHistory.forEach(msg => {
-            if (msg.role && msg.text) {
-              appendMessageToDOM(msg.role, msg.text, false);
-            }
-          });
-        }
-      } catch (e) {
-        // Ignorer les erreurs de localStorage
-      }
+    // Ouvrir/Fermer
+    function openChat() {
+      isOpen = true;
+      container.classList.add('open');
+      container.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.classList.add('active');
+      setTimeout(() => input?.focus(), 100);
     }
     
-    // Sauvegarder l'historique dans localStorage
-    function saveMessage(role, text) {
-      try {
-        const saved = localStorage.getItem('ecofundrive-chat-history') || '[]';
-        const history = JSON.parse(saved);
-        history.push({ role, text, timestamp: Date.now() });
-        // Garder seulement les 20 derniers messages
-        const recentHistory = history.slice(-20);
-        localStorage.setItem('ecofundrive-chat-history', JSON.stringify(recentHistory));
-      } catch (e) {
-        // Ignorer les erreurs de localStorage
-      }
+    function closeChat() {
+      isOpen = false;
+      container.classList.remove('open');
+      container.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('active');
     }
     
-    // Ouvrir/fermer le chatbot
-    function toggleChat(forceState = null) {
-      chatState.isOpen = forceState !== null ? forceState : !chatState.isOpen;
-      
-      if (chatState.isOpen) {
-        chatbotPanel.classList.add('open');
-        chatbotPanel.setAttribute('aria-hidden', 'false');
-        chatbotToggle.setAttribute('aria-expanded', 'true');
-        chatbotToggle.classList.add('active');
-        
-        // Charger l'historique si c'est la première ouverture
-        if (chatbotMessages.children.length === 1) {
-          loadHistory();
-        }
-        
-        // Focus sur l'input
-        setTimeout(() => {
-          if (chatbotInput) chatbotInput.focus();
-        }, 100);
-      } else {
-        chatbotPanel.classList.remove('open');
-        chatbotPanel.setAttribute('aria-hidden', 'true');
-        chatbotToggle.setAttribute('aria-expanded', 'false');
-        chatbotToggle.classList.remove('active');
-      }
-    }
-    
-    // Afficher/masquer l'indicateur de frappe
+    // Afficher/Masquer typing
     function showTyping(show) {
-      if (typingIndicator) {
-        typingIndicator.style.display = show ? 'flex' : 'none';
-        typingIndicator.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (typing) {
+        typing.style.display = show ? 'flex' : 'none';
+        typing.setAttribute('aria-hidden', show ? 'false' : 'true');
       }
     }
     
-    // Ajouter un message au DOM
-    function appendMessageToDOM(role, text, save = true) {
-      if (!chatbotMessages) return;
+    // Ajouter message
+    function addMessage(role, text) {
+      if (!messages) return;
       
-      // Supprimer l'indicateur de frappe s'il existe
       showTyping(false);
       
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `chat-msg ${role}`;
-      messageDiv.setAttribute('data-role', role);
-      messageDiv.setAttribute('data-id', `msg-${++chatState.messageId}`);
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${role}`;
+      msgDiv.setAttribute('data-role', role);
       
       const contentDiv = document.createElement('div');
-      contentDiv.className = 'chat-msg-content';
+      contentDiv.className = 'message-content';
       contentDiv.textContent = text;
-      messageDiv.appendChild(contentDiv);
       
-      chatbotMessages.appendChild(messageDiv);
+      msgDiv.appendChild(contentDiv);
+      messages.appendChild(msgDiv);
       
-      // Scroll vers le bas
-      messageDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
-      
-      // Sauvegarder le message
-      if (save) {
-        saveMessage(role, text);
-      }
-      
-      return messageDiv;
+      msgDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
     
-    // Envoyer un message
-    async function sendMessage(message) {
-      if (!message || chatState.isTyping) return;
+    // Envoyer message
+    async function sendMessage(text) {
+      if (!text || isProcessing) return;
       
-      // Afficher le message de l'utilisateur
-      appendMessageToDOM('user', message);
-      chatbotInput.value = '';
-      
-      // Afficher l'indicateur de frappe
-      chatState.isTyping = true;
+      addMessage('user', text);
+      input.value = '';
+      isProcessing = true;
       showTyping(true);
       
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 25000);
+        const timeout = setTimeout(() => controller.abort(), 20000);
         
-        const response = await fetch('/.netlify/functions/deepseek-chat', {
+        const response = await fetch('/.netlify/functions/chatbot', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message }),
+          body: JSON.stringify({ message: text }),
           signal: controller.signal
         });
         
-        clearTimeout(timeoutId);
+        clearTimeout(timeout);
         
         if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}));
-          throw new Error(errorData.error || `Erreur HTTP ${response.status}`);
+          throw new Error(`HTTP ${response.status}`);
         }
         
         const data = await response.json();
-        const answer = data.answer || getFallbackMessage(message);
+        const answer = data.answer || 'Désolé, je n\'ai pas pu générer de réponse. Contactez-moi au 06 16 55 28 11.';
         
-        // Supprimer l'indicateur et afficher la réponse
-        showTyping(false);
-        appendMessageToDOM('bot', answer);
+        addMessage('bot', answer);
         
       } catch (error) {
-        showTyping(false);
-        
-        let errorMsg = "Désolé, une erreur s'est produite. ";
+        let errorMsg = 'Une erreur s\'est produite. ';
         
         if (error.name === 'AbortError') {
-          errorMsg += "La requête a pris trop de temps. Veuillez réessayer.";
-        } else if (error.message?.includes('Failed to fetch') || error.message?.includes('network')) {
-          errorMsg += "Vérifiez votre connexion internet.";
+          errorMsg += 'La requête a pris trop de temps. Veuillez réessayer.';
+        } else if (error.message?.includes('fetch')) {
+          errorMsg += 'Vérifiez votre connexion internet.';
         } else {
-          errorMsg += "Contactez-moi directement au 06 16 55 28 11 ou via WhatsApp.";
+          errorMsg += 'Contactez-moi directement au 06 16 55 28 11 ou via WhatsApp.';
         }
         
-        appendMessageToDOM('bot', errorMsg);
+        addMessage('bot', errorMsg);
       } finally {
-        chatState.isTyping = false;
-        if (chatbotInput) chatbotInput.focus();
-      }
-    }
-    
-    // Message de fallback intelligent
-    function getFallbackMessage(userMessage) {
-      const lower = userMessage.toLowerCase();
-      
-      if (lower.includes('prix') || lower.includes('tarif') || lower.includes('coût')) {
-        return "Pour un devis précis, précisez : départ, arrivée, date, heure et nombre de passagers. Consultez aussi notre page Tarifs ou appelez-moi au 06 16 55 28 11.";
-      } else if (lower.includes('réserv') || lower.includes('book')) {
-        return "Pour réserver, utilisez notre formulaire de réservation ou contactez-moi au 06 16 55 28 11 / WhatsApp. Réservation minimum 4h à l'avance.";
-      } else if (lower.includes('aéroport') || lower.includes('airport')) {
-        return "Je propose des transferts depuis les aéroports de Nice (NCE) et Cannes-Mandelieu vers toute la Côte d'Azur. Réservez au moins 4h à l'avance.";
-      } else if (lower.includes('nice') || lower.includes('cannes') || lower.includes('monaco') || lower.includes('saint-tropez')) {
-        return "Je couvre toute la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime. Dites-moi votre trajet précis pour un devis !";
-      } else {
-        return "Je peux vous aider pour vos trajets, transferts aéroport et conseils sur la Côte d'Azur. Contactez-moi au 06 16 55 28 11 ou utilisez notre formulaire de réservation.";
+        isProcessing = false;
+        showTyping(false);
+        input?.focus();
       }
     }
     
     // Event listeners
-    if (chatbotToggle) {
-      chatbotToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleChat();
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        if (isOpen) closeChat();
+        else openChat();
       });
     }
     
-    if (chatbotClose) {
-      chatbotClose.addEventListener('click', () => {
-        toggleChat(false);
-      });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeChat);
     }
     
-    if (chatbotForm) {
-      chatbotForm.addEventListener('submit', async (e) => {
+    if (form) {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const message = chatbotInput?.value?.trim();
-        if (message) {
-          await sendMessage(message);
-        }
+        const text = input?.value?.trim();
+        if (text) sendMessage(text);
       });
     }
     
     // Fermer en cliquant à l'extérieur
     document.addEventListener('click', (e) => {
-      if (chatState.isOpen && 
-          chatbotPanel && 
-          !chatbotPanel.contains(e.target) && 
-          chatbotToggle && 
-          !chatbotToggle.contains(e.target)) {
-        toggleChat(false);
+      if (isOpen && 
+          container && 
+          !container.contains(e.target) && 
+          toggle && 
+          !toggle.contains(e.target)) {
+        closeChat();
       }
     });
     
-    // Support clavier (Escape pour fermer)
+    // Escape pour fermer
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && chatState.isOpen) {
-        toggleChat(false);
+      if (e.key === 'Escape' && isOpen) {
+        closeChat();
       }
     });
   })();
@@ -322,27 +239,27 @@
     height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, #d4af37, #b8941f);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     border: none;
     cursor: pointer;
     z-index: 9999;
-    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0a0a0a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .chatbot-toggle:hover {
-    transform: scale(1.1) translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   }
 
   .chatbot-toggle.active {
     background: linear-gradient(135deg, #b8941f, #d4af37);
   }
 
-  .chatbot-panel {
+  .chatbot-container {
     position: fixed;
     bottom: 100px;
     right: 25px;
@@ -360,15 +277,13 @@
     overflow: hidden;
     transform: translateY(20px) scale(0.95);
     opacity: 0;
-    visibility: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .chatbot-panel.open {
+  .chatbot-container.open {
     display: flex;
     transform: translateY(0) scale(1);
     opacity: 1;
-    visibility: visible;
   }
 
   .chatbot-header {
@@ -376,15 +291,14 @@
     padding: 16px 20px;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
     gap: 12px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
   }
 
   .chatbot-avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    overflow: hidden;
     background: linear-gradient(135deg, #d4af37, #b8941f);
     display: flex;
     align-items: center;
@@ -394,7 +308,7 @@
   }
 
   .chatbot-info {
-    flex-grow: 1;
+    flex: 1;
   }
 
   .chatbot-info h3 {
@@ -443,14 +357,6 @@
     transform: rotate(90deg);
   }
 
-  .chatbot-body {
-    flex: 1;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: rgba(26, 26, 26, 0.95);
-  }
-
   .chatbot-messages {
     flex: 1;
     overflow-y: auto;
@@ -472,24 +378,23 @@
     border-radius: 3px;
   }
 
-  .chat-msg {
+  .message {
     margin-bottom: 16px;
     max-width: 85%;
-    animation: fadeInUp 0.3s ease-out;
-    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-out;
   }
 
-  .chat-msg.user {
+  .message.user {
     margin-left: auto;
     margin-right: 0;
   }
 
-  .chat-msg.bot {
+  .message.bot {
     margin-right: auto;
     margin-left: 0;
   }
 
-  .chat-msg-content {
+  .message-content {
     padding: 12px 16px;
     border-radius: 18px;
     font-size: 0.9rem;
@@ -498,20 +403,65 @@
     white-space: pre-wrap;
   }
 
-  .chat-msg.user .chat-msg-content {
+  .message.user .message-content {
     background: linear-gradient(135deg, #d4af37, #b8941f);
     color: #0a0a0a;
     border-bottom-right-radius: 4px;
     font-weight: 500;
   }
 
-  .chat-msg.bot .chat-msg-content {
+  .message.bot .message-content {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     border-bottom-left-radius: 4px;
   }
 
-  .chatbot-footer {
+  .chatbot-typing {
+    display: none;
+    padding: 12px 20px;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .chatbot-typing span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d4af37;
+    animation: typing 1.4s infinite;
+  }
+
+  .chatbot-typing span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .chatbot-typing span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typing {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    30% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .chatbot-form {
     padding: 12px 16px;
     background: rgba(10, 10, 10, 0.95);
     border-top: 2px solid rgba(212, 175, 55, 0.2);
@@ -528,7 +478,7 @@
     padding: 10px 16px;
     color: #ffffff;
     font-size: 0.9rem;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   .chatbot-input:focus {
@@ -566,51 +516,6 @@
     cursor: not-allowed;
   }
 
-  .chatbot-typing-indicator {
-    display: none;
-    padding: 12px 20px;
-    gap: 6px;
-    align-items: center;
-  }
-
-  .chatbot-typing-indicator span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #d4af37;
-    animation: typing 1.4s infinite;
-  }
-
-  .chatbot-typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .chatbot-typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes typing {
-    0%, 60%, 100% {
-      transform: translateY(0);
-      opacity: 0.7;
-    }
-    30% {
-      transform: translateY(-10px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   .sr-only {
     position: absolute;
     width: 1px;
@@ -624,7 +529,7 @@
   }
 
   @media (max-width: 768px) {
-    .chatbot-panel {
+    .chatbot-container {
       width: calc(100vw - 20px);
       right: 10px;
       bottom: 80px;
@@ -639,3 +544,4 @@
     }
   }
 </style>
+
