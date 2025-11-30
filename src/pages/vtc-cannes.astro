@@ -1,104 +1,149 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const title = "VTC Cannes – Chauffeur privé Croisette & festivals | ECOFUNDRIVE";
-const description = "VTC premium à Cannes pour la Croisette, le Palais des Festivals, les hôtels 5* et les transferts depuis l’aéroport de Nice. Chauffeur privé disponible 24/7.";
-const canonical = "/vtc-cannes.html";
+const imageTextMapping = {
+  hero: {
+    image: '/assets/img/destinations/vtc-tesla-cannes.jpg',
+    alt: 'VTC Cannes - Chauffeur privé professionnel',
+    title: 'VTC Cannes – Chauffeur Privé à Cannes',
+    subtitle: 'Service VTC professionnel sur Cannes. Croisette, Palais des Festivals, hôtels de luxe, aéroport de Mandelieu.'
+  },
+  content: {
+    image1: {
+      image: '/assets/img/destinations/vtc-tesla-cannes.jpg',
+      alt: 'VTC Cannes - Croisette et Palais des Festivals',
+      text: 'Cannes - Destination Premium'
+    }
+  }
+};
 ---
 
-<BaseLayout 
-  title={title}
-  description={description}
+<BaseLayout
+  title="VTC Cannes – Chauffeur Privé à Cannes | ECOFUNDRIVE"
+  description="Chauffeur privé VTC à Cannes. Croisette, Palais des Festivals, hôtels de luxe, gare de Cannes, aéroport de Mandelieu. Service professionnel."
   currentPage="vtc-cannes"
-  canonical={canonical}
 >
+  <HeroBanner
+    image={imageTextMapping.hero.image}
+    alt={imageTextMapping.hero.alt}
+    title={imageTextMapping.hero.title}
+    subtitle={imageTextMapping.hero.subtitle}
+  />
 
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Cannes</span>
-    </nav>
+  <section class="page-content">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Cannes</span>
+      </nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">VTC Cannes</div>
-          <h1 class="section-title">VTC Cannes – Chauffeur privé Croisette & festivals</h1>
-          <p>Service de chauffeur privé pour vos déplacements à Cannes : Croisette, Palais des Festivals, hôtels 5*, ports et villas du littoral.</p>
-        </div>
-
-        <div class="image-grid">
-          
-          
-          
-          
-        </div>
-
-        <section class="section" style="padding-top:2rem">
-          <h2>Transferts Cannes depuis l’aéroport de Nice</h2>
-          <p>Trajets fluides entre l’aéroport de Nice Côte d’Azur, les gares TGV (Cannes, Antibes) et votre hôtel ou location de vacances à Cannes. Temps de trajet indicatif Nice aéroport ⇄ Cannes&nbsp;: 35 à 50 minutes selon le trafic.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>VTC pour festivals et congrès à Cannes</h2>
-          <p>Organisation de vos transferts pendant le Festival de Cannes, le MIPIM, le Cannes Lions et l’ensemble des salons professionnels. Gestion possible de plusieurs véhicules pour vos équipes et invités.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>VTC Cannes ou taxi&nbsp;?</h2>
-          <ul>
-            <li>Tarifs convenus à l’avance pour vos trajets stratégiques.</li>
-            <li>Prise en charge à l’heure convenue devant votre hôtel, villa ou yacht.</li>
-            <li>Véhicules adaptés au transport de bagages et de matériel (stand, dossiers, équipements).</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Réserver votre VTC à Cannes</h2>
-          <p>Pour vos congrès, séjours loisirs ou déplacements réguliers, remplissez le <a href="/reservation">formulaire de réservation</a> ou faites une demande via la page <a href="/contact">Contact</a> pour un devis entreprise.</p>
-          <p>Découvrez aussi nos autres destinations&nbsp;: <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-monaco">VTC Monaco</a>, <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>FAQ VTC Cannes</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Assurez‑vous les transferts de nuit pendant le Festival de Cannes&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, un service de nuit peut être organisé sur réservation préalable, avec chauffeur dédié pendant toute la durée de votre événement.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Pouvez‑vous gérer plusieurs véhicules pour un groupe&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, sur demande, plusieurs berlines et vans peuvent être coordonnés pour vos équipes, intervenants ou invités VIP.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Faut‑il réserver longtemps à l’avance pendant les festivals et congrès&nbsp;?</div>
-              <div class="faq-answer">
-                <p>En période de festivals et de grands congrès (Festival de Cannes, MIPIM, Cannes Lions, etc.), il est conseillé de réserver le plus tôt possible, idéalement plusieurs semaines avant l’événement, afin de garantir la disponibilité des véhicules.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Pouvez‑vous transporter beaucoup de bagages ou du matériel de stand&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, il suffit de le préciser au moment de la demande. Selon le volume, un van ou plusieurs véhicules pourront être proposés pour transporter confortablement les bagages et le matériel.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Travaillez‑vous aussi avec l’aéroport de Cannes‑Mandelieu&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, des transferts privés sont possibles entre l’aéroport de Cannes‑Mandelieu, vos hôtels, villas ou lieux d’événements, ainsi qu’avec Nice aéroport et les autres villes de la Côte d’Azur.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Quel est le délai minimum de réservation pour un VTC à Cannes&nbsp;?</div>
-              <div class="faq-answer">
-                <p>En règle générale, un délai minimum de 4 heures avant la prise en charge est demandé. Pendant les grands événements, il est préférable de réserver dès que vos horaires sont connus.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="content-block">
+        <h2>Service VTC Professionnel à Cannes</h2>
+        <p>
+          Je propose un service de chauffeur privé VTC professionnel sur Cannes et ses environs. 
+          Spécialisé dans les transferts vers la Croisette, le Palais des Festivals, les hôtels de luxe, 
+          la gare de Cannes et l'aéroport de Mandelieu.
+        </p>
       </div>
-    </section>
-  
+
+      <ImageTextOverlay
+        image={imageTextMapping.content.image1.image}
+        alt={imageTextMapping.content.image1.alt}
+        text={imageTextMapping.content.image1.text}
+        height="300px"
+      />
+
+      <div class="content-block">
+        <h2>Zones Desservies à Cannes</h2>
+        <ul class="feature-list">
+          <li><strong>Croisette</strong> : Hôtels de luxe et plages privées</li>
+          <li><strong>Palais des Festivals</strong> : Événements et congrès</li>
+          <li><strong>Aéroport de Mandelieu</strong> : Transferts aéroport</li>
+          <li><strong>Gare de Cannes</strong> : Connexions train</li>
+          <li><strong>Hôtels de luxe</strong> : Martinez, Carlton, Majestic, etc.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h2>Réservation</h2>
+        <p>
+          Pour vos congrès, séjours loisirs ou déplacements réguliers, remplissez le 
+          <a href="/reservation">formulaire de réservation</a> ou faites une demande via la page 
+          <a href="/contact">Contact</a> pour un devis entreprise.
+        </p>
+        <p>
+          Découvrez aussi nos autres destinations : 
+          <a href="/vtc-nice">VTC Nice</a>, 
+          <a href="/vtc-monaco">VTC Monaco</a>, 
+          <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .page-content {
+    padding: 3rem 0;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+
+  .breadcrumb a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 12px;
+    border-left: 3px solid #d4af37;
+  }
+
+  .content-block h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+
+  .content-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e5e7eb;
+    margin-bottom: 1rem;
+  }
+
+  .content-block a {
+    color: #d4af37;
+    text-decoration: underline;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    padding: 0.75rem 0;
+    color: #e5e7eb;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .feature-list li:last-child {
+    border-bottom: none;
+  }
+
+  .feature-list strong {
+    color: #d4af37;
+  }
+</style>

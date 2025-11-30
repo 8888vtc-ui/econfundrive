@@ -1,100 +1,151 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const title = "VTC Saint‑Tropez – Chauffeur privé villas, plages & soirées | ECOFUNDRIVE";
-const description = "VTC Saint‑Tropez pour vos transferts depuis les aéroports de Nice et Cannes‑Mandelieu, les gares TGV (Saint‑Raphaël, Fréjus) et les villes du Golfe (Sainte‑Maxime, Gassin, Ramatuelle). Chauffeur privé sur réservation, minimum 4h avant le départ.";
-const canonical = "/vtc-saint-tropez.html";
+const imageTextMapping = {
+  hero: {
+    image: '/assets/img/destinations/nikki-beach-saint-tropez.jpg',
+    alt: 'VTC Saint-Tropez - Chauffeur privé professionnel',
+    title: 'VTC Saint-Tropez – Chauffeur Privé à Saint-Tropez',
+    subtitle: 'Service VTC professionnel sur Saint-Tropez. Port, Pampelonne, villas privées, événements, transferts hélistations.'
+  },
+  content: {
+    image1: {
+      image: '/assets/img/destinations/nikki-beach-saint-tropez.jpg',
+      alt: 'VTC Saint-Tropez - Port et plages',
+      text: 'Saint-Tropez - Destination Exclusive'
+    }
+  }
+};
 ---
 
-<BaseLayout 
-  title={title}
-  description={description}
+<BaseLayout
+  title="VTC Saint-Tropez – Chauffeur Privé à Saint-Tropez | ECOFUNDRIVE"
+  description="Chauffeur privé VTC à Saint-Tropez. Port, Pampelonne, villas privées, événements, gare de Saint-Raphaël, transferts hélistations. Service professionnel."
   currentPage="vtc-saint-tropez"
-  canonical={canonical}
 >
+  <HeroBanner
+    image={imageTextMapping.hero.image}
+    alt={imageTextMapping.hero.alt}
+    title={imageTextMapping.hero.title}
+    subtitle={imageTextMapping.hero.subtitle}
+  />
 
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Saint‑Tropez</span>
-    </nav>
+  <section class="page-content">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Saint-Tropez</span>
+      </nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">VTC Saint‑Tropez</div>
-          <h1 class="section-title">VTC Saint‑Tropez – Chauffeur privé villas, plages & soirées</h1>
-          <p>Transferts sur mesure vers Saint‑Tropez, Ramatuelle, Gassin et l’ensemble du Golfe, depuis les aéroports de Nice et Cannes‑Mandelieu, les gares TGV (Saint‑Raphaël, Fréjus) et les principales villes de la Côte d’Azur.</p>
-        </div>
-
-        <div class="image-grid">
-          
-          
-          
-          
-        </div>
-
-        <section class="section" style="padding-top:2rem">
-          <h2>Transferts vers villas, hôtels & plages privées</h2>
-          <p>Prise en charge sur mesure pour vos séjours à Saint‑Tropez&nbsp;: villas privées, hôtels, plages de Pampelonne, clubs et restaurants du port. Coordination possible avec votre conciergerie ou votre agent immobilier.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Trajets Saint‑Tropez depuis Nice ou Cannes</h2>
-          <p>Transferts directs ou avec arrêts intermédiaires (Fréjus, Saint‑Raphaël, Sainte‑Maxime, Grimaud…). Temps de trajet indicatif Nice ⇄ Saint‑Tropez&nbsp;: 1h45 à 2h30 selon le trafic et la saison.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>VTC pour vos soirées à Saint‑Tropez</h2>
-          <p>Service idéal pour vos soirées, événements privés et sorties en clubs. Le chauffeur gère votre aller‑retour et vous évite les contraintes de stationnement.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Réserver votre VTC pour Saint‑Tropez</h2>
-          <p>Pour organiser vos transferts vers le Golfe de Saint‑Tropez, remplissez le <a href="/reservation">formulaire de réservation</a> avec vos horaires, points de prise en charge et nombre de passagers. Pour des séjours complets avec plusieurs trajets, vous pouvez détailler vos besoins via la page <a href="/contact">Contact</a>. Les départs doivent être réservés au minimum 4 heures avant l’horaire de prise en charge&nbsp;; pour une demande plus urgente, utilisez le téléphone ou le bouton WhatsApp du site afin de vérifier la disponibilité.</p>
-          <p>Complétez vos déplacements avec nos services <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-monaco">VTC Monaco</a>.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>FAQ VTC Saint‑Tropez</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Assurez‑vous les retours de nuit vers Nice ou Cannes après une soirée à Saint‑Tropez&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, des trajets de nuit peuvent être organisés sur réservation préalable, avec horaires définis à l’avance et prise en charge à la sortie de votre établissement.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Pouvez‑vous transporter des bagages volumineux ou équipements (valises, matériel) ?</div>
-              <div class="faq-answer">
-                <p>Oui, il suffit de le préciser dans votre demande pour qu’un véhicule adapté (van notamment) soit proposé en fonction du volume.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Depuis quels aéroports et gares organisez‑vous des transferts vers Saint‑Tropez&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Les principaux transferts se font depuis les aéroports de Nice et Cannes‑Mandelieu, ainsi que depuis les gares TGV de Saint‑Raphaël et Fréjus. Des départs peuvent aussi être organisés depuis d’autres villes de la Côte d’Azur, sur demande.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Faut‑il réserver longtemps à l’avance pour l’été à Saint‑Tropez&nbsp;?</div>
-              <div class="faq-answer">
-                <p>En haute saison et les week‑ends, il est vivement recommandé de réserver dès que vos dates sont connues, idéalement plusieurs jours à l’avance. Un délai minimum de 4 heures est demandé pour les départs, sous réserve de disponibilité.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Puis‑je réserver un aller‑retour ou plusieurs trajets sur plusieurs jours&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, vous pouvez prévoir à l’avance un aller‑retour (par exemple Nice ⇄ Saint‑Tropez) ou plusieurs trajets répartis sur votre séjour. Il suffit de l’indiquer dans la demande afin de recevoir un devis global.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Intervenez‑vous aussi dans les autres villes du Golfe (Sainte‑Maxime, Gassin, Ramatuelle…) ?</div>
-              <div class="faq-answer">
-                <p>Oui, les services couvrent l’ensemble du Golfe de Saint‑Tropez (Sainte‑Maxime, Gassin, Ramatuelle, Grimaud, etc.), aussi bien pour des transferts ponctuels que pour des mises à disposition sur plusieurs heures.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="content-block">
+        <h2>Service VTC Professionnel à Saint-Tropez</h2>
+        <p>
+          Je propose un service de chauffeur privé VTC professionnel sur Saint-Tropez et le golfe de Saint-Tropez. 
+          Spécialisé dans les transferts vers le port, les plages de Pampelonne, les villas privées, 
+          les événements et les hélistations.
+        </p>
       </div>
-    </section>
-  
+
+      <ImageTextOverlay
+        image={imageTextMapping.content.image1.image}
+        alt={imageTextMapping.content.image1.alt}
+        text={imageTextMapping.content.image1.text}
+        height="300px"
+      />
+
+      <div class="content-block">
+        <h2>Zones Desservies à Saint-Tropez</h2>
+        <ul class="feature-list">
+          <li><strong>Port de Saint-Tropez</strong> : Accès au port et aux yachts</li>
+          <li><strong>Pampelonne</strong> : Plages privées et clubs de plage</li>
+          <li><strong>Villas privées</strong> : Accès aux résidences de prestige</li>
+          <li><strong>Événements</strong> : Mariages, anniversaires, soirées</li>
+          <li><strong>Hélistations</strong> : Transferts depuis les hélistations</li>
+          <li><strong>Gare de Saint-Raphaël</strong> : Connexions train</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h2>Réservation</h2>
+        <p>
+          Pour organiser vos transferts vers le Golfe de Saint‑Tropez, remplissez le 
+          <a href="/reservation">formulaire de réservation</a> avec vos horaires, points de prise en charge 
+          et nombre de passagers. Pour des séjours complets avec plusieurs trajets, vous pouvez détailler vos besoins 
+          via la page <a href="/contact">Contact</a>. Les départs doivent être réservés au minimum 4 heures avant 
+          l'horaire de prise en charge ; pour une demande plus urgente, utilisez le téléphone ou le bouton WhatsApp 
+          du site afin de vérifier la disponibilité.
+        </p>
+        <p>
+          Complétez vos déplacements avec nos services <a href="/vtc-nice">VTC Nice</a>, 
+          <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-monaco">VTC Monaco</a>.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .page-content {
+    padding: 3rem 0;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+
+  .breadcrumb a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 12px;
+    border-left: 3px solid #d4af37;
+  }
+
+  .content-block h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+
+  .content-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e5e7eb;
+    margin-bottom: 1rem;
+  }
+
+  .content-block a {
+    color: #d4af37;
+    text-decoration: underline;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    padding: 0.75rem 0;
+    color: #e5e7eb;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .feature-list li:last-child {
+    border-bottom: none;
+  }
+
+  .feature-list strong {
+    color: #d4af37;
+  }
+</style>

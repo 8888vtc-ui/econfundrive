@@ -1,5 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+// Mapping images-text exact
+const imageTextMapping = {
+  hero: {
+    image: '/assets/img/hero/hero-aeroport-nice.webp',
+    alt: 'Chauffeur VTC professionnel à Nice avec véhicule Tesla',
+    title: "Chauffeur privé VTC sur la Côte d'Azur",
+    subtitle: "Professionnalisme et service premium. Transferts aéroport, trajets business, séjours haut de gamme."
+  },
+  destinations: {
+    nice: {
+      image: '/assets/img/destinations/vtc-tesla-nice.jpg',
+      alt: 'VTC Nice - Service de chauffeur privé',
+      title: 'VTC Nice',
+      description: 'Aéroport, Vieux-Nice, Promenade des Anglais, hôtels 5*, gare SNCF, port Lympia.',
+      link: '/vtc-nice'
+    },
+    cannes: {
+      image: '/assets/img/destinations/vtc-tesla-cannes.jpg',
+      alt: 'VTC Cannes - Service de chauffeur privé',
+      title: 'VTC Cannes',
+      description: 'Croisette, Palais des Festivals, hôtels de luxe, gare de Cannes, aéroport de Mandelieu.',
+      link: '/vtc-cannes'
+    },
+    monaco: {
+      image: '/assets/img/destinations/vtc-tesla-monaco.jpg',
+      alt: 'VTC Monaco - Service de chauffeur privé',
+      title: 'VTC Monaco',
+      description: 'Monte-Carlo, Casino, hôtels de prestige, port Hercule, Grand Prix, centre-ville.',
+      link: '/vtc-monaco'
+    },
+    saintTropez: {
+      image: '/assets/img/destinations/nikki-beach-saint-tropez.jpg',
+      alt: 'VTC Saint-Tropez - Service de chauffeur privé',
+      title: 'VTC Saint-Tropez',
+      description: 'Port, Pampelonne, villas privées, événements, gare de Saint-Raphaël, transferts hélistations.',
+      link: '/vtc-saint-tropez'
+    }
+  }
+};
 ---
 
 <BaseLayout
@@ -7,26 +49,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Chauffeur privé VTC professionnel sur la Côte d'Azur. Transferts aéroport Nice & Cannes, trajets business, séjours haut de gamme. Service 24h/24, véhicules premium, ponctualité garantie."
   currentPage="index"
 >
-  <section class="hero-section">
+  <HeroBanner
+    image={imageTextMapping.hero.image}
+    alt={imageTextMapping.hero.alt}
+    title={imageTextMapping.hero.title}
+    subtitle={imageTextMapping.hero.subtitle}
+    ctaText="RÉSERVER UN TRAJET"
+    ctaLink="/reservation"
+  />
+
+  <section class="intro-section">
     <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Chauffeur privé VTC sur la<br>
-          <span class="text-gold">Côte d'Azur</span> :<br>
-          professionnalisme et service premium
-        </h1>
-        
-        <p class="hero-description">
+      <div class="intro-content">
+        <p class="intro-text">
           Je suis David, votre chauffeur VTC indépendant basé à Villeneuve-Loubet plage (Marina Baie des Anges). 
           Spécialiste des transferts aéroports (Nice & Cannes-Mandelieu), des trajets business longue distance et 
           des séjours haut de gamme entre Nice, Cannes, Monaco, Fréjus, Sainte-Maxime et Saint-Tropez, je m'engage 
           sur une ponctualité stricte, un accueil chaleureux et un service discret et professionnel.
         </p>
-
-        <div class="hero-cta">
-          <a href="/reservation" class="btn-primary">RÉSERVER UN TRAJET</a>
-          <p class="hero-contact">06 16 55 28 11</p>
-          <p class="hero-info">Réponse rapide par WhatsApp. Réservation au moins 4h avant le départ. Véhicules premium. Facturation entreprise possible.</p>
+        <div class="contact-info">
+          <a href="tel:+33616552811" class="phone-link">06 16 55 28 11</a>
+          <p class="contact-details">Réponse rapide par WhatsApp · Réservation au moins 4h avant le départ · Véhicules premium · Facturation entreprise possible.</p>
         </div>
       </div>
     </div>
@@ -35,39 +78,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="destinations-section">
     <div class="container">
       <h2 class="section-title">Nos Destinations</h2>
-      
       <div class="card-grid">
-        <div class="card">
-          <div class="card-content">
-            <h3>VTC Nice</h3>
-            <p>Aéroport, Vieux-Nice, Promenade des Anglais, hôtels 5*, gare SNCF, port Lympia.</p>
-            <a href="/vtc-nice" class="btn-outline-light">Découvrir Nice</a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3>VTC Cannes</h3>
-            <p>Croisette, Palais des Festivals, hôtels de luxe, gare de Cannes, aéroport de Mandelieu.</p>
-            <a href="/vtc-cannes" class="btn-outline-light">Découvrir Cannes</a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3>VTC Monaco</h3>
-            <p>Monte-Carlo, Casino, hôtels de prestige, port Hercule, Grand Prix, centre-ville.</p>
-            <a href="/vtc-monaco" class="btn-outline-light">Découvrir Monaco</a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3>VTC Saint-Tropez</h3>
-            <p>Port, Pampelonne, villas privées, événements, gare de Saint-Raphaël, transferts hélistations.</p>
-            <a href="/vtc-saint-tropez" class="btn-outline-light">Découvrir Saint-Tropez</a>
-          </div>
-        </div>
+        <CategoryCard
+          image={imageTextMapping.destinations.nice.image}
+          alt={imageTextMapping.destinations.nice.alt}
+          title={imageTextMapping.destinations.nice.title}
+          description={imageTextMapping.destinations.nice.description}
+          link={imageTextMapping.destinations.nice.link}
+        />
+        <CategoryCard
+          image={imageTextMapping.destinations.cannes.image}
+          alt={imageTextMapping.destinations.cannes.alt}
+          title={imageTextMapping.destinations.cannes.title}
+          description={imageTextMapping.destinations.cannes.description}
+          link={imageTextMapping.destinations.cannes.link}
+        />
+        <CategoryCard
+          image={imageTextMapping.destinations.monaco.image}
+          alt={imageTextMapping.destinations.monaco.alt}
+          title={imageTextMapping.destinations.monaco.title}
+          description={imageTextMapping.destinations.monaco.description}
+          link={imageTextMapping.destinations.monaco.link}
+        />
+        <CategoryCard
+          image={imageTextMapping.destinations.saintTropez.image}
+          alt={imageTextMapping.destinations.saintTropez.alt}
+          title={imageTextMapping.destinations.saintTropez.title}
+          description={imageTextMapping.destinations.saintTropez.description}
+          link={imageTextMapping.destinations.saintTropez.link}
+        />
       </div>
     </div>
   </section>
@@ -75,23 +114,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="services-section">
     <div class="container">
       <h2 class="section-title">Nos Services</h2>
-      
       <div class="services-grid">
         <div class="service-item">
           <h3>Transferts Aéroport</h3>
           <p>Nice Côte d'Azur (NCE) et Cannes-Mandelieu vers toute la Côte d'Azur. Réservation minimum 4h à l'avance.</p>
         </div>
-        
         <div class="service-item">
           <h3>VTC Business</h3>
           <p>Trajets professionnels longue distance, mise à disposition avec chauffeur, facturation entreprise.</p>
         </div>
-        
         <div class="service-item">
           <h3>Événements & Mariages</h3>
           <p>Service premium pour vos événements privés, mariages, anniversaires sur la Côte d'Azur.</p>
         </div>
-        
         <div class="service-item">
           <h3>Service 24h/24</h3>
           <p>Disponible jour et nuit, 7j/7 pour vos besoins urgents. Réponse rapide garantie.</p>
@@ -114,60 +149,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .hero-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(26, 26, 26, 0.95));
-    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  .intro-section {
+    padding: 3rem 0;
+    background: rgba(10, 10, 10, 0.95);
   }
 
-  .hero-content {
-    max-width: 800px;
+  .intro-content {
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-    color: #ffffff;
-  }
-
-  .text-gold {
-    color: #d4af37;
-    background: linear-gradient(135deg, #d4af37, #f4e4bc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-description {
+  .intro-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #e5e7eb;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
-  .hero-cta {
+  .contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 
-  .hero-contact {
+  .phone-link {
     font-size: 1.5rem;
     font-weight: 600;
     color: #d4af37;
-    margin: 0;
+    text-decoration: none;
   }
 
-  .hero-info {
+  .phone-link:hover {
+    text-decoration: underline;
+  }
+
+  .contact-details {
     font-size: 0.9rem;
     color: #9ca3af;
     margin: 0;
-    text-align: center;
   }
 
   .destinations-section,
@@ -176,7 +197,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
@@ -187,33 +208,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .card {
-    background: rgba(26, 26, 26, 0.8);
-    border: 2px solid rgba(212, 175, 55, 0.2);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: transform 0.3s, border-color 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.5);
-  }
-
-  .card-content h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #d4af37;
-    margin-bottom: 1rem;
-  }
-
-  .card-content p {
-    color: #e5e7eb;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
   }
 
   .services-grid {
@@ -223,17 +217,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .service-item {
-    padding: 1.5rem;
+    padding: 2rem;
     background: rgba(26, 26, 26, 0.6);
     border-left: 3px solid #d4af37;
     border-radius: 8px;
   }
 
   .service-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #d4af37;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .service-item p {
@@ -282,31 +276,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 1.1rem;
   }
 
-  .btn-outline-light {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid rgba(212, 175, 55, 0.5);
-    color: #d4af37;
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .btn-outline-light:hover {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: #d4af37;
-  }
-
   @media (max-width: 768px) {
-    .hero-title {
-      font-size: 1.8rem;
+    .section-title {
+      font-size: 2rem;
     }
 
-    .card-grid {
-      grid-template-columns: 1fr;
-    }
-
+    .card-grid,
     .services-grid {
       grid-template-columns: 1fr;
     }

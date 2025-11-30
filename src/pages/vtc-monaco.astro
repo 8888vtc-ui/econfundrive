@@ -1,104 +1,148 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const title = "VTC Monaco – Chauffeur privé Monte‑Carlo & événements | ECOFUNDRIVE";
-const description = "VTC haut de gamme à Monaco pour vos rendez‑vous business, événements, soirées et transferts depuis l’aéroport de Nice. Service discret et ponctuel.";
-const canonical = "/vtc-monaco.html";
+const imageTextMapping = {
+  hero: {
+    image: '/assets/img/destinations/vtc-tesla-monaco.jpg',
+    alt: 'VTC Monaco - Chauffeur privé professionnel',
+    title: 'VTC Monaco – Chauffeur Privé à Monaco',
+    subtitle: 'Service VTC professionnel sur Monaco. Monte-Carlo, Casino, hôtels de prestige, port Hercule, Grand Prix.'
+  },
+  content: {
+    image1: {
+      image: '/assets/img/destinations/vtc-tesla-monaco.jpg',
+      alt: 'VTC Monaco - Monte-Carlo et Casino',
+      text: 'Monaco - Excellence et Prestige'
+    }
+  }
+};
 ---
 
-<BaseLayout 
-  title={title}
-  description={description}
+<BaseLayout
+  title="VTC Monaco – Chauffeur Privé à Monaco | ECOFUNDRIVE"
+  description="Chauffeur privé VTC à Monaco. Monte-Carlo, Casino, hôtels de prestige, port Hercule, Grand Prix, centre-ville. Service professionnel."
   currentPage="vtc-monaco"
-  canonical={canonical}
 >
+  <HeroBanner
+    image={imageTextMapping.hero.image}
+    alt={imageTextMapping.hero.alt}
+    title={imageTextMapping.hero.title}
+    subtitle={imageTextMapping.hero.subtitle}
+  />
 
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Monaco</span>
-    </nav>
+  <section class="page-content">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Monaco</span>
+      </nav>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">VTC Monaco</div>
-          <h1 class="section-title">VTC Monaco – Chauffeur privé Monte‑Carlo & événements</h1>
-          <p>Service VTC premium pour vos rendez‑vous d’affaires, soirées et événements à Monaco, Monte‑Carlo et dans les environs.</p>
-        </div>
-
-        <div class="image-grid">
-          
-          
-          
-          
-        </div>
-
-        <section class="section" style="padding-top:2rem">
-          <h2>Transferts Monaco depuis Nice aéroport</h2>
-          <p>Transferts confortables entre l’aéroport de Nice Côte d’Azur, vos hôtels ou résidences à Monaco (Monte‑Carlo, Fontvieille, La Condamine) et les ports de plaisance. Temps de trajet indicatif Nice aéroport ⇄ Monaco&nbsp;: 35 à 45 minutes.</p>
-        </section>
-
-        <section class="section" id="circuits" style="padding-top:1.5rem">
-          <h2>Chauffeur privé pour événements à Monaco</h2>
-          <p>Organisation de vos déplacements pendant le Grand Prix de Monaco, les salons professionnels, galas et soirées privées. Possible coordination de plusieurs véhicules pour clients VIP et équipes.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Atouts du VTC à Monaco</h2>
-          <ul>
-            <li>Dépose et reprise aux points autorisés à proximité des hôtels, casinos et lieux d’événements.</li>
-            <li>Connaissance des restrictions de circulation et des fermetures temporaires de rues.</li>
-            <li>Chauffeur discret et habitué à une clientèle internationale.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Réserver votre VTC à Monaco</h2>
-          <p>Pour garantir vos trajets à Monaco, notamment en période d’événements, nous vous conseillons de réserver le plus tôt possible via le <a href="/reservation">formulaire de réservation</a> ou la page <a href="/contact">Contact</a> pour les demandes plus complexes.</p>
-          <p>Consultez également les pages <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a> pour organiser tous vos trajets sur la Côte d’Azur.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>FAQ VTC Monaco</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Pouvez‑vous m’attendre pendant mes rendez‑vous à Monaco&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, une formule de mise à disposition est possible. Votre chauffeur vous dépose, vous attend à proximité puis vous récupère à l’horaire convenu.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Proposez‑vous des transferts Monaco ⇄ Italie&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Certaines liaisons transfrontalières peuvent être organisées sur demande (Menton, Vintimille, Sanremo…). Un devis spécifique sera établi.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Gérez‑vous les déplacements pendant le Grand Prix de Monaco&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, des solutions spécifiques peuvent être mises en place pendant le Grand Prix (accès aux zones autorisées, gestion des fermetures de rues, multiples allers‑retours). Les réservations doivent cependant être effectuées très en amont.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Depuis quels aéroports assurez‑vous les transferts vers Monaco&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Les principaux transferts se font depuis l’aéroport de Nice Côte d’Azur, mais des trajets peuvent aussi être étudiés depuis d’autres gares ou aéroports de la région, sur demande.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Combien de temps à l’avance faut‑il réserver un VTC pour Monaco&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Un délai minimum de 4 heures est requis pour la plupart des trajets. En période d’événements (Grand Prix, salons, galas), il est recommandé de réserver plusieurs jours voire semaines à l’avance.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Pouvez‑vous coordonner plusieurs véhicules pour des invités VIP&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, via un réseau de partenaires fiables (berlines, vans, parfois minibus), il est possible de coordonner plusieurs véhicules pour des clients VIP, équipes ou invités lors d’événements à Monaco.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="content-block">
+        <h2>Service VTC Professionnel à Monaco</h2>
+        <p>
+          Je propose un service de chauffeur privé VTC professionnel sur Monaco et ses environs. 
+          Spécialisé dans les transferts vers Monte-Carlo, le Casino, les hôtels de prestige, 
+          le port Hercule et le centre-ville de Monaco.
+        </p>
       </div>
-    </section>
-  
+
+      <ImageTextOverlay
+        image={imageTextMapping.content.image1.image}
+        alt={imageTextMapping.content.image1.alt}
+        text={imageTextMapping.content.image1.text}
+        height="300px"
+      />
+
+      <div class="content-block">
+        <h2>Zones Desservies à Monaco</h2>
+        <ul class="feature-list">
+          <li><strong>Monte-Carlo</strong> : Quartier prestigieux et Casino</li>
+          <li><strong>Casino de Monte-Carlo</strong> : Événements et soirées</li>
+          <li><strong>Port Hercule</strong> : Yachts et événements nautiques</li>
+          <li><strong>Grand Prix de Monaco</strong> : Service spécial événements</li>
+          <li><strong>Hôtels de prestige</strong> : Hermitage, Métropole, etc.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h2>Réservation</h2>
+        <p>
+          Pour garantir vos trajets à Monaco, notamment en période d'événements, nous vous conseillons de réserver 
+          le plus tôt possible via le <a href="/reservation">formulaire de réservation</a> ou la page 
+          <a href="/contact">Contact</a> pour les demandes plus complexes.
+        </p>
+        <p>
+          Consultez également les pages <a href="/vtc-nice">VTC Nice</a>, 
+          <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a> 
+          pour organiser tous vos trajets sur la Côte d'Azur.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .page-content {
+    padding: 3rem 0;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+
+  .breadcrumb a {
+    color: #d4af37;
+    text-decoration: none;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 12px;
+    border-left: 3px solid #d4af37;
+  }
+
+  .content-block h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+
+  .content-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e5e7eb;
+    margin-bottom: 1rem;
+  }
+
+  .content-block a {
+    color: #d4af37;
+    text-decoration: underline;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    padding: 0.75rem 0;
+    color: #e5e7eb;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .feature-list li:last-child {
+    border-bottom: none;
+  }
+
+  .feature-list strong {
+    color: #d4af37;
+  }
+</style>

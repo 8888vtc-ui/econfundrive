@@ -1,5 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import ImageTextOverlay from '../components/ImageTextOverlay.astro';
+
+const imageTextMapping = {
+  hero: {
+    image: '/assets/img/hero/hero-aeroport-nice.webp',
+    alt: 'VTC Nice - Chauffeur privé professionnel',
+    title: 'VTC Nice – Chauffeur Privé à Nice',
+    subtitle: 'Service VTC professionnel sur Nice et ses environs. Transferts aéroport, centre-ville, hôtels 5 étoiles.'
+  },
+  content: {
+    image1: {
+      image: '/assets/img/destinations/vtc-tesla-nice.jpg',
+      alt: 'VTC Nice - Service professionnel',
+      text: 'Zones Desservies à Nice'
+    },
+    image2: {
+      image: '/assets/img/destinations/plage-beau-rivage-nice.jpg',
+      alt: 'VTC Nice - Promenade des Anglais',
+      text: 'Service Premium 24h/24'
+    }
+  }
+};
 ---
 
 <BaseLayout
@@ -7,17 +30,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Chauffeur privé VTC à Nice. Transferts aéroport Nice, Vieux-Nice, Promenade des Anglais, hôtels 5*, gare SNCF. Service professionnel 24h/24."
   currentPage="vtc-nice"
 >
-  <section class="page-header">
+  <HeroBanner
+    image={imageTextMapping.hero.image}
+    alt={imageTextMapping.hero.alt}
+    title={imageTextMapping.hero.title}
+    subtitle={imageTextMapping.hero.subtitle}
+  />
+
+  <section class="page-content">
     <div class="container">
       <nav class="breadcrumb">
         <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Nice</span>
       </nav>
-      <h1>VTC Nice – Chauffeur Privé à Nice</h1>
-    </div>
-  </section>
 
-  <section class="page-content">
-    <div class="container">
       <div class="content-block">
         <h2>Service VTC Professionnel à Nice</h2>
         <p>
@@ -26,6 +51,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           le Vieux-Nice, la Promenade des Anglais, les hôtels 5 étoiles, la gare SNCF et le port Lympia.
         </p>
       </div>
+
+      <ImageTextOverlay
+        image={imageTextMapping.content.image1.image}
+        alt={imageTextMapping.content.image1.alt}
+        text={imageTextMapping.content.image1.text}
+        height="300px"
+      />
 
       <div class="content-block">
         <h2>Zones Desservies à Nice</h2>
@@ -38,6 +70,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li><strong>Port Lympia</strong> : Accès au port et aux croisières</li>
         </ul>
       </div>
+
+      <ImageTextOverlay
+        image={imageTextMapping.content.image2.image}
+        alt={imageTextMapping.content.image2.alt}
+        text={imageTextMapping.content.image2.text}
+        height="300px"
+      />
 
       <div class="content-block">
         <h2>Tarifs et Réservation</h2>
@@ -66,14 +105,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .page-header {
-    padding: 3rem 0 2rem;
-    background: rgba(10, 10, 10, 0.95);
-    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  .page-content {
+    padding: 3rem 0;
   }
 
   .breadcrumb {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-size: 0.9rem;
     color: #9ca3af;
   }
@@ -85,17 +122,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .breadcrumb a:hover {
     text-decoration: underline;
-  }
-
-  .page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-  }
-
-  .page-content {
-    padding: 3rem 0;
   }
 
   .content-block {
@@ -147,10 +173,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 768px) {
-    .page-header h1 {
-      font-size: 1.8rem;
-    }
-
     .content-block {
       padding: 1.5rem;
     }
