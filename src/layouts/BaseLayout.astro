@@ -1,8 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
-import Chatbot from '../components/Chatbot.astro';
+import FloatingElements from '../components/FloatingElements.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
 interface Props {
@@ -119,6 +118,7 @@ if (currentLang === 'fr') {
     <link rel="preload" href="/assets/js/main.js" as="script" />
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/img/hero/chauffeur-luxe-background.webp" as="image" fetchpriority="high" />
     <link rel="preload" href="/assets/img/hero/hero-aeroport-nice.webp" as="image" fetchpriority="high" />
     <link rel="preload" href="/assets/img/destinations/vtc-tesla-cannes.jpg" as="image" fetchpriority="high" />
     
@@ -145,6 +145,35 @@ if (currentLang === 'fr') {
         position: sticky;
         top: 0;
         z-index: 1000;
+      }
+      
+      /* Image de fond en div réel - Solution radicale */
+      .background-image-fixed {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: url('/assets/img/hero/chauffeur-luxe-background.webp') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: fixed !important;
+        background-repeat: no-repeat !important;
+        opacity: 0.7 !important;
+        z-index: -2 !important;
+        filter: brightness(0.85) contrast(1.1) saturate(1.2) !important;
+        pointer-events: none !important;
+        display: block !important;
+        visibility: visible !important;
+        will-change: transform !important;
+      }
+      
+      @media (max-width: 768px) {
+        .background-image-fixed {
+          background-attachment: scroll !important; /* Pas de fixed sur mobile pour performance */
+          opacity: 0.65 !important;
+          filter: brightness(0.80) contrast(1.1) saturate(1.1) !important;
+        }
       }
     </style>
     
@@ -270,6 +299,9 @@ if (currentLang === 'fr') {
     <script src="/assets/js/cookies.js" defer></script>
   </head>
   <body data-page={currentPage}>
+    <!-- Image de fond en div réel (solution radicale) -->
+    <div id="background-image" class="background-image-fixed"></div>
+    
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <Header currentPage={currentPage} />
     {breadcrumbItems && breadcrumbItems.length > 0 && (
@@ -279,8 +311,7 @@ if (currentLang === 'fr') {
       <slot />
     </main>
     <Footer />
-    <WhatsAppButton />
-    <Chatbot />
+    <FloatingElements />
   </body>
 </html>
 

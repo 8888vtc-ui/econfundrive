@@ -220,12 +220,10 @@
 
 <style>
   .chatbot-toggle {
-    position: fixed !important;
+    position: absolute !important; /* Position absolute dans le wrapper */
     top: calc(50% - 60px) !important; /* MILIEU VERTICAL moins 60px (pour laisser de l'espace avec WhatsApp) */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
-    right: auto !important;
-    bottom: auto !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -242,19 +240,25 @@
     font-size: 0.9rem !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
     border: 2px solid rgba(255, 255, 255, 0.2) !important;
-    z-index: 9999 !important;
+    z-index: 10000 !important; /* Juste en dessous de WhatsApp */
     transition: transform 0.2s, box-shadow 0.2s !important;
     min-height: 44px !important;
     min-width: auto !important;
     white-space: nowrap !important;
-    will-change: transform !important;
-    backface-visibility: visible !important;
     pointer-events: auto !important;
+    overflow: visible !important; /* Pas de clipping */
   }
 
   .chatbot-toggle:hover {
     transform: translateY(-50%) translateY(-2px) !important;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  /* Fix clipping sur PC - utiliser vh au lieu de calc avec % */
+  @media (min-width: 769px) {
+    .chatbot-toggle {
+      top: calc(50vh - 60px) !important; /* Utiliser vh au lieu de % */
+    }
   }
 
   .chatbot-toggle.active {
@@ -274,11 +278,10 @@
   }
 
   .chatbot-container {
-    position: fixed !important;
+    position: absolute !important; /* Position absolute dans le wrapper */
     top: calc(50% - 20px) !important; /* MILIEU VERTICAL */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
-    right: auto !important;
     width: 380px !important;
     max-width: calc(100vw - 40px) !important;
     max-height: calc(100vh - 100px) !important;
@@ -287,12 +290,19 @@
     border: 2px solid rgba(212, 175, 55, 0.3) !important;
     border-radius: 16px !important;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
-    z-index: 9998 !important;
+    z-index: 9999 !important; /* Juste en dessous du toggle */
     display: none !important;
     flex-direction: column !important;
     overflow: hidden !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+  
+  /* Fix clipping sur PC */
+  @media (min-width: 769px) {
+    .chatbot-container {
+      top: calc(50vh - 20px) !important; /* Utiliser vh au lieu de % */
+    }
   }
 
   .chatbot-container.open {
@@ -456,17 +466,22 @@
 
          @media (max-width: 768px) {
            .chatbot-toggle {
-             top: calc(50% - 60px) !important; /* MILIEU VERTICAL sur mobile aussi */
+             /* Sur mobile, utiliser vh au lieu de % pour éviter les bugs */
+             top: calc((100vh - 44px) / 2 - 60px) !important;
              left: 15px !important;
-             transform: translateY(-50%) !important;
+             transform: none !important; /* Pas de transform sur mobile */
              padding: 10px 14px !important;
              font-size: 0.85rem !important;
              min-height: 44px !important;
              gap: 6px !important;
              font-weight: 600 !important;
-             z-index: 9999 !important;
+             z-index: 10000 !important;
              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
              border: 2px solid rgba(255, 255, 255, 0.2) !important;
+           }
+           
+           .chatbot-toggle:hover {
+             transform: translateY(-2px) !important; /* Pas de translateY(-50%) sur mobile */
            }
            
            .chatbot-toggle svg {
@@ -475,15 +490,14 @@
            }
 
            .chatbot-container {
-             position: fixed !important;
-             top: 50% !important;
+             position: absolute !important; /* Dans le wrapper */
+             top: calc((100vh - 44px) / 2 - 20px) !important; /* Utiliser vh */
              left: 15px !important;
-             transform: translateY(-50%) !important;
-             right: auto !important;
+             transform: none !important; /* Pas de transform sur mobile */
              width: calc(100vw - 30px) !important;
              max-width: 400px !important;
              max-height: calc(100vh - 90px) !important;
-             z-index: 9998 !important;
+             z-index: 9999 !important;
            }
          }
 </style>

@@ -1,5 +1,5 @@
 ---
-// WhatsApp Button - Pas fixe, position normale
+// WhatsApp Button - Position relative dans FloatingElements wrapper
 ---
 
 <a 
@@ -8,20 +8,19 @@
   aria-label="Demander un devis sur WhatsApp" 
   target="_blank" 
   rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
+  <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
     <path d="M12.04 2C6.58 2 2.17 6.41 2.17 11.87c0 2.09.61 4.02 1.78 5.71L2 22l4.56-1.48A9.84 9.84 0 0 0 12.04 22C17.5 22 21.9 17.59 21.9 12.13 21.9 6.67 17.5 2.26 12.04 2zm0 17.77c-1.7 0-3.35-.5-4.77-1.45l-.34-.22-2.71.88.9-2.64-.22-.35A7.67 7.67 0 0 1 4.37 11.9c0-4.23 3.44-7.67 7.67-7.67 4.22 0 7.66 3.44 7.66 7.67 0 4.23-3.44 7.67-7.66 7.67zm4.19-5.75c-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.23-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.11-.97-.36-1.85-1.13-.69-.61-1.15-1.37-1.28-1.6-.13-.23-.01-.35.1-.46.1-.1.23-.27.34-.4.11-.13.15-.23.23-.38.08-.15.04-.28-.02-.39-.06-.11-.51-1.23-.7-1.69-.18-.43-.37-.37-.51-.38h-.43c-.15 0-.4.06-.61.28-.21.23-.8.78-.8 1.9 0 1.11.82 2.19.94 2.34.11.15 1.6 2.44 3.89 3.42.54.23.96.37 1.28.48.54.17 1.03.15 1.42.09.43-.07 1.36-.55 1.55-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.16-.44-.27z" fill="currentColor"/>
   </svg>
   <span class="whatsapp-label">💬 Demander un devis</span>
 </a>
 
 <style>
+  /* Position relative dans le wrapper FloatingElements */
   .whatsapp-button {
-    position: fixed !important;
+    position: absolute !important;
     top: 50% !important; /* MILIEU VERTICAL */
     left: 20px !important; /* À GAUCHE */
     transform: translateY(-50%) !important; /* Centrer verticalement */
-    bottom: auto !important;
-    right: auto !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -37,13 +36,11 @@
     font-size: 0.9rem !important;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    z-index: 10000 !important;
+    z-index: 10001 !important; /* Le plus haut */
     min-height: 44px !important;
     min-width: auto !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
     white-space: nowrap !important;
-    will-change: transform !important;
-    backface-visibility: visible !important;
     pointer-events: auto !important;
   }
 
@@ -53,8 +50,8 @@
   }
 
   .whatsapp-button svg {
-    width: 20px !important; /* RÉDUIT de 32px */
-    height: 20px !important; /* RÉDUIT de 32px */
+    width: 20px !important;
+    height: 20px !important;
     flex-shrink: 0;
   }
 
@@ -65,13 +62,18 @@
 
   @media (max-width: 768px) {
     .whatsapp-button {
-      top: 50% !important; /* MILIEU VERTICAL sur mobile aussi */
+      /* Sur mobile, utiliser vh au lieu de % pour éviter les bugs */
+      top: calc((100vh - 44px) / 2) !important;
       left: 15px !important;
-      transform: translateY(-50%) !important;
+      transform: none !important; /* Pas de transform sur mobile */
       padding: 10px 14px !important;
       font-size: 0.85rem !important;
       min-height: 44px !important;
       gap: 6px !important;
+    }
+    
+    .whatsapp-button:hover {
+      transform: translateY(-2px) !important; /* Pas de translateY(-50%) sur mobile */
     }
     
     .whatsapp-button svg {
@@ -80,4 +82,3 @@
     }
   }
 </style>
-
