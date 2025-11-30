@@ -16,22 +16,24 @@
 
 <style>
   .whatsapp-button {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 20px;
-    display: flex;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     align-items: center;
     gap: 8px;
     padding: 12px 20px;
-    background: #25D366;
-    color: white;
+    background: #25D366 !important;
+    color: white !important;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
-    z-index: 1000;
+    z-index: 10000;
   }
 
   .whatsapp-button:hover {
