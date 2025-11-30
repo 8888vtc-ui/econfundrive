@@ -467,9 +467,9 @@
          @media (max-width: 768px) {
            .chatbot-toggle {
              position: fixed !important; /* FIXE DIRECT sur mobile */
-             top: calc(50% - 60px) !important; /* MILIEU VERTICAL */
+             top: calc((100vh - 44px) / 2 - 60px) !important; /* MILIEU VERTICAL SANS TRANSFORM */
              left: 15px !important;
-             transform: translateY(-50%) !important; /* Centrer verticalement */
+             transform: none !important; /* SUPPRIMÉ - pas de transform sur mobile */
              padding: 10px 14px !important;
              font-size: 0.85rem !important;
              min-height: 44px !important;
@@ -484,7 +484,7 @@
            }
            
            .chatbot-toggle:hover {
-             transform: translateY(-50%) translateY(-2px) !important;
+             transform: translateY(-2px) !important; /* Pas de translateY(-50%) */
            }
            
            .chatbot-toggle svg {
@@ -494,9 +494,9 @@
 
            .chatbot-container {
              position: fixed !important; /* FIXE DIRECT sur mobile */
-             top: calc(50% - 20px) !important; /* MILIEU VERTICAL */
+             top: calc((100vh - 44px) / 2 - 20px) !important; /* MILIEU VERTICAL SANS TRANSFORM */
              left: 15px !important;
-             transform: translateY(-50%) !important; /* Centrer verticalement */
+             transform: none !important; /* SUPPRIMÉ - pas de transform sur mobile */
              width: calc(100vw - 30px) !important;
              max-width: 400px !important;
              max-height: calc(100vh - 90px) !important;
