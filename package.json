@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "openai": "^6.9.1"
-  }
+    "openai": "^6.9.1",
+    "sharp": "^0.34.5"
+  },
+  "name": "windsurf-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "organize-images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8888vtc-ui/econfundrive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8888vtc-ui/econfundrive/issues"
+  },
+  "homepage": "https://github.com/8888vtc-ui/econfundrive#readme",
+  "devDependencies": {}
 }

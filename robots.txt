@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.davidchemla-vtc.fr/sitemap.xml
+Sitemap: https://www.ecofundrive.com/sitemap.xml

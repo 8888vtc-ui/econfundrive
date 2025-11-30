@@ -42,13 +42,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
 
-    if (!hasChatToggle || !hasChatPanel) {
+    if (!hasChatToggle) {
       const toggle = doc.querySelector(".chatbot-toggle");
-      const panel = doc.querySelector(".chatbot-panel");
-      if (!hasChatToggle && toggle) {
+      if (toggle) {
         document.body.appendChild(toggle.cloneNode(true));
       }
-      if (!hasChatPanel && panel) {
+    }
+
+    if (!hasChatPanel) {
+      const panel = doc.querySelector(".chatbot-panel");
+      if (panel) {
         document.body.appendChild(panel.cloneNode(true));
       }
     }
