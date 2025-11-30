@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "VTC Nice : chauffeur privé & transferts aéroport NCE 24h/24 | ECOFUNDRIVE";
+const description = "Service VTC premium à Nice : transferts aéroport Nice Côte d’Azur (NCE), gares, hôtels et quartiers résidentiels, ainsi que trajets business vers Cannes, Monaco et le golfe de Saint‑Tropez. Véhicules berlines et vans haut de gamme. Réservation au moins 4h avant le départ, en français ou en anglais.";
+const canonical = "/vtc-nice";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-nice"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/services">Services</a> › <span>VTC Nice</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">VTC Nice</div>
+          <h1 class="section-title">VTC à Nice : chauffeur privé aéroport &amp; centre‑ville</h1>
+          <p>Basé à proximité de l’aéroport de Nice Côte d’Azur (NCE), je propose des transferts rapides et fiables entre l’aéroport, le centre‑ville, les quartiers résidentiels et l’ensemble de la Côte d’Azur. Spécialiste des trajets business vers Cannes, Monaco et le golfe de Saint‑Tropez, je tiens compte des temps de trajet réels et des conditions de circulation pour vous faire arriver à l’heure, sereinement.</p>
+        </div>
+
+        <div class="image-grid">
+          <picture>
+            <source srcset="/assets/img/optimized/hero/hero-aeroport-nice.webp" type="image/webp">
+            <img src="/assets/img/hero/hero-aeroport-nice.webp" 
+                 alt="Berline VTC à l’aéroport de Nice Côte d’Azur" 
+                 width="600" 
+                 height="400" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src="/assets/img/optimized/hero/hero-aeroport-nice.webp";" loading="lazy">
+          </picture>
+          <picture>
+            <source srcset="/assets/img/optimized/destinations/plage-beau-rivage-nice.webp" type="image/jpeg">
+            <img src="/assets/img/destinations/plage-beau-rivage-nice.jpg" 
+                 alt="Chauffeur privé VTC à Nice centre‑ville" 
+                 width="600" 
+                 height="400" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src="/assets/img/optimized/destinations/plage-beau-rivage-nice.webp";" loading="lazy">
+          </picture>
+          <picture>
+            <source srcset="/assets/img/optimized/hero/hero-business.webp" type="image/webp">
+            <img src="/assets/img/hero/hero-business.webp" 
+                 alt="Intérieur premium d’une voiture VTC à Nice" 
+                 width="600" 
+                 height="400" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src="/assets/img/optimized/hero/hero-business.webp";" loading="lazy">
+          </picture>
+          <picture>
+            <source srcset="/assets/img/optimized/destinations/vtc-nice-cannes.webp" type="image/jpeg">
+            <img src="/assets/img/destinations/vtc-nice-cannes.jpg" 
+                 alt="Trajet VTC Nice – Monaco avec vue sur la mer" 
+                 width="600" 
+                 height="400" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src="/assets/img/optimized/destinations/vtc-nice-cannes.webp";" loading="lazy">
+          </picture>
+          <img src="/assets/img/destinations/plage-beau-rivage-nice.jpg" 
+               alt="VTC Nice - Vue sur la plage du Beau Rivage" 
+               loading="eager"
+               decoding="async"
+               width="800"
+               height="600"
+               style="width:100%;height:auto;display:block">
+          <img src="/assets/img/destinations/vieux-nice.jpg" 
+               alt="Vieux Nice - Cours Saleya" 
+               loading="eager"
+               decoding="async"
+               width="800"
+               height="600"
+               style="width:100%;height:auto;display:block">
+          <img src="/assets/img/destinations/promenade-des-anglais.jpg" 
+               alt="Promenade des Anglais à Nice" 
+               loading="eager"
+               decoding="async"
+               width="800"
+               height="600"
+               style="width:100%;height:auto;display:block">
+        </div>
+
+        <section class="section" id="aeroport" style="padding-top:2rem">
+          <h2>Transferts aéroport Nice Côte d’Azur (NCE)</h2>
+          <p>Votre chauffeur vous attend à l’intérieur du terminal avec un panneau nominatif, suit l’heure réelle d’arrivée de votre vol et vous accompagne jusqu’au véhicule. Temps de trajet indicatif :</p>
+          <ul>
+            <li>Nice aéroport ⇄ Nice centre‑ville : ~20 à 30 min selon le trafic.</li>
+            <li>Nice aéroport ⇄ Monaco : ~35 à 45 min.</li>
+            <li>Nice aéroport ⇄ Cannes : ~35 à 50 min.</li>
+            <li>Nice aéroport ⇄ Fréjus / Sainte‑Maxime / Saint‑Tropez : ~1h30 à 2h30 selon le trafic et la saison.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>VTC Nice centre‑ville & quartiers</h2>
+          <p>Prise en charge devant votre hôtel, appartement ou bureau : Vieux‑Nice, Promenade des Anglais, Cimiez, Mont Boron, Fabron, Gairaut, collines niçoises…</p>
+          <p>Idéal pour vos rendez‑vous professionnels, sorties au restaurant, soirées ou excursions vers Cannes, Antibes, Monaco et l’arrière‑pays.</p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Pourquoi choisir un VTC à Nice plutôt qu'un taxi&nbsp;?</h2>
+          <ul>
+            <li><strong>Prix transparents</strong> : Prix annoncés à l'avance pour les principaux trajets (aéroports, gares, villes voisines). <a href="/vtc-aeroport-nice-prix">Consultez nos tarifs aéroport Nice</a>.</li>
+            <li>Véhicules récents, proprement entretenus, avec Wi‑Fi, eau et chargeurs à bord.</li>
+            <li>Prise en charge personnalisée, suivi de vol, service porte‑à‑porte.</li>
+            <li><strong>Service 24h/24</strong> : Disponible jour et nuit pour vos besoins urgents. <a href="/chauffeur-24h-nice">En savoir plus sur le service 24h/24</a>.</li>
+            <li><strong>Chauffeur bilingue</strong> : Service en français et anglais pour clients internationaux. <a href="/chauffeur-anglais-nice">English speaking driver</a>.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Réserver votre VTC à Nice</h2>
+          <p>Pour bloquer votre chauffeur sur Nice, remplissez le <a href="/reservation">formulaire de réservation</a> ou utilisez le bouton WhatsApp pour une réponse rapide. Mentionnez votre adresse de départ, votre destination, la date, l’heure, le nombre de passagers et de bagages. Les départs doivent être réservés au minimum 4 heures avant l’horaire de prise en charge&nbsp;; pour une demande plus urgente, contactez‑nous directement par téléphone ou WhatsApp afin de vérifier la disponibilité.</p>
+          <p>Vous pouvez aussi découvrir nos autres destinations : <a href="/vtc-cannes">VTC Cannes</a>, <a href="/vtc-monaco">VTC Monaco</a>, <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.</p>
+          <p>Consultez aussi : <a href="/vtc-aeroport-nice-prix">Prix VTC aéroport Nice</a> | <a href="/chauffeur-24h-nice">Service 24h/24</a> | <a href="/tarifs">Tous nos tarifs</a></p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>FAQ VTC Nice</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">Faut‑il réserver mon VTC à Nice à l’avance&nbsp;?</div>
+              <div class="faq-answer">
+                <p>La réservation à l’avance est fortement recommandée pour garantir la disponibilité, notamment en haute saison, lors des congrès et festivals sur la Côte d’Azur.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Pouvez‑vous assurer des trajets de nuit depuis ou vers Nice&nbsp;?</div>
+              <div class="faq-answer">
+                <p>Oui, le service fonctionne 24h/24 et 7j/7. Pour les départs très matinaux ou les arrivées tardives, indiquez simplement vos horaires lors de la demande.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Est‑il possible de faire plusieurs arrêts sur un même trajet&nbsp;?</div>
+              <div class="faq-answer">
+                <p>Oui, il suffit de préciser vos différentes étapes (ex. récupération d’un collègue à Nice Ouest, arrêt à Antibes, puis Monaco). Un devis adapté vous sera proposé.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Puis‑je réserver un aller‑retour aéroport Nice ⇄ centre ou autre ville&nbsp;?</div>
+              <div class="faq-answer">
+                <p>Oui, vous pouvez réserver simultanément l’aller et le retour (par exemple arrivée à Nice aéroport puis retour quelques jours plus tard). Indiquez simplement les deux dates et horaires dans votre demande.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Couvrez‑vous aussi Fréjus, Sainte‑Maxime et Saint‑Tropez depuis Nice&nbsp;?</div>
+              <div class="faq-answer">
+                <p>Oui, des trajets longue distance sont possibles entre Nice (ou l’aéroport) et le Golfe de Saint‑Tropez (Fréjus, Sainte‑Maxime, Saint‑Tropez…). Les temps de trajet et les tarifs dépendent fortement de la saison et des horaires, un devis personnalisé est donc systématique.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Quels sont les moyens de paiement acceptés pour un VTC à Nice&nbsp;?</div>
+              <div class="faq-answer">
+                <p>Les principaux paiements se font par carte bancaire ou en espèces. Pour certains clients professionnels, une facturation regroupée ou un paiement par virement peut être envisagé, sur accord préalable.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

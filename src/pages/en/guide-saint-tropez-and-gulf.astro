@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Discovering Saint-Tropez and the Gulf | Guide";
+const description = "English guide to reach Saint-Tropez and the Gulf area, enjoy the beaches and villages, and avoid traffic and parking stress.";
+const canonical = "/en/guide-saint-tropez-and-gulf.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-saint-tropez-and-gulf"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Saint-Tropez and the Gulf</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Saint-Tropez guide</div>
+          <h1 class="section-title">Discovering Saint-Tropez and the Gulf</h1>
+          <p>Reaching Saint-Tropez can take time in high season. With a bit of planning, you can still enjoy the area without turning your stay into a busy commute.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Reaching the area</h2>
+          <p>Traffic can be heavy on certain days and at certain hours. If possible, try to:</p>
+          <ul>
+            <li>avoid peak weekend times for your main transfers;</li>
+            <li>group several activities on the same day instead of going back and forth;</li>
+            <li>clarify your pick-up and drop-off locations with your driver.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Enjoying beaches and villages</h2>
+          <p>The Gulf of Saint-Tropez offers a mix of beaches, small villages and viewpoints. A private driver can help you move between them without worrying about parking or narrow roads.</p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Evenings and late returns</h2>
+          <p>If you plan to go out for dinner or to a club, it is usually easier to book your return in advance. This way you know someone will be waiting for you at the agreed time and place.</p>
+          <p>To explain your plans, you can simply use the <a href="/reservation">booking form</a> and mention the main locations and approximate times.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

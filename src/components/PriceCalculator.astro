@@ -1,0 +1,222 @@
+---
+// Calculateur de prix interactif pour estimation rapide
+---
+
+<div class="price-calculator">
+  <h3>Estimation rapide de prix</h3>
+  <form id="price-calc-form" class="calc-form">
+    <div class="calc-row">
+      <label for="calc-from">De</label>
+      <input type="text" id="calc-from" placeholder="Ex: Aéroport Nice" required>
+    </div>
+    <div class="calc-row">
+      <label for="calc-to">Vers</label>
+      <input type="text" id="calc-to" placeholder="Ex: Monaco" required>
+    </div>
+    <div class="calc-row">
+      <label for="calc-passengers">Passagers</label>
+      <input type="number" id="calc-passengers" min="1" max="8" value="2" required>
+    </div>
+    <button type="submit" class="btn-calc">Estimer le prix</button>
+  </form>
+  <div id="calc-result" class="calc-result" style="display: none;">
+    <div class="calc-price">
+      <span class="calc-label">Prix estimé:</span>
+      <span class="calc-amount" id="calc-amount">-- €</span>
+    </div>
+    <p class="calc-note">* Estimation indicative. Prix final selon trajet exact et options.</p>
+    <a href="/reservation" class="btn-calc-link">Réserver ce trajet</a>
+  </div>
+</div>
+
+<style>
+  .price-calculator {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .price-calculator h3 {
+    color: var(--luxe-gold, #d4af37);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .calc-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .calc-row label {
+    color: var(--luxe-gray, #e5e7eb);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .calc-row input {
+    padding: 0.75rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    background: rgba(10, 10, 10, 0.5);
+    color: var(--luxe-white, #ffffff);
+    font-size: 1rem;
+  }
+
+  .calc-row input:focus {
+    outline: none;
+    border-color: var(--luxe-gold, #d4af37);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  }
+
+  .btn-calc {
+    background: linear-gradient(135deg, var(--luxe-gold, #d4af37), var(--luxe-gold-dark, #b8941f));
+    color: var(--luxe-black, #0a0a0a);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+
+  .btn-calc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .calc-result {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .calc-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .calc-label {
+    color: var(--luxe-gray, #e5e7eb);
+    font-size: 1rem;
+  }
+
+  .calc-amount {
+    color: var(--luxe-gold, #d4af37);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .calc-note {
+    color: var(--luxe-gray-dark, #6b7280);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-calc-link {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--luxe-gold, #d4af37);
+    color: var(--luxe-gold, #d4af37);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-calc-link:hover {
+    background: var(--luxe-gold, #d4af37);
+    color: var(--luxe-black, #0a0a0a);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Calculateur de prix simplifié
+  const calcForm = document.getElementById('price-calc-form');
+  const calcResult = document.getElementById('calc-result');
+  const calcAmount = document.getElementById('calc-amount');
+
+  if (calcForm) {
+    // Tarifs de base (en euros)
+    const baseRates = {
+      'nice': { 'monaco': 80, 'cannes': 60, 'saint-tropez': 150, 'default': 70 },
+      'monaco': { 'nice': 80, 'cannes': 100, 'saint-tropez': 180, 'default': 90 },
+      'cannes': { 'nice': 60, 'monaco': 100, 'saint-tropez': 120, 'default': 70 },
+      'aeroport nice': { 'nice': 40, 'monaco': 80, 'cannes': 60, 'default': 50 },
+      'default': 70
+    };
+
+    calcForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const from = document.getElementById('calc-from').value.toLowerCase();
+      const to = document.getElementById('calc-to').value.toLowerCase();
+      const passengers = parseInt(document.getElementById('calc-passengers').value) || 2;
+
+      // Détection simple des villes
+      let fromKey = 'default';
+      let toKey = 'default';
+
+      if (from.includes('nice') || from.includes('aéroport') || from.includes('aeroport')) {
+        fromKey = from.includes('aéroport') || from.includes('aeroport') ? 'aeroport nice' : 'nice';
+      } else if (from.includes('monaco')) {
+        fromKey = 'monaco';
+      } else if (from.includes('cannes')) {
+        fromKey = 'cannes';
+      }
+
+      if (to.includes('nice')) {
+        toKey = 'nice';
+      } else if (to.includes('monaco')) {
+        toKey = 'monaco';
+      } else if (to.includes('cannes')) {
+        toKey = 'cannes';
+      } else if (to.includes('saint-tropez') || to.includes('saint tropez')) {
+        toKey = 'saint-tropez';
+      }
+
+      // Calcul du prix
+      let price = baseRates[fromKey]?.[toKey] || baseRates[fromKey]?.['default'] || baseRates['default'];
+      
+      // Ajustement selon nombre de passagers (van si >4)
+      if (passengers > 4) {
+        price = price * 1.3; // +30% pour van
+      }
+
+      // Arrondir à la dizaine supérieure
+      price = Math.ceil(price / 10) * 10;
+
+      // Afficher le résultat
+      calcAmount.textContent = `${price} €`;
+      calcResult.style.display = 'block';
+      calcResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+</script>
+

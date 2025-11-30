@@ -1,0 +1,7 @@
+{
+  "siteId": "2a354129-00a5-4128-9c1e-8236192b5bfa",
+  "buildCommand": "npm run build",
+  "publishDirectory": "dist",
+  "functionsDirectory": "netlify/functions"
+}
+

@@ -1,0 +1,76 @@
+---
+import Logo from './Logo.astro';
+
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = "" } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container navbar">
+    <div class="nav-brand">
+      <a href="/" class="nav-brand-link" aria-label="ECOFUNDRIVE - Retour à l'accueil">
+        <Logo />
+      </a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+      <span>☰</span>
+    </button>
+    <nav class="nav-links" aria-label="Navigation principale" role="navigation">
+      <a href="/" class={currentPage === "index" ? "active" : ""} aria-current={currentPage === "index" ? "page" : undefined}>Accueil</a>
+      <a href="/services" class={currentPage === "services" ? "active" : ""} aria-current={currentPage === "services" ? "page" : undefined}>Services</a>
+      <a href="/a-propos" class={currentPage === "a-propos" ? "active" : ""} aria-current={currentPage === "a-propos" ? "page" : undefined}>Qui nous sommes</a>
+      <a href="/contact" class={currentPage === "contact" ? "active" : ""} aria-current={currentPage === "contact" ? "page" : undefined}>Contact</a>
+    </nav>
+    <a class="btn-primary" href="/reservation" aria-label="Réserver un trajet VTC">Réserver maintenant</a>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('open');
+    });
+  }
+</script>
+
+<style>
+  .nav-brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-links a.active {
+    color: var(--accent-gold);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--bg-dark);
+      flex-direction: column;
+      padding: 2rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-links.open {
+      transform: translateX(0);
+    }
+  }
+</style>
+

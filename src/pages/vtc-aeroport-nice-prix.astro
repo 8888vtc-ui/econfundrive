@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PriceCalculator from '../components/PriceCalculator.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+
+const title = "Prix VTC Aéroport Nice | Tarifs Transferts NCE - ECOFUNDRIVE";
+const description = "Tarifs VTC pour transferts aéroport Nice (NCE) : prix indicatifs vers Nice centre, Cannes, Monaco, Saint-Tropez. Devis gratuit en ligne, réservation 24h/24.";
+const canonical = "/vtc-aeroport-nice-prix";
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Tarifs", url: "/tarifs" },
+  { name: "Prix Aéroport Nice", url: "/vtc-aeroport-nice-prix" }
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-aeroport-nice-prix"
+  canonical={canonical}
+>
+  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> › <a href="/tarifs">Tarifs</a> › <span>Prix Aéroport Nice</span>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Tarifs aéroport</div>
+        <h1 class="section-title">Prix VTC Aéroport Nice (NCE) : Tarifs Transferts</h1>
+        <p>Découvrez nos tarifs indicatifs pour les transferts depuis l'aéroport Nice Côte d'Azur (NCE) vers les principales destinations de la Côte d'Azur. Prix transparents, devis gratuit, réservation en ligne.</p>
+      </div>
+
+      <PriceCalculator />
+
+      <div class="card-grid" style="margin-top: 2rem;">
+        <div class="card">
+          <h3>Nice Aéroport → Nice Centre</h3>
+          <p><strong>À partir de 45 €</strong></p>
+          <p>Transfert rapide vers le centre-ville, Vieux-Nice, Promenade des Anglais, gare SNCF.</p>
+          <a href="/reservation" class="btn-outline-light">Réserver</a>
+        </div>
+
+        <div class="card">
+          <h3>Nice Aéroport → Cannes</h3>
+          <p><strong>À partir de 95 €</strong></p>
+          <p>Transfert vers Cannes, Croisette, Palais des Festivals, hôtels de luxe.</p>
+          <a href="/transfert-nice-aeroport-cannes" class="btn-outline-light">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <h3>Nice Aéroport → Monaco</h3>
+          <p><strong>À partir de 100 €</strong></p>
+          <p>Transfert vers Monaco, Monte-Carlo, Casino, port Hercule, hôtels prestigieux.</p>
+          <a href="/transfert-nice-aeroport-monaco" class="btn-outline-light">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <h3>Nice Aéroport → Saint-Tropez</h3>
+          <p><strong>À partir de 180 €</strong></p>
+          <p>Transfert longue distance vers Saint-Tropez, Ramatuelle, Pampelonne.</p>
+          <a href="/transfert-nice-aeroport-saint-tropez" class="btn-outline-light">En savoir plus</a>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Facteurs influençant le prix</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Type de véhicule</h3>
+            <p>Berline (1-3 pers.) : tarif de base<br>Van (4-7 pers.) : +30% environ</p>
+          </div>
+          <div class="card">
+            <h3>Distance et trajet</h3>
+            <p>Le prix varie selon la distance exacte et le trafic. Un devis précis est toujours fourni.</p>
+          </div>
+          <div class="card">
+            <h3>Options supplémentaires</h3>
+            <p>Siège enfant, bagages volumineux, attente prolongée : suppléments selon les besoins.</p>
+          </div>
+          <div class="card">
+            <h3>Horaires</h3>
+            <p>Service disponible 24h/24. Pas de majoration nuit standard, sauf cas particuliers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Pourquoi choisir ECOFUNDRIVE pour votre transfert aéroport ?</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 1rem;">✅ <strong>Suivi de vol gratuit</strong> : Nous suivons votre vol en temps réel</li>
+          <li style="margin-bottom: 1rem;">✅ <strong>Ponctualité garantie</strong> : Présence 15 min avant votre arrivée</li>
+          <li style="margin-bottom: 1rem;">✅ <strong>Assistance bagages</strong> : Aide au chargement et déchargement</li>
+          <li style="margin-bottom: 1rem;">✅ <strong>Véhicules premium</strong> : Berlines récentes, climatisées, Wi-Fi</li>
+          <li style="margin-bottom: 1rem;">✅ <strong>Prix transparents</strong> : Devis détaillé avant réservation</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><a href="/reservation" class="btn-primary">Réserver votre transfert</a> ou <a href="/contact">nous contacter</a> pour un devis personnalisé.</p>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>FAQ Prix Aéroport Nice</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">Le prix inclut-il l'attente en cas de retard de vol ?</div>
+            <div class="faq-answer">
+              <p>Oui, nous suivons votre vol en temps réel. L'attente standard (jusqu'à 1h après l'atterrissage) est incluse. Au-delà, un supplément peut s'appliquer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Y a-t-il un supplément pour les transferts de nuit ?</div>
+            <div class="faq-answer">
+              <p>Non, pas de majoration standard pour les transferts de nuit. Le service est disponible 24h/24 au même tarif de base.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Comment obtenir un devis précis ?</div>
+            <div class="faq-answer">
+              <p>Utilisez notre <a href="/reservation">formulaire de réservation</a> en indiquant votre adresse exacte de destination. Un devis détaillé vous sera envoyé rapidement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-secondary" style="margin-top: 2rem;">
+        Consultez aussi : <a href="/vtc-nice">VTC Nice</a> | <a href="/tarifs">Tous nos tarifs</a> | <a href="/services">Nos services</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
+<SchemaOrg type="service" serviceName="Transfert Aéroport Nice" serviceDescription="Service de transfert VTC depuis l'aéroport Nice Côte d'Azur (NCE) vers toute la Côte d'Azur" />
+

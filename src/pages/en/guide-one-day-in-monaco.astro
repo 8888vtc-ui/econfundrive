@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "One day in Monaco from the French Riviera | Guide";
+const description = "Ideas in English for a simple one-day visit to Monaco from Nice, Antibes or Cannes: old town, Monte-Carlo and harbour.";
+const canonical = "/en/guide-one-day-in-monaco.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-one-day-in-monaco"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Breadcrumb">
+      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>One day in Monaco</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Monaco guide</div>
+          <h1 class="section-title">One day in Monaco from the French Riviera</h1>
+          <p>Monaco is a classic day trip from Nice, Antibes or Cannes. This guide suggests a simple way to spend a day there, without turning it into a race.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Morning: old town and palace area</h2>
+          <ul>
+            <li>Start with the old town and the palace area.</li>
+            <li>Walk through the small streets and visit a few viewpoints.</li>
+            <li>Take a break in a café before heading down again.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Afternoon: Monte-Carlo and harbour</h2>
+          <ul>
+            <li>Walk around Monte-Carlo and the gardens near the casino.</li>
+            <li>Go down towards the harbour to see the yachts and the bay.</li>
+            <li>Leave some time for a drink or an early dinner before your return.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>How to get to Monaco</h2>
+          <p>You can reach Monaco by train, bus or car from many towns on the French Riviera. A private driver is useful if you want to combine Monaco with photo stops on the scenic roads or a visit to a hilltop village.</p>
+          <p>If you prefer a flexible schedule, you can mention your plan in the <a href="/reservation">booking form</a> and ask for a quote including Monaco and a few stops along the way.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

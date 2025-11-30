@@ -1,0 +1,15 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+  base = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
+
+[functions.environment]
+  IMAGE_PROMPT_VTC = "Photo réaliste d'une berline ou d'un van de luxe utilisé comme chauffeur privé VTC dans une ville côtière méditerranéenne générique, chauffeur discret en tenue business, ambiance élégante mais sobre, sans aucun logo de marque, sans nom de lieu réel, sans monument ou bâtiment clairement reconnaissable."
+

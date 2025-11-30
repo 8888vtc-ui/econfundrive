@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Contact chauffeur VTC – Côte d'Azur | ECOFUNDRIVE";
+const description = "Contactez votre chauffeur privé VTC pour la Côte d'Azur : Nice, Cannes, Monaco, Saint‑Tropez. Devis entreprises, demandes urgentes, questions pratiques.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="contact"
+  canonical="/contact"
+>
+  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> › <span>Contact</span>
+  </nav>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Nous écrire</div>
+        <h1 class="section-title">Contact & devis VTC</h1>
+        <p>Utilisez ce formulaire pour toute question, demande de devis entreprise ou information sur nos services VTC sur la Côte d'Azur. Pour les sociétés, il est possible d'étudier des contrats récurrents avec facturation mensuelle.</p>
+        <p>Pour une réservation directe, utilisez notre <a href="/reservation">formulaire de réservation</a>. Consultez aussi nos <a href="/services">services</a>, nos <a href="/tarifs">tarifs</a> et <a href="/avis-clients">les avis clients</a>.</p>
+      </div>
+
+      <section class="section" style="padding-top:1.5rem">
+        <h2>Coordonnées & disponibilités</h2>
+        <p><strong>Téléphone :</strong> <a href="tel:+33616552811">06 16 55 28 11</a></p>
+        <p><strong>WhatsApp :</strong> utilisez le bouton en bas à droite pour nous écrire directement.</p>
+        <p><strong>Horaires :</strong> service de transport disponible 24h/24 et 7j/7, sur réservation, avec un délai minimum de 4 heures avant l'horaire de prise en charge (sous réserve de disponibilité).</p>
+      </section>
+
+      <section class="section" style="padding-top:1.5rem">
+        <h2>Localisation du siège</h2>
+        <p>ECOFUNDRIVE est basé à Villeneuve‑Loubet plage (Marina Baie des Anges), au cœur de la Côte d'Azur, pour intervenir rapidement entre Nice, Cannes, Antibes, Monaco et Saint‑Tropez.</p>
+      </section>
+
+      <div class="card" style="margin-top:1.5rem">
+        <form class="booking-form" method="post" action="#">
+          <div class="form-row">
+            <label for="nom">Nom et prénom</label>
+            <input id="nom" name="nom" type="text" required>
+          </div>
+          <div class="form-row">
+            <label for="type-demande">Type de demande</label>
+            <select id="type-demande" name="type-demande" required>
+              <option value="">Sélectionnez…</option>
+              <option value="particulier">Trajet particulier</option>
+              <option value="entreprise">Devis entreprise</option>
+              <option value="evenement">Mariage / événement</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="telephone-contact">Téléphone</label>
+            <input id="telephone-contact" name="telephone" type="tel" required>
+          </div>
+          <div class="form-row">
+            <label for="email-contact">Email de contact</label>
+            <input id="email-contact" name="email" type="email" required placeholder="ex. 8888VTC@gmail.com">
+          </div>
+          <div class="form-row">
+            <label for="message-contact">Votre message</label>
+            <textarea id="message-contact" name="message" rows="4" required placeholder="Pour un devis précis : type de trajet, nombre de passagers, dates, villes de départ et de retour, contraintes particulières…"></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn-primary">Envoyer la demande</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

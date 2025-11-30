@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+
+const title = "VTC Entreprise Côte d'Azur | Service Corporate - ECOFUNDRIVE";
+const description = "Service VTC entreprise sur la Côte d'Azur : navettes régulières, accueil clients, déplacements professionnels, facturation mensuelle. Solution corporate sur mesure.";
+const canonical = "/vtc-entreprise-cote-azur";
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "VTC Entreprise", url: "/vtc-entreprise-cote-azur" }
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-entreprise-cote-azur"
+  canonical={canonical}
+>
+  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Entreprise</span>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Service corporate</div>
+        <h1 class="section-title">VTC Entreprise Côte d'Azur : Service Corporate Premium</h1>
+        <p>Solution de transport professionnel sur mesure pour les entreprises basées sur la Côte d'Azur. Navettes régulières, accueil de clients, déplacements business, événements professionnels : un service VTC adapté à vos besoins corporate avec facturation mensuelle possible.</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Navettes régulières</h3>
+          <p>Transport quotidien ou hebdomadaire entre vos sites, aéroports, gares. Planning personnalisé et véhicule dédié.</p>
+        </div>
+        <div class="card">
+          <h3>Accueil clients & partenaires</h3>
+          <p>Service premium pour l'accueil de vos clients, investisseurs, partenaires à l'aéroport ou en gare.</p>
+        </div>
+        <div class="card">
+          <h3>Congrès & séminaires</h3>
+          <p>Transport pendant les événements professionnels : Cannes, Nice, Monaco. Coordination multi-véhicules.</p>
+        </div>
+        <div class="card">
+          <h3>Facturation mensuelle</h3>
+          <p>Pour les partenariats réguliers : facturation mensuelle simplifiée, interlocuteur unique, reporting détaillé.</p>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Nos solutions VTC entreprise</h2>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Navettes inter-sites</h3>
+          <p>Transport régulier entre vos différents sites sur la Côte d'Azur : Nice, Cannes, Sophia-Antipolis, Monaco. Planning fixe ou flexible selon vos besoins.</p>
+          <p><strong>Avantages :</strong> Ponctualité garantie, véhicule dédié, chauffeur identifié, traçabilité complète.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Accueil VIP clients</h3>
+          <p>Service haut de gamme pour l'accueil de vos clients importants : transferts aéroport, accompagnement pendant le séjour, transport vers vos locaux.</p>
+          <p><strong>Avantages :</strong> Image de marque renforcée, confort premium, discrétion professionnelle.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Événements professionnels</h3>
+          <p>Transport pendant les congrès, salons, séminaires : Cannes (Palais des Festivals), Nice (Acropolis), Monaco (Grimaldi Forum).</p>
+          <p><strong>Avantages :</strong> Coordination multi-véhicules, flexibilité horaire, service 24h/24 si besoin.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Déplacements business</h3>
+          <p>Transport de vos collaborateurs pour rendez-vous clients, visites de sites, déplacements professionnels sur la Côte d'Azur.</p>
+          <p><strong>Avantages :</strong> Productivité optimisée, confort de déplacement, facturation simplifiée.</p>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Avantages du service VTC entreprise</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Facturation mensuelle</h3>
+            <p>Pour les partenariats réguliers : facture mensuelle unique avec détail des trajets, TVA, coordonnées de facturation.</p>
+          </div>
+          <div class="card">
+            <h3>Interlocuteur unique</h3>
+            <p>Un contact dédié pour toutes vos demandes : réservations, modifications, questions, reporting.</p>
+          </div>
+          <div class="card">
+            <h3>Reporting détaillé</h3>
+            <p>Suivi complet de vos trajets : dates, heures, distances, coûts. Exportable pour votre comptabilité.</p>
+          </div>
+          <div class="card">
+            <h3>Flexibilité</h3>
+            <p>Adaptation rapide à vos besoins : changements de planning, urgences, événements imprévus.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Tarifs VTC entreprise</h2>
+        <p>Nos tarifs corporate sont adaptés selon :</p>
+        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+          <li style="margin-bottom: 0.5rem;">✓ Volume de trajets (remises volume possibles)</li>
+          <li style="margin-bottom: 0.5rem;">✓ Fréquence (quotidien, hebdomadaire, ponctuel)</li>
+          <li style="margin-bottom: 0.5rem;">✓ Type de service (navette fixe, sur demande, événements)</li>
+          <li style="margin-bottom: 0.5rem;">✓ Durée du partenariat</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><strong>Devis personnalisé gratuit</strong> : Contactez-nous pour une proposition adaptée à vos besoins.</p>
+        <p style="margin-top: 1rem;"><a href="/contact#entreprises" class="btn-primary">Demander un devis entreprise</a></p>
+      </div>
+
+      <div class="section" style="padding-top: 2rem;">
+        <h2>Zones d'intervention entreprise</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Nice & Sophia-Antipolis</h3>
+            <p>Aéroport Nice, centre-ville, technopole, zones d'activité, hôtels d'affaires</p>
+          </div>
+          <div class="card">
+            <h3>Cannes & Mandelieu</h3>
+            <p>Palais des Festivals, aéroport, zones d'activité, hôtels de congrès</p>
+          </div>
+          <div class="card">
+            <h3>Monaco</h3>
+            <p>Monte-Carlo, zones d'affaires, hôtels prestigieux, Grimaldi Forum</p>
+          </div>
+          <div class="card">
+            <h3>Région PACA</h3>
+            <p>Trajets longue distance vers Marseille, Aix-en-Provence, Toulon sur devis</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 2rem; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--luxe-gold, #d4af37);">
+        <h3 style="color: var(--luxe-gold, #d4af37);">Demande de devis entreprise</h3>
+        <p>Pour un devis personnalisé adapté à vos besoins :</p>
+        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+          <li style="margin-bottom: 0.5rem;">📧 <a href="/contact#entreprises">Formulaire contact entreprise</a></li>
+          <li style="margin-bottom: 0.5rem;">📞 <a href="tel:+33616552811">06 16 55 28 11</a></li>
+          <li style="margin-bottom: 0.5rem;">💬 WhatsApp (bouton en bas à droite)</li>
+        </ul>
+        <p style="margin-top: 1rem;">Réponse sous 24h avec proposition détaillée.</p>
+      </div>
+
+      <p class="hero-secondary" style="margin-top: 2rem;">
+        Voir aussi : <a href="/services">Tous nos services</a> | <a href="/contact">Contact</a> | <a href="/tarifs">Tarifs</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
+<SchemaOrg type="service" serviceName="VTC Entreprise Côte d'Azur" serviceDescription="Service de transport VTC pour entreprises sur la Côte d'Azur : navettes régulières, accueil clients, déplacements business, facturation mensuelle" />
+

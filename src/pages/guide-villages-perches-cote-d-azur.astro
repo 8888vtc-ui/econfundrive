@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Villages perchés de la Côte d’Azur en une journée | Guide";
+const description = "Idées de circuit pour découvrir les plus beaux villages perchés de la Côte d’Azur en une journée, avec conseils de transport et d’organisation.";
+const canonical = "/guide-villages-perches-cote-d-azur.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-villages-perches-cote-d-azur"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/guides">Guides VTC</a> › <span>Villages perchés</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Guide excursions</div>
+          <h1 class="section-title">Les villages perchés de la Côte d’Azur en une journée</h1>
+          <p>Saint‑Paul‑de‑Vence, Gourdon, Èze… Les villages perchés sont incontournables lors d’un séjour sur la Côte d’Azur. Voici quelques pistes pour organiser une journée de découverte.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Exemples de villages à combiner</h2>
+          <ul>
+            <li>Saint‑Paul‑de‑Vence pour les galeries et les remparts.</li>
+            <li>Gourdon pour la vue panoramique sur la vallée et la mer.</li>
+            <li>Èze pour son village médiéval et ses jardins suspendus.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Pourquoi utiliser un VTC pour ce type de circuit&nbsp;?</h2>
+          <ul>
+            <li>Vous pouvez enchaîner plusieurs villages sans vous soucier des routes sinueuses.</li>
+            <li>Vous gagnez du temps sur le stationnement et les changements de bus.</li>
+            <li>Vous adaptez la durée des arrêts selon vos envies.</li>
+          </ul>
+          <p>Pour organiser un circuit sur mesure, décrivez vos envies dans le <a href="/reservation">formulaire de réservation</a> (villages souhaités, durée de la sortie, nombre de passagers).</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

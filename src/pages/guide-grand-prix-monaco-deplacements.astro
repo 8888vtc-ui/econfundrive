@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Se déplacer pendant le Grand Prix de Monaco | Guide";
+const description = "Conseils pour organiser vos déplacements pendant le Grand Prix de Monaco&nbsp;: transferts Nice ⇄ Monaco, restrictions de circulation et intérêt d’un VTC.";
+const canonical = "/guide-grand-prix-monaco-deplacements.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-grand-prix-monaco-deplacements"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/guides">Guides VTC</a> › <span>Grand Prix de Monaco</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Guide événements</div>
+          <h1 class="section-title">Se déplacer pendant le Grand Prix de Monaco</h1>
+          <p>Pendant le Grand Prix de Monaco, de nombreuses rues sont fermées ou limitées. Il est essentiel d’anticiper vos déplacements entre Nice, les villes voisines et Monaco.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Anticiper vos trajets</h2>
+          <p>Les jours de course, la circulation et le stationnement sont très restreints à Monaco et aux abords du circuit. Il est recommandé de&nbsp;:</p>
+          <ul>
+            <li>réserver vos transferts plusieurs semaines à l’avance ;</li>
+            <li>prévoir des marges de temps pour rejoindre vos tribunes ou hospitalités ;</li>
+            <li>centraliser les départs depuis des points faciles d’accès.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Intérêt d’un VTC pendant le Grand Prix</h2>
+          <p>Un VTC permet de gérer&nbsp;:</p>
+          <ul>
+            <li>les transferts aéroport Nice ⇄ Monaco ;</li>
+            <li>les navettes entre hôtels ou villas et les points d’accès à la Principauté ;</li>
+            <li>les retours de soirée après les événements liés au Grand Prix.</li>
+          </ul>
+          <p>Pour plus de détails sur les trajets, consultez la page <a href="/vtc-monaco">VTC Monaco</a> ou faites une demande via le <a href="/reservation">formulaire de réservation</a>.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

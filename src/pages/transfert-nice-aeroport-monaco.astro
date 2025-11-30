@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Transfert aéroport Nice ⇄ Monaco – VTC privé | David Chemla";
+const description = "Transfert VTC entre l’aéroport Nice Côte d’Azur et Monaco / Monte-Carlo. Chauffeur privé, prix annoncés à l’avance, service discret pour clients loisirs et business.";
+const canonical = "/transfert-nice-aeroport-monaco.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="transfert-nice-aeroport-monaco"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/services">Services</a> › <span>Transfert Nice aéroport ⇄ Monaco</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Transferts aéroport</div>
+          <h1 class="section-title">Transfert VTC Nice aéroport ⇄ Monaco</h1>
+          <p>Trajet VTC premium entre l’aéroport de Nice et Monaco / Monte-Carlo. Service discret et ponctuel pour vos séjours d’affaires, événements et vacances.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Temps de trajet indicatif</h2>
+          <p>Le temps de trajet Nice aéroport ⇄ Monaco est généralement compris entre 35 et 45 minutes selon le trafic et l’itinéraire choisi.</p>
+          <p>Votre chauffeur adapte le parcours (autoroute ou route littorale) en fonction de vos contraintes horaires et des conditions de circulation.</p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Un service adapté aux clients internationaux</h2>
+          <p>Le service VTC est particulièrement adapté pour une clientèle internationale habituée aux déplacements entre hôtels, résidences privées, ports de plaisance et lieux d’événements.</p>
+          <p>Accueil possible avec panneau nominatif à l’aéroport et coordination avec votre conciergerie ou votre assistant(e) si besoin.</p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Réservation d’un transfert Nice ⇄ Monaco</h2>
+          <p>Pour réserver, complétez le <a href="/reservation">formulaire de réservation</a> avec :</p>
+          <ul>
+            <li>vos horaires et numéros de vol ;</li>
+            <li>l’adresse précise de votre hôtel, résidence ou yacht-club ;</li>
+            <li>le nombre de passagers et de bagages, ainsi que les besoins particuliers (sièges enfant, arrêts intermédiaires, etc.).</li>
+          </ul>
+          <p>Vous pouvez aussi consulter la page <a href="/vtc-monaco">VTC Monaco</a> pour plus de détails sur les trajets proposés à l’intérieur de la Principauté et ses environs.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

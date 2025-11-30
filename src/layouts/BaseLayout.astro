@@ -1,0 +1,219 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Chatbot from '../components/Chatbot.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPage?: string;
+  ogImage?: string;
+  canonical?: string;
+  schema?: any; // Schema.org optionnel par page
+  skipBaseSchema?: boolean; // Pour pages qui n'ont pas besoin du schema de base
+}
+
+const {
+  title,
+  description,
+  currentPage = "",
+  ogImage = "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+  canonical,
+  schema,
+  skipBaseSchema = false
+} = Astro.props;
+
+const canonicalUrl = canonical || Astro.url.pathname;
+const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="j3W_6acHSoLG44VYoJ7vqzwSzJclmEouNpLwR25fRLU" />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={fullCanonical} />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#c9a85e">
+    <meta name="msapplication-TileColor" content="#0a0c17">
+    <meta name="theme-color" content="#0a0c17">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullCanonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link rel="preload" href="/assets/css/vtc-style.css" as="style" />
+    <link rel="preload" href="/assets/css/luxe-chauffeur.css" as="style" />
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- Critical CSS Inlined -->
+    <style is:inline>
+      /* Critical CSS - Above the fold */
+      :root {
+        --luxe-black: #0a0a0a;
+        --luxe-gold: #d4af37;
+        --luxe-white: #ffffff;
+      }
+      body {
+        margin: 0;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--luxe-black);
+        color: var(--luxe-white);
+      }
+      .site-header {
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 2px solid var(--luxe-gold);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/vtc-style.css" />
+    <link rel="stylesheet" href="/assets/css/luxe-chauffeur.css" />
+    <link rel="stylesheet" href="/assets/css/mobile-improvements.css" />
+    <link rel="stylesheet" href="/assets/css/utilities.css" />
+    <link rel="stylesheet" href="/assets/css/accessibility.css" />
+    
+    <!-- Schema.org JSON-LD -->
+    {!skipBaseSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.ecofundrive.com/#localbusiness",
+            "name": "ECOFUNDRIVE – chauffeur privé VTC",
+            "url": "https://www.ecofundrive.com/",
+            "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-tesla-nice.jpg",
+            "telephone": "+33616552811",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1001 AVENUE DE LA BATTERIE, MARINA BAIE DES ANGES – LE DUCAL – APP",
+              "addressLocality": "Villeneuve-Loubet",
+              "postalCode": "06270",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 43.642,
+              "longitude": 7.124
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Nice" },
+              { "@type": "City", "name": "Cannes" },
+              { "@type": "City", "name": "Antibes" },
+              { "@type": "City", "name": "Monaco" },
+              { "@type": "City", "name": "Saint-Tropez" },
+              { "@type": "City", "name": "Fréjus" },
+              { "@type": "City", "name": "Sainte-Maxime" }
+            ],
+            "founder": { "@type": "Person", "name": "David Chemla" },
+            "foundingDate": "2022-04-07",
+            "vatID": "FR59912244696",
+            "legalName": "ECOFUNDRIVE",
+            "serviceType": ["VTC", "Transfert aéroport", "Transport business", "Mise à disposition avec chauffeur"],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "26",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "openingHoursSpecification": [{
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.ecofundrive.com/#website",
+            "url": "https://www.ecofundrive.com/",
+            "name": "ECOFUNDRIVE – chauffeur privé VTC",
+            "description": "Chauffeur privé VTC sur la Côte d'Azur (Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime). Transferts aéroport, gare, hôtel, domicile, événements.",
+            "publisher": {
+              "@id": "https://www.ecofundrive.com/#localbusiness"
+            }
+          }
+        ]
+      })} />
+    )}
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+    
+    <!-- Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((reg) => {
+              if (import.meta.env.DEV) {
+                console.log('Service Worker registered:', reg);
+              }
+            })
+            .catch((err) => {
+              if (import.meta.env.DEV) {
+                console.error('Service Worker registration failed:', err);
+              }
+            });
+        });
+      }
+    </script>
+    
+    <!-- Analytics -->
+    <Analytics />
+    
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/cookies.js" defer></script>
+  </head>
+  <body data-page={currentPage}>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <Header currentPage={currentPage} />
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <Chatbot />
+    <FloatingCTA />
+  </body>
+</html>
+

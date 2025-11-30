@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Services VTC premium Côte d'Azur | Transferts, mise à disposition & événements";
+const description = "Découvrez nos services VTC premium sur la Côte d'Azur : transferts aéroports (Nice, Cannes), trajets business, mise à disposition à l'heure ou à la journée et organisation d'événements. Solution clé en main pour professionnels et particuliers entre Nice, Cannes, Monaco et le golfe de Saint‑Tropez.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="services"
+  canonical="/services"
+>
+  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> › <span>Services</span>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Notre offre</div>
+        <h1 class="section-title">Nos services VTC sur la Côte d'Azur : professionnalisme et flexibilité sur mesure</h1>
+        <p>Des solutions premium pour vos grands transferts business, transferts aéroport (Nice &amp; Cannes‑Mandelieu), Saint‑Tropez / Fréjus / Sainte‑Maxime et la mise à disposition demi‑journée ou journée.</p>
+        <p>Pour les entreprises, nous proposons des solutions sur mesure : navettes régulières entre sites, accueil de clients ou partenaires, déplacements pendant les congrès et séminaires. Selon le volume et la fréquence, une facturation mensuelle et un interlocuteur unique peuvent être mis en place pour simplifier votre organisation.</p>
+        <div class="rating-strip" aria-label="Note moyenne des avis clients">
+          <span class="rating-stars" aria-hidden="true">★★★★★</span>
+          <span class="rating-text">5,0/5 – 26 avis clients</span>
+          <a href="/avis-clients" class="rating-link">Lire les avis</a>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Transferts aéroport & gares</h3>
+          <p>Prise en charge aux aéroports de Nice (NCE) et Cannes‑Mandelieu, gares SNCF/TGV et ports de plaisance. Suivi de vol et assistance bagages.</p>
+          <a href="/vtc-aeroport-nice-prix" class="btn-outline-light">Prix Aéroport Nice</a>
+          <a href="/vtc-nice#aeroport" class="btn-outline-light" style="margin-left: 0.5rem;">Transferts Nice</a>
+          <a href="/transfert-nice-aeroport-cannes" class="btn-outline-light" style="margin-left: 0.5rem;">Nice → Cannes</a>
+          <a href="/transfert-nice-aeroport-monaco" class="btn-outline-light" style="margin-left: 0.5rem;">Nice → Monaco</a>
+        </div>
+        <div class="card">
+          <h3>Chauffeur business & corporate</h3>
+          <p>Déplacements professionnels, visites de sites, tournées clients, conventions et congrès sur toute la Côte d'Azur, avec possibilité de facturation mensuelle pour les entreprises (sur accord).</p>
+          <a href="/vtc-entreprise-cote-azur" class="btn-outline-light">VTC Entreprise</a>
+          <a href="/contact#entreprises" class="btn-outline-light" style="margin-left: 0.5rem;">Devis entreprise</a>
+        </div>
+        <div class="card">
+          <h3>Mariages & événements privés</h3>
+          <p>Transport des mariés et des invités en berlines ou vans haut de gamme, coordination multi‑véhicules via un réseau de partenaires (vans, autocars, etc.).</p>
+          <a href="/vtc-mariage-cote-azur" class="btn-outline-light">VTC Mariage</a>
+          <a href="/reservation" class="btn-outline-light" style="margin-left: 0.5rem;">Réserver</a>
+        </div>
+        <div class="card">
+          <h3>Circuits touristiques</h3>
+          <p>Découverte de Nice, Cannes, Monaco, Saint‑Tropez, villages perchés et panoramas d'exception.</p>
+          <a href="/vtc-monaco#circuits" class="btn-outline-light">Exemple de circuit Monaco</a>
+        </div>
+        <div class="card">
+          <h3>Mise à disposition</h3>
+          <p>Véhicule avec chauffeur pour 3h, 6h ou journée complète. Idéal pour agendas chargés, tournées clients et événements, avec facturation au forfait ou à l'heure.</p>
+          <a href="/tarifs" class="btn-outline-light">Consulter les tarifs indicatifs</a>
+        </div>
+        <div class="card">
+          <h3>Transport familles & enfants</h3>
+          <p>Sièges enfant homologués sur demande, transferts scolaires ponctuels, accompagnement familles.</p>
+          <a href="/reservation" class="btn-outline-light">Réserver un trajet famille</a>
+        </div>
+        <div class="card">
+          <h3>Service 24h/24</h3>
+          <p>Chauffeur disponible jour et nuit, week-ends et jours fériés. Transferts urgents, vols de nuit, événements tardifs.</p>
+          <a href="/chauffeur-24h-nice" class="btn-outline-light">VTC 24h/24</a>
+        </div>
+        <div class="card">
+          <h3>Chauffeur bilingue</h3>
+          <p>English speaking driver pour clients internationaux. Communication fluide en anglais pour tous vos besoins.</p>
+          <a href="/chauffeur-anglais-nice" class="btn-outline-light">Chauffeur Anglais</a>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:1.5rem">
+        <h2>Nos zones d'intervention</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Nice et alentours</h3>
+            <p>Aéroport, Vieux‑Nice, Cimiez, Promenade des Anglais, port, Mont Boron, Saint‑Laurent‑du‑Var.</p>
+            <a href="/vtc-nice" class="btn-outline-light">VTC Nice</a>
+          </div>
+          <div class="card">
+            <h3>Côte d'Azur Ouest</h3>
+            <p>Antibes, Juan‑les‑Pins, Golfe‑Juan, Vallauris, Biot, Sophia‑Antipolis, Cannes, Mandelieu.</p>
+            <a href="/vtc-cannes" class="btn-outline-light">VTC Cannes</a>
+          </div>
+          <div class="card">
+            <h3>Monaco et Menton</h3>
+            <p>Monte‑Carlo, Fontvieille, La Condamine, Roquebrune‑Cap‑Martin, Menton, frontière italienne.</p>
+            <a href="/vtc-monaco" class="btn-outline-light">VTC Monaco</a>
+          </div>
+          <div class="card">
+            <h3>Saint‑Tropez et golfe</h3>
+            <p>Ramatuelle, Gassin, Grimaud, Port Grimaud, Cavalaire, Sainte‑Maxime, Fréjus, Saint‑Raphaël.</p>
+            <a href="/vtc-saint-tropez" class="btn-outline-light">VTC Saint‑Tropez</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:1.5rem">
+        <h2>FAQ sur nos services VTC</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">Puis‑je réserver un chauffeur pour plusieurs rendez‑vous dans la même journée&nbsp;?</div>
+            <div class="faq-answer">
+              <p>Oui, c'est le principe de la mise à disposition. Votre chauffeur reste à votre service pendant la durée réservée (demi‑journée, journée, soirée) et vous accompagne à chaque adresse.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Comment se passe la prise en charge à l'aéroport de Nice&nbsp;?</div>
+            <div class="faq-answer">
+              <p>Nous suivons votre vol en temps réel. Votre chauffeur vous attend dans le hall d'arrivée avec un panneau nominatif et vous accompagne jusqu'au véhicule en vous aidant pour les bagages.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Proposez‑vous des factures pour les entreprises&nbsp;?</div>
+            <div class="faq-answer">
+              <p>Oui, une facture détaillée peut être envoyée pour chaque mission, avec le détail du trajet, la TVA et les coordonnées de facturation de votre entreprise. Pour les partenariats réguliers, une facturation mensuelle peut être mise en place après accord.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

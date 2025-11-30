@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Découvrir Saint-Tropez et le Golfe en VTC | Guide";
+const description = "Conseils pour découvrir Saint-Tropez et le Golfe en VTC&nbsp;: accès, plages, villages et soirées, sans les contraintes de circulation et de stationnement.";
+const canonical = "/guide-decouvrir-saint-tropez-golfe.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-decouvrir-saint-tropez-golfe"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/guides">Guides VTC</a> › <span>Saint-Tropez et le Golfe</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Guide Saint-Tropez</div>
+          <h1 class="section-title">Découvrir Saint-Tropez et le Golfe en VTC</h1>
+          <p>Accès parfois compliqué, stationnement limité, circulation intense en été&nbsp;: un VTC peut simplifier vos séjours à Saint‑Tropez et dans le Golfe.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Accéder à Saint-Tropez</h2>
+          <p>L’accès au Golfe depuis la Côte d’Azur peut être long en haute saison. Un VTC permet de&nbsp;:</p>
+          <ul>
+            <li>partir tôt ou tard pour éviter les heures de pointe ;</li>
+            <li>vous déposer au plus près de votre villa, hôtel ou plage privée ;</li>
+            <li>ne pas gérer la location de voiture ni la recherche de stationnement.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Profiter des plages et des villages du Golfe</h2>
+          <p>Un chauffeur privé peut vous accompagner vers&nbsp;:</p>
+          <ul>
+            <li>les plages de Pampelonne et leurs clubs ;</li>
+            <li>les villages du Golfe (Gassin, Ramatuelle, Grimaud, Sainte‑Maxime…) ;</li>
+            <li>les ports de plaisance pour vos sorties en mer.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Soirées et retours de nuit</h2>
+          <p>Pour vos soirées, un VTC évite les contraintes de stationnement et de conduite de nuit. Il est possible de prévoir un aller-retour ou une mise à disposition pour la soirée.</p>
+          <p>Pour en savoir plus, consultez la page <a href="/vtc-saint-tropez">VTC Saint-Tropez</a> ou décrivez votre projet dans le <a href="/reservation">formulaire de réservation</a>.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>

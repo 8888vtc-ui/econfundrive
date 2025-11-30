@@ -1,0 +1,126 @@
+---
+interface Props {
+  type?: 'faq' | 'breadcrumb' | 'review' | 'service';
+  faqItems?: Array<{ question: string; answer: string }>;
+  breadcrumbItems?: Array<{ name: string; url: string }>;
+  reviewItems?: Array<{ author: string; rating: number; reviewBody: string; datePublished?: string }>;
+  serviceName?: string;
+  serviceDescription?: string;
+  currentPage?: string;
+}
+
+const { 
+  type = 'breadcrumb',
+  faqItems = [],
+  breadcrumbItems = [],
+  reviewItems = [],
+  serviceName,
+  serviceDescription,
+  currentPage
+} = Astro.props;
+
+// BreadcrumbList
+const breadcrumbSchema = breadcrumbItems.length > 0 ? {
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": `https://www.ecofundrive.com${item.url}`
+  }))
+} : null;
+
+// FAQPage
+const faqSchema = faqItems.length > 0 ? {
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+
+// Review
+const reviewSchema = reviewItems.length > 0 ? {
+  "@type": "LocalBusiness",
+  "@id": "https://www.ecofundrive.com/#localbusiness",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": reviewItems.length.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": reviewItems.map(item => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": item.author
+    },
+    "datePublished": item.datePublished || new Date().toISOString(),
+    "reviewBody": item.reviewBody,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": item.rating.toString(),
+      "bestRating": "5"
+    }
+  }))
+} : null;
+
+// Service
+const serviceSchema = serviceName ? {
+  "@type": "Service",
+  "name": serviceName,
+  "description": serviceDescription || "",
+  "provider": {
+    "@id": "https://www.ecofundrive.com/#localbusiness"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Nice" },
+    { "@type": "City", "name": "Cannes" },
+    { "@type": "City", "name": "Monaco" },
+    { "@type": "City", "name": "Saint-Tropez" }
+  ]
+} : null;
+
+// Générer le schéma approprié
+let schema = null;
+if (type === 'breadcrumb' && breadcrumbSchema) {
+  schema = breadcrumbSchema;
+} else if (type === 'faq' && faqSchema) {
+  schema = faqSchema;
+} else if (type === 'review' && reviewSchema) {
+  schema = reviewSchema;
+} else if (type === 'service' && serviceSchema) {
+  schema = serviceSchema;
+}
+
+// Breadcrumb par défaut si currentPage fourni
+if (!breadcrumbSchema && currentPage && currentPage !== 'index') {
+  schema = {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.ecofundrive.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": currentPage.charAt(0).toUpperCase() + currentPage.slice(1).replace(/-/g, ' '),
+        "item": `https://www.ecofundrive.com/${currentPage}`
+      }
+    ]
+  };
+}
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}
+

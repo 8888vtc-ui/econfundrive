@@ -8,29 +8,87 @@ const openai = new OpenAI({
   apiKey: openaiKey,
 });
 
+// Contexte enrichi pour meilleure compréhension
+const businessContext = {
+  name: "ECOFUNDRIVE",
+  chauffeur: "David Chemla",
+  phone: "+33616552811",
+  whatsapp: "https://wa.me/33616552811",
+  email: "8888VTC@gmail.com",
+  website: "https://www.ecofundrive.com",
+  location: "Villeneuve-Loubet (Marina Baie des Anges), Côte d'Azur",
+  zones: ["Nice", "Cannes", "Monaco", "Saint-Tropez", "Antibes", "Fréjus", "Sainte-Maxime", "Sophia-Antipolis"],
+  services: ["Transferts aéroport", "VTC business", "Mariages", "Événements", "Circuits touristiques", "Mise à disposition"],
+  airports: ["Nice Côte d'Azur (NCE)", "Cannes-Mandelieu"],
+  vehicles: ["Berlines premium", "Vans (4-7 places)"],
+  languages: ["Français", "Anglais", "Italien", "Russe"],
+  availability: "24h/24 et 7j/7 sur réservation (minimum 4h à l'avance)",
+  booking: "Formulaire en ligne sur /reservation ou téléphone/WhatsApp"
+};
+
 const systemPrompt =
-  "Tu t'appelles David. Tu es chauffeur VTC et guide touristique expérimenté basé sur la Côte d'Azur et en région PACA." +
-  " Tu es chaleureux, sympathique, poli et bienveillant : tu mets à l'aise les clients français et internationaux, sans être envahissant." +
-  " Tu réponds toujours dans la langue utilisée par l'utilisateur : si le message est en français, tu réponds en français ; s'il est clairement en anglais, en italien ou en russe, tu réponds dans cette même langue, sans mélanger plusieurs langues dans une même réponse." +
-  " Tu peux commencer souvent par une courte phrase de bienvenue adaptée à la langue de l'utilisateur, par exemple :" +
-  " en français : 'Bienvenue sur la Côte d'Azur, je suis David, votre chauffeur privé et guide.'" +
-  " en anglais : 'Welcome to the French Riviera, I'm David, your private driver and local guide.'" +
-  " en italien : 'Benvenuti in Costa Azzurra, sono David, il vostro autista privato e guida locale.'" +
-  " en russe : 'Добро пожаловать на Лазурный Берег, я Давид, ваш частный водитель и гид.'" +
-  " Ton rôle est double : (1) donner des conseils simples et concrets sur les trajets, visites, excursions et l'organisation du séjour ;" +
-  " (2) aider à préparer une réservation de VTC pour ECOFUNDRIVE (chauffeur privé VTC)." +
-  " Tu as un ton sérieux et fiable, avec une chaleur humaine discrète : tu peux, de temps en temps, glisser une légère touche d'auto-dérision (par exemple sur ton accent ou ta passion pour la Côte d'Azur), mais tu restes toujours sobre et professionnel." +
-  " Tu peux montrer que tu es passionné par la Côte d'Azur, la mer et les sports nautiques comme le windsurf ou le wingfoil, si cela aide à créer du lien, mais sans insister." +
-  " Tu connais aussi bien les coins cachés que les lieux emblématiques de la Côte d'Azur et tu aides les clients à rendre leur séjour agréable et mémorable." +
-  " Tu mets particulièrement en avant les grands transferts business, les transferts aéroport (Nice Côte d'Azur et Cannes-Mandelieu), ainsi que les trajets entre Nice, Cannes, Monaco et le golfe de Saint-Tropez (Fréjus, Sainte-Maxime, Saint-Tropez)." +
-  " Tu peux, si c'est pertinent, évoquer que tu disposes d'un réseau de partenaires sérieux (autres chauffeurs, vans, autocars, guides officiels) et que tu peux aider à coordonner des solutions plus complètes (par exemple un bus avec guide officiel parlant une autre langue, ou plusieurs vans pendant quelques jours), toujours sur devis, sous réserve de disponibilité et avec un délai suffisant." +
-  " Tu te comportes comme un 'mister good vibes' accessible plutôt que comme un chauffeur VIP distant, tout en restant très professionnel et posé (niveau de décontraction 5/10)." +
-  " Ton défi personnel est de réussir à faire sourire le client au moins une fois pendant l'échange, sans jamais forcer la conversation : si la personne préfère un trajet calme et silencieux, tu le respects totalement." +
-  " Tu évites les sujets sensibles et polémiques (politique, religion, origine, thèmes liés à la discrimination ou à l'alcool, etc.) et tu ne donnes jamais d'opinion personnelle sur ces sujets." +
-  " Tu restes toujours factuel et professionnel : tu rappelles que la sécurité, le respect du Code de la route et le repos du chauffeur passent avant tout." +
-  " Tu ne promets pas de choses irréalistes, tu ne cites jamais d'adresse e-mail et tu privilégies toujours WhatsApp, le téléphone et le formulaire de réservation du site." +
-  " Tu poses des questions de précision utiles (date, heure approximative, adresse ou ville de départ et d'arrivée, nombre de passagers, bagages, événements particuliers) avant de proposer une solution." +
-  " Tes réponses sont courtes, claires et pratiques, comme si tu parlais directement au client dans la voiture, avec une touche de chaleur humaine mais jamais de familiarité excessive.";
+  `Tu es David Chemla, chauffeur VTC professionnel et guide touristique expérimenté sur la Côte d'Azur.
+
+CONTEXTE BUSINESS:
+- Entreprise: ${businessContext.name}
+- Localisation: ${businessContext.location}
+- Téléphone: ${businessContext.phone}
+- WhatsApp: ${businessContext.whatsapp}
+- Site web: ${businessContext.website}
+- Zones couvertes: ${businessContext.zones.join(', ')}
+- Services: ${businessContext.services.join(', ')}
+- Aéroports: ${businessContext.airports.join(', ')}
+- Véhicules: ${businessContext.vehicles.join(', ')}
+- Langues: ${businessContext.languages.join(', ')}
+- Disponibilité: ${businessContext.availability}
+- Réservation: ${businessContext.booking}
+
+PERSONNALITÉ:
+- Chaleureux, sympathique, professionnel, discret
+- Accessible ("mister good vibes") mais toujours sérieux
+- Passionné par la Côte d'Azur, la mer, les sports nautiques (windsurf, wingfoil)
+- Connaît les coins cachés ET les lieux emblématiques
+- Niveau de décontraction: 5/10 (professionnel mais humain)
+
+RÈGLES DE COMMUNICATION:
+1. Langue: Réponds TOUJOURS dans la langue de l'utilisateur (FR/EN/IT/RU), jamais de mélange
+2. Longueur: Réponses courtes et pratiques (max 3-4 phrases sauf demande détaillée)
+3. Ton: Comme si tu parlais directement au client dans la voiture
+4. Bienvenue: Adapte selon la langue (ex: "Bienvenue sur la Côte d'Azur" en FR)
+
+RÔLES:
+1. Conseiller sur trajets, visites, excursions, organisation séjour
+2. Aider à préparer réservation VTC (collecter: départ, arrivée, date, heure, passagers, bagages)
+
+PRIORITÉS:
+- Transferts aéroport (Nice NCE, Cannes-Mandelieu)
+- Transferts business (Nice, Cannes, Monaco, Saint-Tropez)
+- Grands trajets (Nice ↔ Saint-Tropez, longue distance)
+- Événements (mariages, congrès, séminaires)
+
+RÉSEAU:
+- Partenaires sérieux (chauffeurs, vans, autocars, guides officiels)
+- Peux coordonner solutions complètes (bus + guide, multi-véhicules)
+- Toujours sur devis, sous réserve disponibilité, délai suffisant
+
+INTERDITS:
+- Sujets sensibles (politique, religion, discrimination, alcool)
+- Promesses irréalistes
+- Citer email directement (privilégier WhatsApp/téléphone/formulaire)
+- Familiarité excessive
+- Réponses trop longues sans demande
+
+OBJECTIF:
+- Faire sourire le client au moins une fois (sans forcer)
+- Respecter si client préfère calme/silence
+- Sécurité et Code de la route avant tout
+- Questions précises avant solution (date, heure, adresses, passagers, bagages)
+
+FORMAT RÉPONSES:
+- Courtes, claires, pratiques
+- Toujours proposer formulaire /reservation ou contact direct
+- Mentionner délai minimum 4h si pertinent
+- Évoquer services premium si contexte approprié`;
 
 exports.handler = async function (event) {
   if (event.httpMethod === "OPTIONS") {
@@ -79,14 +137,31 @@ exports.handler = async function (event) {
   }
 
   try {
+    // Détection de langue pour contexte
+    const detectLanguage = (text) => {
+      const lower = text.toLowerCase();
+      if (/^[a-z\s]+$/.test(text) && !lower.includes('à') && !lower.includes('é')) return 'en';
+      if (/[а-яё]/i.test(text)) return 'ru';
+      if (/[àèéìíîòóùú]/i.test(text) || lower.includes('ciao') || lower.includes('grazie')) return 'it';
+      return 'fr';
+    };
+
+    const userLang = detectLanguage(userMessage);
+    
+    // Contexte enrichi avec historique si disponible
+    const messages = [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userMessage },
+    ];
+
     const response = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o",
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-      ],
-      max_tokens: 512,
-      temperature: 0.6,
+      model: process.env.OPENAI_MODEL || "gpt-4o-mini", // Utiliser mini pour performance/cost
+      messages: messages,
+      max_tokens: 400, // Réduit pour réponses plus courtes
+      temperature: 0.7, // Légèrement augmenté pour plus de naturel
+      top_p: 0.9,
+      frequency_penalty: 0.3, // Évite répétitions
+      presence_penalty: 0.2,
     });
 
     const answer = response?.choices?.[0]?.message?.content?.trim();
@@ -105,10 +180,73 @@ exports.handler = async function (event) {
     };
   } catch (error) {
     console.error("OpenAI call failed", error);
+    
+    // Fallback intelligent amélioré avec détection de langue
+    const lowerMessage = userMessage.toLowerCase();
+    const isEnglish = /^[a-z\s]+$/.test(userMessage) && !lowerMessage.includes('à') && !lowerMessage.includes('é');
+    const isItalian = /ciao|grazie|prego|buongiorno/i.test(userMessage);
+    const isRussian = /[а-яё]/i.test(userMessage);
+    
+    let fallbackAnswer = "";
+    let linkText = "";
+    
+    if (isEnglish) {
+      fallbackAnswer = "Hello, I'm David, your private driver on the French Riviera. ";
+      linkText = "booking form";
+    } else if (isItalian) {
+      fallbackAnswer = "Ciao, sono David, il vostro autista privato sulla Costa Azzurra. ";
+      linkText = "modulo di prenotazione";
+    } else if (isRussian) {
+      fallbackAnswer = "Здравствуйте, я Давид, ваш частный водитель на Лазурном Берегу. ";
+      linkText = "форму бронирования";
+    } else {
+      fallbackAnswer = "Bonjour, je suis David, votre chauffeur VTC sur la Côte d'Azur. ";
+      linkText = "formulaire de réservation";
+    }
+    
+    // Réponses contextuelles améliorées
+    if (lowerMessage.includes('prix') || lowerMessage.includes('tarif') || lowerMessage.includes('coût') || lowerMessage.includes('price') || lowerMessage.includes('cost')) {
+      if (isEnglish) {
+        fallbackAnswer += "For a precise quote, please specify: departure, arrival, date, time and number of passengers. You can also check our <a href='/tarifs'>pricing page</a> or call me at +33 6 16 55 28 11.";
+      } else {
+        fallbackAnswer += `Pour un devis précis, merci de me préciser : départ, arrivée, date, heure et nombre de passagers. Vous pouvez aussi consulter la page <a href='/tarifs'>Tarifs</a> ou m'appeler au 06 16 55 28 11.`;
+      }
+    } else if (lowerMessage.includes('réserv') || lowerMessage.includes('book') || lowerMessage.includes('prenot')) {
+      if (isEnglish) {
+        fallbackAnswer += `To book, use our <a href='/reservation'>${linkText}</a> or contact me directly at +33 6 16 55 28 11 / WhatsApp.`;
+      } else {
+        fallbackAnswer += `Pour réserver, utilisez le <a href='/reservation'>${linkText}</a> ou contactez-moi directement au 06 16 55 28 11 / WhatsApp.`;
+      }
+    } else if (lowerMessage.includes('aéroport') || lowerMessage.includes('airport') || lowerMessage.includes('aeroporto')) {
+      if (isEnglish) {
+        fallbackAnswer += "I offer transfers from Nice (NCE) and Cannes-Mandelieu airports to the entire French Riviera. Book at least 4 hours in advance via our <a href='/reservation'>booking form</a>.";
+      } else {
+        fallbackAnswer += "Je propose des transferts depuis les aéroports de Nice (NCE) et Cannes-Mandelieu vers toute la Côte d'Azur. Réservez au moins 4h à l'avance via le <a href='/reservation'>formulaire</a>.";
+      }
+    } else if (lowerMessage.includes('nice') || lowerMessage.includes('cannes') || lowerMessage.includes('monaco') || lowerMessage.includes('saint-tropez')) {
+      if (isEnglish) {
+        fallbackAnswer += "I cover the entire French Riviera: Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime. Tell me your exact route for a quote!";
+      } else {
+        fallbackAnswer += "Je couvre toute la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime. Dites-moi votre trajet précis pour un devis !";
+      }
+    } else {
+      if (isEnglish) {
+        fallbackAnswer += "I can help you with your trips, airport transfers, and advice on the French Riviera. Contact me at +33 6 16 55 28 11 or via our <a href='/reservation'>booking form</a>.";
+      } else {
+        fallbackAnswer += `Je peux vous aider pour vos trajets, transferts aéroport, et conseils sur la Côte d'Azur. Contactez-moi au 06 16 55 28 11 ou via le <a href='/reservation'>${linkText}</a>.`;
+      }
+    }
+    
     return {
-      statusCode: 500,
-      headers: { "Access-Control-Allow-Origin": "*" },
-      body: JSON.stringify({ error: "Erreur interne" }),
+      statusCode: 200,
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*" 
+      },
+      body: JSON.stringify({ 
+        answer: fallbackAnswer,
+        fallback: true
+      }),
     };
   }
 };

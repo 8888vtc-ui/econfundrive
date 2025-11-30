@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Transfert Cannes ⇄ Saint-Tropez – VTC privé | David Chemla";
+const description = "Transfert VTC entre Cannes et Saint-Tropez pour vos séjours, événements et soirées. Chauffeur privé, trajet confortable, service 24/7.";
+const canonical = "/transfert-cannes-saint-tropez.html";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="transfert-cannes-saint-tropez"
+  canonical={canonical}
+>
+
+    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
+      <a href="/index">Accueil</a> › <a href="/services">Services</a> › <span>Transfert Cannes ⇄ Saint-Tropez</span>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Transferts longue distance</div>
+          <h1 class="section-title">Transfert VTC Cannes ⇄ Saint-Tropez</h1>
+          <p>Trajets privés entre Cannes et Saint-Tropez pour vos séjours, événements et soirées. Service idéal pour éviter les contraintes de circulation et de stationnement.</p>
+        </div>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Trajet Cannes ⇄ Saint-Tropez</h2>
+          <p>Le temps de trajet entre Cannes et Saint-Tropez varie généralement entre 1h30 et 2h15 selon l’itinéraire et la saison.</p>
+          <p>Votre chauffeur choisit la route la plus adaptée et peut prévoir des pauses si nécessaire (familles, long trajet, chaleur estivale, etc.).</p>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Pour quels besoins utiliser un VTC&nbsp;?</h2>
+          <ul>
+            <li>séjours entre hôtels, villas ou résidences entre Cannes et le Golfe de Saint-Tropez ;</li>
+            <li>transferts pour des événements, soirées privées ou clubs ;</li>
+            <li>navettes pour invités, collaborateurs ou clients VIP.</li>
+          </ul>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
+          <h2>Réserver un transfert Cannes ⇄ Saint-Tropez</h2>
+          <p>Pour un devis précis, indiquez dans le <a href="/reservation">formulaire de réservation</a> les horaires souhaités, les adresses exactes et le nombre de passagers et de bagages.</p>
+          <p>Vous pouvez aussi consulter nos pages <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-saint-tropez">VTC Saint-Tropez</a> pour organiser l’ensemble de vos déplacements sur la Côte d’Azur.</p>
+        </section>
+      </div>
+    </section>
+  
+</BaseLayout>
