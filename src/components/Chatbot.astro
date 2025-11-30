@@ -1,5 +1,5 @@
 ---
-// Chatbot VTC - Toujours visible sur la page
+// Chatbot VTC - Position fixe, toujours visible
 ---
 
 <button 
@@ -138,7 +138,6 @@
         const sendBtn = document.getElementById('chatbot-send');
         if (sendBtn) sendBtn.disabled = true;
         
-        // Afficher message utilisateur
         if (messages && input) {
           const userMsg = document.createElement('div');
           userMsg.className = 'message user';
@@ -148,7 +147,6 @@
           input.value = '';
         }
         
-        // Afficher typing
         if (typing) typing.style.display = 'flex';
         
         try {
@@ -197,7 +195,6 @@
       });
     }
     
-    // Fermer en cliquant à l'extérieur
     document.addEventListener('click', (e) => {
       if (isOpen && 
           container && 
@@ -208,7 +205,6 @@
       }
     });
     
-    // Escape pour fermer
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isOpen) {
         closeChat();
@@ -218,12 +214,13 @@
 </script>
 
 <style>
-  /* Chatbot Toggle - TOUJOURS VISIBLE */
+  /* Chatbot Toggle - FIXE, TOUJOURS VISIBLE */
   .chatbot-toggle {
     position: fixed !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    z-index: 10000 !important;
     bottom: 25px;
     right: 25px;
     width: 60px;
@@ -232,7 +229,6 @@
     background: linear-gradient(135deg, #d4af37, #b8941f);
     border: none;
     cursor: pointer;
-    z-index: 10000;
     align-items: center;
     justify-content: center;
     color: #0a0a0a;
@@ -255,7 +251,7 @@
 
   /* Chatbot Container */
   .chatbot-container {
-    position: fixed;
+    position: fixed !important;
     bottom: 100px;
     right: 25px;
     width: 380px;
@@ -266,7 +262,7 @@
     border: 2px solid rgba(212, 175, 55, 0.3);
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    z-index: 10000;
+    z-index: 10000 !important;
     display: none;
     flex-direction: column;
     overflow: hidden;
@@ -276,7 +272,7 @@
   }
 
   .chatbot-container.open {
-    display: flex;
+    display: flex !important;
     transform: translateY(0) scale(1);
     opacity: 1;
   }
@@ -526,10 +522,10 @@
   /* Mobile - Chatbot en haut droite avec texte */
   @media (max-width: 768px) {
     .chatbot-container {
-      width: calc(100vw - 20px);
-      right: 10px;
-      top: 80px;
-      bottom: auto;
+      width: calc(100vw - 20px) !important;
+      right: 10px !important;
+      top: 80px !important;
+      bottom: auto !important;
       max-height: calc(100vh - 100px);
     }
 
@@ -561,3 +557,4 @@
     }
   }
 </style>
+
