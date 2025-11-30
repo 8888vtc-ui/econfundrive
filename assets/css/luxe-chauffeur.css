@@ -349,16 +349,16 @@ section {
   
   body::before {
     background-attachment: scroll;
-    opacity: 0.2;
-    filter: brightness(0.35) contrast(1.0) saturate(0.7);
+    opacity: 0.35;
+    filter: brightness(0.45) contrast(1.1) saturate(0.8);
   }
   
   body::after {
     background: linear-gradient(
       135deg,
-      rgba(10, 10, 10, 0.90) 0%,
-      rgba(10, 10, 10, 0.88) 50%,
-      rgba(10, 10, 10, 0.90) 100%
+      rgba(10, 10, 10, 0.80) 0%,
+      rgba(10, 10, 10, 0.75) 50%,
+      rgba(10, 10, 10, 0.80) 100%
     );
   }
 }
