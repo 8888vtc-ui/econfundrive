@@ -148,7 +148,7 @@ if (currentLang === 'fr') {
         z-index: 1000;
       }
       
-      /* Image de fond en div réel - FOND CLAIR */
+      /* Image de fond en div réel - OPACITY 1.0, FILTER SUPPRIMÉ */
       .background-image-fixed {
         position: fixed !important;
         top: 0 !important;
@@ -160,20 +160,20 @@ if (currentLang === 'fr') {
         background-position: center center !important;
         background-attachment: fixed !important;
         background-repeat: no-repeat !important;
-        opacity: 0.95 !important; /* AUGMENTÉ pour fond clair */
+        opacity: 1.0 !important; /* OPACITY À 1.0 - IMAGE COMPLÈTEMENT VISIBLE */
         z-index: -2 !important;
-        filter: brightness(1.0) contrast(1.0) saturate(1.0) !important; /* BRIGHTNESS À 1.0 pour fond clair */
+        filter: none !important; /* FILTER SUPPRIMÉ - pas de brightness/contrast/saturate */
         pointer-events: none !important;
         display: block !important;
         visibility: visible !important;
-        will-change: transform !important;
+        background-color: transparent !important; /* Pas de fond de secours */
       }
       
       @media (max-width: 768px) {
         .background-image-fixed {
           background-attachment: scroll !important; /* Pas de fixed sur mobile pour performance */
-          opacity: 0.90 !important; /* AUGMENTÉ pour mobile */
-          filter: brightness(0.95) contrast(1.0) saturate(1.0) !important; /* BRIGHTNESS À 0.95 pour mobile */
+          opacity: 1.0 !important; /* OPACITY À 1.0 sur mobile aussi */
+          filter: none !important; /* FILTER SUPPRIMÉ sur mobile */
         }
       }
     </style>
@@ -301,8 +301,11 @@ if (currentLang === 'fr') {
     <script src="/assets/js/fix-mobile-floating.js" defer></script>
   </head>
   <body data-page={currentPage}>
-    <!-- Image de fond en div réel (solution radicale) -->
-    <div id="background-image" class="background-image-fixed"></div>
+    <!-- Image de fond en div réel - STYLE INLINE POUR FORCER L'AFFICHAGE -->
+    <div 
+      id="background-image" 
+      class="background-image-fixed"
+      style="position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background-image: url('/assets/img/hero/chauffeur-luxe-background.webp') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; opacity: 1.0 !important; z-index: -2 !important; filter: none !important; display: block !important; visibility: visible !important; pointer-events: none !important; background-color: transparent !important;"></div>
     
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <Header currentPage={currentPage} />

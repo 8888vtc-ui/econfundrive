@@ -19,45 +19,15 @@
   --transition-luxe: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Image de fond luxe */
+/* Image de fond luxe - SUPPRIMÉ (géré par .background-image-fixed dans BaseLayout) */
 body {
   position: relative;
-  background: var(--luxe-black);
+  background: transparent !important; /* TRANSPARENT pour voir l'image */
   min-height: 100vh;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/assets/img/hero/chauffeur-luxe-background.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 0.15;
-  z-index: -1;
-  filter: brightness(0.3) contrast(1.2);
-}
-
-/* Overlay sombre pour lisibilité */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.95) 0%,
-    rgba(26, 26, 26, 0.92) 50%,
-    rgba(10, 10, 10, 0.95) 100%
-  );
-  z-index: -1;
-}
+/* body::before SUPPRIMÉ - maintenant géré par .background-image-fixed dans BaseLayout */
+/* body::after SUPPRIMÉ - overlay sombre supprimé pour voir l'image */
 
 /* Header Luxe */
 .site-header {
@@ -321,8 +291,6 @@ body::after {
     font-size: 2rem;
   }
   
-  body::before {
-    background-attachment: scroll;
-  }
+  /* body::before SUPPRIMÉ - maintenant géré par .background-image-fixed dans BaseLayout */
 }
 
