@@ -22,7 +22,7 @@
 /* Image de fond luxe */
 body {
   position: relative;
-  background: var(--luxe-black);
+  background: transparent !important; /* TRANSPARENT pour voir l'image */
   min-height: 100vh;
 }
 
@@ -33,15 +33,17 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/img/hero/chauffeur-luxe-background.webp');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  opacity: 0.5 !important; /* AUGMENTÉ de 0.15 à 0.5 pour être visible */
-  z-index: -2; /* En dessous de l'overlay */
-  filter: brightness(0.7) contrast(1.1) saturate(1.2) !important; /* AUGMENTÉ brightness de 0.3 à 0.7 */
+  background-image: url('/assets/img/hero/chauffeur-luxe-background.webp') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.6 !important; /* AUGMENTÉ pour être plus visible */
+  z-index: -2 !important; /* En dessous de l'overlay */
+  filter: brightness(0.8) contrast(1.1) saturate(1.2) !important; /* AUGMENTÉ brightness */
   will-change: transform;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Overlay sombre pour lisibilité - RÉDUIT */

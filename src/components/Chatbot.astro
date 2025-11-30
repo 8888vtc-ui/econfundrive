@@ -221,37 +221,37 @@
 <style>
   .chatbot-toggle {
     position: fixed !important;
-    top: 40% !important; /* 40% depuis le haut = légèrement au-dessus du centre */
-    left: 50% !important; /* CENTRER horizontalement */
-    transform: translate(-50%, -50%) !important; /* CENTRER parfaitement */
+    top: 20px !important; /* En haut */
+    left: 20px !important; /* À GAUCHE */
     right: auto !important;
     bottom: auto !important;
+    transform: none !important; /* Plus de centrage */
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important; /* Plus d'espace entre icône et texte */
-    padding: 16px 30px !important; /* BEAUCOUP PLUS GROS */
+    gap: 8px !important; /* Réduit de 12px */
+    padding: 10px 16px !important; /* RÉDUIT de 16px 30px */
     background: linear-gradient(135deg, #d4af37, #b8941f) !important;
     color: #0a0a0a !important;
     border: none !important;
-    border-radius: 35px !important; /* Plus arrondi */
+    border-radius: 25px !important; /* Réduit de 35px */
     cursor: pointer !important;
-    font-weight: 700 !important;
-    font-size: 1.15rem !important; /* BEAUCOUP PLUS GROS */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
-    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important; /* Réduit de 700 */
+    font-size: 0.9rem !important; /* RÉDUIT de 1.15rem */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important; /* Réduit de 3px */
     z-index: 9999 !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
-    min-height: 64px !important; /* BEAUCOUP PLUS GROS */
+    min-height: 44px !important; /* RÉDUIT de 64px (WCAG standard) */
     min-width: auto !important;
     white-space: nowrap !important;
   }
 
   .chatbot-toggle:hover {
-    transform: translate(-50%, -50%) scale(1.05) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+    transform: translateY(-2px) !important; /* Plus de scale */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
   }
 
   .chatbot-toggle.active {
@@ -259,8 +259,8 @@
   }
 
   .chatbot-toggle svg {
-    width: 32px !important; /* BEAUCOUP PLUS GROS */
-    height: 32px !important; /* BEAUCOUP PLUS GROS */
+    width: 20px !important; /* RÉDUIT de 32px */
+    height: 20px !important; /* RÉDUIT de 32px */
     flex-shrink: 0;
   }
 
@@ -272,13 +272,13 @@
 
   .chatbot-container {
     position: fixed !important;
-    top: 50% !important; /* Centre vertical */
-    left: 50% !important; /* Centre horizontal */
-    transform: translate(-50%, -50%) !important; /* Centrer parfaitement */
+    top: 70px !important; /* En dessous du toggle */
+    left: 20px !important; /* À GAUCHE */
+    transform: none !important; /* Plus de centrage */
     right: auto !important;
-    width: 400px !important;
+    width: 380px !important;
     max-width: calc(100vw - 40px) !important;
-    max-height: 600px !important;
+    max-height: calc(100vh - 100px) !important;
     background: rgba(26, 26, 26, 0.98) !important;
     backdrop-filter: blur(20px) !important;
     border: 2px solid rgba(212, 175, 55, 0.3) !important;
@@ -453,35 +453,32 @@
 
          @media (max-width: 768px) {
            .chatbot-toggle {
-             position: fixed !important;
-             top: 40% !important; /* Même position sur mobile */
-             left: 50% !important;
-             transform: translate(-50%, -50%) !important;
-             right: auto !important;
-             padding: 14px 26px !important; /* Légèrement plus petit sur mobile mais toujours grand */
-             font-size: 1.1rem !important;
-             min-height: 60px !important;
-             gap: 10px !important;
-             font-weight: 700 !important;
+             top: 15px !important; /* Légèrement plus haut sur mobile */
+             left: 15px !important; /* Légèrement plus proche du bord */
+             padding: 10px 14px !important; /* Encore plus petit sur mobile */
+             font-size: 0.85rem !important; /* Plus petit sur mobile */
+             min-height: 44px !important; /* Standard WCAG */
+             gap: 6px !important;
+             font-weight: 600 !important;
              z-index: 9999 !important;
-             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
-             border: 3px solid rgba(255, 255, 255, 0.3) !important;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+             border: 2px solid rgba(255, 255, 255, 0.2) !important;
            }
            
            .chatbot-toggle svg {
-             width: 28px !important;
-             height: 28px !important;
+             width: 18px !important;
+             height: 18px !important;
            }
 
            .chatbot-container {
              position: fixed !important;
-             top: 50% !important;
-             left: 50% !important;
-             transform: translate(-50%, -50%) !important;
+             top: 65px !important;
+             left: 15px !important;
+             transform: none !important;
              right: auto !important;
-             width: calc(100vw - 20px) !important;
+             width: calc(100vw - 30px) !important;
              max-width: 400px !important;
-             max-height: 70vh !important;
+             max-height: calc(100vh - 90px) !important;
              z-index: 9998 !important;
            }
          }

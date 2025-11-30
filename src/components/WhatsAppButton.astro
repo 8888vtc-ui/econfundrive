@@ -17,41 +17,41 @@
 <style>
   .whatsapp-button {
     position: fixed !important;
-    top: 60% !important; /* 60% depuis le haut = légèrement en dessous du centre */
-    left: 50% !important; /* CENTRER horizontalement */
-    transform: translate(-50%, -50%) !important; /* CENTRER parfaitement */
+    bottom: 20px !important; /* En bas */
+    left: 20px !important; /* À GAUCHE */
+    top: auto !important;
     right: auto !important;
-    bottom: auto !important;
+    transform: none !important; /* Plus de centrage */
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important; /* Plus d'espace entre icône et texte */
-    padding: 18px 32px !important; /* BEAUCOUP PLUS GROS */
+    gap: 8px !important; /* Réduit de 12px */
+    padding: 10px 16px !important; /* RÉDUIT de 18px 32px */
     background: #25D366 !important;
     color: white !important;
     text-decoration: none !important;
-    border-radius: 35px !important; /* Plus arrondi */
-    font-weight: 700 !important;
-    font-size: 1.2rem !important; /* BEAUCOUP PLUS GROS */
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6) !important;
-    border: 3px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 25px !important; /* Réduit de 35px */
+    font-weight: 600 !important; /* Réduit de 700 */
+    font-size: 0.9rem !important; /* RÉDUIT de 1.2rem */
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* Réduit de 3px */
     z-index: 10000 !important;
-    min-height: 64px !important; /* BEAUCOUP PLUS GROS */
+    min-height: 44px !important; /* RÉDUIT de 64px (WCAG standard) */
     min-width: auto !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
     white-space: nowrap !important;
   }
 
   .whatsapp-button:hover {
-    transform: translate(-50%, -50%) scale(1.05) !important;
-    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7) !important;
+    transform: translateY(-2px) !important; /* Plus de scale */
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
   }
 
   .whatsapp-button svg {
-    width: 32px !important; /* BEAUCOUP PLUS GROS */
-    height: 32px !important; /* BEAUCOUP PLUS GROS */
+    width: 20px !important; /* RÉDUIT de 32px */
+    height: 20px !important; /* RÉDUIT de 32px */
     flex-shrink: 0;
   }
 
@@ -62,18 +62,17 @@
 
   @media (max-width: 768px) {
     .whatsapp-button {
-      top: 60% !important; /* Même position sur mobile */
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      padding: 16px 28px !important; /* Légèrement plus petit sur mobile mais toujours grand */
-      font-size: 1.1rem !important;
-      min-height: 60px !important;
-      gap: 10px !important;
+      bottom: 20px !important;
+      left: 15px !important; /* Légèrement plus proche du bord sur mobile */
+      padding: 10px 14px !important; /* Encore plus petit sur mobile */
+      font-size: 0.85rem !important; /* Plus petit sur mobile */
+      min-height: 44px !important; /* Standard WCAG */
+      gap: 6px !important;
     }
     
     .whatsapp-button svg {
-      width: 28px !important;
-      height: 28px !important;
+      width: 18px !important;
+      height: 18px !important;
     }
   }
 </style>
