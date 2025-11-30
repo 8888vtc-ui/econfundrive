@@ -61,6 +61,17 @@ header.site-header {
   border: 1px solid rgba(209,213,219,0.5);
   background: radial-gradient(circle at 25% 0, #f9fafb, #374151 55%, #020617 100%);
   box-shadow: 0 12px 30px rgba(15,23,42,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #020617;
 }
 
 .nav-title {
@@ -198,6 +209,33 @@ header.site-header {
   color: #9ca3af;
 }
 
+.rating-strip {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.45);
+  background: radial-gradient(circle at top, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+  font-size: 0.78rem;
+}
+
+.rating-stars {
+  color: #facc15;
+  letter-spacing: 0.08em;
+}
+
+.rating-text {
+  color: #e5e7eb;
+}
+
+.rating-link {
+  color: #93c5fd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .hero-card {
   border-radius: var(--radius-xl);
   border: 1px solid rgba(148,163,184,0.35);
@@ -252,6 +290,14 @@ header.site-header {
   border: 1px solid rgba(148,163,184,0.35);
   background: radial-gradient(circle at top, rgba(15,23,42,0.98), rgba(15,23,42,0.92));
   padding: 1rem 1rem 1.1rem;
+}
+
+.lead-magnet {
+  margin-bottom: 1.75rem;
+}
+
+.lead-magnet-form {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .card h3 {
@@ -326,6 +372,21 @@ header.site-header {
   gap: 0.75rem;
 }
 
+.footer-badges {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.footer-badge {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(75,85,99,0.9);
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
 .breadcrumbs {
   font-size: 0.8rem;
   color: #9ca3af;
@@ -388,6 +449,44 @@ header.site-header {
   cursor: pointer;
   box-shadow: 0 14px 40px rgba(15,23,42,0.85);
   font-size: 1.35rem;
+  animation: chatbot-bounce 1.6s ease-in-out 0.6s 3;
+  position: fixed;
+}
+
+.chatbot-toggle::after {
+  content: "Salut, je peux vous aider ?";
+  position: absolute;
+  right: 56px;
+  bottom: 5px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid rgba(148,163,184,0.6);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  box-shadow: 0 16px 40px rgba(15,23,42,0.85);
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.chatbot-toggle.is-intro::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes chatbot-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
 }
 
 .chatbot-panel {

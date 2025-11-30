@@ -6,11 +6,36 @@ const chatbotForm = document.querySelector(".chatbot-form");
 const chatbotInput = document.querySelector(".chatbot-input");
 const chatbotMessages = document.querySelector(".chatbot-messages");
 
+// Met le bouton en mode "intro" pour afficher une petite bulle
+if (chatbotToggle) {
+  chatbotToggle.classList.add("is-intro");
+}
+
 if (chatbotToggle && chatbotPanel) {
   chatbotToggle.addEventListener("click", () => {
     chatbotPanel.classList.toggle("open");
+    chatbotToggle.classList.remove("is-intro");
   });
 }
+
+// Ouvre automatiquement le chatbot une première fois à l'arrivée sur le site
+function autoOpenChatbotOnce() {
+  if (!chatbotPanel) return;
+  try {
+    const alreadyOpened = sessionStorage.getItem("chatbotAutoOpened");
+    if (alreadyOpened) return;
+    setTimeout(() => {
+      chatbotPanel.classList.add("open");
+      sessionStorage.setItem("chatbotAutoOpened", "1");
+    }, 1500);
+  } catch (e) {
+    setTimeout(() => {
+      chatbotPanel.classList.add("open");
+    }, 1500);
+  }
+}
+
+autoOpenChatbotOnce();
 
 function appendMessage(role, text) {
   if (!chatbotMessages) return;
