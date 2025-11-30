@@ -315,14 +315,22 @@ body::after {
 }
 
 /* Sections avec fond semi-transparent pour lisibilité */
-main {
+main,
+#main-content {
   position: relative;
   z-index: 1;
+  min-height: 50vh;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 section {
   position: relative;
   z-index: 1;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Cards et contenus avec fond pour lisibilité */
