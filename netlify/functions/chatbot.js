@@ -44,10 +44,11 @@ PERSONNALITÉ:
 
 RÈGLES:
 1. Réponds dans la langue de l'utilisateur (FR/EN/IT/RU)
-2. Réponses courtes et pratiques (max 3-4 phrases)
-3. Ton direct et amical
-4. Toujours proposer formulaire /reservation ou contact direct
-5. Mentionner délai minimum 4h si pertinent
+2. Réponses courtes et pratiques (max 2-3 phrases)
+3. Ton direct et amical, PAS INSISTANT
+4. Ne force JAMAIS la réservation, reste discret
+5. Si le client donne des infos (départ, arrivée, date, heure), dis simplement "Je prends note et je vous confirme par WhatsApp"
+6. Si le client n'est pas intéressé, ne pas insister, juste dire "D'accord, n'hésitez pas si besoin"
 
 INTERDITS:
 - Sujets sensibles (politique, religion)
@@ -55,11 +56,14 @@ INTERDITS:
 - Citer email directement
 - Familiarité excessive
 - Réponses trop longues
+- ÊTRE INSISTANT ou forcer la vente
+- Répéter plusieurs fois la même chose
 
 OBJECTIF:
 - Aider le client efficacement
-- Collecter infos pour réservation (départ, arrivée, date, heure, passagers)
-- Orienter vers formulaire ou contact direct`;
+- Collecter infos pour réservation (départ, arrivée, date, heure, passagers) de manière naturelle
+- Si infos collectées, dire "Je prends note et je vous confirme par WhatsApp"
+- Rester discret et professionnel`;
 
 // Détection de langue
 function detectLanguage(text) {
@@ -68,6 +72,62 @@ function detectLanguage(text) {
   if (/[а-яё]/i.test(text)) return 'ru';
   if (/ciao|grazie|prego|buongiorno/i.test(text)) return 'it';
   return 'fr';
+}
+
+// Détecter si le message contient des informations de réservation
+function detectBookingInfo(text) {
+  const lower = text.toLowerCase();
+  
+  // Mots-clés indiquant une réservation
+  const bookingKeywords = [
+    'réserv', 'book', 'prenot', 'бронир',
+    'transfert', 'transfer', 'trajet', 'trip', 'viaggio',
+    'aéroport', 'airport', 'aeroporto', 'аэропорт',
+    'demain', 'tomorrow', 'domani', 'завтра',
+    'aujourd\'hui', 'today', 'oggi', 'сегодня',
+    'passager', 'passenger', 'passeggero', 'пассажир',
+    'bagage', 'baggage', 'bagaglio', 'багаж'
+  ];
+  
+  // Vérifier présence de mots-clés
+  const hasKeywords = bookingKeywords.some(keyword => lower.includes(keyword));
+  
+  // Vérifier présence de dates/heures (format simple)
+  const hasDate = /\d{1,2}[\/\-\.]\d{1,2}/.test(text) || 
+                  /\d{1,2}\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i.test(text) ||
+                  /\d{1,2}\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i.test(text);
+  
+  const hasTime = /\d{1,2}[h:]\d{0,2}/.test(text) || 
+                  /\d{1,2}\s*(h|am|pm|heure|hour)/i.test(text);
+  
+  // Vérifier présence de lieux (Nice, Cannes, Monaco, etc.)
+  const hasLocation = /nice|cannes|monaco|saint-tropez|antibes|fréjus|sainte-maxime|sophia/i.test(text);
+  
+  return hasKeywords && (hasDate || hasTime || hasLocation);
+}
+
+// Formater le message pour WhatsApp
+function formatBookingMessage(text, lang) {
+  const timestamp = new Date().toLocaleString('fr-FR', { 
+    timeZone: 'Europe/Paris',
+    dateStyle: 'short',
+    timeStyle: 'short'
+  });
+  
+  if (lang === 'en') {
+    return `New booking request from website chatbot:\n\n${text}\n\nReceived: ${timestamp}`;
+  }
+  
+  if (lang === 'it') {
+    return `Nuova richiesta di prenotazione dal chatbot del sito:\n\n${text}\n\nRicevuta: ${timestamp}`;
+  }
+  
+  if (lang === 'ru') {
+    return `Новый запрос на бронирование с чатбота сайта:\n\n${text}\n\nПолучено: ${timestamp}`;
+  }
+  
+  // Français (par défaut)
+  return `Nouvelle demande de réservation depuis le chatbot du site:\n\n${text}\n\nReçue le: ${timestamp}`;
 }
 
 // Message de fallback
@@ -209,13 +269,27 @@ exports.handler = async function(event) {
       throw new Error('Aucune réponse générée');
     }
 
+    // Détecter si des informations de réservation sont présentes
+    const hasBookingInfo = detectBookingInfo(userMessage);
+    let whatsappLink = null;
+    
+    if (hasBookingInfo) {
+      // Créer un lien WhatsApp avec message pré-rempli
+      const bookingMessage = formatBookingMessage(userMessage, lang);
+      whatsappLink = `https://wa.me/33616552811?text=${encodeURIComponent(bookingMessage)}`;
+    }
+
     return {
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       },
-      body: JSON.stringify({ answer })
+      body: JSON.stringify({ 
+        answer,
+        hasBookingInfo,
+        whatsappLink
+      })
     };
 
   } catch (error) {

@@ -174,7 +174,18 @@
           if (messages) {
             const botMsg = document.createElement('div');
             botMsg.className = 'message bot';
-            botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
+            
+            // Si des infos de réservation sont détectées, envoyer automatiquement sur WhatsApp
+            if (data.hasBookingInfo && data.whatsappLink) {
+              // Ouvrir WhatsApp automatiquement
+              window.open(data.whatsappLink, '_blank');
+              
+              // Afficher le message avec confirmation
+              botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
+            } else {
+              botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
+            }
+            
             messages.appendChild(botMsg);
             messages.scrollTop = messages.scrollHeight;
           }
