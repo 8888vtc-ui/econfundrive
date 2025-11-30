@@ -14,7 +14,8 @@
 </a>
 
 <style>
-  /* WHATSAPP - PROPRE, FIXE, MILIEU VERTICAL, FLOTTANT */
+  /* WHATSAPP - PROPRE, FIXE, MILIEU VERTICAL, FLOTTANT - OVERRIDE TOUT */
+  a.whatsapp-floating,
   .whatsapp-floating {
     position: fixed !important;
     display: flex !important;
@@ -43,6 +44,8 @@
     will-change: transform !important;
     backface-visibility: visible !important;
     pointer-events: auto !important;
+    float: none !important;
+    clear: both !important;
   }
 
   .whatsapp-floating:hover {

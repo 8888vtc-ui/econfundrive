@@ -225,7 +225,8 @@
 </script>
 
 <style>
-  /* CHATBOT - PROPRE, FIXE, TOUJOURS VISIBLE, FLOTTANT */
+  /* CHATBOT - PROPRE, FIXE, TOUJOURS VISIBLE, FLOTTANT - OVERRIDE TOUT */
+  button.chatbot-toggle,
   .chatbot-toggle {
     position: fixed !important;
     display: flex !important;
@@ -239,6 +240,9 @@
     transform: none !important;
     will-change: auto !important;
     backface-visibility: visible !important;
+    margin: 0 !important;
+    float: none !important;
+    clear: both !important;
     width: auto !important;
     height: auto !important;
     min-width: 130px !important;
@@ -287,6 +291,7 @@
   }
 
   /* Chatbot Container */
+  #chatbot-container,
   .chatbot-container {
     position: fixed !important;
     left: 20px !important;
@@ -296,6 +301,9 @@
     transform: none !important;
     will-change: auto !important;
     backface-visibility: visible !important;
+    margin: 0 !important;
+    float: none !important;
+    clear: both !important;
     width: 380px !important;
     max-width: calc(100vw - 40px) !important;
     max-height: 500px !important;
