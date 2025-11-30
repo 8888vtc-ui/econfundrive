@@ -1,87 +1,25 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroBanner from '../components/HeroBanner.astro';
-import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const imageTextMapping = {
-  hero: {
-    image: '/assets/img/destinations/nikki-beach-saint-tropez.jpg',
-    alt: 'VTC Saint-Tropez - Chauffeur privé professionnel',
-    title: 'VTC Saint-Tropez – Chauffeur Privé à Saint-Tropez',
-    subtitle: 'Service VTC professionnel sur Saint-Tropez. Port, Pampelonne, villas privées, événements, transferts hélistations.'
-  },
-  content: {
-    image1: {
-      image: '/assets/img/destinations/nikki-beach-saint-tropez.jpg',
-      alt: 'VTC Saint-Tropez - Port et plages',
-      text: 'Saint-Tropez - Destination Exclusive'
-    }
-  }
-};
+const title = "VTC Saint-Tropez | ECOFUNDRIVE";
+const description = "Service de VTC Saint-Tropez sur la CÃ´te d'Azur. VTC Saint-Tropez";
+const keywords = [
+  'VTC Saint-Tropez'];
 ---
 
-<BaseLayout
-  title="VTC Saint-Tropez – Chauffeur Privé à Saint-Tropez | ECOFUNDRIVE"
-  description="Chauffeur privé VTC à Saint-Tropez. Port, Pampelonne, villas privées, événements, gare de Saint-Raphaël, transferts hélistations. Service professionnel."
+
+<!-- Mots-clÃ©s SEO: VTC Saint-Tropez -->
+
+<BaseLayout 
+  title={title}
+  description={description}
   currentPage="vtc-saint-tropez"
 >
-  <HeroBanner
-    image={imageTextMapping.hero.image}
-    alt={imageTextMapping.hero.alt}
-    title={imageTextMapping.hero.title}
-    subtitle={imageTextMapping.hero.subtitle}
-  />
-
-  <section class="page-content">
-    <div class="container">
-      <nav class="breadcrumb">
-        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Saint-Tropez</span>
-      </nav>
-
-      <div class="content-block">
-        <h2>Service VTC Professionnel à Saint-Tropez</h2>
-        <p>
-          Je propose un service de chauffeur privé VTC professionnel sur Saint-Tropez et le golfe de Saint-Tropez. 
-          Spécialisé dans les transferts vers le port, les plages de Pampelonne, les villas privées, 
-          les événements et les hélistations.
-        </p>
-      </div>
-
-      <ImageTextOverlay
-        image={imageTextMapping.content.image1.image}
-        alt={imageTextMapping.content.image1.alt}
-        text={imageTextMapping.content.image1.text}
-        height="300px"
-      />
-
-      <div class="content-block">
-        <h2>Zones Desservies à Saint-Tropez</h2>
-        <ul class="feature-list">
-          <li><strong>Port de Saint-Tropez</strong> : Accès au port et aux yachts</li>
-          <li><strong>Pampelonne</strong> : Plages privées et clubs de plage</li>
-          <li><strong>Villas privées</strong> : Accès aux résidences de prestige</li>
-          <li><strong>Événements</strong> : Mariages, anniversaires, soirées</li>
-          <li><strong>Hélistations</strong> : Transferts depuis les hélistations</li>
-          <li><strong>Gare de Saint-Raphaël</strong> : Connexions train</li>
-        </ul>
-      </div>
-
-      <div class="content-block">
-        <h2>Réservation</h2>
-        <p>
-          Pour organiser vos transferts vers le Golfe de Saint‑Tropez, remplissez le 
-          <a href="/reservation">formulaire de réservation</a> avec vos horaires, points de prise en charge 
-          et nombre de passagers. Pour des séjours complets avec plusieurs trajets, vous pouvez détailler vos besoins 
-          via la page <a href="/contact">Contact</a>. Les départs doivent être réservés au minimum 4 heures avant 
-          l'horaire de prise en charge ; pour une demande plus urgente, utilisez le téléphone ou le bouton WhatsApp 
-          du site afin de vérifier la disponibilité.
-        </p>
-        <p>
-          Complétez vos déplacements avec nos services <a href="/vtc-nice">VTC Nice</a>, 
-          <a href="/vtc-cannes">VTC Cannes</a> et <a href="/vtc-monaco">VTC Monaco</a>.
-        </p>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- VTC Saint-Tropez -->
+  </main>
 </BaseLayout>
-

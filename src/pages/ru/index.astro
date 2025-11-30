@@ -1,49 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Частный трансфер на Лазурном берегу – Ницца, Канны, Монако, Сен‑Тропе";
-const description = "Частный водитель на Лазурном берегу: трансферы из аэропорта Ниццы, в Канны, Монако и Сен‑Тропе. Комфортабельные автомобили, англоговорящий водитель.";
-const canonical = "/ru/";
+const title = "chauffeur privé VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privé VTC sur la CÃ´te d'Azur. chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur";
+const keywords = [
+  'chauffeur privé VTC' 'VTC Nice' 'VTC Cannes' 'VTC Monaco' 'transfert aéroport Nice' 'chauffeur Côte d'Azur' 'VTC Saint-Tropez' 'transport premium' 'chauffeur business' 'mise à disposition chauffeur' 'transfert aéroport Cannes' 'VTC longue distance' 'chauffeur événement' 'VTC mariage' 'circuit touristique Côte d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="index"
-  canonical={canonical}
 >
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Лазурный берег</div>
-          <h1 class="section-title">Частный трансфер на Лазурном берегу</h1>
-          <p>Индивидуальные поездки между аэропортом Ниццы (NCE), Ниццей, Каннами, Монако и Сен‑Тропе на комфортабельных автомобилях.</p>
-        </div>
-        <div class="image-grid">
-          
-        </div>
-
-        <section class="section" style="padding-top:0.5rem">
-          <h2>Основные направления</h2>
-          <ul>
-            <li>Аэропорт Ниццы ⇄ центр Ниццы.</li>
-            <li>Ницца ⇄ Канны, Антиб, Монако, Сен‑Тропе.</li>
-            <li>Деловые поездки, отдых, вечерние мероприятия.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Как забронировать</h2>
-          <p>Самый быстрый способ связаться с водителем – <strong>WhatsApp</strong> или телефон:</p>
-          <p>
-            <a href="https://wa.me/33616552811" class="btn-primary" target="_blank" rel="noopener">Написать в WhatsApp</a>
-            <span style="margin-left:0.75rem; font-size:0.9rem;">или позвонить по номеру <a href="tel:+33616552811">+33 6 16 55 28 11</a></span>
-          </p>
-          <p>Также вы можете заполнить форму бронирования на французском языке:</p>
-          <p><a href="/reservation" class="btn-outline-light">Открыть форму бронирования (FR)</a></p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
+  </main>
 </BaseLayout>

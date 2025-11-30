@@ -1,60 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Planning a long-distance transfer from the Riviera | Guide";
-const description = "Tips in English to prepare a long-distance private transfer from the French Riviera to other cities or regions: what to share with your driver and how to make the trip easier.";
-const canonical = "/en/guide-long-distance-transfers.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-long-distance-transfers"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Long Distance Transfers", url: "/guide-long-distance-transfers" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Long-distance transfers</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Long-distance guide</div>
-          <h1 class="section-title">Planning a long-distance transfer from the French Riviera</h1>
-          <p>Sometimes a train or a flight is not the most convenient option. A private long-distance transfer can be a good alternative for families, business travellers or small groups.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>When does a long-distance transfer make sense?</h2>
-          <ul>
-            <li>When you travel with several people and a lot of luggage.</li>
-            <li>When your destination is not well connected by train or plane.</li>
-            <li>When you prefer a direct journey from door to door.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Information to share when you request a quote</h2>
-          <ul>
-            <li>Exact pick-up and drop-off addresses.</li>
-            <li>Date, approximate time and possible flexibility.</li>
-            <li>Number of passengers and luggage.</li>
-            <li>Any special needs (child seats, extra stops, return trip).</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Making the journey more comfortable</h2>
-          <p>For long-distance trips, it is usually better to plan a few short breaks. Let your driver know if you prefer to stop in a particular town or service area.</p>
-          <p>To describe your project, you can use the <a href="/reservation">booking form</a> and mention that you are interested in a long-distance transfer from the French Riviera.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

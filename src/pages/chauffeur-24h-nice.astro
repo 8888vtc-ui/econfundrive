@@ -1,135 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SchemaOrg from '../components/SchemaOrg.astro';
 
-const title = "Chauffeur VTC 24h/24 Nice | Service Permanent - ECOFUNDRIVE";
-const description = "Service VTC 24h/24 et 7j/7 à Nice et sur la Côte d'Azur. Chauffeur disponible jour et nuit pour transferts urgents, aéroport, événements. Réservation rapide.";
-const canonical = "/chauffeur-24h-nice";
-
-const breadcrumbItems = [
-  { name: "Accueil", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "VTC 24h/24", url: "/chauffeur-24h-nice" }
-];
+const title = "VTC 24h Nice | ECOFUNDRIVE";
+const description = "Service de VTC 24h Nice sur la CÃ´te d'Azur. VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice";
+const keywords = [
+  'VTC 24h Nice' 'chauffeur nuit Nice' 'VTC urgence Nice'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="chauffeur-24h-nice"
-  canonical={canonical}
 >
-  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC 24h/24</span>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Service permanent</div>
-        <h1 class="section-title">Chauffeur VTC 24h/24 Nice : Service Permanent</h1>
-        <p>Besoin d'un chauffeur privé à toute heure ? ECOFUNDRIVE propose un service VTC disponible 24 heures sur 24 et 7 jours sur 7 sur la Côte d'Azur. Transferts urgents, aéroport, événements, déplacements professionnels : nous sommes là quand vous en avez besoin.</p>
-      </div>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3>Service 24h/24 et 7j/7</h3>
-          <p>Disponible jour et nuit, week-ends et jours fériés inclus. Réponse rapide pour vos besoins urgents.</p>
-        </div>
-        <div class="card">
-          <h3>Transferts aéroport</h3>
-          <p>Prise en charge à toute heure depuis les aéroports de Nice (NCE) et Cannes-Mandelieu, même pour les vols de nuit.</p>
-        </div>
-        <div class="card">
-          <h3>Urgences et imprévus</h3>
-          <p>Besoin d'un chauffeur en urgence ? Contactez-nous au <a href="tel:+33616552811">06 16 55 28 11</a> ou via WhatsApp.</p>
-        </div>
-        <div class="card">
-          <h3>Événements nocturnes</h3>
-          <p>Mariages, soirées, événements : service disponible jusqu'au petit matin pour vos retours en toute sécurité.</p>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Quand réserver un VTC 24h/24 ?</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Vols de nuit ou tôt le matin</h3>
-            <p>Arrivées ou départs aux aurores ? Nous assurons votre transfert même à 4h du matin.</p>
-          </div>
-          <div class="card">
-            <h3>Urgences professionnelles</h3>
-            <p>Déplacement imprévu, rendez-vous urgent : réactivité maximale pour vos besoins business.</p>
-          </div>
-          <div class="card">
-            <h3>Événements privés</h3>
-            <p>Mariages, anniversaires, soirées : service jusqu'au bout de la nuit pour vos invités.</p>
-          </div>
-          <div class="card">
-            <h3>Retours tardifs</h3>
-            <p>Après un dîner, un spectacle, une soirée : retour en sécurité à toute heure.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Comment réserver un VTC 24h/24 ?</h2>
-        <ol style="list-style: decimal; padding-left: 2rem; line-height: 2;">
-          <li><strong>Réservation en ligne</strong> : Utilisez notre <a href="/reservation">formulaire</a> (minimum 4h à l'avance)</li>
-          <li><strong>Appel direct</strong> : <a href="tel:+33616552811">06 16 55 28 11</a> pour les demandes urgentes</li>
-          <li><strong>WhatsApp</strong> : Bouton en bas à droite pour contact immédiat</li>
-        </ol>
-        <p style="margin-top: 1.5rem;"><strong>Note :</strong> Pour les demandes à moins de 4h, contactez-nous directement par téléphone ou WhatsApp. Nous ferons notre maximum pour répondre à votre besoin, sous réserve de disponibilité.</p>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Tarifs VTC 24h/24</h2>
-        <p>Nos tarifs sont identiques jour et nuit. Pas de majoration pour les transferts nocturnes. Le prix dépend uniquement de :</p>
-        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-          <li style="margin-bottom: 0.5rem;">✓ Distance du trajet</li>
-          <li style="margin-bottom: 0.5rem;">✓ Type de véhicule (berline ou van)</li>
-          <li style="margin-bottom: 0.5rem;">✓ Nombre de passagers et bagages</li>
-          <li style="margin-bottom: 0.5rem;">✓ Options spécifiques (siège enfant, etc.)</li>
-        </ul>
-        <p style="margin-top: 1.5rem;"><a href="/tarifs" class="btn-outline-light">Consulter nos tarifs</a></p>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Zones couvertes 24h/24</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Nice et alentours</h3>
-            <p>Aéroport, centre-ville, Vieux-Nice, Promenade des Anglais, Mont Boron</p>
-          </div>
-          <div class="card">
-            <h3>Cannes et Mandelieu</h3>
-            <p>Croisette, Palais des Festivals, aéroport Cannes-Mandelieu, hôtels de luxe</p>
-          </div>
-          <div class="card">
-            <h3>Monaco</h3>
-            <p>Monte-Carlo, Casino, port Hercule, hôtels prestigieux</p>
-          </div>
-          <div class="card">
-            <h3>Saint-Tropez et golfe</h3>
-            <p>Port, Pampelonne, Ramatuelle, Fréjus, Sainte-Maxime</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 2rem; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--luxe-gold, #d4af37);">
-        <h3 style="color: var(--luxe-gold, #d4af37);">Besoin urgent d'un chauffeur ?</h3>
-        <p>Appelez-nous maintenant : <a href="tel:+33616552811" style="font-size: 1.2rem; font-weight: 600;">06 16 55 28 11</a></p>
-        <p>Ou utilisez WhatsApp (bouton en bas à droite) pour une réponse immédiate.</p>
-        <p style="margin-top: 1rem;"><a href="/reservation" class="btn-primary">Réserver en ligne</a></p>
-      </div>
-
-      <p class="hero-secondary" style="margin-top: 2rem;">
-        Voir aussi : <a href="/services">Tous nos services</a> | <a href="/vtc-nice">VTC Nice</a> | <a href="/contact">Contact</a>
-      </p>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice -->
+  </main>
 </BaseLayout>
-
-<SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
-<SchemaOrg type="service" serviceName="VTC 24h/24 Nice" serviceDescription="Service de chauffeur privé VTC disponible 24 heures sur 24 et 7 jours sur 7 à Nice et sur la Côte d'Azur" />
-

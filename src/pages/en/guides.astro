@@ -1,102 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "French Riviera VTC Guides – Practical tips | David Chemla";
-const description = "Practical guides in English to help you plan your French Riviera journeys: Nice airport transfers, Cannes festivals, Monaco, Saint-Tropez and sightseeing tours.";
-const canonical = "/en/guides.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guides"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <span>VTC Guides</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">VTC Guides</div>
-          <h1 class="section-title">French Riviera VTC guides</h1>
-          <p>Short, practical guides in English to help you organise your transfers, business trips and sightseeing days on the French Riviera.</p>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3>Nice Airport: taxi or private driver?</h3>
-            <p>Understand the differences between a classic taxi and a private driver for your arrivals and departures at Nice Airport.</p>
-            <a href="/en/guide-nice-airport-taxi-or-private-driver" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Getting around during Cannes festivals</h3>
-            <p>How to move between the airport, hotels, Palais des Festivals and evening venues during major events in Cannes.</p>
-            <a href="/en/guide-cannes-festivals-transport" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Planning a long-distance transfer</h3>
-            <p>Tips to prepare a long-distance journey by private car from the French Riviera to other cities and regions.</p>
-            <a href="/en/guide-long-distance-transfers" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>How to spend 1 to 3 days in Nice</h3>
-            <p>Simple ideas to plan a short stay in Nice, with a mix of old town, seaside and easy day trips.</p>
-            <a href="/en/guide-nice-in-1-to-3-days" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>What to do in Cannes</h3>
-            <p>Suggestions for discovering Cannes, from the Croisette to the old town and nearby excursions.</p>
-            <a href="/en/guide-what-to-do-in-cannes" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>One day in Monaco</h3>
-            <p>A simple plan for a day trip to Monaco from the French Riviera, including old town and Monte-Carlo.</p>
-            <a href="/en/guide-one-day-in-monaco" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Discovering Saint-Tropez and the Gulf</h3>
-            <p>How to reach Saint-Tropez, enjoy the beaches and villages, and avoid parking stress.</p>
-            <a href="/en/guide-saint-tropez-and-gulf" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Hilltop villages of the French Riviera</h3>
-            <p>Ideas for a day visiting charming hilltop villages with great views.</p>
-            <a href="/en/guide-hilltop-villages-french-riviera" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Scenic road between Nice, Èze and Monaco</h3>
-            <p>How to enjoy the different coastal roads and photo stops between Nice and Monaco.</p>
-            <a href="/en/guide-scenic-road-nice-eze-monaco" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Family day out on the Riviera</h3>
-            <p>Ideas for family-friendly days with children, mixing beach time and easy walks.</p>
-            <a href="/en/guide-family-day-french-riviera" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Getting around during Cannes congresses</h3>
-            <p>Organising transfers and shuttles for teams and guests during Cannes congresses.</p>
-            <a href="/en/guide-cannes-congress-transport" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>Moving around during the Monaco Grand Prix</h3>
-            <p>Key points to plan your trips to and from Monaco on race days.</p>
-            <a href="/en/guide-monaco-grand-prix-transport" class="btn-outline-light">Read the guide</a>
-          </div>
-          <div class="card">
-            <h3>High season traffic on the French Riviera</h3>
-            <p>Understanding summer traffic and parking, and when a private driver can save time and energy.</p>
-            <a href="/en/guide-high-season-traffic-french-riviera" class="btn-outline-light">Read the guide</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

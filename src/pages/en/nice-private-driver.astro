@@ -1,89 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Private driver in Nice – Airport transfers & city rides";
-const description = "English‑speaking private driver in Nice for airport transfers (NCE), city rides and long‑distance trips to Cannes, Monaco, Fréjus, Sainte‑Maxime and Saint‑Tropez. Advance booking (minimum 4 hours before pick‑up time).";
-const canonical = "/en/nice-private-driver.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="nice-private-driver"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Nice Private Driver", url: "/nice-private-driver" }
-  ]}
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Nice · French Riviera</div>
-          <h1 class="section-title">Private driver in Nice – Airport & city transfers</h1>
-          <p>English‑speaking private driver based near Nice, available for transfers between Nice airport (NCE), the city centre, hotels and nearby cities.</p>
-        </div>
-
-        <div class="image-grid">
-          
-          
-          
-          
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Nice airport (NCE) private transfers</h2>
-          <p>Pick‑up inside the arrival hall with a name sign, flight tracking and comfortable transfer to Nice city centre, Cannes, Antibes or Monaco.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>How to book your private driver in Nice</h2>
-          <p>The fastest way is to use <strong>WhatsApp</strong> or call the driver directly. Please try to book at least 4 hours before pick‑up time; for very last‑minute journeys, availability cannot be guaranteed.</p>
-          <p>
-            <a href="https://wa.me/33616552811" class="btn-primary" target="_blank" rel="noopener">Chat on WhatsApp</a>
-            <span style="margin-left:0.75rem; font-size:0.9rem;">or call <a href="tel:+33616552811">+33 6 16 55 28 11</a></span>
-          </p>
-          <p>You can also fill in the French booking form with your basic details:</p>
-          <p><a href="/reservation" class="btn-outline-light">Open the booking form (FR)</a></p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>FAQ – private driver in Nice</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Which areas do you cover from Nice?</div>
-              <div class="faq-answer">
-                <p>Typical journeys include Nice airport, Nice city centre, the main hotels and residential areas, but also transfers to Cannes, Antibes, Monaco and the Gulf of Saint‑Tropez (Fréjus, Sainte‑Maxime, Saint‑Tropez).</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Do you provide night transfers in or from Nice?</div>
-              <div class="faq-answer">
-                <p>Yes, night transfers can be arranged on request, provided that they are booked early enough. When sending your enquiry, please indicate the exact time and pick‑up location.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Which languages do you speak with guests?</div>
-              <div class="faq-answer">
-                <p>The service is available in English and French, with regular experience hosting international travellers coming to Nice for business or leisure.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">How much time in advance should I book from Nice?</div>
-              <div class="faq-answer">
-                <p>As a rule of thumb, journeys are booked at least 4 hours before pick‑up time. During busy periods (congresses, festivals, summer), it is better to book several days in advance whenever possible.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Can you organise transfers for small groups?</div>
-              <div class="faq-answer">
-                <p>Yes, vans or several cars can be coordinated on request for small groups, families or business teams, subject to availability and sufficient notice.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

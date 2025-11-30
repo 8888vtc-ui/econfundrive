@@ -1,59 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Nice Airport: taxi or private driver? | Guide";
-const description = "Short guide in English to help you choose between a traditional taxi and a private driver service when arriving or leaving Nice Airport.";
-const canonical = "/en/guide-nice-airport-taxi-or-private-driver.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-nice-airport-taxi-or-private-driver"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Nice Airport Taxi Or Private Driver", url: "/guide-nice-airport-taxi-or-private-driver" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Nice Airport: taxi or private driver?</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Nice Airport guide</div>
-          <h1 class="section-title">Nice Airport: taxi or private driver?</h1>
-          <p>When you land at Nice Côte d’Azur Airport, you usually have several options: public transport, regular taxi or private driver. This guide focuses on the difference between taxi and private driver.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>How a taxi works at Nice Airport</h2>
-          <ul>
-            <li>Official taxi ranks are located just outside the terminals.</li>
-            <li>Fares are metered and can vary depending on traffic and route.</li>
-            <li>There may be a queue at peak arrival times.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>How a private driver service works</h2>
-          <ul>
-            <li>Your trip is requested in advance, usually by message or booking form.</li>
-            <li>You receive an estimated price before confirming.</li>
-            <li>The driver waits for you at the agreed meeting point with a name sign.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Which option should you choose?</h2>
-          <p>If you are travelling light and speak some French, a taxi can be a simple last-minute option. If you prefer a more personalised service, with prices shared in advance and direct contact with the driver, a private driver is often more comfortable.</p>
-          <p>To learn more about private transfers, you can check the page <a href="/en/nice-airport-to-cannes-transfer">Nice Airport &rarr; Cannes transfer</a> or send a request through the French <a href="/reservation">booking form</a>.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

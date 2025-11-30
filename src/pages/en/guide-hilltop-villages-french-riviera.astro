@@ -1,54 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Hilltop villages of the French Riviera in one day | Guide";
-const description = "English guide with ideas for a day visiting hilltop villages on the French Riviera, and tips on how a private driver can help.";
-const canonical = "/en/guide-hilltop-villages-french-riviera.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-hilltop-villages-french-riviera"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Hilltop Villages French Riviera", url: "/guide-hilltop-villages-french-riviera" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Hilltop villages</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Excursions guide</div>
-          <h1 class="section-title">Hilltop villages of the French Riviera in one day</h1>
-          <p>The French Riviera is not only about the sea. Several hilltop villages offer great views and quiet streets, just a short drive from the coast.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Examples of villages to combine</h2>
-          <ul>
-            <li>One or two popular villages for a first visit.</li>
-            <li>Another stop mainly for the view and a short walk.</li>
-            <li>A final stop for a drink or simple meal.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Why a private driver can help</h2>
-          <ul>
-            <li>You do not have to focus on narrow or winding roads.</li>
-            <li>You can adjust the time spent in each village.</li>
-            <li>You avoid searching for parking spaces several times in the same day.</li>
-          </ul>
-          <p>If you would like to organise this kind of day, you can describe your idea in the <a href="/reservation">booking form</a> and mention the villages or type of scenery you would like to see.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

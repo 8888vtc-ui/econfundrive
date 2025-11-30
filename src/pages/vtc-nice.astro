@@ -1,111 +1,25 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroBanner from '../components/HeroBanner.astro';
-import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const imageTextMapping = {
-  hero: {
-    image: '/assets/img/hero/hero-aeroport-nice.webp',
-    alt: 'VTC Nice - Chauffeur privé professionnel',
-    title: 'VTC Nice – Chauffeur Privé à Nice',
-    subtitle: 'Service VTC professionnel sur Nice et ses environs. Transferts aéroport, centre-ville, hôtels 5 étoiles.'
-  },
-  content: {
-    image1: {
-      image: '/assets/img/destinations/vtc-tesla-nice.jpg',
-      alt: 'VTC Nice - Service professionnel',
-      text: 'Zones Desservies à Nice'
-    },
-    image2: {
-      image: '/assets/img/destinations/plage-beau-rivage-nice.jpg',
-      alt: 'VTC Nice - Promenade des Anglais',
-      text: 'Service Premium 24h/24'
-    }
-  }
-};
+const title = "VTC pas cher Nice aÃ©roport | ECOFUNDRIVE";
+const description = "Service de VTC pas cher Nice aÃ©roport sur la CÃ´te d'Azur. VTC pas cher Nice aÃ©roport, chauffeur VTC 24h/24 Nice, VTC Nice, transfert aÃ©roport Nice";
+const keywords = [
+  'VTC pas cher Nice aÃ©roport' 'chauffeur VTC 24h/24 Nice' 'VTC Nice' 'transfert aÃ©roport Nice'];
 ---
 
-<BaseLayout
-  title="VTC Nice – Chauffeur Privé à Nice | ECOFUNDRIVE"
-  description="Chauffeur privé VTC à Nice. Transferts aéroport Nice, Vieux-Nice, Promenade des Anglais, hôtels 5*, gare SNCF. Service professionnel 24h/24."
+
+<!-- Mots-clÃ©s SEO: VTC pas cher Nice aÃ©roport, chauffeur VTC 24h/24 Nice, VTC Nice, transfert aÃ©roport Nice -->
+
+<BaseLayout 
+  title={title}
+  description={description}
   currentPage="vtc-nice"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Services", url: "/services" },
-    { name: "VTC Nice", url: "/vtc-nice" }
-  ]}
 >
-  <HeroBanner
-    image={imageTextMapping.hero.image}
-    alt={imageTextMapping.hero.alt}
-    title={imageTextMapping.hero.title}
-    subtitle={imageTextMapping.hero.subtitle}
-  />
-
-  <section class="page-content">
-    <div class="container">
-      <nav class="breadcrumb">
-        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Nice</span>
-      </nav>
-
-      <div class="content-block">
-        <h2>Service VTC Professionnel à Nice</h2>
-        <p>
-          Je propose un service de chauffeur privé VTC professionnel sur Nice et ses environs. 
-          Spécialisé dans les transferts depuis l'aéroport Nice Côte d'Azur (NCE), je couvre également 
-          le Vieux-Nice, la Promenade des Anglais, les hôtels 5 étoiles, la gare SNCF et le port Lympia.
-        </p>
-      </div>
-
-      <ImageTextOverlay
-        image={imageTextMapping.content.image1.image}
-        alt={imageTextMapping.content.image1.alt}
-        text={imageTextMapping.content.image1.text}
-        height="300px"
-      />
-
-      <div class="content-block">
-        <h2>Zones Desservies à Nice</h2>
-        <ul class="feature-list">
-          <li><strong>Aéroport Nice Côte d'Azur (NCE)</strong> : Transferts depuis et vers l'aéroport</li>
-          <li><strong>Vieux-Nice</strong> : Accès aux ruelles historiques et places animées</li>
-          <li><strong>Promenade des Anglais</strong> : Hôtels de luxe et plages</li>
-          <li><strong>Hôtels 5 étoiles</strong> : Negresco, Palais de la Méditerranée, etc.</li>
-          <li><strong>Gare SNCF Nice-Ville</strong> : Connexions train</li>
-          <li><strong>Port Lympia</strong> : Accès au port et aux croisières</li>
-        </ul>
-      </div>
-
-      <ImageTextOverlay
-        image={imageTextMapping.content.image2.image}
-        alt={imageTextMapping.content.image2.alt}
-        text={imageTextMapping.content.image2.text}
-        height="300px"
-      />
-
-      <div class="content-block">
-        <h2>Tarifs et Réservation</h2>
-        <p>
-          Pour bloquer votre chauffeur sur Nice, remplissez le <a href="/reservation">formulaire de réservation</a> 
-          ou utilisez le bouton WhatsApp pour une réponse rapide. Mentionnez votre adresse de départ, votre destination, 
-          la date, l'heure, le nombre de passagers et de bagages. Les départs doivent être réservés au minimum 4 heures 
-          avant l'horaire de prise en charge ; pour une demande plus urgente, contactez-nous directement par téléphone 
-          ou WhatsApp afin de vérifier la disponibilité.
-        </p>
-        <p>
-          Vous pouvez aussi découvrir nos autres destinations : 
-          <a href="/vtc-cannes">VTC Cannes</a>, 
-          <a href="/vtc-monaco">VTC Monaco</a>, 
-          <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.
-        </p>
-        <p>
-          Consultez aussi : 
-          <a href="/vtc-aeroport-nice-prix">Prix VTC aéroport Nice</a> | 
-          <a href="/chauffeur-24h-nice">Service 24h/24</a> | 
-          <a href="/tarifs">Tous nos tarifs</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- VTC pas cher Nice aÃ©roport, chauffeur VTC 24h/24 Nice, VTC Nice, transfert aÃ©roport Nice -->
+  </main>
 </BaseLayout>
-

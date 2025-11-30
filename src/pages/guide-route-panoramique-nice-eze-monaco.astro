@@ -1,64 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Route panoramique entre Nice, Èze et Monaco | Guide";
-const description = "Guide pour profiter des routes panoramiques entre Nice, Èze et Monaco&nbsp;: idées d’arrêts, points de vue et conseils de transport.";
-const canonical = "/guide-route-panoramique-nice-eze-monaco.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-route-panoramique-nice-eze-monaco"
-  canonical={canonical}
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Route panoramique Nice Èze Monaco", url: "/guide-route-panoramique-nice-eze-monaco" }
-  ]}
 >
-
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/guides">Guides VTC</a> › <span>Route panoramique Nice – Èze – Monaco</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Guide panoramas</div>
-          <h1 class="section-title">Route panoramique entre Nice, Èze et Monaco</h1>
-          <p>Entre Nice et Monaco, plusieurs routes offrent des vues spectaculaires sur la mer et les villages perchés. Voici quelques idées pour en profiter.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Les différentes corniches</h2>
-          <ul>
-            <li>Corniche basse&nbsp;: proche du bord de mer, accès aux plages.</li>
-            <li>Corniche moyenne&nbsp;: vue dégagée sur la mer et les villages.</li>
-            <li>Corniche haute&nbsp;: route en altitude avec panoramas impressionnants.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Idées d’arrêts en chemin</h2>
-          <ul>
-            <li>Arrêts photo aux belvédères le long de la route.</li>
-            <li>Visite du village d’Èze et de ses jardins.</li>
-            <li>Temps libre à Monaco ou sur le retour vers Nice.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Profiter de la route en VTC</h2>
-          <p>Un VTC permet de profiter du paysage sans se soucier de la conduite sur des routes parfois étroites et sinueuses. Vous pouvez demander&nbsp;:</p>
-          <ul>
-            <li>un circuit aller-retour au départ de votre hôtel ou location ;</li>
-            <li>des arrêts sur mesure selon vos envies photos ;</li>
-            <li>un retour en fin de journée après une visite à Monaco.</li>
-          </ul>
-          <p>Pour organiser ce type de sortie, utilisez le <a href="/reservation">formulaire de réservation</a> en détaillant votre projet (durée, étapes souhaitées, nombre de passagers). Découvrez aussi nos <a href="/services">services VTC sur la Côte d'Azur</a> et nos pages <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-monaco">VTC Monaco</a> ou <a href="/vtc-cannes">VTC Cannes</a>.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

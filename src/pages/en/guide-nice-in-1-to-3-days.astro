@@ -1,61 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "How to spend 1 to 3 days in Nice | Guide";
-const description = "Simple ideas in English to plan 1 to 3 days in Nice: old town, seaside walks and easy day trips, with a few tips on local transport.";
-const canonical = "/en/guide-nice-in-1-to-3-days.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-nice-in-1-to-3-days"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Nice In 1 To 3 Days", url: "/guide-nice-in-1-to-3-days" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Nice in 1 to 3 days</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Nice guide</div>
-          <h1 class="section-title">How to spend 1 to 3 days in Nice</h1>
-          <p>Nice is easy to explore in a few days. Here is a simple way to organise a short stay, without trying to see everything at once.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Day 1: old town and seaside</h2>
-          <ul>
-            <li>Walk through the old town and its narrow streets.</li>
-            <li>Enjoy the local market and cafés.</li>
-            <li>Finish the day with a walk along the Promenade des Anglais.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Day 2: museums and viewpoints</h2>
-          <p>On your second day, you may want to:</p>
-          <ul>
-            <li>visit one or two museums depending on your interests;</li>
-            <li>take a walk on one of the hills around Nice for a sea view;</li>
-            <li>go out for dinner in the old town or by the sea.</li>
-          </ul>
-          <p>You can use public transport, taxis or a private driver for the trips that are further away from the centre.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Day 3: easy day trips</h2>
-          <p>If you stay three days, consider a simple day trip to a nearby town or village. For example: Antibes, a hilltop village, or a short visit to Monaco.</p>
-          <p>A private driver can be useful if you prefer a flexible schedule and several stops in the same day. You can mention this in the <a href="/reservation">booking form</a>.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

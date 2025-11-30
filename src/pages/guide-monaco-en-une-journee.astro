@@ -1,64 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Visiter Monaco en une journée depuis la Côte d’Azur | Guide";
-const description = "Idées de visites pour une journée à Monaco depuis Nice, Cannes ou Antibes&nbsp;: itinéraire type, lieux à voir et conseils de transport.";
-const canonical = "/guide-monaco-en-une-journee.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-monaco-en-une-journee"
-  canonical={canonical}
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Monaco en une journée", url: "/guide-monaco-en-une-journee" }
-  ]}
 >
-
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/guides">Guides VTC</a> › <span>Monaco en une journée</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Guide Monaco</div>
-          <h1 class="section-title">Visiter Monaco en une journée depuis la Côte d’Azur</h1>
-          <p>Monaco est une étape classique lors d’un séjour sur la Côte d’Azur. Voici un exemple de programme pour une journée de visite.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Matin&nbsp;: vieille ville et palais</h2>
-          <ul>
-            <li>Visite de la vieille ville et du palais princier.</li>
-            <li>Point de vue sur le port et le rocher.</li>
-            <li>Découverte de la cathédrale et des ruelles historiques.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Après-midi&nbsp;: Monte-Carlo et port</h2>
-          <ul>
-            <li>Promenade autour du casino et des jardins.</li>
-            <li>Balade le long du port de plaisance.</li>
-            <li>Temps libre pour shopping ou pause en terrasse.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Comment se rendre à Monaco&nbsp;?</h2>
-          <p>Depuis Nice, Antibes ou Cannes, vous pouvez rejoindre Monaco par train, bus, voiture de location ou VTC. Le VTC permet de&nbsp;</p>
-          <ul>
-            <li>choisir les horaires qui vous conviennent ;</li>
-            <li>faire des arrêts panoramiques sur la route (corniches, points de vue) ;</li>
-            <li>éviter le stress du stationnement sur place.</li>
-          </ul>
-          <p>Pour organiser une journée à Monaco, vous pouvez utiliser le <a href="/reservation">formulaire de réservation</a> ou consulter la page <a href="/vtc-monaco">VTC Monaco</a>. Découvrez aussi nos <a href="/services">services VTC sur la Côte d'Azur</a> et nos pages <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-cannes">VTC Cannes</a> ou <a href="/vtc-saint-tropez">VTC Saint-Tropez</a>.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

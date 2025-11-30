@@ -1,108 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
 
-const title = "À propos d'ECOFUNDRIVE – Chauffeur VTC Côte d'Azur";
-const description = "Découvrez ECOFUNDRIVE, chauffeur VTC expérimenté sur la Côte d'Azur : Nice, Cannes, Monaco, Saint‑Tropez. Engagements qualité, sécurité et discrétion.";
-const canonical = "/a-propos";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="a-propos"
-  canonical={canonical}
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "À propos", url: "/a-propos" }
-  ]}
 >
-    <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
-      <a href="/">Accueil</a> › <span>À propos</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Qui sommes‑nous&nbsp;?</div>
-          <h1 class="section-title">À propos d’ECOFUNDRIVE – VTC sur la Côte d’Azur</h1>
-          <p>Chauffeur privé expérimenté, spécialisé dans les transferts premium entre Nice, Cannes, Monaco, Saint‑Tropez et l'ensemble de la Côte d'Azur.</p>
-          <p>Découvrez nos <a href="/services">services VTC</a>, consultez nos <a href="/tarifs">tarifs</a> et lisez les <a href="/avis-clients">avis de nos clients</a>. Pour réserver, utilisez notre <a href="/reservation">formulaire en ligne</a> ou contactez-nous directement.</p>
-        </div>
-
-
-        <section class="section section-spacing-sm">
-          <h2>Parcours &amp; expérience</h2>
-          <p>Basé à Villeneuve‑Loubet plage (Marina Baie des Anges), j’accompagne depuis plusieurs années une clientèle exigeante composée de particuliers, familles, chefs d’entreprise et équipes événementielles. Ma parfaite connaissance des axes routiers et des temps de trajet sur la Côte d’Azur me permet d’anticiper les imprévus (trafic, travaux, événements).</p>
-          <p>Habitué aux transferts aéroport de Nice, aux congrès à Cannes et aux événements à Monaco et Saint‑Tropez, j’assure un service discret, ponctuel et fiable, en français et en anglais.</p>
-          <p>Concrètement, mon travail ressemble souvent à des histoires simples&nbsp;: une famille que je récupère plusieurs années de suite à l’aéroport de Nice pour les conduire à leur location à Antibes, un chef d’entreprise que j’accompagne toute une journée entre l’aéroport, Sophia‑Antipolis et un dîner d’affaires à Cannes, ou encore un couple que je ramène en toute sécurité tard dans la nuit après une soirée à Saint‑Tropez.</p>
-        </section>
-
-        <section class="section section-spacing-sm">
-          <h2>Engagements qualité</h2>
-          <ul>
-            <li><strong>Ponctualité :</strong> les horaires sont sacrés&nbsp;: aucun oubli, aucun retard, et une arrivée systématiquement en avance (très souvent 30 minutes avant l’horaire prévu) au point de rendez‑vous, avec suivi des vols et trains.</li>
-            <li><strong>Confort :</strong> véhicules récents, climatisés, propres, équipés de Wi‑Fi, eau et chargeurs.</li>
-            <li><strong>Discrétion :</strong> confidentialité totale sur les trajets, rendez‑vous et échanges.</li>
-            <li><strong>Sécurité :</strong> conduite souple et prudente, respect du Code de la route et des temps de repos.</li>
-          </ul>
-          <p>J’aime aussi mettre les gens à l’aise avec une pointe d’humour. Je parle anglais couramment (ma femme est écossaise et beaucoup de clients britanniques commencent par un «&nbsp;so sorry&nbsp;» en montant à bord), je me décris parfois comme un chauffeur privé à mi‑chemin entre le guide touristique et le stand‑up&nbsp;: je connais aussi bien les coins cachés que les lieux emblématiques de la Côte d’Azur et je préfère «&nbsp;mister good vibes&nbsp;» à «&nbsp;chauffeur VIP&nbsp;». Mon défi personnel est simple&nbsp;: si je n’ai pas réussi à vous faire sourire au moins une fois pendant la course, j’ai raté quelque chose – tout en respectant toujours votre besoin de calme si vous préférez rester tranquille. Fan d’Aznavour, de musique française et de jeux comme le backgammon où je suis beaucoup plus à l’aise qu’en wingfoil. En dehors du volant, on me croise plus facilement avec une raquette de tennis ou une planche de windsurf qu’en costume, mais je prends mon métier de chauffeur très au sérieux&nbsp;: votre confort et votre sécurité restent toujours la priorité.</p>
-        </section>
-
-        <section class="section section-spacing-sm">
-          <h2>Zones d’intervention principales</h2>
-          <p>Je couvre l’ensemble de la Côte d’Azur avec un focus sur&nbsp;:</p>
-          <ul>
-            <li>Nice et son aéroport (NCE), Sophia‑Antipolis et Antibes.</li>
-            <li>Cannes, Mandelieu, les principaux palais des congrès.</li>
-            <li>Monaco, Menton, la frontière italienne.</li>
-            <li>Saint‑Tropez et le Golfe (Ramatuelle, Gassin, Grimaud…).</li>
-          </ul>
-          <p>Pour en savoir plus, consultez les pages dédiées&nbsp;: <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-cannes">VTC Cannes</a>, <a href="/vtc-monaco">VTC Monaco</a>, <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.</p>
-        </section>
-
-        <section class="section section-spacing-sm">
-          <h2>Travailler ensemble</h2>
-          <p>Pour mettre en place un partenariat récurrent (navettes entreprise, accueil de clients VIP, événements, séminaires), vous pouvez détailler votre besoin via la page <a href="/contact">Contact</a> ou effectuer une première <a href="/reservation">demande de réservation</a> pour un trajet test.</p>
-          <p>Grâce à un réseau de partenaires sérieux (autres chauffeurs, vans, autocars, guides officiels multilingues), je peux aussi, sur demande et sur devis, vous aider à organiser des dispositifs plus complexes&nbsp;: bus avec guide officiel, flotte de vans pendant quelques jours, logistique d’un séminaire ou d’un mariage, sous réserve de disponibilité et de délais suffisants. J’aime relever ce type de défi logistique quand cela peut rendre votre séjour encore plus simple.</p>
-        </section>
-
-        <section class="section section-spacing-sm">
-          <h2>FAQ À propos du chauffeur</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Depuis combien de temps exercez‑vous comme chauffeur VTC&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Plusieurs années d’expérience sur la Côte d’Azur m’ont permis de bien connaître les axes routiers, les temps de trajet et les habitudes des clients locaux comme internationaux.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Dans quelles langues pouvez‑vous échanger avec les clients&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Je parle français et anglais couramment, et je suis habitué à accueillir une clientèle internationale. L’objectif est que chacun se sente à l’aise, quelle que soit sa langue maternelle.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Quelle est votre philosophie de service&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Allier ponctualité, sécurité et bonne humeur. Je me vois davantage comme un "mister good vibes" accessible qu’un chauffeur distant : sérieux sur l’essentiel, détendu dans la relation humaine, en respectant toujours le besoin de calme des passagers.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Intervenez‑vous uniquement sur la Côte d’Azur&nbsp;?</div>
-              <div class="faq-answer">
-                <p>La majeure partie de mon activité se concentre sur Nice, Cannes, Monaco et le Golfe de Saint‑Tropez. Des trajets plus longs peuvent être étudiés ponctuellement, sur demande et selon les contraintes de temps de conduite.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Travaillez‑vous seul ou avec d’autres chauffeurs&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Je réalise personnellement une grande partie des trajets, mais je peux aussi m’appuyer sur un réseau de partenaires fiables (berlines, vans, bus, guides officiels) pour des demandes plus importantes (groupes, événements, séminaires).</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

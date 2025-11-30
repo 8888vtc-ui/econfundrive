@@ -1,54 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Moving around during the Monaco Grand Prix | Guide";
-const description = "English guide to plan your trips to and from Monaco during the Grand Prix: transfers, traffic and timing.";
-const canonical = "/en/guide-monaco-grand-prix-transport.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-monaco-grand-prix-transport"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Monaco Grand Prix Transport", url: "/guide-monaco-grand-prix-transport" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Monaco Grand Prix transport</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Events guide</div>
-          <h1 class="section-title">Moving around during the Monaco Grand Prix</h1>
-          <p>On race days, access to Monaco is very controlled and traffic can be heavy. A bit of preparation will make your experience much smoother.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Think in terms of time, not only distance</h2>
-          <p>The distance between Nice and Monaco is short, but driving time can vary a lot. Always allow generous margins, especially before sessions or hospitality events.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Using a private driver for race days</h2>
-          <ul>
-            <li>Arrange transfers to and from your hotel, villa or yacht.</li>
-            <li>Share your ticket zone or hospitality location so your driver can plan drop-off and pick-up points.</li>
-            <li>Book late returns in advance to avoid last-minute stress.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Sending a clear request</h2>
-          <p>When you send a request through the <a href="/reservation">booking form</a>, mention the days you will attend the Grand Prix, the number of guests and your accommodation area. This will help design a realistic transport plan.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

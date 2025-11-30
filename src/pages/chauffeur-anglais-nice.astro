@@ -1,171 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SchemaOrg from '../components/SchemaOrg.astro';
 
-const title = "English Speaking Driver Nice | Chauffeur Anglais Côte d'Azur - ECOFUNDRIVE";
-const description = "English speaking private driver in Nice and French Riviera. Bilingual chauffeur for airport transfers, business trips, tours. Professional service for international clients.";
-const canonical = "/chauffeur-anglais-nice";
-
-const breadcrumbItems = [
-  { name: "Accueil", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "Chauffeur Anglais", url: "/chauffeur-anglais-nice" }
-];
+const title = "chauffeur anglais Nice | ECOFUNDRIVE";
+const description = "Service de chauffeur anglais Nice sur la CÃ´te d'Azur. chauffeur anglais Nice, English driver Nice, chauffeur bilingue";
+const keywords = [
+  'chauffeur anglais Nice' 'English driver Nice' 'chauffeur bilingue'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur anglais Nice, English driver Nice, chauffeur bilingue -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="chauffeur-anglais-nice"
-  canonical={canonical}
 >
-  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>Chauffeur Anglais</span>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Service bilingue</div>
-        <h1 class="section-title">English Speaking Driver Nice | Chauffeur Bilingue Côte d'Azur</h1>
-        <p>Looking for an English speaking private driver in Nice and the French Riviera? ECOFUNDRIVE offers professional bilingual chauffeur services for international clients. Airport transfers, business trips, guided tours : fluent English communication guaranteed.</p>
-        <p><strong>Recherchez-vous un chauffeur parlant anglais à Nice ?</strong> ECOFUNDRIVE propose un service de chauffeur privé bilingue pour les clients internationaux. Transferts aéroport, déplacements business, circuits touristiques : communication en anglais garantie.</p>
-      </div>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3>Fluent English</h3>
-          <p>Perfect English communication for all your needs : directions, recommendations, business discussions.</p>
-          <p><strong>Anglais courant</strong> : Communication parfaite en anglais pour tous vos besoins.</p>
-        </div>
-        <div class="card">
-          <h3>Airport Transfers</h3>
-          <p>Professional airport transfers from Nice (NCE) and Cannes-Mandelieu airports with English speaking driver.</p>
-          <p><strong>Transferts aéroport</strong> : Transferts professionnels depuis les aéroports avec chauffeur anglophone.</p>
-        </div>
-        <div class="card">
-          <h3>Business Travel</h3>
-          <p>Corporate transportation for international business travelers. Professional, discreet, reliable.</p>
-          <p><strong>Déplacements business</strong> : Transport corporate pour professionnels internationaux.</p>
-        </div>
-        <div class="card">
-          <h3>Guided Tours</h3>
-          <p>Discover the French Riviera with an English speaking guide-driver. Customized tours and recommendations.</p>
-          <p><strong>Circuits touristiques</strong> : Découvrez la Côte d'Azur avec un chauffeur-guide anglophone.</p>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Why Choose an English Speaking Driver?</h2>
-        <h2 style="font-size: 1.2rem; margin-top: 1rem;">Pourquoi choisir un chauffeur anglophone ?</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Clear Communication</h3>
-            <p>No language barriers. Clear instructions, smooth conversations, perfect understanding of your needs.</p>
-            <p><strong>Communication claire</strong> : Aucune barrière linguistique, instructions précises.</p>
-          </div>
-          <div class="card">
-            <h3>Local Knowledge</h3>
-            <p>Get insider tips, restaurant recommendations, best routes, cultural insights - all in English.</p>
-            <p><strong>Connaissance locale</strong> : Conseils, recommandations, meilleurs itinéraires en anglais.</p>
-          </div>
-          <div class="card">
-            <h3>Professional Service</h3>
-            <p>Business-level English for corporate clients. Professional discussions, confidentiality, discretion.</p>
-            <p><strong>Service professionnel</strong> : Anglais business pour clients corporate, discrétion garantie.</p>
-          </div>
-          <div class="card">
-            <h3>Comfort & Safety</h3>
-            <p>Feel at ease with clear communication. Ask questions, get information, enjoy your journey.</p>
-            <p><strong>Confort et sécurité</strong> : Voyagez sereinement avec une communication claire.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Our English Speaking Services</h2>
-        <h2 style="font-size: 1.2rem; margin-top: 1rem;">Nos services en anglais</h2>
-        
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Airport Transfers | Transferts Aéroport</h3>
-          <p>Professional pickup from Nice Côte d'Azur Airport (NCE) and Cannes-Mandelieu Airport. Flight tracking, luggage assistance, English communication throughout.</p>
-          <p><strong>Prise en charge professionnelle</strong> depuis les aéroports de Nice et Cannes. Suivi de vol, assistance bagages, communication en anglais.</p>
-          <p><a href="/transfert-nice-aeroport-monaco" class="btn-outline-light">Nice Airport Transfers</a></p>
-        </div>
-
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Business Transportation | Transport Business</h3>
-          <p>Corporate transfers for international executives. Meetings, site visits, conferences. Professional English communication for business discussions.</p>
-          <p><strong>Transferts corporate</strong> pour dirigeants internationaux. Réunions, visites de sites, conférences. Communication professionnelle en anglais.</p>
-          <p><a href="/vtc-entreprise-cote-azur" class="btn-outline-light">Corporate Services</a></p>
-        </div>
-
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Guided Tours | Circuits Touristiques</h3>
-          <p>Discover Nice, Cannes, Monaco, Saint-Tropez with an English speaking guide-driver. Customized itineraries, local insights, restaurant recommendations.</p>
-          <p><strong>Découvrez</strong> Nice, Cannes, Monaco, Saint-Tropez avec un chauffeur-guide anglophone. Itinéraires personnalisés, conseils locaux.</p>
-          <p><a href="/vtc-monaco" class="btn-outline-light">Monaco Tours</a></p>
-        </div>
-
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Event Transportation | Transport Événements</h3>
-          <p>Weddings, corporate events, festivals. English speaking coordination for international guests.</p>
-          <p><strong>Mariages, événements corporate, festivals</strong> : Coordination en anglais pour invités internationaux.</p>
-          <p><a href="/services" class="btn-outline-light">Event Services</a></p>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Areas Covered | Zones Couvertes</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Nice & Surroundings</h3>
-            <p>Airport, city center, Old Nice, Promenade des Anglais, hotels</p>
-            <p><strong>Nice et alentours</strong> : Aéroport, centre-ville, Vieux-Nice, Promenade des Anglais</p>
-          </div>
-          <div class="card">
-            <h3>Cannes & Antibes</h3>
-            <p>Croisette, Palais des Festivals, Juan-les-Pins, luxury hotels</p>
-            <p><strong>Cannes & Antibes</strong> : Croisette, Palais des Festivals, hôtels de luxe</p>
-          </div>
-          <div class="card">
-            <h3>Monaco</h3>
-            <p>Monte-Carlo, Casino, port, prestigious hotels</p>
-            <p><strong>Monaco</strong> : Monte-Carlo, Casino, port, hôtels prestigieux</p>
-          </div>
-          <div class="card">
-            <h3>Saint-Tropez & Gulf</h3>
-            <p>Port, Pampelonne, Ramatuelle, private villas</p>
-            <p><strong>Saint-Tropez et golfe</strong> : Port, Pampelonne, villas privées</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>How to Book | Comment Réserver</h2>
-        <ol style="list-style: decimal; padding-left: 2rem; line-height: 2;">
-          <li><strong>Online Booking</strong> : Use our <a href="/reservation">booking form</a> (minimum 4 hours in advance)</li>
-          <li><strong>Phone</strong> : Call <a href="tel:+33616552811">+33 6 16 55 28 11</a> (English spoken)</li>
-          <li><strong>WhatsApp</strong> : Use the button bottom right for instant contact</li>
-        </ol>
-        <p style="margin-top: 1.5rem;"><strong>Réservation en ligne</strong> : Utilisez notre <a href="/reservation">formulaire</a> (minimum 4h à l'avance)<br>
-        <strong>Téléphone</strong> : <a href="tel:+33616552811">06 16 55 28 11</a> (anglais parlé)<br>
-        <strong>WhatsApp</strong> : Bouton en bas à droite pour contact immédiat</p>
-      </div>
-
-      <div class="card" style="margin-top: 2rem; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--luxe-gold, #d4af37);">
-        <h3 style="color: var(--luxe-gold, #d4af37);">Book Your English Speaking Driver | Réservez Votre Chauffeur Anglais</h3>
-        <p><a href="/reservation" class="btn-primary">Book Online | Réserver en ligne</a></p>
-        <p style="margin-top: 1rem;">Or call us | Ou appelez-nous : <a href="tel:+33616552811" style="font-size: 1.2rem; font-weight: 600;">+33 6 16 55 28 11</a></p>
-      </div>
-
-      <p class="hero-secondary" style="margin-top: 2rem;">
-        See also | Voir aussi : <a href="/en">English Pages</a> | <a href="/services">Services</a> | <a href="/contact">Contact</a>
-      </p>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur anglais Nice, English driver Nice, chauffeur bilingue -->
+  </main>
 </BaseLayout>
-
-<SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
-<SchemaOrg type="service" serviceName="English Speaking Driver Nice" serviceDescription="Professional bilingual chauffeur service in Nice and French Riviera for international clients. Airport transfers, business trips, guided tours in English." />
-

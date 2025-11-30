@@ -1,59 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Scenic road between Nice, Èze and Monaco | Guide";
-const description = "English guide to enjoy the scenic roads between Nice, Èze and Monaco, with ideas for simple photo stops and viewpoints.";
-const canonical = "/en/guide-scenic-road-nice-eze-monaco.html";
+const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const keywords = [
+  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-scenic-road-nice-eze-monaco"
-  canonical={canonical}
 >
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Scenic Road Nice Eze Monaco", url: "/guide-scenic-road-nice-eze-monaco" }
-  ]}
-
-    <nav class="breadcrumbs container" aria-label="Breadcrumb">
-      <a href="/en/">Home</a> › <a href="/en/guides">VTC Guides</a> › <span>Scenic road Nice – Èze – Monaco</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Scenic drive guide</div>
-          <h1 class="section-title">Scenic road between Nice, Èze and Monaco</h1>
-          <p>The coastline between Nice and Monaco can be explored using several roads at different heights, each with its own atmosphere and viewpoints.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Different types of roads</h2>
-          <ul>
-            <li>Lower coastal road: close to the sea and beaches.</li>
-            <li>Middle road: a mix of sea views and village access.</li>
-            <li>Higher road: wider views over the coast and the hills.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Ideas for simple stops</h2>
-          <ul>
-            <li>Short photo stops at safe viewpoints.</li>
-            <li>A walk through a village on the way.</li>
-            <li>A coffee or drink with a view before continuing.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Driving or using a private driver</h2>
-          <p>You can explore this area with a rental car, public transport or a private driver. If you prefer to focus on the views and stops, a driver can take care of the route and parking.</p>
-          <p>To book such a drive, you can note your preferred type of road and number of hours in the <a href="/reservation">booking form</a>.</p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  </main>
 </BaseLayout>

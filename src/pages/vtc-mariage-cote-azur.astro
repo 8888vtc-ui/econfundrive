@@ -1,164 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SchemaOrg from '../components/SchemaOrg.astro';
 
-const title = "VTC Mariage Côte d'Azur | Transport Mariés Premium - ECOFUNDRIVE";
-const description = "Service VTC pour mariages sur la Côte d'Azur : transport des mariés et invités en berlines ou vans de luxe. Coordination multi-véhicules, service premium pour votre journée spéciale.";
-const canonical = "/vtc-mariage-cote-azur";
-
-const breadcrumbItems = [
-  { name: "Accueil", url: "/" },
-  { name: "Services", url: "/services" },
-  { name: "VTC Mariage", url: "/vtc-mariage-cote-azur" }
-];
+const title = "VTC mariage | ECOFUNDRIVE";
+const description = "Service de VTC mariage sur la CÃ´te d'Azur. VTC mariage, chauffeur mariage, transport mariÃ©s";
+const keywords = [
+  'VTC mariage' 'chauffeur mariage' 'transport mariÃ©s'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: VTC mariage, chauffeur mariage, transport mariÃ©s -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="vtc-mariage-cote-azur"
-  canonical={canonical}
 >
-  <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
-    <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Mariage</span>
-  </nav>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Événements privés</div>
-        <h1 class="section-title">VTC Mariage Côte d'Azur : Transport Mariés Premium</h1>
-        <p>Organisez le transport de votre mariage sur la Côte d'Azur avec ECOFUNDRIVE. Service VTC premium pour les mariés et leurs invités : berlines de luxe, vans haut de gamme, coordination multi-véhicules. Votre journée spéciale mérite un transport à la hauteur.</p>
-      </div>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3>Transport des mariés</h3>
-          <p>Berline de luxe pour les mariés : départ de la cérémonie, photos, réception. Service discret et élégant.</p>
-        </div>
-        <div class="card">
-          <h3>Transport des invités</h3>
-          <p>Vans premium pour les invités : transferts depuis hôtels, aéroport, gare vers les lieux de cérémonie et réception.</p>
-        </div>
-        <div class="card">
-          <h3>Coordination complète</h3>
-          <p>Gestion de plusieurs véhicules simultanément via notre réseau de partenaires. Planning précis, ponctualité garantie.</p>
-        </div>
-        <div class="card">
-          <h3>Service sur mesure</h3>
-          <p>Décoration véhicule, itinéraire personnalisé, horaires adaptés à votre planning. Solution clé en main.</p>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Nos services VTC mariage</h2>
-        
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Transport des mariés</h3>
-          <p>Berline de luxe (Tesla, Mercedes, BMW) pour les mariés :</p>
-          <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-            <li style="margin-bottom: 0.5rem;">✓ Départ vers la cérémonie (mairie, église, lieu civil)</li>
-            <li style="margin-bottom: 0.5rem;">✓ Transport vers les lieux de photos</li>
-            <li style="margin-bottom: 0.5rem;">✓ Transfert vers la réception</li>
-            <li style="margin-bottom: 0.5rem;">✓ Retour en fin de soirée</li>
-          </ul>
-          <p style="margin-top: 1rem;"><strong>Options :</strong> Décoration (rubans, fleurs), champagne à bord, itinéraire personnalisé.</p>
-        </div>
-
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Transport des invités</h3>
-          <p>Vans premium (6-8 places) pour les invités :</p>
-          <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-            <li style="margin-bottom: 0.5rem;">✓ Transferts depuis hôtels vers la cérémonie</li>
-            <li style="margin-bottom: 0.5rem;">✓ Transport depuis l'aéroport ou la gare</li>
-            <li style="margin-bottom: 0.5rem;">✓ Navettes entre les différents lieux</li>
-            <li style="margin-bottom: 0.5rem;">✓ Retours en fin de soirée</li>
-          </ul>
-          <p style="margin-top: 1rem;"><strong>Coordination :</strong> Plusieurs véhicules simultanés, planning précis, chauffeurs en tenue adaptée.</p>
-        </div>
-
-        <div class="card" style="margin-bottom: 1.5rem;">
-          <h3>Service complet mariage</h3>
-          <p>Solution clé en main pour votre mariage :</p>
-          <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-            <li style="margin-bottom: 0.5rem;">✓ Coordination multi-véhicules (berlines, vans, autocars si besoin)</li>
-            <li style="margin-bottom: 0.5rem;">✓ Planning détaillé et respecté</li>
-            <li style="margin-bottom: 0.5rem;">✓ Chauffeurs en tenue élégante</li>
-            <li style="margin-bottom: 0.5rem;">✓ Véhicules décorés sur demande</li>
-            <li style="margin-bottom: 0.5rem;">✓ Service jusqu'au bout de la nuit</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Destinations mariage Côte d'Azur</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Nice</h3>
-            <p>Mairies, églises, lieux de réception, hôtels 5*, villas privées</p>
-          </div>
-          <div class="card">
-            <h3>Cannes</h3>
-            <p>Palais des Festivals, hôtels de luxe, villas sur la Croisette</p>
-          </div>
-          <div class="card">
-            <h3>Monaco</h3>
-            <p>Palais princier, églises, hôtels prestigieux, salles de réception</p>
-          </div>
-          <div class="card">
-            <h3>Saint-Tropez & Golfe</h3>
-            <p>Villas privées, plages, domaines viticoles, lieux d'exception</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Tarifs VTC mariage</h2>
-        <p>Nos tarifs mariage sont personnalisés selon :</p>
-        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-          <li style="margin-bottom: 0.5rem;">✓ Nombre de véhicules nécessaires</li>
-          <li style="margin-bottom: 0.5rem;">✓ Durée du service (demi-journée, journée complète, soirée)</li>
-          <li style="margin-bottom: 0.5rem;">✓ Distances et itinéraires</li>
-          <li style="margin-bottom: 0.5rem;">✓ Options (décoration, champagne, etc.)</li>
-          <li style="margin-bottom: 0.5rem;">✓ Type de véhicules (berline, van, autocar)</li>
-        </ul>
-        <p style="margin-top: 1.5rem;"><strong>Devis gratuit et personnalisé</strong> : Contactez-nous avec les détails de votre mariage pour une proposition sur mesure.</p>
-        <p style="margin-top: 1rem;"><a href="/reservation" class="btn-primary">Demander un devis mariage</a></p>
-      </div>
-
-      <div class="section" style="padding-top: 2rem;">
-        <h2>Planning type mariage</h2>
-        <div class="card" style="background: rgba(26, 26, 26, 0.8);">
-          <h3>Exemple d'organisation</h3>
-          <ul style="list-style: none; padding: 0; line-height: 2;">
-            <li style="margin-bottom: 0.5rem;"><strong>14h00</strong> : Transport invités depuis hôtels vers mairie</li>
-            <li style="margin-bottom: 0.5rem;"><strong>15h00</strong> : Transport mariés vers mairie</li>
-            <li style="margin-bottom: 0.5rem;"><strong>16h00</strong> : Transport vers lieux de photos</li>
-            <li style="margin-bottom: 0.5rem;"><strong>18h00</strong> : Transport vers réception</li>
-            <li style="margin-bottom: 0.5rem;"><strong>02h00</strong> : Retours invités vers hôtels</li>
-          </ul>
-          <p style="margin-top: 1rem;"><em>Planning adaptable selon vos besoins spécifiques.</em></p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top: 2rem; background: rgba(212, 175, 55, 0.1); border: 2px solid var(--luxe-gold, #d4af37);">
-        <h3 style="color: var(--luxe-gold, #d4af37);">Organisez le transport de votre mariage</h3>
-        <p>Pour un devis personnalisé et une organisation sur mesure :</p>
-        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-          <li style="margin-bottom: 0.5rem;">📧 <a href="/reservation">Formulaire de réservation</a> (mentionnez "mariage")</li>
-          <li style="margin-bottom: 0.5rem;">📞 <a href="tel:+33616552811">06 16 55 28 11</a></li>
-          <li style="margin-bottom: 0.5rem;">💬 WhatsApp (bouton en bas à droite)</li>
-        </ul>
-        <p style="margin-top: 1rem;">Réponse rapide avec proposition détaillée et planning personnalisé.</p>
-      </div>
-
-      <p class="hero-secondary" style="margin-top: 2rem;">
-        Voir aussi : <a href="/services">Tous nos services</a> | <a href="/vtc-nice">VTC Nice</a> | <a href="/contact">Contact</a>
-      </p>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- VTC mariage, chauffeur mariage, transport mariÃ©s -->
+  </main>
 </BaseLayout>
-
-<SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
-<SchemaOrg type="service" serviceName="VTC Mariage Côte d'Azur" serviceDescription="Service de transport VTC premium pour mariages sur la Côte d'Azur : transport des mariés et invités, coordination multi-véhicules, service sur mesure" />
-

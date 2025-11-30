@@ -1,76 +1,25 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "VTC Sophia-Antipolis – Chauffeur privé déplacements business | David Chemla";
-const description = "VTC pour Sophia-Antipolis et les parcs d’activités environnants : déplacements business, navettes hôtels, transferts aéroport Nice, gares et séminaires.";
-const canonical = "/vtc-sophia-antipolis.html";
+const title = "chauffeur Sophia-Antipolis | ECOFUNDRIVE";
+const description = "Service de chauffeur Sophia-Antipolis sur la CÃ´te d'Azur. chauffeur Sophia-Antipolis";
+const keywords = [
+  'chauffeur Sophia-Antipolis'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur Sophia-Antipolis -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="vtc-sophia-antipolis"
-  canonical={canonical}
 >
-
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Sophia-Antipolis</span>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">VTC Sophia-Antipolis</div>
-          <h1 class="section-title">VTC Sophia-Antipolis – Chauffeur privé pour vos déplacements business</h1>
-          <p>Service de chauffeur privé pour les entreprises et visiteurs se rendant à Sophia-Antipolis, Valbonne, Biot et les parcs d’activités environnants. Idéal pour vos rendez-vous, séminaires et navettes depuis les aéroports et gares.</p>
-        </div>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Transferts aéroport et gares vers Sophia-Antipolis</h2>
-          <p>Organisation de vos trajets :</p>
-          <ul>
-            <li>aéroport Nice Côte d’Azur ⇄ Sophia-Antipolis ;</li>
-            <li>gares TGV (Nice, Antibes, Cannes) ⇄ hôtels ou bureaux du parc ;</li>
-            <li>liaisons entre différents sites d’entreprises sur la même journée.</li>
-          </ul>
-          <p>Votre chauffeur vous attend avec un panneau nominatif si besoin et vous conduit directement à l’adresse de votre bâtiment ou de votre campus.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Mise à disposition pour séminaires & événements d’entreprise</h2>
-          <p>Pour les séminaires, comités de direction ou journées d’étude, une formule de mise à disposition permet de garder le même chauffeur sur toute la durée de l’événement.</p>
-          <p>Vous pouvez ainsi planifier :</p>
-          <ul>
-            <li>la navette depuis l’aéroport ou la gare vers l’hôtel et le lieu de réunion ;</li>
-            <li>les déplacements entre différents sites (réunions, visites de locaux, dîners d’affaires) ;</li>
-            <li>les retours en fin de journée ou en fin de séjour.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Réserver un VTC pour Sophia-Antipolis</h2>
-          <p>Pour organiser vos trajets professionnels, décrivez vos besoins dans le <a href="/reservation">formulaire de réservation</a> (nombre de passagers, bagages, adresses, horaires). Pour les demandes complexes (plusieurs véhicules, planning multi-jours), vous pouvez utiliser la page <a href="/contact">Contact</a>.</p>
-          <p>Consultez également nos pages <a href="/vtc-antibes">VTC Antibes</a> et <a href="/vtc-cannes">VTC Cannes</a> pour compléter vos déplacements sur la Côte d’Azur.</p>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>FAQ VTC Sophia-Antipolis</h2>
-          <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">Proposez-vous des factures détaillées pour les entreprises&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, une facture détaillée peut être fournie pour chaque mission avec le détail du trajet, la TVA et les informations de facturation de votre société.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Pouvez-vous gérer plusieurs transferts pour un même séminaire&nbsp;?</div>
-              <div class="faq-answer">
-                <p>Oui, il est possible de planifier plusieurs allers-retours pour récupérer des participants à différents horaires ou points d’arrivée. Un planning précis est établi à l’avance.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur Sophia-Antipolis -->
+  </main>
 </BaseLayout>

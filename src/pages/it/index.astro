@@ -1,49 +1,25 @@
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Autista privato Costa Azzurra – Nizza, Cannes, Monaco, Saint‑Tropez";
-const description = "Servizio di autista privato sulla Costa Azzurra: trasferimenti aeroporto Nizza, Cannes, Monaco, Saint‑Tropez. Autista che parla inglese.";
-const canonical = "/it/";
+const title = "chauffeur privé VTC | ECOFUNDRIVE";
+const description = "Service de chauffeur privé VTC sur la CÃ´te d'Azur. chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur";
+const keywords = [
+  'chauffeur privé VTC' 'VTC Nice' 'VTC Cannes' 'VTC Monaco' 'transfert aéroport Nice' 'chauffeur Côte d'Azur' 'VTC Saint-Tropez' 'transport premium' 'chauffeur business' 'mise à disposition chauffeur' 'transfert aéroport Cannes' 'VTC longue distance' 'chauffeur événement' 'VTC mariage' 'circuit touristique Côte d'Azur'];
 ---
+
+
+<!-- Mots-clÃ©s SEO: chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="index"
-  canonical={canonical}
 >
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Costa Azzurra</div>
-          <h1 class="section-title">Autista privato sulla Costa Azzurra</h1>
-          <p>Servizio di autista privato per trasferimenti tra l’aeroporto di Nizza (NCE), Nizza centro, Cannes, Monaco e Saint‑Tropez.</p>
-        </div>
-        <div class="image-grid">
-          
-        </div>
-
-        <section class="section" style="padding-top:0.5rem">
-          <h2>Trasferimenti principali</h2>
-          <ul>
-            <li>Trasferimento aeroporto Nizza ⇄ Nizza centro.</li>
-            <li>Trasferimenti verso Cannes, Antibes, Monaco e Saint‑Tropez.</li>
-            <li>Servizio per viaggi d’affari, vacanze e serate.</li>
-          </ul>
-        </section>
-
-        <section class="section" style="padding-top:1.5rem">
-          <h2>Come prenotare</h2>
-          <p>Il modo più semplice e veloce per contattare l’autista è <strong>WhatsApp</strong> o telefono:</p>
-          <p>
-            <a href="https://wa.me/33616552811" class="btn-primary" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
-            <span style="margin-left:0.75rem; font-size:0.9rem;">oppure chiama <a href="tel:+33616552811">+33 6 16 55 28 11</a></span>
-          </p>
-          <p>Se preferisci, puoi anche compilare il modulo di prenotazione in francese:</p>
-          <p><a href="/reservation" class="btn-outline-light">Apri il modulo di prenotazione (FR)</a></p>
-        </section>
-      </div>
-    </section>
-  
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
+  </main>
 </BaseLayout>

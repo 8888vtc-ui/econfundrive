@@ -1,90 +1,25 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroBanner from '../components/HeroBanner.astro';
-import ImageTextOverlay from '../components/ImageTextOverlay.astro';
 
-const imageTextMapping = {
-  hero: {
-    image: '/assets/img/destinations/vtc-tesla-cannes.jpg',
-    alt: 'VTC Cannes - Chauffeur privé professionnel',
-    title: 'VTC Cannes – Chauffeur Privé à Cannes',
-    subtitle: 'Service VTC professionnel sur Cannes. Croisette, Palais des Festivals, hôtels de luxe, aéroport de Mandelieu.'
-  },
-  content: {
-    image1: {
-      image: '/assets/img/destinations/vtc-tesla-cannes.jpg',
-      alt: 'VTC Cannes - Croisette et Palais des Festivals',
-      text: 'Cannes - Destination Premium'
-    }
-  }
-};
+const title = "VTC Cannes | ECOFUNDRIVE";
+const description = "Service de VTC Cannes sur la CÃ´te d'Azur. VTC Cannes, transfert aÃ©roport Cannes";
+const keywords = [
+  'VTC Cannes' 'transfert aÃ©roport Cannes'];
 ---
 
-<BaseLayout
-  title="VTC Cannes – Chauffeur Privé à Cannes | ECOFUNDRIVE"
-  description="Chauffeur privé VTC à Cannes. Croisette, Palais des Festivals, hôtels de luxe, gare de Cannes, aéroport de Mandelieu. Service professionnel."
+
+<!-- Mots-clÃ©s SEO: VTC Cannes, transfert aÃ©roport Cannes -->
+
+<BaseLayout 
+  title={title}
+  description={description}
   currentPage="vtc-cannes"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Services", url: "/services" },
-    { name: "VTC Cannes", url: "/vtc-cannes" }
-  ]}
 >
-  <HeroBanner
-    image={imageTextMapping.hero.image}
-    alt={imageTextMapping.hero.alt}
-    title={imageTextMapping.hero.title}
-    subtitle={imageTextMapping.hero.subtitle}
-  />
-
-  <section class="page-content">
-    <div class="container">
-      <nav class="breadcrumb">
-        <a href="/">Accueil</a> › <a href="/services">Services</a> › <span>VTC Cannes</span>
-      </nav>
-
-      <div class="content-block">
-        <h2>Service VTC Professionnel à Cannes</h2>
-        <p>
-          Je propose un service de chauffeur privé VTC professionnel sur Cannes et ses environs. 
-          Spécialisé dans les transferts vers la Croisette, le Palais des Festivals, les hôtels de luxe, 
-          la gare de Cannes et l'aéroport de Mandelieu.
-        </p>
-      </div>
-
-      <ImageTextOverlay
-        image={imageTextMapping.content.image1.image}
-        alt={imageTextMapping.content.image1.alt}
-        text={imageTextMapping.content.image1.text}
-        height="300px"
-      />
-
-      <div class="content-block">
-        <h2>Zones Desservies à Cannes</h2>
-        <ul class="feature-list">
-          <li><strong>Croisette</strong> : Hôtels de luxe et plages privées</li>
-          <li><strong>Palais des Festivals</strong> : Événements et congrès</li>
-          <li><strong>Aéroport de Mandelieu</strong> : Transferts aéroport</li>
-          <li><strong>Gare de Cannes</strong> : Connexions train</li>
-          <li><strong>Hôtels de luxe</strong> : Martinez, Carlton, Majestic, etc.</li>
-        </ul>
-      </div>
-
-      <div class="content-block">
-        <h2>Réservation</h2>
-        <p>
-          Pour vos congrès, séjours loisirs ou déplacements réguliers, remplissez le 
-          <a href="/reservation">formulaire de réservation</a> ou faites une demande via la page 
-          <a href="/contact">Contact</a> pour un devis entreprise.
-        </p>
-        <p>
-          Découvrez aussi nos autres destinations : 
-          <a href="/vtc-nice">VTC Nice</a>, 
-          <a href="/vtc-monaco">VTC Monaco</a>, 
-          <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.
-        </p>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    
+    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- VTC Cannes, transfert aÃ©roport Cannes -->
+  </main>
 </BaseLayout>
-
