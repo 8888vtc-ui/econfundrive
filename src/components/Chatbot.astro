@@ -1,5 +1,5 @@
 ---
-// Nouveau chatbot VTC - Code propre et optimisé
+// Chatbot VTC - Toujours visible sur la page
 ---
 
 <button 
@@ -82,7 +82,6 @@
   (function() {
     'use strict';
     
-    // Éléments DOM
     const toggle = document.getElementById('chatbot-toggle');
     const container = document.getElementById('chatbot-container');
     const closeBtn = document.getElementById('chatbot-close');
@@ -91,18 +90,19 @@
     const messages = document.getElementById('chatbot-messages');
     const typing = document.getElementById('chatbot-typing');
     
-    // État
     let isOpen = false;
     let isProcessing = false;
     
-    // Ouvrir/Fermer
     function openChat() {
       isOpen = true;
       container.classList.add('open');
       container.setAttribute('aria-hidden', 'false');
       toggle.setAttribute('aria-expanded', 'true');
       toggle.classList.add('active');
-      setTimeout(() => input?.focus(), 100);
+      input?.focus();
+      setTimeout(() => {
+        if (messages) messages.scrollTop = messages.scrollHeight;
+      }, 100);
     }
     
     function closeChat() {
@@ -113,89 +113,14 @@
       toggle.classList.remove('active');
     }
     
-    // Afficher/Masquer typing
-    function showTyping(show) {
-      if (typing) {
-        typing.style.display = show ? 'flex' : 'none';
-        typing.setAttribute('aria-hidden', show ? 'false' : 'true');
-      }
-    }
-    
-    // Ajouter message
-    function addMessage(role, text) {
-      if (!messages) return;
-      
-      showTyping(false);
-      
-      const msgDiv = document.createElement('div');
-      msgDiv.className = `message ${role}`;
-      msgDiv.setAttribute('data-role', role);
-      
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'message-content';
-      contentDiv.textContent = text;
-      
-      msgDiv.appendChild(contentDiv);
-      messages.appendChild(msgDiv);
-      
-      msgDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }
-    
-    // Envoyer message
-    async function sendMessage(text) {
-      if (!text || isProcessing) return;
-      
-      addMessage('user', text);
-      input.value = '';
-      isProcessing = true;
-      showTyping(true);
-      
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 20000);
-        
-        const response = await fetch('/.netlify/functions/chatbot', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text }),
-          signal: controller.signal
-        });
-        
-        clearTimeout(timeout);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-        
-        const data = await response.json();
-        const answer = data.answer || 'Désolé, je n\'ai pas pu générer de réponse. Contactez-moi au 06 16 55 28 11.';
-        
-        addMessage('bot', answer);
-        
-      } catch (error) {
-        let errorMsg = 'Une erreur s\'est produite. ';
-        
-        if (error.name === 'AbortError') {
-          errorMsg += 'La requête a pris trop de temps. Veuillez réessayer.';
-        } else if (error.message?.includes('fetch')) {
-          errorMsg += 'Vérifiez votre connexion internet.';
-        } else {
-          errorMsg += 'Contactez-moi directement au 06 16 55 28 11 ou via WhatsApp.';
-        }
-        
-        addMessage('bot', errorMsg);
-      } finally {
-        isProcessing = false;
-        showTyping(false);
-        input?.focus();
-      }
-    }
-    
-    // Event listeners
     if (toggle) {
-      toggle.addEventListener('click', () => {
-        if (isOpen) closeChat();
-        else openChat();
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isOpen) {
+          closeChat();
+        } else {
+          openChat();
+        }
       });
     }
     
@@ -204,10 +129,71 @@
     }
     
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const text = input?.value?.trim();
-        if (text) sendMessage(text);
+        if (!text || isProcessing) return;
+        
+        isProcessing = true;
+        const sendBtn = document.getElementById('chatbot-send');
+        if (sendBtn) sendBtn.disabled = true;
+        
+        // Afficher message utilisateur
+        if (messages && input) {
+          const userMsg = document.createElement('div');
+          userMsg.className = 'message user';
+          userMsg.innerHTML = `<div class="message-content">${text}</div>`;
+          messages.appendChild(userMsg);
+          messages.scrollTop = messages.scrollHeight;
+          input.value = '';
+        }
+        
+        // Afficher typing
+        if (typing) typing.style.display = 'flex';
+        
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 20000);
+          
+          const response = await fetch('/.netlify/functions/chatbot', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text }),
+            signal: controller.signal
+          });
+          
+          clearTimeout(timeoutId);
+          
+          if (typing) typing.style.display = 'none';
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          
+          const data = await response.json();
+          const answer = data.answer || "Je suis désolé, je n'ai pas pu générer de réponse. Pouvez-vous reformuler ?";
+          
+          if (messages) {
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot';
+            botMsg.innerHTML = `<div class="message-content">${answer}</div>`;
+            messages.appendChild(botMsg);
+            messages.scrollTop = messages.scrollHeight;
+          }
+        } catch (error) {
+          if (typing) typing.style.display = 'none';
+          if (messages) {
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'message bot';
+            errorMsg.innerHTML = `<div class="message-content">Une erreur s'est produite. Veuillez réessayer ou nous contacter au 06 16 55 28 11.</div>`;
+            messages.appendChild(errorMsg);
+            messages.scrollTop = messages.scrollHeight;
+          }
+        } finally {
+          isProcessing = false;
+          if (sendBtn) sendBtn.disabled = false;
+          if (input) input.focus();
+        }
       });
     }
     
@@ -232,8 +218,12 @@
 </script>
 
 <style>
+  /* Chatbot Toggle - TOUJOURS VISIBLE */
   .chatbot-toggle {
-    position: fixed;
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     bottom: 25px;
     right: 25px;
     width: 60px;
@@ -243,7 +233,6 @@
     border: none;
     cursor: pointer;
     z-index: 10000;
-    display: flex;
     align-items: center;
     justify-content: center;
     color: #0a0a0a;
@@ -264,6 +253,7 @@
     display: none;
   }
 
+  /* Chatbot Container */
   .chatbot-container {
     position: fixed;
     bottom: 100px;
@@ -533,6 +523,7 @@
     border-width: 0;
   }
 
+  /* Mobile - Chatbot en haut droite avec texte */
   @media (max-width: 768px) {
     .chatbot-container {
       width: calc(100vw - 20px);
@@ -543,22 +534,16 @@
     }
 
     .chatbot-toggle {
-      top: 20px;
-      right: 20px;
-      bottom: auto;
-      width: auto;
-      height: auto;
+      top: 20px !important;
+      right: 20px !important;
+      bottom: auto !important;
+      width: auto !important;
+      height: auto !important;
       min-width: 140px;
       padding: 10px 16px;
       border-radius: 25px;
-      display: flex !important;
       flex-direction: row;
-      align-items: center;
       gap: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      z-index: 10000;
-      visibility: visible !important;
-      opacity: 1 !important;
     }
 
     .chatbot-toggle svg {
@@ -568,16 +553,11 @@
     }
 
     .chatbot-label-mobile {
-      display: inline-block;
+      display: inline-block !important;
       font-size: 0.85rem;
       font-weight: 600;
       color: #0a0a0a;
       white-space: nowrap;
     }
-
-    .chatbot-toggle:hover {
-      transform: scale(1.05);
-    }
   }
 </style>
-
