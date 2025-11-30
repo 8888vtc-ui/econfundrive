@@ -52,13 +52,18 @@
   @media (max-width: 768px) {
     .whatsapp-button {
       position: fixed !important;
-      bottom: 70px !important;
-      left: 10px !important;
-      padding: 10px 16px !important;
-      font-size: 0.85rem !important;
+      bottom: 100px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      right: auto !important;
+      padding: 14px 24px !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
       z-index: 10000 !important;
-      min-height: 44px !important; /* WCAG 2.1 AA */
-      min-width: 44px !important; /* WCAG 2.1 AA */
+      min-height: 48px !important;
+      min-width: auto !important;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
+      border: 2px solid rgba(255, 255, 255, 0.3) !important;
     }
   }
 </style>
