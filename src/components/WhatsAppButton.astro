@@ -17,35 +17,38 @@
 <style>
   .whatsapp-button {
     position: fixed !important;
-    bottom: 20px !important; /* En bas */
+    top: 50% !important; /* MILIEU VERTICAL */
     left: 20px !important; /* À GAUCHE */
-    top: auto !important;
+    transform: translateY(-50%) !important; /* Centrer verticalement */
+    bottom: auto !important;
     right: auto !important;
-    transform: none !important; /* Plus de centrage */
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 8px !important; /* Réduit de 12px */
-    padding: 10px 16px !important; /* RÉDUIT de 18px 32px */
+    gap: 8px !important;
+    padding: 10px 16px !important;
     background: #25D366 !important;
     color: white !important;
     text-decoration: none !important;
-    border-radius: 25px !important; /* Réduit de 35px */
-    font-weight: 600 !important; /* Réduit de 700 */
-    font-size: 0.9rem !important; /* RÉDUIT de 1.2rem */
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* Réduit de 3px */
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
     z-index: 10000 !important;
-    min-height: 44px !important; /* RÉDUIT de 64px (WCAG standard) */
+    min-height: 44px !important;
     min-width: auto !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
     white-space: nowrap !important;
+    will-change: transform !important;
+    backface-visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .whatsapp-button:hover {
-    transform: translateY(-2px) !important; /* Plus de scale */
+    transform: translateY(-50%) translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
   }
 
@@ -62,11 +65,12 @@
 
   @media (max-width: 768px) {
     .whatsapp-button {
-      bottom: 20px !important;
-      left: 15px !important; /* Légèrement plus proche du bord sur mobile */
-      padding: 10px 14px !important; /* Encore plus petit sur mobile */
-      font-size: 0.85rem !important; /* Plus petit sur mobile */
-      min-height: 44px !important; /* Standard WCAG */
+      top: 50% !important; /* MILIEU VERTICAL sur mobile aussi */
+      left: 15px !important;
+      transform: translateY(-50%) !important;
+      padding: 10px 14px !important;
+      font-size: 0.85rem !important;
+      min-height: 44px !important;
       gap: 6px !important;
     }
     
