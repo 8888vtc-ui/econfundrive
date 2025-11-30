@@ -1,5 +1,4 @@
-// Widget bot VTC - front-end
-
+// Widget bot VTC - version simplifiée et optimisée
 const chatbotToggle = document.querySelector(".chatbot-toggle");
 const chatbotPanel = document.querySelector(".chatbot-panel");
 const chatbotForm = document.querySelector(".chatbot-form");
@@ -9,49 +8,16 @@ const chatbotMessages = document.querySelector(".chatbot-messages");
 // État de la conversation
 const chatState = {
   isOpen: false,
-  waitingForName: false,
-  waitingForPhone: false,
-  waitingForDestination: false,
   firstInteraction: true,
-  userInfo: {
-    name: '',
-    phone: '',
-    destination: ''
-  },
+  isTyping: false,
   chatHistory: []
 };
 
-// Gestion du toggle du panneau de chat
+// Gestion du toggle du panneau de chat simplifiée
 if (chatbotToggle && chatbotPanel) {
   chatbotToggle.addEventListener("click", (e) => {
     e.preventDefault();
-    chatState.isOpen = !chatState.isOpen;
-    
-    if (chatState.isOpen) {
-      chatbotPanel.classList.add("open");
-      chatbotToggle.classList.add("active");
-      
-      // Ajouter un message d'accueil uniquement à la première ouverture
-      if (chatState.firstInteraction) {
-        setTimeout(() => {
-          appendMessage(
-            'bot', 
-            'Bonjour ! Comment puis-je vous aider pour votre réservation VTC ?',
-            false,
-            true
-          );
-          chatState.firstInteraction = false;
-        }, 500);
-      }
-      
-      // Focus sur le champ de saisie
-      setTimeout(() => {
-        if (chatbotInput) chatbotInput.focus();
-      }, 100);
-    } else {
-      chatbotPanel.classList.remove("open");
-      chatbotToggle.classList.remove("active");
-    }
+    toggleChat();
   });
   
   // Fermer le chat en cliquant en dehors
@@ -59,32 +25,91 @@ if (chatbotToggle && chatbotPanel) {
     if (chatState.isOpen && 
         !chatbotPanel.contains(e.target) && 
         !chatbotToggle.contains(e.target)) {
-      chatState.isOpen = false;
-      chatbotPanel.classList.remove("open");
-      chatbotToggle.classList.remove("active");
+      toggleChat(false);
     }
   });
 }
 
-// Gestion de la soumission du formulaire
+function toggleChat(forceState = null) {
+  chatState.isOpen = forceState !== null ? forceState : !chatState.isOpen;
+  
+  if (chatState.isOpen) {
+    chatbotPanel.classList.add("open");
+    chatbotToggle.classList.add("active");
+    
+    // Message d'accueil uniquement à la première ouverture
+    if (chatState.firstInteraction) {
+      setTimeout(() => {
+        appendMessage(
+          'bot', 
+          'Bonjour ! Je suis là pour vous aider. Comment puis-je vous assister aujourd\'hui ?',
+          false,
+          true
+        );
+        chatState.firstInteraction = false;
+      }, 300);
+    }
+    
+    // Focus sur le champ de saisie
+    setTimeout(() => {
+      if (chatbotInput) chatbotInput.focus();
+    }, 100);
+  } else {
+    chatbotPanel.classList.remove("open");
+    chatbotToggle.classList.remove("active");
+  }
+}
+
+// Gestion de la soumission du formulaire simplifiée
 if (chatbotForm && chatbotInput) {
   chatbotForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const content = chatbotInput.value.trim();
     
-    if (!content) return;
+    if (!content || chatState.isTyping) return;
     
     // Ajouter le message de l'utilisateur
     appendMessage('user', content);
     chatbotInput.value = '';
     
-    // Traiter la réponse
-    processUserInput(content);
+    // Simuler un délai de frappe
+    chatState.isTyping = true;
+    
+    // Réponse automatique basique
+    setTimeout(() => {
+      const response = generateResponse(content);
+      appendMessage('bot', response);
+      chatState.isTyping = false;
+    }, 800);
   });
 }
 
+function generateResponse(userInput) {
+  const input = userInput.toLowerCase();
+  
+  // Réponses contextuelles
+  if (input.includes('bonjour') || input.includes('salut') || input.includes('coucou')) {
+    return 'Bonjour ! Comment puis-je vous aider aujourd\'hui ?';
+  }
+  
+  if (input.includes('prix') || input.includes('tarif') || input.includes('combien')) {
+    return 'Nos tarifs varient selon la distance et le type de véhicule. Pouvez-vous me préciser votre trajet ?';
+  }
+  
+  if (input.includes('disponibilité') || input.includes('libre') || input.includes('heure')) {
+    return 'Nous sommes disponibles 24/7 sur réservation. Quelle est la date et l\'heure qui vous conviennent ?';
+  }
+  
+  if (input.includes('merci') || input.includes('au revoir') || input.includes('bye')) {
+    return 'Je vous en prie ! N\'hésitez pas si vous avez d\'autres questions. Bonne journée !';
+  }
+  
+  // Réponse par défaut
+  return 'Je comprends que vous souhaitez des informations. Pour vous aider au mieux, vous pouvez me poser des questions sur nos services, nos tarifs ou nos disponibilités.';
+}
+
 function appendMessage(role, text, isInfoRequest = false, isFirstMessage = false) {
-  if (!chatbotMessages) return;
+  if (!chatbotMessages) return Promise.resolve();
   
   // Création du conteneur du message
   const div = document.createElement("div");
@@ -92,90 +117,52 @@ function appendMessage(role, text, isInfoRequest = false, isFirstMessage = false
   
   // Ajout du texte avec support des sauts de ligne
   const textNode = document.createElement('div');
+  textNode.className = 'chat-msg-content';
   textNode.innerHTML = text.replace(/\n/g, '<br>');
   div.appendChild(textNode);
   
   // Ajout du message au DOM
   chatbotMessages.appendChild(div);
+  div.scrollIntoView({ behavior: 'smooth', block: 'end' });
   
-  // Animation d'apparition avec un léger délai pour un effet en cascade
-  setTimeout(() => {
-    div.classList.add('visible');
-    // Défilement vers le bas après l'animation
-    setTimeout(() => {
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }, 50);
-  }, 10);
+  // Animation de frappe pour les messages du bot
+  if (role === 'bot') {
+    div.classList.add('typing');
+    setTimeout(() => div.classList.remove('typing'), 100);
+  }
   
-  // Ajout du message à l'historique
+  // Ajout à l'historique
   chatState.chatHistory.push({ role, text, timestamp: new Date() });
   
-  // Mise à jour de l'état pour les demandes d'information
-  if (isInfoRequest && role === 'bot') {
-    chatState.waitingForName = text.includes('nom');
-    chatState.waitingForPhone = text.includes('téléphone') || text.includes('télephone');
-    chatState.waitingForDestination = text.includes('destination');
-  }
-  
-  // Envoi automatique vers WhatsApp si toutes les infos sont collectées
-  if (role === 'user' && chatState.waitingForDestination && chatState.userInfo.destination) {
-    // Petit délai avant l'envoi pour une meilleure expérience utilisateur
-    setTimeout(sendTravelerInfoToWhatsApp, 1000);
-  }
-  
-  // Retourner la promesse de l'animation
-  return new Promise(resolve => {
-    setTimeout(resolve, 300); // Durée de l'animation
-  });
+  return new Promise(resolve => setTimeout(resolve, 300));
 }
 
 // Fonction pour générer le résumé de la conversation
 function generateConversationSummary() {
   let summary = 'Résumé de la conversation avec le chatbot :\n\n';
-  chatHistory.forEach(msg => {
+  chatState.chatHistory.forEach(msg => {
     const prefix = msg.role === 'user' ? '👤 Vous : ' : '🤖 David : ';
     summary += `${prefix}${msg.text}\n`;
   });
   return encodeURIComponent(summary);
 }
 
-// Fonction pour envoyer les informations du voyageur vers WhatsApp
+// Fonction pour envoyer les informations vers WhatsApp
 function sendTravelerInfoToWhatsApp() {
-  const phoneNumber = '33616552811'; // Votre numéro de téléphone
-  
-  // Créer le message avec les informations du voyageur
+  const phoneNumber = '33616552811';
   const message = encodeURIComponent(
     "📋 NOUVELLE DEMANDE DE RÉSERVATION VTC\n\n" +
-    `👤 Nom: ${chatState.userInfo.name}\n` +
-    `📞 Téléphone: ${chatState.userInfo.phone}\n` +
-    `📍 Destination: ${chatState.userInfo.destination}\n\n` +
-    "📝 Détails de la conversation:\n" +
     chatState.chatHistory
-      .filter(msg => msg.role === 'user' || msg.role === 'bot')
-      .map(msg => `${msg.role === 'user' ? '👤 Client' : '🤖 Bot'}: ${msg.text}`)
+      .filter(msg => msg.role === 'user')
+      .map(msg => `👤 Client: ${msg.text}`)
       .join('\n')
   );
   
-  // Créer un iframe pour l'ouverture en arrière-plan
-  const iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
+  // Ouvrir WhatsApp dans un nouvel onglet
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   
-  // Ouvrir WhatsApp dans l'iframe (ne sera pas visible)
-  iframe.src = `https://wa.me/${phoneNumber}?text=${message}`;
-  
-  // Nettoyer après un court délai
-  setTimeout(() => {
-    document.body.removeChild(iframe);
-  }, 1000);
-  
-  // Réinitialiser l'état
-  chatState.waitingForName = false;
-  chatState.waitingForPhone = false;
-  chatState.waitingForDestination = false;
-  
-  // Afficher un message de confirmation
-  appendMessage('bot', 'Merci ! Votre demande a été transmise à notre service client. Nous vous recontacterons rapidement sur WhatsApp pour confirmer votre réservation.');
+  // Message de confirmation
+  appendMessage('bot', 'J\'ai transmis votre demande. Notre équipe vous contactera rapidement sur WhatsApp pour finaliser la réservation.');
 }
 
 // Fonction pour traiter la réponse de l'utilisateur

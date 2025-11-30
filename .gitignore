@@ -1,6 +1,35 @@
-# .gitignore
-netlify-token.txt
+# Dependencies
 node_modules/
+
+# Build outputs
+/assets/img/optimized/
+/assets/img/optimized-*/
+
+# Environment variables
+.env
+.env.local
+
+# Editor directories and files
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Local Netlify folder
 .netlify
+netlify-token.txt
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temp files
+*.tmp
+*.temp
