@@ -1,0 +1,162 @@
+{
+  "pagesFixed": 11,
+  "linksFixed": 31,
+  "details": [
+    {
+      "page": "a-propos",
+      "broken": "/assets/img/about/about-vehicle.webp",
+      "replacement": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "page": "a-propos",
+      "broken": "/assets/img/about/about-certification.webp",
+      "replacement": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "page": "cannes-private-driver",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "cannes-private-driver",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "cannes-private-driver",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/hero/hero-main.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "nice-private-driver",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "nice-private-driver",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/hero/hero-main.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/destinations/nice-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/destinations/cannes-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/destinations/monaco-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/destinations/saint-tropez-destination.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/hero/hero-main.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "index",
+      "broken": "/assets/img/hero/hero-main.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-cannes",
+      "broken": "/assets/img/hero/cannes-hero-1.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-cannes",
+      "broken": "/assets/img/destinations/cannes-destination-1.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-cannes",
+      "broken": "/assets/img/hero/cannes-hero-2.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-cannes",
+      "broken": "/assets/img/destinations/cannes-destination-2.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-monaco",
+      "broken": "/assets/img/hero/monaco-hero-1.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-monaco",
+      "broken": "/assets/img/destinations/monaco-destination-1.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-monaco",
+      "broken": "/assets/img/hero/monaco-hero-2.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-monaco",
+      "broken": "/assets/img/destinations/monaco-destination-2.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-nice",
+      "broken": "/assets/img/hero/nice-hero-1.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-nice",
+      "broken": "/assets/img/destinations/nice-destination-1.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-nice",
+      "broken": "/assets/img/hero/nice-hero-2.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-nice",
+      "broken": "/assets/img/destinations/nice-destination-2.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-saint-tropez",
+      "broken": "/assets/img/hero/saint-tropez-hero-1.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-saint-tropez",
+      "broken": "/assets/img/destinations/saint-tropez-destination-1.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "page": "vtc-saint-tropez",
+      "broken": "/assets/img/hero/saint-tropez-hero-2.webp",
+      "replacement": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "page": "vtc-saint-tropez",
+      "broken": "/assets/img/destinations/saint-tropez-destination-2.webp",
+      "replacement": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    }
+  ],
+  "timestamp": "2025-11-30T10:16:05.277Z"
+}
