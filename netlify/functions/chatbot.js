@@ -158,20 +158,17 @@ function getFallbackMessage(userMessage, lang) {
     return 'Могу помочь с поездками, трансферами из аэропорта и советами по Лазурному Берегу. Звоните +33 6 16 55 28 11.';
   }
   
-  // Français (par défaut)
-  if (lower.includes('prix') || lower.includes('tarif') || lower.includes('coût')) {
-    return 'Pour un devis précis, précisez : départ, arrivée, date, heure et nombre de passagers. Consultez notre page Tarifs ou appelez-moi au 06 16 55 28 11.';
-  }
-  if (lower.includes('réserv') || lower.includes('book')) {
-    return 'Pour réserver, utilisez notre formulaire de réservation ou contactez-moi directement au 06 16 55 28 11 / WhatsApp. Réservation minimum 4h à l\'avance.';
+  // Français (par défaut) - Guide touristique orienté WhatsApp
+  if (lower.includes('prix') || lower.includes('tarif') || lower.includes('coût') || lower.includes('réserv') || lower.includes('book')) {
+    return 'Pour les tarifs et réservations, contactez-moi directement sur WhatsApp au 06 16 55 28 11 - je réponds rapidement avec un devis précis !';
   }
   if (lower.includes('aéroport') || lower.includes('airport')) {
-    return 'Je propose des transferts depuis les aéroports de Nice (NCE) et Cannes-Mandelieu vers toute la Côte d\'Azur. Réservez au moins 4h à l\'avance.';
+    return 'Je connais bien les aéroports de Nice (NCE) et Cannes-Mandelieu. Pour réserver un transfert, envoyez-moi un message WhatsApp au 06 16 55 28 11 avec vos détails !';
   }
   if (lower.includes('nice') || lower.includes('cannes') || lower.includes('monaco') || lower.includes('saint-tropez')) {
-    return 'Je couvre toute la Côte d\'Azur : Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime. Dites-moi votre trajet précis pour un devis !';
+    return 'J\'adore ces villes ! Je connais plein de coins sympas. Pour des conseils détaillés ou réserver un trajet, contactez-moi sur WhatsApp au 06 16 55 28 11 !';
   }
-  return 'Je peux vous aider pour vos trajets, transferts aéroport et conseils sur la Côte d\'Azur. Contactez-moi au 06 16 55 28 11 ou utilisez notre formulaire de réservation.';
+  return 'Je suis guide touristique sur la Côte d\'Azur ! Je peux vous conseiller sur les visites, restaurants, plages... Pour réserver un trajet ou plus d\'infos, WhatsApp moi au 06 16 55 28 11 !';
 }
 
 // Handler principal
