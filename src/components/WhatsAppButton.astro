@@ -5,65 +5,75 @@
 <a 
   href="https://wa.me/33616552811" 
   class="whatsapp-button" 
-  aria-label="Contacter ECOFUNDRIVE sur WhatsApp" 
+  aria-label="Demander un devis sur WhatsApp" 
   target="_blank" 
   rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+  <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32">
     <path d="M12.04 2C6.58 2 2.17 6.41 2.17 11.87c0 2.09.61 4.02 1.78 5.71L2 22l4.56-1.48A9.84 9.84 0 0 0 12.04 22C17.5 22 21.9 17.59 21.9 12.13 21.9 6.67 17.5 2.26 12.04 2zm0 17.77c-1.7 0-3.35-.5-4.77-1.45l-.34-.22-2.71.88.9-2.64-.22-.35A7.67 7.67 0 0 1 4.37 11.9c0-4.23 3.44-7.67 7.67-7.67 4.22 0 7.66 3.44 7.66 7.67 0 4.23-3.44 7.67-7.66 7.67zm4.19-5.75c-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.23-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.11-.97-.36-1.85-1.13-.69-.61-1.15-1.37-1.28-1.6-.13-.23-.01-.35.1-.46.1-.1.23-.27.34-.4.11-.13.15-.23.23-.38.08-.15.04-.28-.02-.39-.06-.11-.51-1.23-.7-1.69-.18-.43-.37-.37-.51-.38h-.43c-.15 0-.4.06-.61.28-.21.23-.8.78-.8 1.9 0 1.11.82 2.19.94 2.34.11.15 1.6 2.44 3.89 3.42.54.23.96.37 1.28.48.54.17 1.03.15 1.42.09.43-.07 1.36-.55 1.55-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.16-.44-.27z" fill="currentColor"/>
   </svg>
-  <span>WhatsApp</span>
+  <span class="whatsapp-label">💬 Demander un devis</span>
 </a>
 
 <style>
   .whatsapp-button {
     position: fixed !important;
-    bottom: 80px !important;
-    left: 20px !important;
+    top: 60% !important; /* 60% depuis le haut = légèrement en dessous du centre */
+    left: 50% !important; /* CENTRER horizontalement */
+    transform: translate(-50%, -50%) !important; /* CENTRER parfaitement */
+    right: auto !important;
+    bottom: auto !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     align-items: center !important;
-    gap: 8px !important;
-    padding: 12px 20px !important;
+    justify-content: center !important;
+    gap: 12px !important; /* Plus d'espace entre icône et texte */
+    padding: 18px 32px !important; /* BEAUCOUP PLUS GROS */
     background: #25D366 !important;
     color: white !important;
     text-decoration: none !important;
-    border-radius: 25px !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
+    border-radius: 35px !important; /* Plus arrondi */
+    font-weight: 700 !important;
+    font-size: 1.2rem !important; /* BEAUCOUP PLUS GROS */
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6) !important;
+    border: 3px solid rgba(255, 255, 255, 0.4) !important;
     z-index: 10000 !important;
-    min-height: 44px !important; /* WCAG 2.1 AA */
-    min-width: 44px !important; /* WCAG 2.1 AA */
+    min-height: 64px !important; /* BEAUCOUP PLUS GROS */
+    min-width: auto !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+    white-space: nowrap !important;
   }
 
   .whatsapp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    transform: translate(-50%, -50%) scale(1.05) !important;
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7) !important;
   }
 
   .whatsapp-button svg {
-    width: 20px;
-    height: 20px;
+    width: 32px !important; /* BEAUCOUP PLUS GROS */
+    height: 32px !important; /* BEAUCOUP PLUS GROS */
     flex-shrink: 0;
+  }
+
+  .whatsapp-label {
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   @media (max-width: 768px) {
     .whatsapp-button {
-      position: fixed !important;
-      bottom: 100px !important;
+      top: 60% !important; /* Même position sur mobile */
       left: 50% !important;
-      transform: translateX(-50%) !important;
-      right: auto !important;
-      padding: 14px 24px !important;
-      font-size: 1rem !important;
-      font-weight: 700 !important;
-      z-index: 10000 !important;
-      min-height: 48px !important;
-      min-width: auto !important;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
-      border: 2px solid rgba(255, 255, 255, 0.3) !important;
+      transform: translate(-50%, -50%) !important;
+      padding: 16px 28px !important; /* Légèrement plus petit sur mobile mais toujours grand */
+      font-size: 1.1rem !important;
+      min-height: 60px !important;
+      gap: 10px !important;
+    }
+    
+    .whatsapp-button svg {
+      width: 28px !important;
+      height: 28px !important;
     }
   }
 </style>

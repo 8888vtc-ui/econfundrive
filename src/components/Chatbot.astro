@@ -2,18 +2,18 @@
 // Chatbot VTC - Guide touristique, pas fixe
 ---
 
-<button 
-  class="chatbot-toggle" 
-  type="button" 
-  id="chatbot-toggle"
-  aria-label="Ouvrir le chat avec David, votre guide touristique"
-  aria-expanded="false">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
-    <path d="M8 9h8v2H8V9zm0 4h6v2H8v-2z" fill="currentColor"/>
-  </svg>
-  <span class="chatbot-label-mobile">VIP Service Guide</span>
-</button>
+  <button 
+    class="chatbot-toggle" 
+    type="button" 
+    id="chatbot-toggle"
+    aria-label="Ouvrir le guide touristique - Conseils sur la Côte d'Azur"
+    aria-expanded="false">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
+      <path d="M8 9h8v2H8V9zm0 4h6v2H8v-2z" fill="currentColor"/>
+    </svg>
+    <span class="chatbot-label-mobile">🗺️ Guide touristique</span>
+  </button>
 
 <div 
   id="chatbot-container"
@@ -221,32 +221,37 @@
 <style>
   .chatbot-toggle {
     position: fixed !important;
-    top: 80px !important;
-    left: 20px !important;
+    top: 40% !important; /* 40% depuis le haut = légèrement au-dessus du centre */
+    left: 50% !important; /* CENTRER horizontalement */
+    transform: translate(-50%, -50%) !important; /* CENTRER parfaitement */
     right: auto !important;
+    bottom: auto !important;
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     align-items: center !important;
-    gap: 8px !important;
-    padding: 10px 16px !important;
+    justify-content: center !important;
+    gap: 12px !important; /* Plus d'espace entre icône et texte */
+    padding: 16px 30px !important; /* BEAUCOUP PLUS GROS */
     background: linear-gradient(135deg, #d4af37, #b8941f) !important;
     color: #0a0a0a !important;
     border: none !important;
-    border-radius: 25px !important;
+    border-radius: 35px !important; /* Plus arrondi */
     cursor: pointer !important;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important; /* BEAUCOUP PLUS GROS */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
     z-index: 9999 !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
-    min-height: 44px !important; /* WCAG 2.1 AA */
-    min-width: 44px !important; /* WCAG 2.1 AA */
+    min-height: 64px !important; /* BEAUCOUP PLUS GROS */
+    min-width: auto !important;
+    white-space: nowrap !important;
   }
 
   .chatbot-toggle:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%) scale(1.05) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
   }
 
   .chatbot-toggle.active {
@@ -254,23 +259,26 @@
   }
 
   .chatbot-toggle svg {
-    width: 20px;
-    height: 20px;
+    width: 32px !important; /* BEAUCOUP PLUS GROS */
+    height: 32px !important; /* BEAUCOUP PLUS GROS */
     flex-shrink: 0;
   }
 
   .chatbot-label-mobile {
     display: inline-block;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .chatbot-container {
     position: fixed !important;
-    top: 140px !important;
-    left: 20px !important;
+    top: 50% !important; /* Centre vertical */
+    left: 50% !important; /* Centre horizontal */
+    transform: translate(-50%, -50%) !important; /* Centrer parfaitement */
     right: auto !important;
-    width: 380px !important;
+    width: 400px !important;
     max-width: calc(100vw - 40px) !important;
-    max-height: 500px !important;
+    max-height: 600px !important;
     background: rgba(26, 26, 26, 0.98) !important;
     backdrop-filter: blur(20px) !important;
     border: 2px solid rgba(212, 175, 55, 0.3) !important;
@@ -446,29 +454,34 @@
          @media (max-width: 768px) {
            .chatbot-toggle {
              position: fixed !important;
-             top: 100px !important;
+             top: 40% !important; /* Même position sur mobile */
              left: 50% !important;
-             transform: translateX(-50%) !important;
+             transform: translate(-50%, -50%) !important;
              right: auto !important;
-             font-size: 0.95rem !important;
-             padding: 12px 20px !important;
+             padding: 14px 26px !important; /* Légèrement plus petit sur mobile mais toujours grand */
+             font-size: 1.1rem !important;
+             min-height: 60px !important;
+             gap: 10px !important;
              font-weight: 700 !important;
              z-index: 9999 !important;
-             min-height: 48px !important;
-             min-width: auto !important;
-             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
-             border: 2px solid rgba(255, 255, 255, 0.2) !important;
+             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+             border: 3px solid rgba(255, 255, 255, 0.3) !important;
+           }
+           
+           .chatbot-toggle svg {
+             width: 28px !important;
+             height: 28px !important;
            }
 
            .chatbot-container {
              position: fixed !important;
-             top: 160px !important; /* 60px en dessous du toggle */
+             top: 50% !important;
              left: 50% !important;
-             transform: translateX(-50%) !important;
+             transform: translate(-50%, -50%) !important;
              right: auto !important;
              width: calc(100vw - 20px) !important;
              max-width: 400px !important;
-             max-height: calc(100vh - 180px) !important;
+             max-height: 70vh !important;
              z-index: 9998 !important;
            }
          }

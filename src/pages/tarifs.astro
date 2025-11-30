@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PriceCalculator from '../components/PriceCalculator.astro';
+import RequestQuote from '../components/RequestQuote.astro';
 import SchemaOrg from '../components/SchemaOrg.astro';
 
 const title = "Tarifs VTC indicatifs – Côte d'Azur | ECOFUNDRIVE";
@@ -34,7 +34,7 @@ const breadcrumbItems = [
           <p>Un devis précis (avec éventuels suppléments de nuit, d'attente ou de bagages spécifiques) vous est toujours confirmé avant toute validation de réservation.</p>
         </div>
 
-        <PriceCalculator />
+        <RequestQuote />
         
         <SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />
 

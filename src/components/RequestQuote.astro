@@ -1,0 +1,138 @@
+---
+// Composant pour demander un devis personnalisé
+---
+
+<div class="request-quote">
+  <h3>Demander un devis personnalisé</h3>
+  <p>Pour obtenir un tarif précis et adapté à votre trajet, contactez-nous directement. Nous vous répondrons rapidement avec un devis détaillé.</p>
+  
+  <div class="quote-actions">
+    <a 
+      href="https://wa.me/33616552811?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20un%20trajet%20VTC."
+      class="btn-quote btn-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Demander un devis sur WhatsApp">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.17 6.41 2.17 11.87c0 2.09.61 4.02 1.78 5.71L2 22l4.56-1.48A9.84 9.84 0 0 0 12.04 22C17.5 22 21.9 17.59 21.9 12.13 21.9 6.67 17.5 2.26 12.04 2zm0 17.77c-1.7 0-3.35-.5-4.77-1.45l-.34-.22-2.71.88.9-2.64-.22-.35A7.67 7.67 0 0 1 4.37 11.9c0-4.23 3.44-7.67 7.67-7.67 4.22 0 7.66 3.44 7.66 7.67 0 4.23-3.44 7.67-7.66 7.67zm4.19-5.75c-.23-.11-1.36-.67-1.57-.75-.21-.08-.36-.11-.51.11-.15.23-.59.75-.72.9-.13.15-.27.17-.5.06-.23-.11-.97-.36-1.85-1.13-.69-.61-1.15-1.37-1.28-1.6-.13-.23-.01-.35.1-.46.1-.1.23-.27.34-.4.11-.13.15-.23.23-.38.08-.15.04-.28-.02-.39-.06-.11-.51-1.23-.7-1.69-.18-.43-.37-.37-.51-.38h-.43c-.15 0-.4.06-.61.28-.21.23-.8.78-.8 1.9 0 1.11.82 2.19.94 2.34.11.15 1.6 2.44 3.89 3.42.54.23.96.37 1.28.48.54.17 1.03.15 1.42.09.43-.07 1.36-.55 1.55-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.16-.44-.27z" fill="currentColor"/>
+      </svg>
+      <span>Demander un devis sur WhatsApp</span>
+    </a>
+    
+    <a 
+      href="/reservation"
+      class="btn-quote btn-reservation"
+      aria-label="Demander un devis via le formulaire">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+      </svg>
+      <span>Formulaire de réservation</span>
+    </a>
+  </div>
+  
+  <p class="quote-note">
+    <strong>Pourquoi demander un devis ?</strong><br>
+    Chaque trajet est unique. Le prix dépend de nombreux facteurs : distance exacte, horaire, trafic, nombre de passagers, bagages, options. Un devis personnalisé vous garantit un tarif précis et transparent.
+  </p>
+</div>
+
+<style>
+  .request-quote {
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .request-quote h3 {
+    color: var(--luxe-gold, #d4af37);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .request-quote > p {
+    color: var(--luxe-gray, #e5e7eb);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .quote-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-height: 48px;
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-whatsapp:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-reservation {
+    background: transparent;
+    border: 2px solid var(--luxe-gold, #d4af37);
+    color: var(--luxe-gold, #d4af37);
+  }
+
+  .btn-reservation:hover {
+    background: var(--luxe-gold, #d4af37);
+    color: var(--luxe-black, #0a0a0a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .btn-quote svg {
+    flex-shrink: 0;
+  }
+
+  .quote-note {
+    color: var(--luxe-gray-dark, #6b7280);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    text-align: left;
+  }
+
+  .quote-note strong {
+    color: var(--luxe-gold, #d4af37);
+  }
+
+  @media (min-width: 768px) {
+    .quote-actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn-quote {
+      flex: 0 1 auto;
+      min-width: 250px;
+    }
+  }
+</style>
+

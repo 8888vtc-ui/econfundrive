@@ -1,0 +1,135 @@
+{
+  "date": "2025-11-30T17:53:17.709Z",
+  "total": 21,
+  "successful": 21,
+  "failed": 0,
+  "duration": "4.4 minutes",
+  "results": [
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.png",
+      "size": "2.11",
+      "category": "Hero"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.png",
+      "size": "2.36",
+      "category": "Hero"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-mariage.png",
+      "size": "2.28",
+      "category": "Hero"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.png",
+      "size": "1.40",
+      "category": "Destination"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.png",
+      "size": "1.30",
+      "category": "Destination"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.png",
+      "size": "1.36",
+      "category": "Destination"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.png",
+      "size": "1.38",
+      "category": "Destination"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.png",
+      "size": "1.00",
+      "category": "Service"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.png",
+      "size": "0.99",
+      "category": "Service"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mariage.png",
+      "size": "1.00",
+      "category": "Service"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.png",
+      "size": "1.52",
+      "category": "Service"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.png",
+      "size": "1.32",
+      "category": "Service"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.png",
+      "size": "1.46",
+      "category": "Contexte Ville"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.png",
+      "size": "0.91",
+      "category": "Contexte Ville"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.png",
+      "size": "1.16",
+      "category": "Contexte Ville"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.png",
+      "size": "1.14",
+      "category": "Contexte Ville"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\route-panoramique-nice-eze-monaco.png",
+      "size": "1.00",
+      "category": "Guide"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.png",
+      "size": "1.25",
+      "category": "Guide"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.png",
+      "size": "1.06",
+      "category": "Guide"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.png",
+      "size": "1.12",
+      "category": "À Propos"
+    },
+    {
+      "success": true,
+      "file": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.png",
+      "size": "1.20",
+      "category": "À Propos"
+    }
+  ]
+}
