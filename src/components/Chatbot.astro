@@ -12,6 +12,7 @@
     <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
     <path d="M8 9h8v2H8V9zm0 4h6v2H8v-2z" fill="currentColor"/>
   </svg>
+  <span class="chatbot-label-mobile">À votre service</span>
 </button>
 
 <div 
@@ -257,6 +258,10 @@
 
   .chatbot-toggle.active {
     background: linear-gradient(135deg, #b8941f, #d4af37);
+  }
+
+  .chatbot-label-mobile {
+    display: none;
   }
 
   .chatbot-container {
@@ -532,15 +537,43 @@
     .chatbot-container {
       width: calc(100vw - 20px);
       right: 10px;
-      bottom: 80px;
+      top: 80px;
+      bottom: auto;
       max-height: calc(100vh - 100px);
     }
 
     .chatbot-toggle {
-      bottom: 20px;
+      top: 20px;
       right: 20px;
-      width: 56px;
-      height: 56px;
+      bottom: auto;
+      width: auto;
+      height: auto;
+      min-width: 140px;
+      padding: 10px 16px;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .chatbot-toggle svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .chatbot-label-mobile {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0a0a0a;
+      white-space: nowrap;
+    }
+
+    .chatbot-toggle:hover {
+      transform: scale(1.05);
     }
   }
 </style>
