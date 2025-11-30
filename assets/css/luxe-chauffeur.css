@@ -19,7 +19,7 @@
   --transition-luxe: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Image de fond luxe */
+/* Image de fond luxe - Voiture avec chauffeur */
 body {
   position: relative;
   background: var(--luxe-black);
@@ -33,16 +33,18 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/img/hero/chauffeur-luxe-background.webp');
+  background-image: url('/assets/img/destinations/vtc-tesla-nice.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
-  opacity: 0.15;
-  z-index: -1;
-  filter: brightness(0.3) contrast(1.2);
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  z-index: -2;
+  filter: brightness(0.4) contrast(1.1) saturate(0.8);
+  transform: scale(1.05);
 }
 
-/* Overlay sombre pour lisibilité */
+/* Overlay sombre pour lisibilité du texte */
 body::after {
   content: '';
   position: fixed;
@@ -52,11 +54,14 @@ body::after {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(10, 10, 10, 0.95) 0%,
-    rgba(26, 26, 26, 0.92) 50%,
-    rgba(10, 10, 10, 0.95) 100%
+    rgba(10, 10, 10, 0.88) 0%,
+    rgba(10, 10, 10, 0.85) 30%,
+    rgba(10, 10, 10, 0.82) 50%,
+    rgba(10, 10, 10, 0.85) 70%,
+    rgba(10, 10, 10, 0.88) 100%
   );
   z-index: -1;
+  pointer-events: none;
 }
 
 /* Header Luxe */
@@ -311,6 +316,27 @@ body::after {
   box-shadow: var(--shadow-gold-glow);
 }
 
+/* Sections avec fond semi-transparent pour lisibilité */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards et contenus avec fond pour lisibilité */
+.card,
+.content-block,
+.hero-content,
+.intro-content {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title {
@@ -323,6 +349,17 @@ body::after {
   
   body::before {
     background-attachment: scroll;
+    opacity: 0.2;
+    filter: brightness(0.35) contrast(1.0) saturate(0.7);
+  }
+  
+  body::after {
+    background: linear-gradient(
+      135deg,
+      rgba(10, 10, 10, 0.90) 0%,
+      rgba(10, 10, 10, 0.88) 50%,
+      rgba(10, 10, 10, 0.90) 100%
+    );
   }
 }
 
