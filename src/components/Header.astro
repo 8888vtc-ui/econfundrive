@@ -15,62 +15,341 @@ const { currentPage = "" } = Astro.props;
         <Logo />
       </a>
     </div>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-      <span>☰</span>
+    
+    <button 
+      class="nav-toggle" 
+      type="button" 
+      id="nav-toggle-btn"
+      aria-label="Ouvrir le menu de navigation" 
+      aria-expanded="false"
+      aria-controls="nav-menu">
+      <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
     </button>
-    <nav class="nav-links" aria-label="Navigation principale" role="navigation">
+    
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+    
+    <nav class="nav-links" id="nav-menu" aria-label="Navigation principale" role="navigation">
       <a href="/" class={currentPage === "index" ? "active" : ""} aria-current={currentPage === "index" ? "page" : undefined}>Accueil</a>
       <a href="/services" class={currentPage === "services" ? "active" : ""} aria-current={currentPage === "services" ? "page" : undefined}>Services</a>
       <a href="/a-propos" class={currentPage === "a-propos" ? "active" : ""} aria-current={currentPage === "a-propos" ? "page" : undefined}>Qui nous sommes</a>
       <a href="/contact" class={currentPage === "contact" ? "active" : ""} aria-current={currentPage === "contact" ? "page" : undefined}>Contact</a>
+      <a class="btn-primary-mobile" href="/reservation">Réserver maintenant</a>
     </nav>
+    
     <a class="btn-primary" href="/reservation" aria-label="Réserver un trajet VTC">Réserver maintenant</a>
   </div>
 </header>
 
 <script>
-  // Mobile menu toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      navLinks.classList.toggle('open');
+  (function() {
+    'use strict';
+    
+    const navToggle = document.getElementById('nav-toggle-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const body = document.body;
+    
+    if (!navToggle || !navMenu) return;
+    
+    function openMenu() {
+      navMenu.classList.add('open');
+      menuOverlay?.classList.add('active');
+      menuOverlay?.setAttribute('aria-hidden', 'false');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.classList.add('active');
+      body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      menuOverlay?.classList.remove('active');
+      menuOverlay?.setAttribute('aria-hidden', 'true');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.classList.remove('active');
+      body.style.overflow = '';
+    }
+    
+    function toggleMenu() {
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+    
+    // Toggle au clic sur le bouton
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
-  }
+    
+    // Fermer au clic sur l'overlay
+    if (menuOverlay) {
+      menuOverlay.addEventListener('click', closeMenu);
+    }
+    
+    // Fermer au clic sur un lien
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+    
+    // Fermer avec Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+    
+    // Fermer au resize si on passe en desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+  })();
 </script>
 
 <style>
+  .site-header {
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    position: relative;
+  }
+
   .nav-brand-link {
     display: flex;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
     color: inherit;
+    z-index: 1002;
   }
-  
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #d4af37;
+  }
+
   .nav-links a.active {
-    color: var(--accent-gold);
+    color: #d4af37;
   }
-  
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #d4af37;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #0a0a0a;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 18px;
+    position: relative;
+  }
+
+  .hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .nav-toggle.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile Styles */
   @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .btn-primary {
+      display: none;
+    }
+
     .nav-links {
       position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background: var(--bg-dark);
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 320px;
+      height: 100vh;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
       flex-direction: column;
-      padding: 2rem;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 5rem 2rem 2rem;
+      gap: 0;
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+      border-left: 2px solid rgba(212, 175, 55, 0.3);
+      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1001;
+      overflow-y: auto;
     }
-    
+
     .nav-links.open {
-      transform: translateX(0);
+      right: 0;
+    }
+
+    .nav-links a {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      display: block;
+    }
+
+    .nav-links a:last-of-type {
+      border-bottom: none;
+    }
+
+    .nav-links a.active {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .nav-links a.active::after {
+      display: none;
+    }
+
+    .btn-primary-mobile {
+      margin-top: 2rem;
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, #d4af37, #b8941f);
+      color: #0a0a0a;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      text-align: center;
+      display: block;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary-mobile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .menu-overlay {
+      display: block;
+    }
+
+    .navbar {
+      padding: 0.75rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links {
+      width: 90%;
+      padding: 4rem 1.5rem 2rem;
     }
   }
 </style>
-
