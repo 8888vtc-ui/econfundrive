@@ -1,4 +1,4 @@
----
+﻿---
 // CTA flottant pour améliorer la conversion
 ---
 
@@ -17,98 +17,6 @@
     <span class="sr-only">Appeler</span>
   </a>
 </div>
-
-<style>
-  .floating-cta {
-    position: fixed;
-    bottom: 100px;
-    left: 20px;
-    z-index: 9997;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    animation: slideInLeft 0.5s ease;
-  }
-
-  .floating-cta-button {
-    background: linear-gradient(135deg, var(--luxe-gold, #d4af37), var(--luxe-gold-dark, #b8941f));
-    color: var(--luxe-black, #0a0a0a);
-    padding: 16px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  .floating-cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
-  }
-
-  .floating-cta-phone {
-    background: var(--luxe-black, #0a0a0a);
-    color: var(--luxe-gold, #d4af37);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    border: 2px solid var(--luxe-gold, #d4af37);
-  }
-
-  .floating-cta-phone:hover {
-    background: var(--luxe-gold, #d4af37);
-    color: var(--luxe-black, #0a0a0a);
-    transform: scale(1.1);
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .floating-cta {
-      bottom: 80px;
-      left: 15px;
-    }
-
-    .floating-cta-button {
-      padding: 12px 18px;
-      font-size: 0.8rem;
-    }
-
-    .floating-cta-button span {
-      display: none;
-    }
-
-    .floating-cta-button::after {
-      content: "Réserver";
-    }
-  }
-
-  /* Masquer sur la page de réservation */
-  body[data-page="reservation"] .floating-cta {
-    display: none;
-  }
-</style>
 
 <script>
   // Afficher/masquer selon le scroll

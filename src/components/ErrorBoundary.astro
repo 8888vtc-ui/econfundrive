@@ -1,4 +1,4 @@
----
+﻿---
 // Composant pour gérer les erreurs de manière gracieuse
 interface Props {
   fallback?: string;
@@ -11,15 +11,4 @@ const { fallback = "Une erreur est survenue. Veuillez rafraîchir la page." } = 
   <p>{fallback}</p>
   <a href="/" class="btn-primary">Retour à l'accueil</a>
 </div>
-
-<style>
-  .error-boundary {
-    padding: 2rem;
-    text-align: center;
-    background: rgba(220, 38, 38, 0.1);
-    border: 2px solid rgba(220, 38, 38, 0.5);
-    border-radius: 8px;
-    margin: 2rem 0;
-  }
-</style>
 
