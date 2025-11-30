@@ -197,8 +197,21 @@ const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
       }
     </script>
     
-    <!-- Analytics -->
-    <Analytics />
+    <!-- Analytics (optionnel - nécessite PUBLIC_GA4_MEASUREMENT_ID) -->
+    {import.meta.env.PUBLIC_GA4_MEASUREMENT_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_MEASUREMENT_ID}`}></script>
+        <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA4_MEASUREMENT_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId, {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+          });
+        </script>
+      </>
+    )}
     
     <!-- Scripts -->
     <script src="/assets/js/main.js" defer></script>
