@@ -7,6 +7,11 @@ const title = "Avis clients – VTC Côte d'Azur | ECOFUNDRIVE";
 const description = "Avis clients authentiques sur le service VTC ECOFUNDRIVE sur la Côte d'Azur : transferts aéroport, déplacements business, séjours et événements.";
 const canonical = "/avis-clients";
 
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Avis clients", url: "/avis-clients" }
+];
+
 const reviews = [
   {
     author: "Belladii",
@@ -81,6 +86,7 @@ const breadcrumbItems = [
   description={description}
   currentPage="avis-clients"
   canonical={canonical}
+  breadcrumbItems={breadcrumbItems}
 >
   <ReviewsSchema reviews={reviews} />
   <SchemaOrg type="breadcrumb" breadcrumbItems={breadcrumbItems} />

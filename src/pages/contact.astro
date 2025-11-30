@@ -10,6 +10,10 @@ const description = "Contactez votre chauffeur privé VTC pour la Côte d'Azur :
   description={description}
   currentPage="contact"
   canonical="/contact"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Contact", url: "/contact" }
+  ]}
 >
   <nav class="breadcrumbs container" aria-label="Fil d'Ariane">
     <a href="/">Accueil</a> › <span>Contact</span>

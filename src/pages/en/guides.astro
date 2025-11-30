@@ -12,6 +12,10 @@ const canonical = "/en/guides.html";
   currentPage="guides"
   canonical={canonical}
 >
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" }
+  ]}
 
     <nav class="breadcrumbs container" aria-label="Breadcrumb">
       <a href="/en/">Home</a> › <span>VTC Guides</span>

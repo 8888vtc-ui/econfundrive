@@ -12,7 +12,15 @@ const canonical = "/a-propos";
   description={description}
   currentPage="a-propos"
   canonical={canonical}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "À propos", url: "/a-propos" }
+  ]}
 >
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "A Propos", url: "/a-propos" }
+  ]}
 
     <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
       <a href="/">Accueil</a> › <span>À propos</span>

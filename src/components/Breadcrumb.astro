@@ -1,0 +1,71 @@
+---
+interface Props {
+  items: Array<{ name: string; url: string }>;
+}
+
+const { items } = Astro.props;
+
+// Générer le Schema.org BreadcrumbList
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": `https://www.ecofundrive.com${item.url}`
+  }))
+};
+---
+
+<nav class="breadcrumbs container" aria-label="Fil d'Ariane">
+  {items.map((item, index) => (
+    <>
+      {index < items.length - 1 ? (
+        <a href={item.url}>{item.name}</a>
+      ) : (
+        <span aria-current="page">{item.name}</span>
+      )}
+      {index < items.length - 1 && <span class="breadcrumb-separator"> › </span>}
+    </>
+  ))}
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumbs {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--luxe-gray, #9ca3af);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumbs a {
+    color: var(--luxe-gold, #d4af37);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--luxe-gold-light, #f4e4bc);
+    text-decoration: underline;
+  }
+
+  .breadcrumbs span {
+    color: var(--luxe-white, #ffffff);
+  }
+
+  .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: var(--luxe-gray, #9ca3af);
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      font-size: 0.85rem;
+      padding: 0.75rem 0;
+    }
+  }
+</style>
+

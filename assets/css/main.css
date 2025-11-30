@@ -19,12 +19,13 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: #0a0a0a;
+  background: transparent !important; /* Permet à l'image de fond de s'afficher */
   color: #ffffff;
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
   z-index: 0;
+  overflow-x: hidden; /* Empêche le scroll horizontal */
 }
 
 a {

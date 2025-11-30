@@ -12,7 +12,7 @@
     <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L1 23l6.71-1.97c1.31.61 2.75.97 4.29.97 5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="currentColor"/>
     <path d="M8 9h8v2H8V9zm0 4h6v2H8v-2z" fill="currentColor"/>
   </svg>
-  <span class="chatbot-label-mobile">VIP Service</span>
+  <span class="chatbot-label-mobile">VIP Service Guide</span>
 </button>
 
 <div 
@@ -221,7 +221,7 @@
 <style>
   .chatbot-toggle {
     position: fixed !important;
-    top: 20px !important;
+    top: 80px !important;
     left: 20px !important;
     right: auto !important;
     display: flex !important;
@@ -240,6 +240,8 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
     z-index: 9999 !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
+    min-height: 44px !important; /* WCAG 2.1 AA */
+    min-width: 44px !important; /* WCAG 2.1 AA */
   }
 
   .chatbot-toggle:hover {
@@ -263,7 +265,7 @@
 
   .chatbot-container {
     position: fixed !important;
-    top: 80px !important;
+    top: 140px !important;
     left: 20px !important;
     right: auto !important;
     width: 380px !important;
@@ -441,20 +443,22 @@
     border-width: 0;
   }
 
-  @media (max-width: 768px) {
-    .chatbot-toggle {
-      position: fixed !important;
-      top: 10px !important;
-      left: 10px !important;
-      right: auto !important;
-      font-size: 0.8rem !important;
-      padding: 8px 12px !important;
-      z-index: 9999 !important;
-    }
+         @media (max-width: 768px) {
+           .chatbot-toggle {
+             position: fixed !important;
+             top: 60px !important;
+             left: 10px !important;
+             right: auto !important;
+             font-size: 0.8rem !important;
+             padding: 8px 12px !important;
+             z-index: 9999 !important;
+             min-height: 44px !important; /* WCAG 2.1 AA */
+             min-width: 44px !important; /* WCAG 2.1 AA */
+           }
 
     .chatbot-container {
       position: fixed !important;
-      top: 60px !important;
+      top: 110px !important;
       left: 10px !important;
       right: auto !important;
       width: calc(100vw - 20px) !important;

@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Chatbot from '../components/Chatbot.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ interface Props {
   canonical?: string;
   schema?: any; // Schema.org optionnel par page
   skipBaseSchema?: boolean; // Pour pages qui n'ont pas besoin du schema de base
+  breadcrumbItems?: Array<{ name: string; url: string }>; // Breadcrumbs optionnels
 }
 
 const {
@@ -21,27 +23,70 @@ const {
   ogImage = "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
   canonical,
   schema,
-  skipBaseSchema = false
+  skipBaseSchema = false,
+  breadcrumbItems
 } = Astro.props;
 
 const canonicalUrl = canonical || Astro.url.pathname;
 const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
+
+// Détection de la langue depuis le chemin
+const pathLang = Astro.url.pathname.split('/')[1];
+const currentLang = pathLang === 'en' ? 'en' : pathLang === 'it' ? 'it' : pathLang === 'ru' ? 'ru' : 'fr';
+
+// Génération des hreflang
+const hreflangLinks = [];
+if (currentLang === 'fr') {
+  hreflangLinks.push({ lang: 'fr', href: fullCanonical });
+  hreflangLinks.push({ lang: 'en', href: fullCanonical.replace(/^\//, '/en/') });
+  hreflangLinks.push({ lang: 'it', href: fullCanonical.replace(/^\//, '/it/') });
+  hreflangLinks.push({ lang: 'ru', href: fullCanonical.replace(/^\//, '/ru/') });
+  hreflangLinks.push({ lang: 'x-default', href: fullCanonical });
+} else if (currentLang === 'en') {
+  const frPath = Astro.url.pathname.replace('/en', '') || '/';
+  hreflangLinks.push({ lang: 'fr', href: `https://www.ecofundrive.com${frPath}` });
+  hreflangLinks.push({ lang: 'en', href: fullCanonical });
+  hreflangLinks.push({ lang: 'x-default', href: `https://www.ecofundrive.com${frPath}` });
+} else if (currentLang === 'it') {
+  const frPath = Astro.url.pathname.replace('/it', '') || '/';
+  hreflangLinks.push({ lang: 'fr', href: `https://www.ecofundrive.com${frPath}` });
+  hreflangLinks.push({ lang: 'it', href: fullCanonical });
+  hreflangLinks.push({ lang: 'x-default', href: `https://www.ecofundrive.com${frPath}` });
+} else if (currentLang === 'ru') {
+  const frPath = Astro.url.pathname.replace('/ru', '') || '/';
+  hreflangLinks.push({ lang: 'fr', href: `https://www.ecofundrive.com${frPath}` });
+  hreflangLinks.push({ lang: 'ru', href: fullCanonical });
+  hreflangLinks.push({ lang: 'x-default', href: `https://www.ecofundrive.com${frPath}` });
+}
 ---
 
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="j3W_6acHSoLG44VYoJ7vqzwSzJclmEouNpLwR25fRLU" />
     
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ECOFUNDRIVE" />
+    
+    <!-- Android Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={fullCanonical} />
+    
+    <!-- Hreflang tags for multilingual SEO -->
+    {hreflangLinks.map(link => (
+      <link rel="alternate" hreflang={link.lang} href={link.href} />
+    ))}
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
@@ -50,7 +95,7 @@ const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#c9a85e">
     <meta name="msapplication-TileColor" content="#0a0c17">
-    <meta name="theme-color" content="#0a0c17">
+    <meta name="theme-color" content="#d4af37">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -75,6 +120,7 @@ const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/img/hero/hero-aeroport-nice.webp" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/img/destinations/vtc-tesla-cannes.jpg" as="image" fetchpriority="high" />
     
     <!-- Critical CSS Inlined -->
     <style is:inline>
@@ -226,6 +272,9 @@ const fullCanonical = `https://www.ecofundrive.com${canonicalUrl}`;
   <body data-page={currentPage}>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <Header currentPage={currentPage} />
+    {breadcrumbItems && breadcrumbItems.length > 0 && (
+      <Breadcrumb items={breadcrumbItems} />
+    )}
     <main id="main-content" role="main">
       <slot />
     </main>

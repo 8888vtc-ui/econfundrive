@@ -303,6 +303,9 @@ const { currentPage = "" } = Astro.props;
       font-size: 1.1rem;
       border-bottom: 1px solid rgba(212, 175, 55, 0.1);
       display: block;
+      min-height: 44px; /* WCAG 2.1 AA - Touch target */
+      display: flex;
+      align-items: center;
     }
 
     .nav-links a:last-of-type {
