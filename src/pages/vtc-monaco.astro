@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import CategoryCard from '../components/CategoryCard.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "VTC Monaco – Chauffeur Privé à Monaco | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Monaco. Monte-Carlo, Grand Prix, Casino, hôtels de luxe, port Hercule. Service premium 24h/24 pour événements et business.";
@@ -14,8 +15,7 @@ const keywords = [
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="vtc-monaco"
   breadcrumbItems={[
@@ -23,59 +23,51 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Monaco", url: "/vtc-monaco" }
   ]}
+
+  canonical="/vtc-monaco"
+
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Grand Prix de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Pour le Grand Prix de Monaco, nous recommandons de réserver plusieurs mois à l'avance, car la demande est exceptionnelle. Contactez-nous dès que possible pour discuter de vos besoins et obtenir un devis personnalisé."}},{"@type":"Question","name":"Combien de temps faut-il pour aller de Nice à Monaco en VTC ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet entre Nice et Monaco prend généralement entre 30 et 45 minutes en VTC, selon le trafic. Pendant le Grand Prix ou en haute saison, il peut être plus long, mais nos chauffeurs connaissent les itinéraires alternatifs pour optimiser le temps de trajet."}},{"@type":"Question","name":"Vos véhicules peuvent-ils accéder aux hôtels de luxe de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nos chauffeurs connaissent parfaitement les accès aux hôtels de luxe de Monaco et peuvent vous déposer directement à l'entrée principale. Nous travaillons régulièrement avec les établissements prestigieux de la principauté."}}]}}
 >
-  <main id="main-content" class="container py-lg">
-    <h1 class="text-center mb-xl">{title}</h1>
-    <p class="lead text-center mb-xl">{description}</p>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
 
-    <section class="mb-xl">
-      <h2 class="mb-lg">Votre Chauffeur Privé à Monaco : Luxe et Excellence</h2>
-      <div class="grid-2-cols-responsive align-center">
-        <div>
-          <p>
-            Monaco, la principauté de la Côte d'Azur, incarne le luxe et l'excellence. Pour vos déplacements dans cette destination prestigieuse, ECOFUNDRIVE vous propose un service VTC premium à Monaco, à la hauteur des standards de cette principauté. Que vous assistiez au Grand Prix de Monaco, que vous séjourniez dans un hôtel de luxe, ou que vous participiez à un événement au Casino de Monte-Carlo, votre chauffeur privé vous garantit un service irréprochable.
-          </p>
-          <p>
-            Nos chauffeurs connaissent parfaitement Monaco et ses spécificités. Ils maîtrisent les accès, les parkings et les itinéraires optimaux pour vous faire gagner du temps, notamment pendant les événements majeurs comme le Grand Prix.
-          </p>
-          <a href="/reservation" class="btn-primary mt-md">Réserver votre VTC à Monaco</a>
-        </div>
-        <OptimizedImage 
-          src="/assets/img/destinations/monaco-casino.webp" 
-          alt="Voiture VTC devant le Casino de Monte-Carlo" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-      </div>
-    </section>
+    <SectionImageText
+      title="Votre Chauffeur Privé à Monaco : Luxe et Excellence"
+      image="/assets/img/destinations/monaco-casino.webp"
+      alt="Voiture VTC devant le Casino de Monte-Carlo"
+      imageSide="right"
+      ctaText="Réserver votre VTC à Monaco"
+      ctaLink="/reservation"
+    >
+      <p>
+        Monaco, la principauté de la Côte d'Azur, incarne le luxe et l'excellence. Pour vos déplacements dans cette destination prestigieuse, ECOFUNDRIVE vous propose un service VTC premium à Monaco, à la hauteur des standards de cette principauté. Que vous assistiez au Grand Prix de Monaco, que vous séjourniez dans un hôtel de luxe, ou que vous participiez à un événement au Casino de Monte-Carlo, votre chauffeur privé vous garantit un service irréprochable.
+      </p>
+      <p>
+        Nos chauffeurs connaissent parfaitement Monaco et ses spécificités. Ils maîtrisent les accès, les parkings et les itinéraires optimaux pour vous faire gagner du temps, notamment pendant les événements majeurs comme le Grand Prix.
+      </p>
+    </SectionImageText>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">VTC pour le Grand Prix de Monaco</h2>
-      <div class="grid-2-cols-responsive align-center reverse-order-mobile">
-        <OptimizedImage 
-          src="/assets/img/guides/grand-prix-monaco.webp" 
-          alt="Chauffeur VTC pour Grand Prix de Monaco" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-        <div>
-          <p>
-            Le Grand Prix de Monaco est l'un des événements les plus prestigieux au monde. Pendant cette période, Monaco devient le centre de l'attention internationale. Pour naviguer dans cette effervescence, un service VTC professionnel est indispensable. ECOFUNDRIVE vous offre un service dédié, avec des véhicules premium et des chauffeurs expérimentés qui connaissent parfaitement les contraintes de circulation pendant le Grand Prix.
-          </p>
-          <ul>
-            <li>Service spécialisé pour le Grand Prix de Monaco</li>
-            <li>Connaissance des accès et parkings pendant l'événement</li>
-            <li>Disponibilité pendant toute la durée du week-end</li>
-            <li>Véhicules adaptés aux codes vestimentaires</li>
-          </ul>
-          <a href="/guide-grand-prix-monaco-deplacements" class="btn-primary mt-md">Guide VTC Grand Prix Monaco</a>
-        </div>
-      </div>
-    </section>
+    <SectionImageText
+      title="VTC pour le Grand Prix de Monaco"
+      image="/assets/img/guides/grand-prix-monaco.webp"
+      alt="Chauffeur VTC pour Grand Prix de Monaco"
+      imageSide="left"
+      ctaText="Guide VTC Grand Prix Monaco"
+      ctaLink="/guide-grand-prix-monaco-deplacements"
+    >
+      <p>
+        Le Grand Prix de Monaco est l'un des événements les plus prestigieux au monde. Pendant cette période, Monaco devient le centre de l'attention internationale. Pour naviguer dans cette effervescence, un service VTC professionnel est indispensable. ECOFUNDRIVE vous offre un service dédié, avec des véhicules premium et des chauffeurs expérimentés qui connaissent parfaitement les contraintes de circulation pendant le Grand Prix.
+      </p>
+      <ul>
+        <li>Service spécialisé pour le Grand Prix de Monaco</li>
+        <li>Connaissance des accès et parkings pendant l'événement</li>
+        <li>Disponibilité pendant toute la durée du week-end</li>
+        <li>Véhicules adaptés aux codes vestimentaires</li>
+      </ul>
+    </SectionImageText>
 
     <section class="mb-xl">
       <h2 class="text-center mb-lg">Découvrez Monaco avec votre Chauffeur Privé</h2>

@@ -1,26 +1,82 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "combien coÃ»te un VTC Nice Monaco | ECOFUNDRIVE";
-const description = "Service de combien coÃ»te un VTC Nice Monaco sur la CÃ´te d'Azur. combien coÃ»te un VTC Nice Monaco";
+const title = "combien coûte un VTC Nice Monaco | ECOFUNDRIVE";
+const description = "Service de combien coûte un VTC Nice Monaco sur la Côte d'Azur. combien coûte un VTC Nice Monaco Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium,...";
 const keywords = [
-  'combien coÃ»te un VTC Nice Monaco',
+  'combien coûte un VTC Nice Monaco',
+  "VTC Côte d'Azur",
+  'chauffeur privé',
+  'transport premium'
 ];
 ---
 
 
-<!-- Mots-clÃ©s SEO: combien coÃ»te un VTC Nice Monaco -->
+<!-- Mots-clés SEO: combien coûte un VTC Nice Monaco -->
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="tarifs"
+  canonical="/tarifs"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- combien coÃ»te un VTC Nice Monaco -->
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Tarifs & Devis VTC Côte d'Azur</h1>
+      <p class="lead text-center mb-xl">Des tarifs fixes, transparents et compétitifs pour vos déplacements VTC.</p>
+    </div>
+
+    <SectionImageText
+      title="Transparence et Sérénité"
+      image="/assets/img/services/service-business.webp"
+      alt="Paiement sécurisé VTC"
+      imageSide="right"
+      ctaText="Demander un devis"
+      ctaLink="/contact"
+    >
+      <p>
+        Chez ECOFUNDRIVE, nous croyons en la transparence totale. Nos tarifs sont fixes et annoncés à l'avance lors de votre réservation. Fini les mauvaises surprises liées aux embouteillages ou aux suppléments bagages. Le prix convenu est le prix payé.
+      </p>
+      <p>
+        Nous acceptons tous les modes de paiement courants (espèces, cartes bancaires, American Express) et pouvons mettre en place une facturation mensuelle pour nos clients professionnels.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Exemples de Tarifs (Estimations)"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Transfert aéroport Nice"
+      imageSide="left"
+      ctaText="Voir tous les tarifs"
+      ctaLink="/vtc-aeroport-nice-prix"
+    >
+      <p>
+        Voici quelques exemples de tarifs indicatifs pour des transferts au départ de l'aéroport de Nice (Berline Gamme Confort) :
+      </p>
+      <ul>
+        <li><strong>Nice Centre :</strong> à partir de 35€</li>
+        <li><strong>Cannes :</strong> à partir de 70€</li>
+        <li><strong>Monaco :</strong> à partir de 80€</li>
+        <li><strong>Antibes :</strong> à partir de 55€</li>
+        <li><strong>Saint-Tropez :</strong> à partir de 220€</li>
+      </ul>
+      <p><em>Ces tarifs sont donnés à titre indicatif et peuvent varier selon le type de véhicule, l'horaire (tarif nuit) et la saison.</em></p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Devis Personnalisé"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Chauffeur privé à votre écoute"
+      imageSide="right"
+      ctaText="Contactez-nous"
+      ctaLink="/contact"
+    >
+      <p>
+        Chaque trajet est unique. Pour une mise à disposition, un circuit touristique, un événement spécial ou un trajet longue distance, nous vous invitons à nous contacter pour obtenir un devis personnalisé.
+      </p>
+      <p>
+        Nous nous engageons à vous répondre rapidement avec une offre adaptée à vos besoins et à votre budget.
+      </p>
+    </SectionImageText>
   </main>
 </BaseLayout>

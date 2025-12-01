@@ -1,33 +1,75 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "Vtc Frejus Saint Raphael | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="vtc-frejus-saint-raphael">
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">VTC Fréjus & Saint-Raphaël</h1>
+      <p class="lead text-center mb-xl">Votre chauffeur privé pour tous vos déplacements dans le Var et vers la Côte d'Azur.</p>
+    </div>
+
+    <SectionImageText
+      title="Service VTC à Fréjus et Saint-Raphaël"
+      image="/assets/img/destinations/destination-nice.webp"
+      alt="VTC Côte d'Azur"
+      imageSide="right"
+      ctaText="Réserver maintenant"
+      ctaLink="/reservation"
+    >
+      <p>
+        ECOFUNDRIVE étend ses services jusqu'à Fréjus et Saint-Raphaël. Que vous soyez résident ou vacancier, profitez d'un véhicule avec chauffeur pour vos trajets locaux, vos transferts vers les gares ou pour rejoindre l'aéroport de Nice.
+      </p>
+      <p>
+        Nous assurons une liaison confortable et sécurisée entre le Var et les Alpes-Maritimes, vous permettant de voyager sans fatigue.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Liaison Aéroport Nice - Fréjus/Saint-Raphaël"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Transfert aéroport"
+      imageSide="left"
+      ctaText="Consulter les tarifs"
+      ctaLink="/tarifs"
+    >
+      <p>
+        Rejoignez l'aéroport de Nice Côte d'Azur depuis Fréjus ou Saint-Raphaël en toute sérénité. Nos chauffeurs connaissent les meilleurs itinéraires pour éviter les bouchons de l'A8 et vous garantir une arrivée à l'heure pour votre vol.
+      </p>
+      <ul>
+        <li>Prise en charge à domicile ou à l'hôtel</li>
+        <li>Aide au chargement des bagages</li>
+        <li>Conduite souple et sécurisée</li>
+        <li>Disponibilité 24h/24 et 7j/7</li>
+      </ul>
+    </SectionImageText>
+
+    <div class="container py-xl">
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+        <div class="text-center mt-md">
+          <a href="/services" class="btn-primary">Découvrir nos services</a>
         </div>
       </section>
     </div>
   </main>
-</BaseLayout>
 
-<style>
-  .page-content { padding: var(--spacing-3xl) 0; }
-  .contact-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-</style>
+  <style>
+    .contact-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+  </style>

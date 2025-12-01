@@ -1,42 +1,87 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Reservation | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const title = "Reservation | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="reservation"
+  canonical="/reservation"
 >
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Réserver votre Chauffeur VTC</h1>
+      <p class="lead text-center mb-xl">Réservez votre trajet en quelques clics ou par téléphone. Service disponible 24h/24 et 7j/7.</p>
     </div>
+
+    <SectionImageText
+      title="Réservation Simple et Rapide"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Réserver un chauffeur VTC"
+      imageSide="right"
+      ctaText="Appeler pour réserver"
+      ctaLink="tel:+33616552811"
+    >
+      <p>
+        Pour garantir votre prise en charge, nous vous recommandons de réserver votre chauffeur à l'avance. C'est le moyen le plus sûr d'avoir un véhicule disponible à l'heure souhaitée, surtout en haute saison.
+      </p>
+      <p>
+        Vous pouvez nous contacter directement par téléphone ou via WhatsApp pour une réponse immédiate et une confirmation instantanée de votre course.
+      </p>
+      <div class="contact-buttons mt-md">
+        <a href="https://wa.me/33616552811" class="btn-primary" target="_blank" rel="noopener">Réserver par WhatsApp</a>
+      </div>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Informations Nécessaires"
+      image="/assets/img/destinations/vtc-tesla-nice.jpg"
+      alt="Véhicule VTC prêt au départ"
+      imageSide="left"
+      ctaText="Voir nos tarifs"
+      ctaLink="/tarifs"
+    >
+      <p>
+        Afin de vous offrir le meilleur service possible, merci de nous communiquer les informations suivantes lors de votre demande :
+      </p>
+      <ul>
+        <li>Date et heure de prise en charge</li>
+        <li>Adresse de départ et de destination</li>
+        <li>Nombre de passagers et de bagages</li>
+        <li>Numéro de vol ou de train (si applicable)</li>
+        <li>Besoins spécifiques (siège bébé, etc.)</li>
+      </ul>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Confirmation et Paiement"
+      image="/assets/img/services/service-business.webp"
+      alt="Service VTC professionnel"
+      imageSide="right"
+      ctaText="Nous contacter"
+      ctaLink="/contact"
+    >
+      <p>
+        Une fois votre réservation validée, vous recevrez une confirmation avec les coordonnées de votre chauffeur.
+      </p>
+      <p>
+        Le paiement peut s'effectuer à bord du véhicule (espèces, carte bancaire, Amex) ou à distance sur demande. Pour les entreprises, nous proposons une facturation mensuelle simplifiée.
+      </p>
+    </SectionImageText>
   </main>
 </BaseLayout>
 
 <style>
-  .page-content {
-    padding: var(--spacing-3xl) 0;
-  }
-
   .contact-buttons {
     display: flex;
     gap: var(--spacing-md);

@@ -1,0 +1,926 @@
+{
+  "totalPages": 69,
+  "pagesWithIssues": [
+    {
+      "page": "src/pages/a-propos.astro",
+      "issues": [
+        "PEU DE H2 (1 pour contenu long, minimum 2-3 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 691,
+      "h2Count": 1,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 7
+    },
+    {
+      "page": "src/pages/avis-clients.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (171 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 171,
+      "h2Count": 5,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/chauffeur-24h-nice.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/chauffeur-anglais-nice.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/conseils-voyageurs-cote-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/contact.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (151 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 151,
+      "h2Count": 5,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/en/booking.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/cannes-private-driver.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (148 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 148,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-cannes-congress-transport.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (131 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (131 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 131,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/en/guide-cannes-festivals-transport.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-family-day-french-riviera.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (126 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (126 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 126,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/en/guide-high-season-traffic-french-riviera.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-hilltop-villages-french-riviera.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-long-distance-transfers.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (134 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (134 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 134,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/en/guide-monaco-grand-prix-transport.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-nice-airport-taxi-or-private-driver.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-nice-in-1-to-3-days.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-one-day-in-monaco.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-saint-tropez-and-gulf.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-scenic-road-nice-eze-monaco.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guide-what-to-do-in-cannes.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/guides.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/index.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR PAGE PRINCIPALE (154 mots, minimum 800 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/nice-airport-to-cannes-transfer.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/nice-airport-to-monaco-transfer.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (128 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 128,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/en/nice-airport-to-saint-tropez-transfer.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/en/nice-private-driver.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-choisir-vtc-cote-azur.astro",
+      "issues": [
+        "TITLE TROP LONG (71 caracteres, maximum 60)"
+      ],
+      "wordCount": 1159,
+      "h2Count": 10,
+      "h3Count": 8,
+      "images": 1,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/guide-circulation-cote-d-azur-haute-saison.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (175 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (175 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 175,
+      "h2Count": 5,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/guide-congres-cannes-deplacements.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-decouvrir-saint-tropez-golfe.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (170 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (170 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 170,
+      "h2Count": 5,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/guide-evenements-cote-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-grand-prix-monaco-deplacements.astro",
+      "issues": [
+        "TITLE TROP LONG (65 caracteres, maximum 60)",
+        "CONTENU TROP FAIBLE (151 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (151 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 151,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/guide-journee-famille-cote-d-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-monaco-en-une-journee.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-que-faire-a-cannes.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-que-faire-a-nice-1-3-jours.astro",
+      "issues": [
+        "CONTENU TROP FAIBLE (168 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (168 mots, minimum 1200 recommande)"
+      ],
+      "wordCount": 168,
+      "h2Count": 6,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/guide-route-panoramique-nice-eze-monaco.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-villages-perches-cote-d-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-vtc-festival-cannes.astro",
+      "issues": [
+        "TITLE TROP LONG (78 caracteres, maximum 60)"
+      ],
+      "wordCount": 1019,
+      "h2Count": 9,
+      "h3Count": 7,
+      "images": 1,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-vtc-longue-distance.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (154 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guide-vtc-ou-taxi-aeroport-nice.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (125 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR GUIDE (125 mots, minimum 1200 recommande)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 125,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/guides.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (101 mots, minimum 400 recommande)",
+        "CANONICAL NON SPECIFIE (utilise la valeur par defaut)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 101,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/index.astro",
+      "issues": [
+        "H1 MANQUANT"
+      ],
+      "wordCount": 561,
+      "h2Count": 2,
+      "h3Count": 7,
+      "images": 0,
+      "internalLinks": 8
+    },
+    {
+      "page": "src/pages/it/index.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR PAGE PRINCIPALE (154 mots, minimum 800 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/mentions-legales-rgpd.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/reservation.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "AUCUN H2 (structure manquante)",
+        "PEU DE H2 (0 pour contenu long, minimum 2-3 recommande)",
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (176 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 176,
+      "h2Count": 0,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/ru/index.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "CONTENU INSUFFISANT POUR PAGE PRINCIPALE (154 mots, minimum 800 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/services.astro",
+      "issues": [
+        "PEU DE LIENS INTERNES (1, minimum 2-3 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)"
+      ],
+      "wordCount": 664,
+      "h2Count": 2,
+      "h3Count": 3,
+      "images": 0,
+      "internalLinks": 1
+    },
+    {
+      "page": "src/pages/tarifs.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "AUCUN H2 (structure manquante)",
+        "PEU DE H2 (0 pour contenu long, minimum 2-3 recommande)",
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (199 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 199,
+      "h2Count": 0,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/transfert-cannes-saint-tropez.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (155 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 155,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/transfert-nice-aeroport-cannes.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (126 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 126,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/transfert-nice-aeroport-monaco.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (126 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 126,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/transfert-nice-aeroport-saint-tropez.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (155 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 155,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/transferts-longue-distance-paca.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-aeroport-nice-prix.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-antibes.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "PEU DE H2 (1 pour contenu long, minimum 2-3 recommande)",
+        "PEU DE LIENS INTERNES (1, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (170 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 170,
+      "h2Count": 1,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 1
+    },
+    {
+      "page": "src/pages/vtc-cannes.astro",
+      "issues": [
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)"
+      ],
+      "wordCount": 483,
+      "h2Count": 2,
+      "h3Count": 3,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/vtc-entreprise-cote-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-frejus-saint-raphael.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "PEU DE H2 (1 pour contenu long, minimum 2-3 recommande)",
+        "PEU DE LIENS INTERNES (1, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (187 mots, minimum 400 recommande)",
+        "CANONICAL NON SPECIFIE (utilise la valeur par defaut)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 187,
+      "h2Count": 1,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 1
+    },
+    {
+      "page": "src/pages/vtc-grasse.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "PEU DE H2 (1 pour contenu long, minimum 2-3 recommande)",
+        "PEU DE LIENS INTERNES (1, minimum 2-3 recommande)",
+        "CONTENU TROP FAIBLE (193 mots, minimum 400 recommande)",
+        "CANONICAL NON SPECIFIE (utilise la valeur par defaut)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 193,
+      "h2Count": 1,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 1
+    },
+    {
+      "page": "src/pages/vtc-mariage-cote-azur.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-menton.astro",
+      "issues": [
+        "PEU DE KEYWORDS (4, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (154 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 154,
+      "h2Count": 4,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-monaco.astro",
+      "issues": [
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)"
+      ],
+      "wordCount": 515,
+      "h2Count": 2,
+      "h3Count": 3,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/vtc-nice.astro",
+      "issues": [
+        "PEU DE LIENS INTERNES (0, minimum 2-3 recommande)"
+      ],
+      "wordCount": 484,
+      "h2Count": 2,
+      "h3Count": 3,
+      "images": 0,
+      "internalLinks": 0
+    },
+    {
+      "page": "src/pages/vtc-saint-tropez.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 323,
+      "h2Count": 2,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 4
+    },
+    {
+      "page": "src/pages/vtc-sophia-antipolis.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (125 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 125,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    },
+    {
+      "page": "src/pages/vtc-villeneuve-loubet.astro",
+      "issues": [
+        "PEU DE KEYWORDS (3, minimum 5 recommande)",
+        "CONTENU TROP FAIBLE (125 mots, minimum 400 recommande)",
+        "SCHEMA.ORG MANQUANT (utilise le schema de base uniquement)",
+        "BREADCRUMBS MANQUANTS (recommandé pour SEO)"
+      ],
+      "wordCount": 125,
+      "h2Count": 3,
+      "h3Count": 0,
+      "images": 0,
+      "internalLinks": 5
+    }
+  ],
+  "statistics": {
+    "totalWords": 16034,
+    "totalH2": 258,
+    "totalH3": 43,
+    "totalImages": 3,
+    "totalInternalLinks": 291
+  }
+}

@@ -1,26 +1,75 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "VTC Antibes Juan-les-Pins | ECOFUNDRIVE";
-const description = "Service de VTC Antibes Juan-les-Pins sur la CÃ´te d'Azur. VTC Antibes Juan-les-Pins";
+const description = "Service de VTC Antibes Juan-les-Pins sur la Côte d'Azur. VTC Antibes Juan-les-Pins Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ex...";
 const keywords = [
   'VTC Antibes Juan-les-Pins',
+  "VTC Côte d'Azur",
+  'chauffeur privé',
+  'transport premium'
 ];
 ---
 
 
-<!-- Mots-clÃ©s SEO: VTC Antibes Juan-les-Pins -->
+<!-- Mots-clés SEO: VTC Antibes Juan-les-Pins -->
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="vtc-antibes"
+  canonical="/vtc-antibes"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- VTC Antibes Juan-les-Pins -->
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Antibes & Juan-les-Pins"
+      image="/assets/img/destinations/vtc-nice-cannes.jpg"
+      alt="VTC sur la Côte d'Azur"
+      imageSide="right"
+      ctaText="Réserver votre trajet"
+      ctaLink="/reservation"
+    >
+      <p>
+        Antibes et Juan-les-Pins, avec leur charme historique et leur ambiance balnéaire, sont des destinations incontournables. ECOFUNDRIVE vous accompagne pour tous vos déplacements dans cette zone, que ce soit pour rejoindre le port Vauban, la vieille ville ou les plages de Juan-les-Pins.
+      </p>
+      <p>
+        Profitez d'un service VTC de qualité supérieure pour vos transferts vers les hôtels du Cap d'Antibes ou pour vos soirées. Nos chauffeurs discrets et professionnels sont à votre service 24h/24.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Liaisons Aéroport Nice - Antibes"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Transfert aéroport"
+      imageSide="left"
+      ctaText="Voir les tarifs"
+      ctaLink="/tarifs"
+    >
+      <p>
+        Besoin d'un transfert rapide et confortable entre l'aéroport de Nice et Antibes ? Évitez l'attente des taxis et optez pour un chauffeur privé qui vous attendra dès votre arrivée.
+      </p>
+      <ul>
+        <li>Accueil personnalisé à l'aéroport</li>
+        <li>Tarif fixe et transparent</li>
+        <li>Véhicules spacieux pour vos bagages</li>
+        <li>Sièges enfants disponibles sur demande</li>
+      </ul>
+    </SectionImageText>
+
+    <div class="container py-xl">
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+        <div class="text-center mt-md">
+          <a href="/services" class="btn-primary">Découvrir nos services</a>
+        </div>
+      </section>
+    </div>
   </main>
 </BaseLayout>
+```

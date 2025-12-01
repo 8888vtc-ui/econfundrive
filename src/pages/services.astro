@@ -1,14 +1,15 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Services VTC Premium Côte d'Azur | Transferts, Mise à Disposition & Événements | ECOFUNDRIVE";
-const description = "Découvrez nos services VTC premium sur la Côte d'Azur : transferts aéroports (Nice, Cannes), trajets business, mise à disposition à l'heure ou à la journée et organisation d'événements. Solution clé en main pour professionnels et particuliers.";
+const title = "Services VTC Premium Côte d'Azur | ECOFUNDRIVE";
+const description = "Découvrez nos services VTC premium : transferts aéroports Nice & Cannes, trajets business, mise à disposition et événements. Solution clé en main.";
 const keywords = [
-  'service VTC entreprise Côte d\'Azur',
-  'chauffeur privé pour mariage Côte d\'Azur',
+  "service VTC entreprise Côte d\'Azur",
+  "chauffeur privé pour mariage Côte d\'Azur",
   'VTC avec siège enfant Nice',
-  'chauffeur anglais Côte d\'Azur',
+  "chauffeur anglais Côte d\'Azur",
   'mise à disposition chauffeur',
   'VTC business',
   'transfert aéroport'
@@ -25,165 +26,131 @@ const keywords = [
     { name: "Services", url: "/services" }
   ]}
 >
-  <main id="main-content" class="container py-lg">
-    <h1 class="text-center mb-xl">{title}</h1>
-    <p class="lead text-center mb-xl">{description}</p>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
 
-    <section id="transferts" class="mb-xl">
-      <h2 class="mb-lg">Transferts Aéroports, Gares & Hôtels</h2>
-      <div class="grid-2-cols-responsive align-center">
-        <div>
-          <p>
-            Simplifiez vos arrivées et départs sur la Côte d'Azur avec nos services de transfert VTC. Nous assurons vos liaisons depuis et vers l'Aéroport Nice Côte d'Azur (NCE), l'Aéroport de Cannes-Mandelieu, ainsi que toutes les gares TGV et hôtels de la région. Fini le stress des transports en commun ou des taxis incertains : votre chauffeur privé vous attendra ponctuellement, avec une pancarte nominative si nécessaire, pour vous conduire à destination en tout confort.
-          </p>
-          <ul>
-            <li>Accueil personnalisé à l'aéroport ou à la gare</li>
-            <li>Suivi des vols et trains en temps réel pour anticiper les retards</li>
-            <li>Prise en charge des bagages</li>
-            <li>Véhicules confortables et spacieux</li>
-          </ul>
-          <a href="/reservation" class="btn-primary mt-md">Réserver un transfert</a>
-        </div>
-        <OptimizedImage 
-          src="/assets/img/services/service-aeroport.webp" 
-          alt="Chauffeur VTC attendant à l'aéroport de Nice" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-      </div>
-    </section>
+    <SectionImageText
+      id="transferts"
+      title="Transferts Aéroports, Gares & Hôtels"
+      image="/assets/img/services/service-aeroport.webp"
+      alt="Chauffeur VTC attendant à l'aéroport de Nice"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p>
+        Simplifiez vos arrivées et départs sur la Côte d'Azur avec nos services de transfert VTC. Nous assurons vos liaisons depuis et vers l'Aéroport Nice Côte d'Azur (NCE), l'Aéroport de Cannes-Mandelieu, ainsi que toutes les gares TGV et hôtels de la région. Fini le stress des transports en commun ou des taxis incertains : votre chauffeur privé vous attendra ponctuellement, avec une pancarte nominative si nécessaire, pour vous conduire à destination en tout confort.
+      </p>
+      <ul>
+        <li>Accueil personnalisé à l'aéroport ou à la gare</li>
+        <li>Suivi des vols et trains en temps réel pour anticiper les retards</li>
+        <li>Prise en charge des bagages</li>
+        <li>Véhicules confortables et spacieux</li>
+      </ul>
+    </SectionImageText>
 
-    <section id="business" class="mb-xl">
-      <h2 class="mb-lg">VTC Business & Professionnel</h2>
-      <div class="grid-2-cols-responsive align-center reverse-order-mobile">
-        <OptimizedImage 
-          src="/assets/img/services/service-business.webp" 
-          alt="Chauffeur VTC pour rendez-vous d'affaires" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-        <div>
-          <p>
-            Pour vos déplacements professionnels, la ponctualité et la discrétion sont essentielles. ECOFUNDRIVE met à votre disposition des chauffeurs expérimentés pour vos rendez-vous d'affaires, séminaires, congrès (Palais des Festivals de Cannes, Sophia Antipolis) ou tout autre événement professionnel. Concentrez-vous sur vos objectifs, nous nous occupons de votre transport avec efficacité et professionnalisme.
-          </p>
-          <ul>
-            <li>Discrétion et confidentialité assurées</li>
-            <li>Flexibilité pour vos changements de programme</li>
-            <li>Véhicules équipés (Wi-Fi, chargeurs) pour travailler en déplacement</li>
-            <li>Facturation adaptée aux entreprises</li>
-          </ul>
-          <a href="/contact" class="btn-primary mt-md">Demander un devis pro</a>
-        </div>
-      </div>
-    </section>
+    <SectionImageText
+      id="business"
+      title="VTC Business & Professionnel"
+      image="/assets/img/services/service-business.webp"
+      alt="Chauffeur VTC pour rendez-vous d'affaires"
+      imageSide="left"
+      ctaText="Demander un devis pro"
+      ctaLink="/contact"
+    >
+      <p>
+        Pour vos déplacements professionnels, la ponctualité et la discrétion sont essentielles. ECOFUNDRIVE met à votre disposition des chauffeurs expérimentés pour vos rendez-vous d'affaires, séminaires, congrès (Palais des Festivals de Cannes, Sophia Antipolis) ou tout autre événement professionnel. Concentrez-vous sur vos objectifs, nous nous occupons de votre transport avec efficacité et professionnalisme.
+      </p>
+      <ul>
+        <li>Discrétion et confidentialité assurées</li>
+        <li>Flexibilité pour vos changements de programme</li>
+        <li>Véhicules équipés (Wi-Fi, chargeurs) pour travailler en déplacement</li>
+        <li>Facturation adaptée aux entreprises</li>
+      </ul>
+    </SectionImageText>
 
-    <section id="disposition" class="mb-xl">
-      <h2 class="mb-lg">Mise à Disposition avec Chauffeur</h2>
-      <div class="grid-2-cols-responsive align-center">
-        <div>
-          <p>
-            Profitez d'une liberté totale avec notre service de mise à disposition. Que vous ayez besoin d'un chauffeur pour quelques heures de shopping, une journée de visites touristiques, ou pour vous accompagner lors de plusieurs rendez-vous sans contrainte de temps, votre chauffeur reste à votre entière disposition. C'est la solution idéale pour une flexibilité maximale et un confort inégalé.
-          </p>
-          <ul>
-            <li>Chauffeur dédié à l'heure ou à la journée</li>
-            <li>Itinéraire modulable selon vos envies</li>
-            <li>Attente incluse</li>
-            <li>Idéal pour le tourisme, le shopping ou les événements</li>
-          </ul>
-          <a href="/reservation" class="btn-primary mt-md">Réserver une mise à disposition</a>
-        </div>
-        <OptimizedImage 
-          src="/assets/img/services/service-mise-disposition.webp" 
-          alt="Voiture de luxe avec chauffeur à disposition" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-      </div>
-    </section>
+    <SectionImageText
+      id="disposition"
+      title="Mise à Disposition avec Chauffeur"
+      image="/assets/img/services/service-mise-disposition.webp"
+      alt="Voiture de luxe avec chauffeur à disposition"
+      imageSide="right"
+      ctaText="Réserver une mise à disposition"
+      ctaLink="/reservation"
+    >
+      <p>
+        Profitez d'une liberté totale avec notre service de mise à disposition. Que vous ayez besoin d'un chauffeur pour quelques heures de shopping, une journée de visites touristiques, ou pour vous accompagner lors de plusieurs rendez-vous sans contrainte de temps, votre chauffeur reste à votre entière disposition. C'est la solution idéale pour une flexibilité maximale et un confort inégalé.
+      </p>
+      <ul>
+        <li>Chauffeur dédié à l'heure ou à la journée</li>
+        <li>Itinéraire modulable selon vos envies</li>
+        <li>Attente incluse</li>
+        <li>Idéal pour le tourisme, le shopping ou les événements</li>
+      </ul>
+    </SectionImageText>
 
-    <section id="evenements" class="mb-xl">
-      <h2 class="mb-lg">Événements Spéciaux & Mariages</h2>
-      <div class="grid-2-cols-responsive align-center reverse-order-mobile">
-        <OptimizedImage 
-          src="/assets/img/services/service-evenements.webp" 
-          alt="Voiture de mariage avec chauffeur" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-        <div>
-          <p>
-            Pour les moments inoubliables de votre vie, faites confiance à ECOFUNDRIVE. Nous vous proposons un service VTC haut de gamme pour vos mariages, anniversaires, galas, festivals (Festival de Cannes, Grand Prix de Monaco) et autres célébrations. Nos véhicules élégants et nos chauffeurs professionnels ajouteront une touche de prestige à votre événement, en assurant des déplacements fluides et sans souci pour vous et vos invités.
-          </p>
-          <ul>
-            <li>Véhicules décorés sur demande pour les mariages</li>
-            <li>Transport des invités</li>
-            <li>Disponibilité pour toute la durée de l'événement</li>
-            <li>Service discret et élégant</li>
-          </ul>
-          <a href="/vtc-mariage-cote-azur" class="btn-primary mt-md">Découvrir nos services mariage</a>
-        </div>
-      </div>
-    </section>
+    <SectionImageText
+      id="evenements"
+      title="Événements Spéciaux & Mariages"
+      image="/assets/img/services/service-evenements.webp"
+      alt="Voiture de mariage avec chauffeur"
+      imageSide="left"
+      ctaText="Découvrir nos services mariage"
+      ctaLink="/vtc-mariage-cote-azur"
+    >
+      <p>
+        Pour les moments inoubliables de votre vie, faites confiance à ECOFUNDRIVE. Nous vous proposons un service VTC haut de gamme pour vos mariages, anniversaires, galas, festivals (Festival de Cannes, Grand Prix de Monaco) et autres célébrations. Nos véhicules élégants et nos chauffeurs professionnels ajouteront une touche de prestige à votre événement, en assurant des déplacements fluides et sans souci pour vous et vos invités.
+      </p>
+      <ul>
+        <li>Véhicules décorés sur demande pour les mariages</li>
+        <li>Transport des invités</li>
+        <li>Disponibilité pour toute la durée de l'événement</li>
+        <li>Service discret et élégant</li>
+      </ul>
+    </SectionImageText>
 
-    <section id="tourisme" class="mb-xl">
-      <h2 class="mb-lg">Circuits Touristiques Personnalisés</h2>
-      <div class="grid-2-cols-responsive align-center">
-        <div>
-          <p>
-            Explorez la beauté de la Côte d'Azur à votre rythme avec nos circuits touristiques sur mesure. Votre chauffeur, véritable guide local, vous fera découvrir les sites emblématiques et les trésors cachés de la région : les villages perchés, les panoramas époustouflants, les marchés provençaux, les musées... Créez votre propre itinéraire ou laissez-vous guider par nos suggestions.
-          </p>
-          <ul>
-            <li>Itinéraires personnalisables (Nice, Cannes, Monaco, Saint-Paul-de-Vence, Eze...)</li>
-            <li>Chauffeur-guide expérimenté</li>
-            <li>Confort et flexibilité pour vos visites</li>
-            <li>Arrêts photos illimités</li>
-          </ul>
-          <a href="/guides" class="btn-primary mt-md">Voir nos idées de circuits</a>
-        </div>
-        <OptimizedImage 
-          src="/assets/img/destinations/destination-nice.webp" 
-          alt="Vue panoramique de la Côte d'Azur depuis une voiture VTC" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-      </div>
-    </section>
+    <SectionImageText
+      id="tourisme"
+      title="Circuits Touristiques Personnalisés"
+      image="/assets/img/destinations/destination-nice.webp"
+      alt="Vue panoramique de la Côte d'Azur depuis une voiture VTC"
+      imageSide="right"
+      ctaText="Voir nos idées de circuits"
+      ctaLink="/guides"
+    >
+      <p>
+        Explorez la beauté de la Côte d'Azur à votre rythme avec nos circuits touristiques sur mesure. Votre chauffeur, véritable guide local, vous fera découvrir les sites emblématiques et les trésors cachés de la région : les villages perchés, les panoramas époustouflants, les marchés provençaux, les musées... Créez votre propre itinéraire ou laissez-vous guider par nos suggestions.
+      </p>
+      <ul>
+        <li>Itinéraires personnalisables (Nice, Cannes, Monaco, Saint-Paul-de-Vence, Eze...)</li>
+        <li>Chauffeur-guide expérimenté</li>
+        <li>Confort et flexibilité pour vos visites</li>
+        <li>Arrêts photos illimités</li>
+      </ul>
+    </SectionImageText>
 
-    <section id="longue-distance" class="mb-xl">
-      <h2 class="mb-lg">Trajets Longue Distance</h2>
-      <div class="grid-2-cols-responsive align-center reverse-order-mobile">
-        <OptimizedImage 
-          src="/assets/img/hero/hero-business.webp" 
-          alt="Voiture VTC sur autoroute pour un long trajet" 
-          width={600} 
-          height={400} 
-          loading="lazy"
-          class="img-responsive border-radius-md"
-        />
-        <div>
-          <p>
-            Besoin de vous rendre au-delà des frontières de la Côte d'Azur ? ECOFUNDRIVE assure également vos transferts longue distance vers toutes les grandes villes de France (Marseille, Lyon, Paris) ou même vers les pays voisins comme l'Italie. Voyagez en toute tranquillité, sans les contraintes des transports en commun, avec un confort optimal et un service porte-à-porte.
-          </p>
-          <ul>
-            <li>Voyages nationaux et internationaux</li>
-            <li>Confort supérieur pour les longs trajets</li>
-            <li>Flexibilité des horaires</li>
-            <li>Service porte-à-porte</li>
-          </ul>
-          <a href="/transferts-longue-distance-paca" class="btn-primary mt-md">En savoir plus sur les longs trajets</a>
-        </div>
-      </div>
-    </section>
+    <SectionImageText
+      id="longue-distance"
+      title="Trajets Longue Distance"
+      image="/assets/img/hero/hero-business.webp"
+      alt="Voiture VTC sur autoroute pour un long trajet"
+      imageSide="left"
+      ctaText="En savoir plus sur les longs trajets"
+      ctaLink="/transferts-longue-distance-paca"
+    >
+      <p>
+        Besoin de vous rendre au-delà des frontières de la Côte d'Azur ? ECOFUNDRIVE assure également vos transferts longue distance vers toutes les grandes villes de France (Marseille, Lyon, Paris) ou même vers les pays voisins comme l'Italie. Voyagez en toute tranquillité, sans les contraintes des transports en commun, avec un confort optimal et un service porte-à-porte.
+      </p>
+      <ul>
+        <li>Voyages nationaux et internationaux</li>
+        <li>Confort supérieur pour les longs trajets</li>
+        <li>Flexibilité des horaires</li>
+        <li>Service porte-à-porte</li>
+      </ul>
+    </SectionImageText>
 
     <section class="mb-xl">
       <h2 class="text-center mb-lg">Nos Engagements Qualité</h2>

@@ -1,0 +1,172 @@
+---
+import OptimizedImage from './OptimizedImage.astro';
+
+interface Props {
+  title: string;
+  image: string;
+  alt: string;
+  imageSide?: 'left' | 'right';
+  ctaText?: string;
+  ctaLink?: string;
+  id?: string;
+}
+
+const {
+  title,
+  image,
+  alt,
+  imageSide = 'left',
+  ctaText,
+  ctaLink,
+  id
+} = Astro.props;
+---
+
+<section class="section-image-text" id={id}>
+  <div class={`container grid-layout ${imageSide === 'right' ? 'reverse' : ''}`}>
+    <div class="image-column">
+      <div class="image-wrapper">
+        <OptimizedImage
+          src={image}
+          alt={alt}
+          width={600}
+          height={400}
+          class="section-image"
+        />
+        <div class="image-overlay"></div>
+      </div>
+    </div>
+    <div class="content-column">
+      <h2 class="section-title">{title}</h2>
+      <div class="section-content">
+        <slot />
+      </div>
+      {ctaText && ctaLink && (
+        <a href={ctaLink} class="cta-button">{ctaText}</a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-image-text {
+    padding: var(--spacing-3xl) 0;
+    overflow: hidden;
+  }
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .grid-layout.reverse .image-column {
+    order: 2;
+  }
+
+  .grid-layout.reverse .content-column {
+    order: 1;
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-normal);
+  }
+
+  .image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .section-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+
+  .image-wrapper:hover .section-image {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+  }
+
+  .section-title {
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-gold);
+  }
+
+  .section-content {
+    color: var(--color-gray-light);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: var(--color-gold);
+    color: var(--color-primary-black);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: var(--font-size-sm);
+  }
+
+  .cta-button:hover {
+    background-color: var(--color-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+  }
+
+  @media (max-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .grid-layout.reverse .image-column {
+      order: 0; /* Reset order on mobile to always show image first or second depending on preference, usually image first is better for visual flow */
+      order: -1; /* Image first on mobile */
+    }
+    
+    .grid-layout .image-column {
+        order: -1;
+    }
+
+    .grid-layout.reverse .content-column {
+      order: 0;
+    }
+    
+    .section-image-text {
+        padding: var(--spacing-xl) 0;
+    }
+  }
+</style>

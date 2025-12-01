@@ -1,34 +1,54 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "Index | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const title = "Index | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="index"
->
+
+  canonical="/ru/index"
   <main class="page-content">
     <div class="container">
       <h1>{title}</h1>
       <p>{description}</p>
       
       <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
+        <h2>Réservation</h2>
+        <p>Pour réserver votre chauffeur privé VTC :</p>
         <div class="contact-buttons">
           <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
           <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </section>
     </div>
+  
+    <section class="mb-xl">
+      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+      <a href="/services" class="btn-primary">Découvrir nos services</a>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Nos services sur la Côte d'Azur</h2>
+      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
+      <a href="/services" class="btn-primary">Voir tous nos services</a>
+    </section>
   </main>
 </BaseLayout>
 

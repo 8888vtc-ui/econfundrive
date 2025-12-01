@@ -2,25 +2,46 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "chauffeur Sophia-Antipolis | ECOFUNDRIVE";
-const description = "Service de chauffeur Sophia-Antipolis sur la CÃ´te d'Azur. chauffeur Sophia-Antipolis";
+const description = "Service de chauffeur Sophia-Antipolis sur la Côte d'Azur. chauffeur Sophia-Antipolis Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'chauffeur Sophia-Antipolis',
+  "VTC Côte d'Azur",
+  'chauffeur privé',
+  'transport premium'
 ];
 ---
 
 
-<!-- Mots-clÃ©s SEO: chauffeur Sophia-Antipolis -->
+<!-- Mots-clés SEO: chauffeur Sophia-Antipolis -->
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="vtc-sophia-antipolis"
->
+
+  canonical="/vtc-sophia-antipolis"
   <main>
     <h1>{title}</h1>
     <p>{description}</p>
     
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
+    <!-- Mots-clés Ã  intégrer dans le contenu: -->
     <!-- chauffeur Sophia-Antipolis -->
+  
+    <section class="mb-xl">
+      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+      <a href="/services" class="btn-primary">Découvrir nos services</a>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/reservation">reservation</a> | <a href="/contact">contact</a></p>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Nos services sur la Côte d'Azur</h2>
+      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
+      <a href="/services" class="btn-primary">Voir tous nos services</a>
+    </section>
   </main>
 </BaseLayout>

@@ -1,26 +1,69 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "quelle diffÃ©rence entre VTC et taxi Nice | ECOFUNDRIVE";
-const description = "Service de quelle diffÃ©rence entre VTC et taxi Nice sur la CÃ´te d'Azur. quelle diffÃ©rence entre VTC et taxi Nice";
+const title = "quelle différence entre VTC et taxi Nice | ECOFUNDRIVE";
+const description = "Service de quelle différence entre VTC et taxi Nice sur la Côte d'Azur. quelle différence entre VTC et taxi Nice Service ECOFUNDRIVE professionnel 24h/24.";
 const keywords = [
-  'quelle diffÃ©rence entre VTC et taxi Nice',
+  'quelle différence entre VTC et taxi Nice',
+  "VTC Côte d'Azur",
+  'chauffeur privé',
+  'transport premium'
 ];
 ---
 
 
-<!-- Mots-clÃ©s SEO: quelle diffÃ©rence entre VTC et taxi Nice -->
+<!-- Mots-clés SEO: quelle différence entre VTC et taxi Nice -->
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="guide-vtc-ou-taxi-aeroport-nice"
+
+  canonical="/guide-vtc-ou-taxi-aeroport-nice"
+  <main
+  schema={{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "quelle différence entre VTC et taxi Nice | ECOFUNDRIVE",
+  "description": "Service de quelle différence entre VTC et taxi Nice sur la Côte d'Azur. quelle différence entre VTC et taxi Nice Service ECOFUNDRIVE professionnel 24h/24.",
+  "url": "https://www.ecofundrive.com/guide-vtc-ou-taxi-aeroport-nice",
+  "author": {
+    "@type": "Person",
+    "name": "David Chemla"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ecofundrive.com/assets/img/logo.png"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-12-01"
+}}
 >
-  <main>
     <h1>{title}</h1>
     <p>{description}</p>
     
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- quelle diffÃ©rence entre VTC et taxi Nice -->
+    <!-- Mots-clés Ã  intégrer dans le contenu: -->
+    <!-- quelle différence entre VTC et taxi Nice -->
+  
+    <section class="mb-xl">
+      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+      <a href="/services" class="btn-primary">Découvrir nos services</a>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Nos services sur la Côte d'Azur</h2>
+      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
+      <a href="/services" class="btn-primary">Voir tous nos services</a>
+    </section>
   </main>
 </BaseLayout>

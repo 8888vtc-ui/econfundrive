@@ -1,33 +1,75 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Vtc Grasse | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const title = "Vtc Grasse | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="vtc-grasse">
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">VTC Grasse : Capitale du Parfum</h1>
+      <p class="lead text-center mb-xl">Votre chauffeur privé pour découvrir Grasse et ses environs en toute sérénité.</p>
+    </div>
+
+    <SectionImageText
+      title="Visiter Grasse avec un Chauffeur Privé"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Paysage de l'arrière-pays grassois"
+      imageSide="right"
+      ctaText="Réserver votre excursion"
+      ctaLink="/reservation"
+    >
+      <p>
+        Grasse, capitale mondiale du parfum, est une étape incontournable de la Côte d'Azur. Laissez-vous conduire par ECOFUNDRIVE à travers les collines et les champs de fleurs. Visitez les parfumeries historiques (Fragonard, Molinard, Galimard) sans vous soucier du stationnement.
+      </p>
+      <p>
+        Nos chauffeurs connaissent les meilleures adresses et les routes les plus pittoresques pour faire de votre visite une expérience mémorable.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Transferts et Déplacements Professionnels"
+      image="/assets/img/services/service-evenements.webp"
+      alt="Service VTC Business"
+      imageSide="left"
+      ctaText="Demander un devis"
+      ctaLink="/contact"
+    >
+      <p>
+        Vous vous rendez à Grasse pour un rendez-vous d'affaires, un congrès ou un mariage ? ECOFUNDRIVE assure vos transferts depuis l'aéroport de Nice, la gare de Cannes ou votre hôtel.
+      </p>
+      <ul>
+        <li>Ponctualité garantie pour vos rendez-vous</li>
+        <li>Véhicules confortables pour travailler ou se détendre</li>
+        <li>Service de mise à disposition à la journée</li>
+        <li>Accès facile aux domaines et bastides de l'arrière-pays</li>
+      </ul>
+    </SectionImageText>
+
+    <div class="container py-xl">
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+        <div class="text-center mt-md">
+          <a href="/services" class="btn-primary">Découvrir nos services</a>
         </div>
       </section>
     </div>
   </main>
-</BaseLayout>
 
-<style>
-  .page-content { padding: var(--spacing-3xl) 0; }
-  .contact-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-</style>
+  <style>
+    .contact-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+  </style>

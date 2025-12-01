@@ -1,33 +1,136 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Guides | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const title = "Guides | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guides">
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Guides & Conseils Voyage Côte d'Azur</h1>
+      <p class="lead text-center mb-xl">Préparez votre séjour avec nos guides experts : itinéraires, conseils pratiques et astuces pour découvrir la Côte d'Azur autrement.</p>
     </div>
-  </main>
-</BaseLayout>
 
-<style>
-  .page-content { padding: var(--spacing-3xl) 0; }
-  .contact-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-</style>
+    <SectionImageText
+      title="Explorez la Côte d'Azur avec ECOFUNDRIVE"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Village perché de la Côte d'Azur"
+      imageSide="right"
+      ctaText="Réserver un circuit"
+      ctaLink="/reservation"
+    >
+      <p>
+        Au-delà du simple transport, nous souhaitons partager avec vous notre passion pour notre région. Que vous cherchiez les meilleures adresses, des idées d'excursions ou des conseils pour optimiser vos déplacements, nos guides sont là pour vous inspirer.
+      </p>
+      <p>
+        Découvrez nos recommandations pour visiter Nice, Cannes, Monaco, Saint-Tropez et les trésors cachés de l'arrière-pays.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Nos Guides par Destination</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/nice-vieux-nice.webp"
+          alt="Guide Nice"
+          title="Que faire à Nice ?"
+          description="Itinéraire pour visiter Nice en 1 à 3 jours : Vieux-Nice, Promenade des Anglais, Colline du Château..."
+          link="/guide-que-faire-a-nice-1-3-jours"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-cannes.webp"
+          alt="Guide Cannes"
+          title="Visiter Cannes"
+          description="Les incontournables de Cannes : la Croisette, le Suquet, les îles de Lérins."
+          link="/guide-que-faire-a-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.webp"
+          alt="Guide Monaco"
+          title="Monaco en 1 jour"
+          description="Le guide complet pour une journée parfaite à Monaco : Palais, Casino, Musée Océanographique."
+          link="/guide-monaco-en-une-journee"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Guide Saint-Tropez"
+          title="Découvrir Saint-Tropez"
+          description="Plages, port, citadelle : tout ce qu'il faut savoir pour profiter de Saint-Tropez et son golfe."
+          link="/guide-decouvrir-saint-tropez-golfe"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Événements & Lifestyle</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.webp"
+          alt="Festival de Cannes"
+          title="Festival de Cannes"
+          description="Guide pratique pour vos déplacements pendant le Festival de Cannes."
+          link="/guide-vtc-festival-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/guides/grand-prix-monaco.webp"
+          alt="Grand Prix de Monaco"
+          title="Grand Prix de Monaco"
+          description="Comment se déplacer et où se loger pendant le Grand Prix de F1."
+          link="/guide-grand-prix-monaco-deplacements"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-evenements.webp"
+          alt="Événements Côte d'Azur"
+          title="Agenda des Événements"
+          description="Les grands événements à ne pas manquer sur la Côte d'Azur."
+          link="/guide-evenements-cote-azur"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Conseils Pratiques VTC</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/services/service-aeroport.webp"
+          alt="VTC ou Taxi"
+          title="VTC ou Taxi à Nice ?"
+          description="Comparatif pour choisir le meilleur mode de transport à l'aéroport de Nice."
+          link="/guide-vtc-ou-taxi-aeroport-nice"
+        />
+        <CategoryCard
+          image="/assets/img/about/chauffeur-professionnel.webp"
+          alt="Choisir son VTC"
+          title="Bien choisir son VTC"
+          description="Les critères pour sélectionner un chauffeur privé de confiance."
+          link="/guide-choisir-vtc-cote-azur"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-business.webp"
+          alt="Budget Transport"
+          title="Budget Transport"
+          description="Estimez le coût de vos déplacements sur la Côte d'Azur."
+          link="/guide-budget-transport-cote-azur"
+        />
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .grid-3-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-lg);
+    }
+  </style>

@@ -1,26 +1,95 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "VTC Saint-Tropez | ECOFUNDRIVE";
-const description = "Service de VTC Saint-Tropez sur la CÃ´te d'Azur. VTC Saint-Tropez";
+const description = "Service de VTC Saint-Tropez sur la Côte d'Azur. VTC Saint-Tropez Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs expérimentés.";
 const keywords = [
   'VTC Saint-Tropez',
+  "VTC Côte d'Azur",
+  'chauffeur privé',
+  'transport premium'
 ];
 ---
 
+<!-- Mots-clés SEO: VTC Saint-Tropez -->
 
-<!-- Mots-clÃ©s SEO: VTC Saint-Tropez -->
-
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="vtc-saint-tropez"
+  canonical="/vtc-saint-tropez"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Saint-Tropez"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="Vue panoramique de Saint-Tropez"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p>
+        Saint-Tropez, joyau de la Côte d'Azur, est synonyme de glamour, de fêtes et de détente. Pour profiter pleinement de votre séjour dans ce village mythique, ECOFUNDRIVE vous propose un service de chauffeur privé VTC haut de gamme. Que vous arriviez en hélicoptère, en yacht ou que vous veniez de Nice ou Cannes, nous assurons vos déplacements avec élégance et discrétion.
+      </p>
+      <p>
+        Oubliez les difficultés de circulation et de stationnement en été. Votre chauffeur vous dépose directement devant votre hôtel, votre villa, les plages de Pampelonne ou le port, et reste à votre disposition pour vos soirées.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Transferts Nice - Saint-Tropez"
+      image="/assets/img/destinations/saint-tropez-port.webp"
+      alt="Le port de Saint-Tropez"
+      imageSide="left"
+      ctaText="Voir les tarifs"
+      ctaLink="/transfert-nice-aeroport-saint-tropez"
+    >
+      <p>
+        Le trajet entre l'aéroport de Nice et Saint-Tropez peut être long et fatiguant, surtout en haute saison. Avec ECOFUNDRIVE, transformez ce transfert en un moment de détente. Nos véhicules confortables et climatisés vous permettent de voyager sereinement.
+      </p>
+      <ul>
+        <li>Transfert direct depuis l'aéroport de Nice</li>
+        <li>Liaisons vers Cannes et Monaco</li>
+        <li>Mise à disposition pour la journée ou la soirée</li>
+        <li>Service de nuit pour vos sorties</li>
+      </ul>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Plages Privées et Vie Nocturne"
+      image="/assets/img/destinations/club-55-saint-tropez.jpg"
+      alt="Ambiance plage privée à Saint-Tropez"
+      imageSide="right"
+      ctaText="Réserver une mise à disposition"
+      ctaLink="/reservation"
+    >
+      <p>
+        Saint-Tropez est célèbre pour ses plages privées de Pampelonne (Club 55, Nikki Beach...) et sa vie nocturne effervescente. Profitez de vos journées et de vos soirées sans vous soucier du retour. Votre chauffeur privé vous accompagne et vous attend, assurant votre sécurité et votre confort jusqu'au bout de la nuit.
+      </p>
+      <p>
+        Nous connaissons les meilleurs itinéraires pour rejoindre les plages et les clubs, vous évitant ainsi un maximum de stress lié au trafic estival.
+      </p>
+    </SectionImageText>
+
+    <div class="container py-xl">
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+        <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+        <div class="text-center mt-md">
+          <a href="/services" class="btn-primary">Découvrir nos services</a>
+        </div>
+      </section>
     
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- VTC Saint-Tropez -->
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pages connexes</h2>
+        <p class="text-center">Découvrez nos autres services : <a href="/services">services</a> | <a href="/reservation">reservation</a> | <a href="/contact">contact</a></p>
+      </section>
+    </div>
   </main>
 </BaseLayout>

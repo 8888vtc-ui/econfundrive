@@ -5,18 +5,17 @@ import OptimizedImage from '../components/OptimizedImage.astro';
 const title = "Guide Complet : Comment Choisir un VTC sur la Côte d'Azur | ECOFUNDRIVE";
 const description = "Guide expert pour choisir le meilleur VTC sur la Côte d'Azur. Critères de sélection, tarifs, services, législation. Conseils pratiques pour faire le bon choix.";
 const keywords = [
-  'choisir VTC Côte d\'Azur',
+  "choisir VTC Côte d\'Azur",
   'guide VTC Nice',
   'comment choisir chauffeur privé',
   'critères sélection VTC',
-  'VTC légal Côte d\'Azur',
+  "VTC légal Côte d\'Azur",
   'différence VTC taxi',
   'meilleur VTC Nice'
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="guide-choisir-vtc-cote-azur"
   breadcrumbItems={[
@@ -24,8 +23,31 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Choisir un VTC", url: "/guide-choisir-vtc-cote-azur" }
   ]}
+
+  canonical="/guide-choisir-vtc-cote-azur"
+  <main id="main-content" class="container py-lg"
+  schema={{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Guide Complet : Comment Choisir un VTC sur la Côte d'Azur | ECOFUNDRIVE",
+  "description": "Guide expert pour choisir le meilleur VTC sur la Côte d'Azur. Critères de sélection, tarifs, services, législation. Conseils pratiques pour faire le bon choix.",
+  "url": "https://www.ecofundrive.com/guide-choisir-vtc-cote-azur",
+  "author": {
+    "@type": "Person",
+    "name": "David Chemla"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ecofundrive.com/assets/img/logo.png"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-12-01"
+}}
 >
-  <main id="main-content" class="container py-lg">
     <article>
       <h1 class="text-center mb-xl">{title}</h1>
       <p class="lead text-center mb-xl">{description}</p>
@@ -239,6 +261,11 @@ const keywords = [
         </div>
       </section>
     </article>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+    </section>
   </main>
 </BaseLayout>
 

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 
 const title = "VTC Festival de Cannes : Guide Complet Transport et Déplacements | ECOFUNDRIVE";
-const description = "Guide complet pour vos déplacements pendant le Festival de Cannes. Chauffeur privé VTC pour événements, transferts, mise à disposition. Service premium adapté au Festival. Conseils pratiques et tarifs.";
+const description = "Guide complet pour vos déplacements pendant le Festival de Cannes. Chauffeur privé VTC pour événements, transferts, mise à disposition. Service premium adapt...";
 const keywords = [
   'VTC Festival Cannes',
   'chauffeur Festival Cannes',
@@ -15,8 +15,7 @@ const keywords = [
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="guide-vtc-festival-cannes"
   breadcrumbItems={[
@@ -24,8 +23,31 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "VTC Festival Cannes", url: "/guide-vtc-festival-cannes" }
   ]}
+
+  canonical="/guide-vtc-festival-cannes"
+  <main id="main-content" class="container py-lg"
+  schema={{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "VTC Festival de Cannes : Guide Complet Transport et Déplacements | ECOFUNDRIVE",
+  "description": "Guide complet pour vos déplacements pendant le Festival de Cannes. Chauffeur privé VTC pour événements, transferts, mise à disposition. Service premium adapt...",
+  "url": "https://www.ecofundrive.com/guide-vtc-festival-cannes",
+  "author": {
+    "@type": "Person",
+    "name": "David Chemla"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ecofundrive.com/assets/img/logo.png"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-12-01"
+}}
 >
-  <main id="main-content" class="container py-lg">
     <article>
       <h1 class="text-center mb-xl">{title}</h1>
       <p class="lead text-center mb-xl">{description}</p>
@@ -195,6 +217,18 @@ const keywords = [
         </div>
       </section>
     </article>
+  
+    <section class="mb-xl">
+      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+      <a href="/services" class="btn-primary">Découvrir nos services</a>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+    </section>
   </main>
 </BaseLayout>
 

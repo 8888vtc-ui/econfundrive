@@ -34,25 +34,17 @@ const isPublicPath = src.startsWith('/') || src.startsWith('http');
 ---
 
 {isPublicPath ? (
-  <picture>
-    <source 
-      srcset={`${src}?w=400&format=webp&quality=${quality} 400w, ${src}?w=800&format=webp&quality=${quality} 800w, ${src}?w=1200&format=webp&quality=${quality} 1200w`}
-      type="image/webp"
-      sizes={sizes}
-    />
-    <img
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={loading}
-      decoding="async"
-      fetchpriority={fetchpriority}
-      class={className}
-      style={style}
-      sizes={sizes}
-    />
-  </picture>
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+    class={className}
+    style={style}
+  />
 ) : (
   <img
     src={src}

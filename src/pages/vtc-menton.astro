@@ -1,33 +1,75 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Vtc Menton | ECOFUNDRIVE";
-const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
+const title = "Vtc Menton | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
+const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
 const keywords = [
   'VTC',
-  'chauffeur privÃ©',
-  'CÃ´te d\'Azur'
+  'chauffeur privé',
+  "Côte d\'Azur",
+  "VTC Côte d'Azur",
+  'transport premium'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="vtc-menton">
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>RÃ©servation</h2>
-        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">VTC Menton : La Perle de la France</h1>
+      <p class="lead text-center mb-xl">Votre chauffeur privé à Menton et vers l'Italie.</p>
+    </div>
+
+    <SectionImageText
+      title="Découvrir Menton avec un Chauffeur Privé"
+      image="/assets/img/destinations/destination-nice.webp"
+      alt="Vue sur la mer à Menton"
+      imageSide="right"
+      ctaText="Réserver votre trajet"
+      ctaLink="/reservation"
+    >
+      <p>
+        Menton, ville du citron et porte de l'Italie, offre un cadre exceptionnel. ECOFUNDRIVE vous accompagne pour tous vos déplacements dans cette ville jardin. Que vous souhaitiez visiter la vieille ville, le musée Jean Cocteau ou profiter des plages, nous sommes à votre service.
+      </p>
+      <p>
+        Profitez de nos véhicules confortables pour vos transferts vers les hôtels de luxe ou pour vos excursions dans l'arrière-pays mentonnais.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Liaisons Monaco et Italie"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Proximité avec Monaco"
+      imageSide="left"
+      ctaText="Voir les tarifs"
+      ctaLink="/tarifs"
+    >
+      <p>
+        Située à la frontière italienne et à proximité immédiate de Monaco, Menton est un point de départ idéal. Nous assurons vos transferts vers la Principauté pour le travail ou les loisirs, ainsi que vers Vintimille et Sanremo en Italie.
+      </p>
+      <ul>
+        <li>Transfert rapide vers Monaco (15-20 min)</li>
+        <li>Excursions vers les marchés italiens</li>
+        <li>Liaison aéroport de Nice (45 min)</li>
+        <li>Service bilingue et professionnel</li>
+      </ul>
+    </SectionImageText>
+
+    <div class="container py-xl">
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+        <div class="text-center mt-md">
+          <a href="/services" class="btn-primary">Découvrir nos services</a>
         </div>
       </section>
     </div>
   </main>
-</BaseLayout>
 
-<style>
-  .page-content { padding: var(--spacing-3xl) 0; }
-  .contact-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
-</style>
+  <style>
+    .contact-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+  </style>

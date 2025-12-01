@@ -1,0 +1,3184 @@
+{
+  "filesScanned": 86,
+  "imagesFound": [
+    {
+      "file": "src\\pages\\a-propos.astro",
+      "line": 40,
+      "originalPath": "/assets/img/about/david-chemla.jpg",
+      "normalizedPath": "/assets/img/about/david-chemla.jpg",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    },
+    {
+      "file": {
+        "filename": "vtc-tesla-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-nice.jpg",
+        "relativePath": "destinations/vtc-tesla-nice.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-nice.jpg"
+      },
+      "line": 56,
+      "originalPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-nice.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": "src\\pages\\a-propos.astro",
+      "line": 72,
+      "originalPath": "/assets/img/about/tesla-model-3.jpg",
+      "normalizedPath": "/assets/img/about/tesla-model-3.jpg",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    },
+    {
+      "file": {
+        "filename": "vtc-tesla-cannes.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-cannes.jpg",
+        "relativePath": "destinations/vtc-tesla-cannes.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-cannes.jpg"
+      },
+      "line": 91,
+      "originalPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-cannes.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "plage-beau-rivage-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\plage-beau-rivage-nice.jpg",
+        "relativePath": "destinations/plage-beau-rivage-nice.jpg",
+        "publicPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg"
+      },
+      "line": 109,
+      "originalPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "normalizedPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 26,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "nice-vieux-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+        "relativePath": "destinations/nice-vieux-nice.webp",
+        "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      "line": 44,
+      "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 51,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-saint-tropez.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+        "relativePath": "destinations/destination-saint-tropez.webp",
+        "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      "line": 65,
+      "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 78,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "grand-prix-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+        "relativePath": "guides/grand-prix-monaco.webp",
+        "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      "line": 85,
+      "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 92,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 105,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 112,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 119,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 37,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 48,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 74,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-mise-disposition.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+        "relativePath": "services/service-mise-disposition.webp",
+        "publicPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      "line": 81,
+      "originalPath": "/assets/img/services/service-mise-disposition.webp",
+      "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-mise-disposition.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 88,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 95,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 102,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "vehicule-premium.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.webp",
+        "relativePath": "about/vehicule-premium.webp",
+        "publicPath": "/assets/img/about/vehicule-premium.webp"
+      },
+      "line": 113,
+      "originalPath": "/assets/img/about/vehicule-premium.webp",
+      "normalizedPath": "/assets/img/about/vehicule-premium.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/vehicule-premium.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 135,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 29,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": "src\\pages\\reservation.astro",
+      "line": 48,
+      "originalPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+      "normalizedPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 68,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 38,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-mise-disposition.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+        "relativePath": "services/service-mise-disposition.webp",
+        "publicPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      "line": 78,
+      "originalPath": "/assets/img/services/service-mise-disposition.webp",
+      "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-mise-disposition.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 98,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 118,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 138,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 31,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 47,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 68,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "vtc-nice-cannes.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-nice-cannes.jpg",
+        "relativePath": "destinations/vtc-nice-cannes.jpg",
+        "publicPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+      },
+      "line": 31,
+      "originalPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+      "normalizedPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 47,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 39,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 55,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 79,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 86,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 93,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "monaco-casino.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+        "relativePath": "destinations/monaco-casino.webp",
+        "publicPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      "line": 39,
+      "originalPath": "/assets/img/destinations/monaco-casino.webp",
+      "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/monaco-casino.webp"
+    },
+    {
+      "file": {
+        "filename": "grand-prix-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+        "relativePath": "guides/grand-prix-monaco.webp",
+        "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      "line": 55,
+      "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "monaco-casino.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+        "relativePath": "destinations/monaco-casino.webp",
+        "publicPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      "line": 79,
+      "originalPath": "/assets/img/destinations/monaco-casino.webp",
+      "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/monaco-casino.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 86,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 93,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 42,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "nice-vieux-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+        "relativePath": "destinations/nice-vieux-nice.webp",
+        "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      "line": 82,
+      "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 89,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 96,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-saint-tropez.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+        "relativePath": "destinations/destination-saint-tropez.webp",
+        "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      "line": 30,
+      "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+    },
+    {
+      "file": {
+        "filename": "saint-tropez-port.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.webp",
+        "relativePath": "destinations/saint-tropez-port.webp",
+        "publicPath": "/assets/img/destinations/saint-tropez-port.webp"
+      },
+      "line": 46,
+      "originalPath": "/assets/img/destinations/saint-tropez-port.webp",
+      "normalizedPath": "/assets/img/destinations/saint-tropez-port.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/saint-tropez-port.webp"
+    },
+    {
+      "file": {
+        "filename": "club-55-saint-tropez.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\club-55-saint-tropez.jpg",
+        "relativePath": "destinations/club-55-saint-tropez.jpg",
+        "publicPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+      },
+      "line": 65,
+      "originalPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+      "normalizedPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+    }
+  ],
+  "imagesByFile": {
+    "src\\pages\\a-propos.astro": [
+      {
+        "file": "src\\pages\\a-propos.astro",
+        "line": 40,
+        "originalPath": "/assets/img/about/david-chemla.jpg",
+        "normalizedPath": "/assets/img/about/david-chemla.jpg",
+        "exists": false,
+        "reason": "Fichier introuvable"
+      },
+      {
+        "file": {
+          "filename": "vtc-tesla-nice.jpg",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-nice.jpg",
+          "relativePath": "destinations/vtc-tesla-nice.jpg",
+          "publicPath": "/assets/img/destinations/vtc-tesla-nice.jpg"
+        },
+        "line": 56,
+        "originalPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+        "normalizedPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/vtc-tesla-nice.jpg",
+        "wasVariant": true
+      },
+      {
+        "file": "src\\pages\\a-propos.astro",
+        "line": 72,
+        "originalPath": "/assets/img/about/tesla-model-3.jpg",
+        "normalizedPath": "/assets/img/about/tesla-model-3.jpg",
+        "exists": false,
+        "reason": "Fichier introuvable"
+      },
+      {
+        "file": {
+          "filename": "vtc-tesla-cannes.jpg",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-cannes.jpg",
+          "relativePath": "destinations/vtc-tesla-cannes.jpg",
+          "publicPath": "/assets/img/destinations/vtc-tesla-cannes.jpg"
+        },
+        "line": 91,
+        "originalPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+        "normalizedPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/vtc-tesla-cannes.jpg",
+        "wasVariant": true
+      },
+      {
+        "file": {
+          "filename": "plage-beau-rivage-nice.jpg",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\plage-beau-rivage-nice.jpg",
+          "relativePath": "destinations/plage-beau-rivage-nice.jpg",
+          "publicPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg"
+        },
+        "line": 109,
+        "originalPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+        "normalizedPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg",
+        "wasVariant": true
+      }
+    ],
+    "src\\pages\\guide-budget-transport-cote-azur.astro": [
+      {
+        "file": {
+          "filename": "hero-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+          "relativePath": "hero/hero-business.webp",
+          "publicPath": "/assets/img/hero/hero-business.webp"
+        },
+        "line": 67,
+        "originalPath": "/assets/img/hero/hero-business.webp",
+        "normalizedPath": "/assets/img/hero/hero-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-business.webp"
+      }
+    ],
+    "src\\pages\\guide-choisir-vtc-cote-azur.astro": [
+      {
+        "file": {
+          "filename": "hero-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+          "relativePath": "hero/hero-business.webp",
+          "publicPath": "/assets/img/hero/hero-business.webp"
+        },
+        "line": 67,
+        "originalPath": "/assets/img/hero/hero-business.webp",
+        "normalizedPath": "/assets/img/hero/hero-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-business.webp"
+      }
+    ],
+    "src\\pages\\guide-vtc-festival-cannes.astro": [
+      {
+        "file": {
+          "filename": "cannes-palais-festivals.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+          "relativePath": "destinations/cannes-palais-festivals.webp",
+          "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+        },
+        "line": 67,
+        "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      }
+    ],
+    "src\\pages\\guides.astro": [
+      {
+        "file": {
+          "filename": "villages-perches.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+          "relativePath": "guides/villages-perches.webp",
+          "publicPath": "/assets/img/guides/villages-perches.webp"
+        },
+        "line": 26,
+        "originalPath": "/assets/img/guides/villages-perches.webp",
+        "normalizedPath": "/assets/img/guides/villages-perches.webp",
+        "exists": true,
+        "correctPath": "/assets/img/guides/villages-perches.webp"
+      },
+      {
+        "file": {
+          "filename": "nice-vieux-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+          "relativePath": "destinations/nice-vieux-nice.webp",
+          "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+        },
+        "line": 44,
+        "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+        "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-cannes.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+          "relativePath": "destinations/destination-cannes.webp",
+          "publicPath": "/assets/img/destinations/destination-cannes.webp"
+        },
+        "line": 51,
+        "originalPath": "/assets/img/destinations/destination-cannes.webp",
+        "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+          "relativePath": "destinations/destination-monaco.webp",
+          "publicPath": "/assets/img/destinations/destination-monaco.webp"
+        },
+        "line": 58,
+        "originalPath": "/assets/img/destinations/destination-monaco.webp",
+        "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-saint-tropez.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+          "relativePath": "destinations/destination-saint-tropez.webp",
+          "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+        },
+        "line": 65,
+        "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+        "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      {
+        "file": {
+          "filename": "cannes-palais-festivals.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+          "relativePath": "destinations/cannes-palais-festivals.webp",
+          "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+        },
+        "line": 78,
+        "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      {
+        "file": {
+          "filename": "grand-prix-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+          "relativePath": "guides/grand-prix-monaco.webp",
+          "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+        },
+        "line": 85,
+        "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+        "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      {
+        "file": {
+          "filename": "service-evenements.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+          "relativePath": "services/service-evenements.webp",
+          "publicPath": "/assets/img/services/service-evenements.webp"
+        },
+        "line": 92,
+        "originalPath": "/assets/img/services/service-evenements.webp",
+        "normalizedPath": "/assets/img/services/service-evenements.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-evenements.webp"
+      },
+      {
+        "file": {
+          "filename": "service-aeroport.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+          "relativePath": "services/service-aeroport.webp",
+          "publicPath": "/assets/img/services/service-aeroport.webp"
+        },
+        "line": 105,
+        "originalPath": "/assets/img/services/service-aeroport.webp",
+        "normalizedPath": "/assets/img/services/service-aeroport.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-aeroport.webp"
+      },
+      {
+        "file": {
+          "filename": "chauffeur-professionnel.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+          "relativePath": "about/chauffeur-professionnel.webp",
+          "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+        },
+        "line": 112,
+        "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "exists": true,
+        "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+          "relativePath": "hero/hero-business.webp",
+          "publicPath": "/assets/img/hero/hero-business.webp"
+        },
+        "line": 119,
+        "originalPath": "/assets/img/hero/hero-business.webp",
+        "normalizedPath": "/assets/img/hero/hero-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-business.webp"
+      }
+    ],
+    "src\\pages\\index.astro": [
+      {
+        "file": {
+          "filename": "hero-aeroport-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+          "relativePath": "hero/hero-aeroport-nice.webp",
+          "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+        },
+        "line": 37,
+        "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "chauffeur-professionnel.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+          "relativePath": "about/chauffeur-professionnel.webp",
+          "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+        },
+        "line": 48,
+        "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "exists": true,
+        "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      {
+        "file": {
+          "filename": "service-aeroport.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+          "relativePath": "services/service-aeroport.webp",
+          "publicPath": "/assets/img/services/service-aeroport.webp"
+        },
+        "line": 67,
+        "originalPath": "/assets/img/services/service-aeroport.webp",
+        "normalizedPath": "/assets/img/services/service-aeroport.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-aeroport.webp"
+      },
+      {
+        "file": {
+          "filename": "service-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+          "relativePath": "services/service-business.webp",
+          "publicPath": "/assets/img/services/service-business.webp"
+        },
+        "line": 74,
+        "originalPath": "/assets/img/services/service-business.webp",
+        "normalizedPath": "/assets/img/services/service-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-business.webp"
+      },
+      {
+        "file": {
+          "filename": "service-mise-disposition.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+          "relativePath": "services/service-mise-disposition.webp",
+          "publicPath": "/assets/img/services/service-mise-disposition.webp"
+        },
+        "line": 81,
+        "originalPath": "/assets/img/services/service-mise-disposition.webp",
+        "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      {
+        "file": {
+          "filename": "service-evenements.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+          "relativePath": "services/service-evenements.webp",
+          "publicPath": "/assets/img/services/service-evenements.webp"
+        },
+        "line": 88,
+        "originalPath": "/assets/img/services/service-evenements.webp",
+        "normalizedPath": "/assets/img/services/service-evenements.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-evenements.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 95,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+          "relativePath": "hero/hero-business.webp",
+          "publicPath": "/assets/img/hero/hero-business.webp"
+        },
+        "line": 102,
+        "originalPath": "/assets/img/hero/hero-business.webp",
+        "normalizedPath": "/assets/img/hero/hero-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-business.webp"
+      },
+      {
+        "file": {
+          "filename": "vehicule-premium.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.webp",
+          "relativePath": "about/vehicule-premium.webp",
+          "publicPath": "/assets/img/about/vehicule-premium.webp"
+        },
+        "line": 113,
+        "originalPath": "/assets/img/about/vehicule-premium.webp",
+        "normalizedPath": "/assets/img/about/vehicule-premium.webp",
+        "exists": true,
+        "correctPath": "/assets/img/about/vehicule-premium.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 135,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      }
+    ],
+    "src\\pages\\reservation.astro": [
+      {
+        "file": {
+          "filename": "chauffeur-professionnel.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+          "relativePath": "about/chauffeur-professionnel.webp",
+          "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+        },
+        "line": 29,
+        "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "exists": true,
+        "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      {
+        "file": "src\\pages\\reservation.astro",
+        "line": 48,
+        "originalPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+        "normalizedPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+        "exists": false,
+        "reason": "Fichier introuvable"
+      },
+      {
+        "file": {
+          "filename": "service-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+          "relativePath": "services/service-business.webp",
+          "publicPath": "/assets/img/services/service-business.webp"
+        },
+        "line": 68,
+        "originalPath": "/assets/img/services/service-business.webp",
+        "normalizedPath": "/assets/img/services/service-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-business.webp"
+      }
+    ],
+    "src\\pages\\services.astro": [
+      {
+        "file": {
+          "filename": "service-aeroport.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+          "relativePath": "services/service-aeroport.webp",
+          "publicPath": "/assets/img/services/service-aeroport.webp"
+        },
+        "line": 38,
+        "originalPath": "/assets/img/services/service-aeroport.webp",
+        "normalizedPath": "/assets/img/services/service-aeroport.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-aeroport.webp"
+      },
+      {
+        "file": {
+          "filename": "service-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+          "relativePath": "services/service-business.webp",
+          "publicPath": "/assets/img/services/service-business.webp"
+        },
+        "line": 58,
+        "originalPath": "/assets/img/services/service-business.webp",
+        "normalizedPath": "/assets/img/services/service-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-business.webp"
+      },
+      {
+        "file": {
+          "filename": "service-mise-disposition.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+          "relativePath": "services/service-mise-disposition.webp",
+          "publicPath": "/assets/img/services/service-mise-disposition.webp"
+        },
+        "line": 78,
+        "originalPath": "/assets/img/services/service-mise-disposition.webp",
+        "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      {
+        "file": {
+          "filename": "service-evenements.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+          "relativePath": "services/service-evenements.webp",
+          "publicPath": "/assets/img/services/service-evenements.webp"
+        },
+        "line": 98,
+        "originalPath": "/assets/img/services/service-evenements.webp",
+        "normalizedPath": "/assets/img/services/service-evenements.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-evenements.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 118,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+          "relativePath": "hero/hero-business.webp",
+          "publicPath": "/assets/img/hero/hero-business.webp"
+        },
+        "line": 138,
+        "originalPath": "/assets/img/hero/hero-business.webp",
+        "normalizedPath": "/assets/img/hero/hero-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-business.webp"
+      }
+    ],
+    "src\\pages\\tarifs.astro": [
+      {
+        "file": {
+          "filename": "service-business.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+          "relativePath": "services/service-business.webp",
+          "publicPath": "/assets/img/services/service-business.webp"
+        },
+        "line": 31,
+        "originalPath": "/assets/img/services/service-business.webp",
+        "normalizedPath": "/assets/img/services/service-business.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-business.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-aeroport-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+          "relativePath": "hero/hero-aeroport-nice.webp",
+          "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+        },
+        "line": 47,
+        "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "chauffeur-professionnel.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+          "relativePath": "about/chauffeur-professionnel.webp",
+          "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+        },
+        "line": 68,
+        "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+        "exists": true,
+        "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+      }
+    ],
+    "src\\pages\\vtc-antibes.astro": [
+      {
+        "file": {
+          "filename": "vtc-nice-cannes.jpg",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-nice-cannes.jpg",
+          "relativePath": "destinations/vtc-nice-cannes.jpg",
+          "publicPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+        },
+        "line": 31,
+        "originalPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+        "normalizedPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+      },
+      {
+        "file": {
+          "filename": "hero-aeroport-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+          "relativePath": "hero/hero-aeroport-nice.webp",
+          "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+        },
+        "line": 47,
+        "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      }
+    ],
+    "src\\pages\\vtc-cannes.astro": [
+      {
+        "file": {
+          "filename": "destination-cannes.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+          "relativePath": "destinations/destination-cannes.webp",
+          "publicPath": "/assets/img/destinations/destination-cannes.webp"
+        },
+        "line": 39,
+        "originalPath": "/assets/img/destinations/destination-cannes.webp",
+        "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      {
+        "file": {
+          "filename": "cannes-palais-festivals.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+          "relativePath": "destinations/cannes-palais-festivals.webp",
+          "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+        },
+        "line": 55,
+        "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-cannes.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+          "relativePath": "destinations/destination-cannes.webp",
+          "publicPath": "/assets/img/destinations/destination-cannes.webp"
+        },
+        "line": 79,
+        "originalPath": "/assets/img/destinations/destination-cannes.webp",
+        "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-cannes.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+          "relativePath": "destinations/destination-cannes.webp",
+          "publicPath": "/assets/img/destinations/destination-cannes.webp"
+        },
+        "line": 86,
+        "originalPath": "/assets/img/destinations/destination-cannes.webp",
+        "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      {
+        "file": {
+          "filename": "villages-perches.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+          "relativePath": "guides/villages-perches.webp",
+          "publicPath": "/assets/img/guides/villages-perches.webp"
+        },
+        "line": 93,
+        "originalPath": "/assets/img/guides/villages-perches.webp",
+        "normalizedPath": "/assets/img/guides/villages-perches.webp",
+        "exists": true,
+        "correctPath": "/assets/img/guides/villages-perches.webp"
+      }
+    ],
+    "src\\pages\\vtc-frejus-saint-raphael.astro": [
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 25,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-aeroport-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+          "relativePath": "hero/hero-aeroport-nice.webp",
+          "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+        },
+        "line": 41,
+        "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      }
+    ],
+    "src\\pages\\vtc-grasse.astro": [
+      {
+        "file": {
+          "filename": "villages-perches.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+          "relativePath": "guides/villages-perches.webp",
+          "publicPath": "/assets/img/guides/villages-perches.webp"
+        },
+        "line": 25,
+        "originalPath": "/assets/img/guides/villages-perches.webp",
+        "normalizedPath": "/assets/img/guides/villages-perches.webp",
+        "exists": true,
+        "correctPath": "/assets/img/guides/villages-perches.webp"
+      },
+      {
+        "file": {
+          "filename": "service-evenements.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+          "relativePath": "services/service-evenements.webp",
+          "publicPath": "/assets/img/services/service-evenements.webp"
+        },
+        "line": 41,
+        "originalPath": "/assets/img/services/service-evenements.webp",
+        "normalizedPath": "/assets/img/services/service-evenements.webp",
+        "exists": true,
+        "correctPath": "/assets/img/services/service-evenements.webp"
+      }
+    ],
+    "src\\pages\\vtc-menton.astro": [
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 25,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+          "relativePath": "destinations/destination-monaco.webp",
+          "publicPath": "/assets/img/destinations/destination-monaco.webp"
+        },
+        "line": 41,
+        "originalPath": "/assets/img/destinations/destination-monaco.webp",
+        "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-monaco.webp"
+      }
+    ],
+    "src\\pages\\vtc-monaco.astro": [
+      {
+        "file": {
+          "filename": "monaco-casino.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+          "relativePath": "destinations/monaco-casino.webp",
+          "publicPath": "/assets/img/destinations/monaco-casino.webp"
+        },
+        "line": 39,
+        "originalPath": "/assets/img/destinations/monaco-casino.webp",
+        "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      {
+        "file": {
+          "filename": "grand-prix-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+          "relativePath": "guides/grand-prix-monaco.webp",
+          "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+        },
+        "line": 55,
+        "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+        "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      {
+        "file": {
+          "filename": "monaco-casino.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+          "relativePath": "destinations/monaco-casino.webp",
+          "publicPath": "/assets/img/destinations/monaco-casino.webp"
+        },
+        "line": 79,
+        "originalPath": "/assets/img/destinations/monaco-casino.webp",
+        "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+          "relativePath": "destinations/destination-monaco.webp",
+          "publicPath": "/assets/img/destinations/destination-monaco.webp"
+        },
+        "line": 86,
+        "originalPath": "/assets/img/destinations/destination-monaco.webp",
+        "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-monaco.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+          "relativePath": "destinations/destination-monaco.webp",
+          "publicPath": "/assets/img/destinations/destination-monaco.webp"
+        },
+        "line": 93,
+        "originalPath": "/assets/img/destinations/destination-monaco.webp",
+        "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-monaco.webp"
+      }
+    ],
+    "src\\pages\\vtc-nice.astro": [
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 42,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "hero-aeroport-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+          "relativePath": "hero/hero-aeroport-nice.webp",
+          "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+        },
+        "line": 58,
+        "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "nice-vieux-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+          "relativePath": "destinations/nice-vieux-nice.webp",
+          "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+        },
+        "line": 82,
+        "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+        "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 89,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      {
+        "file": {
+          "filename": "destination-nice.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+          "relativePath": "destinations/destination-nice.webp",
+          "publicPath": "/assets/img/destinations/destination-nice.webp"
+        },
+        "line": 96,
+        "originalPath": "/assets/img/destinations/destination-nice.webp",
+        "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-nice.webp"
+      }
+    ],
+    "src\\pages\\vtc-saint-tropez.astro": [
+      {
+        "file": {
+          "filename": "destination-saint-tropez.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+          "relativePath": "destinations/destination-saint-tropez.webp",
+          "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+        },
+        "line": 30,
+        "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+        "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      {
+        "file": {
+          "filename": "saint-tropez-port.webp",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.webp",
+          "relativePath": "destinations/saint-tropez-port.webp",
+          "publicPath": "/assets/img/destinations/saint-tropez-port.webp"
+        },
+        "line": 46,
+        "originalPath": "/assets/img/destinations/saint-tropez-port.webp",
+        "normalizedPath": "/assets/img/destinations/saint-tropez-port.webp",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/saint-tropez-port.webp"
+      },
+      {
+        "file": {
+          "filename": "club-55-saint-tropez.jpg",
+          "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\club-55-saint-tropez.jpg",
+          "relativePath": "destinations/club-55-saint-tropez.jpg",
+          "publicPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+        },
+        "line": 65,
+        "originalPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+        "normalizedPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+        "exists": true,
+        "correctPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+      }
+    ]
+  },
+  "missingImages": [
+    {
+      "file": "src\\pages\\a-propos.astro",
+      "line": 40,
+      "originalPath": "/assets/img/about/david-chemla.jpg",
+      "normalizedPath": "/assets/img/about/david-chemla.jpg",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    },
+    {
+      "file": "src\\pages\\a-propos.astro",
+      "line": 72,
+      "originalPath": "/assets/img/about/tesla-model-3.jpg",
+      "normalizedPath": "/assets/img/about/tesla-model-3.jpg",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    },
+    {
+      "file": "src\\pages\\reservation.astro",
+      "line": 48,
+      "originalPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+      "normalizedPath": "/assets/img/vehicules/vtc-tesla-nice.webp",
+      "exists": false,
+      "reason": "Fichier introuvable"
+    }
+  ],
+  "validImages": [
+    {
+      "file": {
+        "filename": "vtc-tesla-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-nice.jpg",
+        "relativePath": "destinations/vtc-tesla-nice.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-nice.jpg"
+      },
+      "line": 56,
+      "originalPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-nice.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "vtc-tesla-cannes.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-cannes.jpg",
+        "relativePath": "destinations/vtc-tesla-cannes.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-cannes.jpg"
+      },
+      "line": 91,
+      "originalPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-cannes.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "plage-beau-rivage-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\plage-beau-rivage-nice.jpg",
+        "relativePath": "destinations/plage-beau-rivage-nice.jpg",
+        "publicPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg"
+      },
+      "line": 109,
+      "originalPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "normalizedPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 26,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "nice-vieux-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+        "relativePath": "destinations/nice-vieux-nice.webp",
+        "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      "line": 44,
+      "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 51,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-saint-tropez.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+        "relativePath": "destinations/destination-saint-tropez.webp",
+        "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      "line": 65,
+      "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 78,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "grand-prix-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+        "relativePath": "guides/grand-prix-monaco.webp",
+        "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      "line": 85,
+      "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 92,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 105,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 112,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 119,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 37,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 48,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 67,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 74,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-mise-disposition.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+        "relativePath": "services/service-mise-disposition.webp",
+        "publicPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      "line": 81,
+      "originalPath": "/assets/img/services/service-mise-disposition.webp",
+      "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-mise-disposition.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 88,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 95,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 102,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "vehicule-premium.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.webp",
+        "relativePath": "about/vehicule-premium.webp",
+        "publicPath": "/assets/img/about/vehicule-premium.webp"
+      },
+      "line": 113,
+      "originalPath": "/assets/img/about/vehicule-premium.webp",
+      "normalizedPath": "/assets/img/about/vehicule-premium.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/vehicule-premium.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 135,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 29,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 68,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-aeroport.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+        "relativePath": "services/service-aeroport.webp",
+        "publicPath": "/assets/img/services/service-aeroport.webp"
+      },
+      "line": 38,
+      "originalPath": "/assets/img/services/service-aeroport.webp",
+      "normalizedPath": "/assets/img/services/service-aeroport.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-mise-disposition.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+        "relativePath": "services/service-mise-disposition.webp",
+        "publicPath": "/assets/img/services/service-mise-disposition.webp"
+      },
+      "line": 78,
+      "originalPath": "/assets/img/services/service-mise-disposition.webp",
+      "normalizedPath": "/assets/img/services/service-mise-disposition.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-mise-disposition.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 98,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 118,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+        "relativePath": "hero/hero-business.webp",
+        "publicPath": "/assets/img/hero/hero-business.webp"
+      },
+      "line": 138,
+      "originalPath": "/assets/img/hero/hero-business.webp",
+      "normalizedPath": "/assets/img/hero/hero-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "file": {
+        "filename": "service-business.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+        "relativePath": "services/service-business.webp",
+        "publicPath": "/assets/img/services/service-business.webp"
+      },
+      "line": 31,
+      "originalPath": "/assets/img/services/service-business.webp",
+      "normalizedPath": "/assets/img/services/service-business.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 47,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "chauffeur-professionnel.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+        "relativePath": "about/chauffeur-professionnel.webp",
+        "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+      },
+      "line": 68,
+      "originalPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "normalizedPath": "/assets/img/about/chauffeur-professionnel.webp",
+      "exists": true,
+      "correctPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "file": {
+        "filename": "vtc-nice-cannes.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-nice-cannes.jpg",
+        "relativePath": "destinations/vtc-nice-cannes.jpg",
+        "publicPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+      },
+      "line": 31,
+      "originalPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+      "normalizedPath": "/assets/img/destinations/vtc-nice-cannes.jpg",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 47,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 39,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "cannes-palais-festivals.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+        "relativePath": "destinations/cannes-palais-festivals.webp",
+        "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+      },
+      "line": 55,
+      "originalPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "normalizedPath": "/assets/img/destinations/cannes-palais-festivals.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 79,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-cannes.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+        "relativePath": "destinations/destination-cannes.webp",
+        "publicPath": "/assets/img/destinations/destination-cannes.webp"
+      },
+      "line": 86,
+      "originalPath": "/assets/img/destinations/destination-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/destination-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 93,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "villages-perches.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+        "relativePath": "guides/villages-perches.webp",
+        "publicPath": "/assets/img/guides/villages-perches.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/guides/villages-perches.webp",
+      "normalizedPath": "/assets/img/guides/villages-perches.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "file": {
+        "filename": "service-evenements.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+        "relativePath": "services/service-evenements.webp",
+        "publicPath": "/assets/img/services/service-evenements.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/services/service-evenements.webp",
+      "normalizedPath": "/assets/img/services/service-evenements.webp",
+      "exists": true,
+      "correctPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 25,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 41,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "monaco-casino.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+        "relativePath": "destinations/monaco-casino.webp",
+        "publicPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      "line": 39,
+      "originalPath": "/assets/img/destinations/monaco-casino.webp",
+      "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/monaco-casino.webp"
+    },
+    {
+      "file": {
+        "filename": "grand-prix-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+        "relativePath": "guides/grand-prix-monaco.webp",
+        "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+      },
+      "line": 55,
+      "originalPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "normalizedPath": "/assets/img/guides/grand-prix-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/guides/grand-prix-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "monaco-casino.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+        "relativePath": "destinations/monaco-casino.webp",
+        "publicPath": "/assets/img/destinations/monaco-casino.webp"
+      },
+      "line": 79,
+      "originalPath": "/assets/img/destinations/monaco-casino.webp",
+      "normalizedPath": "/assets/img/destinations/monaco-casino.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/monaco-casino.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 86,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-monaco.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+        "relativePath": "destinations/destination-monaco.webp",
+        "publicPath": "/assets/img/destinations/destination-monaco.webp"
+      },
+      "line": 93,
+      "originalPath": "/assets/img/destinations/destination-monaco.webp",
+      "normalizedPath": "/assets/img/destinations/destination-monaco.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 42,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "hero-aeroport-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+        "relativePath": "hero/hero-aeroport-nice.webp",
+        "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+      },
+      "line": 58,
+      "originalPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "normalizedPath": "/assets/img/hero/hero-aeroport-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "nice-vieux-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+        "relativePath": "destinations/nice-vieux-nice.webp",
+        "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+      },
+      "line": 82,
+      "originalPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "normalizedPath": "/assets/img/destinations/nice-vieux-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/nice-vieux-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 89,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-nice.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+        "relativePath": "destinations/destination-nice.webp",
+        "publicPath": "/assets/img/destinations/destination-nice.webp"
+      },
+      "line": 96,
+      "originalPath": "/assets/img/destinations/destination-nice.webp",
+      "normalizedPath": "/assets/img/destinations/destination-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "file": {
+        "filename": "destination-saint-tropez.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+        "relativePath": "destinations/destination-saint-tropez.webp",
+        "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+      },
+      "line": 30,
+      "originalPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "normalizedPath": "/assets/img/destinations/destination-saint-tropez.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/destination-saint-tropez.webp"
+    },
+    {
+      "file": {
+        "filename": "saint-tropez-port.webp",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.webp",
+        "relativePath": "destinations/saint-tropez-port.webp",
+        "publicPath": "/assets/img/destinations/saint-tropez-port.webp"
+      },
+      "line": 46,
+      "originalPath": "/assets/img/destinations/saint-tropez-port.webp",
+      "normalizedPath": "/assets/img/destinations/saint-tropez-port.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/saint-tropez-port.webp"
+    },
+    {
+      "file": {
+        "filename": "club-55-saint-tropez.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\club-55-saint-tropez.jpg",
+        "relativePath": "destinations/club-55-saint-tropez.jpg",
+        "publicPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+      },
+      "line": 65,
+      "originalPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+      "normalizedPath": "/assets/img/destinations/club-55-saint-tropez.jpg",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+    }
+  ],
+  "incorrectPaths": [
+    {
+      "file": {
+        "filename": "vtc-tesla-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-nice.jpg",
+        "relativePath": "destinations/vtc-tesla-nice.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-nice.jpg"
+      },
+      "line": 56,
+      "originalPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-nice.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "vtc-tesla-cannes.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-cannes.jpg",
+        "relativePath": "destinations/vtc-tesla-cannes.jpg",
+        "publicPath": "/assets/img/destinations/vtc-tesla-cannes.jpg"
+      },
+      "line": 91,
+      "originalPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "normalizedPath": "/assets/img/destinations/vtc-tesla-cannes.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/vtc-tesla-cannes.jpg",
+      "wasVariant": true
+    },
+    {
+      "file": {
+        "filename": "plage-beau-rivage-nice.jpg",
+        "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\plage-beau-rivage-nice.jpg",
+        "relativePath": "destinations/plage-beau-rivage-nice.jpg",
+        "publicPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg"
+      },
+      "line": 109,
+      "originalPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "normalizedPath": "/assets/img/destinations/plage-beau-rivage-nice.webp",
+      "exists": true,
+      "correctPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg",
+      "wasVariant": true
+    }
+  ],
+  "availableImages": [
+    {
+      "filename": "chauffeur-professionnel.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.png",
+      "relativePath": "about/chauffeur-professionnel.png",
+      "publicPath": "/assets/img/about/chauffeur-professionnel.png"
+    },
+    {
+      "filename": "chauffeur-professionnel.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\chauffeur-professionnel.webp",
+      "relativePath": "about/chauffeur-professionnel.webp",
+      "publicPath": "/assets/img/about/chauffeur-professionnel.webp"
+    },
+    {
+      "filename": "vehicule-premium.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.png",
+      "relativePath": "about/vehicule-premium.png",
+      "publicPath": "/assets/img/about/vehicule-premium.png"
+    },
+    {
+      "filename": "vehicule-premium.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\about\\vehicule-premium.webp",
+      "relativePath": "about/vehicule-premium.webp",
+      "publicPath": "/assets/img/about/vehicule-premium.webp"
+    },
+    {
+      "filename": "monaco-private-driver.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\authority\\monaco-private-driver.webp",
+      "relativePath": "destinations/authority/monaco-private-driver.webp",
+      "publicPath": "/assets/img/destinations/authority/monaco-private-driver.webp"
+    },
+    {
+      "filename": "nice-cannes-.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\authority\\nice-cannes-.webp",
+      "relativePath": "destinations/authority/nice-cannes-.webp",
+      "publicPath": "/assets/img/destinations/authority/nice-cannes-.webp"
+    },
+    {
+      "filename": "buddha-bar-monaco.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\buddha-bar-monaco.jpg",
+      "relativePath": "destinations/buddha-bar-monaco.jpg",
+      "publicPath": "/assets/img/destinations/buddha-bar-monaco.jpg"
+    },
+    {
+      "filename": "cannes-palais-festivals.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.png",
+      "relativePath": "destinations/cannes-palais-festivals.png",
+      "publicPath": "/assets/img/destinations/cannes-palais-festivals.png"
+    },
+    {
+      "filename": "cannes-palais-festivals.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\cannes-palais-festivals.webp",
+      "relativePath": "destinations/cannes-palais-festivals.webp",
+      "publicPath": "/assets/img/destinations/cannes-palais-festivals.webp"
+    },
+    {
+      "filename": "club-55-saint-tropez.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\club-55-saint-tropez.jpg",
+      "relativePath": "destinations/club-55-saint-tropez.jpg",
+      "publicPath": "/assets/img/destinations/club-55-saint-tropez.jpg"
+    },
+    {
+      "filename": "destination-cannes.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.png",
+      "relativePath": "destinations/destination-cannes.png",
+      "publicPath": "/assets/img/destinations/destination-cannes.png"
+    },
+    {
+      "filename": "destination-cannes.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-cannes.webp",
+      "relativePath": "destinations/destination-cannes.webp",
+      "publicPath": "/assets/img/destinations/destination-cannes.webp"
+    },
+    {
+      "filename": "destination-monaco.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.png",
+      "relativePath": "destinations/destination-monaco.png",
+      "publicPath": "/assets/img/destinations/destination-monaco.png"
+    },
+    {
+      "filename": "destination-monaco.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-monaco.webp",
+      "relativePath": "destinations/destination-monaco.webp",
+      "publicPath": "/assets/img/destinations/destination-monaco.webp"
+    },
+    {
+      "filename": "destination-nice.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.png",
+      "relativePath": "destinations/destination-nice.png",
+      "publicPath": "/assets/img/destinations/destination-nice.png"
+    },
+    {
+      "filename": "destination-nice.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-nice.webp",
+      "relativePath": "destinations/destination-nice.webp",
+      "publicPath": "/assets/img/destinations/destination-nice.webp"
+    },
+    {
+      "filename": "destination-saint-tropez.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.png",
+      "relativePath": "destinations/destination-saint-tropez.png",
+      "publicPath": "/assets/img/destinations/destination-saint-tropez.png"
+    },
+    {
+      "filename": "destination-saint-tropez.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\destination-saint-tropez.webp",
+      "relativePath": "destinations/destination-saint-tropez.webp",
+      "publicPath": "/assets/img/destinations/destination-saint-tropez.webp"
+    },
+    {
+      "filename": "hotel-metropole-monaco.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\hotel-metropole-monaco.jpg",
+      "relativePath": "destinations/hotel-metropole-monaco.jpg",
+      "publicPath": "/assets/img/destinations/hotel-metropole-monaco.jpg"
+    },
+    {
+      "filename": "hotel-negresco-nice.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\hotel-negresco-nice.jpg",
+      "relativePath": "destinations/hotel-negresco-nice.jpg",
+      "publicPath": "/assets/img/destinations/hotel-negresco-nice.jpg"
+    },
+    {
+      "filename": "monaco-1920w.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-1920w.webp",
+      "relativePath": "destinations/monaco-1920w.webp",
+      "publicPath": "/assets/img/destinations/monaco-1920w.webp"
+    },
+    {
+      "filename": "monaco-casino.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.png",
+      "relativePath": "destinations/monaco-casino.png",
+      "publicPath": "/assets/img/destinations/monaco-casino.png"
+    },
+    {
+      "filename": "monaco-casino.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\monaco-casino.webp",
+      "relativePath": "destinations/monaco-casino.webp",
+      "publicPath": "/assets/img/destinations/monaco-casino.webp"
+    },
+    {
+      "filename": "nice-cannes-1920w.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-cannes-1920w.webp",
+      "relativePath": "destinations/nice-cannes-1920w.webp",
+      "publicPath": "/assets/img/destinations/nice-cannes-1920w.webp"
+    },
+    {
+      "filename": "nice-vieux-nice.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.png",
+      "relativePath": "destinations/nice-vieux-nice.png",
+      "publicPath": "/assets/img/destinations/nice-vieux-nice.png"
+    },
+    {
+      "filename": "nice-vieux-nice.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nice-vieux-nice.webp",
+      "relativePath": "destinations/nice-vieux-nice.webp",
+      "publicPath": "/assets/img/destinations/nice-vieux-nice.webp"
+    },
+    {
+      "filename": "nikki-beach-saint-tropez.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\nikki-beach-saint-tropez.jpg",
+      "relativePath": "destinations/nikki-beach-saint-tropez.jpg",
+      "publicPath": "/assets/img/destinations/nikki-beach-saint-tropez.jpg"
+    },
+    {
+      "filename": "plage-beau-rivage-nice.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\plage-beau-rivage-nice.jpg",
+      "relativePath": "destinations/plage-beau-rivage-nice.jpg",
+      "publicPath": "/assets/img/destinations/plage-beau-rivage-nice.jpg"
+    },
+    {
+      "filename": "saint-tropez-port.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.png",
+      "relativePath": "destinations/saint-tropez-port.png",
+      "publicPath": "/assets/img/destinations/saint-tropez-port.png"
+    },
+    {
+      "filename": "saint-tropez-port.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\saint-tropez-port.webp",
+      "relativePath": "destinations/saint-tropez-port.webp",
+      "publicPath": "/assets/img/destinations/saint-tropez-port.webp"
+    },
+    {
+      "filename": "tahiti-beach-saint-tropez.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\tahiti-beach-saint-tropez.jpg",
+      "relativePath": "destinations/tahiti-beach-saint-tropez.jpg",
+      "publicPath": "/assets/img/destinations/tahiti-beach-saint-tropez.jpg"
+    },
+    {
+      "filename": "vtc-nice-cannes.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-nice-cannes.jpg",
+      "relativePath": "destinations/vtc-nice-cannes.jpg",
+      "publicPath": "/assets/img/destinations/vtc-nice-cannes.jpg"
+    },
+    {
+      "filename": "vtc-tesla-cannes.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-cannes.jpg",
+      "relativePath": "destinations/vtc-tesla-cannes.jpg",
+      "publicPath": "/assets/img/destinations/vtc-tesla-cannes.jpg"
+    },
+    {
+      "filename": "vtc-tesla-monaco.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-monaco.jpg",
+      "relativePath": "destinations/vtc-tesla-monaco.jpg",
+      "publicPath": "/assets/img/destinations/vtc-tesla-monaco.jpg"
+    },
+    {
+      "filename": "vtc-tesla-nice.jpg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\destinations\\vtc-tesla-nice.jpg",
+      "relativePath": "destinations/vtc-tesla-nice.jpg",
+      "publicPath": "/assets/img/destinations/vtc-tesla-nice.jpg"
+    },
+    {
+      "filename": "en-booking-process.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\en\\booking\\en-booking-process.webp",
+      "relativePath": "en/booking/en-booking-process.webp",
+      "publicPath": "/assets/img/en/booking/en-booking-process.webp"
+    },
+    {
+      "filename": "festivals.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\en\\cannes-private-driver\\festivals.webp",
+      "relativePath": "en/cannes-private-driver/festivals.webp",
+      "publicPath": "/assets/img/en/cannes-private-driver/festivals.webp"
+    },
+    {
+      "filename": "business-transfers.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\en\\nice-private-driver\\business-transfers.webp",
+      "relativePath": "en/nice-private-driver/business-transfers.webp",
+      "publicPath": "/assets/img/en/nice-private-driver/business-transfers.webp"
+    },
+    {
+      "filename": "android-chrome-192x192.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\android-chrome-192x192.png",
+      "relativePath": "favicon/android-chrome-192x192.png",
+      "publicPath": "/assets/img/favicon/android-chrome-192x192.png"
+    },
+    {
+      "filename": "android-chrome-512x512.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\android-chrome-512x512.png",
+      "relativePath": "favicon/android-chrome-512x512.png",
+      "publicPath": "/assets/img/favicon/android-chrome-512x512.png"
+    },
+    {
+      "filename": "apple-touch-icon.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\apple-touch-icon.png",
+      "relativePath": "favicon/apple-touch-icon.png",
+      "publicPath": "/assets/img/favicon/apple-touch-icon.png"
+    },
+    {
+      "filename": "favicon-16x16.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\favicon-16x16.png",
+      "relativePath": "favicon/favicon-16x16.png",
+      "publicPath": "/assets/img/favicon/favicon-16x16.png"
+    },
+    {
+      "filename": "favicon-32x32.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\favicon-32x32.png",
+      "relativePath": "favicon/favicon-32x32.png",
+      "publicPath": "/assets/img/favicon/favicon-32x32.png"
+    },
+    {
+      "filename": "favicon-temp.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\favicon-temp.png",
+      "relativePath": "favicon/favicon-temp.png",
+      "publicPath": "/assets/img/favicon/favicon-temp.png"
+    },
+    {
+      "filename": "favicon.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\favicon.png",
+      "relativePath": "favicon/favicon.png",
+      "publicPath": "/assets/img/favicon/favicon.png"
+    },
+    {
+      "filename": "favicon.svg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\favicon.svg",
+      "relativePath": "favicon/favicon.svg",
+      "publicPath": "/assets/img/favicon/favicon.svg"
+    },
+    {
+      "filename": "mstile-144x144.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\mstile-144x144.png",
+      "relativePath": "favicon/mstile-144x144.png",
+      "publicPath": "/assets/img/favicon/mstile-144x144.png"
+    },
+    {
+      "filename": "mstile-150x150.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\mstile-150x150.png",
+      "relativePath": "favicon/mstile-150x150.png",
+      "publicPath": "/assets/img/favicon/mstile-150x150.png"
+    },
+    {
+      "filename": "mstile-310x310.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\mstile-310x310.png",
+      "relativePath": "favicon/mstile-310x310.png",
+      "publicPath": "/assets/img/favicon/mstile-310x310.png"
+    },
+    {
+      "filename": "mstile-70x70.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\mstile-70x70.png",
+      "relativePath": "favicon/mstile-70x70.png",
+      "publicPath": "/assets/img/favicon/mstile-70x70.png"
+    },
+    {
+      "filename": "safari-pinned-tab.svg",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\favicon\\safari-pinned-tab.svg",
+      "relativePath": "favicon/safari-pinned-tab.svg",
+      "publicPath": "/assets/img/favicon/safari-pinned-tab.svg"
+    },
+    {
+      "filename": "monaco-private-driver.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\hero\\authority\\monaco-private-driver.webp",
+      "relativePath": "fr/hero/authority/monaco-private-driver.webp",
+      "publicPath": "/assets/img/fr/hero/authority/monaco-private-driver.webp"
+    },
+    {
+      "filename": "nice-cannes-.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\hero\\authority\\nice-cannes-.webp",
+      "relativePath": "fr/hero/authority/nice-cannes-.webp",
+      "publicPath": "/assets/img/fr/hero/authority/nice-cannes-.webp"
+    },
+    {
+      "filename": "homepage-riviera-1920w.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\hero\\shared\\homepage-riviera-1920w.webp",
+      "relativePath": "fr/hero/shared/homepage-riviera-1920w.webp",
+      "publicPath": "/assets/img/fr/hero/shared/homepage-riviera-1920w.webp"
+    },
+    {
+      "filename": "rgpd-signature.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\legal\\rgpd-signature.webp",
+      "relativePath": "fr/legal/rgpd-signature.webp",
+      "publicPath": "/assets/img/fr/legal/rgpd-signature.webp"
+    },
+    {
+      "filename": "booking-steps.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\reservation\\booking-steps.webp",
+      "relativePath": "fr/reservation/booking-steps.webp",
+      "publicPath": "/assets/img/fr/reservation/booking-steps.webp"
+    },
+    {
+      "filename": "service-corporate.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\services\\service-corporate.webp",
+      "relativePath": "fr/services/service-corporate.webp",
+      "publicPath": "/assets/img/fr/services/service-corporate.webp"
+    },
+    {
+      "filename": "service-events.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\fr\\services\\service-events.webp",
+      "relativePath": "fr/services/service-events.webp",
+      "publicPath": "/assets/img/fr/services/service-events.webp"
+    },
+    {
+      "filename": "grand-prix-monaco.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.png",
+      "relativePath": "guides/grand-prix-monaco.png",
+      "publicPath": "/assets/img/guides/grand-prix-monaco.png"
+    },
+    {
+      "filename": "grand-prix-monaco.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\grand-prix-monaco.webp",
+      "relativePath": "guides/grand-prix-monaco.webp",
+      "publicPath": "/assets/img/guides/grand-prix-monaco.webp"
+    },
+    {
+      "filename": "route-panoramique-nice-eze-monaco.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\route-panoramique-nice-eze-monaco.png",
+      "relativePath": "guides/route-panoramique-nice-eze-monaco.png",
+      "publicPath": "/assets/img/guides/route-panoramique-nice-eze-monaco.png"
+    },
+    {
+      "filename": "route-panoramique-nice-eze-monaco.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\route-panoramique-nice-eze-monaco.webp",
+      "relativePath": "guides/route-panoramique-nice-eze-monaco.webp",
+      "publicPath": "/assets/img/guides/route-panoramique-nice-eze-monaco.webp"
+    },
+    {
+      "filename": "villages-perches.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.png",
+      "relativePath": "guides/villages-perches.png",
+      "publicPath": "/assets/img/guides/villages-perches.png"
+    },
+    {
+      "filename": "villages-perches.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\guides\\villages-perches.webp",
+      "relativePath": "guides/villages-perches.webp",
+      "publicPath": "/assets/img/guides/villages-perches.webp"
+    },
+    {
+      "filename": "aeroport-nice-1920w.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\aeroport-nice-1920w.webp",
+      "relativePath": "hero/aeroport-nice-1920w.webp",
+      "publicPath": "/assets/img/hero/aeroport-nice-1920w.webp"
+    },
+    {
+      "filename": "monaco-private-driver.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\authority\\monaco-private-driver.webp",
+      "relativePath": "hero/authority/monaco-private-driver.webp",
+      "publicPath": "/assets/img/hero/authority/monaco-private-driver.webp"
+    },
+    {
+      "filename": "nice-cannes-.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\authority\\nice-cannes-.webp",
+      "relativePath": "hero/authority/nice-cannes-.webp",
+      "publicPath": "/assets/img/hero/authority/nice-cannes-.webp"
+    },
+    {
+      "filename": "chauffeur-luxe-background.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\chauffeur-luxe-background.webp",
+      "relativePath": "hero/chauffeur-luxe-background.webp",
+      "publicPath": "/assets/img/hero/chauffeur-luxe-background.webp"
+    },
+    {
+      "filename": "hero-aeroport-nice.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.png",
+      "relativePath": "hero/hero-aeroport-nice.png",
+      "publicPath": "/assets/img/hero/hero-aeroport-nice.png"
+    },
+    {
+      "filename": "hero-aeroport-nice.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-aeroport-nice.webp",
+      "relativePath": "hero/hero-aeroport-nice.webp",
+      "publicPath": "/assets/img/hero/hero-aeroport-nice.webp"
+    },
+    {
+      "filename": "hero-business.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.png",
+      "relativePath": "hero/hero-business.png",
+      "publicPath": "/assets/img/hero/hero-business.png"
+    },
+    {
+      "filename": "hero-business.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-business.webp",
+      "relativePath": "hero/hero-business.webp",
+      "publicPath": "/assets/img/hero/hero-business.webp"
+    },
+    {
+      "filename": "hero-mariage.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-mariage.png",
+      "relativePath": "hero/hero-mariage.png",
+      "publicPath": "/assets/img/hero/hero-mariage.png"
+    },
+    {
+      "filename": "hero-mariage.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\hero-mariage.webp",
+      "relativePath": "hero/hero-mariage.webp",
+      "publicPath": "/assets/img/hero/hero-mariage.webp"
+    },
+    {
+      "filename": "homepage-riviera-1920w.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\hero\\homepage-riviera-1920w.webp",
+      "relativePath": "hero/homepage-riviera-1920w.webp",
+      "publicPath": "/assets/img/hero/homepage-riviera-1920w.webp"
+    },
+    {
+      "filename": "service-aeroport.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.png",
+      "relativePath": "services/service-aeroport.png",
+      "publicPath": "/assets/img/services/service-aeroport.png"
+    },
+    {
+      "filename": "service-aeroport.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-aeroport.webp",
+      "relativePath": "services/service-aeroport.webp",
+      "publicPath": "/assets/img/services/service-aeroport.webp"
+    },
+    {
+      "filename": "service-business.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.png",
+      "relativePath": "services/service-business.png",
+      "publicPath": "/assets/img/services/service-business.png"
+    },
+    {
+      "filename": "service-business.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-business.webp",
+      "relativePath": "services/service-business.webp",
+      "publicPath": "/assets/img/services/service-business.webp"
+    },
+    {
+      "filename": "service-evenements.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.png",
+      "relativePath": "services/service-evenements.png",
+      "publicPath": "/assets/img/services/service-evenements.png"
+    },
+    {
+      "filename": "service-evenements.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-evenements.webp",
+      "relativePath": "services/service-evenements.webp",
+      "publicPath": "/assets/img/services/service-evenements.webp"
+    },
+    {
+      "filename": "service-mariage.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mariage.png",
+      "relativePath": "services/service-mariage.png",
+      "publicPath": "/assets/img/services/service-mariage.png"
+    },
+    {
+      "filename": "service-mariage.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mariage.webp",
+      "relativePath": "services/service-mariage.webp",
+      "publicPath": "/assets/img/services/service-mariage.webp"
+    },
+    {
+      "filename": "service-mise-disposition.png",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.png",
+      "relativePath": "services/service-mise-disposition.png",
+      "publicPath": "/assets/img/services/service-mise-disposition.png"
+    },
+    {
+      "filename": "service-mise-disposition.webp",
+      "path": "C:\\Users\\8888v\\CascadeProjects\\SITE WEB\\CascadeProjects\\windsurf-project\\public\\assets\\img\\services\\service-mise-disposition.webp",
+      "relativePath": "services/service-mise-disposition.webp",
+      "publicPath": "/assets/img/services/service-mise-disposition.webp"
+    }
+  ],
+  "stats": {
+    "total": 67,
+    "valid": 64,
+    "missing": 3,
+    "incorrect": 3
+  }
+}

@@ -12,8 +12,7 @@ const keywords = [
 ];
 ---
 
-<BaseLayout 
-  title={title}
+<BaseLayout title={title}
   description={description}
   currentPage="guide-grand-prix-monaco-deplacements"
   breadcrumbItems={[
@@ -21,8 +20,31 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Grand Prix Monaco", url: "/guide-grand-prix-monaco-deplacements" }
   ]}
+
+  canonical="/guide-grand-prix-monaco-deplacements"
+  <main class="guide-page"
+  schema={{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Guide Grand Prix Monaco : Déplacements et Transport | ECOFUNDRIVE",
+  "description": "Guide complet pour vos déplacements pendant le Grand Prix de Monaco. Chauffeur privé VTC, itinéraires, conseils pratiques pour éviter les embouteillages.",
+  "url": "https://www.ecofundrive.com/guide-grand-prix-monaco-deplacements",
+  "author": {
+    "@type": "Person",
+    "name": "David Chemla"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ecofundrive.com/assets/img/logo.png"
+    }
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-12-01"
+}}
 >
-  <main class="guide-page">
     <div class="container">
       <article>
         <h1>{title}</h1>
@@ -45,6 +67,18 @@ const keywords = [
         </section>
       </article>
     </div>
+  
+    <section class="mb-xl">
+      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
+      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
+      <a href="/services" class="btn-primary">Découvrir nos services</a>
+    </section>
+  
+    <section class="mb-xl">
+      <h2>Pages connexes</h2>
+      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+    </section>
   </main>
 </BaseLayout>
 
