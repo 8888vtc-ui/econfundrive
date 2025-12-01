@@ -1,173 +1,165 @@
 /* ============================================
-   MOBILE FIXED - WhatsApp & Chatbot
-   Positionnement FIXE et VISIBLE sur mobile
-   Corrige le scroll horizontal
+   MOBILE FIXED ELEMENTS - ECOFUNDRIVE
+   WhatsApp Button & Chatbot - Ajusté pour Bottom Navigation
    ============================================ */
 
-/* === BLOQUER LE SCROLL HORIZONTAL === */
-html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-    position: relative !important;
+/* --- WHATSAPP BUTTON --- */
+.whatsapp-button {
+    position: fixed !important;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* === MOBILE UNIQUEMENT === */
+.whatsapp-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+    background-color: #20BA5A;
+}
+
+.whatsapp-button svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.whatsapp-label {
+    white-space: nowrap;
+}
+
+/* --- CHATBOT --- */
+.chatbot-container {
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999999;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.chatbot-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.chatbot-toggle:hover,
+.chatbot-toggle:focus {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5);
+    outline: none;
+}
+
+.chatbot-toggle:active {
+    transform: translateY(0) scale(1);
+}
+
+.chatbot-toggle:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.chatbot-toggle svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.chatbot-label {
+    white-space: nowrap;
+}
+
+.chatbot-window {
+    position: fixed !important;
+    bottom: 80px;
+    right: 20px;
+    width: 90vw;
+    max-width: 350px;
+    max-height: 60vh;
+    background: #0a0a0a;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999999;
+}
+
+.chatbot-window.open {
+    display: flex;
+}
+
+/* === MOBILE: Ajusté pour Bottom Navigation === */
 @media (max-width: 768px) {
-    
-    /* Bloquer scroll horizontal sur mobile */
-    html {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    
-    body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        position: relative !important;
-    }
-    
-    /* Container principal */
-    main, .container, header, footer {
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-    }
-    
-    /* ==========================================
-       WhatsApp - FIXE en bas à GAUCHE
-       Toujours visible immédiatement
-       ========================================== */
+    /* WhatsApp - Au-dessus de la bottom nav, à gauche */
     .whatsapp-button {
-        position: fixed !important;
-        bottom: 100px !important;
-        left: 15px !important;
-        top: auto !important;
-        right: auto !important;
-        transform: none !important;
-        padding: 10px 14px !important;
-        font-size: 0.85rem !important;
-        z-index: 99999 !important;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7) !important;
-        animation: pulse-wa 2s infinite !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 50px !important;
-        background-color: #25D366 !important;
-        color: #ffffff !important;
+        bottom: 90px; /* 70px (bottom-nav) + 20px espacement */
+        left: 15px;
+        right: auto;
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
-    
+
     .whatsapp-button svg {
-        width: 20px !important;
-        height: 20px !important;
+        width: 22px;
+        height: 22px;
     }
-    
-    .whatsapp-label {
-        font-size: 0.8rem !important;
-    }
-    
-    /* ==========================================
-       Chatbot - FIXE en bas à DROITE
-       Toujours visible immédiatement
-       ========================================== */
+
+    /* Chatbot - Au-dessus de la bottom nav, à droite */
     .chatbot-container {
-        position: fixed !important;
-        bottom: 100px !important;
-        right: 15px !important;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        z-index: 99998 !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        bottom: 90px; /* 70px (bottom-nav) + 20px espacement */
+        right: 15px;
+        left: auto;
     }
-    
+
     .chatbot-toggle {
-        padding: 10px 14px !important;
-        font-size: 0.85rem !important;
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.7) !important;
-        animation: pulse-cb 2s infinite !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 50px !important;
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
-    
+
     .chatbot-toggle svg {
-        width: 20px !important;
-        height: 20px !important;
+        width: 18px;
+        height: 18px;
     }
-    
-    .chatbot-label {
-        font-size: 0.8rem !important;
-    }
-    
-    /* Fenêtre du chatbot - centrée quand ouverte */
+
+    /* Fenêtre chatbot - Au-dessus des boutons */
     .chatbot-window {
-        position: fixed !important;
-        top: 50% !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: translate(-50%, -50%) !important;
-        width: 90vw !important;
-        max-width: 340px !important;
-        max-height: 65vh !important;
-        z-index: 99999 !important;
-    }
-    
-    .chatbot-messages {
-        max-height: 30vh !important;
-    }
-    
-    .chatbot-input {
-        font-size: 16px !important;
-    }
-}
-
-/* === TRÈS PETITS ÉCRANS (< 400px) === */
-@media (max-width: 400px) {
-    .whatsapp-button {
-        bottom: 90px !important;
-        left: 10px !important;
-        padding: 8px 12px !important;
-    }
-    
-    .whatsapp-label {
-        display: none !important;
-    }
-    
-    .chatbot-container {
-        bottom: 90px !important;
-        right: 10px !important;
-    }
-    
-    .chatbot-toggle {
-        padding: 8px 12px !important;
-    }
-    
-    .chatbot-label {
-        display: none !important;
-    }
-}
-
-/* Animations pulsation */
-@keyframes pulse-wa {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
-    }
-    50% {
-        box-shadow: 0 4px 35px rgba(37, 211, 102, 1);
-    }
-}
-
-@keyframes pulse-cb {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.7);
-    }
-    50% {
-        box-shadow: 0 4px 35px rgba(212, 175, 55, 1);
+        bottom: 150px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: none;
+        max-height: 50vh;
     }
 }
