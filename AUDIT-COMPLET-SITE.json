@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-12-01T21:09:59.816Z",
+  "build": {
+    "distExists": true,
+    "htmlFiles": 1,
+    "totalFiles": 54,
+    "buildSuccess": true
+  },
+  "structure": {
+    "src/layouts/BaseLayout.astro": true,
+    "src/components/Header.astro": true,
+    "src/components/Chatbot.astro": true,
+    "src/components/WhatsAppButton.astro": true,
+    "netlify/functions/chatbot.js": true,
+    "astro.config.mjs": true,
+    "netlify.toml": true
+  },
+  "links": {},
+  "images": {
+    "total": 10,
+    "paths": [
+      "/assets/img/hero/hero-aeroport-nice.webp",
+      "/assets/img/about/chauffeur-professionnel.webp",
+      "/assets/img/services/service-aeroport.webp",
+      "/assets/img/services/service-business.webp",
+      "/assets/img/destinations/destination-monaco.webp",
+      "/assets/img/destinations/cannes-palais-festivals.webp",
+      "/assets/img/destinations/destination-saint-tropez.webp",
+      "/assets/img/destinations/vtc-tesla-nice.jpg",
+      "/assets/img/about/vehicule-premium.webp",
+      "/assets/img/destinations/destination-nice.webp"
+    ],
+    "webpCount": 9,
+    "webpPercentage": "90.0"
+  },
+  "css": {
+    "inline": true,
+    "external": false
+  },
+  "javascript": {
+    "inline": true,
+    "external": false
+  },
+  "responsive": {
+    "viewport": true,
+    "mediaQueries": true,
+    "hasMobileMenu": true,
+    "hasDesktopMenu": true,
+    "hasMediaQueries": false,
+    "hasTouchSupport": true
+  },
+  "seo": {
+    "hasTitle": true,
+    "hasMetaDescription": true,
+    "hasCanonical": true,
+    "hasSchemaOrg": true,
+    "hasHreflang": true,
+    "hasOpenGraph": true,
+    "hasTwitterCard": true
+  },
+  "accessibility": {
+    "hasLang": true,
+    "hasAriaLabels": true,
+    "hasAltImages": [
+      "<img src=\"/assets/img/hero/hero-aeroport-nice.webp\" alt=\"Chauffeur privé VTC à l'"
+    ],
+    "hasSkipLink": true,
+    "hasSemanticHTML": false
+  },
+  "performance": {
+    "htmlSize": "70.83 KB",
+    "htmlLength": 72129,
+    "hasPreload": true,
+    "hasCompression": false,
+    "inlineStylesheets": true
+  },
+  "errors": [],
+  "warnings": [
+    "Accessibilité manquante: hasSemanticHTML",
+    "Responsive manquant: hasMediaQueries",
+    "DeepSeek v3 non configuré - analyse IA ignorée"
+  ],
+  "recommendations": []
+}

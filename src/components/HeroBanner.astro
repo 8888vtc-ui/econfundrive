@@ -18,8 +18,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero-banner">
-  <div class="hero-image-container">
+<section class="hero-banner" role="banner" aria-label="Bannière principale">
+  <div class="hero-image-container" aria-hidden="true">
     <img 
       src={image} 
       alt={alt}
@@ -27,6 +27,7 @@ const {
       height="1080"
       loading="eager"
       fetchpriority="high"
+      decoding="async"
       class="hero-background-image"
     />
     <div class="hero-overlay"></div>
@@ -36,7 +37,7 @@ const {
       <h1 class="hero-title">{title}</h1>
       {subtitle && <p class="hero-subtitle">{subtitle}</p>}
       {ctaLink && (
-        <a href={ctaLink} class="hero-cta-button">{ctaText}</a>
+        <a href={ctaLink} class="hero-cta-button" role="button" aria-label={`${ctaText} - Réserver un VTC`}>{ctaText}</a>
       )}
     </div>
   </div>

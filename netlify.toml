@@ -11,6 +11,8 @@
   IMAGE_PROMPT_VTC = "Photo réaliste d'une berline ou d'un van de luxe utilisé comme chauffeur privé VTC dans une ville côtière méditerranéenne générique, chauffeur discret en tenue business, ambiance élégante mais sobre, sans aucun logo de marque, sans nom de lieu réel, sans monument ou bâtiment clairement reconnaissable."
   RESEND_API_KEY = "@resend_api_key"
   BOOKING_EMAIL = "8888VTC@gmail.com"
+  DEEPSEEK_API_KEY = "@deepseek_api_key"
+  DEEPSEEK_MODEL = "deepseek-chat"
 
 # Security Headers
 [[headers]]

@@ -1,0 +1,138 @@
+/* ============================================
+   BASE CSS - ECOFUNDRIVE
+   Reset, Base, Container, Core Web Vitals
+   ============================================ */
+
+/* === RESET & BASE === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* === IMAGES - Core Web Vitals LCP === */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    content-visibility: auto;
+}
+
+img[loading="lazy"] {
+    background-color: #f0f0f0;
+}
+
+/* === CORE WEB VITALS - CLS Prevention === */
+img, video, iframe {
+    aspect-ratio: attr(width) / attr(height);
+}
+
+/* === ACCESSIBILITY === */
+:focus-visible {
+    outline: 3px solid #d4af37;
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    z-index: 10001;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Touch targets minimum 44x44px */
+    button, 
+    a, 
+    input, 
+    select, 
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Prevent zoom on input focus */
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* === PERFORMANCE === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    .chatbot-container,
+    .whatsapp-button,
+    .nav-toggle,
+    .menu-overlay,
+    .nav-links-mobile {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}

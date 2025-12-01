@@ -1,8 +1,12 @@
-// Nouvelle fonction chatbot - Code propre et optimisé
+// Nouvelle fonction chatbot - Code propre et optimisé avec DeepSeek v3
 const OpenAI = require('openai');
 
-const openaiKey = process.env.OPENAI_API_KEY;
-const openai = openaiKey ? new OpenAI({ apiKey: openaiKey }) : null;
+// DeepSeek v3 - Dernière génération
+const deepseekKey = process.env.DEEPSEEK_API_KEY;
+const deepseek = deepseekKey ? new OpenAI({
+  apiKey: deepseekKey,
+  baseURL: 'https://api.deepseek.com'
+}) : null;
 
 // Contexte business
 const businessInfo = {
@@ -224,7 +228,7 @@ exports.handler = async function(event) {
   const lang = detectLanguage(userMessage);
 
   // Si pas d'API key, utiliser fallback
-  if (!openai) {
+  if (!deepseek) {
     const fallback = getFallbackMessage(userMessage, lang);
     return {
       statusCode: 200,
@@ -236,10 +240,10 @@ exports.handler = async function(event) {
     };
   }
 
-  // Appel OpenAI
+  // Appel DeepSeek v3 - Dernière génération
   try {
-    const response = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+    const response = await deepseek.chat.completions.create({
+      model: process.env.DEEPSEEK_MODEL || 'deepseek-chat', // deepseek-chat ou deepseek-reasoner
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userMessage }
@@ -281,7 +285,7 @@ exports.handler = async function(event) {
     };
 
   } catch (error) {
-    console.error('OpenAI error:', error);
+    console.error('DeepSeek error:', error);
     
     // Fallback en cas d'erreur
     const fallback = getFallbackMessage(userMessage, lang);

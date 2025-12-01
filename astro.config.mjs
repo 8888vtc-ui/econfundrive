@@ -7,7 +7,7 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [],
   build: {
-    inlineStylesheets: 'auto', // Inline les petits CSS
+    inlineStylesheets: 'always',
     assets: 'assets'
   },
   vite: {

@@ -2,7 +2,7 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo" aria-label="Pied de page">
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -21,7 +21,7 @@ const currentYear = new Date().getFullYear();
           <span class="footer-badge">TVA FR59912244696</span>
         </div>
       </div>
-      <div class="footer-nav">
+      <nav class="footer-nav" aria-label="Navigation du pied de page">
         <strong>Navigation</strong>
         <a href="/">Accueil</a>
         <a href="/services">Services</a>
@@ -39,7 +39,7 @@ const currentYear = new Date().getFullYear();
         <a href="/contact">Contact</a>
         <a href="/avis-clients">Avis clients</a>
         <a href="/mentions-legales-rgpd">Mentions légales &amp; RGPD</a>
-      </div>
+      </nav>
       <div>
         <strong>Services VTC</strong><br>
         Transferts aéroport Nice (NCE) &amp; Cannes‑Mandelieu, gares<br>
