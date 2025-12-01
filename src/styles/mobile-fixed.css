@@ -1,12 +1,12 @@
 /* ============================================
    MOBILE FIXED ELEMENTS - ECOFUNDRIVE
-   WhatsApp & Chatbot - Au-dessus de la Bottom Navigation
+   WhatsApp & Chatbot - Positions corrigées
    ============================================ */
 
 /* === WHATSAPP - DESKTOP === */
 .whatsapp-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     right: 20px;
     z-index: 9998;
     display: flex;
@@ -41,53 +41,43 @@
     white-space: nowrap;
 }
 
-/* === MOBILE: Positions fixes au-dessus de la Bottom Nav === */
+/* === MOBILE === */
 @media (max-width: 768px) {
-    /* WhatsApp - En haut à gauche, petite taille */
+    /* WhatsApp - Au-dessus du menu bottom, à gauche */
     .whatsapp-button {
         position: fixed !important;
-        bottom: auto !important;
-        top: 70px !important;
-        left: 10px !important;
+        bottom: 85px !important;
+        top: auto !important;
+        left: 15px !important;
         right: auto !important;
-        padding: 8px 12px !important;
-        font-size: 0.8rem !important;
-        z-index: 9998 !important;
-        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4) !important;
+        padding: 8px 14px !important;
+        font-size: 0.85rem !important;
+        z-index: 99997 !important;
     }
 
     .whatsapp-button svg {
-        width: 18px !important;
-        height: 18px !important;
+        width: 20px !important;
+        height: 20px !important;
     }
 
-    .whatsapp-label {
-        font-size: 0.75rem !important;
-    }
-
-    /* Chatbot - En haut à droite, petite taille */
+    /* Chatbot - Au-dessus du menu bottom, à droite */
     .chatbot-container {
         position: fixed !important;
-        bottom: auto !important;
-        top: 70px !important;
-        right: 10px !important;
+        bottom: 85px !important;
+        top: auto !important;
+        right: 15px !important;
         left: auto !important;
-        z-index: 9999 !important;
+        z-index: 99997 !important;
     }
 
     .chatbot-toggle {
-        padding: 8px 12px !important;
-        font-size: 0.8rem !important;
-        box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4) !important;
+        padding: 8px 14px !important;
+        font-size: 0.85rem !important;
     }
 
     .chatbot-toggle svg {
         width: 18px !important;
         height: 18px !important;
-    }
-
-    .chatbot-label {
-        font-size: 0.75rem !important;
     }
 
     /* Fenêtre chatbot - centrée */
