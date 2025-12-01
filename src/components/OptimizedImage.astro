@@ -1,7 +1,5 @@
 ---
 // Composant Image optimisé pour SEO et Performance 2025
-import { Image } from 'astro:assets';
-
 interface Props {
   src: string;
   alt: string;
@@ -31,7 +29,7 @@ const {
 } = Astro.props;
 
 // Si src est une URL externe ou un chemin public, utiliser img classique
-// Sinon, utiliser Astro Image pour l'optimisation
+// Les chemins publics commencent par /assets/
 const isPublicPath = src.startsWith('/') || src.startsWith('http');
 ---
 
@@ -40,11 +38,6 @@ const isPublicPath = src.startsWith('/') || src.startsWith('http');
     <source 
       srcset={`${src}?w=400&format=webp&quality=${quality} 400w, ${src}?w=800&format=webp&quality=${quality} 800w, ${src}?w=1200&format=webp&quality=${quality} 1200w`}
       type="image/webp"
-      sizes={sizes}
-    />
-    <source 
-      srcset={`${src}?w=400&format=avif&quality=${quality} 400w, ${src}?w=800&format=avif&quality=${quality} 800w, ${src}?w=1200&format=avif&quality=${quality} 1200w`}
-      type="image/avif"
       sizes={sizes}
     />
     <img
@@ -58,7 +51,6 @@ const isPublicPath = src.startsWith('/') || src.startsWith('http');
       class={className}
       style={style}
       sizes={sizes}
-      srcset={`${src}?w=400 400w, ${src}?w=800 800w, ${src}?w=1200 1200w`}
     />
   </picture>
 ) : (
