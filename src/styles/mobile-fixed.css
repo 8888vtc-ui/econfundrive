@@ -1,27 +1,25 @@
 /* ============================================
    MOBILE FIXED ELEMENTS - ECOFUNDRIVE
-   WhatsApp en haut, Chatbot au-dessus du menu
+   Chatbot au-dessus du menu, WhatsApp dans header
    ============================================ */
 
-/* === WHATSAPP - Position fixe === */
+/* === WHATSAPP FLOTTANT - Desktop uniquement === */
 .whatsapp-button {
     position: fixed;
-    top: 80px;
-    right: 15px;
-    bottom: auto;
-    left: auto;
+    bottom: 100px;
+    right: 20px;
     z-index: 9998;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
+    gap: 8px;
+    padding: 10px 16px;
     background-color: #25D366;
     color: #ffffff;
     text-decoration: none;
     border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: all 0.3s;
     min-width: 44px;
     min-height: 44px;
@@ -29,13 +27,13 @@
 
 .whatsapp-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
     background-color: #20BA5A;
 }
 
 .whatsapp-button svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     flex-shrink: 0;
 }
 
@@ -43,46 +41,22 @@
     white-space: nowrap;
 }
 
-/* === CHATBOT - Au-dessus du menu bottom === */
+/* === CHATBOT - Position fixe === */
 .chatbot-container {
     position: fixed;
-    bottom: 85px;
-    right: 15px;
-    left: auto;
-    top: auto;
-    z-index: 99997;
+    bottom: 100px;
+    right: 20px;
+    z-index: 9999;
 }
 
-.chatbot-toggle {
-    padding: 10px 14px;
-    font-size: 0.85rem;
-}
-
-.chatbot-toggle svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* === MOBILE SPECIFIQUE === */
+/* === MOBILE === */
 @media (max-width: 768px) {
-    /* WhatsApp - En haut à droite, sous le header */
+    /* WhatsApp flottant caché sur mobile (il est dans le header) */
     .whatsapp-button {
-        position: fixed !important;
-        top: 70px !important;
-        right: 10px !important;
-        bottom: auto !important;
-        left: auto !important;
-        padding: 8px 12px !important;
-        font-size: 0.8rem !important;
-        z-index: 9998 !important;
+        display: none !important;
     }
 
-    .whatsapp-button svg {
-        width: 18px !important;
-        height: 18px !important;
-    }
-
-    /* Chatbot - Au-dessus du menu bottom, à droite */
+    /* Chatbot - Au-dessus du menu bottom */
     .chatbot-container {
         position: fixed !important;
         bottom: 80px !important;
@@ -95,6 +69,11 @@
     .chatbot-toggle {
         padding: 8px 12px !important;
         font-size: 0.8rem !important;
+    }
+
+    .chatbot-toggle svg {
+        width: 18px !important;
+        height: 18px !important;
     }
 
     /* Fenêtre chatbot - centrée */
