@@ -13,7 +13,7 @@ const { currentPage = "" } = Astro.props;
     <div class="nav-brand">
       <a href="/" class="nav-brand-link" aria-label="ECOFUNDRIVE - Retour à l'accueil">
         <Logo />
-        <span class="brand-text">ECOFUNDRIVE</span>
+        <span class="brand-text" style="display: inline-block !important; visibility: visible !important; opacity: 1 !important; color: #ffffff !important; font-size: 1.5rem !important; font-weight: 700 !important; font-family: 'Montserrat', 'Poppins', sans-serif !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; margin-left: 0.75rem !important;">ECOFUNDRIVE</span>
       </a>
     </div>
     
@@ -113,27 +113,55 @@ const { currentPage = "" } = Astro.props;
     color: #ffffff !important;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    display: block !important;
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    line-height: normal !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   @media (max-width: 768px) {
     .brand-text {
-      font-size: 1.25rem;
-      display: block !important;
+      font-size: 1rem !important;
+      display: inline-block !important;
       visibility: visible !important;
       opacity: 1 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+      width: auto !important;
+      max-width: none !important;
+      height: auto !important;
+      line-height: normal !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     .nav-brand-link {
       display: flex !important;
       visibility: visible !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      width: auto !important;
+      max-width: none !important;
     }
 
     .nav-brand {
       display: flex !important;
       visibility: visible !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      width: auto !important;
+      max-width: none !important;
+      min-width: fit-content !important;
     }
   }
 
