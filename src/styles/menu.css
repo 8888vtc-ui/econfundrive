@@ -43,34 +43,49 @@
     text-transform: uppercase;
 }
 
-/* WhatsApp dans le header */
+/* WhatsApp dans le header - CACHÉ, on utilise le fixe à la place */
 .header-whatsapp {
+    display: none !important;
+}
+
+/* WhatsApp FIXE en haut pour mobile - Toujours visible au scroll */
+.whatsapp-fixed-top {
     display: none; /* Caché sur desktop */
+    position: fixed !important;
+    top: 12px !important;
+    right: 60px !important; /* À côté du logo, pas trop à droite */
+    z-index: 100001 !important; /* Au-dessus du header */
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
+    gap: 6px;
+    padding: 8px 16px;
     background-color: #25D366;
     color: #ffffff;
-    border-radius: 50%;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+    border-radius: 25px;
+    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.5);
+    font-weight: 600;
+    font-size: 0.85rem;
     transition: all 0.2s;
 }
 
-.header-whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+.whatsapp-fixed-top:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.6);
 }
 
-.header-whatsapp svg {
-    width: 22px;
-    height: 22px;
+.whatsapp-fixed-top svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.whatsapp-fixed-top span {
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
-    .header-whatsapp {
-        display: flex; /* Visible sur mobile */
+    .whatsapp-fixed-top {
+        display: flex !important; /* Visible sur mobile */
     }
 }
 

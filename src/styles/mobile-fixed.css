@@ -1,9 +1,9 @@
 /* ============================================
    MOBILE FIXED ELEMENTS - ECOFUNDRIVE
-   Chatbot au-dessus du menu, WhatsApp dans header
+   WhatsApp fixe en haut, Chatbot au-dessus du menu
    ============================================ */
 
-/* === WHATSAPP FLOTTANT - Desktop uniquement === */
+/* === WHATSAPP FLOTTANT === */
 .whatsapp-button {
     position: fixed;
     bottom: 100px;
@@ -41,7 +41,7 @@
     white-space: nowrap;
 }
 
-/* === CHATBOT - Position fixe === */
+/* === CHATBOT === */
 .chatbot-container {
     position: fixed;
     bottom: 100px;
@@ -51,7 +51,7 @@
 
 /* === MOBILE === */
 @media (max-width: 768px) {
-    /* WhatsApp flottant caché sur mobile (il est dans le header) */
+    /* WhatsApp flottant caché sur mobile (remplacé par header-whatsapp) */
     .whatsapp-button {
         display: none !important;
     }
