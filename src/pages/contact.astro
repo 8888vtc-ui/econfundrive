@@ -1,7 +1,7 @@
-﻿```
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const title = "Contact | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
 const description = "Contactez ECOFUNDRIVE pour réserver votre chauffeur privé VTC sur la Côte d'Azur. Service professionnel 24h/24. Téléphone, WhatsApp, email.";
@@ -13,82 +13,503 @@ const keywords = [
   'transfert aéroport',
   'transport premium'
 ];
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Contact", url: "/contact" }
+];
 ---
 
 <BaseLayout 
   title={title}
   description={description}
+  keywords={keywords}
   currentPage="contact"
   canonical="/contact"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Contact", url: "/contact" }
-  ]}
+  breadcrumbItems={breadcrumbItems}
 >
   <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Contactez ECOFUNDRIVE</h1>
-      <p class="lead text-center mb-xl">Disponible 24h/24 et 7j/7 pour tous vos déplacements sur la Côte d'Azur</p>
+    <div class="container">
+      <Breadcrumb items={breadcrumbItems} />
+      
+      <section class="contact-hero">
+        <h1>Contactez ECOFUNDRIVE</h1>
+        <p class="lead">Disponible 24h/24 et 7j/7 pour tous vos déplacements sur la Côte d'Azur</p>
+      </section>
+
+      <div class="contact-grid">
+        <section class="contact-form-section">
+          <h2>Envoyez-nous un message</h2>
+          <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+          
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>
+                Ne remplissez pas ce champ si vous êtes humain : <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="form-group">
+              <label for="nom">Nom complet *</label>
+              <input 
+                type="text" 
+                id="nom" 
+                name="nom" 
+                required 
+                placeholder="Votre nom"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="votre@email.com"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone *</label>
+              <input 
+                type="tel" 
+                id="telephone" 
+                name="telephone" 
+                required 
+                placeholder="06 12 34 56 78"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="sujet">Sujet *</label>
+              <select id="sujet" name="sujet" required aria-required="true">
+                <option value="">Sélectionnez un sujet</option>
+                <option value="reservation">Réservation VTC</option>
+                <option value="transfert-aeroport">Transfert aéroport</option>
+                <option value="service-entreprise">Service entreprise</option>
+                <option value="mariage-evenement">Mariage / Événement</option>
+                <option value="devis">Demande de devis</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="6" 
+                required 
+                placeholder="Décrivez votre demande (date, heure, lieu de départ, destination, nombre de passagers...)"
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input 
+                  type="checkbox" 
+                  name="rgpd" 
+                  required 
+                  aria-required="true"
+                />
+                <span>J'accepte que mes données soient utilisées pour répondre à ma demande (conformément au RGPD) *</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Envoyer le message
+            </button>
+
+            <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <section class="contact-info-section">
+          <h2>Nos coordonnées</h2>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">📞</div>
+              <div class="contact-details">
+                <h3>Téléphone</h3>
+                <p><a href="tel:+33616552811">06 16 55 28 11</a></p>
+                <p class="contact-note">Disponible 24h/24 et 7j/7</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">💬</div>
+              <div class="contact-details">
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/33616552811" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp</a></p>
+                <p class="contact-note">Réponse rapide garantie</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p><a href="mailto:8888VTC@gmail.com">8888VTC@gmail.com</a></p>
+                <p class="contact-note">Réponse sous 24h</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <h3>Besoin d'une réponse immédiate ?</h3>
+            <p>Appelez-nous directement ou contactez-nous via WhatsApp pour une réponse instantanée.</p>
+            <div class="contact-buttons">
+              <a href="tel:+33616552811" class="btn btn-primary">Appeler maintenant</a>
+              <a href="https://wa.me/33616552811" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <SectionImageText
+        title="Service disponible 24h/24"
+        image="/assets/img/hero/hero-aeroport-nice.webp"
+        alt="Service VTC disponible jour et nuit"
+        imageSide="left"
+        ctaText="Réserver maintenant"
+        ctaLink="https://wa.me/33616552811"
+      >
+        <p>
+          Que votre vol arrive tard dans la nuit ou que vous ayez besoin d'un service tôt le matin, ECOFUNDRIVE est là pour vous. Nous assurons des transferts à toute heure, 7 jours sur 7.
+        </p>
+        <ul>
+          <li>Disponibilité 24h/24 et 7j/7</li>
+          <li>Réponse rapide à vos demandes</li>
+          <li>Confirmation immédiate de votre réservation</li>
+          <li>Suivi en temps réel de votre chauffeur</li>
+        </ul>
+      </SectionImageText>
+
+      <SectionImageText
+        title="Zones desservies"
+        image="/assets/img/destinations/destination-nice.webp"
+        alt="Côte d'Azur - Zones desservies"
+        imageSide="right"
+        ctaText="Voir nos destinations"
+        ctaLink="/services"
+      >
+        <p>
+          ECOFUNDRIVE dessert l'ensemble de la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Antibes, Grasse, Menton, et bien d'autres destinations.
+        </p>
+        <p>
+          Nous assurons également les transferts vers les aéroports (Nice Côte d'Azur, Cannes Mandelieu), les gares, et les hôtels de la région.
+        </p>
+      </SectionImageText>
     </div>
-
-    <SectionImageText
-      title="Réservez votre chauffeur"
-      image="/assets/img/about/chauffeur-professionnel.webp"
-      alt="Chauffeur professionnel ECOFUNDRIVE"
-      imageSide="right"
-      ctaText="Appeler maintenant"
-      ctaLink="tel:+33616552811"
-    >
-      <p>
-        Pour réserver votre chauffeur privé VTC, plusieurs options s'offrent à vous. Contactez-nous par téléphone au <strong>06 16 55 28 11</strong>, via WhatsApp, ou par email à <strong>8888VTC@gmail.com</strong>.
-      </p>
-      <p>
-        Notre équipe est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions et organiser votre transport sur la Côte d'Azur.
-      </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Service disponible 24h/24"
-      image="/assets/img/hero/hero-aeroport-nice.webp"
-      alt="Service VTC disponible jour et nuit"
-      imageSide="left"
-      ctaText="WhatsApp"
-      ctaLink="https://wa.me/33616552811"
-    >
-      <p>
-        Que votre vol arrive tard dans la nuit ou que vous ayez besoin d'un service tôt le matin, ECOFUNDRIVE est là pour vous. Nous assurons des transferts à toute heure, 7 jours sur 7.
-      </p>
-      <ul>
-        <li>Disponibilité 24h/24 et 7j/7</li>
-        <li>Réponse rapide à vos demandes</li>
-        <li>Confirmation immédiate de votre réservation</li>
-        <li>Suivi en temps réel de votre chauffeur</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Zones desservies"
-      image="/assets/img/destinations/destination-nice.webp"
-      alt="Côte d'Azur - Zones desservies"
-      imageSide="right"
-      ctaText="Voir nos destinations"
-      ctaLink="/services"
-    >
-      <p>
-        ECOFUNDRIVE dessert l'ensemble de la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Antibes, Grasse, Menton, et bien d'autres destinations.
-      </p>
-      <p>
-        Nous assurons également les transferts vers les aéroports (Nice Côte d'Azur, Cannes Mandelieu), les gares, et les hôtels de la région.
-      </p>
-    </SectionImageText>
   </main>
 </BaseLayout>
 
 <style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg, 1.5rem);
+  }
+
+  .contact-hero {
+    text-align: center;
+    padding: var(--spacing-3xl, 3rem) 0 var(--spacing-xl, 2rem);
+  }
+
+  .contact-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md, 1rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary, #666);
+    margin-bottom: var(--spacing-xl, 2rem);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl, 3rem);
+    margin: var(--spacing-3xl, 3rem) 0;
+  }
+
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md, 1rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .contact-form-section p {
+    color: var(--text-secondary, #666);
+    margin-bottom: var(--spacing-xl, 2rem);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg, 1.5rem);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs, 0.5rem);
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--text-primary, #1a1a1a);
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--spacing-md, 1rem);
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm, 0.75rem);
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.25rem;
+    cursor: pointer;
+  }
+
+  .hidden {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn {
+    padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  .btn-primary {
+    background: #0066cc;
+    color: #fff;
+    border-color: #0066cc;
+  }
+
+  .btn-primary:hover {
+    background: #0052a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #0066cc;
+    border-color: #0066cc;
+  }
+
+  .btn-secondary:hover {
+    background: #0066cc;
+    color: #fff;
+  }
+
+  .form-message {
+    padding: var(--spacing-md, 1rem);
+    border-radius: 6px;
+    margin-top: var(--spacing-md, 1rem);
+    display: none;
+  }
+
+  .form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+  }
+
+  .form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl, 2rem);
+    margin-bottom: var(--spacing-2xl, 2rem);
+  }
+
+  .contact-method {
+    display: flex;
+    gap: var(--spacing-lg, 1.5rem);
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-details h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs, 0.5rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .contact-details p {
+    margin: 0.25rem 0;
+    color: var(--text-secondary, #666);
+  }
+
+  .contact-details a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-details a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #999);
+    font-style: italic;
+  }
+
+  .contact-cta {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: var(--spacing-xl, 2rem);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .contact-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md, 1rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .contact-cta p {
+    color: var(--text-secondary, #666);
+    margin-bottom: var(--spacing-lg, 1.5rem);
+  }
+
   .contact-buttons {
     display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: var(--spacing-md, 1rem);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl, 2rem);
+    }
+
+    .contact-hero h1 {
+      font-size: 2rem;
+    }
+
+    .contact-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
   }
 </style>
-```
+
+<script>
+  // Gestion du formulaire de contact
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const messageDiv = document.getElementById('form-message');
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Désactiver le bouton pendant l'envoi
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
+
+        // Masquer les messages précédents
+        messageDiv.className = 'form-message';
+        messageDiv.textContent = '';
+
+        try {
+          const formData = new FormData(form);
+          
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          });
+
+          if (response.ok) {
+            messageDiv.className = 'form-message success';
+            messageDiv.textContent = '✅ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+            form.reset();
+          } else {
+            throw new Error('Erreur lors de l\'envoi');
+          }
+        } catch (error) {
+          messageDiv.className = 'form-message error';
+          messageDiv.textContent = '❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone au 06 16 55 28 11.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+  });
+</script>
