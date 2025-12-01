@@ -6,8 +6,8 @@
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background: rgba(10, 10, 10, 0.95);
+    z-index: 100000;
+    background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -27,7 +27,7 @@
 .nav-brand {
     display: flex;
     align-items: center;
-    z-index: 1001;
+    z-index: 100003;
 }
 
 .nav-brand-link {
@@ -102,7 +102,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1002;
+    z-index: 100003;
     position: relative;
 }
 
@@ -142,42 +142,47 @@
 }
 
 .menu-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(4px);
-    z-index: 9998;
+    z-index: 100001;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
 }
 
 .menu-overlay.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .nav-links-mobile {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 85%;
-    max-width: 320px;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
     height: 100vh;
     background: #0a0a0a;
-    z-index: 9999;
-    transition: right 0.3s ease;
+    z-index: 100002;
     display: flex;
     flex-direction: column;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    visibility: hidden;
 }
 
 .nav-links-mobile.open {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
 }
 
 .mobile-menu-header {

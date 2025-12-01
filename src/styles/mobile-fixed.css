@@ -47,7 +47,7 @@ html, body {
         transform: none !important;
         padding: 10px 14px !important;
         font-size: 0.85rem !important;
-        z-index: 999999 !important;
+        z-index: 99999 !important;
         box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7) !important;
         animation: pulse-wa 2s infinite !important;
         display: flex !important;
@@ -78,7 +78,7 @@ html, body {
         top: auto !important;
         left: auto !important;
         transform: none !important;
-        z-index: 999998 !important;
+        z-index: 99998 !important;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -115,7 +115,7 @@ html, body {
         width: 90vw !important;
         max-width: 340px !important;
         max-height: 65vh !important;
-        z-index: 9999999 !important;
+        z-index: 99999 !important;
     }
     
     .chatbot-messages {
