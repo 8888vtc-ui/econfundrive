@@ -62,17 +62,17 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     white-space: nowrap;
   }
 
-  /* Mobile : position au milieu à gauche */
+  /* Mobile : position en haut au milieu */
   @media (max-width: 768px) {
     .whatsapp-button {
-      top: 50%; /* Milieu vertical de l'écran */
+      top: 80px; /* En haut, sous le header */
       bottom: auto;
-      left: 10px; /* À gauche */
+      left: 50%; /* Au milieu horizontalement */
       right: auto;
-      transform: translateY(-50%); /* Centrer verticalement */
+      transform: translateX(-50%); /* Centrer horizontalement */
       padding: 10px 16px;
       font-size: 0.85rem;
-      z-index: 10000 !important;
+      z-index: 9998 !important; /* En dessous du chatbot (9999) */
     }
 
     .whatsapp-button svg {

@@ -1,0 +1,277 @@
+/* ============================================
+   GESTION AUTOMATIQUE DES COULEURS DE TEXTE
+   Fond clair = Texte noir
+   Fond foncé = Texte blanc clair
+   ============================================ */
+
+/* RÈGLE GLOBALE : Fond blanc/clair = Texte noir */
+body {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+/* Tous les éléments par défaut = noir sur fond blanc */
+body *,
+main,
+main *,
+section,
+section *,
+article,
+article *,
+div,
+div *,
+p,
+span,
+li,
+td,
+th {
+  color: #1a1a1a;
+}
+
+/* Images toujours visibles */
+img,
+picture,
+source,
+.hero-background-image,
+.hero-image-container,
+.hero-banner img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  img,
+  picture,
+  source,
+  .hero-background-image,
+  .hero-image-container,
+  .hero-banner img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Headers sur fond clair = noir */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a !important;
+}
+
+p, span, div, article, section, main {
+  color: #1a1a1a;
+}
+
+a {
+  color: #0066cc;
+}
+
+a:hover {
+  color: #0052a3;
+}
+
+/* SECTIONS AVEC FOND FONCÉ/NOIR = TEXTE BLANC CLAIR */
+
+/* Header (fond foncé) */
+.site-header,
+.site-header * {
+  color: #ffffff !important;
+}
+
+.site-header a {
+  color: #e0e0e0 !important;
+}
+
+.site-header a:hover {
+  color: #d4af37 !important;
+}
+
+/* Menu mobile (fond foncé) */
+.nav-links-mobile,
+.nav-links-mobile * {
+  color: #ffffff !important;
+}
+
+.nav-links-mobile a {
+  color: #ffffff !important;
+}
+
+.nav-links-mobile a:hover,
+.nav-links-mobile a:focus {
+  color: #d4af37 !important;
+}
+
+/* Chatbot (fond foncé) */
+.chatbot-window,
+.chatbot-window *,
+.chatbot-messages,
+.chatbot-messages * {
+  color: #ffffff !important;
+}
+
+.chatbot-title {
+  color: #ffffff !important;
+}
+
+.chatbot-message-bot .message-content,
+.chatbot-message-bot .message-content * {
+  color: #ffffff !important;
+}
+
+/* Footer (fond foncé) */
+.site-footer,
+.site-footer * {
+  color: #e0e0e0 !important;
+}
+
+.site-footer a {
+  color: #d4af37 !important;
+}
+
+.site-footer a:hover {
+  color: #f4e4bc !important;
+}
+
+/* Sections avec fond sombre */
+.bg-dark,
+.bg-dark *,
+[class*="dark"],
+[style*="background"][style*="0a0a0a"],
+[style*="background"][style*="1a1a1a"],
+[style*="background"][style*="10, 10, 10"],
+[style*="background"][style*="rgba(10"],
+[style*="background"][style*="rgba(26"] {
+  color: #ffffff !important;
+}
+
+/* Sections avec fond clair */
+.bg-light,
+.bg-white,
+[class*="light"],
+[class*="white"],
+[style*="background"][style*="fff"],
+[style*="background"][style*="ffffff"],
+[style*="background"][style*="f8f9fa"],
+[style*="background"][style*="e9ecef"] {
+  color: #1a1a1a !important;
+}
+
+.bg-light *,
+.bg-white * {
+  color: #1a1a1a !important;
+}
+
+/* Cards avec fond clair */
+.card,
+.review-card,
+.contact-form-section,
+.reviews-section {
+  background: #ffffff;
+  color: #1a1a1a !important;
+}
+
+.card *,
+.review-card *,
+.contact-form-section *,
+.reviews-section * {
+  color: #1a1a1a !important;
+}
+
+/* Cards avec fond foncé */
+.card-dark,
+[class*="card"][style*="background"][style*="0a0a0a"],
+[class*="card"][style*="background"][style*="1a1a1a"] {
+  background: #1a1a1a;
+  color: #ffffff !important;
+}
+
+.card-dark * {
+  color: #ffffff !important;
+}
+
+/* Formulaires */
+input,
+textarea,
+select {
+  background: #ffffff;
+  color: #1a1a1a !important;
+  border: 1px solid #e0e0e0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999 !important;
+}
+
+/* Labels */
+label {
+  color: #1a1a1a !important;
+}
+
+/* Boutons sur fond clair */
+.btn-primary {
+  background: #0066cc;
+  color: #ffffff !important;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #0066cc !important;
+  border: 2px solid #0066cc;
+}
+
+/* Sections ReviewsDisplay */
+.reviews-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  color: #1a1a1a !important;
+}
+
+.reviews-section * {
+  color: #1a1a1a !important;
+}
+
+.reviews-section h2 {
+  color: #1a1a1a !important;
+}
+
+.review-card {
+  background: #ffffff;
+  color: #1a1a1a !important;
+}
+
+.review-card * {
+  color: #1a1a1a !important;
+}
+
+/* Contact form */
+.contact-form-section {
+  background: #ffffff;
+  color: #1a1a1a !important;
+}
+
+.contact-form-section * {
+  color: #1a1a1a !important;
+}
+
+/* Mobile spécifique */
+@media (max-width: 768px) {
+  body {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+
+  body * {
+    color: #1a1a1a;
+  }
+
+  /* Header reste blanc sur mobile aussi */
+  .site-header,
+  .site-header * {
+    color: #ffffff !important;
+  }
+}
+

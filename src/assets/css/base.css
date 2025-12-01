@@ -106,8 +106,46 @@ body {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
+  color: #1a1a1a !important;
+  background-color: #ffffff !important;
+}
+
+/* Tous les textes sur fond blanc/clair = noir */
+body,
+body * {
   color: #1a1a1a;
-  background-color: #ffffff;
+}
+
+/* Sections avec fond clair = texte noir */
+section,
+div,
+p,
+h1, h2, h3, h4, h5, h6,
+article,
+main {
+  color: #1a1a1a;
+}
+
+/* Sections avec fond foncé = texte blanc */
+.bg-dark,
+.bg-black,
+[style*="background"][style*="0a0a0a"],
+[style*="background"][style*="1a1a1a"],
+[style*="background"][style*="10, 10, 10"],
+.site-header,
+.chatbot-window,
+.chatbot-messages,
+.nav-links-mobile {
+  color: #ffffff !important;
+}
+
+.bg-dark *,
+.bg-black *,
+.site-header *,
+.chatbot-window *,
+.chatbot-messages *,
+.nav-links-mobile * {
+  color: #ffffff !important;
 }
 
 h1,
@@ -121,6 +159,22 @@ h6 {
   color: #1a1a1a;
   margin-bottom: var(--spacing-md);
   letter-spacing: -0.02em;
+}
+
+/* Headers sur fond foncé = blanc */
+.site-header h1,
+.site-header h2,
+.site-header h3,
+.site-header h4,
+.site-header h5,
+.site-header h6,
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6 {
+  color: #ffffff !important;
 }
 
 h1 {

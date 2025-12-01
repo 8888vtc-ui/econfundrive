@@ -196,7 +196,20 @@ const chatbotLabel = "VIP Service Guide";
     min-height: 200px;
     max-height: 400px;
     -webkit-overflow-scrolling: touch;
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.9);
+  }
+
+  /* Forcer tous les textes à être blanc clair */
+  .chatbot-messages * {
+    color: #ffffff !important;
+  }
+
+  .chatbot-messages p,
+  .chatbot-messages span,
+  .chatbot-messages div,
+  .chatbot-messages li {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   .chatbot-message {
@@ -223,25 +236,53 @@ const chatbotLabel = "VIP Service Guide";
 
   .message-content p {
     margin: 0;
-    color: inherit !important;
+    color: #ffffff !important;
     font-size: inherit;
     line-height: inherit;
-    font-weight: inherit;
+    font-weight: 500;
+  }
+
+  .message-content a {
+    color: #ffd700 !important;
+    text-decoration: underline;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .message-content a:hover {
+    color: #ffed4e !important;
+  }
+
+  .message-content * {
+    color: #ffffff !important;
   }
 
   .chatbot-message-bot .message-content {
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(212, 175, 55, 0.25);
     color: #ffffff !important;
     border: 1px solid rgba(212, 175, 55, 0.5);
     font-size: 15px;
     font-weight: 500;
     line-height: 1.7;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  .chatbot-message-bot .message-content p,
+  .chatbot-message-bot .message-content span,
+  .chatbot-message-bot .message-content div {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   .chatbot-message-user .message-content {
     background: var(--color-gold);
-    color: var(--color-primary-black);
+    color: #1a1a1a !important;
+  }
+
+  .chatbot-message-user .message-content p,
+  .chatbot-message-user .message-content span,
+  .chatbot-message-user .message-content div {
+    color: #1a1a1a !important;
   }
 
   .chatbot-input-container {
@@ -470,6 +511,9 @@ const chatbotLabel = "VIP Service Guide";
         contentDiv.className = 'message-content';
         const p = document.createElement('p');
         p.textContent = text;
+        p.style.color = isUser ? '#1a1a1a' : '#ffffff';
+        p.style.textShadow = isUser ? 'none' : '0 1px 3px rgba(0, 0, 0, 0.7)';
+        p.style.fontWeight = '500';
         contentDiv.appendChild(p);
         
         messageDiv.appendChild(contentDiv);
@@ -544,7 +588,10 @@ const chatbotLabel = "VIP Service Guide";
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'message-content';
                 const p = document.createElement('p');
-                p.innerHTML = `Pour finaliser votre réservation, <a href="${data.whatsappLink}" target="_blank" rel="noopener" style="color: var(--color-gold); text-decoration: underline;">contactez-moi sur WhatsApp</a> !`;
+                p.style.color = '#ffffff';
+                p.style.textShadow = '0 1px 3px rgba(0, 0, 0, 0.7)';
+                p.style.fontWeight = '500';
+                p.innerHTML = `Pour finaliser votre réservation, <a href="${data.whatsappLink}" target="_blank" rel="noopener" style="color: #ffd700 !important; text-decoration: underline; font-weight: 600; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);">contactez-moi sur WhatsApp</a> !`;
                 contentDiv.appendChild(p);
                 whatsappMsg.appendChild(contentDiv);
                 messages.appendChild(whatsappMsg);
