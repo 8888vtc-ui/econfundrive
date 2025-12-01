@@ -1,25 +1,66 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
-const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const title = "Guide Grand Prix Monaco : Déplacements et Transport | ECOFUNDRIVE";
+const description = "Guide complet pour vos déplacements pendant le Grand Prix de Monaco. Chauffeur privé VTC, itinéraires, conseils pratiques pour éviter les embouteillages.";
 const keywords = [
-  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
+  'Grand Prix Monaco transport',
+  'VTC Grand Prix Monaco',
+  'chauffeur Grand Prix Monaco',
+  'déplacements Grand Prix',
+  'transport Monaco F1'
+];
 ---
-
-
-<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-grand-prix-monaco-deplacements"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Grand Prix Monaco", url: "/guide-grand-prix-monaco-deplacements" }
+  ]}
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  <main class="guide-page">
+    <div class="container">
+      <article>
+        <h1>{title}</h1>
+        <p class="guide-intro">{description}</p>
+
+        <section>
+          <h2>Transport pendant le Grand Prix</h2>
+          <p>
+            Pendant le Grand Prix de Monaco, la circulation est très dense. Un <strong>chauffeur privé VTC</strong> 
+            connaît les itinéraires alternatifs pour vous garantir ponctualité et confort.
+          </p>
+        </section>
+
+        <section>
+          <h2>Réservation</h2>
+          <div class="contact-buttons">
+            <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
+            <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </section>
+      </article>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .guide-page {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .guide-intro {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+</style>

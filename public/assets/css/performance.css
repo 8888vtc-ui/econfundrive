@@ -1,0 +1,144 @@
+/* ============================================
+   PERFORMANCE CSS - Optimisations Core Web Vitals 2025
+   ============================================ */
+
+/* Optimisations pour LCP (Largest Contentful Paint) */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lazy loading pour images avec transition douce */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Prévenir le layout shift (CLS) - Aspect ratio */
+img,
+iframe,
+video {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Images sans dimensions - fallback */
+img:not([width]):not([height]) {
+  aspect-ratio: 16 / 9;
+}
+
+/* Optimisations fonts - Preload dans BaseLayout */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/poppins-v20-latin-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/poppins-v20-latin-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/poppins-v20-latin-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Will-change pour animations (utiliser avec parcimonie) */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* GPU acceleration pour éléments fixes (WhatsApp, Chatbot) */
+.whatsapp-button,
+.chatbot-toggle,
+.chatbot-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  will-change: transform;
+}
+
+/* Contenu critique visible immédiatement */
+.above-fold {
+  content-visibility: auto;
+}
+
+/* Optimisation scroll - smooth par défaut */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Respecter les préférences utilisateur (motion reduced) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimisation pour les connexions lentes */
+@media (prefers-reduced-data: reduce) {
+  img[loading="lazy"] {
+    display: none;
+  }
+  
+  .hero-background-image {
+    background: linear-gradient(135deg, var(--color-primary-black) 0%, var(--color-primary-black-soft) 100%);
+  }
+}
+
+/* Optimisation FID (First Input Delay) - Interactions */
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Prévenir les reflows inutiles */
+.container {
+  contain: layout style paint;
+}
+
+/* Optimisation des animations */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

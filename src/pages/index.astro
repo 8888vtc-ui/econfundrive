@@ -1,25 +1,280 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 
-const title = "chauffeur privé VTC | ECOFUNDRIVE";
-const description = "Service de chauffeur privé VTC sur la CÃ´te d'Azur. chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur";
+const title = "ECOFUNDRIVE – Chauffeur Privé VTC sur la Côte d'Azur";
+const description = "Chauffeur privé VTC professionnel sur la Côte d'Azur. Transferts aéroport Nice & Cannes, trajets business, séjours haut de gamme. Service 24h/24, véhicules premium, ponctualité garantie.";
 const keywords = [
-  'chauffeur privé VTC' 'VTC Nice' 'VTC Cannes' 'VTC Monaco' 'transfert aéroport Nice' 'chauffeur Côte d'Azur' 'VTC Saint-Tropez' 'transport premium' 'chauffeur business' 'mise à disposition chauffeur' 'transfert aéroport Cannes' 'VTC longue distance' 'chauffeur événement' 'VTC mariage' 'circuit touristique Côte d'Azur'];
+  'chauffeur privé VTC',
+  'VTC Nice',
+  'VTC Cannes',
+  'VTC Monaco',
+  'transfert aéroport Nice',
+  'chauffeur Côte d\'Azur',
+  'VTC Saint-Tropez',
+  'transport premium',
+  'chauffeur business',
+  'mise à disposition chauffeur',
+  'transfert aéroport Cannes',
+  'VTC longue distance',
+  'chauffeur événement',
+  'VTC mariage',
+  'circuit touristique Côte d\'Azur'
+];
 ---
-
-
-<!-- Mots-clÃ©s SEO: chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="index"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- chauffeur privé VTC, VTC Nice, VTC Cannes, VTC Monaco, transfert aéroport Nice, chauffeur Côte d'Azur, VTC Saint-Tropez, transport premium, chauffeur business, mise à disposition chauffeur, transfert aéroport Cannes, VTC longue distance, chauffeur événement, VTC mariage, circuit touristique Côte d'Azur -->
+  <HeroBanner
+    image="/assets/img/hero/hero-aeroport-nice.webp"
+    alt="Chauffeur privé VTC à l'aéroport de Nice"
+    title="Votre Chauffeur Privé VTC sur la Côte d'Azur"
+    subtitle="Transferts aéroport, trajets business, événements et circuits touristiques."
+    ctaText="Réserver votre VTC"
+    ctaLink="/reservation"
+  />
+
+  <main id="main-content" class="container py-lg">
+    <section class="text-center mb-xl">
+      <h2>{title}</h2>
+      <p class="lead">{description}</p>
+      <p>
+        ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la magnifique Côte d'Azur. Que ce soit pour un transfert vers l'aéroport de Nice, un rendez-vous d'affaires à Cannes, une soirée glamour à Monaco ou une excursion touristique, nous vous garantissons un service premium, discret et ponctuel.
+      </p>
+      <p>
+        Nos chauffeurs professionnels, expérimentés et multilingues, sont à votre disposition 24h/24 et 7j/7. Voyagez en toute sérénité à bord de nos véhicules confortables et haut de gamme, équipés pour répondre à toutes vos exigences.
+      </p>
+    </section>
+
+    <section class="mb-xl">
+      <h2 class="text-center mb-lg">Nos Services VTC Premium</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/services/transfert-aeroport.webp"
+          alt="Transfert aéroport Nice"
+          title="Transferts Aéroports & Gares"
+          description="Arrivez à destination en toute tranquillité. Transferts depuis et vers les aéroports de Nice, Cannes, et toutes les gares de la Côte d'Azur."
+          link="/services#transferts"
+        />
+        <CategoryCard
+          image="/assets/img/services/vtc-business.webp"
+          alt="Chauffeur VTC Business"
+          title="VTC Business & Professionnel"
+          description="Optimisez vos déplacements professionnels. Ponctualité, discrétion et confort pour vos rendez-vous, séminaires et congrès."
+          link="/services#business"
+        />
+        <CategoryCard
+          image="/assets/img/services/mise-a-disposition.webp"
+          alt="Mise à disposition chauffeur"
+          title="Mise à Disposition"
+          description="Un chauffeur à votre entière disposition pour quelques heures ou la journée. Idéal pour le shopping, les visites ou les événements."
+          link="/services#disposition"
+        />
+        <CategoryCard
+          image="/assets/img/services/evenements.webp"
+          alt="VTC Événements Côte d'Azur"
+          title="Événements & Mariages"
+          description="Un service sur mesure pour vos occasions spéciales. Mariages, festivals (Cannes), soirées privées, concerts... Voyagez avec élégance."
+          link="/services#evenements"
+        />
+        <CategoryCard
+          image="/assets/img/services/circuits-touristiques.webp"
+          alt="Circuit touristique Côte d'Azur"
+          title="Circuits Touristiques"
+          description="Découvrez les trésors cachés de la Côte d'Azur avec un guide-chauffeur expert. Nice, Cannes, Monaco, Saint-Paul-de-Vence..."
+          link="/services#tourisme"
+        />
+        <CategoryCard
+          image="/assets/img/services/vtc-longue-distance.webp"
+          alt="VTC Longue Distance"
+          title="Trajets Longue Distance"
+          description="Besoin de voyager au-delà de la Côte d'Azur ? Nous assurons vos transferts vers Marseille, Lyon, Paris ou même l'Italie."
+          link="/services#longue-distance"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl">
+      <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
+      <div class="grid-2-cols-responsive">
+        <div>
+          <h3>Expertise Locale et Connaissance Parfaite</h3>
+          <p>
+            Nos chauffeurs sont de véritables experts de la Côte d'Azur. Ils connaissent les itinéraires les plus rapides, les raccourcis pour éviter les embouteillages et les meilleures adresses pour vos sorties. Avec ECOFUNDRIVE, vous bénéficiez d'une connaissance locale inégalée pour optimiser chaque trajet.
+          </p>
+          <h3>Confort et Sécurité Garantis</h3>
+          <p>
+            Voyagez à bord de nos véhicules récents, spacieux et méticuleusement entretenus. Votre sécurité et votre confort sont nos priorités absolues. Profitez d'un environnement calme et luxueux pour vous détendre ou travailler.
+          </p>
+          <h3>Disponibilité 24h/24 et 7j/7</h3>
+          <p>
+            Nous sommes à votre service à toute heure du jour et de la nuit, sur simple réservation. Que votre vol arrive tard ou que votre événement se termine au petit matin, votre chauffeur ECOFUNDRIVE sera là, ponctuel et prêt à vous accueillir.
+          </p>
+        </div>
+        <div>
+          <OptimizedImage 
+            src="/assets/img/chauffeur-david-chemla.webp" 
+            alt="David Chemla, chauffeur privé ECOFUNDRIVE" 
+            width={600} 
+            height={400} 
+            loading="lazy"
+            class="img-responsive border-radius-md"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-xl">
+      <h2 class="text-center mb-lg">Zones desservies sur la Côte d'Azur</h2>
+      <p class="text-center">
+        Nous couvrons l'ensemble de la région Provence-Alpes-Côte d'Azur et au-delà.
+      </p>
+      <ul class="list-unstyled grid-4-cols-responsive text-center">
+        <li><a href="/vtc-nice">VTC Nice</a></li>
+        <li><a href="/vtc-cannes">VTC Cannes</a></li>
+        <li><a href="/vtc-monaco">VTC Monaco</a></li>
+        <li><a href="/vtc-antibes">VTC Antibes</a></li>
+        <li><a href="/vtc-saint-tropez">VTC Saint-Tropez</a></li>
+        <li><a href="/vtc-sophia-antipolis">VTC Sophia-Antipolis</a></li>
+        <li><a href="/vtc-frejus-saint-raphael">VTC Fréjus / Saint-Raphaël</a></li>
+        <li><a href="/vtc-villeneuve-loubet">VTC Villeneuve-Loubet</a></li>
+      </ul>
+    </section>
+
+    <section class="mb-xl">
+      <h2 class="text-center mb-lg">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Comment réserver un VTC avec ECOFUNDRIVE ?</h3>
+          <div class="faq-answer">
+            <p>
+              La réservation est simple et rapide. Vous pouvez nous contacter directement par téléphone au <a href="tel:+33616552811">06 16 55 28 11</a>, par email à <a href="mailto:8888VTC@gmail.com">8888VTC@gmail.com</a>, ou via notre formulaire de réservation en ligne. Nous recommandons de réserver au moins 4 heures à l'avance pour garantir la disponibilité.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Quels types de véhicules proposez-vous ?</h3>
+          <div class="faq-answer">
+            <p>
+              Nous disposons d'une flotte de véhicules premium, incluant des berlines confortables et des vans spacieux (jusqu'à 7 passagers), tous climatisés et équipés pour votre confort et votre sécurité.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Vos chauffeurs sont-ils multilingues ?</h3>
+          <div class="faq-answer">
+            <p>
+              Oui, nos chauffeurs parlent couramment le français et l'anglais. Certains parlent également l'italien et le russe pour mieux servir notre clientèle internationale.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Puis-je demander un siège enfant ?</h3>
+          <div class="faq-answer">
+            <p>
+              Absolument. Sur demande lors de votre réservation, nous pouvons équiper nos véhicules de sièges auto adaptés à l'âge de votre enfant, sans frais supplémentaires.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>
+
+<style>
+  .lead {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  .grid-2-cols-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  .grid-4-cols-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+  }
+
+  .list-unstyled li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .list-unstyled a {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .list-unstyled a:hover {
+    text-decoration: underline;
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  .border-radius-md {
+    border-radius: var(--radius-md);
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+  }
+
+  .faq-question {
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+  }
+
+  .faq-answer {
+    color: var(--color-gray-light);
+  }
+
+  .faq-answer a {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .grid-3-cols,
+    .grid-2-cols-responsive,
+    .grid-4-cols-responsive {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,307 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+
+const title = "Guide Complet : Comment Choisir un VTC sur la Côte d'Azur | ECOFUNDRIVE";
+const description = "Guide expert pour choisir le meilleur VTC sur la Côte d'Azur. Critères de sélection, tarifs, services, législation. Conseils pratiques pour faire le bon choix.";
+const keywords = [
+  'choisir VTC Côte d\'Azur',
+  'guide VTC Nice',
+  'comment choisir chauffeur privé',
+  'critères sélection VTC',
+  'VTC légal Côte d\'Azur',
+  'différence VTC taxi',
+  'meilleur VTC Nice'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-choisir-vtc-cote-azur"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Choisir un VTC", url: "/guide-choisir-vtc-cote-azur" }
+  ]}
+>
+  <main id="main-content" class="container py-lg">
+    <article>
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">Introduction : Pourquoi Choisir un VTC sur la Côte d'Azur ?</h2>
+        <div class="grid-2-cols-responsive align-center">
+          <div>
+            <p>
+              La Côte d'Azur est une destination de choix pour les voyageurs du monde entier. Entre les aéroports internationaux, les événements prestigieux (Festival de Cannes, Grand Prix de Monaco), les hôtels de luxe et les sites touristiques, les besoins en transport sont nombreux et variés. Choisir un VTC (Véhicule de Tourisme avec Chauffeur) professionnel devient alors essentiel pour garantir des déplacements fluides, confortables et sans stress.
+            </p>
+            <p>
+              Mais face à la multitude d'offres disponibles, comment faire le bon choix ? Ce guide complet vous accompagne dans votre sélection en vous présentant tous les critères importants à prendre en compte.
+            </p>
+          </div>
+          <OptimizedImage 
+            src="/assets/img/guides/choisir-vtc-cote-azur.webp" 
+            alt="Chauffeur VTC professionnel sur la Côte d'Azur" 
+            width={600} 
+            height={400} 
+            loading="lazy"
+            class="img-responsive border-radius-md"
+          />
+        </div>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">1. Comprendre la Différence entre VTC, Taxi et Uber</h2>
+        <p>
+          Avant de choisir, il est important de comprendre les différences entre les différents types de transport avec chauffeur :
+        </p>
+        
+        <h3 class="mt-md">Le VTC (Véhicule de Tourisme avec Chauffeur)</h3>
+        <ul>
+          <li><strong>Réservation obligatoire</strong> : Le VTC doit être réservé à l'avance (minimum 30 minutes avant)</li>
+          <li><strong>Tarif fixe</strong> : Le prix est convenu à l'avance, pas de surprise</li>
+          <li><strong>Véhicules premium</strong> : Flotte de véhicules haut de gamme, confortables et bien entretenus</li>
+          <li><strong>Service personnalisé</strong> : Chauffeur professionnel, discrétion, flexibilité</li>
+          <li><strong>Légalité</strong> : Entreprise agréée VTC, assurance professionnelle, carte professionnelle</li>
+        </ul>
+
+        <h3 class="mt-md">Le Taxi</h3>
+        <ul>
+          <li><strong>Disponibilité immédiate</strong> : Peut être pris en rue ou appelé</li>
+          <li><strong>Tarif au compteur</strong> : Prix variable selon le trafic et l'itinéraire</li>
+          <li><strong>Véhicules standards</strong> : Souvent des berlines classiques</li>
+          <li><strong>Réglementation stricte</strong> : Métier réglementé, tarifs fixés par la préfecture</li>
+        </ul>
+
+        <h3 class="mt-md">Uber et Applications Similaires</h3>
+        <ul>
+          <li><strong>Réservation via application</strong> : Disponibilité variable selon la demande</li>
+          <li><strong>Tarif dynamique</strong> : Prix qui varie selon la demande (surge pricing)</li>
+          <li><strong>Qualité variable</strong> : Dépend du chauffeur indépendant</li>
+          <li><strong>Pas de service personnalisé</strong> : Service standardisé</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">2. Critères Essentiels pour Choisir un VTC</h2>
+        
+        <h3 class="mt-md">2.1 La Légalité et les Autorisations</h3>
+        <p>
+          <strong>Vérifiez impérativement que le VTC est légalement autorisé</strong>. Un VTC professionnel doit posséder :
+        </p>
+        <ul>
+          <li>Une <strong>carte professionnelle VTC</strong> délivrée par la préfecture</li>
+          <li>Une <strong>assurance professionnelle</strong> spécifique au transport de personnes</li>
+          <li>Un <strong>numéro d'immatriculation VTC</strong> (obligatoire sur le véhicule)</li>
+          <li>Un <strong>agrément préfectoral</strong> pour l'entreprise</li>
+        </ul>
+        <p>
+          <strong>Attention</strong> : Les chauffeurs non déclarés ou sans autorisation ne sont pas couverts par une assurance professionnelle. En cas d'accident, vous ne seriez pas protégé.
+        </p>
+
+        <h3 class="mt-md">2.2 L'Expérience et la Connaissance Locale</h3>
+        <p>
+          Sur la Côte d'Azur, la connaissance locale est cruciale. Un bon chauffeur VTC doit :
+        </p>
+        <ul>
+          <li>Connaître les <strong>itinéraires optimaux</strong> pour éviter les embouteillages</li>
+          <li>Maîtriser les <strong>accès aux aéroports</strong> (Nice, Cannes-Mandelieu)</li>
+          <li>Savoir naviguer pendant les <strong>événements majeurs</strong> (Festival de Cannes, Grand Prix Monaco)</li>
+          <li>Connaître les <strong>hôtels, restaurants et sites touristiques</strong> de la région</li>
+          <li>Avoir une <strong>expérience</strong> avec une clientèle internationale</li>
+        </ul>
+
+        <h3 class="mt-md">2.3 La Qualité de la Flotte</h3>
+        <p>
+          Vérifiez la qualité des véhicules proposés :
+        </p>
+        <ul>
+          <li><strong>Véhicules récents</strong> : Moins de 5 ans idéalement</li>
+          <li><strong>Entretien régulier</strong> : Véhicules propres et bien entretenus</li>
+          <li><strong>Confort</strong> : Espace suffisant, climatisation, sièges confortables</li>
+          <li><strong>Équipements</strong> : Wi-Fi, chargeurs USB, eau minérale</li>
+          <li><strong>Capacité</strong> : Adaptée à vos besoins (berline, van pour groupes)</li>
+        </ul>
+
+        <h3 class="mt-md">2.4 Le Service Client et la Disponibilité</h3>
+        <p>
+          Un bon VTC doit offrir :
+        </p>
+        <ul>
+          <li><strong>Disponibilité 24h/24 et 7j/7</strong> : Pour répondre à tous vos besoins</li>
+          <li><strong>Réactivité</strong> : Réponse rapide aux demandes de réservation</li>
+          <li><strong>Flexibilité</strong> : Adaptation aux changements de programme</li>
+          <li><strong>Suivi des vols</strong> : Pour les transferts aéroport</li>
+          <li><strong>Support multilingue</strong> : Français, anglais, italien, russe</li>
+        </ul>
+
+        <h3 class="mt-md">2.5 La Transparence des Tarifs</h3>
+        <p>
+          <strong>Un VTC professionnel doit proposer des tarifs clairs et transparents</strong> :
+        </p>
+        <ul>
+          <li><strong>Devis détaillé</strong> : Prix fixe connu à l'avance</li>
+          <li><strong>Pas de frais cachés</strong> : Tous les coûts inclus (péages, stationnement)</li>
+          <li><strong>Facturation professionnelle</strong> : Reçu ou facture pour les entreprises</li>
+          <li><strong>Transparence</strong> : Pas de surprise à l'arrivée</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">3. Questions à Poser Avant de Réserver</h2>
+        <p>
+          Avant de confirmer votre réservation, n'hésitez pas à poser ces questions :
+        </p>
+        <ol>
+          <li><strong>Le chauffeur possède-t-il une carte professionnelle VTC valide ?</strong></li>
+          <li><strong>Le véhicule est-il assuré pour le transport de personnes ?</strong></li>
+          <li><strong>Quel est le tarif exact pour mon trajet ?</strong> (demandez un devis écrit)</li>
+          <li><strong>Le prix inclut-il les péages et le stationnement ?</strong></li>
+          <li><strong>Le chauffeur suit-il les vols pour les transferts aéroport ?</strong></li>
+          <li><strong>Quelle est la politique d'annulation ?</strong></li>
+          <li><strong>Le chauffeur parle-t-il ma langue ?</strong></li>
+          <li><strong>Puis-je modifier mon itinéraire en cours de route ?</strong></li>
+        </ol>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">4. Tarifs VTC sur la Côte d'Azur : À Quoi S'Attendre ?</h2>
+        <p>
+          Les tarifs VTC varient selon plusieurs facteurs : distance, type de véhicule, heure, période (haute/basse saison). Voici des indications de prix pour les trajets courants :
+        </p>
+        <ul>
+          <li><strong>Aéroport Nice → Centre-ville Nice</strong> : 45-55€</li>
+          <li><strong>Nice → Monaco</strong> : 80-100€</li>
+          <li><strong>Nice → Cannes</strong> : 60-75€</li>
+          <li><strong>Nice → Saint-Tropez</strong> : 120-150€</li>
+          <li><strong>Mise à disposition</strong> : 50-70€/heure ou forfait journée</li>
+        </ul>
+        <p>
+          <strong>Conseil</strong> : Demandez toujours un devis détaillé avant de réserver. Les tarifs peuvent varier selon les prestataires et les périodes.
+        </p>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">5. Quand Réserver un VTC ?</h2>
+        <p>
+          La réservation à l'avance est recommandée, surtout pour :
+        </p>
+        <ul>
+          <li><strong>Les événements majeurs</strong> : Festival de Cannes, Grand Prix Monaco (réserver plusieurs semaines/mois à l'avance)</li>
+          <li><strong>Les transferts aéroport</strong> : Réserver au moins 4 heures à l'avance</li>
+          <li><strong>Les périodes de haute saison</strong> : Juillet-août, vacances scolaires</li>
+          <li><strong>Les services longue distance</strong> : Réserver plusieurs jours à l'avance</li>
+          <li><strong>Les mises à disposition</strong> : Réserver au moins 24h à l'avance</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">6. Les Pièges à Éviter</h2>
+        <p>
+          Pour éviter les mauvaises surprises, méfiez-vous de :
+        </p>
+        <ul>
+          <li><strong>Les tarifs trop bas</strong> : Un prix anormalement bas cache souvent des problèmes (chauffeur non déclaré, véhicule non assuré)</li>
+          <li><strong>Les réservations sans devis écrit</strong> : Toujours demander un devis détaillé</li>
+          <li><strong>Les chauffeurs sans carte professionnelle</strong> : Vérifiez toujours les autorisations</li>
+          <li><strong>Les entreprises sans site web ou avis</strong> : Recherchez les avis clients et la présence en ligne</li>
+          <li><strong>Les paiements en espèces uniquement</strong> : Un VTC professionnel accepte les cartes bancaires</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">7. Conclusion : Faire le Bon Choix</h2>
+        <p>
+          Choisir un VTC sur la Côte d'Azur nécessite de prendre en compte plusieurs critères : légalité, expérience locale, qualité de service, transparence des tarifs. Un VTC professionnel comme ECOFUNDRIVE vous garantit :
+        </p>
+        <ul>
+          <li>✅ <strong>Légalité totale</strong> : Carte professionnelle, assurance, agrément</li>
+          <li>✅ <strong>Expérience locale</strong> : Connaissance parfaite de la Côte d'Azur</li>
+          <li>✅ <strong>Service premium</strong> : Véhicules haut de gamme, chauffeurs professionnels</li>
+          <li>✅ <strong>Disponibilité 24/7</strong> : Service à toute heure</li>
+          <li>✅ <strong>Transparence</strong> : Tarifs fixes, devis détaillés</li>
+        </ul>
+        <p>
+          Pour vos déplacements sur la Côte d'Azur, faites confiance à un VTC professionnel qui respecte tous ces critères.
+        </p>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Prêt à Réserver votre VTC ?</h2>
+        <p class="text-center">
+          Contactez ECOFUNDRIVE pour un devis personnalisé et un service VTC professionnel sur la Côte d'Azur.
+        </p>
+        <div class="text-center mt-lg">
+          <a href="/reservation" class="btn-primary hero-cta-button">Réserver maintenant</a>
+          <a href="tel:+33616552811" class="btn-primary mt-md" style="display: inline-block; margin-left: 1rem;">06 16 55 28 11</a>
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .grid-2-cols-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-primary-black);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-gold-dark);
+    text-decoration: none;
+  }
+
+  .hero-cta-button {
+    font-size: var(--font-size-lg);
+    padding: 16px 32px;
+  }
+
+  ul, ol {
+    padding-left: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+  }
+
+  ul li, ol li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gray-light);
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
+  }
+
+  .border-radius-md {
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 768px) {
+    .grid-2-cols-responsive {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

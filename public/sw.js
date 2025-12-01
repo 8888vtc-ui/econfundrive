@@ -1,15 +1,17 @@
 // Service Worker pour PWA et cache offline
-const CACHE_NAME = 'ecofundrive-v2';
-const RUNTIME_CACHE = 'ecofundrive-runtime-v2';
+const CACHE_NAME = 'ecofundrive-v3';
+const RUNTIME_CACHE = 'ecofundrive-runtime-v3';
 
 // Assets critiques à mettre en cache immédiatement
 const CRITICAL_ASSETS = [
   '/',
-  '/assets/css/fonts.css',
-  '/assets/css/main.css',
-  '/assets/css/luxe-chauffeur.css',
+  '/assets/css/base.css',
+  '/assets/css/components.css',
+  '/assets/css/utilities.css',
+  '/assets/css/performance.css',
   '/assets/fonts/poppins-v20-latin-regular.woff2',
-  '/assets/fonts/poppins-v20-latin-600.woff2'
+  '/assets/fonts/poppins-v20-latin-600.woff2',
+  '/assets/fonts/poppins-v20-latin-700.woff2'
 ];
 
 // Installation

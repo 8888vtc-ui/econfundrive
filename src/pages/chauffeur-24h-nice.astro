@@ -1,25 +1,45 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "VTC 24h Nice | ECOFUNDRIVE";
-const description = "Service de VTC 24h Nice sur la CÃ´te d'Azur. VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice";
+const title = "Chauffeur 24H Nice | ECOFUNDRIVE";
+const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
 const keywords = [
-  'VTC 24h Nice' 'chauffeur nuit Nice' 'VTC urgence Nice'];
+  'VTC',
+  'chauffeur privÃ©',
+  'CÃ´te d\'Azur'
+];
 ---
-
-
-<!-- Mots-clÃ©s SEO: VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="chauffeur-24h-nice"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- VTC 24h Nice, chauffeur nuit Nice, VTC urgence Nice -->
+  <main class="page-content">
+    <div class="container">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      
+      <section>
+        <h2>RÃ©servation</h2>
+        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
+        <div class="contact-buttons">
+          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </section>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .page-content {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+</style>

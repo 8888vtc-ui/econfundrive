@@ -21,11 +21,4 @@ if (lastUpdatedEl) {
   lastUpdatedEl.textContent = formatted;
 }
 
-// Menu mobile (burger)
-document.addEventListener("click", (event) => {
-  const toggle = event.target.closest(".nav-toggle");
-  if (!toggle) return;
-  const nav = document.querySelector(".nav-links");
-  if (!nav) return;
-  nav.classList.toggle("is-open");
-});
+// Menu mobile géré directement dans Header.astro - pas de duplication ici

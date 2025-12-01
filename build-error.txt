@@ -1,0 +1,32 @@
+﻿
+> windsurf-project@1.0.0 build
+> astro build
+
+01:51:32 [WARN] [config] The adapter @astrojs/netlify provides experimental support for "assets". You may experience issues or breaking changes until this feature is fully supported by the adapter.
+01:51:32 [types] Generated 250ms
+01:51:32 [build] output: "static"
+01:51:32 [build] directory: C:\Users\8888v\CascadeProjects\SITE WEB\CascadeProjects\windsurf-project\dist\
+01:51:32 [build] adapter: @astrojs/netlify
+01:51:32 [build] Collecting build info...
+01:51:32 [build] Ô£ô Completed in 397ms.
+01:51:32 [build] Building static entrypoints...
+node.exe : 01:51:34 [ERROR] [vite] [31mx[39m Build failed in 1.96s
+Au caractère Ligne:1 : 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (01:51:34 [ERROR...failed in 1.96s:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Unterminated string literal
+  Location:
+    C:/Users/8888v/CascadeProjects/SITE 
+WEB/CascadeProjects/windsurf-project/src/pages/guide-grand-prix-monaco-deplacements.astro:9:11
+  Stack trace:
+    at failureErrorWithLog (C:\Users\8888v\CascadeProjects\SITE 
+WEB\CascadeProjects\windsurf-project\node_modules\esbuild\lib\main.js:1472:15)
+    at responseCallbacks.<computed> (C:\Users\8888v\CascadeProjects\SITE 
+WEB\CascadeProjects\windsurf-project\node_modules\esbuild\lib\main.js:622:9)
+    at Socket.readFromStdout (C:\Users\8888v\CascadeProjects\SITE 
+WEB\CascadeProjects\windsurf-project\node_modules\esbuild\lib\main.js:600:7)
+    at addChunk (node:internal/streams/readable:561:12)
+    at Readable.push (node:internal/streams/readable:392:5)

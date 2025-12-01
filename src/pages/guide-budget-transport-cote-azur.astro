@@ -1,0 +1,463 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+
+const title = "Guide Budget : Transport sur la Côte d'Azur | Tarifs et Comparaisons | ECOFUNDRIVE";
+const description = "Guide complet des budgets transport sur la Côte d'Azur. Comparaison VTC, taxi, Uber, location de voiture. Conseils pour économiser sur vos déplacements.";
+const keywords = [
+  'budget transport Côte d\'Azur',
+  'tarif VTC Côte d\'Azur',
+  'prix transport Nice',
+  'comparaison VTC taxi',
+  'économiser transport',
+  'coût transport Côte d\'Azur',
+  'tarif chauffeur privé Nice'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-budget-transport-cote-azur"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Budget Transport", url: "/guide-budget-transport-cote-azur" }
+  ]}
+>
+  <main id="main-content" class="container py-lg">
+    <article>
+      <h1 class="text-center mb-xl">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">Introduction : Planifier son Budget Transport sur la Côte d'Azur</h2>
+        <div class="grid-2-cols-responsive align-center">
+          <div>
+            <p>
+              La Côte d'Azur est une destination magnifique, mais les déplacements peuvent représenter une part importante de votre budget. Que vous soyez en vacances, en voyage d'affaires ou en séjour événementiel, il est essentiel de bien comprendre les coûts des différents modes de transport pour optimiser votre budget.
+            </p>
+            <p>
+              Ce guide détaillé vous présente une comparaison complète des options de transport disponibles sur la Côte d'Azur, avec des exemples de tarifs concrets et des conseils pour faire des économies intelligentes.
+            </p>
+          </div>
+          <OptimizedImage 
+            src="/assets/img/guides/budget-transport-cote-azur.webp" 
+            alt="Comparaison des moyens de transport sur la Côte d'Azur" 
+            width={600} 
+            height={400} 
+            loading="lazy"
+            class="img-responsive border-radius-md"
+          />
+        </div>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">1. Comparaison Détaillée des Options de Transport</h2>
+        
+        <h3 class="mt-md">1.1 VTC (Véhicule de Tourisme avec Chauffeur)</h3>
+        <p>
+          Le VTC est la solution premium pour vos déplacements sur la Côte d'Azur. Voici les tarifs indicatifs :
+        </p>
+        <div class="price-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Trajet</th>
+                <th>Tarif VTC</th>
+                <th>Durée</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aéroport Nice → Centre-ville Nice</td>
+                <td>45-55€</td>
+                <td>20-30 min</td>
+              </tr>
+              <tr>
+                <td>Nice → Monaco</td>
+                <td>80-100€</td>
+                <td>30-45 min</td>
+              </tr>
+              <tr>
+                <td>Nice → Cannes</td>
+                <td>60-75€</td>
+                <td>30-40 min</td>
+              </tr>
+              <tr>
+                <td>Nice → Saint-Tropez</td>
+                <td>120-150€</td>
+                <td>1h15-1h30</td>
+              </tr>
+              <tr>
+                <td>Nice → Antibes</td>
+                <td>50-65€</td>
+                <td>25-35 min</td>
+              </tr>
+              <tr>
+                <td>Mise à disposition (heure)</td>
+                <td>50-70€</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Mise à disposition (journée 8h)</td>
+                <td>350-450€</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Avantages du VTC</strong> :</p>
+        <ul>
+          <li>✅ Tarif fixe connu à l'avance (pas de surprise)</li>
+          <li>✅ Véhicules premium, confortables et bien entretenus</li>
+          <li>✅ Service personnalisé avec chauffeur professionnel</li>
+          <li>✅ Disponibilité 24h/24 et 7j/7</li>
+          <li>✅ Tous les frais inclus (péages, stationnement)</li>
+          <li>✅ Facturation professionnelle pour les entreprises</li>
+        </ul>
+        <p><strong>Inconvénients</strong> :</p>
+        <ul>
+          <li>❌ Plus cher que le taxi ou Uber pour les trajets courts</li>
+          <li>❌ Réservation obligatoire (minimum 30 minutes à l'avance)</li>
+        </ul>
+        
+        <h3 class="mt-md">1.2 Taxi Traditionnel</h3>
+        <div class="price-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Trajet</th>
+                <th>Tarif Taxi (indicatif)</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aéroport Nice → Centre-ville</td>
+                <td>50-70€</td>
+                <td>Selon trafic</td>
+              </tr>
+              <tr>
+                <td>Nice → Monaco</td>
+                <td>90-120€</td>
+                <td>Selon trafic</td>
+              </tr>
+              <tr>
+                <td>Tarif de base</td>
+                <td>2,50€</td>
+                <td>Prise en charge</td>
+              </tr>
+              <tr>
+                <td>Tarif kilométrique (jour)</td>
+                <td>1,80€/km</td>
+                <td>Hors embouteillages</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Avantages du Taxi</strong> :</p>
+        <ul>
+          <li>✅ Disponibilité immédiate (prise en rue ou appel)</li>
+          <li>✅ Pas de réservation nécessaire</li>
+          <li>✅ Tarifs réglementés par la préfecture</li>
+        </ul>
+        <p><strong>Inconvénients</strong> :</p>
+        <ul>
+          <li>❌ Tarif variable selon le trafic (compteur)</li>
+          <li>❌ Qualité des véhicules variable</li>
+          <li>❌ Difficile à trouver pendant les événements majeurs</li>
+          <li>❌ Pas de service personnalisé</li>
+        </ul>
+        
+        <h3 class="mt-md">1.3 Uber et Applications Similaires</h3>
+        <p>
+          Les tarifs Uber varient considérablement selon la demande (surge pricing) :
+        </p>
+        <ul>
+          <li><strong>Aéroport Nice → Centre-ville</strong> : 40-80€ (selon demande)</li>
+          <li><strong>Nice → Monaco</strong> : 70-150€ (selon demande)</li>
+          <li><strong>Nice → Cannes</strong> : 50-100€ (selon demande)</li>
+        </ul>
+        <p><strong>Avantages d'Uber</strong> :</p>
+        <ul>
+          <li>✅ Application mobile pratique</li>
+          <li>✅ Pas de réservation nécessaire</li>
+          <li>✅ Paiement via application</li>
+        </ul>
+        <p><strong>Inconvénients</strong> :</p>
+        <ul>
+          <li>❌ Tarifs dynamiques (peuvent doubler ou tripler en période de forte demande)</li>
+          <li>❌ Qualité variable selon le chauffeur</li>
+          <li>❌ Disponibilité limitée en périphérie ou pendant les événements</li>
+          <li>❌ Pas de service personnalisé</li>
+        </ul>
+
+        <h3 class="mt-md">1.4 Location de Voiture</h3>
+        <p>
+          Pour une location de voiture sur la Côte d'Azur, comptez :
+        </p>
+        <ul>
+          <li><strong>Location économique</strong> : 30-50€/jour (hors assurance)</li>
+          <li><strong>Location premium</strong> : 80-150€/jour (hors assurance)</li>
+          <li><strong>Assurance complète</strong> : +15-30€/jour</li>
+          <li><strong>Carburant</strong> : ~1,80€/litre</li>
+          <li><strong>Parking</strong> : 15-30€/jour en centre-ville</li>
+        </ul>
+        <p><strong>Avantages</strong> :</p>
+        <ul>
+          <li>✅ Liberté totale de déplacement</li>
+          <li>✅ Économique pour plusieurs jours</li>
+        </ul>
+        <p><strong>Inconvénients</strong> :</p>
+        <ul>
+          <li>❌ Stress de la conduite et du stationnement</li>
+          <li>❌ Coûts cachés (assurance, parking, carburant)</li>
+          <li>❌ Pas adapté pour les événements (embouteillages, parkings complets)</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">2. Conseils pour Optimiser votre Budget Transport</h2>
+        
+        <h3 class="mt-md">2.1 Réservez à l'Avance</h3>
+        <p>
+          La réservation anticipée vous permet souvent d'obtenir de meilleurs tarifs, surtout pour :
+        </p>
+        <ul>
+          <li>Les <strong>transferts aéroport</strong> : Réservez au moins 4 heures à l'avance</li>
+          <li>Les <strong>événements majeurs</strong> : Festival de Cannes, Grand Prix Monaco (réserver plusieurs semaines/mois à l'avance)</li>
+          <li>Les <strong>mises à disposition</strong> : Réserver 24-48h à l'avance</li>
+        </ul>
+
+        <h3 class="mt-md">2.2 Comparez les Options selon vos Besoins</h3>
+        <p>
+          Choisissez le mode de transport le plus adapté à votre situation :
+        </p>
+        <ul>
+          <li><strong>Trajet unique ponctuel</strong> : Taxi ou Uber peuvent suffire</li>
+          <li><strong>Plusieurs trajets dans la journée</strong> : Mise à disposition VTC (plus économique)</li>
+          <li><strong>Événement prestigieux</strong> : VTC premium pour l'image et le confort</li>
+          <li><strong>Séjour de plusieurs jours</strong> : Location de voiture ou mise à disposition selon vos préférences</li>
+        </ul>
+
+        <h3 class="mt-md">2.3 Évitez les Périodes de Forte Demande</h3>
+        <p>
+          Les tarifs augmentent considérablement pendant :
+        </p>
+        <ul>
+          <li><strong>Le Festival de Cannes</strong> (mai) : Tarifs VTC +30 à +50%</li>
+          <li><strong>Le Grand Prix de Monaco</strong> (mai) : Tarifs VTC +40 à +60%</li>
+          <li><strong>La haute saison</strong> (juillet-août) : Tarifs +20 à +30%</li>
+          <li><strong>Les week-ends</strong> : Tarifs légèrement plus élevés</li>
+        </ul>
+        <p>
+          <strong>Conseil</strong> : Si possible, planifiez vos déplacements en dehors de ces périodes pour économiser.
+        </p>
+
+        <h3 class="mt-md">2.4 Optez pour la Mise à Disposition pour Plusieurs Trajets</h3>
+        <p>
+          Si vous avez plusieurs déplacements dans la journée, la mise à disposition VTC est souvent plus économique que plusieurs trajets individuels :
+        </p>
+        <ul>
+          <li><strong>Exemple</strong> : 3 trajets de 30€ chacun = 90€</li>
+          <li><strong>Mise à disposition 4h</strong> : 200-280€ (soit 50-70€/heure)</li>
+          <li><strong>Économie</strong> : Vous bénéficiez en plus de la flexibilité et de l'attente</li>
+        </ul>
+
+        <h3 class="mt-md">2.5 Demandez Toujours un Devis Détaillé</h3>
+        <p>
+          Avant de réserver, demandez un devis écrit qui inclut :
+        </p>
+        <ul>
+          <li>Le tarif exact</li>
+          <li>Les frais inclus (péages, stationnement)</li>
+          <li>Les frais supplémentaires éventuels (attente, nuit, dimanche)</li>
+          <li>La politique d'annulation</li>
+        </ul>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">3. Tableau Comparatif Synthétique</h2>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>VTC</th>
+                <th>Taxi</th>
+                <th>Uber</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tarif</strong></td>
+                <td>Fixe, connu à l'avance</td>
+                <td>Variable (compteur)</td>
+                <td>Variable (surge pricing)</td>
+                <td>Fixé + carburant + parking</td>
+              </tr>
+              <tr>
+                <td><strong>Réservation</strong></td>
+                <td>Obligatoire (30 min min)</td>
+                <td>Non nécessaire</td>
+                <td>Via app</td>
+                <td>Obligatoire</td>
+              </tr>
+              <tr>
+                <td><strong>Qualité véhicule</strong></td>
+                <td>Premium</td>
+                <td>Standard</td>
+                <td>Variable</td>
+                <td>Selon choix</td>
+              </tr>
+              <tr>
+                <td><strong>Service</strong></td>
+                <td>Personnalisé</td>
+                <td>Standard</td>
+                <td>Standard</td>
+                <td>Autonome</td>
+              </tr>
+              <tr>
+                <td><strong>Disponibilité événements</strong></td>
+                <td>Garantie (si réservé)</td>
+                <td>Difficile</td>
+                <td>Variable</td>
+                <td>Parking difficile</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="mb-lg">4. Conclusion : Faire le Meilleur Choix pour votre Budget</h2>
+        <p>
+          Le choix du mode de transport dépend de vos priorités : budget, confort, flexibilité, image. Pour un séjour sur la Côte d'Azur :
+        </p>
+        <ul>
+          <li><strong>Budget serré</strong> : Comparez taxi et Uber, évitez les périodes de forte demande</li>
+          <li><strong>Confort et sérénité</strong> : VTC premium pour un service personnalisé</li>
+          <li><strong>Plusieurs jours</strong> : Location de voiture ou mise à disposition VTC selon préférences</li>
+          <li><strong>Événements prestigieux</strong> : VTC premium pour l'image et la ponctualité</li>
+        </ul>
+        <p>
+          <strong>Rappel</strong> : Un tarif anormalement bas cache souvent des problèmes (chauffeur non déclaré, véhicule non assuré). Privilégiez toujours la qualité et la sécurité.
+        </p>
+      </section>
+
+      <section class="mb-xl">
+        <h2 class="text-center mb-lg">Besoin d'un Devis Personnalisé ?</h2>
+        <p class="text-center">
+          Contactez ECOFUNDRIVE pour un devis détaillé adapté à vos besoins et votre budget.
+        </p>
+        <div class="text-center mt-lg">
+          <a href="/reservation" class="btn-primary hero-cta-button">Demander un devis</a>
+          <a href="tel:+33616552811" class="btn-primary mt-md" style="display: inline-block; margin-left: 1rem;">06 16 55 28 11</a>
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .grid-2-cols-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .price-table,
+  .comparison-table {
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  thead {
+    background: rgba(212, 175, 55, 0.2);
+  }
+
+  th, td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  td {
+    color: var(--color-gray-light);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--color-gold);
+    color: var(--color-primary-black);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-gold-dark);
+    text-decoration: none;
+  }
+
+  .hero-cta-button {
+    font-size: var(--font-size-lg);
+    padding: 16px 32px;
+  }
+
+  ul {
+    padding-left: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+  }
+
+  ul li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gray-light);
+  }
+
+  .img-responsive {
+    width: 100%;
+    height: auto;
+  }
+
+  .border-radius-md {
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 768px) {
+    .grid-2-cols-responsive {
+      grid-template-columns: 1fr;
+    }
+
+    table {
+      font-size: var(--font-size-sm);
+    }
+  }
+</style>

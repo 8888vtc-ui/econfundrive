@@ -1,5 +1,7 @@
 ---
-// Composant Image optimisé pour Astro
+// Composant Image optimisé pour SEO et Performance 2025
+import { Image } from 'astro:assets';
+
 interface Props {
   src: string;
   alt: string;
@@ -8,7 +10,10 @@ interface Props {
   loading?: 'lazy' | 'eager';
   class?: string;
   style?: string;
-  webp?: string; // Source WebP optionnelle
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string; // Pour srcset responsive
+  quality?: number; // Qualité WebP (1-100)
+  format?: 'webp' | 'avif' | 'png' | 'jpg';
 }
 
 const {
@@ -19,16 +24,29 @@ const {
   loading = 'lazy',
   class: className = '',
   style = '',
-  webp
+  fetchpriority = 'auto',
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px',
+  quality = 85,
+  format = 'webp'
 } = Astro.props;
 
-const hasWebP = webp || src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+// Si src est une URL externe ou un chemin public, utiliser img classique
+// Sinon, utiliser Astro Image pour l'optimisation
+const isPublicPath = src.startsWith('/') || src.startsWith('http');
 ---
 
-{webp || src.includes('.webp') ? (
+{isPublicPath ? (
   <picture>
-    {webp && <source srcset={webp} type="image/webp" />}
-    {!webp && src.includes('.webp') && <source srcset={src} type="image/webp" />}
+    <source 
+      srcset={`${src}?w=400&format=webp&quality=${quality} 400w, ${src}?w=800&format=webp&quality=${quality} 800w, ${src}?w=1200&format=webp&quality=${quality} 1200w`}
+      type="image/webp"
+      sizes={sizes}
+    />
+    <source 
+      srcset={`${src}?w=400&format=avif&quality=${quality} 400w, ${src}?w=800&format=avif&quality=${quality} 800w, ${src}?w=1200&format=avif&quality=${quality} 1200w`}
+      type="image/avif"
+      sizes={sizes}
+    />
     <img
       src={src}
       alt={alt}
@@ -36,8 +54,11 @@ const hasWebP = webp || src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
       height={height}
       loading={loading}
       decoding="async"
+      fetchpriority={fetchpriority}
       class={className}
       style={style}
+      sizes={sizes}
+      srcset={`${src}?w=400 400w, ${src}?w=800 800w, ${src}?w=1200 1200w`}
     />
   </picture>
 ) : (
@@ -48,8 +69,16 @@ const hasWebP = webp || src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     height={height}
     loading={loading}
     decoding="async"
+    fetchpriority={fetchpriority}
     class={className}
     style={style}
   />
 )}
 
+<style>
+  picture, img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

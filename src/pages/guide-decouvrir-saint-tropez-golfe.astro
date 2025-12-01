@@ -1,25 +1,74 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
-const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const title = "Guide : Découvrir Saint-Tropez et le Golfe | ECOFUNDRIVE";
+const description = "Guide complet pour découvrir Saint-Tropez et le golfe. Lieux à visiter, meilleures périodes, transport, conseils pratiques pour votre séjour.";
 const keywords = [
-  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
+  'Saint-Tropez guide',
+  'golfe Saint-Tropez',
+  'visiter Saint-Tropez',
+  'VTC Saint-Tropez',
+  'transport Saint-Tropez'
+];
 ---
-
-
-<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-decouvrir-saint-tropez-golfe"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Saint-Tropez", url: "/guide-decouvrir-saint-tropez-golfe" }
+  ]}
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  <main class="guide-page">
+    <div class="container">
+      <article>
+        <h1>{title}</h1>
+        <p class="guide-intro">{description}</p>
+
+        <section>
+          <h2>Découvrir Saint-Tropez</h2>
+          <p>
+            Saint-Tropez est une destination emblématique de la Côte d'Azur, connue pour ses plages, 
+            son port de plaisance et son ambiance glamour. Découvrez les meilleurs endroits à visiter.
+          </p>
+        </section>
+
+        <section>
+          <h2>Transport</h2>
+          <p>
+            Pour vos déplacements vers et autour de Saint-Tropez, réservez votre 
+            <strong>chauffeur privé VTC</strong> pour un service premium et ponctuel.
+          </p>
+        </section>
+
+        <section>
+          <h2>Réservation</h2>
+          <div class="contact-buttons">
+            <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
+            <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </section>
+      </article>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .guide-page {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .guide-intro {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+</style>

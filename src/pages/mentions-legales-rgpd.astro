@@ -1,25 +1,33 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
-const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const title = "Mentions Legales Rgpd | ECOFUNDRIVE";
+const description = "Service VTC sur la CÃ´te d'Azur. Chauffeur privÃ© professionnel pour vos dÃ©placements.";
 const keywords = [
-  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
+  'VTC',
+  'chauffeur privÃ©',
+  'CÃ´te d\'Azur'
+];
 ---
 
-
-<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
-
-<BaseLayout 
-  title={title}
-  description={description}
-  currentPage="mentions-legales-rgpd"
->
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+<BaseLayout title={title} description={description} currentPage="mentions-legales-rgpd">
+  <main class="page-content">
+    <div class="container">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <section>
+        <h2>RÃ©servation</h2>
+        <p>Pour rÃ©server votre chauffeur privÃ© VTC :</p>
+        <div class="contact-buttons">
+          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </section>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .page-content { padding: var(--spacing-3xl) 0; }
+  .contact-buttons { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+</style>

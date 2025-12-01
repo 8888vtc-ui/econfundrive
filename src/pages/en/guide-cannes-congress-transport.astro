@@ -1,25 +1,51 @@
 ﻿---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "chauffeur privÃ© VTC | ECOFUNDRIVE";
-const description = "Service de chauffeur privÃ© VTC sur la CÃ´te d'Azur. chauffeur privÃ© VTC, VTC CÃ´te d'Azur";
+const title = "Cannes Congress Transport Guide | ECOFUNDRIVE";
+const description = "Complete guide for transport during congresses in Cannes. Private driver VTC for Palais des Festivals, hotels, and business events.";
 const keywords = [
-  'chauffeur privÃ© VTC' 'VTC CÃ´te d'Azur'];
+  'Cannes congress transport',
+  'Palais des Festivals transport',
+  'Cannes business VTC',
+  'congress transport Cannes',
+  'private driver Cannes'
+];
 ---
-
-
-<!-- Mots-clÃ©s SEO: chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="guide-cannes-congress-transport"
 >
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    
-    <!-- Mots-clÃ©s Ã  intÃ©grer dans le contenu: -->
-    <!-- chauffeur privÃ© VTC, VTC CÃ´te d'Azur -->
+  <main class="page-content">
+    <div class="container">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      
+      <section>
+        <h2>Congress Transport</h2>
+        <p>Professional transport service for congresses and events at the Palais des Festivals in Cannes.</p>
+      </section>
+
+      <section>
+        <h2>Booking</h2>
+        <div class="contact-buttons">
+          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </section>
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .page-content {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+</style>
