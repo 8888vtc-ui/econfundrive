@@ -43,28 +43,25 @@ const { currentPage = "" } = Astro.props;
   <!-- Overlay Mobile -->
   <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
   
-  <!-- Menu Mobile Slide-out -->
-  <nav class="nav-links-mobile" id="nav-menu-mobile" aria-label="Navigation principale mobile" role="navigation">
+  <!-- Menu Mobile Slide-out - SIMPLIFIÉ -->
+  <nav class="nav-links-mobile" id="nav-menu-mobile" aria-label="Navigation mobile" role="navigation">
     <div class="mobile-menu-header">
-      <div class="mobile-menu-header-content">
-        <Logo />
-      </div>
+      <span class="mobile-menu-title">Menu</span>
       <button 
         class="mobile-menu-close" 
         id="mobile-menu-close"
-        aria-label="Fermer le menu"
+        aria-label="Fermer"
         type="button">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
     <div class="mobile-menu-links">
-      <a href="/" class={currentPage === "index" ? "active" : ""} aria-current={currentPage === "index" ? "page" : undefined}>Accueil</a>
-      <a href="/services" class={currentPage === "services" ? "active" : ""} aria-current={currentPage === "services" ? "page" : undefined}>Services</a>
-      <a href="/a-propos" class={currentPage === "a-propos" ? "active" : ""} aria-current={currentPage === "a-propos" ? "page" : undefined}>Qui nous sommes</a>
-      <a href="/contact" class={currentPage === "contact" ? "active" : ""} aria-current={currentPage === "contact" ? "page" : undefined}>Contact</a>
+      <a href="/" class={currentPage === "index" ? "active" : ""}>Accueil</a>
+      <a href="/services" class={currentPage === "services" ? "active" : ""}>Services</a>
+      <a href="/contact" class={currentPage === "contact" ? "active" : ""}>Contact</a>
     </div>
   </nav>
 </header>
