@@ -304,28 +304,35 @@ const chatbotLabel = "VIP Service Guide";
     text-decoration: underline;
   }
 
-  /* Mobile - Positionnement pour ne pas cacher le logo */
+  /* Mobile - Positionnement centré pour ne pas cacher le menu */
   @media (max-width: 768px) {
     .chatbot-container {
-      top: 70px;
-      right: 10px;
-      left: auto;
+      /* Centré horizontalement et verticalement */
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
       z-index: 9998;
     }
 
     .chatbot-window {
-      top: 120px;
-      right: 10px;
-      left: 10px;
-      width: auto;
-      max-width: none;
-      max-height: calc(100vh - 140px);
+      /* Fenêtre réduite et centrée */
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      max-width: 350px;
+      max-height: 60vh; /* Réduit pour ne pas bloquer l'écran */
       z-index: 9999;
+      position: fixed !important;
     }
 
     .chatbot-toggle {
       padding: 10px 16px;
       font-size: 0.85rem;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .chatbot-toggle svg {
@@ -334,7 +341,44 @@ const chatbotLabel = "VIP Service Guide";
     }
 
     .chatbot-messages {
-      max-height: 300px;
+      max-height: 250px; /* Réduit de 300px */
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+
+    /* S'assurer que le formulaire est accessible */
+    .chatbot-form {
+      touch-action: manipulation;
+    }
+
+    .chatbot-send {
+      min-width: 44px;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
+      padding: var(--spacing-xs);
+    }
+
+    .chatbot-input {
+      font-size: 14px !important; /* Réduit de 16px */
+      touch-action: manipulation;
+      padding: 10px var(--spacing-sm);
+      min-height: 40px;
+    }
+
+    .chatbot-input-container {
+      position: relative;
+      z-index: 1;
+      padding: var(--spacing-sm); /* Réduit */
+    }
+
+    /* Réduire la taille du header */
+    .chatbot-header {
+      padding: var(--spacing-sm);
+    }
+
+    .chatbot-title {
+      font-size: 0.9rem;
     }
   }
 
@@ -369,20 +413,26 @@ const chatbotLabel = "VIP Service Guide";
       const form = document.getElementById('chatbot-form');
       const input = document.getElementById('chatbot-input');
       const messages = document.getElementById('chatbot-messages');
+      const sendButton = form?.querySelector('.chatbot-send');
 
       if (!toggle || !window || !form || !input || !messages) {
         console.error('Chatbot elements not found');
         return;
       }
 
+      // Variable pour éviter la fermeture lors du tap sur le formulaire
+      let isFormInteraction = false;
+
       function openChatbot() {
         window.classList.add('open');
         window.setAttribute('aria-hidden', 'false');
         toggle.setAttribute('aria-expanded', 'true');
-        // Focus avec un petit délai pour éviter les problèmes sur mobile
-        setTimeout(() => {
-          input.focus();
-        }, 100);
+        // Sur mobile, ne pas focus immédiatement pour éviter le scroll
+        if (window.innerWidth > 768) {
+          setTimeout(() => {
+            input.focus();
+          }, 100);
+        }
       }
 
       function closeChatbot() {
@@ -390,6 +440,7 @@ const chatbotLabel = "VIP Service Guide";
         window.setAttribute('aria-hidden', 'true');
         toggle.setAttribute('aria-expanded', 'false');
         input.blur();
+        isFormInteraction = false;
       }
 
       function addMessage(text, isUser = false) {
@@ -431,44 +482,22 @@ const chatbotLabel = "VIP Service Guide";
         }
       }
 
-      // Event listeners
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (window.classList.contains('open')) {
-          closeChatbot();
-        } else {
-          openChatbot();
-        }
-      });
-
-      close?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeChatbot();
-      });
-
-      // Fermer en cliquant en dehors (sur mobile surtout)
-      document.addEventListener('click', (e) => {
-        if (window.classList.contains('open')) {
-          const isClickInside = window.contains(e.target) || toggle.contains(e.target);
-          if (!isClickInside) {
-            closeChatbot();
-          }
-        }
-      });
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
+      async function sendMessage() {
         const userMessage = input.value.trim();
         if (!userMessage) {
-          input.focus();
+          if (window.innerWidth > 768) {
+            input.focus();
+          }
           return;
         }
 
         addMessage(userMessage, true);
         input.value = '';
-        input.blur();
+        
+        // Sur mobile, ne pas blur immédiatement
+        if (window.innerWidth > 768) {
+          input.blur();
+        }
         
         const loadingMsg = addLoadingMessage();
 
@@ -514,10 +543,114 @@ const chatbotLabel = "VIP Service Guide";
           addMessage('Désolé, je ne peux pas répondre pour le moment. Contactez-moi directement sur WhatsApp au 06 16 55 28 11.');
         }
         
-        // Remettre le focus sur l'input après la réponse
+        // Remettre le focus sur l'input après la réponse (seulement sur desktop)
+        if (window.innerWidth > 768) {
+          setTimeout(() => {
+            input.focus();
+          }, 100);
+        }
+      }
+
+      // Event listeners
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (window.classList.contains('open')) {
+          closeChatbot();
+        } else {
+          openChatbot();
+        }
+      });
+
+      // Support touch pour mobile
+      toggle.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (window.classList.contains('open')) {
+          closeChatbot();
+        } else {
+          openChatbot();
+        }
+      });
+
+      close?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        closeChatbot();
+      });
+
+      close?.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        closeChatbot();
+      });
+
+      // Gestion du formulaire - Submit
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        isFormInteraction = true;
+        await sendMessage();
+        // Réinitialiser après un court délai
         setTimeout(() => {
-          input.focus();
-        }, 100);
+          isFormInteraction = false;
+        }, 300);
+      });
+
+      // Bouton send - Click et Touch
+      if (sendButton) {
+        sendButton.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          isFormInteraction = true;
+          await sendMessage();
+          setTimeout(() => {
+            isFormInteraction = false;
+          }, 300);
+        });
+
+        sendButton.addEventListener('touchend', async (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          isFormInteraction = true;
+          await sendMessage();
+          setTimeout(() => {
+            isFormInteraction = false;
+          }, 300);
+        });
+      }
+
+      // Input - Enter key
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          isFormInteraction = true;
+          sendMessage();
+          setTimeout(() => {
+            isFormInteraction = false;
+          }, 300);
+        }
+      });
+
+      // Fermer en cliquant en dehors (mais pas lors d'une interaction avec le formulaire)
+      document.addEventListener('click', (e) => {
+        if (window.classList.contains('open') && !isFormInteraction) {
+          const isClickInside = window.contains(e.target) || toggle.contains(e.target);
+          if (!isClickInside) {
+            closeChatbot();
+          }
+        }
+      });
+
+      // Support touch pour fermer en dehors
+      document.addEventListener('touchend', (e) => {
+        if (window.classList.contains('open') && !isFormInteraction) {
+          const isTouchInside = window.contains(e.target) || toggle.contains(e.target);
+          if (!isTouchInside) {
+            closeChatbot();
+          }
+        }
       });
 
       // Fermer avec Escape
@@ -529,6 +662,20 @@ const chatbotLabel = "VIP Service Guide";
 
       // Empêcher la fermeture lors du scroll sur mobile
       messages.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+      });
+
+      messages.addEventListener('touchmove', (e) => {
+        e.stopPropagation();
+      });
+
+      // Empêcher la propagation des événements du formulaire
+      form.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        isFormInteraction = true;
+      });
+
+      form.addEventListener('touchend', (e) => {
         e.stopPropagation();
       });
     }

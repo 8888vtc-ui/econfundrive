@@ -37,10 +37,7 @@ const { currentPage = "" } = Astro.props;
       <a href="/services" class={currentPage === "services" ? "active" : ""} aria-current={currentPage === "services" ? "page" : undefined}>Services</a>
       <a href="/a-propos" class={currentPage === "a-propos" ? "active" : ""} aria-current={currentPage === "a-propos" ? "page" : undefined}>Qui nous sommes</a>
       <a href="/contact" class={currentPage === "contact" ? "active" : ""} aria-current={currentPage === "contact" ? "page" : undefined}>Contact</a>
-      <a class="btn-primary-mobile" href="/reservation">Réserver maintenant</a>
     </nav>
-    
-    <a class="btn-primary" href="/reservation" aria-label="Réserver un trajet VTC">Réserver maintenant</a>
   </div>
 </header>
 
@@ -84,18 +81,32 @@ const { currentPage = "" } = Astro.props;
     // Toggle au clic sur le bouton
     navToggle.addEventListener('click', (e) => {
       e.stopPropagation();
+      e.preventDefault();
+      toggleMenu();
+    });
+    
+    // Support touch pour mobile
+    navToggle.addEventListener('touchend', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
       toggleMenu();
     });
     
     // Fermer au clic sur l'overlay
     if (menuOverlay) {
       menuOverlay.addEventListener('click', closeMenu);
+      // Support touch pour overlay
+      menuOverlay.addEventListener('touchend', closeMenu);
     }
     
     // Fermer au clic sur un lien
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
+        closeMenu();
+      });
+      // Support touch pour liens
+      link.addEventListener('touchend', () => {
         closeMenu();
       });
     });
