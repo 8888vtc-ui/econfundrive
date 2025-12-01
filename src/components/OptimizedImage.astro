@@ -9,9 +9,6 @@ interface Props {
   class?: string;
   style?: string;
   fetchpriority?: 'high' | 'low' | 'auto';
-  sizes?: string; // Pour srcset responsive
-  quality?: number; // Qualité WebP (1-100)
-  format?: 'webp' | 'avif' | 'png' | 'jpg';
 }
 
 const {
@@ -22,47 +19,27 @@ const {
   loading = 'lazy',
   class: className = '',
   style = '',
-  fetchpriority = 'auto',
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px',
-  quality = 85,
-  format = 'webp'
+  fetchpriority = 'auto'
 } = Astro.props;
-
-// Si src est une URL externe ou un chemin public, utiliser img classique
-// Les chemins publics commencent par /assets/
-const isPublicPath = src.startsWith('/') || src.startsWith('http');
 ---
 
-{isPublicPath ? (
-  <img
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    loading={loading}
-    decoding="async"
-    fetchpriority={fetchpriority}
-    class={className}
-    style={style}
-  />
-) : (
-  <img
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    loading={loading}
-    decoding="async"
-    fetchpriority={fetchpriority}
-    class={className}
-    style={style}
-  />
-)}
+<img
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  fetchpriority={fetchpriority}
+  class={className}
+  style={style}
+/>
 
 <style>
-  picture, img {
+  img {
     max-width: 100%;
     height: auto;
     display: block;
   }
 </style>
+

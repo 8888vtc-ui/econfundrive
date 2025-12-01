@@ -1,68 +1,399 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ReviewsSchema from '../components/ReviewsSchema.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { allReviews } from '../data/reviews.ts';
 
 const title = "Avis Clients | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const description = "Découvrez les avis de nos clients satisfaits. ECOFUNDRIVE : 5.0/5 avec 26 avis vérifiés. Chauffeur privé professionnel, ponctuel et attentionné sur la Côte d'Azur.";
 const keywords = [
-  'VTC',
-  "VTC Côte d'Azur",
-  'chauffeur privé',
-  'transfert aéroport',
-  'VTC Nice',
-  'transport premium'
+  'avis clients',
+  'témoignages VTC',
+  'chauffeur privé avis',
+  'VTC Côte d\'Azur avis',
+  'transfert aéroport Nice avis',
+  'ECOFUNDRIVE avis'
+];
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Avis Clients", url: "/avis-clients" }
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
+  keywords={keywords}
   currentPage="avis-clients"
-
   canonical="/avis-clients"
+  breadcrumbItems={breadcrumbItems}
+>
+  <ReviewsSchema reviews={allReviews} />
+  
   <main class="page-content">
     <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <Breadcrumb items={breadcrumbItems} />
       
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
+      <section class="reviews-hero">
+        <h1>Avis Clients ECOFUNDRIVE</h1>
+        <p class="lead">Découvrez ce que nos clients disent de nos services de chauffeur privé VTC sur la Côte d'Azur</p>
+        
+        <div class="rating-summary">
+          <div class="rating-display">
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-value">5.0 / 5.0</div>
+            <div class="rating-count">26 avis vérifiés</div>
+            <div class="rating-source">
+              <span>Source : </span>
+              <a href="https://www.trustindex.io/reviews/ecofundrive.com" target="_blank" rel="noopener noreferrer" class="trustindex-link">
+                Trustindex
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cta-review">
+          <p>Vous avez utilisé nos services ? Partagez votre expérience !</p>
+          <a href="https://www.trustindex.io/reviews/ecofundrive.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Laisser un avis sur Trustindex
+          </a>
+        </div>
+      </section>
+
+      <section class="reviews-grid">
+        <h2>Tous nos avis clients</h2>
+        <div class="reviews-list">
+          {allReviews.map((review) => (
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-author">
+                  <strong>{review.author}</strong>
+                </div>
+                <div class="review-date">
+                  {new Date(review.datePublished).toLocaleDateString('fr-FR', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </div>
+              </div>
+              <div class="review-rating">
+                {'★'.repeat(review.rating)}
+              </div>
+              <div class="review-body">
+                <p>{review.reviewBody}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="reviews-cta">
+        <h2>Pourquoi nos clients nous font confiance</h2>
+        <div class="trust-points">
+          <div class="trust-point">
+            <strong>Ponctualité</strong>
+            <p>Nous garantissons une arrivée à l'heure convenue, que ce soit pour un transfert aéroport ou un rendez-vous professionnel.</p>
+          </div>
+          <div class="trust-point">
+            <strong>Professionnalisme</strong>
+            <p>Nos chauffeurs sont expérimentés, courtois et connaissent parfaitement la région de la Côte d'Azur.</p>
+          </div>
+          <div class="trust-point">
+            <strong>Véhicules premium</strong>
+            <p>Une flotte de véhicules haut de gamme, propres et confortables pour tous vos déplacements.</p>
+          </div>
+          <div class="trust-point">
+            <strong>Service 24/7</strong>
+            <p>Disponible 24 heures sur 24, 7 jours sur 7, pour répondre à tous vos besoins de transport.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <h2>Réservez votre chauffeur privé</h2>
+        <p>Rejoignez nos clients satisfaits et réservez dès maintenant votre transfert VTC sur la Côte d'Azur.</p>
         <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
+          <a href="tel:+33616552811" class="btn btn-primary">Appeler : 06 16 55 28 11</a>
           <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </section>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Témoignages de nos clients</h2>
-      <p>ECOFUNDRIVE est fier de la confiance que nos clients nous accordent. Depuis plusieurs années, nous accompagnons des particuliers, des familles et des professionnels dans leurs déplacements sur la Côte d'Azur. La satisfaction de nos clients est notre priorité absolue, et nous nous efforçons de dépasser leurs attentes à chaque trajet.</p>
-    </section>
-    <section class="mb-xl">
-      <h2>Pourquoi nos clients nous font confiance</h2>
-      <p>Nos clients apprécient notre ponctualité, notre professionnalisme et notre connaissance approfondie de la région. Que ce soit pour un transfert aéroport, un événement professionnel ou une sortie touristique, nous garantissons un service de qualité supérieure.</p>
-    </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
-    </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
   </main>
 </BaseLayout>
 
 <style>
   .page-content {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl, 3rem) 0;
+    min-height: 60vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg, 1.5rem);
+  }
+
+  .reviews-hero {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl, 3rem);
+    padding: var(--spacing-2xl, 2rem) 0;
+  }
+
+  .reviews-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md, 1rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary, #666);
+    margin-bottom: var(--spacing-xl, 2rem);
+  }
+
+  .rating-summary {
+    margin: var(--spacing-xl, 2rem) 0;
+  }
+
+  .rating-display {
+    display: inline-block;
+    padding: var(--spacing-lg, 1.5rem);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .rating-stars {
+    font-size: 2rem;
+    color: #ffc107;
+    letter-spacing: 0.2rem;
+    margin-bottom: var(--spacing-sm, 0.5rem);
+  }
+
+  .rating-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-primary, #1a1a1a);
+    margin-bottom: var(--spacing-xs, 0.25rem);
+  }
+
+  .rating-count {
+    font-size: 1rem;
+    color: var(--text-secondary, #666);
+    margin-bottom: var(--spacing-sm, 0.5rem);
+  }
+
+  .rating-source {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #666);
+  }
+
+  .trustindex-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .trustindex-link:hover {
+    text-decoration: underline;
+  }
+
+  .cta-review {
+    margin-top: var(--spacing-xl, 2rem);
+    padding: var(--spacing-lg, 1.5rem);
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .cta-review p {
+    margin-bottom: var(--spacing-md, 1rem);
+    color: var(--text-secondary, #666);
+  }
+
+  .reviews-grid {
+    margin-bottom: var(--spacing-3xl, 3rem);
+  }
+
+  .reviews-grid h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl, 2rem);
+    text-align: center;
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg, 1.5rem);
+    margin-bottom: var(--spacing-xl, 2rem);
+  }
+
+  .review-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: var(--spacing-lg, 1.5rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm, 0.5rem);
+    flex-wrap: wrap;
+    gap: var(--spacing-xs, 0.25rem);
+  }
+
+  .review-author strong {
+    color: var(--text-primary, #1a1a1a);
+    font-size: 1.1rem;
+  }
+
+  .review-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #666);
+  }
+
+  .review-rating {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md, 1rem);
+  }
+
+  .review-body {
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+  }
+
+  .review-body p {
+    margin: 0;
+  }
+
+  .reviews-cta {
+    margin-bottom: var(--spacing-3xl, 3rem);
+    padding: var(--spacing-xl, 2rem);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+  }
+
+  .reviews-cta h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl, 2rem);
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .trust-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg, 1.5rem);
+  }
+
+  .trust-point {
+    background: #fff;
+    padding: var(--spacing-lg, 1.5rem);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .trust-point strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-primary, #1a1a1a);
+    margin-bottom: var(--spacing-sm, 0.5rem);
+  }
+
+  .trust-point p {
+    color: var(--text-secondary, #666);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .contact-section {
+    text-align: center;
+    padding: var(--spacing-xl, 2rem);
+    background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+    color: #fff;
+    border-radius: 12px;
+  }
+
+  .contact-section h2 {
+    color: #fff;
+    margin-bottom: var(--spacing-md, 1rem);
+  }
+
+  .contact-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg, 1.5rem);
   }
 
   .contact-buttons {
     display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: var(--spacing-md, 1rem);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: #ffc107;
+    color: #1a1a1a;
+  }
+
+  .btn-primary:hover {
+    background: #ffb300;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .reviews-hero h1 {
+      font-size: 2rem;
+    }
+
+    .reviews-list {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-points {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
   }
 </style>

@@ -1,5 +1,7 @@
-﻿---
+﻿```
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "Contact | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
 const description = "Contactez ECOFUNDRIVE pour réserver votre chauffeur privé VTC sur la Côte d'Azur. Service professionnel 24h/24. Téléphone, WhatsApp, email.";
@@ -23,52 +25,70 @@ const keywords = [
     { name: "Contact", url: "/contact" }
   ]}
 >
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Contactez-nous</h2>
-        <p>Pour réserver votre chauffeur privé VTC ou pour toute question :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:8888VTC@gmail.com" class="btn btn-outline">Email</a>
-        </div>
-      </section>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Contactez ECOFUNDRIVE</h1>
+      <p class="lead text-center mb-xl">Disponible 24h/24 et 7j/7 pour tous vos déplacements sur la Côte d'Azur</p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Comment nous contacter</h2>
-      <p>Plusieurs moyens s'offrent à vous pour nous joindre. Notre équipe est disponible pour répondre à toutes vos questions et vous aider à organiser votre transport sur la Côte d'Azur.</p>
-    </section>
-    <section class="mb-xl">
-      <h2>Nos horaires de disponibilité</h2>
-      <p>ECOFUNDRIVE est disponible 24h/24 et 7j/7 pour répondre à vos besoins. Que votre vol arrive tard dans la nuit ou que vous ayez besoin d'un service tôt le matin, nous sommes là pour vous.</p>
-    </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
-    </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
+    <SectionImageText
+      title="Réservez votre chauffeur"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Chauffeur professionnel ECOFUNDRIVE"
+      imageSide="right"
+      ctaText="Appeler maintenant"
+      ctaLink="tel:+33616552811"
+    >
+      <p>
+        Pour réserver votre chauffeur privé VTC, plusieurs options s'offrent à vous. Contactez-nous par téléphone au <strong>06 16 55 28 11</strong>, via WhatsApp, ou par email à <strong>8888VTC@gmail.com</strong>.
+      </p>
+      <p>
+        Notre équipe est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions et organiser votre transport sur la Côte d'Azur.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Service disponible 24h/24"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Service VTC disponible jour et nuit"
+      imageSide="left"
+      ctaText="WhatsApp"
+      ctaLink="https://wa.me/33616552811"
+    >
+      <p>
+        Que votre vol arrive tard dans la nuit ou que vous ayez besoin d'un service tôt le matin, ECOFUNDRIVE est là pour vous. Nous assurons des transferts à toute heure, 7 jours sur 7.
+      </p>
+      <ul>
+        <li>Disponibilité 24h/24 et 7j/7</li>
+        <li>Réponse rapide à vos demandes</li>
+        <li>Confirmation immédiate de votre réservation</li>
+        <li>Suivi en temps réel de votre chauffeur</li>
+      </ul>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Zones desservies"
+      image="/assets/img/destinations/destination-nice.webp"
+      alt="Côte d'Azur - Zones desservies"
+      imageSide="right"
+      ctaText="Voir nos destinations"
+      ctaLink="/services"
+    >
+      <p>
+        ECOFUNDRIVE dessert l'ensemble de la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Antibes, Grasse, Menton, et bien d'autres destinations.
+      </p>
+      <p>
+        Nous assurons également les transferts vers les aéroports (Nice Côte d'Azur, Cannes Mandelieu), les gares, et les hôtels de la région.
+      </p>
+    </SectionImageText>
   </main>
 </BaseLayout>
 
 <style>
-  .page-content {
-    padding: var(--spacing-3xl) 0;
-  }
-
   .contact-buttons {
     display: flex;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
   }
 </style>
+```

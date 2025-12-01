@@ -4,6 +4,8 @@ import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Chatbot from '../components/Chatbot.astro';
+import ReviewsDisplay from '../components/ReviewsDisplay.astro';
+import { allReviews, aggregateRating } from '../data/reviews.ts';
 
 interface Props {
   title: string;
@@ -116,6 +118,9 @@ if (currentLang === 'fr') {
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     
+    <!-- OVERRIDE CSS - FOND BLANC -->
+    <link rel="stylesheet" href="/assets/css/white-override.css" />
+    
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="dns-prefetch" href="https://wa.me" />
@@ -170,11 +175,25 @@ if (currentLang === 'fr') {
             "serviceType": ["VTC", "Transfert aéroport", "Transport business", "Mise à disposition avec chauffeur"],
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "26",
-              "bestRating": "5",
-              "worstRating": "1"
+              "ratingValue": aggregateRating.ratingValue,
+              "reviewCount": aggregateRating.reviewCount,
+              "bestRating": aggregateRating.bestRating,
+              "worstRating": aggregateRating.worstRating
             },
+            "review": allReviews.map(review => ({
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": review.author
+              },
+              "datePublished": review.datePublished,
+              "reviewBody": review.reviewBody,
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": review.rating.toString(),
+                "bestRating": "5"
+              }
+            })),
             "sameAs": [
               "https://www.trustindex.io/reviews/ecofundrive.com",
               "https://www.facebook.com/ecofundrive/"
@@ -242,7 +261,7 @@ if (currentLang === 'fr') {
     <script src="/assets/js/main.js" defer></script>
     <script src="/assets/js/cookies.js" defer></script>
   </head>
-  <body data-page={currentPage}>
+  <body data-page={currentPage} style="background-color: #ffffff !important; color: #1a1a1a !important;">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <Header currentPage={currentPage} />
     {breadcrumbItems && breadcrumbItems.length > 0 && (
@@ -251,6 +270,7 @@ if (currentLang === 'fr') {
     <main id="main-content" role="main">
       <slot />
     </main>
+    {currentPage !== "avis-clients" && <ReviewsDisplay limit={6} />}
     <Footer />
     <WhatsAppButton />
     <Chatbot />
