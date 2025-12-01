@@ -80,26 +80,7 @@ p {
 }
 
 /* --- HEADER & NAVIGATION --- */
-.site-header {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-}
-
-.nav-links a {
-    color: var(--black-ink) !important;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: all 0.3s var(--ease-premium);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--gold-primary) !important;
-}
+/* SUPPRIMÉ - Géré uniquement dans Header.astro */
 
 /* --- BOUTONS PREMIUM --- */
 .btn,
@@ -227,97 +208,5 @@ img {
         text-align: center;
     }
 
-    /* MENU MOBILE FIX */
-    .nav-toggle {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 44px;
-        height: 44px;
-        background: transparent !important;
-        border: none !important;
-        cursor: pointer;
-        z-index: 1001;
-        padding: 0;
-    }
-
-    .hamburger-icon {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        width: 24px;
-    }
-
-    .hamburger-icon span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--black-ink) !important;
-        border-radius: 2px;
-        transition: all 0.3s var(--ease-premium);
-    }
-
-    .nav-toggle.active .hamburger-icon span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-        background-color: var(--gold-primary) !important;
-    }
-
-    .nav-toggle.active .hamburger-icon span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle.active .hamburger-icon span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-        background-color: var(--gold-primary) !important;
-    }
-
-    .nav-links {
-        position: fixed !important;
-        top: 0;
-        right: -100%;
-        width: 85% !important;
-        max-width: 300px;
-        height: 100vh !important;
-        background: var(--white-pure) !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 80px 30px 30px !important;
-        gap: 20px !important;
-        transition: right 0.4s var(--ease-premium) !important;
-        z-index: 1000 !important;
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1) !important;
-        display: flex !important;
-    }
-
-    .nav-links.open {
-        right: 0 !important;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem !important;
-        width: 100%;
-        padding: 15px 0 !important;
-        border-bottom: 1px solid var(--gray-light) !important;
-        color: var(--black-ink) !important;
-    }
-
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(3px);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .menu-overlay.active {
-        display: block !important;
-        opacity: 1 !important;
-    }
+    /* MENU MOBILE - SUPPRIMÉ - Géré uniquement dans Header.astro */
 }

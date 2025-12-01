@@ -2,42 +2,7 @@
    COMPONENTS CSS - Header, Footer, Navigation, Cards, Buttons
    ============================================ */
 
-/* Header */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-sticky);
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-md) 0;
-  position: relative;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-}
-
-.nav-brand-link {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  text-decoration: none;
-  color: var(--color-white);
-}
-
-.nav-brand-link:hover {
-  color: var(--color-white);
-}
-
-/* Menu Desktop - SUPPRIMÉ - Utilise maintenant nav-links-desktop dans Header.astro */
+/* Header - SUPPRIMÉ - Géré uniquement dans Header.astro */
 
 /* Bouton CTA Desktop */
 .btn-primary {
@@ -64,123 +29,7 @@
   color: var(--color-primary-black);
 }
 
-/* Menu Mobile - Hamburger */
-.nav-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: var(--z-fixed);
-  position: relative;
-}
-
-@media (min-width: 769px) {
-  .nav-toggle {
-    display: none;
-  }
-}
-
-.hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 24px;
-  height: 18px;
-}
-
-.hamburger-icon span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--color-white);
-  border-radius: 2px;
-  transition: all var(--transition-normal);
-}
-
-.nav-toggle.active .hamburger-icon span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.nav-toggle.active .hamburger-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active .hamburger-icon span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Menu Mobile - Slide-out */
-.menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: var(--z-modal);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-}
-
-.menu-overlay.active {
-  display: block;
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--color-primary-black);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--spacing-3xl) var(--spacing-xl);
-    gap: var(--spacing-lg);
-    transition: right var(--transition-normal);
-    z-index: calc(var(--z-modal) + 1);
-    overflow-y: auto;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
-    left: auto;
-    transform: none;
-  }
-
-  .nav-links.open {
-    right: 0;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: var(--spacing-sm) 0;
-    font-size: var(--font-size-lg);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  }
-
-  .nav-links a.active::after {
-    display: none;
-  }
-
-  .btn-primary-mobile {
-    display: block;
-    width: 100%;
-    padding: var(--spacing-md);
-    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-    color: var(--color-primary-black);
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    text-align: center;
-    margin-top: var(--spacing-lg);
-  }
-}
+/* Menu Mobile - SUPPRIMÉ - Géré uniquement dans Header.astro */
 
 /* Footer */
 .site-footer {
@@ -205,7 +54,7 @@
 
 .footer-section p,
 .footer-section a {
-  color: var(--color-gray-light);
+  color: #ffffff !important;
   font-size: var(--font-size-sm);
   line-height: var(--line-height-relaxed);
 }
@@ -218,7 +67,7 @@
   text-align: center;
   padding-top: var(--spacing-xl);
   border-top: 1px solid rgba(212, 175, 55, 0.1);
-  color: var(--color-gray);
+  color: #ffffff !important;
   font-size: var(--font-size-sm);
 }
 
@@ -296,7 +145,7 @@
   font-size: var(--font-size-lg);
   max-width: 800px;
   margin: 0 auto var(--spacing-xl);
-  color: var(--color-gray-light);
+  color: #ffffff !important;
 }
 
 @media (max-width: 768px) {
@@ -329,14 +178,14 @@
 /* Footer */
 .site-footer {
   background: rgba(10, 10, 10, 0.98);
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
   margin-top: var(--spacing-3xl);
   border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .site-footer * {
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
 }
 
 .site-footer a {

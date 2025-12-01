@@ -118,24 +118,21 @@ if (currentLang === 'fr') {
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     
-    <!-- PREMIUM THEME VTC -->
-    <link rel="stylesheet" href="/assets/css/premium-theme.css" />
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
-    <link rel="dns-prefetch" href="https://wa.me" />
-    
-    <!-- Styles CSS modulaires - Critical CSS inline for above-fold content -->
-    <link rel="stylesheet" href="/assets/css/base.css" />
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="/assets/css/simple.css" />
+    <!-- CSS Menu Navigation (externe) -->
+    <link rel="stylesheet" href="/assets/css/menu.css" />
+    <!-- CSS Composants (externe) -->
     <link rel="stylesheet" href="/assets/css/components.css" />
-    <link rel="stylesheet" href="/assets/css/utilities.css" />
-    <link rel="stylesheet" href="/assets/css/performance.css" />
-    <link rel="stylesheet" href="/assets/css/accessibility.css" />
+    <!-- CSS Chatbot (externe) -->
+    <link rel="stylesheet" href="/assets/css/chatbot.css" />
+    <!-- CSS Reviews (externe) -->
+    <link rel="stylesheet" href="/assets/css/reviews.css" />
+    <!-- CSS Text Colors (visibilité texte) -->
     <link rel="stylesheet" href="/assets/css/text-colors.css" />
     
-    <!-- Defer non-critical JavaScript -->
+    <!-- JavaScript externe - Chargement différé pour performance -->
+    <script src="/assets/js/menu.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
     
     <!-- Schema.org JSON-LD -->

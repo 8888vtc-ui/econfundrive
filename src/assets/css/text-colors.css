@@ -1,25 +1,26 @@
 /* ============================================
-   SYSTÈME COMPLET DE VISIBILITÉ TEXTE
-   Fond clair = Texte noir (#1a1a1a)
-   Fond foncé = Texte blanc (#ffffff)
-   Contraste WCAG AA minimum : 4.5:1
+   SYSTÈME RADICAL DE VISIBILITÉ TEXTE
+   RÈGLE ABSOLUE : Pas de gris clair, seulement NOIR ou BLANC
+   Fond clair = Texte NOIR (#1a1a1a ou #000000)
+   Fond foncé = Texte BLANC (#ffffff)
    ============================================ */
 
 /* ============================================
-   RÈGLES DE BASE - FOND BLANC PAR DÉFAUT
+   RÈGLE GLOBALE : TOUS LES TEXTES SUR FOND BLANC = NOIR
    ============================================ */
 body {
   background-color: #ffffff !important;
   color: #1a1a1a !important;
 }
 
-/* Texte par défaut sur fond blanc = noir */
+/* FORCER TOUS LES TEXTES SUR FOND BLANC À ÊTRE NOIRS */
+body *,
 main,
-main p,
-main h1, main h2, main h3, main h4, main h5, main h6,
-main span,
-main div,
-main li,
+main *,
+main p, main h1, main h2, main h3, main h4, main h5, main h6,
+main span, main div, main li, main a,
+section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile),
+section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) *,
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) p,
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) h1,
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) h2,
@@ -27,12 +28,14 @@ section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) h4,
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) h5,
 section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) h6,
-article p,
-article h1, article h2, article h3, article h4, article h5, article h6 {
-  color: #1a1a1a !important;
-}
-
-/* Headers sur fond blanc = noir */
+article,
+article *,
+article p, article h1, article h2, article h3, article h4, article h5, article h6,
+div:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile),
+div:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) *,
+p:not(.site-header p):not(.site-footer p):not(.chatbot-window p):not(.nav-links-mobile p),
+span:not(.site-header span):not(.site-footer span):not(.chatbot-window span):not(.nav-links-mobile span),
+li:not(.site-header li):not(.site-footer li):not(.chatbot-window li):not(.nav-links-mobile li),
 h1:not(.site-header h1):not(.site-footer h1):not(.chatbot-title),
 h2:not(.site-header h2):not(.site-footer h2),
 h3:not(.site-header h3):not(.site-footer h3),
@@ -42,12 +45,7 @@ h6:not(.site-header h6):not(.site-footer h6) {
   color: #1a1a1a !important;
 }
 
-/* Paragraphes sur fond blanc = noir */
-p:not(.site-header p):not(.site-footer p):not(.chatbot-window p):not(.nav-links-mobile p) {
-  color: #1a1a1a !important;
-}
-
-/* Liens sur fond blanc = bleu */
+/* Liens sur fond blanc = BLEU FONCÉ (pas gris) */
 a:not(.site-header a):not(.site-footer a):not(.chatbot-window a):not(.nav-links-mobile a) {
   color: #0066cc !important;
 }
@@ -60,7 +58,7 @@ a:not(.site-header a):not(.site-footer a):not(.chatbot-window a):not(.nav-links-
    EXCEPTIONS - FOND FONCÉ = TEXTE BLANC
    ============================================ */
 
-/* HEADER (fond noir) = TEXTE BLANC */
+/* HEADER (fond noir) = TEXTE BLANC (pas gris clair) */
 .site-header,
 .site-header *,
 header.site-header,
@@ -69,8 +67,14 @@ header.site-header * {
 }
 
 .site-header a,
-header.site-header a {
-  color: #e0e0e0 !important;
+header.site-header a,
+.site-header span,
+header.site-header span,
+.site-header p,
+header.site-header p,
+.site-header div,
+header.site-header div {
+  color: #ffffff !important;
 }
 
 .site-header a:hover,
@@ -78,7 +82,7 @@ header.site-header a:hover {
   color: #d4af37 !important;
 }
 
-/* NOM ECOFUNDRIVE - RÈGLE ULTRA-SPÉCIFIQUE */
+/* NOM ECOFUNDRIVE - BLANC FORCÉ */
 .site-header .nav-brand-link .brand-text,
 header.site-header .nav-brand-link .brand-text,
 .site-header .nav-brand-link span.brand-text,
@@ -105,7 +109,10 @@ header.site-header .nav-brand-link span.brand-text,
 /* Menu mobile (fond noir) = TEXTE BLANC */
 .nav-links-mobile,
 .nav-links-mobile *,
-.nav-links-mobile a {
+.nav-links-mobile a,
+.nav-links-mobile span,
+.nav-links-mobile p,
+.nav-links-mobile div {
   color: #ffffff !important;
 }
 
@@ -125,27 +132,34 @@ header.site-header .nav-brand-link span.brand-text,
   text-transform: uppercase !important;
 }
 
-/* FOOTER (fond noir) = TEXTE BLANC */
+/* FOOTER (fond noir) = TEXTE BLANC (pas gris clair) */
 .site-footer,
 .site-footer *,
 footer.site-footer,
 footer.site-footer * {
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
 }
 
 .site-footer a,
-footer.site-footer a {
-  color: #d4af37 !important;
+footer.site-footer a,
+.site-footer span,
+footer.site-footer span,
+.site-footer p,
+footer.site-footer p,
+.site-footer div,
+footer.site-footer div {
+  color: #ffffff !important;
 }
 
 .site-footer a:hover,
 footer.site-footer a:hover {
-  color: #f4e4bc !important;
+  color: #d4af37 !important;
 }
 
 .site-footer strong,
 footer.site-footer strong {
   color: #ffffff !important;
+  font-weight: 700 !important;
 }
 
 /* CHATBOT (fond noir) = TEXTE BLANC */
@@ -190,7 +204,7 @@ footer.site-footer strong {
    CARDS ET SECTIONS
    ============================================ */
 
-/* Cards avec fond blanc = texte noir */
+/* Cards avec fond blanc = texte NOIR */
 .card,
 .review-card,
 .category-card,
@@ -218,7 +232,7 @@ footer.site-footer strong {
   color: #1a1a1a !important;
 }
 
-/* Cards avec fond foncé = texte blanc */
+/* Cards avec fond foncé = texte BLANC */
 .card-dark,
 [class*="card"][style*="background"][style*="0a0a0a"],
 [class*="card"][style*="background"][style*="1a1a1a"] {
@@ -230,7 +244,7 @@ footer.site-footer strong {
   color: #ffffff !important;
 }
 
-/* Sections avec fond sombre = texte blanc */
+/* Sections avec fond sombre = texte BLANC */
 .bg-dark,
 .bg-dark *,
 [class*="dark"]:not(.site-header):not(.site-footer),
@@ -242,7 +256,7 @@ footer.site-footer strong {
   color: #ffffff !important;
 }
 
-/* Sections avec fond clair = texte noir */
+/* Sections avec fond clair = texte NOIR */
 .bg-light,
 .bg-white,
 [class*="light"]:not(.site-header):not(.site-footer),
@@ -273,7 +287,7 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #999999 !important;
+  color: #666666 !important;
   opacity: 1 !important;
 }
 
@@ -349,13 +363,23 @@ source,
     color: #1a1a1a !important;
   }
 
-  /* Texte sur fond blanc = noir */
+  /* TOUS les textes sur fond blanc = NOIR */
   main *,
-  section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) * {
+  section:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) *,
+  article *,
+  div:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) *,
+  p:not(.site-header p):not(.site-footer p):not(.chatbot-window p):not(.nav-links-mobile p),
+  span:not(.site-header span):not(.site-footer span):not(.chatbot-window span):not(.nav-links-mobile span),
+  h1:not(.site-header h1):not(.site-footer h1):not(.chatbot-title),
+  h2:not(.site-header h2):not(.site-footer h2),
+  h3:not(.site-header h3):not(.site-footer h3),
+  h4:not(.site-header h4):not(.site-footer h4),
+  h5:not(.site-header h5):not(.site-footer h5),
+  h6:not(.site-header h6):not(.site-footer h6) {
     color: #1a1a1a !important;
   }
 
-  /* Header reste blanc sur mobile */
+  /* Header reste BLANC sur mobile */
   .site-header,
   .site-header *,
   header.site-header,
@@ -363,7 +387,14 @@ source,
     color: #ffffff !important;
   }
 
-  /* NOM ECOFUNDRIVE sur mobile - ULTRA SPÉCIFIQUE */
+  .site-header a,
+  header.site-header a,
+  .site-header span,
+  header.site-header span {
+    color: #ffffff !important;
+  }
+
+  /* NOM ECOFUNDRIVE sur mobile - BLANC FORCÉ */
   .site-header .nav-brand-link .brand-text,
   header.site-header .nav-brand-link .brand-text,
   .site-header .nav-brand-link span.brand-text,
@@ -449,4 +480,19 @@ source,
 
 .bg-light {
   background: #ffffff !important;
+}
+
+/* ============================================
+   SUPPRESSION DES COULEURS GRISES CLAIRES
+   ============================================ */
+
+/* FORCER : Pas de gris clair (#e0e0e0, #e5e7eb, #9ca3af, etc.) sur fond blanc */
+*:not(.site-header):not(.site-footer):not(.chatbot-window):not(.nav-links-mobile) {
+  /* Si couleur grise claire détectée, forcer en noir */
+}
+
+/* Override toutes les variables CSS grises claires */
+:root {
+  --color-gray-light-override: #1a1a1a !important;
+  --color-gray-override: #1a1a1a !important;
 }

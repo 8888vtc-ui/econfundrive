@@ -1,0 +1,18 @@
+# robots.txt pour ECOFUNDRIVE
+# https://www.ecofundrive.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ecofundrive.com/sitemap.xml
+
+# Disallow admin et fichiers privés
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /_astro/
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+

@@ -18,51 +18,16 @@ const {
 } = Astro.props;
 ---
 
-<div class="category-card" style="background: #f9f9f9; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-  <div class="card-image-wrapper" style="position: relative; width: 100%; height: 250px; overflow: hidden;">
+<div class="category-card">
+  <div class="card-image-wrapper">
     <img 
       src={image} 
       alt={alt}
-      style="width: 100%; height: 100%; object-fit: cover; display: block !important; visibility: visible !important; opacity: 1 !important;"
     />
   </div>
-  <div class="card-content" style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
-    <h3 class="card-title" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #1a1a1a;">{title}</h3>
-    <p class="card-description" style="color: #4a4a4a; margin-bottom: 1rem; flex: 1; line-height: 1.6;">{description}</p>
-    <a href={link} class="card-link" style="color: #d4af37; text-decoration: none; font-weight: 600; align-self: flex-start;">{linkText}</a>
+  <div class="card-content">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-description">{description}</p>
+    <a href={link} class="card-link">{linkText}</a>
   </div>
 </div>
-
-<style>
-  .category-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .category-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-  }
-
-  .card-link:hover {
-    color: #b8941f !important;
-    text-decoration: underline !important;
-  }
-
-  .card-image-wrapper img {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  @media (max-width: 768px) {
-    .card-image-wrapper img {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      height: 100% !important;
-    }
-  }
-</style>

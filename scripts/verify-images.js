@@ -1,81 +1,127 @@
 /**
- * Script pour vérifier l'existence des images
+ * Script pour vérifier toutes les images référencées dans le code
  */
 
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
 
-const imagesToCheck = [
-  // Fond d'écran
-  'public/assets/img/hero/chauffeur-luxe-background.webp',
-  // Hero images
-  'public/assets/img/hero/hero-aeroport-nice.webp',
-  'public/assets/img/hero/hero-business.webp',
-  'public/assets/img/hero/hero-mariage.webp',
-  // Destinations
-  'public/assets/img/destinations/destination-nice.webp',
-  'public/assets/img/destinations/destination-cannes.webp',
-  'public/assets/img/destinations/destination-monaco.webp',
-  'public/assets/img/destinations/destination-saint-tropez.webp',
-  'public/assets/img/destinations/nice-vieux-nice.webp',
-  'public/assets/img/destinations/cannes-palais-festivals.webp',
-  'public/assets/img/destinations/monaco-casino.webp',
-  'public/assets/img/destinations/saint-tropez-port.webp',
-  // Services
-  'public/assets/img/services/service-aeroport.webp',
-  'public/assets/img/services/service-business.webp',
-  'public/assets/img/services/service-mariage.webp',
-  'public/assets/img/services/service-evenements.webp',
-  'public/assets/img/services/service-mise-disposition.webp',
-  // Guides
-  'public/assets/img/guides/route-panoramique-nice-eze-monaco.webp',
-  'public/assets/img/guides/villages-perches.webp',
-  'public/assets/img/guides/grand-prix-monaco.webp',
-  // À propos
-  'public/assets/img/about/chauffeur-professionnel.webp',
-  'public/assets/img/about/vehicule-premium.webp'
-];
+const publicDir = path.join(__dirname, '../public');
+const srcDir = path.join(__dirname, '../src');
 
-console.log('🔍 Vérification des images...\n');
-const missing = [];
-const existing = [];
+// Extraire tous les chemins d'images du code
+function extractImagePaths(content) {
+  const patterns = [
+    /src=["']([^"']+\.(jpg|jpeg|png|webp|avif|svg))["']/gi,
+    /image=["']([^"']+\.(jpg|jpeg|png|webp|avif|svg))["']/gi,
+    /href=["']([^"']+\.(jpg|jpeg|png|webp|avif|svg))["']/gi,
+    /url\(["']?([^"')]+\.(jpg|jpeg|png|webp|avif|svg))["']?\)/gi,
+    /background-image:\s*url\(["']?([^"')]+\.(jpg|jpeg|png|webp|avif|svg))["']?\)/gi,
+  ];
 
-imagesToCheck.forEach(img => {
-  const fullPath = path.join(process.cwd(), img);
-  if (fs.existsSync(fullPath)) {
-    const stats = fs.statSync(fullPath);
-    const sizeMB = (stats.size / 1024 / 1024).toFixed(2);
-    existing.push({ img, size: sizeMB });
-    console.log(`✅ ${img} (${sizeMB} MB)`);
-  } else {
-    missing.push(img);
-    console.log(`❌ ${img} - MANQUANTE`);
+  const images = new Set();
+  
+  patterns.forEach(pattern => {
+    let match;
+    while ((match = pattern.exec(content)) !== null) {
+      let imgPath = match[1];
+      // Nettoyer le chemin
+      if (imgPath.startsWith('/')) {
+        imgPath = imgPath.substring(1);
+      }
+      if (imgPath.startsWith('assets/') || imgPath.startsWith('/assets/')) {
+        images.add(imgPath.replace(/^\/+/, ''));
+      }
+    }
+  });
+
+  return Array.from(images);
+}
+
+// Vérifier si un fichier existe
+function fileExists(filePath) {
+  const fullPath = path.join(publicDir, filePath);
+  return fs.existsSync(fullPath);
+}
+
+// Traiter tous les fichiers .astro
+const astroFiles = glob.sync('**/*.astro', { 
+  cwd: srcDir,
+  absolute: true 
+});
+
+console.log(`\n🔍 Vérification des images dans ${astroFiles.length} fichiers...\n`);
+
+const allImages = new Set();
+const missingImages = [];
+const existingImages = [];
+
+astroFiles.forEach(file => {
+  try {
+    const content = fs.readFileSync(file, 'utf8');
+    const images = extractImagePaths(content);
+    images.forEach(img => allImages.add(img));
+  } catch (error) {
+    console.error(`Erreur lecture ${file}:`, error.message);
   }
 });
 
-console.log(`\n📊 Résultat:`);
-console.log(`  ✅ ${existing.length} existantes`);
-console.log(`  ❌ ${missing.length} manquantes`);
+console.log(`📸 ${allImages.size} images uniques trouvées dans le code\n`);
 
-if (missing.length > 0) {
-  console.log(`\n⚠️  Images manquantes à générer ou vérifier:`);
-  missing.forEach(img => console.log(`  - ${img}`));
+// Vérifier chaque image
+allImages.forEach(imgPath => {
+  if (fileExists(imgPath)) {
+    existingImages.push(imgPath);
+  } else {
+    missingImages.push(imgPath);
+  }
+});
+
+// Afficher les résultats
+console.log(`✅ Images existantes: ${existingImages.length}`);
+console.log(`❌ Images manquantes: ${missingImages.length}\n`);
+
+if (missingImages.length > 0) {
+  console.log('❌ IMAGES MANQUANTES:\n');
+  missingImages.forEach(img => {
+    console.log(`   - ${img}`);
+  });
+  console.log('');
 }
 
-// Vérifier aussi les chemins dans le CSS
-console.log(`\n🔍 Vérification des chemins dans le CSS...`);
-const cssPath = path.join(process.cwd(), 'src/assets/css/luxe-chauffeur.css');
-if (fs.existsSync(cssPath)) {
-  const cssContent = fs.readFileSync(cssPath, 'utf8');
-  const urlMatches = cssContent.match(/url\(['"]?([^'")]+)['"]?\)/g);
-  if (urlMatches) {
-    console.log(`  Chemins trouvés dans CSS:`);
-    urlMatches.forEach(match => {
-      const url = match.replace(/url\(['"]?/, '').replace(/['"]?\)/, '');
-      console.log(`    - ${url}`);
-    });
+// Vérifier aussi les images dans le dossier public qui ne sont pas utilisées
+const allPublicImages = glob.sync('**/*.{jpg,jpeg,png,webp,avif,svg}', {
+  cwd: publicDir,
+  absolute: false
+});
+
+const unusedImages = allPublicImages.filter(img => {
+  const normalized = img.replace(/\\/g, '/');
+  return !allImages.has(normalized);
+});
+
+if (unusedImages.length > 0 && unusedImages.length < 50) {
+  console.log(`\n📦 Images non utilisées (${unusedImages.length}):\n`);
+  unusedImages.slice(0, 20).forEach(img => {
+    console.log(`   - ${img}`);
+  });
+  if (unusedImages.length > 20) {
+    console.log(`   ... et ${unusedImages.length - 20} autres`);
   }
 }
 
-process.exit(missing.length > 0 ? 1 : 0);
+// Résumé
+console.log(`\n📊 RÉSUMÉ:`);
+console.log(`   Total images dans le code: ${allImages.size}`);
+console.log(`   Images existantes: ${existingImages.length} ✅`);
+console.log(`   Images manquantes: ${missingImages.length} ${missingImages.length > 0 ? '❌' : '✅'}`);
+console.log(`   Images dans public/: ${allPublicImages.length}`);
+console.log(`   Images non utilisées: ${unusedImages.length}\n`);
 
+if (missingImages.length === 0) {
+  console.log('✅ Toutes les images référencées existent !\n');
+  process.exit(0);
+} else {
+  console.log('❌ Certaines images sont manquantes. Vérifiez les chemins ci-dessus.\n');
+  process.exit(1);
+}

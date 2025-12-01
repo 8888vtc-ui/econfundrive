@@ -20,26 +20,22 @@ const {
 } = Astro.props;
 ---
 
-<section class="section-image-text" id={id} style="padding: 2rem 0; background: white;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-    <div style={`display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; ${imageSide === 'right' ? 'direction: rtl;' : ''}`}>
-      <div style={imageSide === 'right' ? 'direction: ltr;' : ''}>
+<section class={`section-image-text ${imageSide === 'right' ? 'image-right' : ''}`} id={id}>
+  <div>
+    <div>
+      <div>
         <img 
           src={image} 
           alt={alt}
-          style="width: 100%; height: auto; display: block !important; visibility: visible !important; opacity: 1 !important; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);"
         />
       </div>
-      <div style={imageSide === 'right' ? 'direction: ltr;' : ''}>
-        <h2 style="color: #d4af37; margin-bottom: 1.5rem; font-size: 2rem;">{title}</h2>
-        <div style="color: #1a1a1a !important; margin-bottom: 2rem; font-size: 1.125rem; line-height: 1.8;">
+      <div>
+        <h2>{title}</h2>
+        <div>
           <slot />
         </div>
         {ctaText && ctaLink && (
-          <a 
-            href={ctaLink} 
-            style="display: inline-block; padding: 12px 32px; background-color: #d4af37; color: #0a0a0a; font-weight: 600; border-radius: 8px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem;"
-          >
+          <a href={ctaLink} class="cta-button">
             {ctaText}
           </a>
         )}
@@ -47,28 +43,3 @@ const {
     </div>
   </div>
 </section>
-
-<style>
-  .section-image-text img {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  @media (max-width: 992px) {
-    .section-image-text > div > div {
-      grid-template-columns: 1fr !important;
-      direction: ltr !important;
-    }
-
-    .section-image-text img {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-  }
-</style>
