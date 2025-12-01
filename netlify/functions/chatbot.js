@@ -1,11 +1,16 @@
-// Nouvelle fonction chatbot - Code propre et optimisé avec DeepSeek v3
+// Chatbot ECOFUNDRIVE - Multi-API (OpenAI, DeepSeek, Anthropic)
 const OpenAI = require('openai');
 
-// DeepSeek v3 - Dernière génération
+// Configuration des APIs
+const openaiKey = process.env.OPENAI_API_KEY;
 const deepseekKey = process.env.DEEPSEEK_API_KEY;
-const deepseek = deepseekKey ? new OpenAI({
-  apiKey: deepseekKey,
-  baseURL: 'https://api.deepseek.com'
+const anthropicKey = process.env.ANTHROPIC_API_KEY;
+
+// Clients API
+const openai = openaiKey ? new OpenAI({ apiKey: openaiKey }) : null;
+const deepseek = deepseekKey ? new OpenAI({ 
+  apiKey: deepseekKey, 
+  baseURL: 'https://api.deepseek.com' 
 }) : null;
 
 // Contexte business
@@ -22,157 +27,237 @@ const businessInfo = {
   airports: ['Nice Côte d\'Azur (NCE)', 'Cannes-Mandelieu'],
   vehicles: ['Berlines premium', 'Vans (4-7 places)'],
   languages: ['Français', 'Anglais', 'Italien', 'Russe'],
-  availability: '24h/24 et 7j/7 sur réservation (minimum 4h à l\'avance)'
+  availability: '24h/24 et 7j/7 sur réservation'
 };
 
 // System prompt
-const systemPrompt = `Tu es David Chemla, GUIDE TOURISTIQUE EXPERT sur la Côte d'Azur. Tu es passionné par cette région et tu adores partager tes connaissances.
+const systemPrompt = `Tu es David Chemla, GUIDE TOURISTIQUE EXPERT sur la Côte d'Azur. Tu es passionné par cette région.
 
 TON RÔLE:
-- GUIDE TOURISTIQUE uniquement : conseils, visites, lieux à voir, restaurants, plages, activités
-- Tu connais les coins cachés, les meilleurs spots, les bonnes adresses
-- Tu partages des anecdotes et des conseils pratiques
-- Tu es chaleureux, passionné, et tu aimes faire découvrir la Côte d'Azur
+- GUIDE TOURISTIQUE : conseils, visites, restaurants, plages, activités
+- Tu connais les coins cachés et les meilleurs spots
+- Tu es chaleureux et passionné
 
 LOCALISATION: ${businessInfo.location}
-ZONES CONNUES: ${businessInfo.zones.join(', ')}
-AÉROPORTS: ${businessInfo.airports.join(', ')}
+ZONES: ${businessInfo.zones.join(', ')}
 
 RÈGLES:
 1. Réponds dans la langue de l'utilisateur (FR/EN/IT/RU)
-2. Réponses courtes et pratiques (max 2-3 phrases)
-3. Ton enthousiaste mais naturel, comme un ami local qui connaît bien la région
-4. Tu es GUIDE TOURISTIQUE, pas commercial - tu ne vends rien
-5. Si on te pose des questions sur réservations/trajets/tarifs, tu dis : "Pour les réservations et tarifs précis, contactez-moi directement sur WhatsApp au ${businessInfo.phone} - je réponds rapidement !"
-6. Si on te demande des infos de réservation, tu dis : "Pour réserver, envoyez-moi un message WhatsApp avec vos détails (départ, arrivée, date, heure) et je vous réponds rapidement !"
-7. Toujours orienter vers WhatsApp pour les questions pratiques/réservations : "Pour plus d'infos ou réserver, WhatsApp moi au ${businessInfo.phone} !"
+2. Réponses courtes (2-3 phrases max)
+3. Pour réservations/tarifs → orienter vers WhatsApp: ${businessInfo.phone}
+4. Sois enthousiaste et utile !
 
-INTERDITS:
-- Sujets sensibles (politique, religion)
-- Promesses irréalistes
-- Être commercial ou insistant
-- Donner des tarifs précis (orienter vers WhatsApp)
-- Réponses trop longues
-
-OBJECTIF:
-- Être un GUIDE TOURISTIQUE utile et passionné
-- Donner des conseils sur la Côte d'Azur
-- Orienter vers WhatsApp pour réservations/questions pratiques
-- Faire découvrir la région avec enthousiasme`;
+IMPORTANT: Chaque réponse doit être UNIQUE et PERSONNALISÉE selon la question.`;
 
 // Détection de langue
 function detectLanguage(text) {
   const lower = text.toLowerCase();
-  if (/^[a-z\s]+$/.test(text) && !lower.includes('à') && !lower.includes('é')) return 'en';
   if (/[а-яё]/i.test(text)) return 'ru';
-  if (/ciao|grazie|prego|buongiorno/i.test(text)) return 'it';
+  if (/ciao|grazie|prego|buongiorno|come|dove|quando/i.test(text)) return 'it';
+  if (/^[a-z\s]+$/.test(text) && !lower.includes('à') && !lower.includes('é') && !lower.includes('è')) return 'en';
   return 'fr';
 }
 
-// Détecter si le message contient des informations de réservation
-function detectBookingInfo(text) {
-  const lower = text.toLowerCase();
-  
-  // Mots-clés indiquant une réservation
-  const bookingKeywords = [
-    'réserv', 'book', 'prenot', 'бронир',
-    'transfert', 'transfer', 'trajet', 'trip', 'viaggio',
-    'aéroport', 'airport', 'aeroporto', 'аэропорт',
-    'demain', 'tomorrow', 'domani', 'завтра',
-    'aujourd\'hui', 'today', 'oggi', 'сегодня',
-    'passager', 'passenger', 'passeggero', 'пассажир',
-    'bagage', 'baggage', 'bagaglio', 'багаж'
-  ];
-  
-  // Vérifier présence de mots-clés
-  const hasKeywords = bookingKeywords.some(keyword => lower.includes(keyword));
-  
-  // Vérifier présence de dates/heures (format simple)
-  const hasDate = /\d{1,2}[\/\-\.]\d{1,2}/.test(text) || 
-                  /\d{1,2}\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i.test(text) ||
-                  /\d{1,2}\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i.test(text);
-  
-  const hasTime = /\d{1,2}[h:]\d{0,2}/.test(text) || 
-                  /\d{1,2}\s*(h|am|pm|heure|hour)/i.test(text);
-  
-  // Vérifier présence de lieux (Nice, Cannes, Monaco, etc.)
-  const hasLocation = /nice|cannes|monaco|saint-tropez|antibes|fréjus|sainte-maxime|sophia/i.test(text);
-  
-  return hasKeywords && (hasDate || hasTime || hasLocation);
-}
-
-// Formater le message pour WhatsApp
-function formatBookingMessage(text, lang) {
-  const timestamp = new Date().toLocaleString('fr-FR', { 
-    timeZone: 'Europe/Paris',
-    dateStyle: 'short',
-    timeStyle: 'short'
-  });
-  
-  if (lang === 'en') {
-    return `New booking request from website chatbot:\n\n${text}\n\nReceived: ${timestamp}`;
-  }
-  
-  if (lang === 'it') {
-    return `Nuova richiesta di prenotazione dal chatbot del sito:\n\n${text}\n\nRicevuta: ${timestamp}`;
-  }
-  
-  if (lang === 'ru') {
-    return `Новый запрос на бронирование с чатбота сайта:\n\n${text}\n\nПолучено: ${timestamp}`;
-  }
-  
-  // Français (par défaut)
-  return `Nouvelle demande de réservation depuis le chatbot du site:\n\n${text}\n\nReçue le: ${timestamp}`;
-}
-
-// Message de fallback
-function getFallbackMessage(userMessage, lang) {
+// Réponses intelligentes variées (fallback amélioré)
+function getSmartResponse(userMessage, lang) {
   const lower = userMessage.toLowerCase();
+  const random = Math.random();
   
-  if (lang === 'en') {
-    if (lower.includes('price') || lower.includes('cost') || lower.includes('tariff')) {
-      return 'For a precise quote, please specify: departure, arrival, date, time and number of passengers. Check our pricing page or call me at +33 6 16 55 28 11.';
-    }
-    if (lower.includes('book') || lower.includes('reserv')) {
-      return 'To book, use our booking form or contact me directly at +33 6 16 55 28 11 / WhatsApp. Minimum 4 hours advance notice required.';
-    }
-    if (lower.includes('airport')) {
-      return 'I offer transfers from Nice (NCE) and Cannes-Mandelieu airports to the entire French Riviera. Book at least 4 hours in advance.';
-    }
-    return 'I can help you with your trips, airport transfers, and advice on the French Riviera. Contact me at +33 6 16 55 28 11 or use our booking form.';
-  }
-  
-  if (lang === 'it') {
-    if (lower.includes('prezzo') || lower.includes('costo')) {
-      return 'Per un preventivo preciso, specificate: partenza, arrivo, data, ora e numero di passeggeri. Contattatemi al +33 6 16 55 28 11.';
-    }
-    if (lower.includes('prenot')) {
-      return 'Per prenotare, utilizzate il nostro modulo di prenotazione o contattatemi direttamente al +33 6 16 55 28 11 / WhatsApp.';
-    }
-    return 'Posso aiutarvi con i vostri viaggi, trasferimenti aeroporto e consigli sulla Costa Azzurra. Contattatemi al +33 6 16 55 28 11.';
-  }
-  
-  if (lang === 'ru') {
-    if (lower.includes('цена') || lower.includes('стоимость')) {
-      return 'Для точного расчета укажите: отправление, прибытие, дата, время и количество пассажиров. Звоните +33 6 16 55 28 11.';
-    }
-    if (lower.includes('бронир')) {
-      return 'Для бронирования используйте форму на сайте или свяжитесь со мной по +33 6 16 55 28 11 / WhatsApp.';
-    }
-    return 'Могу помочь с поездками, трансферами из аэропорта и советами по Лазурному Берегу. Звоните +33 6 16 55 28 11.';
+  // Salutations
+  if (/bonjour|hello|hi|ciao|salut|hey|bonsoir/i.test(lower)) {
+    const greetings = {
+      fr: [
+        'Bonjour ! 👋 Je suis votre guide sur la Côte d\'Azur. Que souhaitez-vous découvrir ?',
+        'Salut ! Bienvenue ! Je connais tous les secrets de la Côte d\'Azur. Une question ?',
+        'Hello ! Ravi de vous accueillir. Nice, Cannes, Monaco... où voulez-vous aller ?'
+      ],
+      en: [
+        'Hello! 👋 I\'m your French Riviera guide. What would you like to discover?',
+        'Hi there! Welcome! I know all the secrets of the Côte d\'Azur. Any questions?',
+        'Hey! Nice to meet you. Nice, Cannes, Monaco... where would you like to go?'
+      ],
+      it: [
+        'Ciao! 👋 Sono la tua guida sulla Costa Azzurra. Cosa vuoi scoprire?',
+        'Benvenuto! Conosco tutti i segreti della Costa Azzurra. Domande?'
+      ],
+      ru: [
+        'Привет! 👋 Я ваш гид по Лазурному Берегу. Что хотите узнать?',
+        'Здравствуйте! Добро пожаловать! Я знаю все секреты Côte d\'Azur.'
+      ]
+    };
+    const responses = greetings[lang] || greetings.fr;
+    return responses[Math.floor(random * responses.length)];
   }
   
-  // Français (par défaut) - Guide touristique orienté WhatsApp
-  if (lower.includes('prix') || lower.includes('tarif') || lower.includes('coût') || lower.includes('réserv') || lower.includes('book')) {
-    return 'Pour les tarifs et réservations, contactez-moi directement sur WhatsApp au 06 16 55 28 11 - je réponds rapidement avec un devis précis !';
+  // Nice
+  if (/nice/i.test(lower)) {
+    const niceResponses = {
+      fr: [
+        'Nice est magnifique ! La Promenade des Anglais au coucher du soleil est un must. Le Vieux Nice aussi, avec ses ruelles colorées ! 🌅',
+        'J\'adore Nice ! Le Cours Saleya pour le marché aux fleurs, la Colline du Château pour la vue... Vous allez adorer !',
+        'Nice, c\'est mon terrain de jeu ! Plage de Castel pour la tranquillité, ou les restos du Port pour l\'ambiance. Des préférences ?'
+      ],
+      en: [
+        'Nice is amazing! The Promenade des Anglais at sunset is a must. Old Nice too, with its colorful alleys! 🌅',
+        'I love Nice! Cours Saleya for the flower market, Castle Hill for the view... You\'ll love it!',
+        'Nice is my playground! Castel Beach for peace, or Port restaurants for atmosphere. Any preferences?'
+      ]
+    };
+    const responses = niceResponses[lang] || niceResponses.fr;
+    return responses[Math.floor(random * responses.length)];
   }
-  if (lower.includes('aéroport') || lower.includes('airport')) {
-    return 'Je connais bien les aéroports de Nice (NCE) et Cannes-Mandelieu. Pour réserver un transfert, envoyez-moi un message WhatsApp au 06 16 55 28 11 avec vos détails !';
+  
+  // Cannes
+  if (/cannes/i.test(lower)) {
+    const cannesResponses = {
+      fr: [
+        'Cannes, c\'est le glamour ! La Croisette est incontournable. Pour manger, essayez le Suquet, le vieux quartier ! 🎬',
+        'J\'aime beaucoup Cannes ! Les îles de Lérins sont accessibles en bateau, c\'est paradisiaque. La plage du Midi est plus locale.',
+        'Cannes a du style ! Le Marché Forville pour les produits locaux, et le quartier du Suquet pour l\'authenticité.'
+      ],
+      en: [
+        'Cannes is glamour! La Croisette is a must. For food, try Le Suquet, the old quarter! 🎬',
+        'I love Cannes! The Lérins Islands are accessible by boat, it\'s paradise. Midi Beach is more local.',
+        'Cannes has style! Forville Market for local products, and Le Suquet district for authenticity.'
+      ]
+    };
+    const responses = cannesResponses[lang] || cannesResponses.fr;
+    return responses[Math.floor(random * responses.length)];
   }
-  if (lower.includes('nice') || lower.includes('cannes') || lower.includes('monaco') || lower.includes('saint-tropez')) {
-    return 'J\'adore ces villes ! Je connais plein de coins sympas. Pour des conseils détaillés ou réserver un trajet, contactez-moi sur WhatsApp au 06 16 55 28 11 !';
+  
+  // Monaco
+  if (/monaco/i.test(lower)) {
+    const monacoResponses = {
+      fr: [
+        'Monaco, c\'est unique ! Le Rocher avec le Palais, le Musée Océanographique, et le Port Hercule. Impressionnant ! 🏎️',
+        'J\'adore Monaco ! Le Jardin Exotique offre une vue incroyable. Et Monte-Carlo pour l\'ambiance casino chic.',
+        'Monaco en une journée : le Rocher le matin, déjeuner au Port, Monte-Carlo l\'après-midi. Parfait !'
+      ],
+      en: [
+        'Monaco is unique! The Rock with the Palace, the Oceanographic Museum, and Port Hercule. Impressive! 🏎️',
+        'I love Monaco! The Exotic Garden offers an incredible view. And Monte-Carlo for the chic casino vibe.',
+        'Monaco in one day: the Rock in the morning, lunch at the Port, Monte-Carlo in the afternoon. Perfect!'
+      ]
+    };
+    const responses = monacoResponses[lang] || monacoResponses.fr;
+    return responses[Math.floor(random * responses.length)];
   }
-  return 'Je suis guide touristique sur la Côte d\'Azur ! Je peux vous conseiller sur les visites, restaurants, plages... Pour réserver un trajet ou plus d\'infos, WhatsApp moi au 06 16 55 28 11 !';
+  
+  // Saint-Tropez
+  if (/saint.?tropez|st.?tropez/i.test(lower)) {
+    const tropezResponses = {
+      fr: [
+        'Saint-Tropez, c\'est le rêve ! La Place des Lices le mardi et samedi matin pour le marché. Les plages de Pampelonne sont mythiques ! 🏖️',
+        'J\'adore Saint-Trop\' ! Le port pour voir les yachts, la Citadelle pour la vue, et Ramatuelle pour le calme.',
+        'Saint-Tropez hors saison, c\'est magique. Moins de monde, même charme. Le Sentier du Littoral est superbe pour marcher.'
+      ],
+      en: [
+        'Saint-Tropez is a dream! Place des Lices on Tuesday and Saturday mornings for the market. Pampelonne beaches are legendary! 🏖️',
+        'I love Saint-Trop\'! The port to see yachts, the Citadel for views, and Ramatuelle for peace.',
+        'Saint-Tropez off-season is magical. Fewer crowds, same charm. The Coastal Path is great for walking.'
+      ]
+    };
+    const responses = tropezResponses[lang] || tropezResponses.fr;
+    return responses[Math.floor(random * responses.length)];
+  }
+  
+  // Restaurant / manger
+  if (/restaurant|manger|eat|food|cuisine|déjeuner|dîner|lunch|dinner/i.test(lower)) {
+    const foodResponses = {
+      fr: [
+        'Pour bien manger sur la Côte d\'Azur : la socca à Nice, la pissaladière, les petits farcis... Vous êtes où ? Je vous donne mes adresses ! 🍽️',
+        'J\'ai plein de bonnes adresses ! Chez Pipo à Nice pour la socca, le Plongeoir pour la vue, ou des restos plus cachés. Vous préférez quoi ?',
+        'La cuisine provençale est incroyable ici ! Dites-moi votre budget et la ville, je vous trouve le parfait resto.'
+      ],
+      en: [
+        'For great food on the Riviera: socca in Nice, pissaladière, petits farcis... Where are you? I\'ll share my favorite spots! 🍽️',
+        'I have lots of good addresses! Chez Pipo in Nice for socca, Le Plongeoir for the view. What do you prefer?',
+        'Provençal cuisine is incredible here! Tell me your budget and city, I\'ll find you the perfect restaurant.'
+      ]
+    };
+    const responses = foodResponses[lang] || foodResponses.fr;
+    return responses[Math.floor(random * responses.length)];
+  }
+  
+  // Plage
+  if (/plage|beach|mer|sea|baignade|swim/i.test(lower)) {
+    const beachResponses = {
+      fr: [
+        'Les meilleures plages ? Paloma à Saint-Jean-Cap-Ferrat (sublime !), Mala à Cap d\'Ail, ou Pampelonne à Saint-Tropez. Vous cherchez quoi ? 🏖️',
+        'Pour les plages, ça dépend : tranquille ou animée ? Sable ou galets ? Dites-moi et je vous guide !',
+        'La plage de la Garoupe à Antibes est superbe, eau turquoise ! Sinon, Passable à Saint-Jean est très sympa aussi.'
+      ],
+      en: [
+        'Best beaches? Paloma in Saint-Jean-Cap-Ferrat (stunning!), Mala in Cap d\'Ail, or Pampelonne in Saint-Tropez. What are you looking for? 🏖️',
+        'For beaches, it depends: quiet or lively? Sand or pebbles? Tell me and I\'ll guide you!',
+        'La Garoupe beach in Antibes is gorgeous, turquoise water! Passable in Saint-Jean is also very nice.'
+      ]
+    };
+    const responses = beachResponses[lang] || beachResponses.fr;
+    return responses[Math.floor(random * responses.length)];
+  }
+  
+  // Réservation / tarif / prix
+  if (/réserv|book|tarif|prix|price|cost|combien|how much|quanto/i.test(lower)) {
+    const bookingResponses = {
+      fr: [
+        'Pour réserver ou avoir un tarif précis, le mieux c\'est de me contacter sur WhatsApp au 06 16 55 28 11 ! Je réponds vite avec un devis personnalisé. 📱',
+        'Les tarifs dépendent du trajet et des options. Envoyez-moi un WhatsApp au 06 16 55 28 11 avec vos détails, je vous fais un devis rapide !',
+        'Pour les réservations, WhatsApp est le plus simple : 06 16 55 28 11. Dites-moi départ, arrivée, date et heure, et c\'est parti !'
+      ],
+      en: [
+        'For booking or pricing, best to contact me on WhatsApp at +33 6 16 55 28 11! I reply quickly with a personalized quote. 📱',
+        'Prices depend on the route and options. Send me a WhatsApp at +33 6 16 55 28 11 with your details, I\'ll give you a quick quote!',
+        'For reservations, WhatsApp is easiest: +33 6 16 55 28 11. Tell me departure, arrival, date and time, and we\'re good to go!'
+      ]
+    };
+    const responses = bookingResponses[lang] || bookingResponses.fr;
+    return responses[Math.floor(random * responses.length)];
+  }
+  
+  // Aéroport
+  if (/aéroport|airport|avion|plane|vol|flight|nce/i.test(lower)) {
+    const airportResponses = {
+      fr: [
+        'L\'aéroport de Nice (NCE) est super bien situé ! Je fais des transferts vers Nice centre (20-30min), Cannes (45min), Monaco (40min). WhatsApp pour réserver : 06 16 55 28 11 ✈️',
+        'Pour les transferts aéroport, je vous attends à la sortie avec une pancarte. Véhicule climatisé, WiFi, eau fraîche. Contactez-moi sur WhatsApp !',
+        'Aéroport Nice-Côte d\'Azur : je connais par cœur ! Terminal 1 ou 2, je m\'adapte. Réservez sur WhatsApp : 06 16 55 28 11'
+      ],
+      en: [
+        'Nice Airport (NCE) is perfectly located! I do transfers to Nice center (20-30min), Cannes (45min), Monaco (40min). WhatsApp to book: +33 6 16 55 28 11 ✈️',
+        'For airport transfers, I wait for you at the exit with a sign. Air-conditioned vehicle, WiFi, fresh water. Contact me on WhatsApp!',
+        'Nice Côte d\'Azur Airport: I know it by heart! Terminal 1 or 2, I adapt. Book on WhatsApp: +33 6 16 55 28 11'
+      ]
+    };
+    const responses = airportResponses[lang] || airportResponses.fr;
+    return responses[Math.floor(random * responses.length)];
+  }
+  
+  // Réponse par défaut variée
+  const defaultResponses = {
+    fr: [
+      'Excellente question ! Je connais la Côte d\'Azur comme ma poche. Dites-moi plus précisément ce que vous cherchez et je vous guide ! 🌴',
+      'Je suis là pour vous aider ! Nice, Cannes, Monaco, Saint-Tropez... ou peut-être des coins moins connus ? Qu\'est-ce qui vous fait envie ?',
+      'La Côte d\'Azur regorge de trésors ! Dites-moi vos centres d\'intérêt (plages, culture, gastronomie, villages...) et je vous conseille.',
+      'Ah, bonne question ! Pour mieux vous répondre, dites-moi : vous êtes où sur la Côte d\'Azur et qu\'est-ce que vous aimez faire ?'
+    ],
+    en: [
+      'Great question! I know the French Riviera like the back of my hand. Tell me more specifically what you\'re looking for! 🌴',
+      'I\'m here to help! Nice, Cannes, Monaco, Saint-Tropez... or perhaps lesser-known spots? What interests you?',
+      'The Côte d\'Azur is full of treasures! Tell me your interests (beaches, culture, food, villages...) and I\'ll advise you.',
+      'Good question! To answer better, tell me: where are you on the Riviera and what do you like to do?'
+    ],
+    it: [
+      'Bella domanda! Conosco la Costa Azzurra come le mie tasche. Dimmi cosa cerchi! 🌴',
+      'Sono qui per aiutarti! Nice, Cannes, Monaco, Saint-Tropez... cosa ti interessa?'
+    ],
+    ru: [
+      'Отличный вопрос! Я знаю Лазурный Берег как свои пять пальцев. Скажите, что вы ищете! 🌴',
+      'Я здесь, чтобы помочь! Ницца, Канны, Монако, Сен-Тропе... Что вас интересует?'
+    ]
+  };
+  const responses = defaultResponses[lang] || defaultResponses.fr;
+  return responses[Math.floor(random * responses.length)];
 }
 
 // Handler principal
@@ -190,19 +275,14 @@ exports.handler = async function(event) {
     };
   }
 
-  // Vérifier méthode
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: {
-        'Allow': 'POST, OPTIONS',
-        'Access-Control-Allow-Origin': '*'
-      },
+      headers: { 'Allow': 'POST, OPTIONS', 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({ error: 'Méthode non autorisée' })
     };
   }
 
-  // Parser le body
   let body;
   try {
     body = JSON.parse(event.body || '{}');
@@ -215,7 +295,6 @@ exports.handler = async function(event) {
   }
 
   const userMessage = (body.message || '').trim();
-
   if (!userMessage) {
     return {
       statusCode: 400,
@@ -224,80 +303,65 @@ exports.handler = async function(event) {
     };
   }
 
-  // Détecter langue
   const lang = detectLanguage(userMessage);
 
-  // Si pas d'API key, utiliser fallback
-  if (!deepseek) {
-    const fallback = getFallbackMessage(userMessage, lang);
-    return {
-      statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify({ answer: fallback, fallback: true })
-    };
+  // Essayer les APIs dans l'ordre : OpenAI > DeepSeek
+  let answer = null;
+  let usedApi = null;
+
+  // 1. Essayer OpenAI GPT-4o-mini (rapide et pas cher)
+  if (openai && !answer) {
+    try {
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userMessage }
+        ],
+        max_tokens: 250,
+        temperature: 0.8
+      });
+      answer = response?.choices?.[0]?.message?.content?.trim();
+      usedApi = 'openai';
+    } catch (err) {
+      console.error('OpenAI error:', err.message);
+    }
   }
 
-  // Appel DeepSeek v3 - Dernière génération
-  try {
-    const response = await deepseek.chat.completions.create({
-      model: process.env.DEEPSEEK_MODEL || 'deepseek-chat', // deepseek-chat ou deepseek-reasoner
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userMessage }
-      ],
-      max_tokens: 300,
-      temperature: 0.7,
-      top_p: 0.9,
-      frequency_penalty: 0.3,
-      presence_penalty: 0.2
-    });
-
-    const answer = response?.choices?.[0]?.message?.content?.trim();
-
-    if (!answer) {
-      throw new Error('Aucune réponse générée');
+  // 2. Essayer DeepSeek
+  if (deepseek && !answer) {
+    try {
+      const response = await deepseek.chat.completions.create({
+        model: process.env.DEEPSEEK_MODEL || 'deepseek-chat',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userMessage }
+        ],
+        max_tokens: 250,
+        temperature: 0.8
+      });
+      answer = response?.choices?.[0]?.message?.content?.trim();
+      usedApi = 'deepseek';
+    } catch (err) {
+      console.error('DeepSeek error:', err.message);
     }
-
-    // Détecter si des informations de réservation sont présentes
-    const hasBookingInfo = detectBookingInfo(userMessage);
-    let whatsappLink = null;
-    
-    if (hasBookingInfo) {
-      // Créer un lien WhatsApp avec message pré-rempli
-      const bookingMessage = formatBookingMessage(userMessage, lang);
-      whatsappLink = `https://wa.me/33616552811?text=${encodeURIComponent(bookingMessage)}`;
-    }
-
-    return {
-      statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify({ 
-        answer,
-        hasBookingInfo,
-        whatsappLink
-      })
-    };
-
-  } catch (error) {
-    console.error('DeepSeek error:', error);
-    
-    // Fallback en cas d'erreur
-    const fallback = getFallbackMessage(userMessage, lang);
-    
-    return {
-      statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify({ answer: fallback, fallback: true })
-    };
   }
+
+  // 3. Fallback intelligent si aucune API ne fonctionne
+  if (!answer) {
+    answer = getSmartResponse(userMessage, lang);
+    usedApi = 'fallback';
+  }
+
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({ 
+      answer,
+      api: usedApi
+    })
+  };
 };
-
