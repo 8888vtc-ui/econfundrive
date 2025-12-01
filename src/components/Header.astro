@@ -47,7 +47,10 @@ const { currentPage = "" } = Astro.props;
   <!-- Menu Mobile Slide-out -->
   <nav class="nav-links-mobile" id="nav-menu-mobile" aria-label="Navigation principale mobile" role="navigation">
     <div class="mobile-menu-header">
-      <Logo />
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <Logo />
+        <span class="brand-text-mobile">ECOFUNDRIVE</span>
+      </div>
       <button 
         class="mobile-menu-close" 
         id="mobile-menu-close"
@@ -110,11 +113,27 @@ const { currentPage = "" } = Astro.props;
     color: #ffffff !important;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   @media (max-width: 768px) {
     .brand-text {
       font-size: 1.25rem;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .nav-brand-link {
+      display: flex !important;
+      visibility: visible !important;
+    }
+
+    .nav-brand {
+      display: flex !important;
+      visibility: visible !important;
     }
   }
 
@@ -261,6 +280,17 @@ const { currentPage = "" } = Astro.props;
     justify-content: space-between;
     padding: var(--spacing-xl, 2rem) var(--spacing-lg, 1.5rem);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .brand-text-mobile {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .mobile-menu-close {

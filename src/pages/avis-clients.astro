@@ -1,7 +1,6 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ReviewsSchema from '../components/ReviewsSchema.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import { allReviews } from '../data/reviews.ts';
 
 const title = "Avis Clients | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
@@ -33,8 +32,6 @@ const breadcrumbItems = [
   
   <main class="page-content">
     <div class="container">
-      <Breadcrumb items={breadcrumbItems} />
-      
       <section class="reviews-hero">
         <h1>Avis Clients ECOFUNDRIVE</h1>
         <p class="lead">Découvrez ce que nos clients disent de nos services de chauffeur privé VTC sur la Côte d'Azur</p>

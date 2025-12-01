@@ -34,12 +34,24 @@ picture,
 source,
 .hero-background-image,
 .hero-image-container,
-.hero-banner img {
+.hero-banner img,
+.category-card img,
+.card-image-wrapper img,
+.section-image-text img {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   width: 100% !important;
   max-width: 100% !important;
+}
+
+/* Nom ECOFUNDRIVE toujours visible */
+.brand-text,
+.nav-brand-link,
+.nav-brand {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 768px) {
@@ -48,12 +60,36 @@ source,
   source,
   .hero-background-image,
   .hero-image-container,
-  .hero-banner img {
+  .hero-banner img,
+  .category-card img,
+  .card-image-wrapper img,
+  .section-image-text img {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* Nom ECOFUNDRIVE visible sur mobile */
+  .brand-text {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 1.25rem !important;
+  }
+
+  .nav-brand-link {
+    display: flex !important;
+    visibility: visible !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .nav-brand {
+    display: flex !important;
+    visibility: visible !important;
   }
 }
 
