@@ -62,12 +62,13 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
     white-space: nowrap;
   }
 
-  /* Mobile : position à gauche pour ne pas chevaucher avec le chatbot */
+  /* Mobile : position au centre en bas pour ne pas chevaucher avec le chatbot */
   @media (max-width: 768px) {
     .whatsapp-button {
       bottom: 20px;
-      left: 20px;
+      left: 50%;
       right: auto;
+      transform: translateX(-50%);
       padding: 10px 16px;
       font-size: 0.85rem;
     }

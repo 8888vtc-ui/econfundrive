@@ -71,7 +71,7 @@ const chatbotLabel = "VIP Service Guide";
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: var(--z-chatbot);
+    z-index: 9999;
   }
 
   .chatbot-toggle {
@@ -86,21 +86,28 @@ const chatbotLabel = "VIP Service Guide";
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    box-shadow: var(--shadow-lg);
-    transition: all var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     backface-visibility: hidden;
     min-height: 44px;
+    min-width: 44px;
   }
 
   .chatbot-toggle:hover,
   .chatbot-toggle:focus {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5);
+    outline: none;
   }
 
   .chatbot-toggle:active {
     transform: translateY(0) scale(1);
+  }
+
+  .chatbot-toggle:focus-visible {
+    outline: 3px solid var(--color-white);
+    outline-offset: 2px;
   }
 
   .chatbot-toggle svg {
@@ -119,15 +126,15 @@ const chatbotLabel = "VIP Service Guide";
     right: 20px;
     width: 380px;
     max-width: calc(100vw - 40px);
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 120px);
     background: var(--color-primary-black);
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     display: none;
     flex-direction: column;
     overflow: hidden;
-    z-index: calc(var(--z-chatbot) + 1);
+    z-index: 10000;
   }
 
   .chatbot-window.open {
@@ -141,6 +148,7 @@ const chatbotLabel = "VIP Service Guide";
     padding: var(--spacing-md);
     background: rgba(212, 175, 55, 0.1);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    flex-shrink: 0;
   }
 
   .chatbot-title {
@@ -160,15 +168,21 @@ const chatbotLabel = "VIP Service Guide";
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-sm);
-    transition: all var(--transition-fast);
-    min-width: 32px;
-    min-height: 32px;
+    transition: all 0.2s ease;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .chatbot-close:hover,
   .chatbot-close:focus {
     background: rgba(212, 175, 55, 0.2);
     color: var(--color-gold);
+    outline: none;
+  }
+
+  .chatbot-close:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
   }
 
   .chatbot-messages {
@@ -180,6 +194,7 @@ const chatbotLabel = "VIP Service Guide";
     gap: var(--spacing-md);
     min-height: 200px;
     max-height: 400px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .chatbot-message {
@@ -200,6 +215,7 @@ const chatbotLabel = "VIP Service Guide";
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-md);
     line-height: var(--line-height-normal);
+    word-wrap: break-word;
   }
 
   .chatbot-message-bot .message-content {
@@ -217,6 +233,7 @@ const chatbotLabel = "VIP Service Guide";
     padding: var(--spacing-md);
     border-top: 1px solid rgba(212, 175, 55, 0.2);
     background: rgba(10, 10, 10, 0.5);
+    flex-shrink: 0;
   }
 
   .chatbot-form {
@@ -227,13 +244,14 @@ const chatbotLabel = "VIP Service Guide";
 
   .chatbot-input {
     flex: 1;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 12px var(--spacing-md);
     background: rgba(26, 26, 26, 0.8);
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: var(--radius-md);
     color: var(--color-white);
-    font-size: var(--font-size-base);
+    font-size: 16px;
     min-height: 44px;
+    font-family: inherit;
   }
 
   .chatbot-input:focus {
@@ -252,15 +270,26 @@ const chatbotLabel = "VIP Service Guide";
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-fast);
+    transition: all 0.2s ease;
     min-width: 44px;
     min-height: 44px;
+    flex-shrink: 0;
   }
 
   .chatbot-send:hover,
   .chatbot-send:focus {
     background: var(--color-gold-light);
     transform: scale(1.05);
+    outline: none;
+  }
+
+  .chatbot-send:active {
+    transform: scale(0.95);
+  }
+
+  .chatbot-send:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
   }
 
   .chatbot-whatsapp-hint {
@@ -275,20 +304,23 @@ const chatbotLabel = "VIP Service Guide";
     text-decoration: underline;
   }
 
-  /* Mobile */
+  /* Mobile - Positionnement pour ne pas cacher le logo */
   @media (max-width: 768px) {
     .chatbot-container {
-      top: 20px;
-      left: 20px;
-      right: auto;
+      top: 70px;
+      right: 10px;
+      left: auto;
+      z-index: 9998;
     }
 
     .chatbot-window {
-      top: 80px;
-      left: 20px;
-      right: 20px;
+      top: 120px;
+      right: 10px;
+      left: 10px;
       width: auto;
       max-width: none;
+      max-height: calc(100vh - 140px);
+      z-index: 9999;
     }
 
     .chatbot-toggle {
@@ -299,6 +331,10 @@ const chatbotLabel = "VIP Service Guide";
     .chatbot-toggle svg {
       width: 18px;
       height: 18px;
+    }
+
+    .chatbot-messages {
+      max-height: 300px;
     }
   }
 
@@ -319,117 +355,182 @@ const chatbotLabel = "VIP Service Guide";
   (function() {
     'use strict';
 
-    const toggle = document.getElementById('chatbot-toggle');
-    const window = document.getElementById('chatbot-window');
-    const close = document.getElementById('chatbot-close');
-    const form = document.getElementById('chatbot-form');
-    const input = document.getElementById('chatbot-input');
-    const messages = document.getElementById('chatbot-messages');
-
-    if (!toggle || !window || !form || !input || !messages) return;
-
-    function openChatbot() {
-      window.classList.add('open');
-      window.setAttribute('aria-hidden', 'false');
-      toggle.setAttribute('aria-expanded', 'true');
-      input.focus();
+    // Attendre que le DOM soit chargé
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChatbot);
+    } else {
+      initChatbot();
     }
 
-    function closeChatbot() {
-      window.classList.remove('open');
-      window.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
+    function initChatbot() {
+      const toggle = document.getElementById('chatbot-toggle');
+      const window = document.getElementById('chatbot-window');
+      const close = document.getElementById('chatbot-close');
+      const form = document.getElementById('chatbot-form');
+      const input = document.getElementById('chatbot-input');
+      const messages = document.getElementById('chatbot-messages');
 
-    function addMessage(text, isUser = false) {
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `chatbot-message ${isUser ? 'chatbot-message-user' : 'chatbot-message-bot'}`;
-      
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'message-content';
-      const p = document.createElement('p');
-      p.textContent = text;
-      contentDiv.appendChild(p);
-      
-      messageDiv.appendChild(contentDiv);
-      messages.appendChild(messageDiv);
-      messages.scrollTop = messages.scrollHeight;
-    }
-
-    function addLoadingMessage() {
-      const messageDiv = document.createElement('div');
-      messageDiv.className = 'chatbot-message chatbot-message-bot loading';
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'message-content';
-      contentDiv.textContent = '';
-      messageDiv.appendChild(contentDiv);
-      messages.appendChild(messageDiv);
-      messages.scrollTop = messages.scrollHeight;
-      return messageDiv;
-    }
-
-    function removeLoadingMessage(loadingMsg) {
-      if (loadingMsg && loadingMsg.parentNode) {
-        loadingMsg.parentNode.removeChild(loadingMsg);
+      if (!toggle || !window || !form || !input || !messages) {
+        console.error('Chatbot elements not found');
+        return;
       }
-    }
 
-    toggle.addEventListener('click', openChatbot);
-    close?.addEventListener('click', closeChatbot);
+      function openChatbot() {
+        window.classList.add('open');
+        window.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        // Focus avec un petit délai pour éviter les problèmes sur mobile
+        setTimeout(() => {
+          input.focus();
+        }, 100);
+      }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const userMessage = input.value.trim();
-      if (!userMessage) return;
+      function closeChatbot() {
+        window.classList.remove('open');
+        window.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        input.blur();
+      }
 
-      addMessage(userMessage, true);
-      input.value = '';
-      
-      const loadingMsg = addLoadingMessage();
+      function addMessage(text, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chatbot-message ${isUser ? 'chatbot-message-user' : 'chatbot-message-bot'}`;
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        const p = document.createElement('p');
+        p.textContent = text;
+        contentDiv.appendChild(p);
+        
+        messageDiv.appendChild(contentDiv);
+        messages.appendChild(messageDiv);
+        
+        // Scroll avec un petit délai pour s'assurer que le message est rendu
+        setTimeout(() => {
+          messages.scrollTop = messages.scrollHeight;
+        }, 50);
+      }
 
-      try {
-        const response = await fetch('/.netlify/functions/chatbot', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: userMessage })
-        });
+      function addLoadingMessage() {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'chatbot-message chatbot-message-bot loading';
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        contentDiv.textContent = '';
+        messageDiv.appendChild(contentDiv);
+        messages.appendChild(messageDiv);
+        setTimeout(() => {
+          messages.scrollTop = messages.scrollHeight;
+        }, 50);
+        return messageDiv;
+      }
 
-        const data = await response.json();
-        removeLoadingMessage(loadingMsg);
-
-        if (data.answer) {
-          addMessage(data.answer);
-          
-          if (data.hasBookingInfo && data.whatsappLink) {
-            setTimeout(() => {
-              const whatsappMsg = document.createElement('div');
-              whatsappMsg.className = 'chatbot-message chatbot-message-bot';
-              const contentDiv = document.createElement('div');
-              contentDiv.className = 'message-content';
-              const p = document.createElement('p');
-              p.innerHTML = `Pour finaliser votre réservation, <a href="${data.whatsappLink}" target="_blank" rel="noopener" style="color: var(--color-gold); text-decoration: underline;">contactez-moi sur WhatsApp</a> !`;
-              contentDiv.appendChild(p);
-              whatsappMsg.appendChild(contentDiv);
-              messages.appendChild(whatsappMsg);
-              messages.scrollTop = messages.scrollHeight;
-            }, 500);
-          }
-        } else {
-          addMessage('Désolé, une erreur est survenue. Contactez-moi directement sur WhatsApp pour plus d\'informations.');
+      function removeLoadingMessage(loadingMsg) {
+        if (loadingMsg && loadingMsg.parentNode) {
+          loadingMsg.parentNode.removeChild(loadingMsg);
         }
-      } catch (error) {
-        console.error('Chatbot error:', error);
-        removeLoadingMessage(loadingMsg);
-        addMessage('Désolé, je ne peux pas répondre pour le moment. Contactez-moi directement sur WhatsApp au 06 16 55 28 11.');
       }
-    });
 
-    // Fermer avec Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && window.classList.contains('open')) {
+      // Event listeners
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.classList.contains('open')) {
+          closeChatbot();
+        } else {
+          openChatbot();
+        }
+      });
+
+      close?.addEventListener('click', (e) => {
+        e.stopPropagation();
         closeChatbot();
-      }
-    });
+      });
+
+      // Fermer en cliquant en dehors (sur mobile surtout)
+      document.addEventListener('click', (e) => {
+        if (window.classList.contains('open')) {
+          const isClickInside = window.contains(e.target) || toggle.contains(e.target);
+          if (!isClickInside) {
+            closeChatbot();
+          }
+        }
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const userMessage = input.value.trim();
+        if (!userMessage) {
+          input.focus();
+          return;
+        }
+
+        addMessage(userMessage, true);
+        input.value = '';
+        input.blur();
+        
+        const loadingMsg = addLoadingMessage();
+
+        try {
+          const response = await fetch('/.netlify/functions/chatbot', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userMessage })
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          removeLoadingMessage(loadingMsg);
+
+          if (data.answer) {
+            addMessage(data.answer);
+            
+            if (data.hasBookingInfo && data.whatsappLink) {
+              setTimeout(() => {
+                const whatsappMsg = document.createElement('div');
+                whatsappMsg.className = 'chatbot-message chatbot-message-bot';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                const p = document.createElement('p');
+                p.innerHTML = `Pour finaliser votre réservation, <a href="${data.whatsappLink}" target="_blank" rel="noopener" style="color: var(--color-gold); text-decoration: underline;">contactez-moi sur WhatsApp</a> !`;
+                contentDiv.appendChild(p);
+                whatsappMsg.appendChild(contentDiv);
+                messages.appendChild(whatsappMsg);
+                setTimeout(() => {
+                  messages.scrollTop = messages.scrollHeight;
+                }, 50);
+              }, 500);
+            }
+          } else {
+            addMessage('Désolé, une erreur est survenue. Contactez-moi directement sur WhatsApp pour plus d\'informations.');
+          }
+        } catch (error) {
+          console.error('Chatbot error:', error);
+          removeLoadingMessage(loadingMsg);
+          addMessage('Désolé, je ne peux pas répondre pour le moment. Contactez-moi directement sur WhatsApp au 06 16 55 28 11.');
+        }
+        
+        // Remettre le focus sur l'input après la réponse
+        setTimeout(() => {
+          input.focus();
+        }, 100);
+      });
+
+      // Fermer avec Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && window.classList.contains('open')) {
+          closeChatbot();
+        }
+      });
+
+      // Empêcher la fermeture lors du scroll sur mobile
+      messages.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+      });
+    }
   })();
 </script>
-
