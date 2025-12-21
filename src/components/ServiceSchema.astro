@@ -1,0 +1,46 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  areaServed: string;
+  url: string;
+  image: string;
+}
+
+const { name, description, areaServed, url, image } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": name,
+  "description": description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ECOFUNDRIVE",
+    "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-tesla-nice.webp",
+    "telephone": "+33616552811",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Villeneuve-Loubet",
+      "postalCode": "06270",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": areaServed
+  },
+  "url": `https://www.ecofundrive.com${url}`,
+  "image": `https://www.ecofundrive.com${image}`,
+  "serviceType": "Transport de personnes VTC",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "50.00",
+    "priceValidUntil": "2025-12-31",
+    "availability": "https://schema.org/InStock"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

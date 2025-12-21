@@ -123,6 +123,42 @@ img, video, iframe {
     }
 }
 
+/* === ANIMATIONS & FLUIDITY === */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Staggered delay for grid items */
+.grid-3-cols .category-card:nth-child(1) { transition-delay: 0.1s; }
+.grid-3-cols .category-card:nth-child(2) { transition-delay: 0.2s; }
+.grid-3-cols .category-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Smooth Image Loading */
+img {
+    transition: opacity 0.3s ease-in-out;
+}
+
+img.loading {
+    opacity: 0;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Enhanced Hover Effects */
+a, button, .category-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* === PRINT STYLES === */
 @media print {
     .chatbot-container,
