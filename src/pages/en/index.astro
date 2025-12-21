@@ -1,54 +1,343 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Index | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "French Riviera Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
+const description = "Premium private driver service on the French Riviera. Nice Airport transfers, Monaco, Cannes, Saint-Tropez. Luxury vehicles, professional multilingual chauffeurs 24/7.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'French Riviera private driver',
+  'Cote d Azur chauffeur',
+  'Nice Airport transfer',
+  'premium VTC French Riviera',
+  'luxury car service Riviera'
+];
+
+const servicesEN = [
+  { icon: "✈️", title: "Airport Transfers", desc: "Meet & greet at Nice Airport with name board. Flight tracking, luggage assistance, fixed prices." },
+  { icon: "🏨", title: "Hotel Transfers", desc: "Direct transfers to all luxury hotels on the Riviera. Palace-level service from door to door." },
+  { icon: "⏰", title: "Hourly Disposal", desc: "Your dedicated driver for half-day or full day. Perfect for sightseeing, shopping, or business." },
+  { icon: "💼", title: "Business Travel", desc: "Corporate transportation, executive car service, meetings and congress transfers." },
+  { icon: "💒", title: "Weddings & Events", desc: "Elegant chauffeur service for your special day. Decorated vehicles available on request." },
+  { icon: "🗺️", title: "Scenic Tours", desc: "Discover the Riviera with guided tours: Nice, Eze, Monaco, hillside villages, wine tours." }
+];
+
+const popularRoutes = [
+  { from: "Nice Airport", to: "Nice City Center", time: "15-20 min", price: "35€" },
+  { from: "Nice Airport", to: "Cannes", time: "35-45 min", price: "75€" },
+  { from: "Nice Airport", to: "Monaco", time: "30-45 min", price: "80€" },
+  { from: "Nice Airport", to: "Saint-Tropez", time: "1h30-2h", price: "250€" },
+  { from: "Nice Airport", to: "Antibes", time: "20-30 min", price: "50€" },
+  { from: "Cannes", to: "Monaco", time: "55-70 min", price: "130€" }
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
-  currentPage="index"
-
-  canonical="/en/index"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  currentPage="en-index"
+  canonical="/en"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" }
+  ]}
+>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Your Premium Private Driver on the French Riviera</h1>
+        <p class="hero-subtitle">Airport transfers, scenic tours & luxury transportation. Nice • Cannes • Monaco • Saint-Tropez</p>
+        <div class="hero-cta">
+          <a href="/en/booking" class="btn btn-gold">Book Your Transfer</a>
+          <a href="tel:+33616552811" class="btn btn-outline">Call +33 6 16 55 28 11</a>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Services Grid -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Our Premium VTC Services</h2>
+      <p class="text-center mb-xl lead">Experience luxury transportation across the French Riviera with ECOFUNDRIVE</p>
+      <div class="services-grid">
+        {servicesEN.map((service) => (
+          <div class="service-card">
+            <span class="service-icon">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+          </div>
+        ))}
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- Popular Routes -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Popular Transfer Routes & Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>From</th><th>To</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          {popularRoutes.map((route) => (
+            <tr>
+              <td>{route.from}</td>
+              <td>{route.to}</td>
+              <td>{route.time}</td>
+              <td class="price-cell">{route.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Fixed prices with no hidden fees. Meet & greet service included.</em></p>
+    </section>
+
+    <!-- Destinations -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Explore the French Riviera</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Nice Private Driver"
+          title="Nice"
+          description="Capital of the French Riviera. Old Town, Promenade des Anglais, Castle Hill. Your gateway to the Côte d'Azur."
+          link="/en/nice-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Monaco Private Driver"
+          title="Monaco"
+          description="The glamorous principality. Monte-Carlo Casino, Grand Prix circuit, Port Hercule superyachts."
+          link="/en/monaco-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Cannes Private Driver"
+          title="Cannes"
+          description="Home of the famous Film Festival. La Croisette, Palais des Festivals, luxury boutiques."
+          link="/en/cannes-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Saint-Tropez Private Driver"
+          title="Saint-Tropez"
+          description="Legendary jet-set destination. Pampelonne Beach, Club 55, charming old port."
+          link="/en/saint-tropez-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Eze Village Tour"
+          title="Eze & Perfumeries"
+          description="Medieval hilltop village with stunning views. Fragonard perfume factory, Exotic Garden."
+          link="/en/eze-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Antibes Private Driver"
+          title="Antibes & Cap d'Antibes"
+          description="Old Town charm, Port Vauban superyachts, Picasso Museum, legendary Hotel du Cap."
+          link="/en/antibes-private-driver"
+        />
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <SectionImageText
+      title="Why Choose ECOFUNDRIVE?"
+      image="/assets/img/about/chauffeur-professionnel.png"
+      alt="Professional chauffeur French Riviera"
+      imageSide="right"
+      ctaText="Book Now"
+      ctaLink="/en/booking"
+    >
+      <ul class="benefits-list fade-in-section">
+        <li><strong>Fixed Prices</strong> – Know your fare upfront, no surprises with traffic or detours</li>
+        <li><strong>Premium Vehicles</strong> – Tesla Model S, Mercedes S-Class, spacious vans for groups</li>
+        <li><strong>Professional Chauffeurs</strong> – Trained, multilingual (EN/FR/IT/RU), local experts</li>
+        <li><strong>Meet & Greet</strong> – Personal welcome with name board at airport arrivals</li>
+        <li><strong>Flight Tracking</strong> – We monitor your flight and adjust pickup time if needed</li>
+        <li><strong>Available 24/7</strong> – Early morning flights, late-night returns, we're always there</li>
+        <li><strong>Free Cancellation</strong> – Up to 24 hours before with full refund</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in-section">
+      <div class="container text-center">
+        <h2>Ready to Experience Premium Transportation?</h2>
+        <p class="lead mb-lg">Book your private driver now and travel the French Riviera in style</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn btn-gold btn-lg">Book Online</a>
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How do I book a private driver?</h3>
+          <div class="faq-answer">
+            <p>You can book online through our <a href="/en/booking">booking form</a>, via WhatsApp at +33 6 16 55 28 11, or by calling us directly. We confirm all bookings within 1 hour.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What types of vehicles do you offer?</h3>
+          <div class="faq-answer">
+            <p>We operate premium vehicles including Tesla Model S, Mercedes E-Class and S-Class sedans, and Mercedes V-Class vans for groups up to 7 passengers. All vehicles are less than 3 years old.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do your drivers speak English?</h3>
+          <div class="faq-answer">
+            <p>Yes, all our chauffeurs are fluent in English and French. Some also speak Italian and Russian. We match drivers to client language preferences when possible.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you provide child seats?</h3>
+          <div class="faq-answer">
+            <p>Absolutely. We provide infant seats, child seats, and booster seats free of charge. Simply mention the ages of your children when booking.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/assets/img/hero/hero-aeroport-nice.png');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-gold {
+    background: #d4af37;
+    color: #000;
+  }
+  .btn-gold:hover {
+    background: #b8941f;
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    border: 2px solid white;
+    color: white;
+  }
+  .btn-outline:hover {
+    background: white;
+    color: #000;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+  .btn-whatsapp:hover {
+    background: #1da851;
+  }
+  .btn-lg {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.1rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .service-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    margin-bottom: 0.5rem;
+    color: #d4af37;
+  }
+  .tarif-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  .tarif-table th, .tarif-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .tarif-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .price-cell {
+    font-weight: 700;
+    color: #d4af37;
+  }
+  .bg-light {
+    background: #f9f9f9;
+    padding: 2rem;
+  }
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+  }
+  .benefits-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  .benefits-list li:last-child {
+    border-bottom: none;
+  }
+  .cta-section {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    padding: 4rem 2rem;
+    color: #000;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-section .btn-gold {
+    background: #000;
+    color: #d4af37;
+  }
+  .cta-section .btn-gold:hover {
+    background: #222;
+  }
+</style>

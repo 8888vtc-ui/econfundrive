@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Juan-les-Pins – Chauffeur Privé Jazz & Plages | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Juan-les-Pins. Festival Jazz à Juan, plages de sable, vie nocturne, casinos. Station balnéaire Art Déco. Transferts Nice. Service premium 24h/24.";
+const keywords = [
+  'VTC Juan-les-Pins',
+  'chauffeur privé Juan-les-Pins',
+  'VTC Jazz à Juan',
+  'transfert plages Juan-les-Pins',
+  'chauffeur festival jazz'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-juan-les-pins"
+  canonical="/vtc-juan-les-pins"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Juan-les-Pins", url: "/vtc-juan-les-pins" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts pour Jazz à Juan ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers le festival Jazz à Juan en juillet. Service de récupération après les concerts disponible même tard le soir."}},{"@type":"Question","name":"Juan-les-Pins a-t-elle des plages de sable ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Juan-les-Pins possède les plus belles plages de sable fin de la Baie des Anges, idéales pour les familles."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Juan-les-Pins"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="VTC chauffeur privé Juan-les-Pins"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Juan-les-Pins</strong> est la station balnéaire jumelle d'Antibes, célèbre dans le monde entier pour le <strong>festival Jazz à Juan</strong>, l'un des plus anciens festivals de jazz d'Europe. Cette station à l'ambiance Art Déco des années folles offre de superbes plages de sable fin, une vie nocturne animée et des hôtels de charme.
+      </p>
+      <p class="fade-in-section">
+        Située au cœur de la baie, Juan-les-Pins est idéalement placée entre Nice et Cannes. ECOFUNDRIVE vous propose un <strong>service VTC premium à Juan-les-Pins</strong>, parfait pour vos soirées festival, journées plage ou transferts aéroport.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (20-30 min)</li>
+        <li>Service dédié Festival Jazz à Juan (juillet)</li>
+        <li>Récupération après concerts et soirées</li>
+        <li>Accès aux plages et restaurants de bord de mer</li>
+        <li>Casino Eden Beach et vie nocturne</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Juan-les-Pins</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Juan-les-Pins</td><td>22 km</td><td>20-30 min</td><td>50€</td></tr>
+          <tr><td>Nice Centre → Juan-les-Pins</td><td>18 km</td><td>20-25 min</td><td>45€</td></tr>
+          <tr><td>Juan-les-Pins → Cannes</td><td>10 km</td><td>12-18 min</td><td>32€</td></tr>
+          <tr><td>Juan-les-Pins → Antibes (vieille ville)</td><td>3 km</td><td>8 min</td><td>18€</td></tr>
+          <tr><td>Juan-les-Pins → Monaco</td><td>35 km</td><td>35-45 min</td><td>80€</td></tr>
+          <tr><td>Soirée concert + retour</td><td>-</td><td>Attente incluse</td><td>120€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Juan-les-Pins</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Jazz à Juan"
+          title="Festival Jazz à Juan"
+          description="Créé en 1960, l'un des plus prestigieux festivals de jazz au monde. En plein air face à la pinède en juillet."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Plages Juan-les-Pins"
+          title="Plages de Sable Fin"
+          description="Les plus belles plages de sable de la Côte d'Azur. Eau cristalline, plages privées et publiques."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Vie nocturne Juan-les-Pins"
+          title="Vie Nocturne"
+          description="Bars, clubs, casino Eden Beach. L'ambiance festive des années folles continue encore aujourd'hui."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

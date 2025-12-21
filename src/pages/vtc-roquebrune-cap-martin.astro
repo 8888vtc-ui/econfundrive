@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Roquebrune-Cap-Martin – Chauffeur Privé Presqu'île | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Roquebrune-Cap-Martin. Cap Martin, plages, villas Belle Époque, sentier Le Corbusier. Entre Monaco et Menton. Service premium 24h/24.";
+const keywords = [
+  'VTC Roquebrune-Cap-Martin',
+  'chauffeur privé Roquebrune',
+  'VTC Cap Martin',
+  'transfert Monaco Roquebrune',
+  'chauffeur Menton Roquebrune'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-roquebrune-cap-martin"
+  canonical="/vtc-roquebrune-cap-martin"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Roquebrune-Cap-Martin", url: "/vtc-roquebrune-cap-martin" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Roquebrune-Cap-Martin est-elle proche de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Roquebrune-Cap-Martin jouxte Monaco. Le Cap Martin est à 5 minutes en VTC du Casino de Monte-Carlo."}},{"@type":"Question","name":"Proposez-vous des transferts vers les hôtels de Roquebrune ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous desservons tous les hôtels et villas de Roquebrune-Cap-Martin, dont le Vista Palace et les résidences du Cap Martin."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Roquebrune-Cap-Martin"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="VTC chauffeur privé Roquebrune-Cap-Martin"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Roquebrune-Cap-Martin</strong> est une station balnéaire élégante située entre Monaco et Menton. La commune possède deux visages : le <strong>vieux village médiéval de Roquebrune</strong> perché sur son éperon rocheux, et le <strong>Cap Martin</strong>, presqu'île de rêve où résidèrent Coco Chanel, Le Corbusier et les plus grandes fortunes européennes.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Roquebrune-Cap-Martin</strong>, idéal pour rejoindre Monaco, l'aéroport de Nice ou explorer la Riviera depuis cette adresse prestigieuse.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts vers Monaco (5 min)</li>
+        <li>Transferts aéroport Nice (35-45 min)</li>
+        <li>Service pour les hôtels et villas du Cap Martin</li>
+        <li>Visite du village médiéval et château</li>
+        <li>Promenade Le Corbusier (sentier du littoral)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Roquebrune-Cap-Martin</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Roquebrune</td><td>35 km</td><td>35-45 min</td><td>85€</td></tr>
+          <tr><td>Monaco → Roquebrune</td><td>3 km</td><td>5-8 min</td><td>18€</td></tr>
+          <tr><td>Roquebrune → Menton</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
+          <tr><td>Roquebrune → Nice</td><td>25 km</td><td>30-40 min</td><td>70€</td></tr>
+          <tr><td>Roquebrune → Èze Village</td><td>12 km</td><td>20-25 min</td><td>40€</td></tr>
+          <tr><td>Roquebrune → Cannes</td><td>60 km</td><td>60-75 min</td><td>140€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Roquebrune-Cap-Martin</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Village Roquebrune"
+          title="Le Village Médiéval"
+          description="Ruelles pavées, château du Xe siècle (le plus ancien de France), vue spectaculaire sur Monaco et la mer."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Cap Martin"
+          title="Le Cap Martin"
+          description="Presqu'île exclusive aux villas Belle Époque. Lieu de villégiature de l'aristocratie européenne."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Cabanon Le Corbusier"
+          title="Cabanon Le Corbusier"
+          description="La minuscule maison-atelier de l'architecte, classée au patrimoine mondial de l'UNESCO."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-menton" class="text-dark hover-gold">VTC Menton</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

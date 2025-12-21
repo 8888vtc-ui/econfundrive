@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Vallauris Golfe-Juan – Chauffeur Privé Picasso & Plages | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Vallauris et Golfe-Juan. Musée Picasso, poteries, plages de sable. Entre Cannes et Antibes. Transferts aéroport Nice. Service premium.";
+const keywords = [
+  'VTC Vallauris',
+  'VTC Golfe-Juan',
+  'chauffeur privé Vallauris',
+  'transfert Cannes Vallauris',
+  'VTC plage Golfe-Juan'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-vallauris-golfe-juan"
+  canonical="/vtc-vallauris-golfe-juan"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Vallauris Golfe-Juan", url: "/vtc-vallauris-golfe-juan" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vallauris est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Vallauris est située à seulement 6 km de Cannes, soit 10-15 minutes en VTC. Golfe-Juan offre de belles plages de sable entre Cannes et Antibes."}},{"@type":"Question","name":"Proposez-vous des transferts pour les ateliers de poterie ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous organisons des transferts vers les nombreux ateliers de céramique de Vallauris, ville rendue célèbre par Picasso."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Vallauris & Golfe-Juan"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="VTC chauffeur privé Vallauris Golfe-Juan"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Vallauris Golfe-Juan</strong> réunit deux facettes complémentaires : Vallauris, cité des potiers rendue célèbre par <strong>Pablo Picasso</strong> qui y vécut de 1948 à 1955, et <strong>Golfe-Juan</strong>, station balnéaire aux belles plages de sable fin.
+      </p>
+      <p class="fade-in-section">
+        Idéalement située entre Cannes et Antibes, la commune offre un accès facile à toute la Côte d'Azur. ECOFUNDRIVE vous propose un <strong>service VTC premium à Vallauris Golfe-Juan</strong> pour vos transferts, visites culturelles ou journées plage.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (25-35 min)</li>
+        <li>Navettes vers Cannes et Antibes</li>
+        <li>Visite du Musée Picasso "La Guerre et la Paix"</li>
+        <li>Découverte des ateliers de céramique</li>
+        <li>Accès aux plages de Golfe-Juan</li>
+        <li>Port de Golfe-Juan et restaurants les pieds dans l'eau</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Vallauris Golfe-Juan</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Vallauris/Golfe-Juan</td><td>25 km</td><td>25-35 min</td><td>55€</td></tr>
+          <tr><td>Cannes → Vallauris</td><td>6 km</td><td>10-15 min</td><td>25€</td></tr>
+          <tr><td>Antibes → Golfe-Juan</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
+          <tr><td>Vallauris → Monaco</td><td>40 km</td><td>40-50 min</td><td>95€</td></tr>
+          <tr><td>Vallauris → Nice</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Circuit Picasso (Vallauris + Antibes)</td><td>-</td><td>4h</td><td>240€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Vallauris Golfe-Juan</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Musée Picasso Vallauris"
+          title="Musée Picasso"
+          description="La chapelle romane de Vallauris abrite 'La Guerre et la Paix', chef-d'œuvre monumental de Picasso."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Poteries Vallauris"
+          title="Ateliers de Céramique"
+          description="Vallauris, capitale de la poterie depuis le XVIe siècle. Ateliers d'artisans et boutiques de céramique."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Plage Golfe-Juan"
+          title="Plages de Golfe-Juan"
+          description="Sable fin, eau turquoise, restaurants de plage. Station balnéaire familiale entre Cannes et Antibes."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

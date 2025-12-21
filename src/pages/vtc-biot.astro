@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Biot – Chauffeur Privé Village Verriers & Marineland | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Biot. Village des verriers, Marineland, Musée Fernand Léger. Entre Antibes et Sophia Antipolis. Transferts aéroport Nice. Service premium.";
+const keywords = [
+  'VTC Biot',
+  'chauffeur privé Biot',
+  'VTC Marineland',
+  'transfert Antibes Biot',
+  'VTC verreries Biot'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-biot"
+  canonical="/vtc-biot"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Biot", url: "/vtc-biot" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Biot est-elle proche de Marineland ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Marineland est situé sur le territoire de Biot, à 5 minutes du village. Nous assurons les transferts pour les familles visitant le parc."}},{"@type":"Question","name":"Proposez-vous des transferts vers les verreries de Biot ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous organisons des transferts vers la célèbre Verrerie de Biot et les ateliers d'artisans du village."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Biot"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="VTC chauffeur privé Biot"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Biot</strong> est un charmant village perché de la Côte d'Azur, célèbre pour son artisanat d'art, notamment le <strong>verre bullé</strong> créé dans les années 1950. Le village abrite également le <strong>Musée Fernand Léger</strong>, l'un des plus beaux musées d'art moderne de la région.
+      </p>
+      <p class="fade-in-section">
+        La commune accueille aussi <strong>Marineland</strong>, le plus grand parc marin d'Europe, destination familiale par excellence. Situé entre Antibes et Sophia Antipolis, Biot offre un accès facile à toute la Côte d'Azur.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Biot</strong> pour vos transferts, journées en famille ou découvertes artisanales.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (25-35 min)</li>
+        <li>Navettes vers Marineland et parcs aquatiques</li>
+        <li>Visite des verreries et ateliers d'artisans</li>
+        <li>Musée Fernand Léger</li>
+        <li>Liaison vers Sophia Antipolis (5 min)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Biot</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Biot</td><td>22 km</td><td>25-35 min</td><td>50€</td></tr>
+          <tr><td>Antibes → Biot</td><td>6 km</td><td>10-15 min</td><td>25€</td></tr>
+          <tr><td>Biot → Sophia Antipolis</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
+          <tr><td>Biot → Nice</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Biot → Cannes</td><td>15 km</td><td>18-25 min</td><td>40€</td></tr>
+          <tr><td>Biot → Marineland (A/R avec attente)</td><td>-</td><td>4h</td><td>180€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Biot</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Verrerie Biot"
+          title="La Verrerie de Biot"
+          description="Assistez au travail des maîtres verriers et découvrez le célèbre verre bullé. Boutique et galerie d'exposition."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Marineland Biot"
+          title="Marineland"
+          description="Le plus grand parc marin d'Europe. Orques, dauphins, requins et nombreuses attractions pour toute la famille."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Musée Léger Biot"
+          title="Musée Fernand Léger"
+          description="Superbe musée dédié à l'œuvre du peintre cubiste. Architecture moderne et mosaïques monumentales."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia</a>
+        <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>
