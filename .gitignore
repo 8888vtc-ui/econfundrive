@@ -39,3 +39,9 @@ Thumbs.db
 # Build artifacts
 *.log
 .cache/
+
+netlify-token.txt
+*.txt
+*.md
+!README.md
+!AUDIT-*.md
