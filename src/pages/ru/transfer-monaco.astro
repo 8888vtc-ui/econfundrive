@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Трансфер Монако – Личный Водитель Монте-Карло | ECOFUNDRIVE";
+const description = "Премиум трансфер в Монако. Казино Монте-Карло, Гран-При F1, Порт Эркюль, 5-звездочные отели. Русскоговорящий водитель. Трансферы из Ниццы.";
+const keywords = [
+  'трансфер Монако',
+  'личный водитель Монако',
+  'трансфер Ницца Монако',
+  'VTC Монте-Карло',
+  'русский водитель Монако'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-monaco"
+  canonical="/ru/transfer-monaco"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Трансфер Монако", url: "/ru/transfer-monaco" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Ваш Личный Водитель в Монако"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Трансфер личный водитель Монако Монте-Карло"
+      imageSide="right"
+      ctaText="Забронировать Трансфер"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Монако</strong>, гламурное княжество на Лазурном Берегу, воплощает роскошь, элегантность и престиж. Посещаете ли вы <strong>Казино Монте-Карло</strong>, участвуете в <strong>Гран-При Ф1</strong>, или остановились в одном из люксовых отелей — вы заслуживаете премиум-сервиса.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE предоставляет <strong>премиум трансферы в Монако</strong>, идеальные для поездок из аэропорта Ниццы, деловых встреч, особых мероприятий и исследования средиземноморского побережья.
+      </p>
+      <ul class="fade-in-section">
+        <li>Трансфер аэропорт Ниццы - Монако (30-45 мин)</li>
+        <li>Специальный сервис на Гран-При Монако</li>
+        <li>Трансферы в люксовые отели и на яхты</li>
+        <li>Бизнес и корпоративные перевозки</li>
+        <li>Профессиональные русскоговорящие водители</li>
+        <li>Премиум автомобили (Tesla, Mercedes S-Class)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Тарифы на Трансферы в Монако</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Маршрут</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Аэропорт Ниццы → Монако</td><td>30 км</td><td>30-45 мин</td><td>80€</td></tr>
+          <tr><td>Центр Ниццы → Монако</td><td>20 км</td><td>25-35 мин</td><td>65€</td></tr>
+          <tr><td>Монако → Канны</td><td>55 км</td><td>55-70 мин</td><td>130€</td></tr>
+          <tr><td>Монако → деревня Эз</td><td>8 км</td><td>15-20 мин</td><td>35€</td></tr>
+          <tr><td>Монако → Сен-Тропе</td><td>110 км</td><td>1ч45</td><td>280€</td></tr>
+          <tr><td>Почасовая аренда (4ч)</td><td>-</td><td>4ч</td><td>320€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Откройте Монако с Личным Водителем</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Казино Монте-Карло"
+          title="Казино Монте-Карло"
+          description="Икона стиля Belle Époque, символ гламура Монако. Вечерние трансферы для посещения казино."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Гран-При Монако"
+          title="Гран-При Формулы 1"
+          description="Специальный сервис на самую престижную гонку мира. Бронируйте за несколько месяцев."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Порт Эркюль Монако"
+          title="Порт Эркюль и Яхты"
+          description="Трансферы к суперяхтам и Monaco Yacht Show. Высадка прямо у причала."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Ближайшие Направления</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/ru" class="text-dark hover-gold">Трансфер Ницца</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">Трансфер Канны</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">Тур в Эз</a>
+        <a href="/vtc-saint-tropez" class="text-dark hover-gold">Сен-Тропе</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

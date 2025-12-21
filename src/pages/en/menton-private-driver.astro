@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Menton Private Driver – Italian Border & Lemon Festival | ECOFUNDRIVE";
+const description = "Private driver to Menton, the pearl of France near Italy. Lemon Festival, stunning gardens, Italian Riviera day trips. Premium chauffeur service 24/7.";
+const keywords = [
+  'Menton private driver',
+  'Menton Lemon Festival transport',
+  'Nice to Menton transfer',
+  'Menton Italy day trip',
+  'Monaco to Menton driver'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-menton-private-driver"
+  canonical="/en/menton-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Menton Private Driver", url: "/en/menton-private-driver" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Menton"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Private driver Menton French Riviera"
+      imageSide="right"
+      ctaText="Book Your Menton Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Menton</strong>, the "Pearl of France," enjoys the warmest climate on the French Riviera and sits just 2 km from the Italian border. Famous for its lemons, Belle Époque architecture, and exceptional gardens, Menton offers a unique blend of French and Italian cultures.
+      </p>
+      <p class="fade-in-section">
+        The town is home to the spectacular <strong>Fête du Citron</strong> (Lemon Festival) each February, and the stunning <strong>Serre de la Madone</strong> and <strong>Val Rahmeh</strong> gardens attract visitors year-round.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE provides <strong>private driver services to Menton</strong> from Nice, Monaco, or anywhere on the Riviera. Perfect for exploring this hidden gem or hopping across to the Italian Riviera.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Menton transfers (45-55 min)</li>
+        <li>Monaco to Menton (15-20 min)</li>
+        <li>Fête du Citron (Lemon Festival) transport</li>
+        <li>Garden tours (Serre de la Madone, Val Rahmeh)</li>
+        <li>Day trips to Italian Riviera (Ventimiglia, San Remo)</li>
+        <li>Border crossing to Italy included</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Menton Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Menton</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
+          <tr><td>Nice City Center → Menton</td><td>30 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Monaco → Menton</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Menton → Ventimiglia (Italy)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
+          <tr><td>Menton → San Remo (Italy)</td><td>40 km</td><td>45 min</td><td>90€</td></tr>
+          <tr><td>Italian Riviera Day Trip</td><td>-</td><td>8h</td><td>450€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Menton</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Lemon Festival Menton"
+          title="Fête du Citron"
+          description="The world-famous Lemon Festival each February. Giant citrus sculptures and parades attract 250,000 visitors."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Menton Gardens"
+          title="Exceptional Gardens"
+          description="Subtropical gardens including Serre de la Madone and Val Rahmeh. A paradise for plant lovers."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Italian Border Menton"
+          title="Gateway to Italy"
+          description="Just 2 km from Italy. Day trips to Ventimiglia market (Fridays) and San Remo."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">When is the Lemon Festival?</h3>
+          <div class="faq-answer">
+            <p>The <strong>Fête du Citron</strong> takes place every February for about 2-3 weeks. We provide dedicated transport to the festival – book early as demand is very high!</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you take us across the border to Italy?</h3>
+          <div class="faq-answer">
+            <p>Yes, we regularly do <strong>cross-border trips to Italy</strong>. Popular destinations include Ventimiglia (famous Friday market), San Remo, and the Italian Riviera. No additional paperwork needed for EU citizens.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Is Menton worth a day trip?</h3>
+          <div class="faq-answer">
+            <p>Absolutely! Menton offers a different atmosphere from Nice or Monaco – more relaxed and authentically Mediterranean. Combined with a trip to Italy, it makes an excellent full-day excursion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Private Driver</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze Tour</a>
+        <a href="/en" class="text-dark hover-gold">All Destinations</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

@@ -1,54 +1,237 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Index | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "NCC Costa Azzurra – Autista Privato Nizza Monaco Cannes | ECOFUNDRIVE";
+const description = "Servizio NCC premium in Costa Azzurra. Trasferimenti aeroporto Nizza, Monaco, Cannes, Saint-Tropez. Autista privato italiano 24/7. Veicoli di lusso.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'NCC Costa Azzurra',
+  'autista privato Nizza',
+  'trasferimento aeroporto Nizza',
+  'NCC Monaco',
+  'autista italiano Costa Azzurra',
+  'noleggio con conducente Cannes'
+];
+
+const servicesIT = [
+  { icon: "✈️", title: "Trasferimenti Aeroporto", desc: "Accoglienza personalizzata all'aeroporto di Nizza con cartello nominativo. Monitoraggio voli incluso." },
+  { icon: "🏨", title: "Trasferimenti Hotel", desc: "Servizio porta a porta per tutti gli hotel di lusso della Costa Azzurra." },
+  { icon: "⏰", title: "A Disposizione", desc: "Il vostro autista privato per mezza giornata o giornata intera. Ideale per visite e shopping." },
+  { icon: "💼", title: "Business Travel", desc: "Trasporti aziendali, riunioni d'affari, congressi ed eventi." },
+  { icon: "💒", title: "Matrimoni", desc: "Servizio elegante per il vostro giorno speciale. Veicoli decorati su richiesta." },
+  { icon: "🗺️", title: "Tour Panoramici", desc: "Scoprite la Riviera: Nizza, Eze, Monaco, villaggi arroccati, cantine." }
+];
+
+const tarifeIT = [
+  { da: "Aeroporto Nizza", a: "Nizza Centro", durata: "15-20 min", prezzo: "35€" },
+  { da: "Aeroporto Nizza", a: "Monaco", durata: "30-45 min", prezzo: "80€" },
+  { da: "Aeroporto Nizza", a: "Cannes", durata: "35-45 min", prezzo: "75€" },
+  { da: "Aeroporto Nizza", a: "Saint-Tropez", durata: "1h30-2h", prezzo: "250€" },
+  { da: "Nizza", a: "Eze + Monaco (tour)", durata: "4h", prezzo: "280€" },
+  { da: "Cannes", a: "Monaco", durata: "55-70 min", prezzo: "130€" }
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
-  currentPage="index"
-
-  canonical="/it/index"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  currentPage="it-index"
+  canonical="/it"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" }
+  ]}
+>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Il Vostro Autista Privato in Costa Azzurra</h1>
+        <p class="hero-subtitle">Trasferimenti aeroporto, tour panoramici e trasporti di lusso. Nizza • Cannes • Monaco • Saint-Tropez</p>
+        <div class="hero-cta">
+          <a href="/reservation" class="btn btn-gold">Prenota il Tuo Trasferimento</a>
+          <a href="tel:+33616552811" class="btn btn-outline">Chiama +33 6 16 55 28 11</a>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Services Grid -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">I Nostri Servizi NCC Premium</h2>
+      <p class="text-center mb-xl lead">Vivete il trasporto di lusso in Costa Azzurra con ECOFUNDRIVE</p>
+      <div class="services-grid">
+        {servicesIT.map((service) => (
+          <div class="service-card">
+            <span class="service-icon">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+          </div>
+        ))}
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- Popular Routes -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Tariffe Trasferimenti Popolari</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Da</th><th>A</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          {tarifeIT.map((route) => (
+            <tr>
+              <td>{route.da}</td>
+              <td>{route.a}</td>
+              <td>{route.durata}</td>
+              <td class="price-cell">{route.prezzo}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prezzi fissi senza costi nascosti. Accoglienza personalizzata inclusa.</em></p>
+    </section>
+
+    <!-- Destinations -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Esplorate la Costa Azzurra</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="NCC Nizza"
+          title="Nizza"
+          description="Capitale della Costa Azzurra. Città Vecchia, Promenade des Anglais, Collina del Castello."
+          link="/vtc-nice"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="NCC Monaco"
+          title="Monaco"
+          description="Il glamour della Principauté. Casino di Monte-Carlo, Gran Premio, Port Hercule."
+          link="/vtc-monaco"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="NCC Cannes"
+          title="Cannes"
+          description="Sede del famoso Festival del Cinema. La Croisette, Palais des Festivals, boutique di lusso."
+          link="/vtc-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="NCC Saint-Tropez"
+          title="Saint-Tropez"
+          description="Destinazione jet-set leggendaria. Spiaggia di Pampelonne, Club 55, porto incantevole."
+          link="/vtc-saint-tropez"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Tour Eze"
+          title="Eze e Profumerie"
+          description="Villaggio medievale arroccato con vista mozzafiato. Fabbrica di profumi Fragonard."
+          link="/vtc-eze"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="NCC Antibes"
+          title="Antibes e Cap d'Antibes"
+          description="Città vecchia incantevole, superyacht a Port Vauban, Museo Picasso."
+          link="/vtc-antibes"
+        />
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <SectionImageText
+      title="Perché Scegliere ECOFUNDRIVE?"
+      image="/assets/img/about/chauffeur-professionnel.png"
+      alt="Autista professionale Costa Azzurra"
+      imageSide="right"
+      ctaText="Prenota Ora"
+      ctaLink="/reservation"
+    >
+      <ul class="benefits-list fade-in-section">
+        <li><strong>Prezzi Fissi</strong> – Conoscete la tariffa in anticipo, nessuna sorpresa</li>
+        <li><strong>Veicoli Premium</strong> – Tesla Model S, Mercedes Classe S, van spaziosi</li>
+        <li><strong>Autisti Professionali</strong> – Formati, multilingue (IT/FR/EN), esperti locali</li>
+        <li><strong>Accoglienza Personalizzata</strong> – Con cartello nominativo all'arrivo</li>
+        <li><strong>Monitoraggio Voli</strong> – Adattiamo l'orario di pickup se necessario</li>
+        <li><strong>Disponibili 24/7</strong> – Voli mattutini, rientri notturni, sempre presenti</li>
+        <li><strong>Cancellazione Gratuita</strong> – Fino a 24 ore prima con rimborso completo</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in-section">
+      <div class="container text-center">
+        <h2>Pronti a Viaggiare con Stile?</h2>
+        <p class="lead mb-lg">Prenotate il vostro autista privato e viaggiate in Costa Azzurra con eleganza</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn btn-gold btn-lg">Prenota Online</a>
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">Contattaci su WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Domande Frequenti</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Come prenoto un autista privato?</h3>
+          <div class="faq-answer">
+            <p>Potete prenotare online tramite il nostro <a href="/reservation">modulo di prenotazione</a>, via WhatsApp al +33 6 16 55 28 11, o chiamandoci direttamente. Confermiamo tutte le prenotazioni entro 1 ora.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">I vostri autisti parlano italiano?</h3>
+          <div class="faq-answer">
+            <p>Sì, abbiamo autisti che parlano italiano fluentemente. Su richiesta, possiamo assicurare un autista che parla la vostra lingua.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Fornite seggiolini per bambini?</h3>
+          <div class="faq-answer">
+            <p>Assolutamente. Forniamo seggiolini per neonati, bambini e rialzi gratuitamente. Basta indicare l'età dei bambini al momento della prenotazione.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/assets/img/hero/hero-aeroport-nice.png');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  .hero-title { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  .hero-subtitle { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+  .btn-gold { background: #d4af37; color: #000; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-outline { border: 2px solid white; color: white; }
+  .btn-outline:hover { background: white; color: #000; }
+  .btn-whatsapp { background: #25D366; color: white; }
+  .btn-lg { padding: 1.25rem 2.5rem; font-size: 1.1rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card { background: #f9f9f9; padding: 2rem; border-radius: 12px; text-align: center; transition: transform 0.3s ease; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .service-card h3 { margin-bottom: 0.5rem; color: #d4af37; }
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .price-cell { font-weight: 700; color: #d4af37; }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .benefits-list { list-style: none; padding: 0; }
+  .benefits-list li { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+  .cta-section { background: linear-gradient(135deg, #d4af37, #b8941f); padding: 4rem 2rem; color: #000; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-section .btn-gold { background: #000; color: #d4af37; }
+</style>

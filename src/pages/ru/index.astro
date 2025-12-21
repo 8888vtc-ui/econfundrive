@@ -1,54 +1,237 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Index | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Трансфер Лазурный берег – Личный Водитель Ницца Монако | ECOFUNDRIVE";
+const description = "Премиум трансфер на Лазурном Берегу. Аэропорт Ниццы, Монако, Канны, Сен-Тропе. Русскоговорящий водитель 24/7. Люксовые автомобили.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'трансфер Лазурный берег',
+  'личный водитель Ницца',
+  'трансфер аэропорт Ниццы',
+  'VTC Монако',
+  'русский водитель Ницца',
+  'трансфер Канны'
+];
+
+const servicesRU = [
+  { icon: "✈️", title: "Трансфер из аэропорта", desc: "Персональная встреча в аэропорту Ниццы с табличкой. Отслеживание рейсов включено." },
+  { icon: "🏨", title: "Трансфер в отели", desc: "Сервис от двери до двери для всех люксовых отелей Лазурного Берега." },
+  { icon: "⏰", title: "Почасовая аренда", desc: "Ваш личный водитель на полдня или целый день. Идеально для экскурсий и шопинга." },
+  { icon: "💼", title: "Бизнес-поездки", desc: "Корпоративные перевозки, деловые встречи, конгрессы и мероприятия." },
+  { icon: "💒", title: "Свадьбы", desc: "Элегантный сервис для вашего особенного дня. Украшенные автомобили по запросу." },
+  { icon: "🗺️", title: "Панорамные туры", desc: "Откройте Ривьеру: Ницца, Эз, Монако, горные деревни, виноградники." }
+];
+
+const tarifeRU = [
+  { ot: "Аэропорт Ниццы", do: "Центр Ниццы", vremya: "15-20 мин", cena: "35€" },
+  { ot: "Аэропорт Ниццы", do: "Монако", vremya: "30-45 мин", cena: "80€" },
+  { ot: "Аэропорт Ниццы", do: "Канны", vremya: "35-45 мин", cena: "75€" },
+  { ot: "Аэропорт Ниццы", do: "Сен-Тропе", vremya: "1ч30-2ч", cena: "250€" },
+  { ot: "Ницца", do: "Эз + Монако (тур)", vremya: "4ч", cena: "280€" },
+  { ot: "Канны", do: "Монако", vremya: "55-70 мин", cena: "130€" }
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
-  currentPage="index"
-
-  canonical="/ru/index"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  currentPage="ru-index"
+  canonical="/ru"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" }
+  ]}
+>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Ваш Личный Водитель на Лазурном Берегу</h1>
+        <p class="hero-subtitle">Трансферы из аэропорта, панорамные туры и люксовые перевозки. Ницца • Канны • Монако • Сен-Тропе</p>
+        <div class="hero-cta">
+          <a href="/reservation" class="btn btn-gold">Забронировать Трансфер</a>
+          <a href="tel:+33616552811" class="btn btn-outline">Позвонить +33 6 16 55 28 11</a>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Services Grid -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Наши Премиум Услуги</h2>
+      <p class="text-center mb-xl lead">Ощутите роскошь перемещения по Лазурному Берегу с ECOFUNDRIVE</p>
+      <div class="services-grid">
+        {servicesRU.map((service) => (
+          <div class="service-card">
+            <span class="service-icon">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+          </div>
+        ))}
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- Popular Routes -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Популярные Маршруты и Цены</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Откуда</th><th>Куда</th><th>Время</th><th>Цена от</th></tr>
+        </thead>
+        <tbody>
+          {tarifeRU.map((route) => (
+            <tr>
+              <td>{route.ot}</td>
+              <td>{route.do}</td>
+              <td>{route.vremya}</td>
+              <td class="price-cell">{route.cena}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Фиксированные цены без скрытых платежей. Персональная встреча включена.</em></p>
+    </section>
+
+    <!-- Destinations -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Исследуйте Лазурный Берег</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Трансфер Ницца"
+          title="Ницца"
+          description="Столица Лазурного Берега. Старый город, Английская набережная, Замковый холм."
+          link="/vtc-nice"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Трансфер Монако"
+          title="Монако"
+          description="Гламур княжества. Казино Монте-Карло, Гран-При, порт Эркюль."
+          link="/vtc-monaco"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Трансфер Канны"
+          title="Канны"
+          description="Родина знаменитого кинофестиваля. Круазет, Дворец Фестивалей, бутики."
+          link="/vtc-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Трансфер Сен-Тропе"
+          title="Сен-Тропе"
+          description="Легендарный курорт. Пляж Пампелон, Club 55, очаровательный старый порт."
+          link="/vtc-saint-tropez"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Тур в Эз"
+          title="Эз и Парфюмерии"
+          description="Средневековая деревня с потрясающими видами. Фабрика духов Фрагонар."
+          link="/vtc-eze"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Трансфер Антиб"
+          title="Антиб и Кап д'Антиб"
+          description="Очаровательный старый город, суперяхты в Порт Вобан, Музей Пикассо."
+          link="/vtc-antibes"
+        />
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <SectionImageText
+      title="Почему Выбирают ECOFUNDRIVE?"
+      image="/assets/img/about/chauffeur-professionnel.png"
+      alt="Профессиональный водитель Лазурный Берег"
+      imageSide="right"
+      ctaText="Забронировать"
+      ctaLink="/reservation"
+    >
+      <ul class="benefits-list fade-in-section">
+        <li><strong>Фиксированные цены</strong> – Знайте стоимость заранее, без сюрпризов</li>
+        <li><strong>Премиум автомобили</strong> – Tesla Model S, Mercedes S-Class, просторные минивэны</li>
+        <li><strong>Профессиональные водители</strong> – Обученные, владеющие русским языком</li>
+        <li><strong>Персональная встреча</strong> – С табличкой с вашим именем при прибытии</li>
+        <li><strong>Отслеживание рейсов</strong> – Корректируем время встречи при задержке рейса</li>
+        <li><strong>Доступны 24/7</strong> – Ранние рейсы, ночные возвращения – мы всегда на связи</li>
+        <li><strong>Бесплатная отмена</strong> – До 24 часов до поездки с полным возвратом</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in-section">
+      <div class="container text-center">
+        <h2>Готовы Путешествовать с Комфортом?</h2>
+        <p class="lead mb-lg">Закажите личного водителя и путешествуйте по Лазурному Берегу со стилем</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn btn-gold btn-lg">Забронировать Онлайн</a>
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">Написать в WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Часто Задаваемые Вопросы</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Как забронировать личного водителя?</h3>
+          <div class="faq-answer">
+            <p>Вы можете забронировать онлайн через нашу <a href="/reservation">форму бронирования</a>, через WhatsApp по номеру +33 6 16 55 28 11 или позвонив нам напрямую. Мы подтверждаем все бронирования в течение 1 часа.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Ваши водители говорят по-русски?</h3>
+          <div class="faq-answer">
+            <p>Да, у нас есть русскоговорящие водители. По запросу мы можем предоставить водителя, владеющего русским языком.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Предоставляете ли вы детские кресла?</h3>
+          <div class="faq-answer">
+            <p>Конечно. Мы предоставляем автокресла для младенцев, детей и бустеры бесплатно. Просто укажите возраст детей при бронировании.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/assets/img/hero/hero-aeroport-nice.png');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  .hero-title { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  .hero-subtitle { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+  .btn-gold { background: #d4af37; color: #000; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-outline { border: 2px solid white; color: white; }
+  .btn-outline:hover { background: white; color: #000; }
+  .btn-whatsapp { background: #25D366; color: white; }
+  .btn-lg { padding: 1.25rem 2.5rem; font-size: 1.1rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card { background: #f9f9f9; padding: 2rem; border-radius: 12px; text-align: center; transition: transform 0.3s ease; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .service-card h3 { margin-bottom: 0.5rem; color: #d4af37; }
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .price-cell { font-weight: 700; color: #d4af37; }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .benefits-list { list-style: none; padding: 0; }
+  .benefits-list li { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+  .cta-section { background: linear-gradient(135deg, #d4af37, #b8941f); padding: 4rem 2rem; color: #000; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-section .btn-gold { background: #000; color: #d4af37; }
+</style>
