@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Monaco Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
+const description = "Private driver VTC service in Monaco. Monte-Carlo Casino, Grand Prix, luxury hotels, Port Hercule. Premium chauffeur service 24/7 from Nice Airport.";
+const keywords = [
+  'Monaco private driver',
+  'VTC Monaco',
+  'Monaco chauffeur service',
+  'Nice Airport to Monaco transfer',
+  'Monte Carlo driver',
+  'Grand Prix Monaco transport'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-monaco-private-driver"
+  canonical="/en/monaco-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Services", url: "/en#services" },
+    { name: "Monaco Private Driver", url: "/en/monaco-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is the transfer from Nice Airport to Monaco?","acceptedAnswer":{"@type":"Answer","text":"The Nice Airport to Monaco transfer takes approximately 30-45 minutes depending on traffic. During Grand Prix or peak season, it may take longer."}},{"@type":"Question","name":"Do you provide service during the Monaco Grand Prix?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer dedicated VTC service during the Monaco Grand Prix. We recommend booking several months in advance due to extremely high demand."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver in Monaco"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Private driver VTC Monaco Monte Carlo"
+      imageSide="right"
+      ctaText="Book Your Monaco Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Monaco</strong>, the glamorous principality on the French Riviera, embodies luxury, elegance and prestige. Whether you're visiting the <strong>Monte-Carlo Casino</strong>, attending the <strong>Grand Prix</strong>, or staying at one of the world-class hotels, you deserve a premium chauffeur service.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE provides <strong>premium private driver services in Monaco</strong>, perfect for airport transfers from Nice, business meetings, special events, and exploring the Mediterranean coast.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Monaco transfers (30-45 min)</li>
+        <li>Grand Prix Monaco dedicated service</li>
+        <li>Luxury hotel transfers & yacht access</li>
+        <li>Business & corporate transportation</li>
+        <li>Multilingual professional chauffeurs</li>
+        <li>Premium vehicles (Tesla, Mercedes S-Class)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Monaco Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
+          <tr><td>Nice City Center → Monaco</td><td>20 km</td><td>25-35 min</td><td>65€</td></tr>
+          <tr><td>Monaco → Cannes</td><td>55 km</td><td>55-70 min</td><td>130€</td></tr>
+          <tr><td>Monaco → Eze Village</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Monaco → Saint-Tropez</td><td>110 km</td><td>1h45</td><td>280€</td></tr>
+          <tr><td>Half-day disposal (4h)</td><td>-</td><td>4h</td><td>320€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prices are indicative. Personal greeting with name board included.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Monaco with Your Private Driver</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Monte Carlo Casino"
+          title="Monte-Carlo Casino"
+          description="The iconic Belle Époque casino, symbol of Monaco's glamour. Evening transfers for casino nights and gala events."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Monaco Grand Prix"
+          title="Formula 1 Grand Prix"
+          description="Dedicated VTC service for the most prestigious race in the world. Book months in advance."
+          link="/en/guide-monaco-grand-prix-transport"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Port Hercule Monaco"
+          title="Port Hercule & Yachts"
+          description="Transfers to superyachts and the famous Monaco Yacht Show. Quayside drop-off available."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How long is the transfer from Nice Airport to Monaco?</h3>
+          <div class="faq-answer">
+            <p>The Nice Airport to Monaco transfer takes approximately <strong>30-45 minutes</strong> depending on traffic. During the Grand Prix or summer high season, it may take longer, but our drivers know alternative routes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you provide service during the Monaco Grand Prix?</h3>
+          <div class="faq-answer">
+            <p>Yes, we offer <strong>dedicated VTC service during the Monaco Grand Prix</strong>. Due to extremely high demand, we recommend booking several months in advance to guarantee availability.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you access luxury hotels in Monaco?</h3>
+          <div class="faq-answer">
+            <p>Absolutely. Our chauffeurs are familiar with all luxury hotels in Monaco (Hôtel de Paris, Hermitage, Fairmont, Métropole) and can drop you off directly at the main entrance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">Cannes Private Driver</a>
+        <a href="/en/nice-airport-to-monaco-transfer" class="text-dark hover-gold">Nice → Monaco Transfer</a>
+        <a href="/en/guide-one-day-in-monaco" class="text-dark hover-gold">One Day in Monaco</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Cap Ferrat – Chauffeur Privé Villa Ephrussi | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Saint-Jean-Cap-Ferrat. Villa Ephrussi de Rothschild, Grand Hôtel du Cap-Ferrat, villas de luxe. Service premium pour clientèle exigeante.";
+const keywords = [
+  'VTC Cap Ferrat',
+  'chauffeur privé Cap Ferrat',
+  'VTC Villa Ephrussi',
+  'transfert Saint-Jean-Cap-Ferrat',
+  'VTC Grand Hotel Cap Ferrat',
+  'chauffeur presqu ile Cap Ferrat'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-cap-ferrat"
+  canonical="/vtc-cap-ferrat"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Cap Ferrat", url: "/vtc-cap-ferrat" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Cap Ferrat ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert Nice → Cap Ferrat coûte environ 45-55€. La presqu'île est située à 12 km de Nice, entre Villefranche et Beaulieu."}},{"@type":"Question","name":"Proposez-vous des transferts vers le Grand Hôtel du Cap-Ferrat ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous desservons régulièrement le Grand Hôtel du Cap-Ferrat Four Seasons ainsi que tous les hôtels et villas de la presqu'île."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Cap Ferrat"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="VTC chauffeur privé Cap Ferrat"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Jean-Cap-Ferrat</strong>, souvent appelé simplement "Cap Ferrat", est l'une des destinations les plus exclusives de la Riviera française. Cette presqu'île de rêve abrite certaines des propriétés les plus chères au monde, la somptueuse <strong>Villa Ephrussi de Rothschild</strong> et le mythique <strong>Grand Hôtel du Cap-Ferrat Four Seasons</strong>.
+      </p>
+      <p class="fade-in-section">
+        Pour une destination aussi prestigieuse, seul un service VTC d'excellence est à la hauteur. ECOFUNDRIVE vous offre un <strong>chauffeur privé premium à Cap Ferrat</strong>, avec des véhicules haut de gamme et un service irréprochable.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (25-35 min)</li>
+        <li>Service pour les hôtels 5 étoiles et villas privées</li>
+        <li>Visite Villa Ephrussi de Rothschild</li>
+        <li>Excursion tour de la presqu'île et sentiers</li>
+        <li>Dîners gastronomiques et événements privés</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Cap Ferrat</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Cap Ferrat</td><td>15 km</td><td>25-35 min</td><td>55€</td></tr>
+          <tr><td>Nice Centre → Cap Ferrat</td><td>12 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Cap Ferrat → Monaco</td><td>10 km</td><td>18-25 min</td><td>40€</td></tr>
+          <tr><td>Cap Ferrat → Villefranche-sur-Mer</td><td>3 km</td><td>5-8 min</td><td>18€</td></tr>
+          <tr><td>Cap Ferrat → Beaulieu-sur-Mer</td><td>3 km</td><td>5-10 min</td><td>20€</td></tr>
+          <tr><td>Cap Ferrat → Cannes</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Cap Ferrat</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Villa Ephrussi Rothschild"
+          title="Villa Ephrussi de Rothschild"
+          description="Palais de style Renaissance italienne aux 9 jardins thématiques. Vue imprenable sur les deux baies de la presqu'île."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Grand Hotel Cap Ferrat"
+          title="Grand Hôtel du Cap-Ferrat"
+          description="Palace Four Seasons mythique, ses plages privées et son restaurant étoilé face à la mer."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Sentier Cap Ferrat"
+          title="Le Sentier du Littoral"
+          description="Promenade de 11 km autour de la presqu'île, entre criques cachées et vues spectaculaires."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

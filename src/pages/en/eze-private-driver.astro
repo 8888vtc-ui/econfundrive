@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Eze Village Private Driver – Perfumeries & Scenic Drive | ECOFUNDRIVE";
+const description = "Private driver to Eze Village from Nice. Exotic Garden, Fragonard perfumery, Grande Corniche scenic drive. Perfect half-day tour from Nice or Monaco.";
+const keywords = [
+  'Eze village private driver',
+  'VTC Eze',
+  'Nice to Eze transfer',
+  'Fragonard perfumery tour',
+  'Grande Corniche driver',
+  'Eze panoramic view'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-eze-private-driver"
+  canonical="/en/eze-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Services", url: "/en#services" },
+    { name: "Eze Private Driver", url: "/en/eze-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can I see in Eze Village?","acceptedAnswer":{"@type":"Answer","text":"Eze offers a stunning medieval village perched 429m above the sea, an exotic garden with 360° views, and famous perfumeries (Fragonard, Galimard) with free tours."}},{"@type":"Question","name":"Can you do a Nice - Eze - Monaco scenic tour?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is our most popular tour! We take the scenic Grande/Moyenne Corniche road with breathtaking views, stop in Eze for 2-3 hours, then continue to Monaco."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Eze Village"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Private driver VTC Eze Village"
+      imageSide="right"
+      ctaText="Book Your Eze Tour"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Eze</strong> is one of the most spectacular hilltop villages on the French Riviera. Perched 429 meters above the Mediterranean, this medieval eagle's nest offers <strong>breathtaking panoramic views</strong> stretching from Italy to Saint-Tropez.
+      </p>
+      <p class="fade-in-section">
+        The village is home to the famous <strong>Exotic Garden</strong> at its summit, the renowned <strong>Fragonard and Galimard perfumeries</strong>, and charming artisan boutiques. It's an essential stop on any Riviera itinerary.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE provides <strong>private driver tours to Eze</strong>, including the scenic Grande Corniche route with stunning photo stops along the way.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice - Eze - Monaco scenic tour (most popular)</li>
+        <li>Perfumery visit (Fragonard/Galimard) included</li>
+        <li>Time to explore the village and Exotic Garden</li>
+        <li>Stunning photo stops on the Corniche roads</li>
+        <li>Flexible half-day or full-day options</li>
+        <li>Pickup from hotel, cruise ship, or airport</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Eze Tour Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Tour / Route</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice → Eze (one way)</td><td>25-30 min</td><td>40€</td></tr>
+          <tr><td>Nice → Eze → Nice (with 2h wait)</td><td>3h total</td><td>150€</td></tr>
+          <tr><td>Nice → Eze → Monaco (half-day)</td><td>4h</td><td>280€</td></tr>
+          <tr><td>Monaco → Eze → Monaco (with 2h wait)</td><td>2.5h</td><td>120€</td></tr>
+          <tr><td>Full Riviera Tour: Nice - Eze - Monaco - Nice</td><td>6h</td><td>380€</td></tr>
+          <tr><td>Cruise ship excursion from Villefranche</td><td>4h</td><td>260€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>All tours include scenic route and photo stops.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">What to See in Eze</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Exotic Garden Eze"
+          title="Exotic Garden"
+          description="Stunning cactus garden at the summit with 360° Mediterranean views. The castle ruins add to the magic."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Fragonard Perfumery Eze"
+          title="Perfumeries"
+          description="Free guided tours of Fragonard and Galimard. Learn the secrets of perfume-making and shop for fragrances."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Grande Corniche Eze"
+          title="Grande Corniche Road"
+          description="One of the world's most scenic drives, offering spectacular coastal views. Featured in many films."
+          link="/en/guide-scenic-road-nice-eze-monaco"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How long should I spend in Eze?</h3>
+          <div class="faq-answer">
+            <p>We recommend <strong>2-3 hours in Eze</strong> to explore the village, visit the Exotic Garden, and tour a perfumery. Your driver will wait or return at your chosen time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you combine Eze with Monaco?</h3>
+          <div class="faq-answer">
+            <p>Absolutely! Our <strong>Nice - Eze - Monaco tour</strong> is our most popular half-day excursion. You'll enjoy the scenic drive, explore Eze, then continue to Monaco for the afternoon.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Is the perfumery visit free?</h3>
+          <div class="faq-answer">
+            <p>Yes, both <strong>Fragonard and Galimard</strong> offer free guided factory tours. There's a boutique where you can purchase perfumes, but there's no obligation to buy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Private Driver</a>
+        <a href="/en/guide-scenic-road-nice-eze-monaco" class="text-dark hover-gold">Scenic Drive Guide</a>
+        <a href="/en/guide-hilltop-villages-french-riviera" class="text-dark hover-gold">Hilltop Villages</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

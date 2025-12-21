@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Beaulieu-sur-Mer – Chauffeur Privé Villa Kérylos | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Beaulieu-sur-Mer. Villa Kérylos, port de plaisance, plages privées, hôtels 5 étoiles. Transferts Nice, Monaco. Service premium 24h/24.";
+const keywords = [
+  'VTC Beaulieu-sur-Mer',
+  'chauffeur privé Beaulieu',
+  'VTC Villa Kérylos',
+  'transfert Nice Beaulieu',
+  'chauffeur Beaulieu Monaco'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-beaulieu-sur-mer"
+  canonical="/vtc-beaulieu-sur-mer"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Beaulieu-sur-Mer", url: "/vtc-beaulieu-sur-mer" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Beaulieu-sur-Mer ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert Nice → Beaulieu-sur-Mer coûte environ 40-50€. Beaulieu est située à 10 km à l'est de Nice, entre Villefranche et Monaco."}},{"@type":"Question","name":"Beaulieu-sur-Mer est-elle proche de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Beaulieu est à seulement 8 km de Monaco. Le trajet en VTC prend environ 15-20 minutes."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Beaulieu-sur-Mer"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="VTC chauffeur privé Beaulieu-sur-Mer"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Beaulieu-sur-Mer</strong>, surnommée "La Petite Afrique" pour son microclimat exceptionnel, est l'une des stations balnéaires les plus élégantes de la Côte d'Azur. Cette destination prisée de la Belle Époque a conservé tout son charme avec ses villas somptueuses, son port de plaisance et la célèbre <strong>Villa Kérylos</strong>.
+      </p>
+      <p class="fade-in-section">
+        Située entre Nice et Monaco, Beaulieu est un havre de paix pour une clientèle exigeante. ECOFUNDRIVE vous propose un <strong>service VTC premium à Beaulieu-sur-Mer</strong>, parfait pour vos transferts aéroport, excursions ou dîners dans les restaurants étoilés.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (25-30 min)</li>
+        <li>Navettes vers Monaco (15-20 min)</li>
+        <li>Visite Villa Kérylos et baie des Fourmis</li>
+        <li>Accès aux hôtels 5 étoiles et restaurants gastronomiques</li>
+        <li>Circuit Moyenne Corniche Nice - Èze - Monaco</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Beaulieu-sur-Mer</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Beaulieu-sur-Mer</td><td>18 km</td><td>25-35 min</td><td>50€</td></tr>
+          <tr><td>Nice Centre → Beaulieu</td><td>10 km</td><td>15-25 min</td><td>40€</td></tr>
+          <tr><td>Beaulieu → Monaco</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Beaulieu → Èze Village</td><td>5 km</td><td>10-15 min</td><td>25€</td></tr>
+          <tr><td>Beaulieu → Cap Ferrat</td><td>3 km</td><td>5-10 min</td><td>20€</td></tr>
+          <tr><td>Beaulieu → Villefranche-sur-Mer</td><td>4 km</td><td>8-12 min</td><td>22€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Beaulieu-sur-Mer</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Villa Kérylos Beaulieu"
+          title="Villa Kérylos"
+          description="Réplique unique d'une villa grecque antique, surplombant la mer. Un voyage dans le temps fascinant."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Baie des Fourmis Beaulieu"
+          title="La Baie des Fourmis"
+          description="L'une des plus belles plages de la Côte d'Azur, avec vue sur le Cap Ferrat. Eau cristalline garantie."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Port Beaulieu"
+          title="Le Port de Plaisance"
+          description="Port élégant avec yachts de luxe, restaurants et promenade le long du quai."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

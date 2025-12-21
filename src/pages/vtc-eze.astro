@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Èze – Chauffeur Privé Village Perché & Parfumeries | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Èze. Jardin Exotique, village médiéval, parfumeries Fragonard et Galimard. Circuit Moyenne Corniche. Transferts Nice, Monaco. Service premium.";
+const keywords = [
+  'VTC Eze',
+  'chauffeur privé Eze',
+  'VTC parfumerie Eze',
+  'transfert Nice Eze',
+  'VTC Jardin Exotique Eze'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-eze"
+  canonical="/vtc-eze"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Èze", url: "/vtc-eze" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps pour visiter Èze ?","acceptedAnswer":{"@type":"Answer","text":"Comptez environ 2-3 heures pour visiter le village, le jardin exotique et une parfumerie. Nous pouvons vous attendre ou revenir vous chercher."}},{"@type":"Question","name":"Proposez-vous un circuit Nice - Èze - Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, c'est notre circuit le plus populaire ! Départ de Nice le matin, visite d'Èze (village + parfumerie), déjeuner, puis Monaco l'après-midi. Demi-journée ou journée complète."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Èze"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="VTC chauffeur privé Èze village"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Èze</strong> est l'un des villages perchés les plus spectaculaires de la Côte d'Azur. Accroché à une falaise à 429 mètres d'altitude, ce nid d'aigle médiéval offre une vue à couper le souffle sur la Méditerranée et le Cap Ferrat.
+      </p>
+      <p class="fade-in-section">
+        Le village abrite le célèbre <strong>Jardin Exotique</strong>, les parfumeries <strong>Fragonard</strong> et <strong>Galimard</strong>, ainsi que des ateliers d'artistes. C'est une étape incontournable du circuit Nice - Monaco par la Moyenne Corniche.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Èze</strong> : transferts, circuits touristiques ou mise à disposition pour explorer ce joyau de la Riviera.
+      </p>
+      <ul class="fade-in-section">
+        <li>Circuit Nice - Èze - Monaco (Moyenne Corniche)</li>
+        <li>Visite Jardin Exotique et ruines du château</li>
+        <li>Visite parfumeries Fragonard / Galimard</li>
+        <li>Liaison vers la plage d'Èze-bord-de-Mer</li>
+        <li>Déjeuner avec vue au Chèvre d'Or</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Èze</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Centre → Èze Village</td><td>12 km</td><td>20-30 min</td><td>40€</td></tr>
+          <tr><td>Aéroport Nice → Èze</td><td>18 km</td><td>25-35 min</td><td>50€</td></tr>
+          <tr><td>Èze → Monaco</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Èze Village → Èze-bord-de-Mer</td><td>2 km</td><td>8 min</td><td>15€</td></tr>
+          <tr><td>Circuit Nice - Èze - Monaco (demi-journée)</td><td>-</td><td>4h</td><td>280€</td></tr>
+          <tr><td>Circuit complet avec déjeuner (journée)</td><td>-</td><td>8h</td><td>480€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Èze</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Jardin Exotique Èze"
+          title="Le Jardin Exotique"
+          description="Au sommet du village, un jardin de cactus avec vue panoramique à 360° sur la mer et les Alpes."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Parfumerie Fragonard Eze"
+          title="Parfumeries"
+          description="Visite gratuite des usines Fragonard et Galimard. Découvrez les secrets de la parfumerie provençale."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Moyenne Corniche Eze"
+          title="La Moyenne Corniche"
+          description="Route panoramique légendaire entre Nice et Monaco, avec arrêt photo à Èze. Vues spectaculaires."
+          link="/guide-route-panoramique-nice-eze-monaco"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

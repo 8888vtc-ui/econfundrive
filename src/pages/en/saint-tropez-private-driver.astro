@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Saint-Tropez Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
+const description = "Private driver VTC service to Saint-Tropez from Nice Airport. Club 55, Pampelonne Beach, Port. Premium chauffeur for glamorous St-Tropez experience.";
+const keywords = [
+  'Saint-Tropez private driver',
+  'VTC Saint Tropez',
+  'Nice Airport to Saint-Tropez transfer',
+  'St Tropez chauffeur',
+  'Club 55 transport',
+  'Pampelonne beach transfer'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-saint-tropez-private-driver"
+  canonical="/en/saint-tropez-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Services", url: "/en#services" },
+    { name: "Saint-Tropez Private Driver", url: "/en/saint-tropez-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is the transfer from Nice Airport to Saint-Tropez?","acceptedAnswer":{"@type":"Answer","text":"The Nice Airport to Saint-Tropez transfer takes approximately 1h30-2h depending on traffic. During summer high season, it can take longer due to heavy traffic."}},{"@type":"Question","name":"Can you take us to Club 55 or Nikki Beach?","acceptedAnswer":{"@type":"Answer","text":"Yes, we provide transfers to all beach clubs on Pampelonne Beach including Club 55, Nikki Beach, and Tahiti Beach. We can also wait and bring you back."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Saint-Tropez"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="Private driver VTC Saint-Tropez"
+      imageSide="right"
+      ctaText="Book Your Saint-Tropez Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Tropez</strong> is the ultimate glamour destination on the French Riviera. From the legendary <strong>Pampelonne Beach</strong> and its famous beach clubs to the charming old port, Saint-Tropez attracts celebrities, yachters and discerning travelers from around the world.
+      </p>
+      <p class="fade-in-section">
+        Getting to Saint-Tropez requires crossing the often congested coastal roads, especially in summer. ECOFUNDRIVE provides <strong>premium private driver services to Saint-Tropez</strong>, ensuring you arrive relaxed and refreshed.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Saint-Tropez transfers (1h30-2h)</li>
+        <li>Cannes to Saint-Tropez day trips</li>
+        <li>Beach club transfers (Club 55, Nikki Beach, Tahiti)</li>
+        <li>Port drop-off for yacht access</li>
+        <li>Full day disposal for exploring the Gulf</li>
+        <li>Premium vehicles with air conditioning</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Saint-Tropez Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>300€</td></tr>
+          <tr><td>Saint-Tropez → Pampelonne Beach</td><td>5 km</td><td>10-15 min</td><td>25€</td></tr>
+          <tr><td>Day trip with waiting time (8h)</td><td>-</td><td>8h</td><td>550€</td></tr>
+          <tr><td>Round trip same day</td><td>-</td><td>-</td><td>450€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prices are indicative and may vary during peak season (July-August).</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Saint-Tropez</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Pampelonne Beach Saint-Tropez"
+          title="Pampelonne Beach"
+          description="5 km of white sand and legendary beach clubs: Club 55, Nikki Beach, Tahiti Beach. The place to be."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Saint-Tropez Old Port"
+          title="The Old Port"
+          description="Iconic harbor with superyachts, cafés and the famous Sénéquier. Perfect for an afternoon stroll."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Saint-Tropez Village"
+          title="Place des Lices"
+          description="The heart of Saint-Tropez life. Famous pétanque games, provençal market, and legendary cafés."
+          link="/en/guide-saint-tropez-and-gulf"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How long is the transfer from Nice Airport to Saint-Tropez?</h3>
+          <div class="faq-answer">
+            <p>The Nice Airport to Saint-Tropez transfer takes approximately <strong>1h30 to 2 hours</strong> depending on traffic. During summer high season (July-August), it can take up to 3 hours due to heavy traffic on the coastal road.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you take us directly to Club 55?</h3>
+          <div class="faq-answer">
+            <p>Yes, we provide transfers to all beach clubs on Pampelonne Beach including <strong>Club 55, Nikki Beach, Tahiti Beach, La Voile Rouge</strong> and others. We can wait for you or arrange a pickup time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Is it possible to visit Saint-Tropez as a day trip?</h3>
+          <div class="faq-answer">
+            <p>Absolutely. Many clients book a <strong>day trip from Nice or Cannes to Saint-Tropez</strong>. We recommend leaving early (8-9 AM) to maximize your time. Full day disposal with driver is the most convenient option.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">Cannes Private Driver</a>
+        <a href="/en/nice-airport-to-saint-tropez-transfer" class="text-dark hover-gold">Nice → St-Tropez</a>
+        <a href="/en/guide-saint-tropez-and-gulf" class="text-dark hover-gold">St-Tropez Guide</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

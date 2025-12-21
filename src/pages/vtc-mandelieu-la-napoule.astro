@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Mandelieu-la-Napoule – Chauffeur Privé Golf & Château | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Mandelieu-la-Napoule. Château de la Napoule, Golf Old Course, aéroport Cannes-Mandelieu, port. Proche Cannes. Service premium 24h/24.";
+const keywords = [
+  'VTC Mandelieu-la-Napoule',
+  'chauffeur privé Mandelieu',
+  'VTC Château Napoule',
+  'VTC aéroport Cannes Mandelieu',
+  'VTC golf Old Course'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-mandelieu-la-napoule"
+  canonical="/vtc-mandelieu-la-napoule"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Mandelieu-la-Napoule", url: "/vtc-mandelieu-la-napoule" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts depuis l'aéroport de Cannes-Mandelieu ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts depuis l'aéroport privé de Cannes-Mandelieu vers toutes destinations : hôtels, villas, yachts. Service aviation privée."}},{"@type":"Question","name":"Mandelieu est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mandelieu-la-Napoule est la porte d'entrée de Cannes, à seulement 8 km (10-15 minutes en VTC)."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Mandelieu-la-Napoule"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="VTC chauffeur privé Mandelieu-la-Napoule"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Mandelieu-la-Napoule</strong> est une station balnéaire élégante aux portes de Cannes. La ville est célèbre pour le <strong>Château de la Napoule</strong>, son <strong>aéroport privé</strong> (Cannes-Mandelieu), le prestigieux <strong>Golf Old Course</strong> et son port de plaisance.
+      </p>
+      <p class="fade-in-section">
+        Destination prisée pour les mariages au château et les événements corporate, Mandelieu attire une clientèle exigeante. ECOFUNDRIVE vous propose un <strong>service VTC premium à Mandelieu-la-Napoule</strong> pour tous vos déplacements.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport privé Cannes-Mandelieu</li>
+        <li>Service VTC pour mariages au Château de la Napoule</li>
+        <li>Navettes vers les parcours de golf</li>
+        <li>Liaison port de La Napoule et yachts</li>
+        <li>Transferts vers Cannes et l'aéroport de Nice</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Mandelieu-la-Napoule</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Cannes-Mandelieu → Cannes</td><td>8 km</td><td>12-18 min</td><td>30€</td></tr>
+          <tr><td>Aéroport Nice → Mandelieu</td><td>40 km</td><td>40-50 min</td><td>85€</td></tr>
+          <tr><td>Mandelieu → Cannes Centre</td><td>8 km</td><td>10-15 min</td><td>28€</td></tr>
+          <tr><td>Mandelieu → Mougins</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Mandelieu → Saint-Tropez</td><td>65 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Service mariage (demi-journée)</td><td>-</td><td>4h</td><td>300€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Mandelieu-la-Napoule</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Château de la Napoule"
+          title="Château de la Napoule"
+          description="Château médiéval restauré au style fantaisiste, lieu emblématique pour mariages et événements face à la mer."
+          link="/vtc-mariage-cote-azur"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Golf Old Course Mandelieu"
+          title="Golf Old Course"
+          description="L'un des plus anciens parcours de golf de la Riviera, fondé en 1891. 18 trous dans un cadre exceptionnel."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Aéroport Cannes Mandelieu"
+          title="Aéroport Privé"
+          description="Aéroport d'aviation privée de Cannes-Mandelieu. Service VTC dédié pour jets privés et hélicoptères."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+        <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">VTC Fréjus</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

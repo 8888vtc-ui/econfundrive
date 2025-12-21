@@ -1,0 +1,386 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC ou Taxi ou Uber à Nice : Quel Transport Choisir ? | Comparatif 2025";
+const description = "Comparatif complet VTC vs Taxi vs Uber à Nice et sur la Côte d'Azur. Prix, avantages, inconvénients, disponibilité aéroport. Guide pour choisir le meilleur transport.";
+const keywords = [
+  'VTC ou taxi Nice',
+  'Uber Nice aéroport',
+  'comparatif VTC taxi Uber',
+  'quel transport Nice',
+  'VTC pas cher Nice',
+  'taxi Nice prix',
+  'Uber Nice prix'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="comparatif-vtc-taxi-uber-nice"
+  canonical="/comparatif-vtc-taxi-uber-nice"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "VTC vs Taxi vs Uber", url: "/comparatif-vtc-taxi-uber-nice" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <section class="container py-lg fade-in-section">
+      <h2>Introduction : Comment se déplacer à Nice en 2025 ?</h2>
+      <p>
+        Que vous arriviez à l'<strong>aéroport de Nice Côte d'Azur</strong>, que vous souhaitiez explorer la ville ou vous rendre à Monaco, Cannes ou Saint-Tropez, plusieurs options de transport s'offrent à vous : le <strong>VTC (Voiture de Transport avec Chauffeur)</strong>, le <strong>taxi traditionnel</strong> et les <strong>applications comme Uber</strong>.
+      </p>
+      <p>
+        Mais lequel choisir ? Les différences de prix, de qualité de service et de disponibilité sont réelles. Ce guide comparatif vous aide à faire le bon choix selon votre situation.
+      </p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tableau Comparatif : VTC vs Taxi vs Uber à Nice</h2>
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th class="vtc-col">🚗 VTC (ECOFUNDRIVE)</th>
+              <th>🚕 Taxi</th>
+              <th>📱 Uber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Prix indicatif Aéroport Nice → Centre-ville</strong></td>
+              <td class="vtc-col">30-40€ (tarif fixe)</td>
+              <td>30-45€ (compteur)</td>
+              <td>25-50€ (variable)</td>
+            </tr>
+            <tr>
+              <td><strong>Prix connu à l'avance</strong></td>
+              <td class="vtc-col">✅ Oui, toujours</td>
+              <td>❌ Non (compteur)</td>
+              <td>⚠️ Estimation (surge pricing)</td>
+            </tr>
+            <tr>
+              <td><strong>Réservation à l'avance</strong></td>
+              <td class="vtc-col">✅ Obligatoire, garanti</td>
+              <td>⚠️ Possible mais non garanti</td>
+              <td>❌ Non (temps réel uniquement)</td>
+            </tr>
+            <tr>
+              <td><strong>Disponibilité aéroport</strong></td>
+              <td class="vtc-col">✅ Accueil personnalisé</td>
+              <td>✅ File d'attente taxi</td>
+              <td>⚠️ Variable selon l'heure</td>
+            </tr>
+            <tr>
+              <td><strong>Accueil avec pancarte</strong></td>
+              <td class="vtc-col">✅ Inclus</td>
+              <td>❌ Non</td>
+              <td>❌ Non</td>
+            </tr>
+            <tr>
+              <td><strong>Qualité des véhicules</strong></td>
+              <td class="vtc-col">✅ Premium (Tesla, Mercedes)</td>
+              <td>⚠️ Variable</td>
+              <td>⚠️ Variable</td>
+            </tr>
+            <tr>
+              <td><strong>Chauffeurs professionnels</strong></td>
+              <td class="vtc-col">✅ Formés, multilingues</td>
+              <td>✅ Professionnels</td>
+              <td>⚠️ Particuliers, variable</td>
+            </tr>
+            <tr>
+              <td><strong>Siège enfant disponible</strong></td>
+              <td class="vtc-col">✅ Sur demande, gratuit</td>
+              <td>❌ Rarement</td>
+              <td>❌ Rarement</td>
+            </tr>
+            <tr>
+              <td><strong>Paiement carte/facture</strong></td>
+              <td class="vtc-col">✅ CB, virement, facture</td>
+              <td>✅ CB acceptée</td>
+              <td>✅ CB via app</td>
+            </tr>
+            <tr>
+              <td><strong>Disponibilité 24h/24</strong></td>
+              <td class="vtc-col">✅ Oui</td>
+              <td>⚠️ Réduite la nuit</td>
+              <td>⚠️ Réduite la nuit</td>
+            </tr>
+            <tr>
+              <td><strong>Longue distance (Monaco, St-Tropez)</strong></td>
+              <td class="vtc-col">✅ Spécialité</td>
+              <td>⚠️ Certains refusent</td>
+              <td>❌ Non disponible</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <SectionImageText
+      title="Avantages du VTC par rapport au Taxi"
+      image="/assets/img/about/vehicule-premium.png"
+      alt="Intérieur VTC premium"
+      imageSide="right"
+      ctaText="Réserver un VTC"
+      ctaLink="/reservation"
+    >
+      <h3 class="fade-in-section">1. Prix fixe connu à l'avance</h3>
+      <p class="fade-in-section">
+        Avec un <strong>VTC comme ECOFUNDRIVE</strong>, vous connaissez le prix exact de votre course avant de réserver. Pas de surprise liée aux embouteillages, aux détours ou aux "extras" non prévus. Le taxi, lui, fonctionne au compteur : le prix final dépend du trafic et de l'itinéraire.
+      </p>
+
+      <h3 class="fade-in-section">2. Réservation garantie</h3>
+      <p class="fade-in-section">
+        Quand vous réservez un VTC, votre chauffeur est <strong>garanti</strong>. Il sera là à l'heure convenue, que ce soit à 6h du matin ou à minuit. Avec un taxi, la réservation est "meilleur effort" : si aucun taxi n'est disponible, vous n'en aurez pas.
+      </p>
+
+      <h3 class="fade-in-section">3. Accueil personnalisé à l'aéroport</h3>
+      <p class="fade-in-section">
+        Votre chauffeur VTC vous attend à la sortie des arrivées avec une <strong>pancarte à votre nom</strong>. Il vous aide avec vos bagages et vous accompagne jusqu'au véhicule. Avec un taxi, vous faites la queue à la borne taxi.
+      </p>
+
+      <h3 class="fade-in-section">4. Véhicules haut de gamme</h3>
+      <p class="fade-in-section">
+        Les VTC comme ECOFUNDRIVE utilisent des véhicules <strong>récents et premium</strong> (Tesla Model S, Mercedes Classe E ou S). Les taxis ont des véhicules de qualité variable.
+      </p>
+    </SectionImageText>
+
+    <SectionImageText
+      title="Avantages du VTC par rapport à Uber"
+      image="/assets/img/services/service-business.png"
+      alt="Chauffeur VTC professionnel"
+      imageSide="left"
+      ctaText="Réserver maintenant"
+      ctaLink="/reservation"
+    >
+      <h3 class="fade-in-section">1. Réservation à l'avance</h3>
+      <p class="fade-in-section">
+        Uber ne permet pas de réserver à l'avance de manière garantie. Vous lancez la demande en temps réel et espérez qu'un chauffeur soit disponible. Avec un VTC, vous réservez 24h, 1 semaine ou 1 mois à l'avance : c'est confirmé.
+      </p>
+
+      <h3 class="fade-in-section">2. Pas de "surge pricing"</h3>
+      <p class="fade-in-section">
+        Uber applique un <strong>tarif dynamique</strong> : pendant les heures de pointe, les événements ou les intempéries, les prix peuvent doubler ou tripler. Le VTC vous donne un <strong>tarif fixe garanti</strong>, quelle que soit la demande.
+      </p>
+
+      <h3 class="fade-in-section">3. Chauffeurs professionnels</h3>
+      <p class="fade-in-section">
+        Les chauffeurs VTC sont des <strong>professionnels formés</strong>, souvent avec des années d'expérience dans le transport de personnes. Les chauffeurs Uber peuvent être des particuliers qui font cette activité occasionnellement.
+      </p>
+
+      <h3 class="fade-in-section">4. Disponibilité garantie la nuit</h3>
+      <p class="fade-in-section">
+        Votre vol arrive à 2h du matin ? Avec un VTC, votre chauffeur est là, garanti. Avec Uber, bonne chance pour trouver un chauffeur à cette heure-là à Nice.
+      </p>
+
+      <h3 class="fade-in-section">5. Longue distance disponible</h3>
+      <p class="fade-in-section">
+        Uber ne dessert pas les trajets longue distance (Nice → Saint-Tropez par exemple). Le VTC est spécialisé dans ces trajets.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Quand choisir chaque option ?</h2>
+      <div class="grid-3-cols">
+        <div class="choice-card vtc-choice">
+          <h3>🚗 Choisissez le VTC si...</h3>
+          <ul>
+            <li>Vous arrivez à l'aéroport et voulez un accueil personnalisé</li>
+            <li>Vous avez un rendez-vous important et ne pouvez pas être en retard</li>
+            <li>Vous voyagez avec des enfants (siège auto)</li>
+            <li>Vous allez à Monaco, Saint-Tropez ou une longue distance</li>
+            <li>Vous participez à un événement (Festival, MIPIM, Grand Prix)</li>
+            <li>Vous voulez un prix fixe sans surprise</li>
+            <li>Votre vol arrive tôt le matin ou tard le soir</li>
+          </ul>
+        </div>
+        <div class="choice-card taxi-choice">
+          <h3>🚕 Choisissez le Taxi si...</h3>
+          <ul>
+            <li>Vous êtes déjà à une borne taxi (gare, aéroport)</li>
+            <li>Vous avez besoin d'un transport immédiat sans réservation</li>
+            <li>Votre trajet est court (moins de 10 km)</li>
+            <li>Le trafic est fluide et prévisible</li>
+          </ul>
+        </div>
+        <div class="choice-card uber-choice">
+          <h3>📱 Choisissez Uber si...</h3>
+          <ul>
+            <li>Vous êtes en ville et avez besoin d'un transport rapide</li>
+            <li>C'est une heure de faible demande (pas de surge pricing)</li>
+            <li>Vous n'avez pas de contrainte horaire stricte</li>
+            <li>Votre trajet est urbain et de courte distance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Prix Comparés : Trajets Courants à Nice</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Trajet</th>
+            <th class="vtc-col">VTC (ECOFUNDRIVE)</th>
+            <th>Taxi (estimation)</th>
+            <th>Uber (estimation)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aéroport Nice → Centre-ville</td>
+            <td class="vtc-col">35€</td>
+            <td>30-45€</td>
+            <td>25-45€</td>
+          </tr>
+          <tr>
+            <td>Aéroport Nice → Monaco</td>
+            <td class="vtc-col">80€</td>
+            <td>80-100€</td>
+            <td>Non disponible</td>
+          </tr>
+          <tr>
+            <td>Aéroport Nice → Cannes</td>
+            <td class="vtc-col">70€</td>
+            <td>70-90€</td>
+            <td>Non disponible</td>
+          </tr>
+          <tr>
+            <td>Aéroport Nice → Saint-Tropez</td>
+            <td class="vtc-col">250€</td>
+            <td>Variable (certains refusent)</td>
+            <td>Non disponible</td>
+          </tr>
+          <tr>
+            <td>Nice Centre → Monaco</td>
+            <td class="vtc-col">65€</td>
+            <td>60-80€</td>
+            <td>50-70€</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Tarifs indicatifs, susceptibles de varier selon l'heure et la date.</em></p>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Est-ce que Uber fonctionne à Nice ?</h3>
+          <div class="faq-answer">
+            <p>
+              Oui, Uber est disponible à Nice et dans les grandes villes de la Côte d'Azur. Cependant, la disponibilité varie selon l'heure et la demande. Les trajets longue distance (vers Saint-Tropez par exemple) ne sont généralement pas possibles.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Pourquoi les VTC sont-ils parfois plus chers que Uber ?</h3>
+          <div class="faq-answer">
+            <p>
+              Le VTC offre un service premium : véhicules haut de gamme, chauffeurs professionnels, réservation garantie, accueil personnalisé. Uber propose un service plus basique avec des chauffeurs occasionnels et des véhicules standards. De plus, le prix Uber affiché est souvent une estimation : le tarif final peut être bien plus élevé en cas de "surge pricing".
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Comment réserver un VTC à Nice ?</h3>
+          <div class="faq-answer">
+            <p>
+              Avec ECOFUNDRIVE, vous pouvez réserver par téléphone au <a href="tel:+33616552811">06 16 55 28 11</a>, par WhatsApp, par email ou via notre <a href="/reservation">formulaire en ligne</a>. Nous confirmons votre réservation et vous envoyons les coordonnées de votre chauffeur avant le jour J.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Y a-t-il des taxis à l'aéroport de Nice ?</h3>
+          <div class="faq-answer">
+            <p>
+              Oui, une file de taxis est disponible à la sortie des deux terminaux de l'aéroport de Nice. Cependant, aux heures de pointe ou pendant les événements, l'attente peut être longue (30 minutes ou plus).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section text-center">
+      <h3 class="h4 mb-md">Prêt à réserver votre VTC ?</h3>
+      <p>Profitez d'un service premium, d'un prix fixe garanti et d'un chauffeur professionnel.</p>
+      <a href="/reservation" class="btn btn-gold mt-md">Réserver maintenant</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .comparison-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .vtc-col {
+    background: rgba(212, 175, 55, 0.1);
+    font-weight: 600;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .choice-card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .choice-card h3 {
+    margin-bottom: 1rem;
+  }
+  .choice-card ul {
+    padding-left: 1.2rem;
+  }
+  .choice-card li {
+    margin-bottom: 0.5rem;
+  }
+  .vtc-choice {
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid #d4af37;
+  }
+  .taxi-choice {
+    background: #fff8e1;
+  }
+  .uber-choice {
+    background: #e3f2fd;
+  }
+  .bg-gold-light {
+    background: rgba(212, 175, 55, 0.1);
+  }
+  .bg-light {
+    background: #f9f9f9;
+  }
+  .btn-gold {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-gold:hover {
+    background: #b8941f;
+  }
+</style>

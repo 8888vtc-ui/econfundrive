@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Mougins – Chauffeur Privé Village Gastronomique | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Mougins, village gastronomique et artistique. Musée de la Photographie, restaurants étoilés, golf. Proche Cannes et Sophia Antipolis. Service premium.";
+const keywords = [
+  'VTC Mougins',
+  'chauffeur privé Mougins',
+  'VTC restaurant Mougins',
+  'transfert Cannes Mougins',
+  'VTC golf Mougins'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-mougins"
+  canonical="/vtc-mougins"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Mougins", url: "/vtc-mougins" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mougins est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mougins est située à seulement 8 km de Cannes, soit 15-20 minutes en VTC. C'est la destination gastronomique préférée des participants au Festival de Cannes."}},{"@type":"Question","name":"Proposez-vous des transferts pour les restaurants étoilés de Mougins ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers tous les restaurants de Mougins, dont Le Moulin de Mougins et La Place de Mougins. Service de retour après le dîner inclus sur demande."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Mougins"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="VTC chauffeur privé Mougins"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Mougins</strong> est un village perché d'exception, internationalement reconnu pour sa gastronomie et son patrimoine artistique. Pablo Picasso y a passé les 12 dernières années de sa vie, et le village attire aujourd'hui les gourmets du monde entier avec ses nombreux restaurants étoilés.
+      </p>
+      <p class="fade-in-section">
+        Situé à mi-chemin entre Cannes et Grasse, Mougins est également réputé pour ses parcours de golf (Royal Mougins, Cannes-Mougins Golf). ECOFUNDRIVE vous propose un <strong>service VTC premium à Mougins</strong> : transferts, dîners gastronomiques ou journées golf.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts vers les restaurants étoilés</li>
+        <li>Service retour après dîner (même tard le soir)</li>
+        <li>Navettes vers les parcours de golf</li>
+        <li>Visite du vieux village et Musée de la Photographie</li>
+        <li>Circuit combiné Mougins + Grasse (parfumeries)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Mougins</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cannes → Mougins</td><td>8 km</td><td>15-20 min</td><td>30€</td></tr>
+          <tr><td>Aéroport Nice → Mougins</td><td>30 km</td><td>35-45 min</td><td>70€</td></tr>
+          <tr><td>Mougins → Sophia Antipolis</td><td>10 km</td><td>15-20 min</td><td>30€</td></tr>
+          <tr><td>Mougins → Grasse</td><td>8 km</td><td>12-18 min</td><td>28€</td></tr>
+          <tr><td>Mougins → Monaco</td><td>50 km</td><td>50-60 min</td><td>110€</td></tr>
+          <tr><td>Dîner + Retour (attente incluse)</td><td>-</td><td>3-4h</td><td>150€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Mougins</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Restaurant gastronomique Mougins"
+          title="Gastronomie Étoilée"
+          description="Le Moulin de Mougins, Paloma, La Place de Mougins... Un concentré de restaurants d'exception."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Musée Photo Mougins"
+          title="Musée de la Photographie"
+          description="Collection unique de portraits de Picasso par les plus grands photographes du XXe siècle."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Golf Mougins"
+          title="Les Golfs de Mougins"
+          description="Royal Mougins Golf Resort et Cannes-Mougins Golf, deux parcours prestigieux dans un cadre provençal."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

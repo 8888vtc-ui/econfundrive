@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC Villefranche-sur-Mer – Chauffeur Privé Rade & Citadelle | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Villefranche-sur-Mer. Rade légendaire, vieille ville colorée, escales croisières, plages. Transferts Nice, Monaco. Service premium 24h/24.";
+const keywords = [
+  'VTC Villefranche-sur-Mer',
+  'chauffeur privé Villefranche',
+  'VTC croisière Villefranche',
+  'transfert Nice Villefranche',
+  'VTC rade Villefranche'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-villefranche-sur-mer"
+  canonical="/vtc-villefranche-sur-mer"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Villefranche-sur-Mer", url: "/vtc-villefranche-sur-mer" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts pour les passagers de croisière à Villefranche ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts pour les escales de croisière à Villefranche. Nous vous attendons à la descente du tender pour des excursions à Nice, Monaco ou l'arrière-pays."}},{"@type":"Question","name":"Combien de temps pour aller de Villefranche à Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet Villefranche → Monaco prend environ 20-25 minutes en VTC par la Moyenne Corniche, avec des vues spectaculaires."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé à Villefranche-sur-Mer"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="VTC chauffeur privé Villefranche-sur-Mer"
+      imageSide="right"
+      ctaText="Réserver votre VTC"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Villefranche-sur-Mer</strong> possède l'une des plus belles rades de la Méditerranée, qui en fait une escale privilégiée pour les navires de croisière. Son vieux port aux maisons colorées, ses ruelles médiévales et la Chapelle Saint-Pierre décorée par Jean Cocteau en font une destination incontournable.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Villefranche-sur-Mer</strong>, particulièrement adapté aux passagers de croisière souhaitant découvrir Nice, Monaco ou les villages de l'arrière-pays.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts passagers de croisière (escales)</li>
+        <li>Excursions Nice, Monaco, Èze depuis Villefranche</li>
+        <li>Transferts aéroport Nice (20-30 min)</li>
+        <li>Circuit Moyenne Corniche panoramique</li>
+        <li>Visite Chapelle Cocteau et Citadelle</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Villefranche-sur-Mer</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Villefranche</td><td>12 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Nice Centre → Villefranche</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Villefranche → Monaco</td><td>10 km</td><td>20-25 min</td><td>40€</td></tr>
+          <tr><td>Villefranche → Èze Village</td><td>6 km</td><td>12-18 min</td><td>28€</td></tr>
+          <tr><td>Villefranche → Cap Ferrat</td><td>3 km</td><td>5-8 min</td><td>18€</td></tr>
+          <tr><td>Excursion Nice + Monaco (demi-journée)</td><td>-</td><td>4h</td><td>280€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Excursions depuis Villefranche pour Croisiéristes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Excursion Nice depuis croisière"
+          title="Nice en Demi-Journée"
+          description="Vieux-Nice, Promenade des Anglais, Colline du Château. Parfait pour une escale de quelques heures."
+          link="/vtc-nice"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Excursion Monaco depuis croisière"
+          title="Monaco en Demi-Journée"
+          description="Casino Monte-Carlo, Palais Princier, Port Hercule. L'essentiel de la Principauté en 4 heures."
+          link="/vtc-monaco"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Excursion Èze Parfumerie"
+          title="Èze & Parfumeries"
+          description="Village perché médiéval, jardin exotique et visite d'une parfumerie (Fragonard ou Galimard)."
+          link="/guide-route-panoramique-nice-eze-monaco"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

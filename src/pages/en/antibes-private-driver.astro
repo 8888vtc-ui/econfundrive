@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Antibes Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
+const description = "Private driver VTC service in Antibes. Old Town, Port Vauban superyachts, Cap d'Antibes, Picasso Museum. Premium chauffeur 24/7 from Nice Airport.";
+const keywords = [
+  'Antibes private driver',
+  'VTC Antibes',
+  'Nice Airport to Antibes transfer',
+  'Cap Antibes chauffeur',
+  'Port Vauban driver',
+  'Juan-les-Pins transfer'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-antibes-private-driver"
+  canonical="/en/antibes-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Services", url: "/en#services" },
+    { name: "Antibes Private Driver", url: "/en/antibes-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is the transfer from Nice Airport to Antibes?","acceptedAnswer":{"@type":"Answer","text":"The Nice Airport to Antibes transfer takes approximately 20-30 minutes depending on traffic. Antibes is conveniently located midway between Nice and Cannes."}},{"@type":"Question","name":"Can you take us to Jazz à Juan festival?","acceptedAnswer":{"@type":"Answer","text":"Yes, we provide transfers to Jazz à Juan in Juan-les-Pins. During the festival, we recommend booking in advance as demand is high."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver in Antibes"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Private driver VTC Antibes"
+      imageSide="right"
+      ctaText="Book Your Antibes Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Antibes</strong> is a captivating coastal town with a rich history dating back to ancient Greece. Today, it's known for its charming <strong>Old Town</strong>, the prestigious <strong>Port Vauban</strong> (Europe's largest marina for superyachts), the <strong>Picasso Museum</strong>, and the glamorous <strong>Cap d'Antibes</strong> peninsula.
+      </p>
+      <p class="fade-in-section">
+        Its twin town <strong>Juan-les-Pins</strong> is famous for the legendary <strong>Jazz à Juan</strong> festival and Art Deco seaside charm. ECOFUNDRIVE provides <strong>premium private driver services in Antibes</strong> and Juan-les-Pins for all your transportation needs.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport transfers (20-30 min)</li>
+        <li>Port Vauban & superyacht access</li>
+        <li>Cap d'Antibes hotel transfers</li>
+        <li>Jazz à Juan festival service</li>
+        <li>Sophia Antipolis business transfers</li>
+        <li>Day trips to Monaco, Saint-Tropez</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Antibes Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Nice Airport → Cap d'Antibes</td><td>25 km</td><td>25-35 min</td><td>55€</td></tr>
+          <tr><td>Antibes → Cannes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Antibes → Monaco</td><td>35 km</td><td>35-45 min</td><td>80€</td></tr>
+          <tr><td>Antibes → Sophia Antipolis</td><td>10 km</td><td>15-20 min</td><td>30€</td></tr>
+          <tr><td>Antibes → Saint-Tropez</td><td>90 km</td><td>1h30</td><td>220€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Antibes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Port Vauban Antibes"
+          title="Port Vauban"
+          description="Europe's largest marina for superyachts. Unique atmosphere among the world's most prestigious vessels."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Cap d'Antibes"
+          title="Cap d'Antibes"
+          description="Exclusive peninsula with legendary Hôtel du Cap-Eden-Roc, hidden coves, and billionaire villas."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Antibes Old Town"
+          title="Old Town & Picasso Museum"
+          description="Charming provençal market, ramparts, and the Picasso Museum in the Château Grimaldi."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How far is Antibes from Nice Airport?</h3>
+          <div class="faq-answer">
+            <p>Antibes is approximately <strong>20 km from Nice Airport</strong>, about 20-30 minutes by VTC. It's conveniently located between Nice and Cannes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you provide service for Jazz à Juan?</h3>
+          <div class="faq-answer">
+            <p>Yes, we provide <strong>dedicated transport for Jazz à Juan festival</strong> in July. Evening pickup after concerts is available. Book in advance during festival dates.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you access Port Vauban for yacht crew?</h3>
+          <div class="faq-answer">
+            <p>Absolutely. We work regularly with <strong>yacht crews and captains</strong> at Port Vauban. Quayside pickup/drop-off and provisioning runs available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">Cannes Private Driver</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Private Driver</a>
+        <a href="/en/saint-tropez-private-driver" class="text-dark hover-gold">St-Tropez Private Driver</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

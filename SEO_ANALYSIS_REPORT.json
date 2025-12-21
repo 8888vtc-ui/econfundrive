@@ -1,0 +1,119 @@
+{
+    "rapport_seo": {
+        "date_analyse": "2025-12-21",
+        "site": "ecofundrive.com",
+        "note_globale": "7/10",
+        "resume": "Le site possède une bonne base SEO technique, mais manque de contenu long (cornerstone) et de mots-clés longue traîne pour dominer les recherches locales Côte d'Azur."
+    },
+    "points_forts": [
+        "Schema.org LocalBusiness bien implémenté avec avis clients",
+        "Pages géolocalisées pour chaque ville (Nice, Cannes, Monaco, etc.)",
+        "Balises hreflang multilingues (FR, EN, IT, RU)",
+        "FAQ structurées avec schema FAQPage",
+        "Performance technique optimisée (Astro SSG)"
+    ],
+    "lacunes_identifiees": [
+        {
+            "probleme": "Contenu trop court sur les pages clés",
+            "detail": "Les pages vtc-sophia-antipolis (2104 bytes) et vtc-villeneuve-loubet (2088 bytes) sont trop légères. Google favorise les contenus de 1500+ mots.",
+            "impact": "Faible"
+        },
+        {
+            "probleme": "Mots-clés longue traîne absents",
+            "detail": "Aucune page ne cible des requêtes comme 'prix VTC Nice aéroport centre-ville', 'VTC pas cher Côte d'Azur', 'chauffeur privé mariage Monaco'",
+            "impact": "Critique"
+        },
+        {
+            "probleme": "Pages de transfert trop minimalistes",
+            "detail": "Les pages transfert-nice-aeroport-* font ~2200 bytes. Elles devraient inclure tarifs, durée, itinéraire, FAQ.",
+            "impact": "Moyen"
+        },
+        {
+            "probleme": "Absence de blog/actualités",
+            "detail": "Pas de contenu frais régulier pour signaler à Google que le site est actif.",
+            "impact": "Moyen"
+        },
+        {
+            "probleme": "Absence de page dédiée par événement majeur",
+            "detail": "Manque: VTC MIPIM Cannes, VTC Formule 1 Monaco, VTC Carnaval Nice, VTC Festival Jazz Juan-les-Pins",
+            "impact": "Critique"
+        }
+    ],
+    "mots_cles_prioritaires": {
+        "transactionnels": [
+            "VTC Nice aéroport prix",
+            "chauffeur privé Nice pas cher",
+            "réserver VTC Cannes",
+            "transfert aéroport Nice Monaco tarif",
+            "VTC mariage Côte d'Azur",
+            "VTC Festival Cannes 2025"
+        ],
+        "informationnels": [
+            "combien coute un VTC Nice aéroport",
+            "VTC ou taxi Nice aéroport",
+            "meilleur VTC Côte d'Azur",
+            "chauffeur privé pour mariage",
+            "transfert groupe Côte d'Azur"
+        ],
+        "locaux_longue_traine": [
+            "VTC Nice aéroport Hotel Negresco",
+            "chauffeur privé Palais des Festivals Cannes",
+            "transfert Nice aéroport Monte Carlo Bay Hotel",
+            "VTC mariage Château de la Napoule",
+            "VTC mariage Villa Ephrussi Rothschild"
+        ]
+    },
+    "pages_a_creer": [
+        {
+            "url": "/vtc-mipim-cannes",
+            "titre": "VTC pour le MIPIM Cannes 2025 – Chauffeur Privé Salon Immobilier",
+            "mots_cles": [
+                "VTC MIPIM",
+                "chauffeur MIPIM Cannes",
+                "transfert MIPIM"
+            ]
+        },
+        {
+            "url": "/vtc-carnaval-nice",
+            "titre": "VTC Carnaval de Nice 2025 – Chauffeur Privé Bataille de Fleurs",
+            "mots_cles": [
+                "VTC Carnaval Nice",
+                "chauffeur Carnaval Nice",
+                "transfert Carnaval"
+            ]
+        },
+        {
+            "url": "/vtc-mariage-chateau-cote-azur",
+            "titre": "VTC Mariage Châteaux Côte d'Azur – Chauffeur Privé pour votre Jour J",
+            "mots_cles": [
+                "VTC mariage château",
+                "chauffeur mariage Côte d'Azur",
+                "voiture mariage Nice"
+            ]
+        },
+        {
+            "url": "/vtc-jazz-juan-les-pins",
+            "titre": "VTC Festival Jazz à Juan – Chauffeur Privé Juan-les-Pins",
+            "mots_cles": [
+                "VTC Jazz Juan",
+                "chauffeur Juan-les-Pins",
+                "transfert festival jazz"
+            ]
+        },
+        {
+            "url": "/comparatif-vtc-taxi-uber-nice",
+            "titre": "VTC vs Taxi vs Uber à Nice : Quel Transport Choisir ?",
+            "mots_cles": [
+                "VTC ou Uber Nice",
+                "taxi ou VTC Nice",
+                "comparatif transport Nice"
+            ]
+        }
+    ],
+    "recommandations_immediates": [
+        "Enrichir les pages vtc-sophia-antipolis et vtc-villeneuve-loubet avec 800+ mots de contenu",
+        "Ajouter les tarifs indicatifs sur les pages de transfert",
+        "Créer les 5 pages événementielles listées ci-dessus",
+        "Ajouter un composant 'Articles récents' sur la page d'accueil"
+    ]
+}

@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const title = "VTC MIPIM Cannes 2025 – Chauffeur Privé Salon Immobilier | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC pour le MIPIM Cannes 2025. Transferts aéroport Nice, navettes Palais des Festivals, mise à disposition pour professionnels de l'immobilier. Réservez tôt !";
+const keywords = [
+  'VTC MIPIM Cannes',
+  'chauffeur MIPIM',
+  'transfert MIPIM Cannes',
+  'VTC salon immobilier Cannes',
+  'chauffeur privé MIPIM 2025',
+  'navette aéroport MIPIM',
+  'VTC business Cannes'
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "MIPIM Cannes 2025",
+  "startDate": "2025-03-11",
+  "endDate": "2025-03-14",
+  "location": {
+    "@type": "Place",
+    "name": "Palais des Festivals et des Congrès",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Boulevard de la Croisette",
+      "addressLocality": "Cannes",
+      "postalCode": "06400",
+      "addressCountry": "FR"
+    }
+  },
+  "description": "Le MIPIM est le plus grand salon international de l'immobilier. ECOFUNDRIVE propose des services VTC premium pour les participants.",
+  "organizer": {
+    "@type": "Organization",
+    "name": "RX France"
+  }
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-mipim-cannes"
+  canonical="/vtc-mipim-cannes"
+  schema={schema}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC MIPIM Cannes", url: "/vtc-mipim-cannes" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Votre Chauffeur Privé pour le MIPIM 2025"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="VTC devant le Palais des Festivals de Cannes pour le MIPIM"
+      imageSide="right"
+      ctaText="Réserver votre VTC MIPIM"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        Le <strong>MIPIM (Marché International des Professionnels de l'Immobilier)</strong> est le rendez-vous incontournable du secteur immobilier mondial. Chaque année, plus de <strong>26 000 participants</strong> venus de 100 pays se retrouvent à Cannes du 11 au 14 mars 2025 pour ce salon d'envergure internationale.
+      </p>
+      <p class="fade-in-section">
+        Pour un événement de ce calibre, votre image compte. ECOFUNDRIVE vous propose un <strong>service VTC premium dédié au MIPIM</strong> : transferts depuis l'aéroport de Nice, navettes vers le Palais des Festivals, mise à disposition pour vos rendez-vous clients et déplacements professionnels tout au long du salon.
+      </p>
+      <p class="fade-in-section">
+        <strong>Pourquoi nous choisir pour le MIPIM ?</strong>
+      </p>
+      <ul class="fade-in-section">
+        <li>Chauffeurs expérimentés connaissant parfaitement Cannes et le trafic MIPIM</li>
+        <li>Véhicules premium (Tesla, Mercedes Classe S) adaptés à l'image professionnelle</li>
+        <li>Ponctualité garantie pour vos réunions et événements</li>
+        <li>Facturation entreprise et notes de frais disponibles</li>
+        <li>Service multilingue (français, anglais, italien, russe)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC pour le MIPIM Cannes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-aeroport-nice.png"
+          alt="Transfert aéroport Nice MIPIM"
+          title="Transfert Aéroport Nice → Cannes"
+          description="Accueil personnalisé à l'aéroport de Nice avec pancarte, aide aux bagages et transfert direct vers votre hôtel à Cannes ou le Palais des Festivals."
+          link="/transfert-nice-aeroport-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.png"
+          alt="Mise à disposition MIPIM"
+          title="Mise à Disposition Journée"
+          description="Un chauffeur et un véhicule à votre entière disposition pendant toute la durée du MIPIM. Idéal pour vos rendez-vous multiples et événements networking."
+          link="/services#disposition"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Navettes MIPIM Monaco"
+          title="Navettes & Événements Privés"
+          description="Transport vers les soirées privées, yachts, restaurants et événements corporate organisés pendant le MIPIM à Cannes et alentours."
+          link="/services#evenements"
+        />
+      </div>
+    </section>
+
+    <SectionImageText
+      title="Tarifs VTC MIPIM Cannes 2025"
+      image="/assets/img/about/vehicule-premium.png"
+      alt="Intérieur véhicule VTC premium"
+      imageSide="left"
+      ctaText="Demander un devis"
+      ctaLink="/contact"
+    >
+      <p class="fade-in-section">
+        Pendant le MIPIM, la demande de transport explose à Cannes. Pour garantir votre disponibilité et bénéficier des meilleurs tarifs, nous vous recommandons de <strong>réserver au moins 4 à 6 semaines à l'avance</strong>.
+      </p>
+      <h3 class="fade-in-section">Tarifs indicatifs MIPIM 2025</h3>
+      <table class="tarif-table fade-in-section">
+        <tr><th>Service</th><th>Tarif estimé</th></tr>
+        <tr><td>Transfert Aéroport Nice → Cannes (1-3 pers.)</td><td>à partir de 80€</td></tr>
+        <tr><td>Transfert Aéroport Nice → Cannes (4-7 pers. Van)</td><td>à partir de 110€</td></tr>
+        <tr><td>Mise à disposition demi-journée (4h)</td><td>à partir de 280€</td></tr>
+        <tr><td>Mise à disposition journée (8h)</td><td>à partir de 480€</td></tr>
+        <tr><td>Navette soirée privée</td><td>sur devis</td></tr>
+      </table>
+      <p class="fade-in-section"><em>Tarifs indicatifs, susceptibles de varier selon la date et la disponibilité. Devis personnalisé sur demande.</em></p>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Informations Pratiques MIPIM 2025</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>📅 Dates</h3>
+          <p>11 au 14 mars 2025</p>
+        </div>
+        <div class="info-card">
+          <h3>📍 Lieu</h3>
+          <p>Palais des Festivals, 1 Boulevard de la Croisette, 06400 Cannes</p>
+        </div>
+        <div class="info-card">
+          <h3>✈️ Aéroport le plus proche</h3>
+          <p>Nice Côte d'Azur (NCE) – 35 km / 30-45 min en VTC</p>
+        </div>
+        <div class="info-card">
+          <h3>🏨 Hôtels recommandés</h3>
+          <p>Carlton, Martinez, Majestic Barrière, JW Marriott</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes – VTC MIPIM</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Quand dois-je réserver mon VTC pour le MIPIM ?</h3>
+          <div class="faq-answer">
+            <p>
+              Nous recommandons de réserver <strong>4 à 6 semaines avant le début du salon</strong>. Le MIPIM attire des milliers de professionnels et la demande de VTC est très forte. Les réservations de dernière minute ne sont pas garanties.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous des forfaits entreprise pour le MIPIM ?</h3>
+          <div class="faq-answer">
+            <p>
+              Oui, nous proposons des forfaits sur mesure pour les entreprises participant au MIPIM : mise à disposition de plusieurs véhicules, facturation centralisée, coordination logistique. Contactez-nous pour un devis corporate.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Pouvez-vous gérer les transferts pour toute mon équipe ?</h3>
+          <div class="faq-answer">
+            <p>
+              Absolument. Nous coordonnons les arrivées et départs de groupes, avec plusieurs véhicules si nécessaire. Transmettez-nous les horaires de vol de votre équipe et nous organisons toute la logistique.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Jusqu'à quelle heure êtes-vous disponibles pendant le MIPIM ?</h3>
+          <div class="faq-answer">
+            <p>
+              Nous sommes disponibles <strong>24h/24</strong> pendant toute la durée du MIPIM. Que votre soirée networking se termine à 2h du matin ou que votre vol arrive à 6h, votre chauffeur sera là.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Autres événements professionnels à Cannes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/guide-vtc-festival-cannes" class="text-dark hover-gold">Festival de Cannes</a>
+        <a href="/guide-congres-cannes-deplacements" class="text-dark hover-gold">Congrès Cannes</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/transfert-nice-aeroport-cannes" class="text-dark hover-gold">Transfert Nice → Cannes</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  .tarif-table th, .tarif-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .tarif-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .info-card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .info-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .bg-gold-light {
+    background: rgba(212, 175, 55, 0.1);
+  }
+</style>
