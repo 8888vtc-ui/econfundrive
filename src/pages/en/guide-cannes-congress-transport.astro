@@ -10,9 +10,32 @@ const keywords = [
   'Cannes Lions private driver',
   'Cannes Film Festival transfer',
   'Palais des Festivals transport',
-  'corporate driver Cannes',
+   'corporate driver Cannes',
   'executive chauffeur Cannes'
 ];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/cannes-congress.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "url": "https://www.ecofundrive.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
+    }
+  },
+  "datePublished": "2024-01-15",
+  "dateModified": new Date().toISOString().split('T')[0]
+};
 ---
 
 <BaseLayout 
@@ -21,6 +44,13 @@ const keywords = [
   keywords={keywords}
   currentPage="guide-cannes-congress-transport"
   canonical="/en/guide-cannes-congress-transport"
+  lang="en"
+  schema={articleSchema}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Cannes Congress Transport", url: "/en/guide-cannes-congress-transport" }
+  ]}
 >
   <main class="page-content">
     <!-- Hero Section -->

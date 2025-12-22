@@ -240,6 +240,20 @@ if (currentLang === 'fr') {
         ]
       })} />
     )}
+    
+    {/* Breadcrumb Schema */}
+    {breadcrumbItems && breadcrumbItems.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": `https://www.ecofundrive.com${item.url}`
+        }))
+      })} />
+    )}
     {schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     )}
