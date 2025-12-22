@@ -456,3 +456,30 @@
     display: block;
   }
 }
+
+/* --- GLOBAL IMAGE CONSTRAINTS --- */
+/* Consolidate image behavior for articles and content pages */
+article img,
+.page-content img:not(.hero-background-image),
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media (min-width: 992px) {
+
+  /* Prevent huge images on desktop content */
+  article img,
+  .page-content img:not(.hero-background-image):not(.trust-logo),
+  .img-responsive {
+    max-height: 500px;
+    /* Cap height to keep visible on one screen */
+    object-fit: cover;
+    /* Crop nicely */
+    width: 100%;
+    /* Fill width of the column/container */
+  }
+
+  /* Exception for small icons/logos if needed, though :not(.trust-logo) helps */
+}
