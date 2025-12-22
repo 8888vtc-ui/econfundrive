@@ -2,7 +2,8 @@
 // Bouton WhatsApp premium - Élégant avec bulle d'accroche subtile
 const whatsappNumber = "33660152737";
 const whatsappMessage = encodeURIComponent("Bonjour, je souhaite réserver un VTC");
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+// Utilisation de web.whatsapp.com pour PC, wa.me pour mobile
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
 ---
 
 <!-- Container WhatsApp avec bulle -->
