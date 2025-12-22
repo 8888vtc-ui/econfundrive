@@ -1,71 +1,152 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Guide Que Faire A Cannes | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Que Faire à Cannes ? Guide VTC Exclusif | ECOFUNDRIVE";
+const description = "Découvrez les incontournables de Cannes avec votre chauffeur privé : La Croisette, Le Suquet, les Îles de Lérins, shopping de luxe et vie nocturne.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'que faire à Cannes',
+  'visiter Cannes chauffeur',
+  'shopping luxe Cannes',
+  'Îles de Lérins VTC',
+  'Le Suquet Cannes',
+  'activités Cannes'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-que-faire-a-cannes"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-que-faire-a-cannes"
   canonical="/guide-que-faire-a-cannes"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Que faire à Cannes", url: "/guide-que-faire-a-cannes" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Que Faire A Cannes | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-que-faire-a-cannes",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}>
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-cannes.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
+      }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
+>
   <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Que Faire à Cannes ? Les Incontournables</h1>
+      <p class="lead text-center mb-xl">
+        Capitale mondiale du cinéma, Cannes est un joyau de la Côte d'Azur qui allie glamour, histoire et nature. Laissez votre chauffeur privé VTC vous guider à travers les expériences les plus exclusives de la ville.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. LA CROISETTE -->
+    <SectionImageText
+      title="La Mythique Croisette"
+      image="/assets/img/destinations/destination-cannes.webp"
+      alt="La Croisette Cannes"
+      imageSide="right"
+      ctaText="Réserver un transfert Croisette"
+      ctaLink="/reservation"
+    >
+      <p>
+        Inscrite au patrimoine culturel, la <strong>Promenade de la Croisette</strong> est l'emblème de Cannes. Flânez à l'ombre des pins parasols, admirez les palaces légendaires comme le Carlton ou le Martinez, et profitez des plages privées au sable fin.
+      </p>
+      <p>
+        Pour une expérience shopping ultime, la Croisette abrite les boutiques des plus grandes maisons de luxe : Chanel, Dior, Louis Vuitton, Cartier... Votre chauffeur peut rester à votre disposition pour déposer vos achats en toute sécurité pendant que vous continuez votre promenade.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. LE SUQUET -->
+    <SectionImageText
+      title="Le Suquet : L'Âme Historique"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Le Suquet Cannes Vieille Ville"
+      imageSide="left"
+      ctaText="Visiter le Suquet en VTC"
+      ctaLink="/reservation"
+    >
+      <p>
+        Perché sur une colline, le quartier du <strong>Suquet</strong> est le cœur historique de Cannes. Loin des paillettes, ses ruelles pavées et ses maisons colorées offrent un charme authentique provençal.
+      </p>
+      <p>
+        Ne manquez pas de monter jusqu'à l'église Notre-Dame d'Espérance et au Musée de la Castre pour une vue panoramique époustouflante sur la baie de Cannes et le massif de l'Esterel. Pour le dîner, la rue Saint-Antoine regorge de restaurants gastronomiques et traditionnels où votre chauffeur pourra vous déposer juste devant l'entrée.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. ILES DE LERINS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Évasion Nature : Les Îles de Lérins</h2>
+      <p class="text-center mb-lg">
+        À seulement 15 minutes de bateau, un archipel sauvage vous attend. Nous organisons votre transfert vers l'embarcadère du port de Cannes.
+      </p>
+      <div class="grid-2-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-ete.webp"
+          alt="Île Sainte-Marguerite"
+          title="Île Sainte-Marguerite"
+          description="Célèbre pour son Fort Royal qui aurait abrité le Masque de Fer. Idéale pour les balades en forêt et la baignade dans les criques turquoises."
+          link="/reservation"
+          linkText="Réserver transfert port"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-mariage.webp"
+          alt="Île Saint-Honorat"
+          title="Île Saint-Honorat"
+          description="Propriété des moines cisterciens depuis le Ve siècle. Visitez l'abbaye fortifiée et dégustez les vins produits sur place par les moines."
+          link="/reservation"
+          linkText="Réserver transfert port"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 4. PALAIS ET TAPIS ROUGE -->
+    <SectionImageText
+      title="Le Palais des Festivals"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="Marches du Palais des Festivals Cannes"
+      imageSide="right"
+      ctaText="Service VTC Festival"
+      ctaLink="/guide-vtc-festival-cannes"
+    >
+      <p>
+        Impossible de visiter Cannes sans voir le célèbre <strong>Palais des Festivals et des Congrès</strong>. C'est ici que bat le cœur du cinéma mondial chaque mois de mai.
+      </p>
+      <p>
+        Prenez la pose sur les mythiques 24 marches du tapis rouge, et découvrez le "Chemin des Étoiles" où plus de 300 stars ont laissé leurs empreintes, à l'image du Walk of Fame d'Hollywood. Le Palais accueille également des congrès majeurs toute l'année (MIPIM, Cannes Lions) pour lesquels nous assurons un service de transport business dédié.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+        <div class="text-center bg-light p-5 rounded">
+            <h2 class="mb-4">Profitez de Cannes en toute Sérénité</h2>
+            <p class="lead mb-4">
+                Ne perdez pas de temps à chercher un parking ou à attendre un taxi. Réservez votre chauffeur privé ECOFUNDRIVE pour une expérience VIP sur-mesure à Cannes.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/reservation" class="btn btn-primary">Réserver mon Chauffeur</a>
+                <a href="https://wa.me/33616552811" class="btn btn-outline">Contact WhatsApp</a>
+            </div>
+        </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
   </main>
 </BaseLayout>
 

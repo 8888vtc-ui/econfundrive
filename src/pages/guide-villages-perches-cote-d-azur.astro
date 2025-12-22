@@ -1,71 +1,124 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Villages Perches Cote D Azur | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Villages Perchés de la Côte d'Azur | Guide VTC ECOFUNDRIVE";
+const description = "Explorez les plus beaux villages médiévaux de la Côte d'Azur : Èze, Saint-Paul-de-Vence, Gourdon. Visite privée avec chauffeur VTC.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'villages perchés côte d\'azur',
+  'visiter Eze chauffeur',
+  'Saint-Paul-de-Vence VTC',
+  'Gourdon village',
+  'transport touristique Nice'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-villages-perches-cote-d-azur"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-villages-perches-cote-d-azur"
   canonical="/guide-villages-perches-cote-d-azur"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Villages Perchés", url: "/guide-villages-perches-cote-d-azur" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Villages Perches Cote D Azur | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-villages-perches-cote-d-azur",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}>
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/guides/villages-perches.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
+      }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
+>
   <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Les Plus Beaux Villages Perchés de la Côte d'Azur</h1>
+      <p class="lead text-center mb-xl">
+        Loin du tumulte du littoral, l'arrière-pays niçois cache des trésors médiévaux suspendus entre ciel et mer. Découvrez notre sélection des villages incontournables à visiter avec votre chauffeur privé.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. EZE VILLAGE -->
+    <SectionImageText
+      title="Èze : Le Nid d'Aigle"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Vue panoramique Village Eze"
+      imageSide="right"
+      ctaText="Réserver un tour à Èze"
+      ctaLink="/reservation"
+    >
+      <p>
+        Perché à 429 mètres au-dessus de la Méditerranée, <strong>Èze</strong> est sans doute le village le plus spectaculaire de la Côte d'Azur. Ses ruelles médiévales serpentent jusqu'au sommet où se niche le célèbre Jardin Exotique.
+      </p>
+      <p>
+        <strong>L'expérience VTC :</strong> L'accès à Èze est sinueux et le stationnement y est très difficile. Votre chauffeur vous déposera au plus près de l'entrée du village historique et vous attendra pendant votre visite des parfumeries Fragonard ou Galimard, situées au pied du village.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. SAINT-PAUL-DE-VENCE -->
+    <SectionImageText
+      title="Saint-Paul-de-Vence : La Cité des Artistes"
+      image="/assets/img/hero/hero-mariage.webp"
+      alt="Saint-Paul-de-Vence remparts"
+      imageSide="left"
+      ctaText="Visiter Saint-Paul"
+      ctaLink="/reservation"
+    >
+      <p>
+        Entouré de ses remparts du XVIe siècle, <strong>Saint-Paul-de-Vence</strong> est un musée à ciel ouvert qui a inspiré Chagall, Matisse et Picasso. Flânez dans les galeries d'art, visitez la Fondation Maeght, et jouez à la pétanque sur la célèbre place de l'entrée du village.
+      </p>
+      <p>
+        Pour le déjeuner, nous pouvons vous déposer devant la mythique Colombe d'Or. Profitez de votre journée artistique sans vous soucier de la logistique du retour.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. GOURDON -->
+    <SectionImageText
+      title="Gourdon : Le Balcon de la Côte d'Azur"
+      image="/assets/img/destinations/destination-cannes.webp"
+      alt="Vue depuis Gourdon"
+      imageSide="right"
+      ctaText="Excursion à Gourdon"
+      ctaLink="/reservation"
+    >
+      <p>
+        Classé parmi les "Plus Beaux Villages de France", <strong>Gourdon</strong> est une forteresse imprenable offrant une vue panoramique époustouflante sur 80km de côte, de Nice à Théoule-sur-Mer.
+      </p>
+      <p>
+        La route des Gorges du Loup pour y accéder est magnifique mais technique. Installez-vous confortablement dans nos véhicules premium et laissez votre chauffeur expert gérer les virages pendant que vous admirez le paysage grandiose.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+        <div class="text-center bg-light p-5 rounded">
+            <h2 class="mb-4">Envie d'une Excursion Sur-Mesure ?</h2>
+            <p class="lead mb-4">
+                Nous créons votre itinéraire personnalisé pour découvrir ces joyaux de l'arrière-pays. Demi-journée ou journée complète, évadez-vous en toute liberté avec ECOFUNDRIVE.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/reservation" class="btn btn-primary">Réserver mon Excursion</a>
+                <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+            </div>
+        </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
-    </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
   </main>
 </BaseLayout>
 
