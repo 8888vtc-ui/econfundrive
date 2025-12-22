@@ -24,6 +24,13 @@
         "Italian",
         "Russian"
     ],
+    "sameAs": [
+        "https://www.facebook.com/ecofundrive",
+        "https://www.instagram.com/ecofundrive",
+        "https://www.linkedin.com/company/ecofundrive",
+        "https://twitter.com/ecofundrive",
+        "https://wa.me/33660152737"
+    ],
     "slogan": "Votre Chauffeur Privé VTC sur la Côte d'Azur",
     "address": {
         "@type": "PostalAddress",
@@ -163,11 +170,6 @@
         "opens": "00:00",
         "closes": "23:59"
     },
-    "sameAs": [
-        "https://www.facebook.com/ecofundrive",
-        "https://www.instagram.com/ecofundrive",
-        "https://wa.me/33660152737"
-    ],
     "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
