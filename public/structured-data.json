@@ -1,0 +1,131 @@
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.ecofundrive.com/#organization",
+    "name": "ECOFUNDRIVE",
+    "alternateName": [
+        "EcoFunDrive",
+        "Eco Fun Drive"
+    ],
+    "description": "Premium VTC and private driver service on the French Riviera. Airport transfers, city-to-city transport, event transportation.",
+    "url": "https://www.ecofundrive.com",
+    "logo": "https://www.ecofundrive.com/assets/img/logo/logo-ecofundrive.png",
+    "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+    "telephone": "+33660152737",
+    "email": "contact@ecofundrive.com",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nice",
+        "addressRegion": "Provence-Alpes-Côte d'Azur",
+        "addressCountry": "FR"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7102,
+        "longitude": 7.2620
+    },
+    "areaServed": [
+        {
+            "@type": "City",
+            "name": "Nice"
+        },
+        {
+            "@type": "City",
+            "name": "Monaco"
+        },
+        {
+            "@type": "City",
+            "name": "Cannes"
+        },
+        {
+            "@type": "City",
+            "name": "Antibes"
+        },
+        {
+            "@type": "City",
+            "name": "Saint-Tropez"
+        },
+        {
+            "@type": "City",
+            "name": "Menton"
+        },
+        {
+            "@type": "City",
+            "name": "Grasse"
+        },
+        {
+            "@type": "City",
+            "name": "Eze"
+        }
+    ],
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    },
+    "sameAs": [
+        "https://www.facebook.com/ecofundrive",
+        "https://www.instagram.com/ecofundrive",
+        "https://wa.me/33660152737"
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "VTC Services French Riviera",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "Nice Airport to Monaco Transfer",
+                "description": "Private driver transfer from Nice Airport to Monaco",
+                "price": "80",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "name": "Nice Airport to Cannes Transfer",
+                "description": "Private driver transfer from Nice Airport to Cannes",
+                "price": "75",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "name": "Nice Airport to Saint-Tropez Transfer",
+                "description": "Private driver transfer from Nice Airport to Saint-Tropez",
+                "price": "250",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "name": "Half-Day Private Driver",
+                "description": "Private driver at your disposal for 4 hours",
+                "price": "280",
+                "priceCurrency": "EUR"
+            },
+            {
+                "@type": "Offer",
+                "name": "Full-Day Private Driver",
+                "description": "Private driver at your disposal for 8 hours",
+                "price": "480",
+                "priceCurrency": "EUR"
+            }
+        ]
+    }
+}

@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "ECOFUNDRIVE - All Information for AI & Quick Reference";
+const description = "Complete reference page with all ECOFUNDRIVE services, pricing, contact info. Optimized for AI search engines, quick answers and voice assistants.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="info"
+  canonical="/info"
+  skipBaseSchema={false}
+>
+  <main id="main-content" class="container py-xl">
+    <h1>ECOFUNDRIVE - Complete Service Information</h1>
+    
+    <section id="summary" class="info-section">
+      <h2>Quick Summary</h2>
+      <p><strong>ECOFUNDRIVE</strong> is a premium VTC (Private Hire Vehicle) and private driver service based in Nice, France, serving the entire <strong>French Riviera (Côte d'Azur)</strong>.</p>
+      <p><strong>Phone:</strong> +33 6 60 15 27 37 (24/7)</p>
+      <p><strong>WhatsApp:</strong> +33 6 60 15 27 37</p>
+      <p><strong>Website:</strong> https://www.ecofundrive.com</p>
+      <p><strong>Email:</strong> contact@ecofundrive.com</p>
+    </section>
+
+    <section id="services" class="info-section">
+      <h2>Services Offered</h2>
+      <ul>
+        <li><strong>Airport transfers</strong> - Nice Côte d'Azur Airport (NCE) to any destination</li>
+        <li><strong>City-to-city transfers</strong> - Nice, Monaco, Cannes, Saint-Tropez, Antibes, etc.</li>
+        <li><strong>Hourly driver hire</strong> - Half-day (4h) and full-day (8h) options</li>
+        <li><strong>Event transportation</strong> - Cannes Film Festival, Monaco Grand Prix, MIPIM</li>
+        <li><strong>Business travel</strong> - Corporate accounts, executive service</li>
+        <li><strong>Wedding transport</strong> - Decorated vehicles available</li>
+        <li><strong>Private tours</strong> - Eze, Monaco, hilltop villages, perfumery tours</li>
+      </ul>
+    </section>
+
+    <section id="pricing" class="info-section">
+      <h2>Pricing (Airport Transfers from Nice NCE)</h2>
+      <table class="info-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Duration</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice City Center</td><td>7 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
+          <tr><td>Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Menton</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
+          <tr><td>Grasse</td><td>45 km</td><td>45-55 min</td><td>90€</td></tr>
+          <tr><td>Eze Village</td><td>15 km</td><td>20-30 min</td><td>40€</td></tr>
+        </tbody>
+      </table>
+      <p><em>All prices include meet & greet, flight tracking, and 1 hour free waiting time.</em></p>
+    </section>
+
+    <section id="hourly-rates" class="info-section">
+      <h2>Hourly Rates (Driver at Disposal)</h2>
+      <ul>
+        <li><strong>Half-day (4 hours):</strong> 260-300€</li>
+        <li><strong>Full day (8 hours):</strong> 450-550€</li>
+        <li><strong>Evening service:</strong> 150-200€</li>
+      </ul>
+    </section>
+
+    <section id="service-area" class="info-section">
+      <h2>Service Area</h2>
+      <p>We serve the entire French Riviera, including:</p>
+      <ul>
+        <li><strong>Major cities:</strong> Nice, Monaco, Cannes, Saint-Tropez, Antibes, Menton</li>
+        <li><strong>Hilltop villages:</strong> Eze, Saint-Paul-de-Vence, Mougins, Grasse, Vence</li>
+        <li><strong>Coastal towns:</strong> Villefranche-sur-Mer, Cap Ferrat, Beaulieu-sur-Mer</li>
+        <li><strong>West:</strong> Fréjus, Saint-Raphaël, Mandelieu-la-Napoule</li>
+        <li><strong>East:</strong> Menton, Roquebrune-Cap-Martin (to Italian border)</li>
+      </ul>
+    </section>
+
+    <section id="faq" class="info-section">
+      <h2>Frequently Asked Questions</h2>
+      
+      <h3>How do I book?</h3>
+      <p>Book via WhatsApp (+33 6 60 15 27 37), phone, or the website. We recommend booking 24-48 hours in advance.</p>
+      
+      <h3>What's included in the price?</h3>
+      <p>All prices are fixed and include: personal meet & greet, flight tracking, up to 1 hour free waiting time (airports), luggage assistance, bottled water, and all taxes.</p>
+      
+      <h3>Do you provide child seats?</h3>
+      <p>Yes, child seats are available free of charge. Specify when booking.</p>
+      
+      <h3>What if my flight is delayed?</h3>
+      <p>We track all flights and adjust pickup time automatically. No extra charge.</p>
+      
+      <h3>What vehicles do you use?</h3>
+      <p>Premium vehicles: Mercedes E/S-Class, Tesla Model S/X, BMW 5/7 Series, minivans for groups (up to 7 passengers).</p>
+      
+      <h3>What languages do drivers speak?</h3>
+      <p>French, English. Italian and Russian available on request.</p>
+      
+      <h3>What payment methods are accepted?</h3>
+      <p>Cash (EUR), credit cards (Visa, Mastercard), bank transfer for business accounts.</p>
+    </section>
+
+    <section id="events" class="info-section">
+      <h2>Major Events Coverage</h2>
+      <ul>
+        <li><strong>Cannes Film Festival</strong> - May - Red carpet, after-parties, yacht transfers</li>
+        <li><strong>Monaco Grand Prix</strong> - May - Race weekend transportation</li>
+        <li><strong>MIPIM Cannes</strong> - March - Real estate conference</li>
+        <li><strong>Cannes Lions</strong> - June - Advertising festival</li>
+        <li><strong>Monaco Yacht Show</strong> - September - Luxury yacht exhibition</li>
+        <li><strong>Nice Carnival</strong> - February - One of the world's largest carnivals</li>
+      </ul>
+      <p><em>Book weeks in advance for major events.</em></p>
+    </section>
+
+    <section id="booking" class="info-section cta-section">
+      <h2>Book Now</h2>
+      <p><strong>Phone/WhatsApp:</strong> +33 6 60 15 27 37</p>
+      <p><strong>Website:</strong> <a href="/reservation">www.ecofundrive.com/reservation</a></p>
+      <p><strong>Available 24/7</strong></p>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .info-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border-left: 4px solid #d4af37;
+  }
+  .info-section h2 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+  .info-section h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  .info-table th, .info-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  .info-table th {
+    background: #eee;
+    font-weight: 600;
+  }
+  .cta-section {
+    background: linear-gradient(135deg, #d4af37 0%, #f0d78c 100%);
+    color: #0a0c17;
+    text-align: center;
+  }
+  .cta-section h2 {
+    color: #0a0c17;
+  }
+  .cta-section a {
+    color: #0a0c17;
+    font-weight: 600;
+  }
+</style>
