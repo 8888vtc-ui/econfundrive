@@ -1,53 +1,162 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PricingRequest from '../../components/PricingRequest.astro';
 
-const title = "Nice Airport to Monaco Transfer | ECOFUNDRIVE";
-const description = "Professional transfer service from Nice Airport to Monaco. Private driver VTC for comfortable and punctual transfers between Nice Airport and Monaco.";
+const title = "Nice Airport to Monaco Transfer | ECOFUNDRIVE VTC Service";
+const description = "Book your premium private driver from Nice Airport (NCE) to Monaco. Fixed prices, Tesla & Mercedes fleet, English speaking chauffeurs. Instant confirmation.";
 const keywords = [
   'Nice airport Monaco transfer',
-  'Nice Monaco VTC',
-  'airport transfer Monaco',
-  "Nice Côte d\'Azur airport",
-  'Monaco private driver'
+  'chauffeur service Monaco',
+  'private driver Nice to Monaco',
+  'limousine service Monaco',
+  'Monaco Grand Prix transfer',
+  'Nice airport helicopter transfer'
+];
+
+const breadcrumbItems = [
+  { name: "Home", url: "/en" },
+  { name: "Nice Airport to Monaco", url: "/en/nice-airport-to-monaco-transfer" }
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
+  keywords={keywords}
   currentPage="nice-airport-to-monaco-transfer"
-
   canonical="/en/nice-airport-to-monaco-transfer"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Transfer Service</h2>
-        <p>Professional transfer from Nice Airport (NCE) to Monaco with private driver.</p>
-      </section>
-
-      <section>
-        <h2>Booking</h2>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  breadcrumbItems={breadcrumbItems}
+>
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Nice Airport to Monaco Transfer</h1>
+        <p class="lead">Premium Chauffeur Service for Monte-Carlo, Fontvieille and Larvotto.</p>
+        <div class="hero-actions">
+           <a href="#booking" class="btn-primary">Book Your Transfer</a>
+           <a href="https://wa.me/33616552811" class="btn-whatsapp">WhatsApp Now</a>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="grid-2-cols">
+           
+           <div class="text-content">
+              <h2>The Most Convenient Way to Reach Monaco</h2>
+              <p>
+                Forget the hassle of public transport or standard taxis. ECOFUNDRIVE offers a seamless VIP transfer service from <strong>Nice Côte d'Azur Airport (NCE)</strong> directly to your hotel or residence in the Principality of Monaco.
+              </p>
+              <p>
+                Your private chauffeur will welcome you at the arrival terminal with a name sign, assist with your luggage, and drive you safely to Monaco in a luxury vehicle (Tesla or Mercedes).
+              </p>
+              
+              <ul class="features-list">
+                 <li><strong>Meet & Greet:</strong> Personalized welcome at the airport.</li>
+                 <li><strong>Fixed Fares:</strong> Know the price in advance, no hidden fees.</li>
+                 <li><strong>Luxury Fleet:</strong> Tesla Model Y (Eco-Premium) or Mercedes V-Class (Groups).</li>
+                 <li><strong>Flight Tracking:</strong> We monitor your flight and adjust pickup time for free.</li>
+              </ul>
+           </div>
+
+           <div class="image-content">
+              <img src="/assets/img/destinations/destination-monaco.png" alt="Monaco Monte-Carlo Luxury Car" class="rounded-img shadow-lg" />
+           </div>
+
+        </div>
+      </div>
     </section>
+
+    <!-- Pricing / Booking -->
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <h2 class="text-center">Request a Quote</h2>
+        <PricingRequest />
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us-section">
+      <div class="container">
+         <h2 class="text-center mb-lg">Why Choose ECOFUNDRIVE for Monaco?</h2>
+         <div class="grid-3-cols">
+            <div class="benefit-card">
+               <h3>Monaco Expertise</h3>
+               <p>We know every street of the Principality, from the Casino Square to the Prince's Palace, ensuring a smooth arrival.</p>
+            </div>
+            <div class="benefit-card">
+               <h3>English Speaking</h3>
+               <p>All our drivers serve an international clientele and speak fluent English for clear communication.</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Events & Business</h3>
+               <p>Perfect for the Monaco Grand Prix, Monaco Yacht Show, or private business meetings.</p>
+            </div>
+         </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
 
+<style>
+  .page-hero {
+    background: #1a1a1a;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    background-image: url('/assets/img/hero/hero-monaco.webp'); /* Fallback image if exists */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+  }
+  
+  .page-hero .container { position: relative; z-index: 2; }
 
+  .page-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #d4af37; }
+  .page-hero .lead { font-size: 1.2rem; margin-bottom: 2rem; color: #eee; }
+
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; }
+
+  .btn-primary {
+     background: #d4af37; color: black; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
+  }
+  .btn-whatsapp {
+     background: #25D366; color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
+  }
+
+  .content-section { padding: 4rem 0; }
+  
+  .grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  
+  @media (max-width: 768px) {
+     .grid-2-cols { grid-template-columns: 1fr; }
+  }
+
+  .features-list { margin-top: 1.5rem; list-style: none; padding: 0; }
+  .features-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+  .features-list li::before { content: '✓'; color: #d4af37; position: absolute; left: 0; }
+
+  .rounded-img { width: 100%; border-radius: 12px; }
+  .shadow-lg { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+  .booking-section { background: #f9f9f9; padding: 4rem 0; }
+  
+  .why-us-section { padding: 4rem 0; }
+  .benefit-card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; text-align: center; }
+  .benefit-card h3 { color: #d4af37; margin-bottom: 1rem; }
+  
+  .text-center { text-align: center; }
+  .mb-lg { margin-bottom: 2rem; }
+</style>

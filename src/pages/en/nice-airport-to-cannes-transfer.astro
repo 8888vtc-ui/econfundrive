@@ -1,51 +1,161 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PricingRequest from '../../components/PricingRequest.astro';
 
-const title = "Nice Airport To Cannes Transfer | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Nice Airport to Cannes Transfer | VTC & Chauffeur Service";
+const description = "Private chauffeur from Nice Airport (NCE) to Cannes. Transfers for MIPIM, Cannes Lions & Festivals. Luxury Mercedes vans and sedans.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Nice airport Cannes transfer',
+  'chauffeur service Cannes',
+  'executive transfer Cannes',
+  'MIPIM transport Cannes',
+  'Cannes Lions chauffeur'
+];
+
+const breadcrumbItems = [
+  { name: "Home", url: "/en" },
+  { name: "Nice Airport to Cannes", url: "/en/nice-airport-to-cannes-transfer" }
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="nice-airport-to-cannes-transfer"
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  currentPage="nice-airport-to-cannes-transfer"
   canonical="/en/nice-airport-to-cannes-transfer"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  breadcrumbItems={breadcrumbItems}
+>
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Nice Airport to Cannes</h1>
+        <p class="lead">Executive Chauffeur Service for Festivals, Business, and Holidays.</p>
+        <div class="hero-actions">
+           <a href="#booking" class="btn-primary">Book Now</a>
+           <a href="https://wa.me/33616552811" class="btn-whatsapp">WhatsApp</a>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="grid-2-cols">
+           
+           <div class="text-content">
+              <h2>VIP Transfer to the City of Cinema</h2>
+              <p>
+                Whether you visit Cannes for the <strong>Film Festival</strong>, a major congress like <strong>MIPIM</strong>, or a sunny holiday on the Croisette, ECOFUNDRIVE ensures a smooth ride from Nice Airport.
+              </p>
+              <p>
+                Our drivers are experts in business hospitality. We guarantee punctuality, discretion, and a high-end vehicle to match your professional standing.
+              </p>
+              
+              <ul class="features-list">
+                 <li><strong>Congress Expertise:</strong> Dedicated service for MIPIM, Lions, Series.</li>
+                 <li><strong>Fleet:</strong> Mercedes E-Class & S-Class for VIPs, V-Class for teams.</li>
+                 <li><strong>Meet & Greet:</strong> Arrival hall welcome sign.</li>
+                 <li><strong>24/7 Service:</strong> Late flights? We are there.</li>
+              </ul>
+           </div>
+
+           <div class="image-content">
+              <img src="/assets/img/destinations/vtc-cannes.webp" alt="Cannes Croisette Luxury Transfer" class="rounded-img shadow-lg" />
+           </div>
+
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- Pricing / Booking -->
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <h2 class="text-center">Get Your Fixed Quote</h2>
+        <PricingRequest />
+      </div>
     </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us-section">
+      <div class="container">
+         <h2 class="text-center mb-lg">Business & Leisure Chauffeur</h2>
+         <div class="grid-3-cols">
+            <div class="benefit-card">
+               <h3>Business Ready</h3>
+               <p>Wi-Fi on board, invoices for expenses, and discreet drivers for your confidential calls.</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Festival Logistics</h3>
+               <p>We manage complex schedules for large teams during major Cannes events.</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Punctuality</h3>
+               <p>We track your flight and traffic in real-time to ensure you are never late.</p>
+            </div>
+         </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
 
+<style>
+  .page-hero {
+    background: #1a1a1a;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    background-image: url('/assets/img/destinations/destination-nice.png'); /* Cannes specific fallback */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+  }
+  
+  .page-hero .container { position: relative; z-index: 2; }
 
+  .page-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #d4af37; }
+  .page-hero .lead { font-size: 1.2rem; margin-bottom: 2rem; color: #eee; }
+
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; }
+
+  .btn-primary {
+     background: #d4af37; color: black; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
+  }
+  .btn-whatsapp {
+     background: #25D366; color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
+  }
+
+  .content-section { padding: 4rem 0; }
+  
+  .grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  
+  @media (max-width: 768px) {
+     .grid-2-cols { grid-template-columns: 1fr; }
+  }
+
+  .features-list { margin-top: 1.5rem; list-style: none; padding: 0; }
+  .features-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+  .features-list li::before { content: '✓'; color: #d4af37; position: absolute; left: 0; }
+
+  .rounded-img { width: 100%; border-radius: 12px; }
+  .shadow-lg { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+  .booking-section { background: #f9f9f9; padding: 4rem 0; }
+  
+  .why-us-section { padding: 4rem 0; }
+  .benefit-card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; text-align: center; }
+  .benefit-card h3 { color: #d4af37; margin-bottom: 1rem; }
+  
+  .text-center { text-align: center; }
+  .mb-lg { margin-bottom: 2rem; }
+</style>
