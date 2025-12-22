@@ -43,6 +43,7 @@ Thumbs.db
 netlify-token.txt
 *.txt
 !public/llms.txt
+!public/robots.txt
 !public/.well-known/*
 *.md
 !README.md
