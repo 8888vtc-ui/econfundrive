@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Guide Budget : Transport sur la Côte d'Azur | ECOFUNDRIVE";
 const description = "Guide complet des budgets transport sur la Côte d'Azur. Comparaison VTC, taxi, Uber, location de voiture. Conseils pour économiser sur vos déplacements.";
 const keywords = [
@@ -82,52 +83,7 @@ const keywords = [
           Le VTC est la solution premium pour vos déplacements sur la Côte d'Azur. Voici les tarifs indicatifs :
         </p>
         <div class="price-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Trajet</th>
-                <th>Tarif VTC</th>
-                <th>Durée</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Aéroport Nice → Centre-ville Nice</td>
-                <td>45-55€</td>
-                <td>20-30 min</td>
-              </tr>
-              <tr>
-                <td>Nice → Monaco</td>
-                <td>80-100€</td>
-                <td>30-45 min</td>
-              </tr>
-              <tr>
-                <td>Nice → Cannes</td>
-                <td>60-75€</td>
-                <td>30-40 min</td>
-              </tr>
-              <tr>
-                <td>Nice → Saint-Tropez</td>
-                <td>120-150€</td>
-                <td>1h15-1h30</td>
-              </tr>
-              <tr>
-                <td>Nice → Antibes</td>
-                <td>50-65€</td>
-                <td>25-35 min</td>
-              </tr>
-              <tr>
-                <td>Mise à disposition (heure)</td>
-                <td>50-70€</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Mise à disposition (journée 8h)</td>
-                <td>350-450€</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
+          <PricingRequest />
         </div>
         <p><strong>Avantages du VTC</strong> :</p>
         <ul>
@@ -146,37 +102,7 @@ const keywords = [
         
         <h3 class="mt-md">1.2 Taxi Traditionnel</h3>
         <div class="price-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Trajet</th>
-                <th>Tarif Taxi (indicatif)</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Aéroport Nice → Centre-ville</td>
-                <td>50-70€</td>
-                <td>Selon trafic</td>
-              </tr>
-              <tr>
-                <td>Nice → Monaco</td>
-                <td>90-120€</td>
-                <td>Selon trafic</td>
-              </tr>
-              <tr>
-                <td>Tarif de base</td>
-                <td>2,50€</td>
-                <td>Prise en charge</td>
-              </tr>
-              <tr>
-                <td>Tarif kilométrique (jour)</td>
-                <td>1,80€/km</td>
-                <td>Hors embouteillages</td>
-              </tr>
-            </tbody>
-          </table>
+          <PricingRequest />
         </div>
         <p><strong>Avantages du Taxi</strong> :</p>
         <ul>

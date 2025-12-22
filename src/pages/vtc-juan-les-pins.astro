@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Juan-les-Pins – Chauffeur Privé Jazz & Plages | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Juan-les-Pins. Festival Jazz à Juan, plages de sable, vie nocturne, casinos. Station balnéaire Art Déco. Transferts Nice. Service premium 24h/24.";
 const keywords = [
@@ -32,44 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Juan-les-Pins"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Juan-les-Pins"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Juan-les-Pins</strong> est la station balnéaire jumelle d'Antibes, célèbre dans le monde entier pour le <strong>festival Jazz à Juan</strong>, l'un des plus anciens festivals de jazz d'Europe. Cette station à l'ambiance Art Déco des années folles offre de superbes plages de sable fin, une vie nocturne animée et des hôtels de charme.
-      </p>
-      <p class="fade-in-section">
-        Située au cœur de la baie, Juan-les-Pins est idéalement placée entre Nice et Cannes. ECOFUNDRIVE vous propose un <strong>service VTC premium à Juan-les-Pins</strong>, parfait pour vos soirées festival, journées plage ou transferts aéroport.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (20-30 min)</li>
-        <li>Service dédié Festival Jazz à Juan (juillet)</li>
-        <li>Récupération après concerts et soirées</li>
-        <li>Accès aux plages et restaurants de bord de mer</li>
-        <li>Casino Eden Beach et vie nocturne</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Juan-les-Pins</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Juan-les-Pins</td><td>22 km</td><td>20-30 min</td><td>50€</td></tr>
-          <tr><td>Nice Centre → Juan-les-Pins</td><td>18 km</td><td>20-25 min</td><td>45€</td></tr>
-          <tr><td>Juan-les-Pins → Cannes</td><td>10 km</td><td>12-18 min</td><td>32€</td></tr>
-          <tr><td>Juan-les-Pins → Antibes (vieille ville)</td><td>3 km</td><td>8 min</td><td>18€</td></tr>
-          <tr><td>Juan-les-Pins → Monaco</td><td>35 km</td><td>35-45 min</td><td>80€</td></tr>
-          <tr><td>Soirée concert + retour</td><td>-</td><td>Attente incluse</td><td>120€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -112,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

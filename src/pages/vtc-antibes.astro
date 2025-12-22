@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Antibes Juan-les-Pins – Chauffeur Privé Cap & Port Vauban | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Antibes et Juan-les-Pins. Port Vauban, Cap d'Antibes, Jazz à Juan, plages, Musée Picasso. Transferts aéroport Nice, Sophia. Service premium 24h/24.";
 const keywords = [
@@ -76,51 +77,10 @@ const faqSchema = {
       </p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Antibes"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Antibes Port Vauban"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Antibes</strong> est une ville côtière captivante au riche patrimoine historique remontant à l'Antiquité grecque. Aujourd'hui, elle est célèbre pour son <strong>Port Vauban</strong>, le plus grand port de plaisance d'Europe pour les superyachts, sa charmante <strong>vieille ville</strong> aux ruelles provençales, et le <strong>Musée Picasso</strong> installé dans le Château Grimaldi.
-      </p>
-      <p class="fade-in-section">
-        Sa presqu'île jumelle, le <strong>Cap d'Antibes</strong>, abrite les plus belles villas et les hôtels les plus exclusifs de la Riviera, dont le légendaire Hôtel du Cap-Eden-Roc.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Antibes</strong>, idéal pour les transferts aéroport, les déplacements vers Sophia Antipolis, ou les soirées au festival Jazz à Juan.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (20-30 min)</li>
-        <li>Service Port Vauban et équipages de yachts</li>
-        <li>Accès aux hôtels du Cap d'Antibes</li>
-        <li>Transferts Sophia Antipolis (15 min)</li>
-        <li>Service dédié Jazz à Juan (juillet)</li>
-        <li>Musée Picasso et vieille ville</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Antibes</h2>
-      <p class="text-center mb-md">Tarifs indicatifs depuis/vers Antibes :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Aéroport Nice → Cap d'Antibes</td><td>25 km</td><td>25-35 min</td><td>55€</td></tr>
-          <tr><td>Antibes → Cannes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Antibes → Monaco</td><td>35 km</td><td>35-45 min</td><td>80€</td></tr>
-          <tr><td>Antibes → Sophia Antipolis</td><td>10 km</td><td>15-20 min</td><td>30€</td></tr>
-          <tr><td>Antibes → Saint-Tropez</td><td>90 km</td><td>1h30</td><td>220€</td></tr>
-          <tr><td>Concert Jazz à Juan + Retour</td><td>-</td><td>Soirée</td><td>120€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tarifs fixes, sans surprises. Sièges enfants gratuits sur demande.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <SectionImageText
@@ -250,9 +210,7 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .yacht-service { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
   .service-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }

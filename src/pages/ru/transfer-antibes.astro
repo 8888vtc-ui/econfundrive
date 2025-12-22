@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Трансфер Антиб – Личный Водитель Порт Вобан & Кап | ECOFUNDRIVE";
 const description = "Премиум трансфер в Антиб и Жуан-ле-Пен. Порт Вобан, Кап д'Антиб, Jazz à Juan, Музей Пикассо. Трансферы из Ниццы.";
 const keywords = [
@@ -57,18 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы в Антиб</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Маршрут</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Аэропорт Ниццы → Антиб</td><td>20 км</td><td>20-30 мин</td><td>45€</td></tr>
-          <tr><td>Аэропорт Ниццы → Кап д'Антиб</td><td>25 км</td><td>25-35 мин</td><td>55€</td></tr>
-          <tr><td>Антиб → Канны</td><td>12 км</td><td>15-20 мин</td><td>35€</td></tr>
-          <tr><td>Антиб → Монако</td><td>35 км</td><td>35-45 мин</td><td>80€</td></tr>
-          <tr><td>Антиб → Сен-Тропе</td><td>90 км</td><td>1ч30</td><td>220€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -111,8 +101,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Cagnes-sur-Mer – Chauffeur Privé Hippodrome & Renoir | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Cagnes-sur-Mer. Hippodrome de la Côte d'Azur, Haut-de-Cagnes, musée Renoir, plages. Transferts aéroport Nice. Service premium 24h/24.";
 const keywords = [
@@ -25,7 +26,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Cagnes-sur-Mer", url: "/vtc-cagnes-sur-mer" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de l'aéroport de Nice à Cagnes-sur-Mer ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert aéroport Nice → Cagnes-sur-Mer coûte environ 35-45€ selon le véhicule. Cagnes est située à seulement 15 km de l'aéroport."}},{"@type":"Question","name":"Proposez-vous des transferts pour l'Hippodrome de la Côte d'Azur ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers l'Hippodrome pour les courses et événements. Réservation recommandée les jours de grandes courses."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de l'aéroport de Nice à Cagnes-sur-Mer ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des transferts pour l'Hippodrome de la Côte d'Azur ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers l'Hippodrome pour les courses et événements. Réservation recommandée les jours de grandes courses."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -33,44 +34,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Cagnes-sur-Mer"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Cagnes-sur-Mer"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Cagnes-sur-Mer</strong> est une ville balnéaire prisée située entre Nice et Antibes. Avec son charmant village médiéval du <strong>Haut-de-Cagnes</strong>, son célèbre <strong>Hippodrome de la Côte d'Azur</strong> et le <strong>musée Renoir</strong>, elle attire visiteurs et résidents toute l'année.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Cagnes-sur-Mer</strong>, idéal pour vos transferts aéroport, vos sorties au hippodrome ou vos visites touristiques. Nos chauffeurs connaissent parfaitement la ville et ses accès.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (15 min en VTC)</li>
-        <li>Service pour l'Hippodrome de la Côte d'Azur</li>
-        <li>Visites du Haut-de-Cagnes et musée Renoir</li>
-        <li>Accès aux plages et restaurants du Cros-de-Cagnes</li>
-        <li>Navettes vers Polygone Riviera et Sophia Antipolis</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Cagnes-sur-Mer</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Cagnes-sur-Mer</td><td>15 km</td><td>15-25 min</td><td>40€</td></tr>
-          <tr><td>Cagnes → Nice Centre</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Cagnes → Antibes</td><td>8 km</td><td>10-15 min</td><td>25€</td></tr>
-          <tr><td>Cagnes → Cannes</td><td>25 km</td><td>25-35 min</td><td>55€</td></tr>
-          <tr><td>Cagnes → Monaco</td><td>30 km</td><td>30-45 min</td><td>75€</td></tr>
-          <tr><td>Cagnes → Sophia Antipolis</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -131,8 +98,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

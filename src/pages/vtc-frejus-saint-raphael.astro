@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Fréjus Saint-Raphaël – Chauffeur Privé Var & Estérel | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Fréjus et Saint-Raphaël. Arènes romaines, Massif de l'Estérel, plages, port. Transferts aéroport Nice, Saint-Tropez. Service premium 24h/24.";
 const keywords = [
@@ -67,51 +68,10 @@ const faqSchema = {
       </p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Fréjus & Saint-Raphaël"
-      image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="VTC chauffeur privé Fréjus Saint-Raphaël"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Fréjus</strong> et <strong>Saint-Raphaël</strong> sont deux villes jumelles situées à l'entrée ouest de la Côte d'Azur, dans le Var. Fréjus possède un patrimoine romain exceptionnel (arènes, aqueduc, baptistère), tandis que Saint-Raphaël offre un élégant port de plaisance et des plages de sable fin.
-      </p>
-      <p class="fade-in-section">
-        Les deux villes sont la porte d'entrée du spectaculaire <strong>Massif de l'Estérel</strong>, avec ses roches rouges plongeant dans la Méditerranée. C'est également le point de départ le plus pratique pour <strong>Saint-Tropez</strong>, à seulement 35 km.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Fréjus et Saint-Raphaël</strong>, idéal pour vos transferts aéroport, vos excursions dans l'Estérel ou vos journées à Saint-Tropez.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (50-70 min)</li>
-        <li>Navettes vers Saint-Tropez et le golfe</li>
-        <li>Circuit panoramique Massif de l'Estérel</li>
-        <li>Visite patrimoine romain de Fréjus</li>
-        <li>Accès plages, port et restaurants</li>
-        <li>Transferts gare Saint-Raphaël TGV</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Fréjus / Saint-Raphaël</h2>
-      <p class="text-center mb-md">Tarifs indicatifs depuis Fréjus ou Saint-Raphaël :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Fréjus/St-Raphaël</td><td>65 km</td><td>50-70 min</td><td>130€</td></tr>
-          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
-          <tr><td>Fréjus → Cannes</td><td>40 km</td><td>40-50 min</td><td>85€</td></tr>
-          <tr><td>Gare St-Raphaël → Hôtel local</td><td>Variable</td><td>10-20 min</td><td>25-40€</td></tr>
-          <tr><td>Fréjus → Monaco</td><td>85 km</td><td>1h15-1h30</td><td>180€</td></tr>
-          <tr><td>Circuit Estérel (demi-journée)</td><td>-</td><td>4h</td><td>240€</td></tr>
-          <tr><td>Journée Saint-Tropez depuis Fréjus</td><td>-</td><td>8h</td><td>380€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tarifs fixes, sans surprises. Devis gratuit pour toute demande.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -212,8 +172,6 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Saint-Tropez Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
 const description = "Private driver VTC service to Saint-Tropez from Nice Airport. Club 55, Pampelonne Beach, Port. Premium chauffeur for glamorous St-Tropez experience.";
 const keywords = [
@@ -60,19 +61,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Saint-Tropez Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
-          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
-          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>300€</td></tr>
-          <tr><td>Saint-Tropez → Pampelonne Beach</td><td>5 km</td><td>10-15 min</td><td>25€</td></tr>
-          <tr><td>Day trip with waiting time (8h)</td><td>-</td><td>8h</td><td>550€</td></tr>
-          <tr><td>Round trip same day</td><td>-</td><td>-</td><td>450€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Prices are indicative and may vary during peak season (July-August).</em></p>
     </section>
 
@@ -140,8 +129,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

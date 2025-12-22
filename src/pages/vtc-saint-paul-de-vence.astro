@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Saint-Paul-de-Vence – Chauffeur Privé Village d'Art | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Saint-Paul-de-Vence. Village d'artistes, Fondation Maeght, galeries d'art, hôtels de charme. Transferts depuis Nice et Cannes. Service premium.";
 const keywords = [
@@ -24,7 +25,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Saint-Paul-de-Vence", url: "/vtc-saint-paul-de-vence" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert Nice → Saint-Paul-de-Vence coûte environ 45-55€. Le village est situé à 20 km de Nice dans l'arrière-pays."}},{"@type":"Question","name":"Proposez-vous des transferts pour les mariages à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Saint-Paul-de-Vence est une destination prisée pour les mariages. Nous proposons des services VTC premium avec véhicules décorés sur demande."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des transferts pour les mariages à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Saint-Paul-de-Vence est une destination prisée pour les mariages. Nous proposons des services VTC premium avec véhicules décorés sur demande."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,47 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Saint-Paul-de-Vence"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Saint-Paul-de-Vence"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Saint-Paul-de-Vence</strong> est l'un des plus beaux villages perchés de France, véritable joyau de la Côte d'Azur. Ce village médiéval fortifié a séduit les plus grands artistes du XXe siècle : Picasso, Matisse, Chagall, et bien d'autres y ont séjourné et travaillé.
-      </p>
-      <p class="fade-in-section">
-        Avec la <strong>Fondation Maeght</strong>, l'une des plus importantes collections d'art moderne d'Europe, ses galeries d'art, ses restaurants gastronomiques et ses hôtels de charme, Saint-Paul-de-Vence est une destination incontournable.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Saint-Paul-de-Vence</strong> : transferts depuis Nice ou l'aéroport, circuits touristiques, ou service mariage haut de gamme.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice - Saint-Paul (25-35 min)</li>
-        <li>Visite de la Fondation Maeght</li>
-        <li>Circuit villages perchés (Vence, Tourrettes, Gourdon)</li>
-        <li>Service VTC mariage à Saint-Paul-de-Vence</li>
-        <li>Dîner à La Colombe d'Or (restaurant mythique)</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Saint-Paul-de-Vence</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Saint-Paul-de-Vence</td><td>22 km</td><td>25-35 min</td><td>50€</td></tr>
-          <tr><td>Nice Centre → Saint-Paul</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Cannes → Saint-Paul</td><td>25 km</td><td>30-40 min</td><td>60€</td></tr>
-          <tr><td>Monaco → Saint-Paul</td><td>35 km</td><td>40-50 min</td><td>85€</td></tr>
-          <tr><td>Saint-Paul → Vence</td><td>5 km</td><td>10 min</td><td>20€</td></tr>
-          <tr><td>Circuit Villages Perchés (journée)</td><td>-</td><td>8h</td><td>450€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -115,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

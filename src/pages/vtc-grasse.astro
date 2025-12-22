@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Grasse – Chauffeur Privé Capitale du Parfum | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Grasse, capitale mondiale du parfum. Parfumeries Fragonard, Galimard, Molinard. Création de parfum, vieille ville, ateliers. Transferts Nice, Cannes. Service premium.";
 const keywords = [
@@ -23,7 +24,7 @@ const faqSchema = {
       "name": "Les visites des parfumeries de Grasse sont-elles gratuites ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, les trois grandes parfumeries (Fragonard, Galimard, Molinard) proposent des visites guidées gratuites de leurs usines. Seuls les ateliers de création de parfum sont payants (environ 50-100€)."
+        "text": "Tarif sur demande"
       }
     },
     {
@@ -67,72 +68,31 @@ const faqSchema = {
       </p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Grasse"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Grasse parfum"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Grasse</strong> est la capitale mondiale du parfum depuis plus de 400 ans. Nichée dans les collines au-dessus de Cannes, cette ville provençale abrite les plus grandes maisons de parfum : <strong>Fragonard, Galimard et Molinard</strong>. Des champs de jasmin, de rose et de fleur d'oranger entourent la cité.
-      </p>
-      <p class="fade-in-section">
-        Une visite à Grasse est une expérience sensorielle unique : découvrez les secrets de fabrication des parfums, créez votre propre fragrance dans un atelier, et flânez dans la charmante vieille ville médiévale aux fontaines moussues.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium pour Grasse</strong>, idéal pour les amateurs de parfum, les groupes et les voyageurs souhaitant éviter les problèmes de stationnement dans cette ville pentue.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts depuis Nice (40-50 min) ou Cannes (20-30 min)</li>
-        <li>Visites des trois grandes parfumeries (Fragonard, Galimard, Molinard)</li>
-        <li>Ateliers de création de parfum personnalisé</li>
-        <li>Découverte de la vieille ville et du marché provençal</li>
-        <li>Circuit combiné Grasse + Mougins (gastronomie)</li>
-        <li>Excursion Grasse + villages perchés (Gourdon, Tourrettes)</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Grasse</h2>
-      <p class="text-center mb-md">Tarifs indicatifs pour Grasse :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Grasse</td><td>45 km</td><td>45-55 min</td><td>90€</td></tr>
-          <tr><td>Nice Centre → Grasse</td><td>40 km</td><td>40-50 min</td><td>80€</td></tr>
-          <tr><td>Cannes → Grasse</td><td>15 km</td><td>20-30 min</td><td>40€</td></tr>
-          <tr><td>Grasse → Mougins</td><td>8 km</td><td>12-18 min</td><td>28€</td></tr>
-          <tr><td>Grasse → Monaco</td><td>60 km</td><td>60-75 min</td><td>140€</td></tr>
-          <tr><td>Demi-journée Grasse (depuis Nice)</td><td>-</td><td>4h</td><td>240€</td></tr>
-          <tr><td>Journée Grasse + Mougins (déjeuner)</td><td>-</td><td>6h</td><td>350€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Visites parfumeries gratuites. Ateliers création : supplément 50-100€.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Les Parfumeries de Grasse</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/guides/villages-perches.webp"
           alt="Parfumerie Fragonard Grasse"
           title="Fragonard"
           description="La plus célèbre des parfumeries grassoises. Usine historique, musée du parfum, boutique. Visite guidée gratuite."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/about/chauffeur-professionnel.webp"
           alt="Parfumerie Galimard Grasse"
           title="Galimard"
           description="Fondée en 1747. Studio des Fragrances pour créer votre parfum unique (atelier 2h). Visite gratuite."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/hero/hero-business.webp"
           alt="Parfumerie Molinard Grasse"
           title="Molinard"
           description="Maison familiale depuis 1849. Tarinologie (création de parfum), musée, jardin. Visite gratuite."
@@ -142,18 +102,18 @@ const faqSchema = {
     </section>
 
     <SectionImageText
-      title="L'Expérience Création de Parfum"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="Atelier création parfum Grasse"
-      imageSide="left"
-      ctaText="Réserver un atelier"
-      ctaLink="/reservation"
+      image="/assets/img/services/service-mise-disposition.webp"
+      alt="Atelier de création de parfum à Grasse"
+      title="Créez Votre Parfum Unique à Grasse"
+      textPosition="right"
     >
-      <p class="fade-in-section">
-        L'une des expériences les plus emblématiques de Grasse est de <strong>créer son propre parfum</strong>. Les trois grandes maisons proposent des ateliers guidés par des "nez" professionnels.
+      <p>
+        Grasse est le berceau de la parfumerie mondiale. Profitez de votre visite pour participer à un atelier de création de parfum. 
+        Sous la houlette d'un "nez" expert, vous découvrirez les secrets de cet art ancestral et repartirez avec votre propre fragrance.
       </p>
-      <h3 class="fade-in-section">Ce que vous apprendrez :</h3>
-      <ul class="fade-in-section">
+      <h3 class="h4 mt-md">Au programme de l'atelier :</h3>
+      <ul class="list-disc list-inside">
+        <li>Découverte des matières premières (huiles essentielles, absolues...)</li>
         <li>Les familles olfactives (florales, orientales, boisées...)</li>
         <li>La pyramide des parfums (notes de tête, cœur, fond)</li>
         <li>L'art de l'assemblage et de l'équilibre</li>
@@ -212,8 +172,6 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Трансфер Лазурный берег – Личный Водитель Ницца Монако | ECOFUNDRIVE";
 const description = "Премиум трансфер на Лазурном Берегу. Аэропорт Ниццы, Монако, Канны, Сен-Тропе. Русскоговорящий водитель 24/7. Люксовые автомобили.";
 const keywords = [
@@ -24,12 +25,12 @@ const servicesRU = [
 ];
 
 const tarifeRU = [
-  { ot: "Аэропорт Ниццы", do: "Центр Ниццы", vremya: "15-20 мин", cena: "35€" },
-  { ot: "Аэропорт Ниццы", do: "Монако", vremya: "30-45 мин", cena: "80€" },
-  { ot: "Аэропорт Ниццы", do: "Канны", vremya: "35-45 мин", cena: "75€" },
-  { ot: "Аэропорт Ниццы", do: "Сен-Тропе", vremya: "1ч30-2ч", cena: "250€" },
-  { ot: "Ницца", do: "Эз + Монако (тур)", vremya: "4ч", cena: "280€" },
-  { ot: "Канны", do: "Монако", vremya: "55-70 мин", cena: "130€" }
+  { ot: "Аэропорт Ниццы", do: "Центр Ниццы", vremya: "15-20 мин", cena: "Цена по запросу" },
+  { ot: "Аэропорт Ниццы", do: "Монако", vremya: "30-45 мин", cena: "Цена по запросу" },
+  { ot: "Аэропорт Ниццы", do: "Канны", vremya: "35-45 мин", cena: "Цена по запросу" },
+  { ot: "Аэропорт Ниццы", do: "Сен-Тропе", vremya: "1ч30-2ч", cena: "Цена по запросу" },
+  { ot: "Ницца", do: "Эз + Монако (тур)", vremya: "4ч", cena: "Цена по запросу" },
+  { ot: "Канны", do: "Монако", vremya: "55-70 мин", cena: "Цена по запросу" }
 ];
 ---
 
@@ -224,9 +225,7 @@ const tarifeRU = [
   .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
   .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
   .service-card h3 { margin-bottom: 0.5rem; color: #d4af37; }
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .price-cell { font-weight: 700; color: #d4af37; }
   .bg-light { background: #f9f9f9; padding: 2rem; }
   .benefits-list { list-style: none; padding: 0; }

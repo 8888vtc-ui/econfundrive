@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Villefranche-sur-Mer Private Driver – Scenic Port & Beaches | ECOFUNDRIVE";
 const description = "Private driver to Villefranche-sur-Mer. Stunning natural harbor, colorful Old Town, scenic beaches between Nice and Monaco. Premium chauffeur service 24/7.";
 const keywords = [
@@ -57,19 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Villefranche Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Villefranche</td><td>12 km</td><td>20-30 min</td><td>40€</td></tr>
-          <tr><td>Nice City → Villefranche</td><td>8 km</td><td>15-20 min</td><td>30€</td></tr>
-          <tr><td>Villefranche → Monaco</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Villefranche → Eze Village</td><td>5 km</td><td>10-15 min</td><td>25€</td></tr>
-          <tr><td>Villefranche → Cap Ferrat</td><td>4 km</td><td>10 min</td><td>22€</td></tr>
-          <tr><td>Cruise ship shore excursion (4h)</td><td>-</td><td>4h</td><td>280€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -132,9 +121,7 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .cruise-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
   .excursion-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }

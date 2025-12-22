@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Saint-Laurent-du-Var – Chauffeur Privé Cap 3000 | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Saint-Laurent-du-Var. Centre commercial Cap 3000, port de plaisance, plages. Transferts aéroport Nice en 10 min. Service premium 24h/24.";
 const keywords = [
@@ -24,7 +25,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Saint-Laurent-du-Var", url: "/vtc-saint-laurent-du-var" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de l'aéroport de Nice à Saint-Laurent-du-Var ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert aéroport Nice → Saint-Laurent-du-Var coûte environ 25-30€. C'est la ville la plus proche de l'aéroport, à seulement 5 km."}},{"@type":"Question","name":"Proposez-vous des navettes pour Cap 3000 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers le centre commercial Cap 3000 depuis Nice, Cannes ou l'aéroport. Idéal pour une journée shopping."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de l'aéroport de Nice à Saint-Laurent-du-Var ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des navettes pour Cap 3000 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers le centre commercial Cap 3000 depuis Nice, Cannes ou l'aéroport. Idéal pour une journée shopping."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,43 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Saint-Laurent-du-Var"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Saint-Laurent-du-Var"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Saint-Laurent-du-Var</strong> est stratégiquement située à l'embouchure du Var, juste à côté de l'aéroport de Nice. La ville est connue pour son centre commercial <strong>Cap 3000</strong>, l'un des plus grands de la région, son port de plaisance moderne et ses plages familiales.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Saint-Laurent-du-Var</strong> : transferts aéroport ultra-rapides (10 min), navettes shopping Cap 3000, ou déplacements vers Nice et la Côte d'Azur.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (10 min, la ville la plus proche)</li>
-        <li>Navettes centre commercial Cap 3000</li>
-        <li>Accès au port de plaisance et restaurants</li>
-        <li>Liaisons vers Nice, Cagnes, Antibes et Monaco</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Saint-Laurent-du-Var</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Saint-Laurent-du-Var</td><td>5 km</td><td>8-12 min</td><td>25€</td></tr>
-          <tr><td>Saint-Laurent → Nice Centre</td><td>8 km</td><td>10-15 min</td><td>30€</td></tr>
-          <tr><td>Saint-Laurent → Cagnes-sur-Mer</td><td>5 km</td><td>8-10 min</td><td>20€</td></tr>
-          <tr><td>Saint-Laurent → Antibes</td><td>15 km</td><td>15-25 min</td><td>40€</td></tr>
-          <tr><td>Saint-Laurent → Cannes</td><td>30 km</td><td>30-40 min</td><td>65€</td></tr>
-          <tr><td>Saint-Laurent → Monaco</td><td>25 km</td><td>25-35 min</td><td>60€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -129,8 +97,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

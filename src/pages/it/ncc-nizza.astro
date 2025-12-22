@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "NCC Nizza – Autista Privato Aeroporto & Costa Azzurra | ECOFUNDRIVE";
 const description = "Servizio NCC premium a Nizza. Trasferimenti aeroporto Nizza Côte d'Azur, Promenade des Anglais, Vieux Nice. Autista privato italiano 24/7.";
 const keywords = [
@@ -31,47 +32,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Il Vostro Autista Privato a Nizza"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="NCC autista privato Nizza Promenade des Anglais"
-      imageSide="right"
-      ctaText="Prenota il Tuo Trasferimento"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Nizza</strong> è la vibrante capitale della Costa Azzurra, che unisce bellezza mediterranea e ricco patrimonio culturale. Dalla iconica <strong>Promenade des Anglais</strong> al colorato <strong>Vieux Nice</strong> (Città Vecchia) e al panorama dalla <strong>Collina del Castello</strong>, Nizza offre un'esperienza indimenticabile.
-      </p>
-      <p class="fade-in-section">
-        L'<strong>Aeroporto Nizza Côte d'Azur</strong> è la porta d'accesso all'intera Riviera, servendo oltre 14 milioni di passeggeri all'anno. ECOFUNDRIVE fornisce <strong>servizi NCC premium dall'aeroporto di Nizza</strong> verso qualsiasi destinazione sulla costa.
-      </p>
-      <ul class="fade-in-section">
-        <li>Trasferimenti aeroporto Nizza con meet & greet</li>
-        <li>Tour della città e visite turistiche</li>
-        <li>Trasferimenti verso Monaco, Cannes, Saint-Tropez</li>
-        <li>Tour panoramici sulle Corniches</li>
-        <li>Trasporti business e corporate</li>
-        <li>Autisti professionali multilingue</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tariffe Trasferimenti Aeroporto Nizza</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Dall'Aeroporto Nizza a</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Centro città Nizza</td><td>7 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Hotel Nizza (Negresco, etc.)</td><td>6-10 km</td><td>15-25 min</td><td>35-45€</td></tr>
-          <tr><td>Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
-          <tr><td>Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
-          <tr><td>Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
-          <tr><td>Villaggio di Eze</td><td>15 km</td><td>20-30 min</td><td>40€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tutti i prezzi includono meet & greet, monitoraggio volo e assistenza bagagli.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -131,9 +95,7 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .meet-greet-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
   .meet-greet-info h3 { color: #d4af37; margin: 1rem 0 0.5rem; }

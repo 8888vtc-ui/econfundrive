@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Mougins Private Driver – Gourmet Village & Picasso | ECOFUNDRIVE";
 const description = "Private driver to Mougins, the gourmet village near Cannes. Michelin-starred restaurants, Picasso connections, art galleries. Premium chauffeur service.";
 const keywords = [
@@ -57,18 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Mougins Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Mougins</td><td>38 km</td><td>35-45 min</td><td>75€</td></tr>
-          <tr><td>Cannes → Mougins</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
-          <tr><td>Mougins → Grasse</td><td>8 km</td><td>12-18 min</td><td>28€</td></tr>
-          <tr><td>Mougins → Antibes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Restaurant dinner (round trip + wait)</td><td>-</td><td>Evening</td><td>150€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -111,8 +101,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

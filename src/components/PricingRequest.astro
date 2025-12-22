@@ -1,0 +1,246 @@
+---
+// Composant commercial pour remplacer les tableaux de tarifs
+// Message vendeur avec appel à l'action
+
+interface Props {
+  cityName?: string;
+}
+
+const { cityName = "" } = Astro.props;
+---
+
+<section class="pricing-request-section">
+  <div class="pricing-card">
+    <div class="pricing-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+    </div>
+    
+    <h2 class="pricing-title">Tarif Sur Demande</h2>
+    
+    <p class="pricing-subtitle">
+      Un service personnalisé mérite un tarif sur mesure
+    </p>
+    
+    <div class="pricing-features">
+      <div class="feature">
+        <span class="feature-icon">🚗</span>
+        <span class="feature-text">Choix du véhicule : Berline, Van Premium ou Véhicule de luxe</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🕐</span>
+        <span class="feature-text">Horaires flexibles : Jour, nuit, week-end, jours fériés</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">⭐</span>
+        <span class="feature-text">Niveau de service : Standard, Business ou VIP</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📍</span>
+        <span class="feature-text">Distance et durée adaptées à votre trajet</span>
+      </div>
+    </div>
+    
+    <p class="pricing-message">
+      Chez <strong>ECOFUNDRIVE</strong>, chaque client est unique. Nos tarifs sont établis en fonction de vos besoins spécifiques pour vous garantir le meilleur rapport qualité-prix. 
+      <strong>Demandez votre devis gratuit en quelques secondes !</strong>
+    </p>
+    
+    <div class="pricing-cta">
+      <a href="https://wa.me/33616552811?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20un%20trajet%20VTC" 
+         class="cta-whatsapp" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Obtenir mon devis gratuit
+      </a>
+      
+      <a href="/contact" class="cta-contact">
+        📧 Contact par email
+      </a>
+    </div>
+    
+    <p class="pricing-guarantee">
+      ✅ Réponse rapide • ✅ Devis sans engagement • ✅ Tarif fixe garanti
+    </p>
+  </div>
+</section>
+
+<style>
+  .pricing-request-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .pricing-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #d4af37;
+  }
+  
+  .pricing-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .pricing-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .pricing-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  
+  .pricing-features {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 3px solid #d4af37;
+  }
+  
+  .feature-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  
+  .feature-text {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .pricing-message {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border-radius: 12px;
+  }
+  
+  .pricing-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  }
+  
+  .cta-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+  
+  .cta-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-contact:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+  }
+  
+  .pricing-guarantee {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .pricing-card {
+      padding: 2rem 1.5rem;
+    }
+    
+    .pricing-title {
+      font-size: 1.8rem;
+    }
+    
+    .pricing-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .pricing-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .feature {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+    
+    .cta-whatsapp {
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+</style>

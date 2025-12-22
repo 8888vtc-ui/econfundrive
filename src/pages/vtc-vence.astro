@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Vence – Chauffeur Privé Chapelle Matisse | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Vence. Chapelle du Rosaire (Matisse), vieille ville médiévale, marchés provençaux. Transferts depuis Nice et l'aéroport. Service premium.";
 const keywords = [
@@ -24,7 +25,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Vence", url: "/vtc-vence" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Vence ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert Nice → Vence coûte environ 45-55€ selon le véhicule. Vence est située à 20 km de Nice dans l'arrière-pays."}},{"@type":"Question","name":"Proposez-vous des circuits incluant Saint-Paul-de-Vence et Vence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des circuits touristiques combinant Vence, Saint-Paul-de-Vence et les villages perchés. Mise à disposition demi-journée ou journée."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Vence ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des circuits incluant Saint-Paul-de-Vence et Vence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des circuits touristiques combinant Vence, Saint-Paul-de-Vence et les villages perchés. Mise à disposition demi-journée ou journée."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,44 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Vence"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Vence"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Vence</strong> est une charmante cité médiévale de l'arrière-pays niçois, célèbre pour la <strong>Chapelle du Rosaire</strong> décorée par Henri Matisse. Avec ses remparts, ses placettes ombragées et son marché provençal, Vence incarne l'art de vivre du sud de la France.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Vence</strong> : transferts depuis Nice ou l'aéroport, circuits touristiques incluant Saint-Paul-de-Vence, ou mise à disposition pour explorer l'arrière-pays.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice - Vence (30-40 min)</li>
-        <li>Visite de la Chapelle du Rosaire (Matisse)</li>
-        <li>Circuit combiné Vence + Saint-Paul-de-Vence</li>
-        <li>Excursion villages perchés de l'arrière-pays</li>
-        <li>Mise à disposition pour les mariages en Provence</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Vence</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Vence</td><td>25 km</td><td>30-40 min</td><td>55€</td></tr>
-          <tr><td>Nice Centre → Vence</td><td>20 km</td><td>25-35 min</td><td>50€</td></tr>
-          <tr><td>Vence → Saint-Paul-de-Vence</td><td>5 km</td><td>10 min</td><td>20€</td></tr>
-          <tr><td>Vence → Cannes</td><td>30 km</td><td>35-45 min</td><td>70€</td></tr>
-          <tr><td>Vence → Monaco</td><td>35 km</td><td>40-50 min</td><td>85€</td></tr>
-          <tr><td>Circuit Vence + Saint-Paul (demi-journée)</td><td>-</td><td>4h</td><td>250€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -112,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

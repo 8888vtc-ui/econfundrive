@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "NCC Saint-Tropez – Autista Privato Pampelonne & Vita Notturna | ECOFUNDRIVE";
 const description = "Servizio NCC premium a Saint-Tropez. Spiagge Pampelonne, Club 55, Nikki Beach, porto, Place des Lices. Trasferimenti da Nizza e Cannes.";
 const keywords = [
@@ -31,46 +32,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Il Vostro Autista Privato a Saint-Tropez"
-      image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="NCC autista privato Saint-Tropez porto"
-      imageSide="right"
-      ctaText="Prenota il Tuo Trasferimento"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Saint-Tropez</strong> è la leggenda vivente della Costa Azzurra. Questo piccolo villaggio di pescatori diventato destinazione jet-set mondiale ha saputo conservare il suo charme provenzale pur attirando celebrità di tutto il mondo. Il <strong>porto mitico</strong>, la <strong>Place des Lices</strong> e le sue partite di pétanque, le <strong>spiagge di Pampelonne</strong> – ogni angolo respira glamour alla francese.
-      </p>
-      <p class="fade-in-section">
-        Ma Saint-Tropez significa anche traffico e parcheggio impossibile, soprattutto in estate. ECOFUNDRIVE vi offre la <strong>soluzione perfetta</strong>: un autista privato vi porta esattamente dove desiderate e vi riprende quando volete, anche dopo mezzanotte.
-      </p>
-      <ul class="fade-in-section">
-        <li>Trasferimenti aeroporto Nizza (1h30-2h)</li>
-        <li>Trasferimenti da Cannes (1h15)</li>
-        <li>Navette spiagge Pampelonne (Club 55, Nikki Beach)</li>
-        <li>Servizio notturno e ritorno dopo serate</li>
-        <li>Messa a disposizione giornata intera</li>
-        <li>Yacht ed eliporto Saint-Tropez</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tariffe NCC Saint-Tropez</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destinazione</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aeroporto Nizza → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
-          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
-          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
-          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>320€</td></tr>
-          <tr><td>Saint-Tropez → Pampelonne</td><td>8 km</td><td>15-25 min</td><td>35€</td></tr>
-          <tr><td>Mezza giornata a disposizione (5h)</td><td>-</td><td>5h</td><td>300€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tariffe alta stagione (luglio-agosto): +20%. Prenotate in anticipo!</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -151,8 +116,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

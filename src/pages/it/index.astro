@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "NCC Costa Azzurra – Autista Privato Nizza Monaco Cannes | ECOFUNDRIVE";
 const description = "Servizio NCC premium in Costa Azzurra. Trasferimenti aeroporto Nizza, Monaco, Cannes, Saint-Tropez. Autista privato italiano 24/7. Veicoli di lusso.";
 const keywords = [
@@ -24,12 +25,12 @@ const servicesIT = [
 ];
 
 const tarifeIT = [
-  { da: "Aeroporto Nizza", a: "Nizza Centro", durata: "15-20 min", prezzo: "35€" },
-  { da: "Aeroporto Nizza", a: "Monaco", durata: "30-45 min", prezzo: "80€" },
-  { da: "Aeroporto Nizza", a: "Cannes", durata: "35-45 min", prezzo: "75€" },
-  { da: "Aeroporto Nizza", a: "Saint-Tropez", durata: "1h30-2h", prezzo: "250€" },
-  { da: "Nizza", a: "Eze + Monaco (tour)", durata: "4h", prezzo: "280€" },
-  { da: "Cannes", a: "Monaco", durata: "55-70 min", prezzo: "130€" }
+  { da: "Aeroporto Nizza", a: "Nizza Centro", durata: "15-20 min", prezzo: "Prezzo su richiesta" },
+  { da: "Aeroporto Nizza", a: "Monaco", durata: "30-45 min", prezzo: "Prezzo su richiesta" },
+  { da: "Aeroporto Nizza", a: "Cannes", durata: "35-45 min", prezzo: "Prezzo su richiesta" },
+  { da: "Aeroporto Nizza", a: "Saint-Tropez", durata: "1h30-2h", prezzo: "Prezzo su richiesta" },
+  { da: "Nizza", a: "Eze + Monaco (tour)", durata: "4h", prezzo: "Prezzo su richiesta" },
+  { da: "Cannes", a: "Monaco", durata: "55-70 min", prezzo: "Prezzo su richiesta" }
 ];
 ---
 
@@ -45,51 +46,10 @@ const tarifeIT = [
 >
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Il Vostro Autista Privato in Costa Azzurra</h1>
-        <p class="hero-subtitle">Trasferimenti aeroporto, tour panoramici e trasporti di lusso. Nizza • Cannes • Monaco • Saint-Tropez</p>
-        <div class="hero-cta">
-          <a href="/reservation" class="btn btn-gold">Prenota il Tuo Trasferimento</a>
-          <a href="tel:+33616552811" class="btn btn-outline">Chiama +33 6 16 55 28 11</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Grid -->
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">I Nostri Servizi NCC Premium</h2>
-      <p class="text-center mb-xl lead">Vivete il trasporto di lusso in Costa Azzurra con ECOFUNDRIVE</p>
-      <div class="services-grid">
-        {servicesIT.map((service) => (
-          <div class="service-card">
-            <span class="service-icon">{service.icon}</span>
-            <h3>{service.title}</h3>
-            <p>{service.desc}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- Popular Routes -->
-    <section class="container py-xl bg-light rounded-lg fade-in-section">
-      <h2 class="text-center mb-lg">Tariffe Trasferimenti Popolari</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Da</th><th>A</th><th>Durata</th><th>Prezzo da</th></tr>
-        </thead>
-        <tbody>
-          {tarifeIT.map((route) => (
-            <tr>
-              <td>{route.da}</td>
-              <td>{route.a}</td>
-              <td>{route.durata}</td>
-              <td class="price-cell">{route.prezzo}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Prezzi fissi senza costi nascosti. Accoglienza personalizzata inclusa.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <!-- Destinations -->
@@ -224,9 +184,7 @@ const tarifeIT = [
   .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
   .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
   .service-card h3 { margin-bottom: 0.5rem; color: #d4af37; }
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .price-cell { font-weight: 700; color: #d4af37; }
   .bg-light { background: #f9f9f9; padding: 2rem; }
   .benefits-list { list-style: none; padding: 0; }

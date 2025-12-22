@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Grasse Private Driver – Perfume Capital Tour | ECOFUNDRIVE";
 const description = "Private driver to Grasse, the world capital of perfume. Fragonard, Galimard, Molinard factory tours. Day trips from Nice, Cannes. Premium chauffeur service.";
 const keywords = [
@@ -60,19 +61,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Grasse Tour Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Tour / Route</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice → Grasse (one way)</td><td>40-50 min</td><td>65€</td></tr>
-          <tr><td>Cannes → Grasse (one way)</td><td>20-30 min</td><td>40€</td></tr>
-          <tr><td>Grasse Half-Day Tour (from Nice)</td><td>4h</td><td>240€</td></tr>
-          <tr><td>Grasse Half-Day Tour (from Cannes)</td><td>4h</td><td>200€</td></tr>
-          <tr><td>Grasse + Gourdon + Vence (full day)</td><td>8h</td><td>420€</td></tr>
-          <tr><td>Perfume Workshop + Mougins Lunch</td><td>6h</td><td>350€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Factory tours are free. Workshop fees are additional (approx. €50-100).</em></p>
     </section>
 
@@ -140,8 +129,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

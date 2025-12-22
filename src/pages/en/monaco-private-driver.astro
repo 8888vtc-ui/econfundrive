@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Monaco Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
 const description = "Private driver VTC service in Monaco. Monte-Carlo Casino, Grand Prix, luxury hotels, Port Hercule. Premium chauffeur service 24/7 from Nice Airport.";
 const keywords = [
@@ -60,19 +61,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Monaco Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
-          <tr><td>Nice City Center → Monaco</td><td>20 km</td><td>25-35 min</td><td>65€</td></tr>
-          <tr><td>Monaco → Cannes</td><td>55 km</td><td>55-70 min</td><td>130€</td></tr>
-          <tr><td>Monaco → Eze Village</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Monaco → Saint-Tropez</td><td>110 km</td><td>1h45</td><td>280€</td></tr>
-          <tr><td>Half-day disposal (4h)</td><td>-</td><td>4h</td><td>320€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Prices are indicative. Personal greeting with name board included.</em></p>
     </section>
 
@@ -140,8 +129,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

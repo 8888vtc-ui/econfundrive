@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Menton – Chauffeur Privé Perle de France & Italie | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Menton, la Perle de la France. Fête du Citron, jardins exceptionnels, frontière italienne. Transferts Monaco, Nice, Vintimille. Service premium 24h/24.";
 const keywords = [
@@ -75,51 +76,10 @@ const faqSchema = {
       </p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Menton"
-      image="/assets/img/destinations/destination-monaco.png"
-      alt="VTC chauffeur privé Menton Côte d'Azur"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Menton</strong>, surnommée la "Perle de la France", bénéficie du climat le plus doux de la Côte d'Azur. Nichée entre Monaco et la frontière italienne, cette ville jardin séduit par sa vieille ville aux couleurs chaudes, sa célèbre <strong>Fête du Citron</strong> et ses jardins subtropicaux d'exception.
-      </p>
-      <p class="fade-in-section">
-        Sa position unique en fait un point de départ idéal pour explorer à la fois la Riviera française et la <strong>Riviera dei Fiori italienne</strong>. Le Musée Jean Cocteau, la basilique Saint-Michel et les plages de galets complètent un tableau enchanteur.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Menton</strong>, parfait pour vos transferts aéroport, vos excursions en Italie ou vos visites des jardins botaniques.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (45-55 min)</li>
-        <li>Navettes quotidiennes Monaco - Menton</li>
-        <li>Excursions frontière italienne (Vintimille, San Remo)</li>
-        <li>Service dédié Fête du Citron (février)</li>
-        <li>Circuit des jardins de Menton</li>
-        <li>Visite Musée Jean Cocteau</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Menton</h2>
-      <p class="text-center mb-md">Tarifs indicatifs depuis/vers Menton :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Menton</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
-          <tr><td>Nice Centre → Menton</td><td>30 km</td><td>35-45 min</td><td>75€</td></tr>
-          <tr><td>Monaco → Menton</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Menton → Vintimille (Italie)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
-          <tr><td>Menton → San Remo (Italie)</td><td>40 km</td><td>45 min</td><td>90€</td></tr>
-          <tr><td>Menton → Roquebrune-Cap-Martin</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
-          <tr><td>Excursion Riviera italienne (journée)</td><td>-</td><td>8h</td><td>450€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Passage frontière Italie inclus. Tarifs fixes sans surprises.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <SectionImageText
@@ -219,8 +179,6 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

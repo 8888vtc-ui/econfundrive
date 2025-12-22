@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC La Turbie – Chauffeur Privé Trophée des Alpes | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à La Turbie. Trophée des Alpes, vue Monaco, Grande Corniche. Village perché dominant la principauté. Transferts Nice, Monaco. Service premium.";
 const keywords = [
@@ -32,47 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à La Turbie"
-      image="/assets/img/destinations/destination-monaco.png"
-      alt="VTC chauffeur privé La Turbie"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>La Turbie</strong> est un village perché spectaculaire situé sur les hauteurs de Monaco, à 480 mètres d'altitude. Il doit sa renommée au <strong>Trophée des Alpes</strong>, monument romain du Ier siècle avant J.-C. érigé en l'honneur d'Auguste, et à sa vue imprenable sur la Principauté.
-      </p>
-      <p class="fade-in-section">
-        Traversée par la <strong>Grande Corniche</strong>, la plus spectaculaire des trois routes reliant Nice à Monaco, La Turbie est une étape incontournable pour tout visiteur de la Côte d'Azur.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à La Turbie</strong>, idéal pour les circuits panoramiques, les visites du Trophée ou les transferts vers Monaco et Nice.
-      </p>
-      <ul class="fade-in-section">
-        <li>Circuit Grande Corniche Nice - Èze - La Turbie - Monaco</li>
-        <li>Visite du Trophée des Alpes et musée</li>
-        <li>Point de vue sur Monaco (le plus célèbre de la Riviera)</li>
-        <li>Déjeuner gastronomique au Café de la Fontaine</li>
-        <li>Transferts depuis/vers Monaco (15 min)</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC La Turbie</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Monaco → La Turbie</td><td>6 km</td><td>12-18 min</td><td>30€</td></tr>
-          <tr><td>Nice → La Turbie (Grande Corniche)</td><td>18 km</td><td>30-40 min</td><td>55€</td></tr>
-          <tr><td>Aéroport Nice → La Turbie</td><td>25 km</td><td>35-45 min</td><td>65€</td></tr>
-          <tr><td>La Turbie → Èze Village</td><td>6 km</td><td>10-15 min</td><td>28€</td></tr>
-          <tr><td>Circuit Nice - Èze - La Turbie - Monaco</td><td>-</td><td>4h</td><td>280€</td></tr>
-          <tr><td>Circuit complet avec déjeuner</td><td>-</td><td>6h</td><td>380€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -115,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

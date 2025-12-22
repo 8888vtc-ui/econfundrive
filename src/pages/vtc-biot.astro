@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Biot – Chauffeur Privé Village Verriers & Marineland | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Biot. Village des verriers, Marineland, Musée Fernand Léger. Entre Antibes et Sophia Antipolis. Transferts aéroport Nice. Service premium.";
 const keywords = [
@@ -32,47 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Biot"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Biot"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Biot</strong> est un charmant village perché de la Côte d'Azur, célèbre pour son artisanat d'art, notamment le <strong>verre bullé</strong> créé dans les années 1950. Le village abrite également le <strong>Musée Fernand Léger</strong>, l'un des plus beaux musées d'art moderne de la région.
-      </p>
-      <p class="fade-in-section">
-        La commune accueille aussi <strong>Marineland</strong>, le plus grand parc marin d'Europe, destination familiale par excellence. Situé entre Antibes et Sophia Antipolis, Biot offre un accès facile à toute la Côte d'Azur.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Biot</strong> pour vos transferts, journées en famille ou découvertes artisanales.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (25-35 min)</li>
-        <li>Navettes vers Marineland et parcs aquatiques</li>
-        <li>Visite des verreries et ateliers d'artisans</li>
-        <li>Musée Fernand Léger</li>
-        <li>Liaison vers Sophia Antipolis (5 min)</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Biot</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Biot</td><td>22 km</td><td>25-35 min</td><td>50€</td></tr>
-          <tr><td>Antibes → Biot</td><td>6 km</td><td>10-15 min</td><td>25€</td></tr>
-          <tr><td>Biot → Sophia Antipolis</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
-          <tr><td>Biot → Nice</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Biot → Cannes</td><td>15 km</td><td>18-25 min</td><td>40€</td></tr>
-          <tr><td>Biot → Marineland (A/R avec attente)</td><td>-</td><td>4h</td><td>180€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -115,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Villeneuve-Loubet – Chauffeur Privé Marina & Plages | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Villeneuve-Loubet. Marina Baie des Anges, plages, Marineland, Fondation Escoffier. Entre Nice et Cannes. Transferts aéroport. Service premium 24h/24.";
 const keywords = [
@@ -67,51 +68,10 @@ const faqSchema = {
       </p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Villeneuve-Loubet"
-      image="/assets/img/destinations/destination-nice.png"
-      alt="VTC chauffeur privé Villeneuve-Loubet Marina Baie des Anges"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Villeneuve-Loubet</strong> est une commune résidentielle prisée située entre Nice et Antibes. Elle est célèbre pour la <strong>Marina Baie des Anges</strong>, ensemble architectural emblématique des années 70 en forme de vagues, et pour ses plages de galets bordant la Méditerranée.
-      </p>
-      <p class="fade-in-section">
-        La ville est également le berceau de la gastronomie française moderne : <strong>Auguste Escoffier</strong>, le "roi des cuisiniers", y est né. Le Musée Escoffier de l'Art Culinaire attire les passionnés du monde entier. Côté loisirs, <strong>Marineland</strong> et ses parcs associés sont à quelques minutes.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE vous propose un <strong>service VTC premium à Villeneuve-Loubet</strong>, idéal pour vos transferts aéroport, vos journées en famille à Marineland, ou vos déplacements professionnels vers Sophia Antipolis.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (15-25 min)</li>
-        <li>Service Marina Baie des Anges</li>
-        <li>Navettes vers Marineland et parcs aquatiques</li>
-        <li>Transferts Sophia Antipolis (10 min)</li>
-        <li>Visite Musée Escoffier</li>
-        <li>Accès plages et restaurants de bord de mer</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Villeneuve-Loubet</h2>
-      <p class="text-center mb-md">Tarifs indicatifs à partir de Villeneuve-Loubet :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Villeneuve-Loubet</td><td>15 km</td><td>15-25 min</td><td>40€</td></tr>
-          <tr><td>Nice Centre → Villeneuve-Loubet</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Villeneuve-Loubet → Antibes</td><td>8 km</td><td>12-18 min</td><td>28€</td></tr>
-          <tr><td>Villeneuve-Loubet → Cannes</td><td>18 km</td><td>20-30 min</td><td>45€</td></tr>
-          <tr><td>Villeneuve-Loubet → Monaco</td><td>30 km</td><td>35-45 min</td><td>75€</td></tr>
-          <tr><td>Villeneuve-Loubet → Sophia Antipolis</td><td>8 km</td><td>10-15 min</td><td>25€</td></tr>
-          <tr><td>Marineland (aller-retour + 4h attente)</td><td>-</td><td>5h</td><td>200€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tarifs fixes, sans surprises. Devis gratuit pour toute demande spécifique.</em></p>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -210,9 +170,7 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .feature-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
   .feature-card h3 { margin-bottom: 0.5rem; }

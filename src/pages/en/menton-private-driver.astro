@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Menton Private Driver – Italian Border & Lemon Festival | ECOFUNDRIVE";
 const description = "Private driver to Menton, the pearl of France near Italy. Lemon Festival, stunning gardens, Italian Riviera day trips. Premium chauffeur service 24/7.";
 const keywords = [
@@ -60,19 +61,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Menton Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Menton</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
-          <tr><td>Nice City Center → Menton</td><td>30 km</td><td>35-45 min</td><td>75€</td></tr>
-          <tr><td>Monaco → Menton</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Menton → Ventimiglia (Italy)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
-          <tr><td>Menton → San Remo (Italy)</td><td>40 km</td><td>45 min</td><td>90€</td></tr>
-          <tr><td>Italian Riviera Day Trip</td><td>-</td><td>8h</td><td>450€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -139,8 +128,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

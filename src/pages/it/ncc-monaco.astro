@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "NCC Monaco – Autista Privato Monte-Carlo Gran Premio | ECOFUNDRIVE";
 const description = "Servizio NCC premium a Monaco. Casino Monte-Carlo, Gran Premio F1, Port Hercules, hotel 5 stelle. Autista privato italiano. Trasferimenti da Nizza.";
 const keywords = [
@@ -31,45 +32,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Il Vostro Autista Privato a Monaco"
-      image="/assets/img/destinations/destination-monaco.png"
-      alt="NCC autista privato Monaco Monte-Carlo"
-      imageSide="right"
-      ctaText="Prenota il Tuo Trasferimento"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Monaco</strong>, il glamour della Principauté sulla Costa Azzurra, incarna lusso, eleganza e prestigio. Che stiate visitando il <strong>Casino di Monte-Carlo</strong>, partecipando al <strong>Gran Premio di F1</strong>, o soggiornando in uno degli hotel di lusso, meritate un servizio di autista premium.
-      </p>
-      <p class="fade-in-section">
-        ECOFUNDRIVE offre <strong>servizi NCC premium a Monaco</strong>, perfetti per trasferimenti dall'aeroporto di Nizza, riunioni d'affari, eventi speciali ed esplorazioni della costa mediterranea.
-      </p>
-      <ul class="fade-in-section">
-        <li>Trasferimenti aeroporto Nizza - Monaco (30-45 min)</li>
-        <li>Servizio dedicato Gran Premio Monaco</li>
-        <li>Trasferimenti hotel di lusso e accesso yacht</li>
-        <li>Trasporti business e corporate</li>
-        <li>Autisti multilingue professionali</li>
-        <li>Veicoli premium (Tesla, Mercedes Classe S)</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tariffe NCC Monaco</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Percorso</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aeroporto Nizza → Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
-          <tr><td>Nizza Centro → Monaco</td><td>20 km</td><td>25-35 min</td><td>65€</td></tr>
-          <tr><td>Monaco → Cannes</td><td>55 km</td><td>55-70 min</td><td>130€</td></tr>
-          <tr><td>Monaco → Eze Village</td><td>8 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Monaco → Saint-Tropez</td><td>110 km</td><td>1h45</td><td>280€</td></tr>
-          <tr><td>Mezza giornata a disposizione (4h)</td><td>-</td><td>4h</td><td>320€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -112,8 +78,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -1,6 +1,5 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 
 const title = "Contact | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
 const description = "Contactez ECOFUNDRIVE pour réserver votre chauffeur privé VTC sur la Côte d'Azur. Service professionnel 24h/24. Téléphone, WhatsApp, email.";
@@ -28,207 +27,522 @@ const breadcrumbItems = [
   breadcrumbItems={breadcrumbItems}
 >
   <main id="main-content">
+    <!-- Hero Section Minimaliste & Chic -->
+    <section class="contact-header fade-in-section">
+      <div class="container">
+        <span class="sub-title">Service Premium 24h/7</span>
+        <h1>Parlons de votre projet de voyage</h1>
+        <p class="lead">Une demande particulière, un transfert urgent ou une mise à disposition sur mesure ? Notre équipe est à votre écoute.</p>
+      </div>
+    </section>
+
     <div class="container">
-      <section class="contact-hero">
-        <h1>Contactez ECOFUNDRIVE</h1>
-        <p class="lead">Disponible 24h/24 et 7j/7 pour tous vos déplacements sur la Côte d'Azur</p>
-      </section>
-
-      <div class="contact-grid">
-        <section class="contact-form-section">
-          <h2>Envoyez-nous un message</h2>
-          <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
-          
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>
-                Ne remplissez pas ce champ si vous êtes humain : <input name="bot-field" />
-              </label>
-            </p>
-
-            <div class="form-group">
-              <label for="nom">Nom complet *</label>
-              <input 
-                type="text" 
-                id="nom" 
-                name="nom" 
-                required 
-                placeholder="Votre nom"
-                aria-required="true"
-              />
+      <div class="contact-wrapper">
+        <!-- Colonne Info : Glassmorphism Cards -->
+        <aside class="contact-sidebar fade-in-section">
+          <div class="info-card">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </div>
-
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                required 
-                placeholder="votre@email.com"
-                aria-required="true"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="telephone">Téléphone *</label>
-              <input 
-                type="tel" 
-                id="telephone" 
-                name="telephone" 
-                required 
-                placeholder="06 12 34 56 78"
-                aria-required="true"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="sujet">Sujet *</label>
-              <select id="sujet" name="sujet" required aria-required="true">
-                <option value="">Sélectionnez un sujet</option>
-                <option value="reservation">Réservation VTC</option>
-                <option value="transfert-aeroport">Transfert aéroport</option>
-                <option value="service-entreprise">Service entreprise</option>
-                <option value="mariage-evenement">Mariage / Événement</option>
-                <option value="devis">Demande de devis</option>
-                <option value="autre">Autre demande</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="6" 
-                required 
-                placeholder="Décrivez votre demande (date, heure, lieu de départ, destination, nombre de passagers...)"
-                aria-required="true"
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="checkbox-label">
-                <input 
-                  type="checkbox" 
-                  name="rgpd" 
-                  required 
-                  aria-required="true"
-                />
-                <span>J'accepte que mes données soient utilisées pour répondre à ma demande (conformément au RGPD) *</span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn-primary">
-              Envoyer le message
-            </button>
-
-            <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
-          </form>
-        </section>
-
-        <section class="contact-info-section">
-          <h2>Nos coordonnées</h2>
-          
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-icon">📞</div>
-              <div class="contact-details">
-                <h3>Téléphone</h3>
-                <p><a href="tel:+33616552811">06 16 55 28 11</a></p>
-                <p class="contact-note">Disponible 24h/24 et 7j/7</p>
-              </div>
-            </div>
-
-            <div class="contact-method">
-              <div class="contact-icon">💬</div>
-              <div class="contact-details">
-                <h3>WhatsApp</h3>
-                <p><a href="https://wa.me/33616552811" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp</a></p>
-                <p class="contact-note">Réponse rapide garantie</p>
-              </div>
-            </div>
-
-            <div class="contact-method">
-              <div class="contact-icon">✉️</div>
-              <div class="contact-details">
-                <h3>Email</h3>
-                <p><a href="mailto:8888VTC@gmail.com">8888VTC@gmail.com</a></p>
-                <p class="contact-note">Réponse sous 24h</p>
-              </div>
+            <div class="info-content">
+              <h3>Appelez-nous</h3>
+              <a href="tel:+33660152737" class="info-link">+33 6 60 15 27 37</a>
+              <p>Ligne directe 24h/24 & 7j/7</p>
             </div>
           </div>
 
-          <div class="contact-cta">
-            <h3>Besoin d'une réponse immédiate ?</h3>
-            <p>Appelez-nous directement ou contactez-nous via WhatsApp pour une réponse instantanée.</p>
-            <div class="contact-buttons">
-              <a href="tel:+33616552811" class="btn btn-primary">Appeler maintenant</a>
+          <div class="info-card highlight">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
             </div>
+            <div class="info-content">
+              <h3>WhatsApp</h3>
+              <a href="https://wa.me/33660152737?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20VTC" class="info-link whatsapp-btn-pc" target="_blank">Chat Instantané</a>
+              <p>Réponse en moins de 5 minutes</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="info-content">
+              <h3>Email</h3>
+              <a href="mailto:8888VTC@gmail.com" class="info-link">8888VTC@gmail.com</a>
+              <p>Pour vos demandes complexes</p>
+            </div>
+          </div>
+
+          <div class="badges-trust">
+            <div class="trust-badge">
+              <img src="/assets/img/favicon/favicon.svg" alt="VTC" width="30" height="30" />
+              <span>Chauffeur Professionnel Agréé</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Formulaire de luxe -->
+        <section class="contact-main fade-in-section">
+          <div class="form-container">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="premium-form" id="contact-form">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden"><label>Bot Field: <input name="bot-field" /></label></p>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <input type="text" id="nom" name="nom" required placeholder=" " />
+                  <label for="nom">Nom Complet</label>
+                  <div class="bar"></div>
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" name="email" required placeholder=" " />
+                  <label for="email">Adresse Email</label>
+                  <div class="bar"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <input type="tel" id="telephone" name="telephone" required placeholder=" " />
+                  <label for="telephone">Téléphone</label>
+                  <div class="bar"></div>
+                </div>
+                <div class="input-group">
+                  <select id="sujet" name="sujet" required>
+                    <option value="" disabled selected>Nature de la demande</option>
+                    <option value="devis">Demande de devis</option>
+                    <option value="reservation">Réservation immédiate</option>
+                    <option value="disposition">Mise à disposition</option>
+                    <option value="evenement">Événement / Mariage</option>
+                  </select>
+                  <div class="bar"></div>
+                </div>
+              </div>
+
+              <div class="input-group full-width">
+                <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                <label for="message">Détails de votre trajet (Date, Heure, Départ, Destination...)</label>
+                <div class="bar"></div>
+              </div>
+
+              <div class="form-footer">
+                <label class="custom-checkbox">
+                  <input type="checkbox" name="rgpd" required />
+                  <span class="checkmark"></span>
+                  <span class="label-text">J'accepte la politique de confidentialité.</span>
+                </label>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">
+                  <span class="btn-text">Envoyer ma demande</span>
+                  <span class="btn-icon">→</span>
+                </button>
+              </div>
+
+              <div id="form-message" class="form-status" role="alert" aria-live="polite"></div>
+            </form>
           </div>
         </section>
       </div>
-
-      <SectionImageText
-        title="Service disponible 24h/24"
-        image="/assets/img/hero/hero-aeroport-nice.webp"
-        alt="Service VTC disponible jour et nuit"
-        imageSide="left"
-        ctaText="Réserver maintenant"
-        ctaLink="https://wa.me/33616552811"
-      >
-        <p>
-          Que votre vol arrive tard dans la nuit ou que vous ayez besoin d'un service tôt le matin, ECOFUNDRIVE est là pour vous. Nous assurons des transferts à toute heure, 7 jours sur 7.
-        </p>
-        <ul>
-          <li>Disponibilité 24h/24 et 7j/7</li>
-          <li>Réponse rapide à vos demandes</li>
-          <li>Confirmation immédiate de votre réservation</li>
-          <li>Suivi en temps réel de votre chauffeur</li>
-        </ul>
-      </SectionImageText>
-
-      <SectionImageText
-        title="Zones desservies"
-        image="/assets/img/destinations/destination-nice.webp"
-        alt="Côte d'Azur - Zones desservies"
-        imageSide="right"
-        ctaText="Voir nos destinations"
-        ctaLink="/services"
-      >
-        <p>
-          ECOFUNDRIVE dessert l'ensemble de la Côte d'Azur : Nice, Cannes, Monaco, Saint-Tropez, Antibes, Grasse, Menton, et bien d'autres destinations.
-        </p>
-        <p>
-          Nous assurons également les transferts vers les aéroports (Nice Côte d'Azur, Cannes Mandelieu), les gares, et les hôtels de la région.
-        </p>
-      </SectionImageText>
     </div>
   </main>
 </BaseLayout>
 
+<style>
+  /* Utility Classes */
+  .hidden {
+    display: none !important;
+  }
 
+  /* Base Layout Overrides & Specific Page Styles */
+  #main-content {
+    background: #fcfcfc;
+    padding-bottom: 5rem;
+  }
 
-<script>
-  // Gestion du formulaire de contact
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header Styles */
+  .contact-header {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  }
+
+  .sub-title {
+    display: block;
+    color: #d4af37;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-header h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #0a0a0a;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .contact-header .lead {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Layout Grid */
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+
+  /* Info Cards (Sidebar) */
+  .contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .info-card.highlight {
+    background: #0a0a0a;
+    color: white;
+  }
+
+  .info-card.highlight .info-link {
+    color: #d4af37;
+  }
+
+  .info-card.highlight .icon-box {
+    background: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+    flex-shrink: 0;
+  }
+
+  .info-content h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .info-link {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .info-card:not(.highlight) .info-link:hover {
+    color: #d4af37;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0;
+  }
+
+  .badges-trust {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px dashed #d4af37;
+    text-align: center;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8c732b;
+  }
+
+  /* Premium Form */
+  .contact-main {
+    background: white;
+    padding: 3.5rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+  }
+
+  .premium-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .input-group {
+    position: relative;
+    width: 100%;
+  }
+
+  .input-group input, 
+  .input-group select, 
+  .input-group textarea {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background: transparent;
+    color: #0a0a0a;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-group select {
+    cursor: pointer;
+    appearance: none;
+    padding-right: 2rem;
+  }
+
+  .input-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    color: #999;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Floating Labels */
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label,
+  .input-group textarea:focus ~ label,
+  .input-group textarea:not(:placeholder-shown) ~ label {
+    top: -1.2rem;
+    font-size: 0.75rem;
+    color: #d4af37;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .input-group input:focus ~ .bar,
+  .input-group textarea:focus ~ .bar {
+    width: 100%;
+  }
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #d4af37;
+    transition: width 0.3s ease;
+  }
+
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+
+  /* Custom Checkbox */
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+    user-select: none;
+  }
+
+  .custom-checkbox input {
+    display: none;
+  }
+
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .custom-checkbox input:checked ~ .checkmark {
+    background: #d4af37;
+    border-color: #d4af37;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    background: #0a0a0a;
+    color: white;
+    padding: 1.25rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .submit-btn:hover {
+    background: #d4af37;
+    color: #0a0a0a;
+    transform: scale(1.05);
+  }
+
+  .submit-btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
+
+  .submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+  }
+
+  .form-status {
+    font-size: 0.95rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .form-status.success {
+    display: block;
+    background: rgba(37, 211, 102, 0.1);
+    color: #128c7e;
+    border: 1px solid #25d366;
+  }
+
+  .form-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+  }
+
+  /* Mobile States */
+  @media (max-width: 992px) {
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .contact-main {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-header {
+      padding: 6rem 0 3rem;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .form-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .submit-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
-    const messageDiv = document.getElementById('form-message');
+    const statusDiv = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
 
     if (form) {
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Désactiver le bouton pendant l'envoi
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+        // Loading state
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi en cours...';
-
-        // Masquer les messages précédents
-        messageDiv.className = 'form-message';
-        messageDiv.textContent = '';
+        btnText.textContent = 'Envoi en cours...';
+        statusDiv.style.display = 'none';
 
         try {
           const formData = new FormData(form);
@@ -240,18 +554,21 @@ const breadcrumbItems = [
           });
 
           if (response.ok) {
-            messageDiv.className = 'form-message success';
-            messageDiv.textContent = '✅ Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+            statusDiv.className = 'form-status success';
+            statusDiv.textContent = '✅ Demande envoyée ! Nous revenons vers vous rapidement.';
             form.reset();
+            
+            // Animation de succès sur le bouton
+            btnText.textContent = 'Envoyé !';
+            submitBtn.style.background = '#25D366';
           } else {
-            throw new Error('Erreur lors de l\'envoi');
+            throw new Error();
           }
         } catch (error) {
-          messageDiv.className = 'form-message error';
-          messageDiv.textContent = '❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone au 06 16 55 28 11.';
-        } finally {
+          statusDiv.className = 'form-status error';
+          statusDiv.textContent = '❌ Une erreur est survenue. Merci de nous appeler directement.';
+          btnText.textContent = 'Réessayer';
           submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
         }
       });
     }

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Mandelieu-la-Napoule – Chauffeur Privé Golf & Château | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Mandelieu-la-Napoule. Château de la Napoule, Golf Old Course, aéroport Cannes-Mandelieu, port. Proche Cannes. Service premium 24h/24.";
 const keywords = [
@@ -32,44 +33,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Mandelieu-la-Napoule"
-      image="/assets/img/destinations/cannes-palais-festivals.png"
-      alt="VTC chauffeur privé Mandelieu-la-Napoule"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Mandelieu-la-Napoule</strong> est une station balnéaire élégante aux portes de Cannes. La ville est célèbre pour le <strong>Château de la Napoule</strong>, son <strong>aéroport privé</strong> (Cannes-Mandelieu), le prestigieux <strong>Golf Old Course</strong> et son port de plaisance.
-      </p>
-      <p class="fade-in-section">
-        Destination prisée pour les mariages au château et les événements corporate, Mandelieu attire une clientèle exigeante. ECOFUNDRIVE vous propose un <strong>service VTC premium à Mandelieu-la-Napoule</strong> pour tous vos déplacements.
-      </p>
-      <ul class="fade-in-section">
-        <li>Transferts aéroport privé Cannes-Mandelieu</li>
-        <li>Service VTC pour mariages au Château de la Napoule</li>
-        <li>Navettes vers les parcours de golf</li>
-        <li>Liaison port de La Napoule et yachts</li>
-        <li>Transferts vers Cannes et l'aéroport de Nice</li>
-      </ul>
-    </SectionImageText>
-
+    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Mandelieu-la-Napoule</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Cannes-Mandelieu → Cannes</td><td>8 km</td><td>12-18 min</td><td>30€</td></tr>
-          <tr><td>Aéroport Nice → Mandelieu</td><td>40 km</td><td>40-50 min</td><td>85€</td></tr>
-          <tr><td>Mandelieu → Cannes Centre</td><td>8 km</td><td>10-15 min</td><td>28€</td></tr>
-          <tr><td>Mandelieu → Mougins</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
-          <tr><td>Mandelieu → Saint-Tropez</td><td>65 km</td><td>1h15</td><td>180€</td></tr>
-          <tr><td>Service mariage (demi-journée)</td><td>-</td><td>4h</td><td>300€</td></tr>
-        </tbody>
-      </table>
+      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -112,8 +79,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

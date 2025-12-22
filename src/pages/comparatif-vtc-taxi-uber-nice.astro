@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC ou Taxi ou Uber à Nice : Quel Transport Choisir ? | Comparatif 2025";
 const description = "Comparatif complet VTC vs Taxi vs Uber à Nice et sur la Côte d'Azur. Prix, avantages, inconvénients, disponibilité aéroport. Guide pour choisir le meilleur transport.";
 const keywords = [
@@ -46,84 +47,7 @@ const keywords = [
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tableau Comparatif : VTC vs Taxi vs Uber à Nice</h2>
       <div class="table-responsive">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Critère</th>
-              <th class="vtc-col">🚗 VTC (ECOFUNDRIVE)</th>
-              <th>🚕 Taxi</th>
-              <th>📱 Uber</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Prix indicatif Aéroport Nice → Centre-ville</strong></td>
-              <td class="vtc-col">30-40€ (tarif fixe)</td>
-              <td>30-45€ (compteur)</td>
-              <td>25-50€ (variable)</td>
-            </tr>
-            <tr>
-              <td><strong>Prix connu à l'avance</strong></td>
-              <td class="vtc-col">✅ Oui, toujours</td>
-              <td>❌ Non (compteur)</td>
-              <td>⚠️ Estimation (surge pricing)</td>
-            </tr>
-            <tr>
-              <td><strong>Réservation à l'avance</strong></td>
-              <td class="vtc-col">✅ Obligatoire, garanti</td>
-              <td>⚠️ Possible mais non garanti</td>
-              <td>❌ Non (temps réel uniquement)</td>
-            </tr>
-            <tr>
-              <td><strong>Disponibilité aéroport</strong></td>
-              <td class="vtc-col">✅ Accueil personnalisé</td>
-              <td>✅ File d'attente taxi</td>
-              <td>⚠️ Variable selon l'heure</td>
-            </tr>
-            <tr>
-              <td><strong>Accueil avec pancarte</strong></td>
-              <td class="vtc-col">✅ Inclus</td>
-              <td>❌ Non</td>
-              <td>❌ Non</td>
-            </tr>
-            <tr>
-              <td><strong>Qualité des véhicules</strong></td>
-              <td class="vtc-col">✅ Premium (Tesla, Mercedes)</td>
-              <td>⚠️ Variable</td>
-              <td>⚠️ Variable</td>
-            </tr>
-            <tr>
-              <td><strong>Chauffeurs professionnels</strong></td>
-              <td class="vtc-col">✅ Formés, multilingues</td>
-              <td>✅ Professionnels</td>
-              <td>⚠️ Particuliers, variable</td>
-            </tr>
-            <tr>
-              <td><strong>Siège enfant disponible</strong></td>
-              <td class="vtc-col">✅ Sur demande, gratuit</td>
-              <td>❌ Rarement</td>
-              <td>❌ Rarement</td>
-            </tr>
-            <tr>
-              <td><strong>Paiement carte/facture</strong></td>
-              <td class="vtc-col">✅ CB, virement, facture</td>
-              <td>✅ CB acceptée</td>
-              <td>✅ CB via app</td>
-            </tr>
-            <tr>
-              <td><strong>Disponibilité 24h/24</strong></td>
-              <td class="vtc-col">✅ Oui</td>
-              <td>⚠️ Réduite la nuit</td>
-              <td>⚠️ Réduite la nuit</td>
-            </tr>
-            <tr>
-              <td><strong>Longue distance (Monaco, St-Tropez)</strong></td>
-              <td class="vtc-col">✅ Spécialité</td>
-              <td>⚠️ Certains refusent</td>
-              <td>❌ Non disponible</td>
-            </tr>
-          </tbody>
-        </table>
+        <PricingRequest />
       </div>
     </section>
 
@@ -228,48 +152,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section bg-light rounded-lg">
       <h2 class="text-center mb-lg">Prix Comparés : Trajets Courants à Nice</h2>
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Trajet</th>
-            <th class="vtc-col">VTC (ECOFUNDRIVE)</th>
-            <th>Taxi (estimation)</th>
-            <th>Uber (estimation)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Aéroport Nice → Centre-ville</td>
-            <td class="vtc-col">35€</td>
-            <td>30-45€</td>
-            <td>25-45€</td>
-          </tr>
-          <tr>
-            <td>Aéroport Nice → Monaco</td>
-            <td class="vtc-col">80€</td>
-            <td>80-100€</td>
-            <td>Non disponible</td>
-          </tr>
-          <tr>
-            <td>Aéroport Nice → Cannes</td>
-            <td class="vtc-col">70€</td>
-            <td>70-90€</td>
-            <td>Non disponible</td>
-          </tr>
-          <tr>
-            <td>Aéroport Nice → Saint-Tropez</td>
-            <td class="vtc-col">250€</td>
-            <td>Variable (certains refusent)</td>
-            <td>Non disponible</td>
-          </tr>
-          <tr>
-            <td>Nice Centre → Monaco</td>
-            <td class="vtc-col">65€</td>
-            <td>60-80€</td>
-            <td>50-70€</td>
-          </tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Tarifs indicatifs, susceptibles de varier selon l'heure et la date.</em></p>
     </section>
 

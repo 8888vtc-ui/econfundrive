@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Трансфер Ницца – Личный Водитель Аэропорт & Лазурный Берег | ECOFUNDRIVE";
 const description = "Премиум трансфер в Ницце. Аэропорт Ницца Лазурный Берег, Английская набережная, Старый город. Русскоговорящий водитель 24/7.";
 const keywords = [
@@ -57,20 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы из Аэропорта Ниццы</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Из аэропорта Ниццы в</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Центр Ниццы</td><td>7 км</td><td>15-20 мин</td><td>35€</td></tr>
-          <tr><td>Отели Ниццы (Негреско и др.)</td><td>6-10 км</td><td>15-25 мин</td><td>35-45€</td></tr>
-          <tr><td>Монако</td><td>30 км</td><td>30-45 мин</td><td>80€</td></tr>
-          <tr><td>Канны</td><td>35 км</td><td>35-45 мин</td><td>75€</td></tr>
-          <tr><td>Антиб</td><td>20 км</td><td>20-30 мин</td><td>45€</td></tr>
-          <tr><td>Сен-Тропе</td><td>110 км</td><td>1ч30-2ч</td><td>250€</td></tr>
-          <tr><td>Деревня Эз</td><td>15 км</td><td>20-30 мин</td><td>40€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Все цены включают встречу с табличкой, отслеживание рейса и помощь с багажом.</em></p>
     </section>
 
@@ -131,9 +119,7 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .meet-greet-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
   .meet-greet-info h3 { color: #d4af37; margin: 1rem 0 0.5rem; }

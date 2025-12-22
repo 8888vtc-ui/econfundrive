@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Saint-Paul-de-Vence Private Driver – Artists' Village Tour | ECOFUNDRIVE";
 const description = "Private driver to Saint-Paul-de-Vence, the famous artists' village. Fondation Maeght, La Colombe d'Or, art galleries. Premium chauffeur from Nice.";
 const keywords = [
@@ -57,18 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Saint-Paul Transfer Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice Airport → Saint-Paul</td><td>22 km</td><td>30-40 min</td><td>55€</td></tr>
-          <tr><td>Nice City → Saint-Paul</td><td>18 km</td><td>25-35 min</td><td>45€</td></tr>
-          <tr><td>Saint-Paul → Vence</td><td>4 km</td><td>8-10 min</td><td>20€</td></tr>
-          <tr><td>Saint-Paul → Grasse</td><td>20 km</td><td>25-30 min</td><td>50€</td></tr>
-          <tr><td>Half-day art villages tour</td><td>-</td><td>4h</td><td>260€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
@@ -111,8 +101,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Eze Village Private Driver – Perfumeries & Scenic Drive | ECOFUNDRIVE";
 const description = "Private driver to Eze Village from Nice. Exotic Garden, Fragonard perfumery, Grande Corniche scenic drive. Perfect half-day tour from Nice or Monaco.";
 const keywords = [
@@ -63,19 +64,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Eze Tour Rates</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Tour / Route</th><th>Duration</th><th>Price from</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Nice → Eze (one way)</td><td>25-30 min</td><td>40€</td></tr>
-          <tr><td>Nice → Eze → Nice (with 2h wait)</td><td>3h total</td><td>150€</td></tr>
-          <tr><td>Nice → Eze → Monaco (half-day)</td><td>4h</td><td>280€</td></tr>
-          <tr><td>Monaco → Eze → Monaco (with 2h wait)</td><td>2.5h</td><td>120€</td></tr>
-          <tr><td>Full Riviera Tour: Nice - Eze - Monaco - Nice</td><td>6h</td><td>380€</td></tr>
-          <tr><td>Cruise ship excursion from Villefranche</td><td>4h</td><td>260€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>All tours include scenic route and photo stops.</em></p>
     </section>
 
@@ -143,8 +132,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

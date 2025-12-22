@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "Трансфер Сен-Тропе – Личный Водитель Пампелон & Пляжи | ECOFUNDRIVE";
 const description = "Премиум трансфер в Сен-Тропе. Пляжи Пампелон, Club 55, Nikki Beach, порт, Place des Lices. Трансферы из Ниццы и Канн.";
 const keywords = [
@@ -57,19 +58,7 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы в Сен-Тропе</h2>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Назначение</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Аэропорт Ниццы → Сен-Тропе</td><td>110 км</td><td>1ч30-2ч</td><td>250€</td></tr>
-          <tr><td>Канны → Сен-Тропе</td><td>80 км</td><td>1ч15</td><td>180€</td></tr>
-          <tr><td>Фрежюс → Сен-Тропе</td><td>35 км</td><td>45-60 мин</td><td>90€</td></tr>
-          <tr><td>Монако → Сен-Тропе</td><td>130 км</td><td>2ч</td><td>320€</td></tr>
-          <tr><td>Сен-Тропе → Пампелон</td><td>8 км</td><td>15-25 мин</td><td>35€</td></tr>
-          <tr><td>Полдня в распоряжении (5ч)</td><td>-</td><td>5ч</td><td>300€</td></tr>
-        </tbody>
-      </table>
+      <PricingRequest />
       <p class="text-center mt-md"><em>Тарифы высокого сезона (июль-август): +20%. Бронируйте заранее!</em></p>
     </section>
 
@@ -151,8 +140,6 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
 </style>

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
+import PricingRequest from '../components/PricingRequest.astro';
 
 const title = "VTC Saint-Tropez – Chauffeur Privé Pampelonne & Golf | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Saint-Tropez. Plages Pampelonne, Club 55, Nikki Beach, port, Place des Lices. Transferts Nice, Cannes. Service premium 24h/24.";
@@ -24,7 +25,7 @@ const faqSchema = {
       "name": "Combien de temps pour aller de Nice à Saint-Tropez ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le transfert Nice Aéroport → Saint-Tropez prend environ 1h30 à 2h en VTC (110 km). En été, comptez jusqu'à 2h30 en raison du trafic intense sur la côte varoise."
+        "text": "Le transfert Nice Aéroport → Saint-Tropez prend environ 1h30 à 2h en VTC (110 km). En été, comptez jusqu'à 2h30 en raison du trafic intense sur la côte varoise. Contactez-nous pour optimiser votre trajet."
       }
     },
     {
@@ -102,36 +103,21 @@ const faqSchema = {
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs VTC Saint-Tropez</h2>
-      <p class="text-center mb-md">Tarifs indicatifs vers/depuis Saint-Tropez :</p>
-      <table class="tarif-table">
-        <thead>
-          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Aéroport Nice → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
-          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
-          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
-          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>320€</td></tr>
-          <tr><td>Saint-Tropez → Pampelonne (Club 55, Nikki)</td><td>8 km</td><td>15-25 min</td><td>35€</td></tr>
-          <tr><td>Mise à disposition demi-journée (5h)</td><td>-</td><td>5h</td><td>300€</td></tr>
-          <tr><td>Mise à disposition journée (10h)</td><td>-</td><td>10h</td><td>550€</td></tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-md"><em>Tarifs haute saison (juillet-août) : +20%. Réservez à l'avance !</em></p>
+      <PricingRequest />
     </section>
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Découvrez Saint-Tropez</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
-          alt="Plages Pampelonne"
+          image="/assets/img/destinations/club-55-saint-tropez.jpg"
+          alt="Plages Pampelonne Club 55"
           title="Plages de Pampelonne"
           description="5 km de sable doré, clubs légendaires : Club 55, Nikki Beach, Bagatelle. L'essence même du glamour tropézien."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
+          image="/assets/img/destinations/saint-tropez-port.webp"
           alt="Port Saint-Tropez"
           title="Le Port Mythique"
           description="Yachts de rêve, terrasses animées, façades colorées. Le décor de Brigitte Bardot inchangé depuis 60 ans."
@@ -149,8 +135,8 @@ const faqSchema = {
 
     <SectionImageText
       title="Service Plages & Beach Clubs"
-      image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="VTC plages Pampelonne Club 55"
+      image="/assets/img/destinations/nikki-beach-saint-tropez.jpg"
+      alt="VTC plages Pampelonne Nikki Beach"
       imageSide="left"
       ctaText="Réserver un transfert plage"
       ctaLink="/reservation"
@@ -241,9 +227,6 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-  .tarif-table th { background: #f5f5f5; font-weight: 600; }
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
   .village-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; border-left: 3px solid #d4af37; }

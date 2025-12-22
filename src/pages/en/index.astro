@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
+import PricingRequest from '../components/PricingRequest.astro';
 const title = "French Riviera Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
 const description = "Premium private driver service on the French Riviera. Nice Airport transfers, Monaco, Cannes, Saint-Tropez. Luxury vehicles, professional multilingual chauffeurs 24/7.";
 const keywords = [
@@ -23,12 +24,12 @@ const servicesEN = [
 ];
 
 const popularRoutes = [
-  { from: "Nice Airport", to: "Nice City Center", time: "15-20 min", price: "35€" },
-  { from: "Nice Airport", to: "Cannes", time: "35-45 min", price: "75€" },
-  { from: "Nice Airport", to: "Monaco", time: "30-45 min", price: "80€" },
-  { from: "Nice Airport", to: "Saint-Tropez", time: "1h30-2h", price: "250€" },
-  { from: "Nice Airport", to: "Antibes", time: "20-30 min", price: "50€" },
-  { from: "Cannes", to: "Monaco", time: "55-70 min", price: "130€" }
+  { from: "Nice Airport", to: "Nice City Center", time: "15-20 min", price: "Price on request" },
+  { from: "Nice Airport", to: "Cannes", time: "35-45 min", price: "Price on request" },
+  { from: "Nice Airport", to: "Monaco", time: "30-45 min", price: "Price on request" },
+  { from: "Nice Airport", to: "Saint-Tropez", time: "1h30-2h", price: "Price on request" },
+  { from: "Nice Airport", to: "Antibes", time: "20-30 min", price: "Price on request" },
+  { from: "Cannes", to: "Monaco", time: "55-70 min", price: "Price on request" }
 ];
 ---
 
@@ -289,20 +290,7 @@ const popularRoutes = [
     margin-bottom: 0.5rem;
     color: #d4af37;
   }
-  .tarif-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-  }
-  .tarif-table th, .tarif-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-  .tarif-table th {
-    background: #f5f5f5;
-    font-weight: 600;
-  }
+  
   .price-cell {
     font-weight: 700;
     color: #d4af37;
