@@ -14,6 +14,16 @@ const keywords = [
 ];
 ---
 
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guides"
+  canonical="/guides"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" }
+  ]}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -125,5 +135,4 @@ const keywords = [
       </div>
     </section>
   </main>
-
-  
+</BaseLayout>
