@@ -143,9 +143,10 @@ if (currentLang === 'fr') {
     <meta name="twitter:image" content={ogImage} />
     
     <!-- Preload critical resources for performance -->
-    <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/poppins-v20-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/assets/fonts/poppins-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <!-- Fonts (Google Fonts Optimization) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     {/* Preload hero image for LCP optimization */}
     {heroImage && (
