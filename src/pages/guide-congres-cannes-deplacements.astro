@@ -1,72 +1,169 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Congres Cannes Deplacements | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Transport Congrès & Événements Cannes | Guide Business VTC";
+const description = "Solutions de transport premium pour vos congrès à Cannes : MIPIM, Festival du Film, Cannes Lions, ILTM. Service chauffeur VTC professionnel.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC congrès Cannes',
+  'chauffeur MIPIM Cannes',
+  'transport Festival Cannes',
+  'VTC Cannes Lions',
+  'transfert aéroport business',
+  'mise à disposition chauffeur Cannes'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-congres-cannes-deplacements"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-congres-cannes-deplacements"
   canonical="/guide-congres-cannes-deplacements"
-  <main class="page-content"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Congrès à Cannes", url: "/guide-congres-cannes-deplacements" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Congres Cannes Deplacements | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-congres-cannes-deplacements",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
+      }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Transport VTC pour Congrès & Événements à Cannes</h1>
+      <p class="lead text-center mb-xl">
+        Cannes est la deuxième ville de congrès en France après Paris. Pour vos déplacements professionnels lors du MIPIM, des Cannes Lions ou du Festival du Film, exigez l'excellence d'un service VTC premium.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. INTRO BUSINESS -->
+    <SectionImageText
+      title="L'Excellence pour vos Déplacements Business"
+      image="/assets/img/services/service-business.webp"
+      alt="Chauffeur privé business class"
+      imageSide="right"
+      ctaText="Réserver un Chauffeur Business"
+      ctaLink="/reservation"
+    >
+      <p>
+        Lors d'un congrès, chaque minute compte. Ne perdez pas de temps à attendre un taxi ou à chercher une place. Nos chauffeurs professionnels connaissent parfaitement les accès au <strong>Palais des Festivals</strong> et les itinéraires alternatifs pour éviter le trafic.
+      </p>
+      <p>
+        Nos véhicules (Berlines S-Class, Vans Mercedes) sont de véritables bureaux mobiles : Wi-Fi, chargeurs, bouteilles d'eau et discrétion absolue pour préparer vos réunions en toute sérénité.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. EVENEMENTS MAJEURS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Les Rendez-Vous Incontournables</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">MIPIM (Mars)</h3>
+          <p>Le marché international des professionnels de l'immobilier. Nous assurons vos navettes entre les villas de Mougins/Super-Cannes et le Palais, ainsi que vos transferts aéroport.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+            <h3 class="mb-3">Festival de Cannes (Mai)</h3>
+            <p>Le sommet mondial du cinéma. Service de mise à disposition 24h/24 pour vos montées des marches, soirées de gala et rendez-vous professionnels.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+            <h3 class="mb-3">Cannes Lions (Juin)</h3>
+            <p>Le festival international de la créativité. Transportez vos équipes créatives et clients VIP entre les hôtels, les plages privées et les lieux de conférence.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 3. MISE A DISPOSITION -->
+    <SectionImageText
+      title="Mise à Disposition : Flexibilité Totale"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="Palais des Festivals Cannes"
+      imageSide="left"
+      ctaText="Demander un devis Mise à Disposition"
+      ctaLink="/contact"
+    >
+      <p>
+        Un agenda chargé et changeant ? Optez pour notre service de <strong>mise à disposition</strong>. Votre chauffeur vous est dédié pour une durée déterminée (4h, 8h, 12h ou plusieurs jours).
+      </p>
+      <p>
+        Il vous attend devant chaque lieu de rendez-vous, garde vos effets personnels en sécurité et reste joignable à tout instant. C'est la solution idéale pour enchaîner les déjeuners d'affaires, les conférences et les dîners sans stress.
+      </p>
+    </SectionImageText>
+
+    <!-- 4. TRANSFERTS AEROPORT -->
+    <SectionImageText
+      title="Accueil VIP Aéroport de Nice"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Transfert aéroport Nice Cannes"
+      imageSide="right"
+      ctaText="Réserver transfert NCE"
+      ctaLink="/reservation"
+    >
+      <p>
+        La première impression est essentielle. Accueillez vos partenaires ou collaborateurs dès leur arrivée à l'Aéroport de Nice Côte d'Azur avec une pancarte nominative.
+      </p>
+      <p>
+        Nous suivons les vols en temps réel pour garantir une présence à l'atterrissage, même en cas de retard. Le transfert vers Cannes se fait dans un confort absolu, permettant à vos invités de se détendre ou de travailler dès leur sortie de l'avion.
+      </p>
+    </SectionImageText>
+
+    <!-- FAQ -->
+    <section class="mb-xl container">
+        <h2 class="mb-4 text-center">Questions Fréquentes Business</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question">Peut-on réserver plusieurs véhicules pour un événement ?</button>
+                <div class="faq-answer">
+                    <p>Oui, ECOFUNDRIVE gère des flottes pour les délégations. Contactez-nous à l'avance pour coordonner plusieurs vans et berlines.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Facturez-vous l'attente en cas de réunion prolongée ?</button>
+                <div class="faq-answer">
+                    <p>Dans le cadre d'une mise à disposition, l'attente est incluse. Pour un transfert simple, une période de courtoisie est offerte, puis l'attente est facturée.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Proposez-vous une facturation mensuelle ?</button>
+                <div class="faq-answer">
+                    <p>Pour les entreprises et les clients réguliers, nous pouvons mettre en place un compte client avec facturation mensuelle récapitulative.</p>
+                </div>
+            </div>
+        </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+        <div class="text-center bg-light p-5 rounded">
+            <h2 class="mb-4">Réservez Votre Transport Business</h2>
+            <p class="lead mb-4">
+                Garantissez la réussite de votre congrès à Cannes avec un partenaire logistique fiable.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/reservation" class="btn btn-primary">Réserver un Chauffeur</a>
+                <a href="/contact" class="btn btn-outline">Contacter le Service Business</a>
+            </div>
+        </div>
     </section>
+
   </main>
 </BaseLayout>
 

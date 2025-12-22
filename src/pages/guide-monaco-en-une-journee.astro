@@ -1,72 +1,152 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Guide Monaco En Une Journee | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Visiter Monaco en 1 Jour : Guide VTC Exclusif | ECOFUNDRIVE";
+const description = "Découvrez le meilleur de Monaco en une journée avec votre chauffeur privé : Casino de Monte-Carlo, Palais Princier, Musée Océanographique et circuit F1.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'visiter Monaco 1 jour',
+  'chauffeur privé Monaco',
+  'Casino Monte-Carlo VTC',
+  'Palais Princier Monaco',
+  'tourisme luxe Monaco',
+  'transfert Nice Monaco'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-monaco-en-une-journee"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-monaco-en-une-journee"
   canonical="/guide-monaco-en-une-journee"
-  <main class="page-content"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Monaco en 1 Jour", url: "/guide-monaco-en-une-journee" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Monaco En Une Journee | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-monaco-en-une-journee",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
+      }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Monaco en Une Journée : L'Itinéraire VIP</h1>
+      <p class="lead text-center mb-xl">
+        La Principauté de Monaco est un concentré de luxe, d'histoire et de beauté. Pour en profiter pleinement sans les contraintes de stationnement, optez pour une visite guidée avec chauffeur privé.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. LE ROCHER & PALAIS -->
+    <SectionImageText
+      title="Le Rocher et le Palais Princier"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Palais Princier Monaco"
+      imageSide="right"
+      ctaText="Réserver mon Chauffeur"
+      ctaLink="/reservation"
+    >
+      <p>
+        Commencez votre journée par le cœur historique : <strong>Le Rocher</strong>. Assistez à la traditionnelle relève de la garde devant le Palais Princier à 11h55 précises.
+      </p>
+      <p>
+        Flânez dans les ruelles du vieux Monaco, visitez la Cathédrale où reposent la Princesse Grace et le Prince Rainier III. Votre chauffeur vous déposera au parking des Pécheurs, à quelques minutes à pied des lieux touristiques, vous évitant la montée difficile.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. MONTE-CARLO & CASINO -->
+    <SectionImageText
+      title="Monte-Carlo et le Carré d'Or"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Place du Casino Monaco"
+      imageSide="left"
+      ctaText="Transfert Soirée Casino"
+      ctaLink="/reservation"
+    >
+      <p>
+        L'après-midi, direction le glamour absolu. La <strong>Place du Casino</strong> est le lieu idéal pour admirer les supercars et l'architecture Belle Époque.
+      </p>
+      <p>
+        Faites du shopping dans les boutiques de luxe du Carré d'Or ou prenez un café au Café de Paris. Avec ECOFUNDRIVE, arrivez comme un VIP directement devant l'entrée du Casino ou de l'Hôtel de Paris.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. MUSEE OCEANOGRAPHIQUE & JARDINS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Nature et Culture</h2>
+      <p class="text-center mb-lg">
+        Monaco n'est pas que béton et luxe. Découvrez ses poumons verts et son patrimoine scientifique exceptionnel.
+      </p>
+      <div class="grid-2-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-ete.webp"
+          alt="Musée Océanographique"
+          title="Musée Océanographique"
+          description="Un temple de la mer accroché à la falaise. Aquariums géants, lagon aux requins et toit-terrasse panoramique. Incontournable en famille."
+          link="/reservation"
+          linkText="Y aller en VTC"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-mariage.webp"
+          alt="Jardin Exotique"
+          title="Jardin Exotique"
+          description="Une collection incroyable de plantes succulentes et une vue imprenable sur la Principauté. Découvrez aussi la Grotte de l'Observatoire."
+          link="/reservation"
+          linkText="Visiter les Jardins"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 4. CIRCUIT F1 -->
+    <SectionImageText
+      title="Sur les Traces du Grand Prix F1"
+      image="/assets/img/services/service-business.webp"
+      alt="Circuit F1 Monaco"
+      imageSide="right"
+      ctaText="Faire le tour du circuit"
+      ctaLink="/reservation"
+    >
+      <p>
+        Vivez le frisson du <strong>Grand Prix de Monaco</strong> ! Demandez à votre chauffeur de parcourir le tracé mythique du circuit de Formule 1.
+      </p>
+      <p>
+        Du virage de Sainte-Dévote à l'épingle du Fairmont, en passant par le tunnel sous l'hôtel, découvrez le circuit urbain le plus célèbre du monde confortablement installé dans votre VTC.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+        <div class="text-center bg-light p-5 rounded">
+            <h2 class="mb-4">Une Journée Inoubliable à Monaco</h2>
+            <p class="lead mb-4">
+                L'accès à Monaco est souvent saturé et les parkings hors de prix. Choisissez la tranquillité d'un chauffeur privé pour profiter pleinement de chaque instant.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/reservation" class="btn btn-primary">Réserver ma Journée Monaco</a>
+                <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+            </div>
+        </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
   </main>
 </BaseLayout>
 
