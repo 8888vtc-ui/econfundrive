@@ -18,26 +18,39 @@ html {
     text-size-adjust: 100%;
     overflow-x: hidden;
     max-width: 100vw;
+    font-size: 16px;
+    /* Base size */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background: #ffffff;
-    color: #1a1a1a;
-    line-height: 1.7;
-    /* Slightly more open line-height for readability */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    color: #000000;
+    /* PURE BLACK for max readability */
+    line-height: 1.75;
+    /* Luxury spacing */
+    /* text-rendering: optimizeLegibility; - Removed as it causes issues on some androids */
     overflow-x: hidden;
     font-weight: 400;
-    /* Ensure base weight is not too thin */
+    /* Ensure base weight is standard */
 }
 
 p {
     margin-bottom: 1.5rem;
     font-weight: 400;
-    /* Force normal weight for paragraphs, avoiding thin rendering */
+    color: #111111;
+    /* Detailed text almost black */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000000;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .container {
@@ -136,16 +149,18 @@ iframe {
 /* === MOBILE OPTIMIZATIONS === */
 @media (max-width: 768px) {
     html {
-        font-size: 16px;
+        font-size: 17px;
+        /* Increased from 16px for better mobile readability */
     }
 
     body {
         font-size: 1rem;
-        line-height: 1.5;
+        line-height: 1.65;
+        /* Better mobile spacing */
     }
 
     .container {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
     }
 
     /* Touch targets minimum 44x44px */
