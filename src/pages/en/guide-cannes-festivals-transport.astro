@@ -1,73 +1,152 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Guide Cannes Festivals Transport | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Cannes Film Festival Transport Guide | ECOFUNDRIVE";
+const description = "Navigate the Cannes Film Festival like a star. Private driver for red carpet, Croisette hotels, after-parties. VIP service 24/7 during the Festival.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Cannes Film Festival transport',
+  'private driver Cannes Festival',
+  'red carpet transfer',
+  'Croisette chauffeur',
+  'Festival de Cannes VIP'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-cannes-festivals-transport"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-cannes-festivals-transport"
   canonical="/en/guide-cannes-festivals-transport"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Cannes Festival", url: "/en/guide-cannes-festivals-transport" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Cannes Festivals Transport | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-cannes-festivals-transport",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/cannes-palais-festivals.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Cannes Film Festival: Your VIP Transport Guide</h1>
+      <p class="lead text-center mb-xl">
+        Every May, Cannes becomes the world capital of cinema. The Croisette buzzes with celebrities, paparazzi, and industry insiders. Here's how to navigate it all like a true film star.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- THE CHALLENGE -->
+    <SectionImageText
+      title="The Festival Challenge: Why Ordinary Transport Fails"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="Palais des Festivals Cannes"
+      imageSide="right"
+      ctaText="Festival Service"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>During the Festival, Cannes is in lockdown.</strong> Road closures around La Croisette, security checkpoints everywhere, taxis impossible to find after screenings. Your usual options simply don't work.
+      </p>
+      <p>
+        ECOFUNDRIVE has 10+ years of Festival experience. We know which roads stay open, where to wait during screenings, and how to get you from party to party without missing a beat.
+      </p>
+    </SectionImageText>
+
+    <!-- FESTIVAL SERVICES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Our Festival Services</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎬 Red Carpet Arrivals</h3>
+          <p>Arrive at the Palais des Festivals in style. We drop you at the closest authorized point on Boulevard de la Croisette, timed for your screening.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏨 Hotel Transfers</h3>
+          <p>Transfers to and from all major Croisette hotels: Carlton, Martinez, Majestic, JW Marriott, and beyond. We know the service entrances.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎉 After-Party Service</h3>
+          <p>Party until dawn? No problem. We're available 24/7 during Festival. From beach clubs to Cap d'Antibes villas, we'll get you home safely.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">✈️ Airport Transfers</h3>
+          <p>Nice Airport to Cannes in premium comfort. Avoid the Festival chaos – we track your flight and meet you in arrivals with a name sign.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">📅 Full Day Availability</h3>
+          <p>Need a driver on standby all day? Book "mise à disposition" – your chauffeur stays with you for 4, 8, or 12 hours. Change plans on the fly.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏖️ Beach Club Transfers</h3>
+          <p>Les Marches, Nikki Beach, La Plage du Martinez... We handle the parking nightmare so you can focus on networking and rosé.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- INSIDER TIPS -->
+    <SectionImageText
+      title="Festival Insider Tips"
+      image="/assets/img/services/service-business.webp"
+      alt="Cannes Festival Night"
+      imageSide="left"
+      ctaText="Book Festival Transfer"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Book early:</strong> The best drivers get reserved months in advance. Contact us as soon as your Festival dates are confirmed.
+      </p>
+      <p>
+        <strong>Stay flexible:</strong> Festival schedules change. Last-minute invitations happen. A mid à disposition service gives you maximum flexibility.
+      </p>
+      <p>
+        <strong>Dress code tip:</strong> We can make quick stops for you to change before formal screenings. Our vehicles have enough space for your evening wear.
+      </p>
+    </SectionImageText>
+
+    <!-- OTHER CANNES EVENTS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Other Cannes Events We Cover</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🦁 Cannes Lions (June)</h3>
+          <p>The advertising industry's biggest event. We provide corporate transport for agencies and brands, including full-day service for client meetings.</p>
+          <a href="/en/guide-cannes-congress-transport" class="card-link">Congress Guide →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎸 Music Festivals</h3>
+          <p>Les Plages Électroniques, NRJ Music Awards... Late-night pickups from Palais des Festivals and beach venues.</p>
+          <a href="/en/booking" class="card-link">Book Now →</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Walk the Croisette Like a Star</h2>
+        <p class="lead mb-4">
+          Don't let transport stress ruin your Festival. Book your dedicated driver now.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book Festival Service</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Quote</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-
-

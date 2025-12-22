@@ -1,73 +1,212 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Guide Nice Airport Taxi Or Private Driver | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Nice Airport: Taxi vs Private Driver Comparison | ECOFUNDRIVE";
+const description = "Should you take a taxi, Uber, VTC or bus from Nice Airport? Complete comparison of prices, pros, cons. Make the right choice for your transfer.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Nice airport taxi',
+  'Nice airport private driver',
+  'Nice airport Uber',
+  'taxi vs VTC Nice',
+  'Nice airport transfer price'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-nice-airport-taxi-or-private-driver"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-nice-airport-taxi-or-private-driver"
   canonical="/en/guide-nice-airport-taxi-or-private-driver"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Taxi vs Driver", url: "/en/guide-nice-airport-taxi-or-private-driver" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Nice Airport Taxi Or Private Driver | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-nice-airport-taxi-or-private-driver",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Nice Airport: Taxi, VTC, Uber or Bus?</h1>
+      <p class="lead text-center mb-xl">
+        You've just landed at Nice Côte d'Azur Airport and need to reach your hotel. This guide compares every option to help you make the smart choice.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- COMPARISON TABLE -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">At-a-Glance Comparison</h2>
+      <div class="overflow-x-auto">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #f9f9f9;">
+              <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #ddd;">Criteria</th>
+              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚕 Taxi</th>
+              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd; background: #d4af3710;">🚘 VTC Pro</th>
+              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">📱 Uber/Bolt</th>
+              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚌 Bus/Tram</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Nice Center</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~€32 fixed</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">From €35</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€15-40 variable</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€1.50</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Monaco</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~€95 fixed</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">From €90</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€50-120 variable</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€22 (2 buses)</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Arrivals Meet & Greet</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Queue outside</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ With name sign</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Pickup point</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Bus stop</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Luggage Help</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Always included</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ DIY</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Vehicle Quality</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Standard</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Premium</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Random</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Bus</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Flight Tracking</strong></td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Free</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
+              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- TAXI -->
+    <SectionImageText
+      title="🚕 Taxi: The Official Option"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Nice Airport Taxi"
+      imageSide="left"
+      ctaText="Compare with VTC"
+      ctaLink="#vtc-section"
+    >
+      <p>
+        <strong>Pros:</strong> Fixed prices set by prefecture. Taxi ranks right at the terminals. No booking needed.
+      </p>
+      <p>
+        <strong>Cons:</strong> Long queues in high season (sometimes 20-30 min wait). Standard vehicles. No personalized welcome. Service quality varies.
+      </p>
+      <p>
+        <strong>2025 Official Prices:</strong> Nice center ~€32, Monaco ~€95, Cannes ~€78, Saint-Tropez from €200 (hourly rate beyond 50km).
+      </p>
+    </SectionImageText>
+
+    <!-- VTC -->
+    <section id="vtc-section">
+      <SectionImageText
+        title="🚘 Professional VTC: The Premium Experience"
+        image="/assets/img/about/chauffeur-professionnel.webp"
+        alt="VTC Chauffeur Nice"
+        imageSide="right"
+        ctaText="Book a VTC"
+        ctaLink="/en/booking"
+      >
+        <p>
+          <strong>Pros:</strong> Meet & greet in arrivals hall with name sign. Premium vehicles (Mercedes, Tesla). Free flight tracking. Trained professional chauffeur.
+        </p>
+        <p>
+          <strong>Cons:</strong> Requires advance booking. Sometimes slightly more than taxi (but not always!).
+        </p>
+        <p>
+          <strong>Ideal for:</strong> Premium travelers, families with children (free baby seats), business trips, passengers with lots of luggage.
+        </p>
+      </SectionImageText>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- UBER -->
+    <SectionImageText
+      title="📱 Uber/Bolt: The Gamble"
+      image="/assets/img/services/service-business.webp"
+      alt="Uber Nice Airport"
+      imageSide="left"
+      ctaText="Avoid Surprises"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Pros:</strong> Familiar app. Sometimes attractive prices in off-peak hours.
+      </p>
+      <p>
+        <strong>Cons:</strong> <strong>Surge pricing!</strong> In July-August or during flight delays, prices can triple (€120 for Monaco instead of €40). No arrivals meet & greet. Random vehicle quality (sometimes a Renault Clio).
+      </p>
+      <p>
+        <strong>Our advice:</strong> Check the app price BEFORE you land. If it's surging, you should have booked a fixed-price VTC.
+      </p>
+    </SectionImageText>
+
+    <!-- VERDICT -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Our Verdict: Which One for You?</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎒 Solo Backpacker</h3>
+          <p><strong>Bus/Tram → €1.50</strong>. Tram line 2 gets you to city center in 30 min. Cheap but no luggage comfort.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">👨‍👩‍👧‍👦 Family with Kids</h3>
+          <p><strong>Premium VTC</strong>. Free child seats, luggage help, spacious vehicle. Stress-free arrival.</p>
+          <a href="/en/booking" class="card-link">Book Now →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">💼 Business Traveler</h3>
+          <p><strong>Premium VTC</strong>. VIP welcome, productive start to your trip (Wi-Fi, quiet), invoice for expenses.</p>
+          <a href="/en/booking" class="card-link">Book Now →</a>
+        </div>
+      </div>
     </section>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Avoid Surprises: Book a Fixed-Price VTC</h2>
+        <p class="lead mb-4">
+          Know the price before you travel. That's how a great Riviera trip starts.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book My Transfer</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Quote</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
-
-
