@@ -1,85 +1,226 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Vtc Menton | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "VTC Menton – Chauffeur Privé Perle de France & Italie | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Menton, la Perle de la France. Fête du Citron, jardins exceptionnels, frontière italienne. Transferts Monaco, Nice, Vintimille. Service premium 24h/24.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC Menton',
+  'chauffeur privé Menton',
+  'VTC Fête du Citron',
+  'transfert Monaco Menton',
+  'VTC frontière Italie',
+  'chauffeur Menton Vintimille'
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quand a lieu la Fête du Citron à Menton ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Fête du Citron se déroule chaque année en février pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes et ses corsos. Nous proposons des transferts dédiés pour cet événement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faites-vous des transferts vers l'Italie depuis Menton ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, Menton est à la frontière italienne. Nous proposons des excursions vers Vintimille (marché du vendredi), Bordighera, San Remo et toute la Riviera des Fleurs italienne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps entre Menton et Monaco ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Menton est à seulement 10 km de Monaco, soit 15-20 minutes en VTC. Nous assurons les navettes quotidiennes entre Menton et la Principauté."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les jardins de Menton valent-ils le détour ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument ! Menton possède plusieurs jardins exceptionnels : Serre de la Madone, Val Rahmeh, Jardin Fontana Rosa. Le climat particulièrement doux permet une végétation subtropicale unique en France."
+      }
+    }
+  ]
+};
 ---
 
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-menton"
+  canonical="/vtc-menton"
+  schema={faqSchema}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Menton", url: "/vtc-menton" }
+  ]}
 >
   <main id="main-content">
     <div class="container py-lg">
-      <h1 class="text-center mb-xl">VTC Menton : La Perle de la France</h1>
-      <p class="lead text-center mb-xl">Votre chauffeur privé à Menton et vers l'Italie.</p>
+      <h1 class="text-center mb-lg">VTC Menton – La Perle de la France</h1>
+      <p class="lead text-center mb-xl">
+        Chauffeur privé premium à Menton. Fête du Citron, jardins exceptionnels, frontière italienne. 
+        Transferts Monaco, Nice, Vintimille. Service 24h/24 multilingue.
+      </p>
     </div>
 
     <SectionImageText
-      title="Découvrir Menton avec un Chauffeur Privé"
-      image="/assets/img/destinations/destination-nice.webp"
-      alt="Vue sur la mer à Menton"
+      title="Votre Chauffeur Privé à Menton"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="VTC chauffeur privé Menton Côte d'Azur"
       imageSide="right"
-      ctaText="Réserver votre trajet"
+      ctaText="Réserver votre VTC"
       ctaLink="/reservation"
     >
-      <p>
-        Menton, ville du citron et porte de l'Italie, offre un cadre exceptionnel. ECOFUNDRIVE vous accompagne pour tous vos déplacements dans cette ville jardin. Que vous souhaitiez visiter la vieille ville, le musée Jean Cocteau ou profiter des plages, nous sommes à votre service.
+      <p class="fade-in-section">
+        <strong>Menton</strong>, surnommée la "Perle de la France", bénéficie du climat le plus doux de la Côte d'Azur. Nichée entre Monaco et la frontière italienne, cette ville jardin séduit par sa vieille ville aux couleurs chaudes, sa célèbre <strong>Fête du Citron</strong> et ses jardins subtropicaux d'exception.
       </p>
-      <p>
-        Profitez de nos véhicules confortables pour vos transferts vers les hôtels de luxe ou pour vos excursions dans l'arrière-pays mentonnais.
+      <p class="fade-in-section">
+        Sa position unique en fait un point de départ idéal pour explorer à la fois la Riviera française et la <strong>Riviera dei Fiori italienne</strong>. Le Musée Jean Cocteau, la basilique Saint-Michel et les plages de galets complètent un tableau enchanteur.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Liaisons Monaco et Italie"
-      image="/assets/img/destinations/destination-monaco.webp"
-      alt="Proximité avec Monaco"
-      imageSide="left"
-      ctaText="Voir les tarifs"
-      ctaLink="/tarifs"
-    >
-      <p>
-        Située à la frontière italienne et à proximité immédiate de Monaco, Menton est un point de départ idéal. Nous assurons vos transferts vers la Principauté pour le travail ou les loisirs, ainsi que vers Vintimille et Sanremo en Italie.
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Menton</strong>, parfait pour vos transferts aéroport, vos excursions en Italie ou vos visites des jardins botaniques.
       </p>
-      <ul>
-        <li>Transfert rapide vers Monaco (15-20 min)</li>
-        <li>Excursions vers les marchés italiens</li>
-        <li>Liaison aéroport de Nice (45 min)</li>
-        <li>Service bilingue et professionnel</li>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (45-55 min)</li>
+        <li>Navettes quotidiennes Monaco - Menton</li>
+        <li>Excursions frontière italienne (Vintimille, San Remo)</li>
+        <li>Service dédié Fête du Citron (février)</li>
+        <li>Circuit des jardins de Menton</li>
+        <li>Visite Musée Jean Cocteau</li>
       </ul>
     </SectionImageText>
 
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Menton</h2>
+      <p class="text-center mb-md">Tarifs indicatifs depuis/vers Menton :</p>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Menton</td><td>40 km</td><td>45-55 min</td><td>95€</td></tr>
+          <tr><td>Nice Centre → Menton</td><td>30 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Monaco → Menton</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Menton → Vintimille (Italie)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
+          <tr><td>Menton → San Remo (Italie)</td><td>40 km</td><td>45 min</td><td>90€</td></tr>
+          <tr><td>Menton → Roquebrune-Cap-Martin</td><td>5 km</td><td>8-12 min</td><td>22€</td></tr>
+          <tr><td>Excursion Riviera italienne (journée)</td><td>-</td><td>8h</td><td>450€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Passage frontière Italie inclus. Tarifs fixes sans surprises.</em></p>
+    </section>
+
     <SectionImageText
-      title="Perle de la France"
-      image="/assets/img/destinations/destination-monaco.webp"
-      alt="Menton et ses jardins"
-      imageSide="right"
-      ctaText="Réserver"
+      title="La Porte de l'Italie"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Menton frontière Italie Vintimille"
+      imageSide="left"
+      ctaText="Réserver une excursion"
       ctaLink="/reservation"
     >
-      <p>
-        Explorez Menton, la perle de la France, avec votre chauffeur privé : les jardins exotiques, la vieille ville colorée, le marché couvert, et la frontière italienne toute proche.
+      <p class="fade-in-section">
+        Menton est située à seulement <strong>2 km de la frontière italienne</strong>. Cette position unique permet des excursions faciles vers la Riviera dei Fiori (Riviera des Fleurs) italienne.
       </p>
-      <p>
-        Service de mise à disposition pour vos excursions vers l'Italie (Vintimille, Bordighera, San Remo) ou vers Monaco.
+      <h3 class="fade-in-section">Destinations italiennes populaires :</h3>
+      <ul class="fade-in-section">
+        <li><strong>Vintimille (Ventimiglia)</strong> – Célèbre marché du vendredi, vieille ville médiévale (15 min)</li>
+        <li><strong>Bordighera</strong> – Palmiers, vieille ville, jardin Pallanca (25 min)</li>
+        <li><strong>San Remo</strong> – Casino, festival de la chanson, marché aux fleurs (45 min)</li>
+        <li><strong>Dolceacqua</strong> – Village médiéval, château, vin Rossese (30 min)</li>
+      </ul>
+      <p class="fade-in-section">
+        Nous proposons des <strong>excursions à la journée</strong> combinant plusieurs de ces destinations, avec possibilité de déjeuner typique italien.
       </p>
     </SectionImageText>
 
-    <div class="container py-xl">
-      <section class="mb-xl">
-        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
-        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-        <div class="text-center mt-md">
-          <a href="/services" class="btn-primary">Découvrir nos services</a>
-        </div>
-      </section>
-    </div>
-  </main>
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Menton</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Fête du Citron Menton"
+          title="Fête du Citron"
+          description="Chaque février, sculptures géantes d'agrumes et corsos attirent 250.000 visiteurs. Réservez votre transport à l'avance !"
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Jardins Menton"
+          title="Jardins Exceptionnels"
+          description="Serre de la Madone, Val Rahmeh, Fontana Rosa... Des jardins subtropicaux uniques en France grâce au microclimat."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Vieille ville Menton"
+          title="Vieille Ville Baroque"
+          description="Ruelles colorées, basilique Saint-Michel, marché couvert, cimetière du Vieux-Château avec vue panoramique."
+          link="/reservation"
+        />
+      </div>
+    </section>
 
-  
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Quand a lieu la Fête du Citron à Menton ?</h3>
+          <div class="faq-answer">
+            <p>La <strong>Fête du Citron</strong> se déroule chaque année en <strong>février</strong> pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes et ses corsos. Réservez votre VTC à l'avance, la demande est très forte !</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Faites-vous des transferts vers l'Italie depuis Menton ?</h3>
+          <div class="faq-answer">
+            <p>Oui, Menton est à la frontière italienne. Nous proposons des excursions vers <strong>Vintimille</strong> (célèbre marché du vendredi), <strong>Bordighera</strong>, <strong>San Remo</strong> et toute la Riviera des Fleurs italienne. Aucune formalité particulière pour les citoyens UE.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps entre Menton et Monaco ?</h3>
+          <div class="faq-answer">
+            <p>Menton est à seulement <strong>10 km de Monaco</strong>, soit 15-20 minutes en VTC. Nous assurons les navettes quotidiennes entre Menton et la Principauté pour les résidents et travailleurs.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Les jardins de Menton valent-ils le détour ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Menton possède plusieurs <strong>jardins exceptionnels</strong> : Serre de la Madone (classé Monument Historique), Val Rahmeh (jardin botanique remarquable), Jardin Fontana Rosa. Le climat particulièrement doux (le plus chaud de France) permet une végétation subtropicale unique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-roquebrune-cap-martin" class="text-dark hover-gold">VTC Roquebrune</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
+        <a href="/vtc-la-turbie" class="text-dark hover-gold">VTC La Turbie</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

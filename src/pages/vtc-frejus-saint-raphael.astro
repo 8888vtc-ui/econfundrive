@@ -1,85 +1,219 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Vtc Frejus Saint Raphael | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "VTC Fréjus Saint-Raphaël – Chauffeur Privé Var & Estérel | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Fréjus et Saint-Raphaël. Arènes romaines, Massif de l'Estérel, plages, port. Transferts aéroport Nice, Saint-Tropez. Service premium 24h/24.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC Fréjus',
+  'VTC Saint-Raphaël',
+  'chauffeur privé Fréjus',
+  'transfert aéroport Nice Fréjus',
+  'VTC Estérel',
+  'chauffeur Saint-Raphaël Saint-Tropez'
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour aller de l'aéroport de Nice à Fréjus ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le transfert aéroport Nice → Fréjus/Saint-Raphaël prend environ 50-70 minutes en VTC (65-70 km). Le trajet peut être plus long en été ou aux heures de pointe sur l'A8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proposez-vous des transferts vers Saint-Tropez ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, Fréjus/Saint-Raphaël sont les villes les plus proches de Saint-Tropez (35-40 km). Nous assurons les transferts réguliers vers le golfe de Saint-Tropez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le Massif de l'Estérel est-il accessible en VTC ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument ! Nous proposons des excursions panoramiques dans le Massif de l'Estérel, l'une des plus belles routes de la Côte d'Azur avec ses roches rouges plongeant dans la mer."
+      }
+    }
+  ]
+};
 ---
 
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-frejus-saint-raphael"
+  canonical="/vtc-frejus-saint-raphael"
+  schema={faqSchema}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Fréjus Saint-Raphaël", url: "/vtc-frejus-saint-raphael" }
+  ]}
 >
   <main id="main-content">
     <div class="container py-lg">
-      <h1 class="text-center mb-xl">VTC Fréjus & Saint-Raphaël</h1>
-      <p class="lead text-center mb-xl">Votre chauffeur privé pour tous vos déplacements dans le Var et vers la Côte d'Azur.</p>
+      <h1 class="text-center mb-lg">VTC Fréjus & Saint-Raphaël</h1>
+      <p class="lead text-center mb-xl">
+        Chauffeur privé premium à Fréjus et Saint-Raphaël. Patrimoine romain, Massif de l'Estérel, 
+        plages de sable fin. Transferts aéroport Nice et Saint-Tropez.
+      </p>
     </div>
 
     <SectionImageText
-      title="Service VTC à Fréjus et Saint-Raphaël"
-      image="/assets/img/destinations/destination-nice.webp"
-      alt="VTC Côte d'Azur"
+      title="Votre Chauffeur Privé à Fréjus & Saint-Raphaël"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="VTC chauffeur privé Fréjus Saint-Raphaël"
       imageSide="right"
-      ctaText="Réserver maintenant"
+      ctaText="Réserver votre VTC"
       ctaLink="/reservation"
     >
-      <p>
-        ECOFUNDRIVE étend ses services jusqu'à Fréjus et Saint-Raphaël. Que vous soyez résident ou vacancier, profitez d'un véhicule avec chauffeur pour vos trajets locaux, vos transferts vers les gares ou pour rejoindre l'aéroport de Nice.
+      <p class="fade-in-section">
+        <strong>Fréjus</strong> et <strong>Saint-Raphaël</strong> sont deux villes jumelles situées à l'entrée ouest de la Côte d'Azur, dans le Var. Fréjus possède un patrimoine romain exceptionnel (arènes, aqueduc, baptistère), tandis que Saint-Raphaël offre un élégant port de plaisance et des plages de sable fin.
       </p>
-      <p>
-        Nous assurons une liaison confortable et sécurisée entre le Var et les Alpes-Maritimes, vous permettant de voyager sans fatigue.
+      <p class="fade-in-section">
+        Les deux villes sont la porte d'entrée du spectaculaire <strong>Massif de l'Estérel</strong>, avec ses roches rouges plongeant dans la Méditerranée. C'est également le point de départ le plus pratique pour <strong>Saint-Tropez</strong>, à seulement 35 km.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Liaison Aéroport Nice - Fréjus/Saint-Raphaël"
-      image="/assets/img/hero/hero-aeroport-nice.webp"
-      alt="Transfert aéroport"
-      imageSide="left"
-      ctaText="Consulter les tarifs"
-      ctaLink="/tarifs"
-    >
-      <p>
-        Rejoignez l'aéroport de Nice Côte d'Azur depuis Fréjus ou Saint-Raphaël en toute sérénité. Nos chauffeurs connaissent les meilleurs itinéraires pour éviter les bouchons de l'A8 et vous garantir une arrivée à l'heure pour votre vol.
+      <p class="fade-in-section">
+        ECOFUNDRIVE vous propose un <strong>service VTC premium à Fréjus et Saint-Raphaël</strong>, idéal pour vos transferts aéroport, vos excursions dans l'Estérel ou vos journées à Saint-Tropez.
       </p>
-      <ul>
-        <li>Prise en charge à domicile ou à l'hôtel</li>
-        <li>Aide au chargement des bagages</li>
-        <li>Conduite souple et sécurisée</li>
-        <li>Disponibilité 24h/24 et 7j/7</li>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (50-70 min)</li>
+        <li>Navettes vers Saint-Tropez et le golfe</li>
+        <li>Circuit panoramique Massif de l'Estérel</li>
+        <li>Visite patrimoine romain de Fréjus</li>
+        <li>Accès plages, port et restaurants</li>
+        <li>Transferts gare Saint-Raphaël TGV</li>
       </ul>
     </SectionImageText>
 
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Fréjus / Saint-Raphaël</h2>
+      <p class="text-center mb-md">Tarifs indicatifs depuis Fréjus ou Saint-Raphaël :</p>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Fréjus/St-Raphaël</td><td>65 km</td><td>50-70 min</td><td>130€</td></tr>
+          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
+          <tr><td>Fréjus → Cannes</td><td>40 km</td><td>40-50 min</td><td>85€</td></tr>
+          <tr><td>Gare St-Raphaël → Hôtel local</td><td>Variable</td><td>10-20 min</td><td>25-40€</td></tr>
+          <tr><td>Fréjus → Monaco</td><td>85 km</td><td>1h15-1h30</td><td>180€</td></tr>
+          <tr><td>Circuit Estérel (demi-journée)</td><td>-</td><td>4h</td><td>240€</td></tr>
+          <tr><td>Journée Saint-Tropez depuis Fréjus</td><td>-</td><td>8h</td><td>380€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Tarifs fixes, sans surprises. Devis gratuit pour toute demande.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez la Région</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Massif Estérel"
+          title="Massif de l'Estérel"
+          description="Roches rouges spectaculaires plongeant dans la mer turquoise. Corniche d'Or, calanques, panoramas inoubliables."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Arènes Fréjus"
+          title="Patrimoine Romain"
+          description="Fréjus possède l'un des patrimoines romains les plus riches de France : arènes, aqueduc, baptistère paléochrétien."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Port Saint-Raphaël"
+          title="Ports & Plages"
+          description="Ports de plaisance animés, plages de sable fin, restaurants de bord de mer. L'art de vivre méditerranéen."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
     <SectionImageText
-      title="Découvrir Fréjus et Saint-Raphaël"
+      title="La Porte de Saint-Tropez"
       image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="Fréjus et Saint-Raphaël"
-      imageSide="right"
-      ctaText="Réserver"
+      alt="Fréjus vers Saint-Tropez"
+      imageSide="left"
+      ctaText="Réserver un transfert"
       ctaLink="/reservation"
     >
-      <p>
-        Explorez les richesses de Fréjus et Saint-Raphaël avec votre chauffeur privé : les arènes romaines, le port de plaisance, les plages de sable fin, et les calanques de l'Estérel.
+      <p class="fade-in-section">
+        Fréjus et Saint-Raphaël sont les <strong>villes les plus proches de Saint-Tropez</strong> accessibles par autoroute. C'est le point de départ idéal pour rejoindre le golfe de Saint-Tropez et ses plages mythiques.
       </p>
-      <p>
-        Service de mise à disposition pour vos excursions et visites touristiques dans le Var.
+      <h3 class="fade-in-section">Nos services vers Saint-Tropez :</h3>
+      <ul class="fade-in-section">
+        <li>Transfert simple vers Saint-Tropez (45-60 min)</li>
+        <li>Journée à Saint-Tropez avec chauffeur à disposition</li>
+        <li>Transfert vers les plages de Pampelonne (Club 55, Nikki Beach)</li>
+        <li>Excursion Port Grimaud + Saint-Tropez</li>
+        <li>Service retour après soirée (même tard)</li>
+      </ul>
+      <p class="fade-in-section">
+        Évitez les embouteillages estivaux vers Saint-Tropez ! Notre connaissance des itinéraires alternatifs vous fait gagner un temps précieux.
       </p>
     </SectionImageText>
 
-    <div class="container py-xl">
-      <section class="mb-xl">
-        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
-        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-        <div class="text-center mt-md">
-          <a href="/services" class="btn-primary">Découvrir nos services</a>
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps pour aller de l'aéroport de Nice à Fréjus ?</h3>
+          <div class="faq-answer">
+            <p>Le transfert aéroport Nice → Fréjus/Saint-Raphaël prend environ <strong>50-70 minutes</strong> en VTC (65-70 km par l'A8). En été ou aux heures de pointe, le trajet peut être plus long. Nous surveillons le trafic et adaptons l'heure de départ si nécessaire.</p>
+          </div>
         </div>
-      </section>
-    </div>
-  </main>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous des transferts vers Saint-Tropez ?</h3>
+          <div class="faq-answer">
+            <p>Oui, Fréjus/Saint-Raphaël sont les <strong>villes les plus proches de Saint-Tropez</strong> (35-40 km, 45-60 min). Nous assurons les transferts réguliers vers le golfe, les plages de Pampelonne et le village de Saint-Tropez.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Le Massif de l'Estérel est-il accessible en VTC ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Nous proposons des <strong>excursions panoramiques dans le Massif de l'Estérel</strong>, l'une des plus belles routes de la Côte d'Azur. Roches rouges, calanques, points de vue spectaculaires sur la mer. Circuit de 3-4 heures recommandé.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Desservez-vous la gare TGV de Saint-Raphaël ?</h3>
+          <div class="faq-answer">
+            <p>Oui, la <strong>gare de Saint-Raphaël-Valescure</strong> est desservie par TGV depuis Paris. Nous assurons les transferts depuis/vers la gare pour tous vos déplacements dans la région.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-saint-tropez" class="text-dark hover-gold">VTC Saint-Tropez</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-mandelieu-la-napoule" class="text-dark hover-gold">VTC Mandelieu</a>
+        <a href="/guide-decouvrir-saint-tropez-golfe" class="text-dark hover-gold">Guide Saint-Tropez</a>
+        <a href="/transfert-cannes-saint-tropez" class="text-dark hover-gold">Cannes → St-Tropez</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>
