@@ -1,94 +1,148 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Circulation Côte d'Azur Haute Saison | ECOFUNDRIVE";
-const description = "Guide pratique sur la circulation en haute saison sur la Côte d'Azur. Conseils pour éviter les embouteillages, meilleurs horaires, alternatives de transport.";
+const title = "Circulation Haute Saison Côte d'Azur : Guide de Survie | ECOFUNDRIVE";
+const description = "Survivre aux embouteillages d'été sur la Riviera. Horaires à éviter, routes secrètes, pourquoi un chauffeur change tout. Guide expert local.";
 const keywords = [
-  "circulation Côte d\'Azur",
-  "embouteillages Côte d\'Azur",
-  'haute saison transport',
-  'éviter embouteillages',
-  'VTC haute saison'
+  'embouteillage Côte d\'Azur',
+  'circulation haute saison Nice',
+  'éviter bouchon Cannes',
+  'trafic été Monaco',
+  'chauffeur privé anti-bouchon'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="guide-circulation-cote-d-azur-haute-saison"
+  canonical="/guide-circulation-cote-d-azur-haute-saison"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Guides", url: "/guides" },
     { name: "Circulation Haute Saison", url: "/guide-circulation-cote-d-azur-haute-saison" }
   ]}
-
-  canonical="/guide-circulation-cote-d-azur-haute-saison"
-  <main class="guide-page"
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Circulation Côte d'Azur Haute Saison | ECOFUNDRIVE",
-  "description": "Guide pratique sur la circulation en haute saison sur la Côte d'Azur. Conseils pour éviter les embouteillages, meilleurs horaires, alternatives de transport.",
-  "url": "https://www.ecofundrive.com/guide-circulation-cote-d-azur-haute-saison",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <article>
-        <h1>{title}</h1>
-        <p class="guide-intro">{description}</p>
-
-        <section>
-          <h2>Circulation en Haute Saison</h2>
-          <p>
-            En haute saison (juillet-août), la circulation sur la Côte d'Azur peut être très dense. 
-            Un <strong>chauffeur privé VTC</strong> connaît les itinéraires alternatifs pour éviter les embouteillages.
-          </p>
-        </section>
-
-        <section>
-          <h2>Conseils</h2>
-          <ul>
-            <li>Évitez les heures de pointe (8h-10h, 17h-19h)</li>
-            <li>Prévoyez du temps supplémentaire pour vos déplacements</li>
-            <li>Utilisez un <strong>chauffeur privé VTC</strong> qui connaît les raccourcis</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Réservation</h2>
-          <div class="contact-buttons">
-            <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-            <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-        </section>
-      </article>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Survivre aux Embouteillages de la Riviera</h1>
+      <p class="lead text-center mb-xl">
+        En juillet-août, la Côte d'Azur devient un piège automobile. L'A8 se transforme en parking géant. Voici comment profiter de vos vacances sans perdre des heures dans les bouchons.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- LA REALITE -->
+    <SectionImageText
+      title="La Réalité : À Quoi Vous Attendre"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Trafic Riviera"
+      imageSide="right"
+      ctaText="Éviter le stress"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>L'A8 (Nice-Cannes-Monaco)</strong> : En haute saison, de 10h à 19h, elle ressemble à un parking. Un Nice-Cannes normalement de 25 min peut prendre 1h30.
+      </p>
+      <p>
+        <strong>Les routes côtières</strong> sont pires : la N98 vers Saint-Tropez est légendaire (4h de bouchon régulièrement !). Monaco n'est accessible qu'avec une connaissance locale.
+      </p>
+      <p>
+        <strong>Le stationnement ?</strong> Bonne chance. Comptez 30-50€/jour pour les parkings plage... si vous trouvez une place.
+      </p>
+    </SectionImageText>
+
+    <!-- LES HEURES D'OR -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Les Heures d'Or : Quand Voyager</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌅 Tôt le Matin (avant 9h)</h3>
+          <p>Les routes sont dégagées, les parkings sont vides, les plages sont à vous. Arrivez à destination avant 9h30 et vous aurez l'impression d'avoir la Côte d'Azur pour vous seul.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌙 En Soirée (après 19h)</h3>
+          <p>Le trafic plage est terminé, les excursionnistes sont rentrés. C'est le moment parfait pour un trajet panoramique, un dîner au restaurant ou un transfert sunset.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">☀️ Mi-Journée (à éviter !)</h3>
+          <p>11h-16h = le pire. Tout le monde va ou revient de la plage. Si vous devez voyager à cette heure, ayez un chauffeur qui connaît les alternatives.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- LES ROUTES SECRETES -->
+    <SectionImageText
+      title="Les Routes que Votre GPS ne Connaît Pas"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Routes arrière-pays Riviera"
+      imageSide="left"
+      ctaText="Expert local à votre service"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Nos chauffeurs connaissent les alternatives :</strong>
+      </p>
+      <ul>
+        <li><strong>Monaco :</strong> Par La Turbie et la Grande Corniche – souvent plus rapide ET infiniment plus beau que l'A8 congestionnée.</li>
+        <li><strong>Saint-Tropez :</strong> Par La Garde-Freinet et les routes de villages, évitant le calvaire de la D98 littorale.</li>
+        <li><strong>Nice-Cannes :</strong> Par Vence et Grasse quand l'A8 est bloquée – avec des vues bonus sur les Alpes.</li>
+      </ul>
+      <p>Ces itinéraires ne sont pas juste plus rapides – ils sont une expérience en soi, traversant les plus beaux paysages de Provence.</p>
+    </SectionImageText>
+
+    <!-- POURQUOI VTC -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Pourquoi un Chauffeur Change Tout</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">😌 Zéro Stress</h3>
+          <p>Le trafic devient le problème de quelqu'un d'autre. Vous pouvez lire, dormir, répondre à vos emails ou simplement admirer les vues méditerranéennes. Arrivez détendu, pas frustré.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🅿️ Pas de Cauchemar Parking</h3>
+          <p>Votre chauffeur vous dépose devant la porte et se gare ailleurs – ou vous attend à proximité. Quand vous êtes prêt, il est là. Fini les marches interminables depuis un parking éloigné.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🍷 Liberté de Savourer</h3>
+          <p>Un rosé avec le déjeuner ? Du champagne au coucher de soleil ? Pas besoin de conducteur désigné. Profitez pleinement du lifestyle azuréen.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">📍 Connaissance Locale</h3>
+          <p>Votre chauffeur sait quel beach club est tendance, quel restaurant a de la disponibilité, et quel spot photo a le meilleur coucher de soleil.</p>
+        </div>
+      </div>
     </section>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Évitez les Bouchons, Commencez Vos Vacances</h2>
+        <p class="lead mb-4">
+          Que ce soit un transfert aéroport ou une journée complète d'exploration, laissez-nous gérer les routes.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
-
-
