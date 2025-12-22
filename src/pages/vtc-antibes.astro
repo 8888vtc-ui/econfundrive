@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
-
 import PricingRequest from '../components/PricingRequest.astro';
+
 const title = "VTC Antibes Juan-les-Pins – Chauffeur Privé Cap & Port Vauban | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Antibes et Juan-les-Pins. Port Vauban, Cap d'Antibes, Jazz à Juan, plages, Musée Picasso. Transferts aéroport Nice, Sophia. Service premium 24h/24.";
 const keywords = [
@@ -77,7 +77,6 @@ const faqSchema = {
       </p>
     </div>
 
-    
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs & Devis</h2>
       <PricingRequest />
@@ -85,7 +84,7 @@ const faqSchema = {
 
     <SectionImageText
       title="Juan-les-Pins & Jazz à Juan"
-      image="/assets/img/destinations/destination-nice.png"
+      image="/assets/img/services/service-evenements.webp"
       alt="Juan-les-Pins Jazz festival VTC"
       imageSide="left"
       ctaText="Réserver pour Jazz à Juan"
@@ -111,21 +110,21 @@ const faqSchema = {
       <h2 class="text-center mb-lg">Découvrez Antibes</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/hero/chauffeur-luxe-background.webp"
           alt="Port Vauban Antibes"
           title="Port Vauban"
           description="Le plus grand port de plaisance d'Europe pour superyachts. Atmosphère unique parmi les navires les plus prestigieux du monde."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/about/vehicule-premium.webp"
           alt="Cap d'Antibes"
           title="Cap d'Antibes"
           description="Presqu'île exclusive aux villas de milliardaires. Hôtel du Cap-Eden-Roc, criques cachées, sentier du littoral."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/guides/villages-perches.webp"
           alt="Musée Picasso Antibes"
           title="Vieille Ville & Musée Picasso"
           description="Marché provençal, remparts, ruelles charmantes. Le château Grimaldi abrite le Musée Picasso et ses œuvres méditerranéennes."
@@ -210,7 +209,6 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
   .yacht-service { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
   .service-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
