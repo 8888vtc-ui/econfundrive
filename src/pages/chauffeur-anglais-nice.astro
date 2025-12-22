@@ -1,54 +1,138 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Chauffeur Anglais Nice | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "English-Speaking Chauffeur Nice – Private Driver for Tourists | ECOFUNDRIVE";
+const description = "Need an English-speaking driver on the French Riviera? Our multilingual chauffeurs provide comfortable, stress-free transfers for English speaking travelers.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'English speaking driver Nice',
+  'English chauffeur French Riviera',
+  'private driver English Nice',
+  'English speaking VTC',
+  'bilingual chauffeur Nice'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="chauffeur-anglais-nice"
-
   canonical="/chauffeur-anglais-nice"
+  keywords={keywords}
+  lang="fr"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "Chauffeur Anglophone", url: "/chauffeur-anglais-nice" }
+  ]}
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "English-Speaking Private Driver Nice",
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "availableLanguage": ["English", "French"],
+    "areaServed": "Nice, French Riviera"
+  }}
+>
   <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">English-Speaking Chauffeur in Nice</h1>
+      <p class="lead text-center mb-xl">
+        Vous cherchez un chauffeur anglophone pour vos clients internationaux ? Nous offrons un service VTC bilingue parfait pour les touristes et voyageurs d'affaires anglophones.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- WHY ENGLISH DRIVER -->
+    <SectionImageText
+      title="Why Choose an English-Speaking Driver?"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="English speaking chauffeur Nice"
+      imageSide="right"
+      ctaText="Book English Driver"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>For international travelers</strong>, navigating the French Riviera can be overwhelming. Street signs are in French, menus are in French, and most taxi drivers speak limited English.
+      </p>
+      <p>
+        Our English-speaking chauffeurs don't just drive – they become your local guide, translator, and concierge. They can recommend restaurants, explain local customs, and ensure you never feel lost.
+      </p>
+    </SectionImageText>
+
+    <!-- SERVICES FOR ENGLISH SPEAKERS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Services for English-Speaking Travelers</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">✈️ Airport Transfers</h3>
+          <p>Your driver meets you in arrivals with a name sign. No confusion, no searching for transport – just a warm welcome in perfect English.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏰 Guided Tours</h3>
+          <p>Half-day and full-day tours with English commentary. Monaco, Eze, Grasse, Saint-Tropez... Your driver shares local history and insider tips.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">💼 Business Services</h3>
+          <p>Impress your international clients with seamless English-speaking transport for meetings, conferences, and corporate events.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- MULTILINGUAL TEAM -->
+    <SectionImageText
+      title="Notre Équipe Multilingue"
+      image="/assets/img/services/service-business.webp"
+      alt="Chauffeur bilingue"
+      imageSide="left"
+      ctaText="Réserver un Chauffeur Anglophone"
+      ctaLink="/reservation"
+    >
+      <p>
+        Nos chauffeurs parlent couramment :
+      </p>
+      <ul>
+        <li><strong>Anglais (English)</strong> : Tous nos chauffeurs</li>
+        <li><strong>Français</strong> : Langue maternelle</li>
+        <li><strong>Italien (Italiano)</strong> : Certains chauffeurs</li>
+        <li><strong>Russe (Русский)</strong> : Sur demande</li>
+      </ul>
+      <p>
+        <strong>Pour les conciergeries et hôtels :</strong> Nous pouvons garantir un chauffeur anglophone pour vos clients VIP. Contactez-nous pour établir un partenariat.
+      </p>
+    </SectionImageText>
+
+    <!-- FOR HOTELS AND CONCIERGES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Pour les Hôtels et Conciergeries</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏨 Service Dédié Hôtels</h3>
+          <p>Vous êtes concierge ou responsable de réception ? Nous offrons un service prioritaire pour vos clients internationaux. Facture centralisée, réponse rapide, qualité garantie.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌍 Clientèle Internationale</h3>
+          <p>Nice accueille des millions de touristes anglophones chaque année. Offrez-leur une expérience locale sans barrière linguistique.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Book Your English-Speaking Driver</h2>
+        <p class="lead mb-4">
+          Whether you're a traveler or a hotel concierge, we're here to help.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Book Transfer</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Us</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-

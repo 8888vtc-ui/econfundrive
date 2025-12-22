@@ -1,54 +1,122 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Chauffeur 24H Nice | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Chauffeur Privé 24h/24 Nice – Service VTC Nuit & Jour | ECOFUNDRIVE";
+const description = "Besoin d'un chauffeur à 3h du matin ? Service VTC disponible 24h/24 et 7j/7 à Nice. Vol de nuit, soirée tardive, transfert urgent. Réponse immédiate.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'chauffeur 24h Nice',
+  'VTC nuit Nice',
+  'taxi de nuit Nice',
+  'chauffeur privé 24h/24',
+  'transfert nuit Nice aéroport'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="chauffeur-24h-nice"
-
   canonical="/chauffeur-24h-nice"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "Chauffeur 24h/24", url: "/chauffeur-24h-nice" }
+  ]}
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Chauffeur Privé 24h/24 Nice",
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE"
+    },
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "areaServed": "Nice, France"
+  }}
+>
   <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Chauffeur Privé 24h/24 à Nice</h1>
+      <p class="lead text-center mb-xl">
+        Vol à 5h du matin ? Soirée qui se termine à 3h ? Urgence professionnelle à minuit ? Nous sommes là. Toujours.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- WHY 24H -->
+    <SectionImageText
+      title="Pourquoi Avez-Vous Besoin d'un Chauffeur 24h/24 ?"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="VTC de nuit Nice aéroport"
+      imageSide="right"
+      ctaText="Réserver Maintenant"
+      ctaLink="tel:+33616552811"
+    >
+      <p>
+        <strong>L'aéroport de Nice ne dort jamais.</strong> Des vols arrivent et partent à toute heure – les compagnies low-cost atterrissent souvent après minuit, les vols intercontinentaux décollent aux aurores.
+      </p>
+      <p>
+        Les transports en commun s'arrêtent. Les taxis sont introuvables. Uber est en "surge pricing" à +300%. C'est là qu'ECOFUNDRIVE fait la différence.
+      </p>
+    </SectionImageText>
+
+    <!-- USE CASES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Quand Nous Appeler ?</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">✈️ Vols de Nuit</h3>
+          <p>Arrivée après 23h ou départ avant 6h ? Votre chauffeur sera ponctuel, au chaud dans un véhicule confortable. Suivi de vol inclus – même si votre avion a du retard.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎉 Sorties Nocturnes</h3>
+          <p>Dîner qui s'éternise, soirée au casino, club jusqu'au bout de la nuit. Confiez-nous votre retour – plus jamais de "qui conduit ce soir ?".</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">💼 Urgences Business</h3>
+          <p>Deal à signer le lendemain matin à Milan ? Client à accueillir en urgence à l'aéroport ? Nous répondons en moins de 30 minutes, même à minuit.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- ADVANTAGES -->
+    <SectionImageText
+      title="Nos Garanties de Nuit"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Chauffeur VTC nuit"
+      imageSide="left"
+      ctaText="WhatsApp 24h/24"
+      ctaLink="https://wa.me/33616552811"
+    >
+      <ul>
+        <li><strong>Réponse immédiate :</strong> Nous sommes joignables par téléphone ou WhatsApp 24h/24. Réponse en moins de 5 minutes.</li>
+        <li><strong>Prix transparent :</strong> Pas de "surge pricing" nocturne excessif. Tarif de nuit légèrement majoré mais prévisible.</li>
+        <li><strong>Véhicule propre :</strong> Même à 4h du matin, vous trouverez un véhicule impeccable, climatisé et confortable.</li>
+        <li><strong>Chauffeur reposé :</strong> Nos chauffeurs travaillent en rotation. Celui qui vous conduit à 3h du matin a dormi convenablement.</li>
+        <li><strong>Sécurité :</strong> Parcours suivi par GPS, véhicule assuré, chauffeur professionnel. Voyagez l'esprit tranquille.</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Une Urgence ? Appelez-Nous Maintenant</h2>
+        <p class="lead mb-4">
+          Que ce soit 2h de l'après-midi ou 2h du matin, nous décrocherons.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="tel:+33616552811" class="btn btn-primary">Appeler 06 16 55 28 11</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp 24h/24</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
   </main>
 </BaseLayout>
-
