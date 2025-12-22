@@ -9,7 +9,6 @@ const pages = [
   { url: '/', changefreq: 'weekly', priority: 1.0 },
   { url: '/services', changefreq: 'monthly', priority: 0.9 },
   { url: '/reservation', changefreq: 'weekly', priority: 0.9 },
-  { url: '/tarifs', changefreq: 'monthly', priority: 0.8 },
   { url: '/contact', changefreq: 'monthly', priority: 0.8 },
   { url: '/a-propos', changefreq: 'monthly', priority: 0.7 },
   { url: '/avis-clients', changefreq: 'weekly', priority: 0.8 },
@@ -25,7 +24,7 @@ const pages = [
   { url: '/conseils-voyageurs-cote-azur', changefreq: 'monthly', priority: 0.7 },
 
   // Pages VTC Aéroport et Services
-  { url: '/vtc-aeroport-nice-prix', changefreq: 'monthly', priority: 0.9 },
+
   { url: '/vtc-entreprise-cote-azur', changefreq: 'monthly', priority: 0.8 },
   { url: '/vtc-mariage-cote-azur', changefreq: 'monthly', priority: 0.8 },
   { url: '/vtc-carnaval-nice', changefreq: 'monthly', priority: 0.7 },

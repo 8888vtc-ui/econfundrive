@@ -2,8 +2,8 @@
 // Bouton WhatsApp premium - Élégant avec bulle d'accroche subtile
 const whatsappNumber = "33660152737";
 const whatsappMessage = encodeURIComponent("Bonjour, je souhaite réserver un VTC");
-// Utilisation de web.whatsapp.com pour PC, wa.me pour mobile
-const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+// Par défaut wa.me (excellent pour mobile)
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
 
 <!-- Container WhatsApp avec bulle -->
@@ -21,6 +21,7 @@ const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
   <!-- Bouton WhatsApp principal -->
   <a 
     href={whatsappUrl}
+    id="main-whatsapp-btn"
     class="whatsapp-button"
     aria-label="Contacter ECOFUNDRIVE par WhatsApp"
     target="_blank"
@@ -212,13 +213,14 @@ const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
   }
 </style>
 
-<script>
-  // Gestion de la fermeture de la bulle
+<script is:inline>
+  // Gestion de la plateforme WhatsApp
   document.addEventListener('DOMContentLoaded', () => {
     const bubble = document.getElementById('whatsapp-bubble');
     const closeBtn = document.getElementById('bubble-close');
+    const mainBtn = document.getElementById('main-whatsapp-btn');
     
-    // Vérifier si la bulle a déjà été fermée
+    // 1. Fermeture de la bulle
     if (sessionStorage.getItem('whatsappBubbleClosed') === 'true') {
       bubble?.classList.add('hidden');
     }
@@ -229,5 +231,17 @@ const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
       bubble?.classList.add('hidden');
       sessionStorage.setItem('whatsappBubbleClosed', 'true');
     });
+
+    // 2. Détection Desktop pour forcer api.whatsapp.com (plus fiable sur PC)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (!isMobile && mainBtn) {
+      const currentHref = mainBtn.getAttribute('href');
+      // On remplace wa.me par api.whatsapp.com/send?phone= pour PC
+      const desktopHref = currentHref.replace('wa.me/', 'api.whatsapp.com/send?phone=');
+      mainBtn.setAttribute('href', desktopHref);
+      
+      console.log('Mode Desktop : Lien WhatsApp optimisé pour PC');
+    }
   });
 </script>
