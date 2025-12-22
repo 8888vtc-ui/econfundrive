@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "À Propos d'ECOFUNDRIVE | Votre Chauffeur Privé de Confiance";
 const description = "Découvrez l'histoire et les valeurs d'ECOFUNDRIVE. Une vision du transport VTC basée sur l'excellence, la discrétion et le service sur-mesure.";
+const keywords = [
+  'VTC luxe Nice',
+  'chauffeur privé Côte d\'Azur',
+  'histoire ECOFUNDRIVE',
+  'valeurs transport VTC',
+  'service premium VTC'
+];
 
 const breadcrumbItems = [
   { name: "Accueil", url: "/" },
@@ -218,6 +225,8 @@ const breadcrumbItems = [
 
   .mission-image img {
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
   }

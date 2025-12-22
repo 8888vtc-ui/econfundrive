@@ -24,6 +24,7 @@ interface Props {
   skipBaseSchema?: boolean; // Pour pages qui n'ont pas besoin du schema de base
   breadcrumbItems?: Array<{ name: string; url: string }>; // Breadcrumbs optionnels
   heroImage?: string; // Image hero à preload pour améliorer LCP
+  keywords?: string[]; // Mots-clés SEO
 }
 
 const {
@@ -35,7 +36,8 @@ const {
   schema,
   skipBaseSchema = false,
   breadcrumbItems,
-  heroImage
+  heroImage,
+  keywords = []
 } = Astro.props;
 
 const canonicalUrl = canonical || Astro.url.pathname;
@@ -92,6 +94,9 @@ if (currentLang === 'fr') {
     
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && keywords.length > 0 && (
+      <meta name="keywords" content={keywords.join(', ')} />
+    )}
     <link rel="canonical" href={fullCanonical} />
     
     <!-- Robots & SEO -->
