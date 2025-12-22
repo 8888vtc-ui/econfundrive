@@ -1,75 +1,191 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PricingRequest from '../../components/PricingRequest.astro';
 
-const title = "Cannes Congress Transport Guide | ECOFUNDRIVE";
-const description = "Complete guide for transport during congresses in Cannes. Private driver VTC for Palais des Festivals, hotels, and business events.";
+const title = "Cannes Congress Transport | Private Chauffeur & VTC Service";
+const description = "Premium private driver service for Cannes congresses: MIPIM, Cannes Lions, Film Festival. Luxury fleet, punctual chauffeurs, and seamless transfers to Palais des Festivals.";
 const keywords = [
-  'Cannes congress transport',
+  'Cannes congress transfer',
+  'chauffeur service MIPIM',
+  'Cannes Lions private driver',
+  'Cannes Film Festival transfer',
   'Palais des Festivals transport',
-  'Cannes business VTC',
-  'congress transport Cannes',
-  'private driver Cannes'
+  'corporate driver Cannes',
+  'executive chauffeur Cannes'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
+  keywords={keywords}
   currentPage="guide-cannes-congress-transport"
-
   canonical="/en/guide-cannes-congress-transport"
-  <main class="page-content"
-  schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Cannes Congress Transport Guide | ECOFUNDRIVE",
-  "description": "Complete guide for transport during congresses in Cannes. Private driver VTC for Palais des Festivals, hotels, and business events.",
-  "url": "https://www.ecofundrive.com/en/guide-cannes-congress-transport",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Congress Transport</h2>
-        <p>Professional transport service for congresses and events at the Palais des Festivals in Cannes.</p>
-      </section>
-
-      <section>
-        <h2>Booking</h2>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  <main class="page-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container__large">
+        <div class="hero-text">
+          <h1>Business Transport for Cannes Congresses</h1>
+          <p class="subtitle">Your reliable partner for MIPIM, Cannes Lions, and the Film Festival.</p>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <div class="container section-spacing">
+      <div class="grid-layout">
+        <div class="content-col">
+          <section class="mb-xl">
+            <h2>Seamless Transport for Business Events</h2>
+            <p>
+              Cannes is the world's capital for business tourism, hosting major international events at the Palais des Festivals. 
+              Whether you are attending **MIPIM**, **Cannes Lions**, or the **Cannes Film Festival**, punctuality and image are paramount.
+            </p>
+            <p>
+              EcoFunDrive provides a premium chauffeur service explicitly tailored for congress attendees. 
+              Avoid the stress of finding a taxi or parking. Our professional drivers ensure you arrive at your meetings, hotels, and gala dinners on time and in style.
+            </p>
+          </section>
+
+          <section class="mb-xl">
+            <h2>Major Events We Cover</h2>
+            <ul class="feature-list">
+              <li><strong>MIPIM:</strong> The world's leading real estate market event.</li>
+              <li><strong>Cannes Lions:</strong> The International Festival of Creativity.</li>
+              <li><strong>Cannes Film Festival:</strong> The most prestigious film gathering globally.</li>
+              <li><strong>ILTM & TFWA:</strong> Major luxury travel and duty-free summits.</li>
+            </ul>
+            <p class="mt-4">
+              Our fleet of Mercedes and Tesla vehicles offers a quiet, comfortable environment, perfect for making calls or relaxing between intense networking sessions.
+            </p>
+          </section>
+        </div>
+        
+        <aside class="sidebar-col">
+          <div class="sidebar-block">
+            <h3>Quick Booking</h3>
+            <p>Secure your driver for the congress in advance.</p>
+            <PricingRequest lang="en" />
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="bg-light section-spacing">
+      <div class="container">
+        <h2 class="text-center mb-lg">Why Choose EcoFunDrive?</h2>
+        <div class="grid-3">
+          <div class="feature-card">
+            <h3>Punctuality First</h3>
+            <p>We understand that every minute counts during a congress. We guarantee timely pick-ups and efficient routes.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Premium Fleet</h3>
+            <p>Travel in high-end electric and hybrid vehicles (Tesla, Mercedes) that combine luxury with eco-responsibility.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Professional Chauffeurs</h3>
+            <p>Our drivers are bilingual, discreet, and knowledgeable about Cannes traffic patterns and shortcuts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section for SEO -->
+    <section class="container section-spacing">
+      <h2 class="mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Do you offer transfers from Nice Airport to Cannes?</h3>
+          <p>Yes, we specialize in transfers from Nice Côte d'Azur Airport (NCE) to all hotels and locations in Cannes. We monitor flights to ensure we are there when you land.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I book a driver for the whole day?</h3>
+          <p>Absolutely. We offer hourly hire services, allowing you to have a driver at your disposal for multiple meetings, dinners, or parties throughout the day and night.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you provide invoices for business expenses?</h3>
+          <p>Yes, we provide automatic, professional digital invoices for all rides, simplifying your expense reporting.</p>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/img/cannes-congress.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+  }
+  
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .feature-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .sidebar-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+  }
+</style>

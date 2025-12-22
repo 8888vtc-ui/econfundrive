@@ -1,11 +1,14 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.ecofundrive.com',
   output: 'static',
   adapter: netlify(),
-  integrations: [],
+  integrations: [sitemap()],
   build: {
     inlineStylesheets: 'always',
     assets: 'assets'
@@ -32,4 +35,3 @@ export default defineConfig({
   },
   compressHTML: true
 });
-

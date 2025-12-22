@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Plan du Site | ECOFUNDRIVE VTC Côte d'Azur";
 const description = "Plan du site ECOFUNDRIVE. Retrouvez toutes nos pages : services VTC, zones d'intervention, guides touristiques et informations pratiques.";
+const keywords = [
+  'plan du site ecofundrive',
+  'services VTC Nice',
+  'chauffeur privé Cannes',
+  'transfert aéroport Monaco',
+  'guide touristique Côte d\'Azur'
+];
 
 const sections = [
   {
@@ -84,7 +91,12 @@ const sections = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical="/plan-du-site">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  keywords={keywords}
+  canonical="/plan-du-site"
+>
   <main id="main-content" class="container py-xl">
     <h1 class="text-center mb-xl">Plan du Site</h1>
     

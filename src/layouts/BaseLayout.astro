@@ -369,7 +369,7 @@ if (currentLang === 'fr') {
   </head>
   <body data-page={currentPage}>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    <Header currentPage={currentPage} />
+    <Header currentPage={currentPage} lang={currentLang} />
     {breadcrumbItems && breadcrumbItems.length > 0 && (
       <Breadcrumb items={breadcrumbItems} />
     )}

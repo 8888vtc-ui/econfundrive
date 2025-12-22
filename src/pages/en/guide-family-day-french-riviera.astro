@@ -1,75 +1,203 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PricingRequest from '../../components/PricingRequest.astro';
 
-const title = "Family Day French Riviera Guide | ECOFUNDRIVE";
-const description = "Complete guide for a family day on the French Riviera. Family-friendly activities, beaches, attractions, and transportation tips.";
+const title = "Family Day Trip French Riviera | Private Driver & Tours";
+const description = "Plan the perfect family day on the French Riviera. Visit Marineland, Oceanographic Museum, and kid-friendly beaches with our safe, comfortable private chauffeured vans.";
 const keywords = [
-  'family day French Riviera',
-  "family activities Côte d\'Azur",
-  'family beaches Nice',
-  'kids activities Monaco',
-  'family transport French Riviera'
+  'family day trip Nice',
+  'family driver French Riviera',
+  'Marineland private transfer',
+  'Oceanographic Museum Monaco transport',
+  'family van rental with driver',
+  'kid friendly activities Cote dAzur'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
+  keywords={keywords}
   currentPage="guide-family-day-french-riviera"
-
   canonical="/en/guide-family-day-french-riviera"
-  <main class="page-content"
-  schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Family Day French Riviera Guide | ECOFUNDRIVE",
-  "description": "Complete guide for a family day on the French Riviera. Family-friendly activities, beaches, attractions, and transportation tips.",
-  "url": "https://www.ecofundrive.com/en/guide-family-day-french-riviera",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Family Activities</h2>
-        <p>Discover the best family-friendly activities on the French Riviera.</p>
-      </section>
-
-      <section>
-        <h2>Booking</h2>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  <main class="page-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container__large">
+        <div class="hero-text">
+          <h1>Unforgettable Family Adventures on the Riviera</h1>
+          <p class="subtitle">Safe, comfortable, and stress-free transport for your entire family.</p>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <div class="container section-spacing">
+      <div class="grid-layout">
+        <div class="content-col">
+          <section class="mb-xl">
+            <h2>Start Your Family Adventure in Comfort</h2>
+            <p>
+              Exploring the French Riviera with children creates magical memories, but navigating public transport or parking can be a hassle. 
+              **EcoFunDrive** offers spacious, air-conditioned vans (Mercedes V-Class) perfect for families, ensuring everyone travels together safely and comfortably.
+            </p>
+            <p>
+              We provide **baby seats and booster seats** free of charge upon request, prioritizing your children's safety above all else.
+            </p>
+          </section>
+
+          <section class="mb-xl">
+            <h2>Top Family Destinations</h2>
+            <ul class="feature-list">
+              <li>
+                <strong>Marineland Antibes:</strong> Europe's largest marine park. A must-see for kids of all ages.
+              </li>
+              <li>
+                <strong>Oceanographic Museum of Monaco:</strong> Discover the wonders of the ocean in this world-famous aquarium.
+              </li>
+              <li>
+                <strong>Phoenix Park (Nice):</strong> A massive greenhouse and zoo with playgrounds, perfect for toddlers and younger kids.
+              </li>
+              <li>
+                <strong>Aquasplash:</strong> The premier water park in Antibes for cooling off on hot summer days.
+              </li>
+            </ul>
+          </section>
+          
+          <section class="mb-xl">
+             <h2>Custom Family Tours</h2>
+             <p>
+               Don't want to be stuck in one place? We can organize a full-day tour visiting multiple spots. 
+               Start with a morning at the **Nice flower market**, have lunch in the medieval village of **Eze**, and finish with an ice cream in **Monaco**. 
+               Our drivers are patient and flexible, accommodating stops whenever your little ones need a break.
+             </p>
+          </section>
+        </div>
+        
+        <aside class="sidebar-col">
+          <div class="sidebar-block">
+            <h3>Book Your Family Van</h3>
+            <p>Ensure travel comfort with our Mercedes V-Class vans.</p>
+            <PricingRequest lang="en" />
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="bg-light section-spacing">
+      <div class="container">
+        <h2 class="text-center mb-lg">Why Families Love EcoFunDrive</h2>
+        <div class="grid-3">
+          <div class="feature-card">
+            <h3>Safety First</h3>
+            <p>Free baby seats and boosters customized for your child's age and weight. Professional, cautious drivers.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Spacious Vans</h3>
+            <p>Our Mercedes V-Class vans seat up to 7 passengers with ample room for strollers, beach gear, and luggage.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Flexible Schedule</h3>
+            <p>We work around your family's rhythm. Late start? Need a nap stop? No problem, we are at your disposal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container section-spacing">
+      <h2 class="mb-lg">Family Travel FAQs</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Do you provide car seats for infants?</h3>
+          <p>Yes, we provide high-quality infant seats and booster seats at no extra cost. Please specify the age/weight of your children when booking.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much luggage can we bring?</h3>
+          <p>Our V-Class vans have a large trunk capable of holding 7 large suitcases plus strollers and carry-on bags.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are your drivers patient with children?</h3>
+          <p>Absolutely. We are a family-friendly company and our drivers are trained to be courteous, patient, and helpful with families.</p>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/img/family-riviera.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+  }
+  
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .feature-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .sidebar-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+  }
+</style>

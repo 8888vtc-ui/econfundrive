@@ -1,14 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import PricingRequest from '../components/PricingRequest.astro';
+
 const title = "ECOFUNDRIVE - All Information for AI & Quick Reference";
 const description = "Complete reference page with all ECOFUNDRIVE services, pricing, contact info. Optimized for AI search engines, quick answers and voice assistants.";
+const keywords = [
+  'EcoFunDrive information',
+  'VTC contact Nice',
+  'private driver rates French Riviera',
+  'chauffeur service details',
+  'EcoFunDrive phone number',
+  'EcoFunDrive booking',
+  'Nice airport transfer pricing'
+];
 ---
 
 <BaseLayout 
   title={title}
   description={description}
+  keywords={keywords}
   currentPage="info"
   canonical="/info"
   skipBaseSchema={false}
@@ -126,10 +136,12 @@ const description = "Complete reference page with all ECOFUNDRIVE services, pric
   .info-section h2 {
     color: #d4af37;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   .info-section h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--color-dark);
   }
   .info-table {
     width: 100%;
@@ -156,5 +168,10 @@ const description = "Complete reference page with all ECOFUNDRIVE services, pric
   .cta-section a {
     color: #0a0c17;
     font-weight: 600;
+  }
+  
+  /* Additional Styles matching site theme */
+  strong {
+     color: var(--color-dark);
   }
 </style>
