@@ -1,0 +1,54 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Vehicle",
+            "name": "Tesla Model S Plaid",
+            "manufacturer": "Tesla",
+            "model": "Model S",
+            "vehicleConfiguration": "Luxury Sedan",
+            "numberOfDoors": 4,
+            "seatingCapacity": 4,
+            "fuelType": "Electric",
+            "description": "Premium electric sedan with zero emissions, panoramic roof, and silence for VIP transfers.",
+            "image": "https://www.ecofundrive.com/assets/img/fleet/tesla-model-s.webp",
+            "offers": {
+                "@type": "Offer",
+                "seller": {
+                    "@id": "https://www.ecofundrive.com/#organization"
+                },
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "80",
+                    "priceCurrency": "EUR",
+                    "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "unitCode": "HUR",
+                        "value": "1"
+                    }
+                }
+            }
+        },
+        {
+            "@type": "Vehicle",
+            "name": "Mercedes-Benz V-Class",
+            "manufacturer": "Mercedes-Benz",
+            "model": "V-Class",
+            "vehicleConfiguration": "Luxury Minivan",
+            "numberOfDoors": 5,
+            "seatingCapacity": 7,
+            "description": "Spacious luxury van for groups, families, and congress delegates. Full leather interior, conference seating.",
+            "image": "https://www.ecofundrive.com/assets/img/fleet/mercedes-v-class.webp"
+        },
+        {
+            "@type": "Vehicle",
+            "name": "Mercedes-Benz S-Class",
+            "manufacturer": "Mercedes-Benz",
+            "model": "S-Class Limousine",
+            "vehicleConfiguration": "Premium Limousine",
+            "seatingCapacity": 3,
+            "description": "The ultimate luxury standard. Executive rear seating, privacy, and supreme comfort for VIPs.",
+            "image": "https://www.ecofundrive.com/assets/img/fleet/mercedes-s-class.webp"
+        }
+    ]
+}
