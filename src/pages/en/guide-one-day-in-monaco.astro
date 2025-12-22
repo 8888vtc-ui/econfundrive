@@ -1,73 +1,145 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Guide One Day In Monaco | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "One Day in Monaco: VIP Private Driver Guide | ECOFUNDRIVE";
+const description = "Experience the best of Monaco in one day: Monte Carlo Casino, Prince's Palace, Oceanographic Museum & F1 Circuit. Private chauffeur from Nice or Cannes.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'one day Monaco tour',
+  'private driver Monaco',
+  'Monte Carlo Casino transfer',
+  'Monaco from Nice',
+  'luxury Monaco trip'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-one-day-in-monaco"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-one-day-in-monaco"
   canonical="/en/guide-one-day-in-monaco"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Monaco in 1 Day", url: "/en/guide-one-day-in-monaco" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide One Day In Monaco | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-one-day-in-monaco",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Monaco in One Day: The Ultimate VIP Experience</h1>
+      <p class="lead text-center mb-xl">
+        The world's second-smallest country packs more luxury per square meter than anywhere else on Earth. Let your private chauffeur navigate the winding roads while you soak in the Mediterranean glamour.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. THE ROCK & PALACE -->
+    <SectionImageText
+      title="Morning: The Rock & Prince's Palace"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Prince's Palace Monaco"
+      imageSide="right"
+      ctaText="Book Your Driver"
+      ctaLink="/en/booking"
+    >
+      <p>
+        Start your day at the historic heart of Monaco: <strong>Le Rocher</strong> (The Rock). Arrive by 11:30 AM to witness the ceremonial <strong>Changing of the Guard</strong> at the Prince's Palace at precisely 11:55 AM.
+      </p>
+      <p>
+        Wander through the charming narrow streets of Monaco-Ville, visit the Cathedral where Princess Grace and Prince Rainier III rest, and enjoy breathtaking views of the harbor. Your driver will drop you at the closest access point and wait while you explore.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. MONTE-CARLO & CASINO -->
+    <SectionImageText
+      title="Afternoon: Monte Carlo & The Casino Square"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Monte Carlo Casino"
+      imageSide="left"
+      ctaText="Casino Evening Transfer"
+      ctaLink="/en/booking"
+    >
+      <p>
+        After lunch, head to the legendary <strong>Casino Square</strong>. Even if you don't gamble, the Belle Époque architecture and parade of supercars (Ferraris, Lamborghinis, Rolls-Royces) is a spectacle in itself.
+      </p>
+      <p>
+        Shop at the luxury boutiques of the <strong>Carré d'Or</strong>, enjoy a coffee at the iconic Café de Paris, or simply people-watch. With ECOFUNDRIVE, arrive like royalty directly at the Casino entrance – no parking stress, no walking uphill.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. NATURE & CULTURE -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Don't Miss: Nature & Culture</h2>
+      <p class="text-center mb-lg">
+        Monaco isn't just about glamour. Discover its remarkable natural and cultural heritage.
+      </p>
+      <div class="grid-2-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-ete.webp"
+          alt="Oceanographic Museum"
+          title="Oceanographic Museum"
+          description="A temple of the sea clinging to the cliff. Giant aquariums, shark lagoon, and a rooftop terrace with panoramic views. Jacques Cousteau directed this museum for 31 years."
+          link="/en/booking"
+          linkText="Book Transfer"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-mariage.webp"
+          alt="Exotic Garden"
+          title="Exotic Garden"
+          description="An incredible collection of succulents and cacti with stunning views over the Principality. Don't miss the prehistoric Observatory Cave underneath."
+          link="/en/booking"
+          linkText="Visit the Gardens"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 4. F1 CIRCUIT -->
+    <SectionImageText
+      title="For Petrolheads: The F1 Circuit"
+      image="/assets/img/services/service-business.webp"
+      alt="Monaco F1 Circuit"
+      imageSide="right"
+      ctaText="Drive the Circuit"
+      ctaLink="/en/booking"
+    >
+      <p>
+        Feel the thrill of the <strong>Monaco Grand Prix</strong>! Ask your driver to take you on a lap of the legendary street circuit.
+      </p>
+      <p>
+        From the Sainte-Dévote corner to the Fairmont Hairpin, through the famous tunnel under the Fairmont Hotel – experience the world's most famous urban circuit from the comfort of your private vehicle. Your chauffeur can explain each legendary corner.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">An Unforgettable Day in Monaco Awaits</h2>
+        <p class="lead mb-4">
+          Monaco has notoriously expensive parking and heavy traffic. Let your private driver handle the logistics while you live like royalty.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book My Monaco Day</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Us</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
-    </section>
+
   </main>
 </BaseLayout>
-
-

@@ -1,73 +1,149 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Guide High Season Traffic French Riviera | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Surviving High Season Traffic on the Riviera | ECOFUNDRIVE";
+const description = "Beat the summer traffic on the French Riviera. Insider tips for avoiding jams, best travel times, and why a private driver changes everything.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'French Riviera traffic',
+  'Côte d\'Azur summer traffic',
+  'avoid traffic Nice Cannes',
+  'best time travel Riviera',
+  'private driver beat traffic'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-high-season-traffic-french-riviera"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-high-season-traffic-french-riviera"
   canonical="/en/guide-high-season-traffic-french-riviera"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Traffic Guide", url: "/en/guide-high-season-traffic-french-riviera" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide High Season Traffic French Riviera | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-high-season-traffic-french-riviera",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Beating the Riviera: Traffic Survival Guide</h1>
+      <p class="lead text-center mb-xl">
+        July and August on the French Riviera are magical – but so is the traffic. Millions of visitors arrive, and the roads weren't designed for them. Here's how to keep your vacation stress-free.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- THE REALITY -->
+    <SectionImageText
+      title="The Reality: What to Expect"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Riviera traffic"
+      imageSide="right"
+      ctaText="Skip the Traffic"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>The A8 Motorway</strong> (Nice-Cannes-Monaco) becomes a parking lot from 10 AM to 7 PM in July-August. A normally 30-minute Nice to Cannes drive can take 90 minutes.
+      </p>
+      <p>
+        <strong>Coastal Roads</strong> are even worse: the N98 to Saint-Tropez is legendarily awful (4-hour waits not unheard of), and Monaco is accessible only with local knowledge.
+      </p>
+      <p>
+        <strong>Parking?</strong> Good luck. Beach parking can cost €30-50/day – if you find a space at all.
+      </p>
+    </SectionImageText>
+
+    <!-- GOLDEN HOURS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">The Golden Hours: When to Travel</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌅 Early Morning (Before 9 AM)</h3>
+          <p>The roads are quiet, parking spaces exist, and beaches are empty. Arrive at your destination by 9:30 AM and you'll feel like you have the Riviera to yourself.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌙 Evening (After 7 PM)</h3>
+          <p>Beach traffic has cleared, day-trippers have gone home. Perfect time for a scenic drive, dinner reservation, or late sunset transfer.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⛱️ Midday (Avoid!)</h3>
+          <p>11 AM – 4 PM is the absolute worst. Everyone is going to or from the beach. If you must travel now, have a professional driver who knows alternatives.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- SECRET ROUTES -->
+    <SectionImageText
+      title="Secret Routes: What Your GPS Won't Tell You"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Back roads Riviera"
+      imageSide="left"
+      ctaText="Book Local Expert"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Our drivers know the alternatives:</strong>
+      </p>
+      <ul>
+        <li><strong>To Monaco:</strong> Via La Turbie and the Grande Corniche – often faster and always more beautiful than the jammed A8.</li>
+        <li><strong>To Saint-Tropez:</strong> Through La Garde-Freinet and Grimaud back roads, avoiding the infamous D98 bottleneck.</li>
+        <li><strong>Nice to Cannes:</strong> Through the hilltop villages of Vence and Grasse when the A8 is jammed.</li>
+      </ul>
+      <p>These routes aren't just faster – they're an experience in themselves, through Provence's most beautiful landscapes.</p>
+    </SectionImageText>
+
+    <!-- WHY PRIVATE DRIVER -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Why a Private Driver Changes Everything</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">😌 Zero Stress</h3>
+          <p>Traffic becomes someone else's problem. You can read, nap, answer emails, or simply gaze at the Mediterranean views. Arrive relaxed, not frustrated.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🅿️ No Parking Nightmares</h3>
+          <p>Your driver drops you at the door and finds parking elsewhere – or waits nearby. When you're ready, they're there. No hiking from distant car parks.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🍷 Drink Freely</h3>
+          <p>Rosé with lunch? Champagne at sunset? No designated driver needed. Enjoy the Riviera lifestyle fully.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">📍 Local Knowledge</h3>
+          <p>Your driver knows which beach club is hot right now, which restaurant has availability, and which viewpoint has the best sunset photos.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Skip the Traffic, Start Your Vacation</h2>
+        <p class="lead mb-4">
+          Whether it's an airport transfer or a full day of exploring, let us handle the roads.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book Your Driver</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Us</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-
-

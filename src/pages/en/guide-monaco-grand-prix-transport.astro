@@ -1,73 +1,139 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Guide Monaco Grand Prix Transport | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Monaco Grand Prix Transport Guide | ECOFUNDRIVE";
+const description = "Survive the Monaco GP chaos: private driver for transfers, access tips, parking nightmares solved. VIP service from Nice & Cannes to the Principality.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Monaco Grand Prix transfer',
+  'F1 Monaco private driver',
+  'Monaco GP transport',
+  'Nice to Monaco F1',
+  'Grand Prix VIP access'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-monaco-grand-prix-transport"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-monaco-grand-prix-transport"
   canonical="/en/guide-monaco-grand-prix-transport"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Monaco GP", url: "/en/guide-monaco-grand-prix-transport" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Monaco Grand Prix Transport | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-monaco-grand-prix-transport",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Monaco Grand Prix: Your VIP Logistics Guide</h1>
+      <p class="lead text-center mb-xl">
+        Every May, the Principality transforms into the world's most glamorous racetrack. Traffic becomes a nightmare and prices skyrocket. Here's how to enjoy the spectacle without the chaos.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- THE CHALLENGE -->
+    <SectionImageText
+      title="The Challenge: Why a Private Driver is Essential"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Monaco F1 Circuit"
+      imageSide="right"
+      ctaText="Book for GP Weekend"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>During the Monaco GP, traffic is an absolute nightmare.</strong> Road closures, security barriers, massive crowds... A usual 30-minute journey can take 2-3 hours.
+      </p>
+      <p>
+        Our chauffeurs know the secret routes through La Turbie, Beausoleil, and Roquebrune-Cap-Martin. They'll drop you as close as possible to the grandstands without wasting hours in traffic jams.
+      </p>
+    </SectionImageText>
+
+    <!-- SCHEDULE -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Race Weekend Schedule: Plan Your Transfers</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏎️ Thursday</h3>
+          <p><strong>Practice 1 & 2</strong>. Important technical sessions. Access is relatively smooth in the morning but traffic builds from 2 PM.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⏱️ Saturday</h3>
+          <p><strong>Practice 3 & Qualifying</strong>. The battle for pole position! Plan to arrive before 10 AM. Return after 6 PM is very congested.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏆 Sunday</h3>
+          <p><strong>Race Day</strong>. Start at 3 PM. Allow 2 hours for arrival. After the race, wait in a café – Monaco exit is jammed for 2 hours.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- INSIDER TIPS -->
+    <SectionImageText
+      title="Insider Tips: Optimize Your Experience"
+      image="/assets/img/services/service-business.webp"
+      alt="Monaco GP grandstand"
+      imageSide="left"
+      ctaText="Request Quote"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>"Base Camp" Strategy:</strong> Stay in Nice or Villefranche rather than Monaco. Prices are 3x lower and we'll drive you to each session.
+      </p>
+      <p>
+        <strong>Helicopter Option:</strong> For premium budgets, we arrange combined VTC + Helicopter transfers (Nice → Monaco in 7 min!). Contact us for a quote.
+      </p>
+      <p>
+        <strong>After-Race Parties:</strong> Monaco's port comes alive in the evening. We can wait until late at night to take you safely back after the celebrations.
+      </p>
+    </SectionImageText>
+
+    <!-- DROP-OFF POINTS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Where We Can Drop You</h2>
+      <p class="text-center mb-lg">Depending on your grandstand or access zone, we adapt the drop-off point:</p>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Grandstands K, L, T (Port/Chicane)</h3>
+          <p>Drop-off: Parking des Pécheurs or Place d'Armes. Access via escalators/elevators. Allow 15 min walk.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Grandstand B, Casino, Fairmont</h3>
+          <p>Drop-off: Avenue de Monte-Carlo (if permitted) or Casino parking. Most requested location – book early!</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Experience the GP Like a VIP</h2>
+        <p class="lead mb-4">
+          Don't let logistics ruin your race weekend. Book your dedicated driver now.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book for Grand Prix</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Quote</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-
-

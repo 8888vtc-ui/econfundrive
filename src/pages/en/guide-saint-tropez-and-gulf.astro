@@ -1,73 +1,158 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Guide Saint Tropez And Gulf | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Saint-Tropez & The Gulf: Private Driver Guide | ECOFUNDRIVE";
+const description = "Explore Saint-Tropez like a celebrity: Place des Lices, Pampelonne beaches, Port Grimaud. Private chauffeur to avoid the legendary traffic jams.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Saint-Tropez private driver',
+  'Pampelonne beach transfer',
+  'Nice to Saint-Tropez',
+  'Club 55 transport',
+  'Saint-Tropez day trip'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-saint-tropez-and-gulf"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-saint-tropez-and-gulf"
   canonical="/en/guide-saint-tropez-and-gulf"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Saint-Tropez", url: "/en/guide-saint-tropez-and-gulf" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Saint Tropez And Gulf | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-saint-tropez-and-gulf",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-saint-tropez.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Saint-Tropez: Where Glamour Meets the Sea</h1>
+      <p class="lead text-center mb-xl">
+        From a humble fishing village to the world's most famous beach destination. Where Brigitte Bardot made sunbathing an art form and where superyachts line the harbor like gleaming white pearls.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. WHY A PRIVATE DRIVER -->
+    <SectionImageText
+      title="Why You Need a Private Driver for Saint-Tropez"
+      image="/assets/img/destinations/vtc-saint-tropez.webp"
+      alt="Saint-Tropez Port"
+      imageSide="right"
+      ctaText="Book Your Transfer"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Getting to Saint-Tropez is notoriously difficult.</strong> In high season, the D98 road becomes a parking lot – a 30-minute drive can take 3+ hours. Parking costs €40-50/day and is often full by 10 AM.
+      </p>
+      <p>
+        With ECOFUNDRIVE, you arrive relaxed. Your driver knows the secret routes through the back country villages (La Garde-Freinet, Grimaud) and can drop you directly at your beach club or restaurant. No stress, no parking, pure paradise.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. PLACE DES LICES -->
+    <SectionImageText
+      title="Place des Lices: The Heart of Tropezian Life"
+      image="/assets/img/hero/hero-ete.webp"
+      alt="Place des Lices Saint-Tropez"
+      imageSide="left"
+      ctaText="Market Day Transfer"
+      ctaLink="/en/booking"
+    >
+      <p>
+        This is where Saint-Tropez's soul beats. Under century-old plane trees, locals play pétanque (French bocce) while the world's elite sip rosé at the legendary <strong>Café des Arts</strong> or <strong>Sénéquier</strong>.
+      </p>
+      <p>
+        <strong>Insider Tip:</strong> The Provençal market on Tuesday and Saturday mornings is unmissable. Arrive early (before 9 AM) for the authentic atmosphere before the crowds. Your driver can drop you off and pick you up with your baskets full of local delicacies.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. PAMPELONNE BEACHES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">The Legendary Pampelonne Beaches</h2>
+      <p class="text-center mb-lg">
+        3 miles of pristine white sand lined with the world's most famous beach clubs. Choose your vibe:
+      </p>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Club 55</h3>
+          <p>The original, since 1955. Chic family atmosphere, legendary Niçoise salad, and a discreet A-list clientele. Reservations essential in summer.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Nikki Beach</h3>
+          <p>The daytime party temple. DJ sets, champagne showers, international party crowd. The place to see and be seen.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">La Plage des Jumeaux</h3>
+          <p>More relaxed and family-friendly, with refined Mediterranean cuisine. Perfect for a peaceful day away from the buzz.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 4. HIDDEN GEMS -->
+    <SectionImageText
+      title="Hidden Gems of The Gulf"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Port Grimaud Venice of Provence"
+      imageSide="right"
+      ctaText="Village Circuit"
+      ctaLink="/en/booking"
+    >
+      <p>
+        Don't limit yourself to Saint-Tropez! The gulf is full of treasures:
+      </p>
+      <ul>
+        <li><strong>Port Grimaud</strong>: The "Provence Venice" with colorful houses and canals. Electric boat trips recommended.</li>
+        <li><strong>Ramatuelle</strong>: A perched village with plunging views over the gulf and authentic medieval streets.</li>
+        <li><strong>Gassin</strong>: Classified among France's most beautiful villages, 360° panorama.</li>
+      </ul>
+      <p>With a half-day at your disposal, explore these jewels at your own pace.</p>
+    </SectionImageText>
+
+    <!-- 5. WHEN TO VISIT -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">When to Visit?</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌞 High Season (July-August)</h3>
+          <p>Maximum atmosphere but massive crowds. Book your driver well in advance. Aim for early morning arrivals (9 AM) or evening (7 PM+).</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🍷 Shoulder Season (May-June, Sept-Oct)</h3>
+          <p>Our recommendation. Perfect weather, accessible beaches, no restaurant queues. The VIP experience without the chaos. Les Voiles de Saint-Tropez yacht races in late September are a must-see.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Live the Saint-Tropez Dream</h2>
+        <p class="lead mb-4">
+          From Nice or Cannes, let us drive you to paradise. VIP arrival guaranteed.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book My Transfer</a>
+          <a href="/en/saint-tropez-private-driver" class="btn btn-outline">Saint-Tropez Rates</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-
-

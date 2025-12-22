@@ -1,73 +1,163 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Guide What To Do In Cannes | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "What To Do in Cannes: Luxury Travel Guide | ECOFUNDRIVE";
+const description = "Discover Cannes beyond the red carpet: La Croisette, Le Suquet, Îles de Lérins. Private chauffeur for shopping, beaches & the Film Festival.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'what to do Cannes',
+  'Cannes private driver',
+  'La Croisette tour',
+  'Cannes Film Festival transfer',
+  'Lérins Islands boat trip'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-what-to-do-in-cannes"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-what-to-do-in-cannes"
   canonical="/en/guide-what-to-do-in-cannes"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Cannes Guide", url: "/en/guide-what-to-do-in-cannes" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide What To Do In Cannes | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-what-to-do-in-cannes",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/cannes-palais-festivals.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Cannes: Where Dreams Walk the Red Carpet</h1>
+      <p class="lead text-center mb-xl">
+        Beyond the glitz of the Film Festival lies a city of timeless elegance. Art Deco palaces, a medieval old town, pristine beaches, and islands straight out of a fairy tale. Let us show you the Cannes that celebrities keep secret.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. LA CROISETTE -->
+    <SectionImageText
+      title="La Croisette: The World's Most Glamorous Boulevard"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="La Croisette Cannes"
+      imageSide="right"
+      ctaText="Book Your Driver"
+      ctaLink="/en/booking"
+    >
+      <p>
+        This 2-mile palm-lined promenade is where Cannes shows off. Stroll past the legendary <strong>Carlton</strong>, <strong>Majestic</strong>, and <strong>Martinez</strong> hotels – each a masterpiece of Belle Époque architecture.
+      </p>
+      <p>
+        Window-shop at Chanel, Louis Vuitton, and Dior. Take photos on the steps of the <strong>Palais des Festivals</strong> where movie stars walk the red carpet each May. Your private driver can navigate the busy boulevard and drop you exactly where you want.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. LE SUQUET -->
+    <SectionImageText
+      title="Le Suquet: The Authentic Old Town"
+      image="/assets/img/hero/hero-ete.webp"
+      alt="Le Suquet Old Town Cannes"
+      imageSide="left"
+      ctaText="Old Town Tour"
+      ctaLink="/en/booking"
+    >
+      <p>
+        Escape the glamour and climb the winding streets to <strong>Le Suquet</strong>, Cannes' historic heart. The view from the church tower over the bay and the islands is absolutely breathtaking.
+      </p>
+      <p>
+        Browse the restaurants on Rue Saint-Antoine for authentic Provençal cuisine at a fraction of La Croisette prices. <strong>Insider tip:</strong> The Marché Forville (daily market) at the base of Le Suquet is perfect for local cheeses, olives, and lavender honey.
+      </p>
+    </SectionImageText>
+
+    <!-- 3. ILES DE LERINS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Îles de Lérins: Paradise Just 15 Minutes Away</h2>
+      <p class="text-center mb-lg">
+        Two magical islands just off Cannes. We'll drop you at the ferry dock and pick you up on your return.
+      </p>
+      <div class="grid-2-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-mariage.webp"
+          alt="Sainte-Marguerite Island"
+          title="Île Sainte-Marguerite"
+          description="Pine forests, hidden coves with crystal-clear water, and the mysterious Fort Royal where the Man in the Iron Mask was imprisoned. Pack a picnic!"
+          link="/en/booking"
+          linkText="Book Transfer to Ferry"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.webp"
+          alt="Saint-Honorat Island"
+          title="Île Saint-Honorat"
+          description="A working monastery since the 5th century. Visit the ancient abbey, taste wines made by the monks, and enjoy absolute serenity. No cars, no noise, just peace."
+          link="/en/booking"
+          linkText="Book Transfer to Ferry"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 4. SHOPPING -->
+    <SectionImageText
+      title="Shopping in Cannes: From Luxury to Vintage"
+      image="/assets/img/services/service-business.webp"
+      alt="Cannes Luxury Shopping"
+      imageSide="right"
+      ctaText="Shopping Day Transfer"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Rue d'Antibes</strong>: The main shopping street with high-end boutiques, French designers, and concept stores. Less intimidating than La Croisette but equally chic.
+      </p>
+      <p>
+        <strong>Les Allées de la Liberté</strong>: The Saturday flower market is a feast for the senses. Combine with the Forville Market for the ultimate Provençal shopping experience.
+      </p>
+      <p>
+        Your driver can wait while you shop and help with packages. Multiple stops? No problem – we're at your service.
+      </p>
+    </SectionImageText>
+
+    <!-- 5. BEACHES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Cannes Beaches: Public & Private</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏖️ Public Beaches (Free)</h3>
+          <p>Plage du Midi (west of La Croisette) and Plage Zamenhof (east) offer free access with excellent facilities. Perfect for a casual beach day.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⛱️ Private Beach Clubs</h3>
+          <p>La Plage 45, Baoli Beach, and Z Plage offer full service with sun loungers, waiter service, and gourmet restaurants. We can reserve on your behalf.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Ready to Discover Cannes?</h2>
+        <p class="lead mb-4">
+          From Nice Airport or your hotel, let us introduce you to the city of stars.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Book My Transfer</a>
+          <a href="/en/cannes-private-driver" class="btn btn-outline">Cannes Rates</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
-
-

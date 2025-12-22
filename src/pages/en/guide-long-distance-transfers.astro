@@ -1,77 +1,154 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
 
-const title = "Long Distance Transfers Guide | ECOFUNDRIVE";
-const description = "Complete guide for long distance transfers on the French Riviera. VTC service for Nice-Monaco, Nice-Saint-Tropez, and other long distance routes.";
+const title = "Long Distance Transfers: Lyon, Milan, Geneva | ECOFUNDRIVE";
+const description = "Premium long-distance VTC transfers from Nice: Lyon, Milan, Geneva, Marseille. Fixed prices, luxury vehicles, experienced drivers. Free quote.";
 const keywords = [
-  'long distance transfers',
-  'VTC long distance',
-  'Nice Monaco transfer',
-  'Nice Saint-Tropez transfer',
-  'private driver long distance'
+  'Nice to Milan private driver',
+  'Nice to Lyon transfer',
+  'Nice to Geneva VTC',
+  'long distance chauffeur',
+  'intercity transfer French Riviera'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="guide-long-distance-transfers"
-
   canonical="/en/guide-long-distance-transfers"
-  <main class="page-content"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Long Distance", url: "/en/guide-long-distance-transfers" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Long Distance Transfers Guide | ECOFUNDRIVE",
-  "description": "Complete guide for long distance transfers on the French Riviera. VTC service for Nice-Monaco, Nice-Saint-Tropez, and other long distance routes.",
-  "url": "https://www.ecofundrive.com/en/guide-long-distance-transfers",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Long Distance VTC Service</h2>
-        <p>
-          We offer professional VTC service for long distance transfers on the French Riviera and beyond.
-        </p>
-      </section>
-
-      <section>
-        <h2>Booking</h2>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Long-Distance Transfers in Ultimate Comfort</h1>
+      <p class="lead text-center mb-xl">
+        Need to reach Lyon, Milan, Marseille, or Geneva from Nice? Skip the stress of flights and rental cars. Travel in a mobile office with Wi-Fi, refreshments, and a professional chauffeur who knows every route.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- WHY LONG DISTANCE VTC -->
+    <SectionImageText
+      title="Why Choose a Private Driver for Long Distances?"
+      image="/assets/img/services/service-business.webp"
+      alt="Luxury long distance transfer"
+      imageSide="right"
+      ctaText="Request Quote"
+      ctaLink="/en/booking"
+    >
+      <p>
+        <strong>Comfort & Productivity:</strong> Our premium vehicles feature Wi-Fi, USB charging, bottled water, and ample space to work or relax. Arrive refreshed and ready for your meeting.
+      </p>
+      <p>
+        <strong>Flexibility:</strong> Depart at your preferred time, take breaks wherever you like, change your destination en route. No flight schedules, no train timetables, no restrictions.
+      </p>
+      <p>
+        <strong>Cost Effective:</strong> For 2-4 passengers with luggage, a private transfer often costs less than 4 train or plane tickets – especially on short notice.
+      </p>
+    </SectionImageText>
+
+    <!-- POPULAR ROUTES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Popular Routes & Indicative Prices</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇫🇷 Nice → Lyon</h3>
+          <p><strong>Distance:</strong> ~290 miles | <strong>Duration:</strong> ~4h30</p>
+          <p>Business connections or TGV link to Paris. Early departure for late morning arrival. Route: A8 then A7 (Autoroute du Soleil).</p>
+          <p><em>From €550</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇫🇷 Nice → Marseille</h3>
+          <p><strong>Distance:</strong> ~125 miles | <strong>Duration:</strong> ~2h15</p>
+          <p>Ideal for meetings or Marseille-Provence Airport connections. Optional scenic route via the Calanques.</p>
+          <p><em>From €280</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇮🇹 Nice → Milan</h3>
+          <p><strong>Distance:</strong> ~185 miles | <strong>Duration:</strong> ~3h30</p>
+          <p>Through the Alps via Fréjus Tunnel or scenic Col de Tende. Fashion weeks, trade fairs, international connections.</p>
+          <p><em>From €450</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇨🇭 Nice → Geneva</h3>
+          <p><strong>Distance:</strong> ~250 miles | <strong>Duration:</strong> ~4h</p>
+          <p>World financial center. Route via Grenoble and scenic Annecy available. Seats configured for productive work.</p>
+          <p><em>From €520</em></p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- WHO USES THIS -->
+    <SectionImageText
+      title="Who Uses Long-Distance Transfers?"
+      image="/assets/img/hero/hero-business.webp"
+      alt="Business travel VTC"
+      imageSide="left"
+      ctaText="Book Now"
+      ctaLink="/en/booking"
+    >
+      <ul>
+        <li><strong>Executives & Entrepreneurs:</strong> Multi-city meetings, roadshows, client visits without airport hassle.</li>
+        <li><strong>Families:</strong> Skip the stress of dragging luggage through stations. Children travel comfortably.</li>
+        <li><strong>VIPs & Celebrities:</strong> Complete discretion, no fans or paparazzi at airports. Tinted windows available.</li>
+        <li><strong>Medical:</strong> Comfortable, safe transfers to specialized clinics in Geneva or Milan.</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- PRACTICAL INFO -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Practical Information</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🧳 Luggage</h3>
+          <p>Our sedans accommodate 3 large suitcases plus carry-ons. For more luggage, choose our Mercedes V-Class van.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⏱️ Breaks</h3>
+          <p>Coffee/meal break included on journeys over 3 hours. Choose the location with your driver (premium service areas or local restaurants).</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">📋 Quotes & Billing</h3>
+          <p>Fixed price quoted in advance – no surprises. Corporate invoicing with VAT available. Pay by card, bank transfer, or cash.</p>
+        </div>
+      </div>
     </section>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Ready to Travel in Style?</h2>
+        <p class="lead mb-4">
+          Request a personalized quote for your long-distance journey. Response within 2 hours.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/en/booking" class="btn btn-primary">Request Quote</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Contact</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
-
-
