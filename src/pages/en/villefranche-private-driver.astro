@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Villefranche-sur-Mer Private Driver – Scenic Port & Beaches | ECOFUNDRIVE";
+const description = "Private driver to Villefranche-sur-Mer. Stunning natural harbor, colorful Old Town, scenic beaches between Nice and Monaco. Premium chauffeur service 24/7.";
+const keywords = [
+  'Villefranche private driver',
+  'Villefranche-sur-Mer VTC',
+  'Nice to Villefranche transfer',
+  'Villefranche harbor tour',
+  'cruise port transfer Villefranche'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-villefranche-private-driver"
+  canonical="/en/villefranche-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Villefranche Private Driver", url: "/en/villefranche-private-driver" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Villefranche-sur-Mer"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Private driver Villefranche-sur-Mer harbor"
+      imageSide="right"
+      ctaText="Book Your Villefranche Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Villefranche-sur-Mer</strong> is one of the most picturesque towns on the French Riviera. Its deep natural harbor, colorful waterfront buildings, and charming Old Town make it a favorite stop for discerning travelers. Located between Nice and Monaco, Villefranche offers stunning views of the Mediterranean.
+      </p>
+      <p class="fade-in-section">
+        The town is a popular <strong>cruise ship port</strong>, with luxury liners anchoring in its protected bay. The medieval streets, the 16th-century Citadel, and the famous <strong>Chapelle Saint-Pierre</strong> decorated by Jean Cocteau attract visitors year-round.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Villefranche transfers (20-30 min)</li>
+        <li>Cruise ship port transfers and shore excursions</li>
+        <li>Combined tour: Villefranche + Eze + Monaco</li>
+        <li>Beach access (Plage des Marinières)</li>
+        <li>Restaurant transfers for seafood dining</li>
+        <li>Connection to Cap Ferrat peninsula</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Villefranche Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Villefranche</td><td>12 km</td><td>20-30 min</td><td>40€</td></tr>
+          <tr><td>Nice City → Villefranche</td><td>8 km</td><td>15-20 min</td><td>30€</td></tr>
+          <tr><td>Villefranche → Monaco</td><td>10 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Villefranche → Eze Village</td><td>5 km</td><td>10-15 min</td><td>25€</td></tr>
+          <tr><td>Villefranche → Cap Ferrat</td><td>4 km</td><td>10 min</td><td>22€</td></tr>
+          <tr><td>Cruise ship shore excursion (4h)</td><td>-</td><td>4h</td><td>280€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Villefranche-sur-Mer</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Villefranche Harbor"
+          title="The Natural Harbor"
+          description="One of the deepest natural harbors on the Riviera. Colorful waterfront, fishing boats, and luxury yachts."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Villefranche Old Town"
+          title="Medieval Old Town"
+          description="Narrow streets, Rue Obscure covered passage, 16th-century Citadel with free museums and art exhibitions."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Cocteau Chapel"
+          title="Chapelle Saint-Pierre"
+          description="14th-century chapel decorated by Jean Cocteau in 1957. Stunning frescoes depicting the life of St. Peter."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Cruise Ship Shore Excursions</h2>
+      <div class="cruise-info">
+        <p>Villefranche-sur-Mer is a major <strong>cruise ship tender port</strong> for the French Riviera. Ships anchor in the bay and passengers are tendered to the harbor. ECOFUNDRIVE offers premium shore excursions for cruise passengers.</p>
+        <div class="grid-2-cols mt-lg">
+          <div class="excursion-card">
+            <h3>🚢 Monaco & Eze (4h)</h3>
+            <p>Visit Eze village and perfumery, then Monaco (Casino, Old Town, Palace). Return in time for ship departure.</p>
+            <p class="price">From <strong>280€</strong></p>
+          </div>
+          <div class="excursion-card">
+            <h3>🎨 Nice & Riviera (4h)</h3>
+            <p>Tour Nice Old Town, Promenade des Anglais, Castle Hill. Optional stop at Chagall or Matisse museum.</p>
+            <p class="price">From <strong>250€</strong></p>
+          </div>
+        </div>
+        <p class="mt-lg"><strong>Note:</strong> We meet you at the tender dock. Please share your ship name and tender time when booking.</p>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze Village</a>
+        <a href="/en" class="text-dark hover-gold">Cap Ferrat</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .cruise-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
+  .excursion-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .excursion-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
+  .price { font-size: 1.1rem; color: #d4af37; margin-top: 1rem; }
+  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+</style>

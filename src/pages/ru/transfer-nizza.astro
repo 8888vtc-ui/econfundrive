@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Трансфер Ницца – Личный Водитель Аэропорт & Лазурный Берег | ECOFUNDRIVE";
+const description = "Премиум трансфер в Ницце. Аэропорт Ницца Лазурный Берег, Английская набережная, Старый город. Русскоговорящий водитель 24/7.";
+const keywords = [
+  'трансфер Ницца',
+  'личный водитель Ницца',
+  'трансфер аэропорт Ниццы',
+  'VTC Лазурный Берег',
+  'русский водитель Ницца'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-transfer-nice"
+  canonical="/ru/transfer-nizza"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Трансфер Ницца", url: "/ru/transfer-nizza" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Ваш Личный Водитель в Ницце"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Трансфер личный водитель Ницца Английская набережная"
+      imageSide="right"
+      ctaText="Забронировать Трансфер"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Ницца</strong> — яркая столица Лазурного Берега, сочетающая средиземноморскую красоту и богатое культурное наследие. От знаменитой <strong>Английской набережной</strong> до красочного <strong>Старого города</strong> и панорамы с <strong>Замковой горы</strong>, Ницца дарит незабываемые впечатления.
+      </p>
+      <p class="fade-in-section">
+        <strong>Аэропорт Ницца Лазурный Берег</strong> — это ворота всей Ривьеры, обслуживающий более 14 миллионов пассажиров ежегодно. ECOFUNDRIVE предоставляет <strong>премиум-трансферы из аэропорта Ниццы</strong> в любую точку побережья.
+      </p>
+      <ul class="fade-in-section">
+        <li>Трансферы из аэропорта Ниццы с встречей</li>
+        <li>Экскурсии по городу и достопримечательностям</li>
+        <li>Трансферы в Монако, Канны, Сен-Тропе</li>
+        <li>Панорамные туры по Корнишам</li>
+        <li>Бизнес и корпоративные перевозки</li>
+        <li>Профессиональные русскоговорящие водители</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Тарифы на Трансферы из Аэропорта Ниццы</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Из аэропорта Ниццы в</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Центр Ниццы</td><td>7 км</td><td>15-20 мин</td><td>35€</td></tr>
+          <tr><td>Отели Ниццы (Негреско и др.)</td><td>6-10 км</td><td>15-25 мин</td><td>35-45€</td></tr>
+          <tr><td>Монако</td><td>30 км</td><td>30-45 мин</td><td>80€</td></tr>
+          <tr><td>Канны</td><td>35 км</td><td>35-45 мин</td><td>75€</td></tr>
+          <tr><td>Антиб</td><td>20 км</td><td>20-30 мин</td><td>45€</td></tr>
+          <tr><td>Сен-Тропе</td><td>110 км</td><td>1ч30-2ч</td><td>250€</td></tr>
+          <tr><td>Деревня Эз</td><td>15 км</td><td>20-30 мин</td><td>40€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Все цены включают встречу с табличкой, отслеживание рейса и помощь с багажом.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Откройте Ниццу</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Английская набережная Ницца"
+          title="Английская Набережная"
+          description="Знаменитая 7-километровая набережная. Лазурные воды, архитектура Belle Époque, идеальна для живописной поездки."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Старый город Ницца"
+          title="Старый Город (Vieux Nice)"
+          description="Красочные барочные здания, оживленные рынки, аутентичные рестораны. Сердце и душа Ниццы."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Замковая гора Ницца"
+          title="Замковая Гора"
+          description="Панорамные виды на Залив Ангелов, порт и Старый город. Обязательная смотровая площадка."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Сервис Встречи в Аэропорту</h2>
+      <div class="meet-greet-info">
+        <p>Прибываете в <strong>Аэропорт Ницца Лазурный Берег</strong>? Мы делаем ваш приезд безупречным с нашим премиум-сервисом встречи.</p>
+        <h3>Что включено:</h3>
+        <ul>
+          <li><strong>Персональная встреча</strong> в зоне прилёта с табличкой с вашим именем</li>
+          <li><strong>Отслеживание рейса</strong> — мы корректируем время, если рейс задерживается</li>
+          <li><strong>Бесплатное ожидание</strong> — до 1 часа после посадки</li>
+          <li><strong>Помощь с багажом</strong> — мы поможем донести до автомобиля</li>
+          <li><strong>Бутилированная вода</strong> в автомобиле</li>
+          <li><strong>Детские кресла</strong> по запросу бесплатно</li>
+          <li><strong>Фиксированная цена</strong> — без сюрпризов от пробок или задержек</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Направления на Лазурном Берегу</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/ru/transfer-monaco" class="text-dark hover-gold">Монако</a>
+        <a href="/ru/transfer-cannes" class="text-dark hover-gold">Канны</a>
+        <a href="/ru/transfer-saint-tropez" class="text-dark hover-gold">Сен-Тропе</a>
+        <a href="/ru" class="text-dark hover-gold">Все Направления</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .meet-greet-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
+  .meet-greet-info h3 { color: #d4af37; margin: 1rem 0 0.5rem; }
+  .meet-greet-info ul { padding-left: 1.2rem; }
+</style>

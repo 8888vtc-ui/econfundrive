@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Cap Ferrat Private Driver – Luxury Peninsula Tour | ECOFUNDRIVE";
+const description = "Private driver to Cap Ferrat, the most exclusive peninsula on the French Riviera. Villa Ephrussi de Rothschild, luxury villas, secret beaches. Premium service.";
+const keywords = [
+  'Cap Ferrat private driver',
+  'Saint-Jean-Cap-Ferrat VTC',
+  'Villa Ephrussi tour',
+  'Cap Ferrat luxury transfer',
+  'Nice to Cap Ferrat'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-cap-ferrat-private-driver"
+  canonical="/en/cap-ferrat-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Cap Ferrat Private Driver", url: "/en/cap-ferrat-private-driver" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Cap Ferrat"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="Private driver Cap Ferrat luxury peninsula"
+      imageSide="right"
+      ctaText="Book Your Cap Ferrat Tour"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Cap Ferrat</strong> (Saint-Jean-Cap-Ferrat) is the most exclusive address on the French Riviera. This small peninsula between Nice and Monaco is home to some of the world's most expensive real estate, hidden behind high walls and tropical gardens. Celebrities, royalty, and billionaires have long favored this discreet paradise.
+      </p>
+      <p class="fade-in-section">
+        The highlight is the <strong>Villa Ephrussi de Rothschild</strong>, a pink Italianate palace with nine themed gardens overlooking the Mediterranean. The coastal path offers stunning views and access to secret beaches.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Cap Ferrat transfers (25-35 min)</li>
+        <li>Villa Ephrussi de Rothschild visit</li>
+        <li>Coastal walk access (Sentier du Littoral)</li>
+        <li>Paloma Beach and Plage Passable</li>
+        <li>Grand-Hôtel du Cap-Ferrat transfers</li>
+        <li>Combined tour: Cap Ferrat + Eze + Monaco</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Cap Ferrat Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Cap Ferrat</td><td>15 km</td><td>25-35 min</td><td>50€</td></tr>
+          <tr><td>Nice City → Cap Ferrat</td><td>10 km</td><td>20-25 min</td><td>38€</td></tr>
+          <tr><td>Cap Ferrat → Monaco</td><td>8 km</td><td>15-20 min</td><td>32€</td></tr>
+          <tr><td>Cap Ferrat → Villefranche</td><td>4 km</td><td>10 min</td><td>22€</td></tr>
+          <tr><td>Cap Ferrat → Eze Village</td><td>7 km</td><td>15 min</td><td>28€</td></tr>
+          <tr><td>Half-day Cap Ferrat tour</td><td>-</td><td>4h</td><td>260€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Cap Ferrat</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Villa Ephrussi Rothschild"
+          title="Villa Ephrussi de Rothschild"
+          description="Pink Belle Époque palace with 9 magnificent gardens. Art collection, musical fountains, panoramic views."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Cap Ferrat Beaches"
+          title="Secret Beaches"
+          description="Paloma Beach, Plage Passable, and hidden coves. Crystal-clear waters accessible via coastal path."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Coastal Path Cap Ferrat"
+          title="Sentier du Littoral"
+          description="Scenic coastal walk around the peninsula. Private villa gardens, hidden bays, stunning Mediterranean views."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Luxury Hotel Transfers</h2>
+      <p class="text-center mb-lg">We provide premium transfers to Cap Ferrat's exclusive hotels:</p>
+      <div class="grid-2-cols">
+        <div class="hotel-card">
+          <h3>⭐ Grand-Hôtel du Cap-Ferrat</h3>
+          <p>Four Seasons resort, Michelin-starred restaurant, cliff-edge pool. The epitome of Riviera luxury.</p>
+        </div>
+        <div class="hotel-card">
+          <h3>🌿 Royal Riviera</h3>
+          <p>Boutique luxury hotel with private beach at Plage Passable. Art Deco charm meets Mediterranean elegance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco</a>
+        <a href="/en/villefranche-private-driver" class="text-dark hover-gold">Villefranche</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .hotel-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; border-left: 3px solid #d4af37; }
+  .hotel-card h3 { margin-bottom: 0.5rem; color: #d4af37; }
+  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+</style>

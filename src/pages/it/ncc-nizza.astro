@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Nizza – Autista Privato Aeroporto & Costa Azzurra | ECOFUNDRIVE";
+const description = "Servizio NCC premium a Nizza. Trasferimenti aeroporto Nizza Côte d'Azur, Promenade des Anglais, Vieux Nice. Autista privato italiano 24/7.";
+const keywords = [
+  'NCC Nizza',
+  'autista privato Nizza',
+  'trasferimento aeroporto Nizza',
+  'NCC Costa Azzurra',
+  'autista italiano Nizza'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-ncc-nice"
+  canonical="/it/ncc-nizza"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "NCC Nizza", url: "/it/ncc-nizza" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Il Vostro Autista Privato a Nizza"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="NCC autista privato Nizza Promenade des Anglais"
+      imageSide="right"
+      ctaText="Prenota il Tuo Trasferimento"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Nizza</strong> è la vibrante capitale della Costa Azzurra, che unisce bellezza mediterranea e ricco patrimonio culturale. Dalla iconica <strong>Promenade des Anglais</strong> al colorato <strong>Vieux Nice</strong> (Città Vecchia) e al panorama dalla <strong>Collina del Castello</strong>, Nizza offre un'esperienza indimenticabile.
+      </p>
+      <p class="fade-in-section">
+        L'<strong>Aeroporto Nizza Côte d'Azur</strong> è la porta d'accesso all'intera Riviera, servendo oltre 14 milioni di passeggeri all'anno. ECOFUNDRIVE fornisce <strong>servizi NCC premium dall'aeroporto di Nizza</strong> verso qualsiasi destinazione sulla costa.
+      </p>
+      <ul class="fade-in-section">
+        <li>Trasferimenti aeroporto Nizza con meet & greet</li>
+        <li>Tour della città e visite turistiche</li>
+        <li>Trasferimenti verso Monaco, Cannes, Saint-Tropez</li>
+        <li>Tour panoramici sulle Corniches</li>
+        <li>Trasporti business e corporate</li>
+        <li>Autisti professionali multilingue</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tariffe Trasferimenti Aeroporto Nizza</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Dall'Aeroporto Nizza a</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Centro città Nizza</td><td>7 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Hotel Nizza (Negresco, etc.)</td><td>6-10 km</td><td>15-25 min</td><td>35-45€</td></tr>
+          <tr><td>Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
+          <tr><td>Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Villaggio di Eze</td><td>15 km</td><td>20-30 min</td><td>40€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Tutti i prezzi includono meet & greet, monitoraggio volo e assistenza bagagli.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Scoprite Nizza</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Promenade des Anglais Nizza"
+          title="Promenade des Anglais"
+          description="La iconica passeggiata sul mare di 7 km. Acque azzurre, architettura Belle Époque, perfetta per una guida panoramica."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Città Vecchia Nizza"
+          title="Vieux Nice"
+          description="Edifici barocchi colorati, mercati vivaci, ristoranti autentici. Il cuore e l'anima di Nizza."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Collina del Castello Nizza"
+          title="Collina del Castello"
+          description="Viste panoramiche sulla Baia degli Angeli, il porto e la Città Vecchia. Un punto panoramico imperdibile."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Servizio Meet & Greet Aeroporto</h2>
+      <div class="meet-greet-info">
+        <p>Arrivate all'<strong>Aeroporto Nizza Côte d'Azur</strong>? Rendiamo il vostro arrivo perfetto con il nostro servizio premium meet & greet.</p>
+        <h3>Cosa è incluso:</h3>
+        <ul>
+          <li><strong>Accoglienza personale</strong> agli arrivi con il vostro nome su un cartello</li>
+          <li><strong>Monitoraggio volo</strong> – adattiamo l'orario se il vostro volo è in ritardo</li>
+          <li><strong>Tempo di attesa gratuito</strong> – fino a 1 ora dopo l'atterraggio</li>
+          <li><strong>Assistenza bagagli</strong> – vi aiutiamo fino al veicolo</li>
+          <li><strong>Acqua in bottiglia</strong> nel veicolo</li>
+          <li><strong>Seggiolini per bambini</strong> disponibili gratuitamente su richiesta</li>
+          <li><strong>Prezzo fisso</strong> – nessuna sorpresa per traffico o ritardi</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinazioni nella Costa Azzurra</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/it/ncc-monaco" class="text-dark hover-gold">Monaco</a>
+        <a href="/it/ncc-cannes" class="text-dark hover-gold">Cannes</a>
+        <a href="/it/ncc-saint-tropez" class="text-dark hover-gold">Saint-Tropez</a>
+        <a href="/it" class="text-dark hover-gold">Tutte le Destinazioni</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .meet-greet-info { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
+  .meet-greet-info h3 { color: #d4af37; margin: 1rem 0 0.5rem; }
+  .meet-greet-info ul { padding-left: 1.2rem; }
+</style>
