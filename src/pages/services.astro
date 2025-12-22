@@ -1,185 +1,476 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Services VTC Premium Côte d'Azur | ECOFUNDRIVE";
-const description = "Découvrez nos services VTC premium : transferts aéroports Nice & Cannes, trajets business, mise à disposition et événements. Solution clé en main.";
+const title = "Services VTC Premium Côte d'Azur | ECOFUNDRIVE – Transfert, Business & Mariage";
+const description = "Découvrez l'excellence ECOFUNDRIVE. Transferts aéroport Nice, navettes privées Saint-Tropez & Monaco, chauffeurs business et organisation de transport événementiel.";
 const keywords = [
-  "service VTC entreprise Côte d\'Azur",
-  "chauffeur privé pour mariage Côte d\'Azur",
-  'VTC avec siège enfant Nice',
-  "chauffeur anglais Côte d\'Azur",
-  'mise à disposition chauffeur',
-  'VTC business',
-  'transfert aéroport'
+  "service VTC premium",
+  "chauffeur privé Nice",
+  "transfert aéroport Nice VTC",
+  "location voiture avec chauffeur mariage",
+  "chauffeur business Sophia Antipolis",
+  "navette festival de cannes"
+];
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "Services", url: "/services" }
 ];
 ---
 
 <BaseLayout 
   title={title}
   description={description}
+  keywords={keywords}
   currentPage="services"
   canonical="/services"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Services", url: "/services" }
-  ]}
+  breadcrumbItems={breadcrumbItems}
 >
   <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
-
-    <SectionImageText
-      id="transferts"
-      title="Transferts Aéroports, Gares & Hôtels"
-      image="/assets/img/services/service-aeroport.webp"
-      alt="Chauffeur VTC attendant à l'aéroport de Nice"
-      imageSide="right"
-      ctaText="Réserver un transfert"
-      ctaLink="/reservation"
-    >
-      <p>
-        Simplifiez vos arrivées et départs sur la Côte d'Azur avec nos services de transfert VTC. Nous assurons vos liaisons depuis et vers l'Aéroport Nice Côte d'Azur (NCE), l'Aéroport de Cannes-Mandelieu, ainsi que toutes les gares TGV et hôtels de la région. Fini le stress des transports en commun ou des taxis incertains : votre chauffeur privé vous attendra ponctuellement, avec une pancarte nominative si nécessaire, pour vous conduire à destination en tout confort.
-      </p>
-      <ul>
-        <li>Accueil personnalisé à l'aéroport ou à la gare</li>
-        <li>Suivi des vols et trains en temps réel pour anticiper les retards</li>
-        <li>Prise en charge des bagages</li>
-        <li>Véhicules confortables et spacieux</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      id="business"
-      title="VTC Business & Professionnel"
-      image="/assets/img/services/service-business.webp"
-      alt="Chauffeur VTC pour rendez-vous d'affaires"
-      imageSide="left"
-      ctaText="Demander un devis pro"
-      ctaLink="/contact"
-    >
-      <p>
-        Pour vos déplacements professionnels, la ponctualité et la discrétion sont essentielles. ECOFUNDRIVE met à votre disposition des chauffeurs expérimentés pour vos rendez-vous d'affaires, séminaires, congrès (Palais des Festivals de Cannes, Sophia Antipolis) ou tout autre événement professionnel. Concentrez-vous sur vos objectifs, nous nous occupons de votre transport avec efficacité et professionnalisme.
-      </p>
-      <ul>
-        <li>Discrétion et confidentialité assurées</li>
-        <li>Flexibilité pour vos changements de programme</li>
-        <li>Véhicules équipés (Wi-Fi, chargeurs) pour travailler en déplacement</li>
-        <li>Facturation adaptée aux entreprises</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      id="disposition"
-      title="Mise à Disposition avec Chauffeur"
-      image="/assets/img/services/service-mise-disposition.webp"
-      alt="Voiture de luxe avec chauffeur à disposition"
-      imageSide="right"
-      ctaText="Réserver une mise à disposition"
-      ctaLink="/reservation"
-    >
-      <p>
-        Profitez d'une liberté totale avec notre service de mise à disposition. Que vous ayez besoin d'un chauffeur pour quelques heures de shopping, une journée de visites touristiques, ou pour vous accompagner lors de plusieurs rendez-vous sans contrainte de temps, votre chauffeur reste à votre entière disposition. C'est la solution idéale pour une flexibilité maximale et un confort inégalé.
-      </p>
-      <ul>
-        <li>Chauffeur dédié à l'heure ou à la journée</li>
-        <li>Itinéraire modulable selon vos envies</li>
-        <li>Attente incluse</li>
-        <li>Idéal pour le tourisme, le shopping ou les événements</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      id="evenements"
-      title="Événements Spéciaux & Mariages"
-      image="/assets/img/services/service-evenements.webp"
-      alt="Voiture de mariage avec chauffeur"
-      imageSide="left"
-      ctaText="Découvrir nos services mariage"
-      ctaLink="/vtc-mariage-cote-azur"
-    >
-      <p>
-        Pour les moments inoubliables de votre vie, faites confiance à ECOFUNDRIVE. Nous vous proposons un service VTC haut de gamme pour vos mariages, anniversaires, galas, festivals (Festival de Cannes, Grand Prix de Monaco) et autres célébrations. Nos véhicules élégants et nos chauffeurs professionnels ajouteront une touche de prestige à votre événement, en assurant des déplacements fluides et sans souci pour vous et vos invités.
-      </p>
-      <ul>
-        <li>Véhicules décorés sur demande pour les mariages</li>
-        <li>Transport des invités</li>
-        <li>Disponibilité pour toute la durée de l'événement</li>
-        <li>Service discret et élégant</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      id="tourisme"
-      title="Circuits Touristiques Personnalisés"
-      image="/assets/img/destinations/destination-nice.webp"
-      alt="Vue panoramique de la Côte d'Azur depuis une voiture VTC"
-      imageSide="right"
-      ctaText="Voir nos idées de circuits"
-      ctaLink="/guides"
-    >
-      <p>
-        Explorez la beauté de la Côte d'Azur à votre rythme avec nos circuits touristiques sur mesure. Votre chauffeur, véritable guide local, vous fera découvrir les sites emblématiques et les trésors cachés de la région : les villages perchés, les panoramas époustouflants, les marchés provençaux, les musées... Créez votre propre itinéraire ou laissez-vous guider par nos suggestions.
-      </p>
-      <ul>
-        <li>Itinéraires personnalisables (Nice, Cannes, Monaco, Saint-Paul-de-Vence, Eze...)</li>
-        <li>Chauffeur-guide expérimenté</li>
-        <li>Confort et flexibilité pour vos visites</li>
-        <li>Arrêts photos illimités</li>
-      </ul>
-    </SectionImageText>
-
-    <SectionImageText
-      id="longue-distance"
-      title="Trajets Longue Distance"
-      image="/assets/img/hero/hero-business.webp"
-      alt="Voiture VTC sur autoroute pour un long trajet"
-      imageSide="left"
-      ctaText="En savoir plus sur les longs trajets"
-      ctaLink="/transferts-longue-distance-paca"
-    >
-      <p>
-        Besoin de vous rendre au-delà des frontières de la Côte d'Azur ? ECOFUNDRIVE assure également vos transferts longue distance vers toutes les grandes villes de France (Marseille, Lyon, Paris) ou même vers les pays voisins comme l'Italie. Voyagez en toute tranquillité, sans les contraintes des transports en commun, avec un confort optimal et un service porte-à-porte.
-      </p>
-      <ul>
-        <li>Voyages nationaux et internationaux</li>
-        <li>Confort supérieur pour les longs trajets</li>
-        <li>Flexibilité des horaires</li>
-        <li>Service porte-à-porte</li>
-      </ul>
-    </SectionImageText>
-
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Nos Engagements Qualité</h2>
-      <div class="grid-3-cols">
-        <div class="text-center">
-          <h3 class="text-primary">Ponctualité</h3>
-          <p>Votre temps est précieux. Nous garantissons une arrivée à l'heure, à chaque fois.</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-primary">Confort</h3>
-          <p>Véhicules haut de gamme, propres et équipés pour votre bien-être.</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-primary">Discrétion</h3>
-          <p>Un service professionnel et respectueux de votre intimité.</p>
+    
+    <!-- HERO SECTION -->
+    <section class="services-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content fade-in-section">
+        <span class="hero-subtitle">EXCELLENCE & DISCRÉTION</span>
+        <h1>Nos Services Limousine & VTC</h1>
+        <p class="lead">Bien plus qu'un simple transport. Une expérience de mobilité haut de gamme sur toute la French Riviera.</p>
+        <div class="hero-buttons">
+            <a href="/reservation" class="btn-gold">Réserver un Chauffeur</a>
+            <a href="#services-list" class="btn-outline">Découvrir nos offres</a>
         </div>
       </div>
     </section>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Prêt à réserver votre VTC ?</h2>
-      <p class="text-center">
-        Contactez-nous dès aujourd'hui pour un devis personnalisé ou pour toute question.
-      </p>
-      <div class="text-center mt-lg">
-        <a href="/reservation" class="btn-primary hero-cta-button">Réserver maintenant</a>
-      </div>
+    <!-- SERVICES LIST SECTION -->
+    <section id="services-list" class="services-wrapper">
+        <div class="container">
+            
+            <!-- Service 1 : Aéroport -->
+            <div class="service-card full-width fade-in-section">
+                <div class="service-image-box">
+                    <img src="/assets/img/services/service-aeroport.webp" alt="Transfert Aéroport Nice VTC" loading="lazy" />
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">✈️</div>
+                    <h2>Transferts Aéroports & Gares</h2>
+                    <p class="service-desc">
+                        Liaisons privées depuis et vers l'Aéroport Nice Côte d'Azur (NCE), l'aviation d'affaires de Cannes-Mandelieu et les gares TGV.
+                        Accueil pancarte, suivi de vol en temps réel et gestion des bagages. CommenceZ ou terminez votre voyage en toute sérénité.
+                    </p>
+                    <ul class="service-features">
+                        <li>Accueil VIP avec pancarte</li>
+                        <li>Attente gratuite en cas de retard</li>
+                        <li>Aide aux bagages</li>
+                    </ul>
+                    <a href="/reservation" class="link-gold">Réserver un transfert →</a>
+                </div>
+            </div>
+
+            <!-- Service 2 : Mise à disposition -->
+            <div class="service-card full-width reverse fade-in-section">
+                <div class="service-image-box">
+                    <img src="/assets/img/services/service-mise-disposition.webp" alt="Mise à disposition chauffeur privé" loading="lazy" />
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">⏳</div>
+                    <h2>Mise à Disposition</h2>
+                    <p class="service-desc">
+                        Votre chauffeur personnel pour quelques heures ou plusieurs jours. Idéal pour le shopping à Monaco, les rendez-vous d'affaires multiples ou une visite touristique sans contraintes.
+                        Gardez une liberté totale sur votre emploi du temps.
+                    </p>
+                    <ul class="service-features">
+                        <li>Tarification à l'heure ou journée</li>
+                        <li>Itinéraire 100% flexible</li>
+                        <li>Chauffeur bilingue et discret</li>
+                    </ul>
+                    <a href="/contact" class="link-gold">Demander un forfait journée →</a>
+                </div>
+            </div>
+
+            <!-- Service 3 : Business & Événements -->
+            <div class="service-card full-width fade-in-section">
+                <div class="service-image-box">
+                    <img src="/assets/img/services/service-business.webp" alt="Chauffeur business congrès Cannes" loading="lazy" />
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">💼</div>
+                    <h2>Business & Événements</h2>
+                    <p class="service-desc">
+                        Partenaire de vos succès professionnels et privés. Congrès (MIPIM, Cannes Lions), séminaires, mariages ou soirées de gala.
+                        Nous gérons la logistique transport de vos invités avec une flotte coordonnée et rigoureuse.
+                    </p>
+                    <ul class="service-features">
+                        <li>Navettes événementielles</li>
+                        <li>Berlines & Vans luxe</li>
+                        <li>Coordination logistique sur site</li>
+                    </ul>
+                    <a href="/vtc-mariage-cote-azur" class="link-gold">Voir nos offres mariages & events →</a>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+    <!-- PREMIUM FEATURES GRID -->
+    <section class="features-section">
+        <div class="container fade-in-section">
+            <div class="section-title text-center">
+                <h2>L'Expérience ECOFUNDRIVE</h2>
+                <p>Le diable est dans les détails. Nous ne laissons rien au hasard.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3>Sécurité & Confidentialité</h3>
+                    <p>Chauffeurs agréés VTC, assurance professionnelle complète et discrétion absolue garantie.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                    </div>
+                    <h3>Confort à bord</h3>
+                    <p>Wi-Fi 4G, chargeurs, bouteilles d'eau, bonbons et playlist personnalisée sur demande.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3>Ponctualité 100%</h3>
+                    <p>Nous arrivons 15 minutes avant l'heure prévue. Votre sérénité est notre priorité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-banner">
+        <div class="overlay"></div>
+        <div class="container cta-content fade-in-section">
+            <h2>Prêt pour un voyage d'exception ?</h2>
+            <p>Réservez votre chauffeur en quelques clics ou contactez-nous pour une demande sur mesure.</p>
+            <div class="cta-buttons">
+                <a href="/reservation" class="btn-gold">Réserver maintenant</a>
+                <a href="https://wa.me/33616552811" class="btn-whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></path></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
   </main>
 </BaseLayout>
 
+<style>
+    /* HERO */
+    .services-hero {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+    }
 
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('/assets/img/hero/hero-aeroport-nice.webp');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.7);
+        z-index: 1;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.4) 100%);
+        z-index: 2;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        max-width: 900px;
+    }
+
+    .hero-subtitle {
+        display: inline-block;
+        padding: 5px 15px;
+        border: 1px solid rgba(212,175,55,0.5);
+        border-radius: 50px;
+        color: #d4af37;
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        background: rgba(10,10,10,0.5);
+        backdrop-filter: blur(5px);
+    }
+
+    .services-hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .services-hero .lead {
+        font-size: 1.25rem;
+        color: #e0e0e0;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* BUTTONS */
+    .btn-gold {
+        background: #d4af37;
+        color: black;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    .btn-gold:hover {
+        background: white;
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        border: 1px solid white;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    .btn-outline:hover {
+        background: white;
+        color: black;
+    }
+
+    /* SERVICES LIST */
+    .services-wrapper {
+        padding: 4rem 0;
+    }
+
+    .service-card {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    .service-card.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .service-image-box {
+        flex: 1;
+        position: relative;
+    }
+
+    .service-image-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image-box img {
+        transform: scale(1.02);
+    }
+
+    .service-content {
+        flex: 1;
+        padding: 2rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card h2 {
+        font-size: 2.5rem;
+        color: #1a1a1a;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    .service-desc {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+    }
+
+    .service-features li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 25px;
+        color: #333;
+        font-weight: 500;
+        list-style: none;
+    }
+
+    .service-features li::before {
+        content: '✓';
+        color: #d4af37;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    .link-gold {
+        color: #d4af37;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-top: 1rem;
+        transition: color 0.3s;
+    }
+    
+    .link-gold:hover {
+        color: #b8941f;
+        transform: translateX(5px);
+    }
+
+    /* FEATURES GRID */
+    .features-section {
+        background: #f8f8f8;
+        padding: 6rem 0;
+    }
+    
+    .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .section-title p { margin-bottom: 4rem; color: #666; font-size: 1.1rem; }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .feature-box {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .feature-box:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(212, 175, 55, 0.1);
+        color: #d4af37;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .feature-box h3 {
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+        font-size: 1.25rem;
+    }
+
+    .feature-box p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+        position: relative;
+        padding: 6rem 0;
+        background-image: url('/assets/img/hero/hero-home.webp');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+    }
+
+    .cta-banner .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10,10,10,0.85);
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cta-content h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cta-content p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .btn-whatsapp {
+        background: #25D366;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-whatsapp:hover { background: #1ebc57; }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+        .service-card, .service-card.reverse {
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .service-image-box { width: 100%; }
+        .service-content { padding: 0; }
+        
+        .features-grid { grid-template-columns: 1fr; }
+    }
+    
+    @media (max-width: 768px) {
+        .services-hero h1 { font-size: 2.5rem; }
+    }
+</style>

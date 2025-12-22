@@ -1,160 +1,329 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "À propos d’ECOFUNDRIVE – Chauffeur VTC Côte d’Azur";
-const description = "Découvrez ECOFUNDRIVE, chauffeur VTC expérimenté sur la Côte d’Azur : Nice, Cannes, Monaco, Saint‑Tropez. Engagements qualité, sécurité et discrétion.";
-const keywords = [
-  "VTC Côte d'Azur",
-  'chauffeur privé',
-  'transfert aéroport',
-  'VTC Nice',
-  'VTC Cannes',
-  'transport premium'
+const title = "À Propos d'ECOFUNDRIVE | Votre Chauffeur Privé de Confiance";
+const description = "Découvrez l'histoire et les valeurs d'ECOFUNDRIVE. Une vision du transport VTC basée sur l'excellence, la discrétion et le service sur-mesure.";
+
+const breadcrumbItems = [
+  { name: "Accueil", url: "/" },
+  { name: "À Propos", url: "/a-propos" }
 ];
-const canonical = "/a-propos.html";
 ---
 
 <BaseLayout 
   title={title}
   description={description}
   currentPage="a-propos"
-  canonical={canonical}
+  canonical="/a-propos"
+  breadcrumbItems={breadcrumbItems}
 >
+  <main id="main-content">
+    
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content fade-in-section">
+        <h1>L'Art du Transport Privé</h1>
+        <p class="lead">Plus qu'un simple trajet, nous vous offrons une expérience de mobilité exclusive sur la Côte d'Azur.</p>
+      </div>
+    </section>
 
-    <nav class="breadcrumbs container" aria-label="Fil d’Ariane">
-      <a href="/index">Accueil</a> › <span>À propos</span>
-    </nav>
-
-    <main id="main-content">
-      <div class="container py-lg">
-        <div class="section-header text-center mb-xl">
-          <div class="section-eyebrow">Qui sommes‑nous&nbsp;?</div>
-          <h1 class="section-title">À propos d’ECOFUNDRIVE – VTC sur la Côte d’Azur</h1>
-          <p class="lead">Chauffeur privé expérimenté, spécialisé dans les transferts premium entre Nice, Cannes, Monaco, Saint‑Tropez et l’ensemble de la Côte d’Azur.</p>
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-text fade-in-section">
+            <span class="eyebrow">NOTRE VISION</span>
+            <h2>L'Excellence comme Standard</h2>
+            <p>
+              Fondée avec la conviction que le transport privé doit allier confort absolu, fiabilité sans faille et touche humaine, ECOFUNDRIVE s'est imposée comme une référence sur la Côte d'Azur.
+            </p>
+            <p>
+              Nous ne nous contentons pas de vous conduire d'un point A à un point B. Nous anticipons vos besoins, nous connaissons les meilleurs itinéraires pour éviter le trafic, et nous veillons à ce que chaque minute passée à bord soit un moment de détente ou de productivité.
+            </p>
+            <div class="signature">
+              <p class="founder-name">L'Équipe ECOFUNDRIVE</p>
+              <p class="founder-title">Service VTC Premium</p>
+            </div>
+          </div>
+          <div class="mission-image fade-in-section">
+             <!-- Placeholder image chauffeur -->
+             <img src="/assets/img/hero/chauffeur-luxe-background.webp" alt="Chauffeur privé ouvrant la porte" loading="lazy" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <SectionImageText
-        title="David Chemla, votre chauffeur"
-        image="/assets/img/about/chauffeur-professionnel.webp"
-        alt="David Chemla, fondateur d'ECOFUNDRIVE"
-        imageSide="left"
-        ctaText="Me contacter"
-        ctaLink="/contact"
-      >
-        <p>
-          Basé à Villeneuve‑Loubet plage (Marina Baie des Anges), j’accompagne depuis plusieurs années une clientèle exigeante composée de particuliers, familles, chefs d’entreprise et équipes événementielles. Ma parfaite connaissance des axes routiers et des temps de trajet sur la Côte d’Azur me permet d’anticiper les imprévus (trafic, travaux, événements).
-        </p>
-        <p>
-          J’aime aussi mettre les gens à l’aise avec une pointe d’humour. Je parle anglais couramment (ma femme est écossaise et beaucoup de clients britanniques commencent par un «&nbsp;so sorry&nbsp;» en montant à bord), je me décris parfois comme un chauffeur privé à mi‑chemin entre le guide touristique et le stand‑up&nbsp;: je connais aussi bien les coins cachés que les lieux emblématiques de la Côte d’Azur.
-        </p>
-      </SectionImageText>
-
-      <SectionImageText
-        title="Parcours & Expérience"
-        image="/assets/img/destinations/vtc-tesla-nice.webp"
-        alt="Berline VTC stationnée sur la Côte d’Azur"
-        imageSide="right"
-        ctaText="Réserver un trajet"
-        ctaLink="/reservation"
-      >
-        <p>
-          Habitué aux transferts aéroport de Nice, aux congrès à Cannes et aux événements à Monaco et Saint‑Tropez, j’assure un service discret, ponctuel et fiable, en français et en anglais.
-        </p>
-        <p>
-          Concrètement, mon travail ressemble souvent à des histoires simples&nbsp;: une famille que je récupère plusieurs années de suite à l’aéroport de Nice pour les conduire à leur location à Antibes, un chef d’entreprise que j’accompagne toute une journée entre l’aéroport, Sophia‑Antipolis et un dîner d’affaires à Cannes, ou encore un couple que je ramène en toute sécurité tard dans la nuit après une soirée à Saint‑Tropez.
-        </p>
-      </SectionImageText>
-
-      <SectionImageText
-        title="Engagements Qualité"
-        image="/assets/img/about/vehicule-premium.webp"
-        alt="Véhicule Tesla Model 3 d'ECOFUNDRIVE"
-        imageSide="left"
-        ctaText="Voir nos services"
-        ctaLink="/services"
-      >
-        <ul>
-          <li><strong>Ponctualité :</strong> les horaires sont sacrés&nbsp;: aucun oubli, aucun retard, et une arrivée systématiquement en avance (très souvent 30 minutes avant l’horaire prévu) au point de rendez‑vous, avec suivi des vols et trains.</li>
-          <li><strong>Confort :</strong> véhicules récents, climatisés, propres, équipés de Wi‑Fi, eau et chargeurs.</li>
-          <li><strong>Discrétion :</strong> confidentialité totale sur les trajets, rendez‑vous et échanges.</li>
-          <li><strong>Sécurité :</strong> conduite souple et prudente, respect du Code de la route et des temps de repos.</li>
-        </ul>
-        <p>
-          En dehors du volant, on me croise plus facilement avec une raquette de tennis ou une planche de windsurf qu’en costume, mais je prends mon métier de chauffeur très au sérieux&nbsp;: votre confort et votre sécurité restent toujours la priorité.
-        </p>
-      </SectionImageText>
-
-      <SectionImageText
-        title="Zones d’intervention principales"
-        image="/assets/img/destinations/vtc-tesla-cannes.jpg"
-        alt="Chauffeur accueillant un client devant un hôtel"
-        imageSide="right"
-        ctaText="Voir toutes les zones"
-        ctaLink="/index#zones"
-      >
-        <p>Je couvre l’ensemble de la Côte d’Azur avec un focus sur&nbsp;:</p>
-        <ul>
-          <li>Nice et son aéroport (NCE), Sophia‑Antipolis et Antibes.</li>
-          <li>Cannes, Mandelieu, les principaux palais des congrès.</li>
-          <li>Monaco, Menton, la frontière italienne.</li>
-          <li>Saint‑Tropez et le Golfe (Ramatuelle, Gassin, Grimaud…).</li>
-        </ul>
-        <p>Pour en savoir plus, consultez les pages dédiées&nbsp;: <a href="/vtc-nice">VTC Nice</a>, <a href="/vtc-cannes">VTC Cannes</a>, <a href="/vtc-monaco">VTC Monaco</a>, <a href="/vtc-saint-tropez">VTC Saint‑Tropez</a>.</p>
-      </SectionImageText>
-
-      <SectionImageText
-        title="Travailler ensemble"
-        image="/assets/img/destinations/plage-beau-rivage-nice.jpg"
-        alt="Vue de la Côte d’Azur depuis l’intérieur du véhicule"
-        imageSide="left"
-        ctaText="Contact pro"
-        ctaLink="/contact"
-      >
-        <p>
-          Pour mettre en place un partenariat récurrent (navettes entreprise, accueil de clients VIP, événements, séminaires), vous pouvez détailler votre besoin via la page <a href="/contact">Contact</a> ou effectuer une première <a href="/reservation">demande de réservation</a> pour un trajet test.
-        </p>
-        <p>
-          Grâce à un réseau de partenaires sérieux (autres chauffeurs, vans, autocars, guides officiels multilingues), je peux aussi, sur demande et sur devis, vous aider à organiser des dispositifs plus complexes&nbsp;: bus avec guide officiel, flotte de vans pendant quelques jours, logistique d’un séminaire ou d’un mariage.
-        </p>
-      </SectionImageText>
-
-      <section class="container py-xl">
-        <h2 class="text-center mb-lg">FAQ À propos du chauffeur</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question">Depuis combien de temps exercez‑vous comme chauffeur VTC&nbsp;?</div>
-            <div class="faq-answer">
-              <p>Plusieurs années d’expérience sur la Côte d’Azur m’ont permis de bien connaître les axes routiers, les temps de trajet et les habitudes des clients locaux comme internationaux.</p>
-            </div>
+    <!-- VALUES GRID -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-header text-center fade-in-section">
+          <h2>Nos Piliers de Qualité</h2>
+          <div class="divider"></div>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card fade-in-section">
+            <div class="value-number">01</div>
+            <h3>Discrétion</h3>
+            <p>Votre vie privée est sacrée. Nos chauffeurs s'engagent à une confidentialité totale concernant vos conversations et déplacements.</p>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">Dans quelles langues pouvez‑vous échanger avec les clients&nbsp;?</div>
-            <div class="faq-answer">
-              <p>Je parle français et anglais couramment, et je suis habitué à accueillir une clientèle internationale. L’objectif est que chacun se sente à l’aise, quelle que soit sa langue maternelle.</p>
-            </div>
+          
+          <div class="value-card fade-in-section">
+            <div class="value-number">02</div>
+            <h3>Ponctualité</h3>
+            <p>Le temps est le luxe ultime. Nous arrivons systématiquement en avance pour que vous ne soyez jamais en retard.</p>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">Quelle est votre philosophie de service&nbsp;?</div>
-            <div class="faq-answer">
-              <p>Allier ponctualité, sécurité et bonne humeur. Je me vois davantage comme un "mister good vibes" accessible qu’un chauffeur distant : sérieux sur l’essentiel, détendu dans la relation humaine, en respectant toujours le besoin de calme des passagers.</p>
-            </div>
+          
+          <div class="value-card fade-in-section">
+            <div class="value-number">03</div>
+            <h3>Confort</h3>
+            <p>Véhicules récents, entretien méticuleux, conduite souple et attentions à bord (eau, chargeurs, wifi).</p>
           </div>
-          <div class="faq-item">
-            <div class="faq-question">Intervenez‑vous uniquement sur la Côte d’Azur&nbsp;?</div>
-            <div class="faq-answer">
-              <p>La majeure partie de mon activité se concentre sur Nice, Cannes, Monaco et le Golfe de Saint‑Tropez. Des trajets plus longs peuvent être étudiés ponctuellement, sur demande et selon les contraintes de temps de conduite.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">Travaillez‑vous seul ou avec d’autres chauffeurs&nbsp;?</div>
-            <div class="faq-answer">
-              <p>Je réalise personnellement une grande partie des trajets, mais je peux aussi m’appuyer sur un réseau de partenaires fiables (berlines, vans, bus, guides officiels) pour des demandes plus importantes (groupes, événements, séminaires).</p>
-            </div>
+          
+          <div class="value-card fade-in-section">
+            <div class="value-number">04</div>
+            <h3>Expertise</h3>
+            <p>Parfaite connaissance de la région, de ses raccourcis et de ses lieux d'exception (hôtels, lieux événementiels).</p>
           </div>
         </div>
-      </section>
-    </main>
-  
+      </div>
+    </section>
+
+    <!-- FLEET SHOWCASE -->
+    <section class="fleet-section">
+      <div class="container">
+         <div class="fleet-content fade-in-section">
+            <div class="fleet-text">
+               <h2>Une Flotte d'Exception</h2>
+               <p>Que vous voyagiez seul ou en groupe, nous avons le véhicule adapté. De la berline Tesla écologique et silencieuse au Van Mercedes Classe V pour vos équipes.</p>
+               <a href="/reservation" class="btn-primary">Réserver un véhicule</a>
+            </div>
+            <div class="fleet-visual">
+               <img src="/assets/img/destinations/vtc-tesla-nice.webp" alt="Flotte véhicules VTC" />
+            </div>
+         </div>
+      </div>
+    </section>
+
+  </main>
 </BaseLayout>
+
+<style>
+  /* HERO */
+  .about-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/img/hero/hero-business.webp');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: 1;
+  }
+  
+  .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.4);
+      z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
+  .about-hero .lead {
+      font-size: 1.25rem;
+      color: #e0e0e0;
+      font-weight: 300;
+  }
+
+  /* MISSION SECTION */
+  .mission-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .mission-text .eyebrow {
+    color: #d4af37;
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .mission-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+  }
+
+  .mission-text p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
+  .signature {
+      margin-top: 2rem;
+      border-left: 3px solid #d4af37;
+      padding-left: 1rem;
+  }
+  
+  .founder-name {
+      font-family: 'Playfair Display', serif; /* Si dispo, sinon fallback */
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.25rem !important;
+  }
+  
+  .founder-title {
+      font-size: 0.9rem !important;
+      color: #888 !important;
+      margin-bottom: 0 !important;
+  }
+
+  .mission-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  }
+
+  /* VALUES SECTION */
+  .values-section {
+    padding: 6rem 0;
+    background: #fcfcfc;
+  }
+  
+  .section-header { margin-bottom: 4rem; }
+  .section-header h2 { font-size: 2.5rem; color: #1a1a1a; margin-bottom: 1rem; }
+  .divider { width: 60px; height: 3px; background: #d4af37; margin: 0 auto; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .value-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(212, 175, 55, 0.15);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .value-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  /* FLEET SECTION */
+  .fleet-section {
+      padding: 6rem 0;
+      background: #111;
+      color: white;
+      text-align: center;
+  }
+  
+  .fleet-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+  }
+  
+  .fleet-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #d4af37; }
+  .fleet-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
+  
+  .btn-primary {
+      background: #d4af37;
+      color: black;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+  }
+  .btn-primary:hover { background: white; transform: translateY(-3px); }
+  
+  .fleet-visual img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
+    .mission-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 576px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .about-hero h1 { font-size: 2.5rem; }
+  }
+</style>
