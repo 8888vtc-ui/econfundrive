@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Antibes – Autista Privato Porto Vauban & Cap | ECOFUNDRIVE";
+const description = "Servizio NCC premium ad Antibes e Juan-les-Pins. Porto Vauban, Cap d'Antibes, Jazz à Juan, Musée Picasso. Trasferimenti da Nizza.";
+const keywords = [
+  'NCC Antibes',
+  'autista privato Antibes',
+  'NCC Juan-les-Pins',
+  'trasferimento Porto Vauban',
+  'autista Cap d Antibes'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-ncc-antibes"
+  canonical="/it/ncc-antibes"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "NCC Antibes", url: "/it/ncc-antibes" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Il Vostro Autista Privato ad Antibes"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="NCC autista privato Antibes Porto Vauban"
+      imageSide="right"
+      ctaText="Prenota il Tuo Trasferimento"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Antibes</strong> è una città costiera affascinante con un ricco patrimonio storico risalente all'antichità greca. Oggi è famosa per il <strong>Porto Vauban</strong>, il più grande porto turistico d'Europa per superyacht, la sua affascinante <strong>città vecchia</strong> e il <strong>Musée Picasso</strong>.
+      </p>
+      <p class="fade-in-section">
+        La sua penisola gemella, il <strong>Cap d'Antibes</strong>, ospita le più belle ville e gli hotel più esclusivi della Riviera, tra cui il leggendario Hôtel du Cap-Eden-Roc.
+      </p>
+      <ul class="fade-in-section">
+        <li>Trasferimenti aeroporto Nizza (20-30 min)</li>
+        <li>Servizio Porto Vauban ed equipaggi yacht</li>
+        <li>Accesso agli hotel del Cap d'Antibes</li>
+        <li>Trasferimenti Sophia Antipolis (15 min)</li>
+        <li>Servizio dedicato Jazz à Juan (luglio)</li>
+        <li>Musée Picasso e città vecchia</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tariffe NCC Antibes</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Percorso</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aeroporto Nizza → Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Aeroporto Nizza → Cap d'Antibes</td><td>25 km</td><td>25-35 min</td><td>55€</td></tr>
+          <tr><td>Antibes → Cannes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Antibes → Monaco</td><td>35 km</td><td>35-45 min</td><td>80€</td></tr>
+          <tr><td>Antibes → Saint-Tropez</td><td>90 km</td><td>1h30</td><td>220€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Scoprite Antibes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Porto Vauban Antibes"
+          title="Porto Vauban"
+          description="Il più grande porto d'Europa per superyacht. Atmosfera unica tra le navi più prestigiose del mondo."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Cap d'Antibes"
+          title="Cap d'Antibes"
+          description="Penisola esclusiva con ville miliardarie. Hôtel du Cap-Eden-Roc, calette nascoste, sentiero litoraneo."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Musée Picasso Antibes"
+          title="Città Vecchia & Museo Picasso"
+          description="Mercato provenzale, bastioni, vicoli affascinanti. Il castello Grimaldi ospita il Museo Picasso."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinazioni Vicine</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/it/ncc-nizza" class="text-dark hover-gold">NCC Nizza</a>
+        <a href="/it/ncc-cannes" class="text-dark hover-gold">NCC Cannes</a>
+        <a href="/it/ncc-monaco" class="text-dark hover-gold">NCC Monaco</a>
+        <a href="/it" class="text-dark hover-gold">Tutte le Destinazioni</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

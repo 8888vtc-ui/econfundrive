@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Mougins Private Driver – Gourmet Village & Picasso | ECOFUNDRIVE";
+const description = "Private driver to Mougins, the gourmet village near Cannes. Michelin-starred restaurants, Picasso connections, art galleries. Premium chauffeur service.";
+const keywords = [
+  'Mougins private driver',
+  'Mougins gourmet tour',
+  'Cannes to Mougins transfer',
+  'Mougins restaurants VTC',
+  'gastronomic tour French Riviera'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-mougins-private-driver"
+  canonical="/en/mougins-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Mougins Private Driver", url: "/en/mougins-private-driver" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Mougins"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Private driver Mougins gourmet village"
+      imageSide="right"
+      ctaText="Book Your Mougins Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Mougins</strong> is the gourmet capital of the French Riviera. This charming medieval village, perched in the hills above Cannes, has attracted artists, celebrities, and food lovers for decades. <strong>Picasso</strong> spent the last 12 years of his life here, and the village still exudes an artistic, bohemian atmosphere.
+      </p>
+      <p class="fade-in-section">
+        Today, Mougins is renowned for its exceptional <strong>Michelin-starred restaurants</strong> and fine dining scene. The village hosts the annual <strong>Les Étoiles de Mougins</strong> gastronomy festival, attracting top chefs from around the world.
+      </p>
+      <ul class="fade-in-section">
+        <li>Cannes to Mougins transfers (15 min)</li>
+        <li>Nice Airport to Mougins (40 min)</li>
+        <li>Restaurant transfers with return pickup</li>
+        <li>Combined tour: Mougins + Grasse perfumes</li>
+        <li>Photography Museum and art galleries</li>
+        <li>Evening service for gourmet dinners</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Mougins Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Mougins</td><td>38 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Cannes → Mougins</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
+          <tr><td>Mougins → Grasse</td><td>8 km</td><td>12-18 min</td><td>28€</td></tr>
+          <tr><td>Mougins → Antibes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Restaurant dinner (round trip + wait)</td><td>-</td><td>Evening</td><td>150€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Mougins</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Mougins Restaurants"
+          title="Gourmet Restaurants"
+          description="Multiple Michelin-starred restaurants in a tiny village. Le Moulin de Mougins, L'Amandier, and more."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Mougins Art"
+          title="Art & Picasso"
+          description="Photography Museum, art galleries, Picasso's last home. The village where the master spent his final years."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Mougins Village"
+          title="Medieval Village"
+          description="Stone ramparts, narrow streets, fountains. A perfectly preserved Provençal village with panoramic views."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">Cannes</a>
+        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse</a>
+        <a href="/en/antibes-private-driver" class="text-dark hover-gold">Antibes</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

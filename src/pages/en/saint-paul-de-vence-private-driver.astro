@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Saint-Paul-de-Vence Private Driver – Artists' Village Tour | ECOFUNDRIVE";
+const description = "Private driver to Saint-Paul-de-Vence, the famous artists' village. Fondation Maeght, La Colombe d'Or, art galleries. Premium chauffeur from Nice.";
+const keywords = [
+  'Saint-Paul-de-Vence private driver',
+  'St Paul de Vence tour',
+  'Nice to St Paul transfer',
+  'Fondation Maeght tour',
+  'artists village Provence'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-saint-paul-private-driver"
+  canonical="/en/saint-paul-de-vence-private-driver"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Saint-Paul-de-Vence", url: "/en/saint-paul-de-vence-private-driver" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Your Private Driver to Saint-Paul-de-Vence"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Private driver Saint-Paul-de-Vence artists village"
+      imageSide="right"
+      ctaText="Book Your St-Paul Tour"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Paul-de-Vence</strong> is one of the most beautiful and famous perched villages in France. This medieval fortress town has attracted artists since the 1920s – <strong>Chagall, Picasso, Matisse, and Miró</strong> all found inspiration here. The village remains an artistic mecca, with over 80 galleries within its stone ramparts.
+      </p>
+      <p class="fade-in-section">
+        The legendary <strong>La Colombe d'Or</strong> hotel-restaurant displays an incredible collection of art given by artists who once dined here. Just outside the village, the <strong>Fondation Maeght</strong> is one of Europe's most important modern art museums.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Saint-Paul transfers (30-40 min)</li>
+        <li>Fondation Maeght museum visit</li>
+        <li>Art gallery walking tour</li>
+        <li>Lunch at La Colombe d'Or</li>
+        <li>Combined tour: St-Paul + Vence + Tourrettes</li>
+        <li>Provençal market visit (Wednesdays)</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Saint-Paul Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Saint-Paul</td><td>22 km</td><td>30-40 min</td><td>55€</td></tr>
+          <tr><td>Nice City → Saint-Paul</td><td>18 km</td><td>25-35 min</td><td>45€</td></tr>
+          <tr><td>Saint-Paul → Vence</td><td>4 km</td><td>8-10 min</td><td>20€</td></tr>
+          <tr><td>Saint-Paul → Grasse</td><td>20 km</td><td>25-30 min</td><td>50€</td></tr>
+          <tr><td>Half-day art villages tour</td><td>-</td><td>4h</td><td>260€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Saint-Paul-de-Vence</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Fondation Maeght"
+          title="Fondation Maeght"
+          description="World-class modern art museum. Miró sculptures, Giacometti courtyard, Chagall mosaics in stunning gardens."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="La Colombe d'Or"
+          title="La Colombe d'Or"
+          description="Legendary hotel where Picasso, Matisse, Léger paid in art. Dine surrounded by original masterpieces."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Medieval Streets"
+          title="Medieval Ramparts"
+          description="16th-century walls, cobblestone alleys, 80+ art galleries. A perfectly preserved artistic village."
+          link="/en/booking"
+        />
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice</a>
+        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse</a>
+        <a href="/en/guide-hilltop-villages-french-riviera" class="text-dark hover-gold">Hilltop Villages</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>
