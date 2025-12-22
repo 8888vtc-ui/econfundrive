@@ -1,91 +1,149 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide : Que Faire à Nice en 1 à 3 Jours | ECOFUNDRIVE";
-const description = "Guide complet pour visiter Nice en 1 à 3 jours. Itinéraires, lieux à visiter, activités, restaurants. Conseils pratiques pour votre séjour à Nice.";
+const title = "Que Faire à Nice en 1 à 3 Jours | Guide VTC ECOFUNDRIVE";
+const description = "Itinéraires optimisés pour visiter Nice : Jour 1 Vieux-Nice & Promenade, Jour 2 Musées & Cimiez, Jour 3 Excursions Eze/Monaco. Chauffeur privé disponible.";
 const keywords = [
-  'que faire à Nice',
-  'visiter Nice',
-  'guide Nice',
-  'itinéraire Nice',
-  'Nice 3 jours'
+  'visiter Nice 1 jour',
+  'itinéraire Nice 3 jours',
+  'que faire Nice week-end',
+  'VTC Nice tourisme',
+  'excursion depuis Nice'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="guide-que-faire-a-nice-1-3-jours"
+  canonical="/guide-que-faire-a-nice-1-3-jours"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Guides", url: "/guides" },
     { name: "Nice 1-3 jours", url: "/guide-que-faire-a-nice-1-3-jours" }
   ]}
-
-  canonical="/guide-que-faire-a-nice-1-3-jours"
-  <main class="guide-page"
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide : Que Faire à Nice en 1 à 3 Jours | ECOFUNDRIVE",
-  "description": "Guide complet pour visiter Nice en 1 à 3 jours. Itinéraires, lieux à visiter, activités, restaurants. Conseils pratiques pour votre séjour à Nice.",
-  "url": "https://www.ecofundrive.com/guide-que-faire-a-nice-1-3-jours",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-nice.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <article>
-        <h1>{title}</h1>
-        <p class="guide-intro">{description}</p>
-
-        <section>
-          <h2>Itinéraire 1 Jour</h2>
-          <p>Découvrez les essentiels de Nice en une journée : Vieux-Nice, Promenade des Anglais, Colline du Château.</p>
-        </section>
-
-        <section>
-          <h2>Itinéraire 2-3 Jours</h2>
-          <p>Explorez Nice en profondeur : musées, marchés, plages, et excursions dans les environs.</p>
-        </section>
-
-        <section>
-          <h2>Transport</h2>
-          <p>Pour vos déplacements à Nice, réservez votre <strong>chauffeur privé VTC</strong>.</p>
-        </section>
-
-        <section>
-          <h2>Réservation</h2>
-          <div class="contact-buttons">
-            <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-            <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-        </section>
-      </article>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Que Faire à Nice en 1, 2 ou 3 Jours ?</h1>
+      <p class="lead text-center mb-xl">
+        Capitale de la Côte d'Azur, Nice est une ville aux mille facettes. Voici nos itinéraires optimisés pour profiter au maximum de votre séjour, que vous restiez une journée ou un long week-end.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- JOUR 1 -->
+    <SectionImageText
+      title="Jour 1 : Incontournables du Centre"
+      image="/assets/img/destinations/vtc-nice.webp"
+      alt="Promenade des Anglais Nice"
+      imageSide="right"
+      ctaText="Transfert Aéroport"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Matin :</strong> Commencez par le <strong>Vieux-Nice</strong>. Flânez dans la rue Pairolière, admirez le Palais Lascaris, et découvrez le marché aux fleurs du Cours Saleya. Goûtez la socca chez Chez Thérésa.
+      </p>
+      <p>
+        <strong>Après-midi :</strong> Montez à la <strong>Colline du Château</strong> pour une vue panoramique époustouflante (ascenseur gratuit disponible). Redescendez par le Quai des États-Unis jusqu'à la <strong>Promenade des Anglais</strong>.
+      </p>
+      <p>
+        <strong>Soir :</strong> Apéro sur la Promenade puis dîner dans le Vieux-Nice. Restaurant recommandé : Olive et Artichaut (étoilé Michelin, prix accessible).
+      </p>
+    </SectionImageText>
+
+    <!-- JOUR 2 -->
+    <SectionImageText
+      title="Jour 2 : Culture & Élégance"
+      image="/assets/img/hero/hero-business.webp"
+      alt="Musée Matisse Cimiez"
+      imageSide="left"
+      ctaText="Mise à Disposition Journée"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Matin :</strong> Direction <strong>Cimiez</strong>, le quartier résidentiel chic. Visitez le Musée Matisse (gratuit !), flânez dans les jardins du monastère, puis admirez les ruines romaines des Arènes.
+      </p>
+      <p>
+        <strong>Après-midi :</strong> Retour vers le centre pour le Musée Marc Chagall (chef-d'œuvre des vitraux) ou shopping sur l'Avenue Jean Médecin et les ruelles du Carré d'Or.
+      </p>
+      <p>
+        <strong>Soir :</strong> Coucher de soleil depuis le rooftop du Radisson Blu (accès gratuit au bar). Dîner au port, face aux yachts.
+      </p>
+    </SectionImageText>
+
+    <!-- JOUR 3 -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Jour 3 : Excursions Côte d'Azur</h2>
+      <p class="text-center mb-lg">
+        Avec un chauffeur VTC, explorez les environs de Nice sans contrainte de stationnement ni de temps.
+      </p>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏔️ Option 1 : Èze + Monaco</h3>
+          <p>Village perché d'Èze (Jardin Exotique + Parfumerie Fragonard), puis Monaco (Casino, Palais, Port). Demi-journée ou journée complète.</p>
+          <a href="/guide-monaco-en-une-journee" class="card-link">Guide Monaco →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🎨 Option 2 : Villages Perchés</h3>
+          <p>Saint-Paul-de-Vence (galeries d'art), Vence (Chapelle Matisse), et retour par Tourrettes-sur-Loup. Circuit artistique.</p>
+          <a href="/guide-villages-perches-cote-d-azur" class="card-link">Guide Villages →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌸 Option 3 : Grasse & Arrière-Pays</h3>
+          <p>Capitale mondiale du parfum. Atelier création de parfum chez Molinard ou Galimard. Balade à Mougins.</p>
+          <a href="/vtc-grasse" class="card-link">VTC Grasse →</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- VTC AVANTAGE -->
+    <SectionImageText
+      title="Votre Chauffeur à Nice : Liberté & Confort"
+      image="/assets/img/services/service-business.webp"
+      alt="Chauffeur privé Nice"
+      imageSide="right"
+      ctaText="Réserver mon Chauffeur"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Transfert Aéroport :</strong> Arrivez à Nice Côte d'Azur en toute sérénité. Accueil personnalisé en zone d'arrivée, aide aux bagages, et trajet vers votre hôtel dans un véhicule premium.
+      </p>
+      <p>
+        <strong>Mise à Disposition :</strong> Pour vos journées d'excursion (Jour 3), optez pour un chauffeur à la journée. Prix forfaitaire, flexibilité totale, et zéro stress parking.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Prêt à Découvrir Nice ?</h2>
+        <p class="lead mb-4">
+          Organisez votre séjour parfait avec un partenaire local de confiance.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Réserver mon Transfert</a>
+          <a href="/vtc-nice" class="btn btn-outline">Nos Tarifs Nice</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
 

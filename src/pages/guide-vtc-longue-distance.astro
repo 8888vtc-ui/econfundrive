@@ -1,72 +1,154 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Vtc Longue Distance | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "VTC Longue Distance : Nice, Lyon, Milan, Genève | ECOFUNDRIVE";
+const description = "Transferts longue distance en VTC premium : Nice-Lyon, Nice-Milan, Nice-Genève. Confort absolu, prix fixes, chauffeur professionnel. Devis gratuit.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC longue distance Nice',
+  'transfert Nice Lyon VTC',
+  'chauffeur Nice Milan',
+  'VTC Nice Genève',
+  'transfert inter-villes Côte d\'Azur'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-vtc-longue-distance"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-vtc-longue-distance"
   canonical="/guide-vtc-longue-distance"
-  <main class="page-content"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Longue Distance", url: "/guide-vtc-longue-distance" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Vtc Longue Distance | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-vtc-longue-distance",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Transferts Longue Distance en VTC Premium</h1>
+      <p class="lead text-center mb-xl">
+        Besoin de rejoindre Lyon, Milan, Marseille ou Genève depuis Nice ? Oubliez le stress des correspondances aériennes ou des locations de voiture. Voyagez confortablement dans nos véhicules haut de gamme.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- POURQUOI VTC LONGUE DISTANCE -->
+    <SectionImageText
+      title="Pourquoi Choisir un VTC pour la Longue Distance ?"
+      image="/assets/img/services/service-business.webp"
+      alt="Berline VTC longue distance"
+      imageSide="right"
+      ctaText="Demander un devis"
+      ctaLink="/contact"
+    >
+      <p>
+        <strong>Confort & Productivité :</strong> Nos véhicules premium sont équipés de Wi-Fi, prises USB, bouteilles d'eau, et d'un espace suffisant pour travailler. Arrivez reposé et prêt pour vos rendez-vous.
+      </p>
+      <p>
+        <strong>Flexibilité :</strong> Partez à l'heure qui vous convient, faites des pauses quand vous le souhaitez, modifiez votre destination en cours de route. Aucune contrainte horaire d'avion ou de train.
+      </p>
+      <p>
+        <strong>Prix Compétitif :</strong> Pour 2 à 4 personnes avec bagages, le VTC longue distance revient souvent moins cher que 4 billets de TGV ou d'avion (surtout en dernière minute).
+      </p>
+    </SectionImageText>
+
+    <!-- DESTINATIONS POPULAIRES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Nos Trajets les Plus Demandés</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇫🇷 Nice → Lyon</h3>
+          <p><strong>Distance :</strong> ~470 km | <strong>Durée :</strong> ~4h30</p>
+          <p>Objectif affaires ou connexion TGV vers Paris. Départ matinal pour arrivée avant midi. Routes A8 puis A7 (Autoroute du Soleil).</p>
+          <p><em>À partir de 550€</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇫🇷 Nice → Marseille</h3>
+          <p><strong>Distance :</strong> ~200 km | <strong>Durée :</strong> ~2h15</p>
+          <p>Idéal pour un rendez-vous à Marseille ou une correspondance à l'aéroport Marseille-Provence. Vue sur la Côte possible en passant par les Calanques.</p>
+          <p><em>À partir de 280€</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇮🇹 Nice → Milan</h3>
+          <p><strong>Distance :</strong> ~300 km | <strong>Durée :</strong> ~3h30</p>
+          <p>Traversée des Alpes par le tunnel du Fréjus ou le col de Tende (scénique). Fashion weeks, salons, connexions internationales.</p>
+          <p><em>À partir de 450€</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🇨🇭 Nice → Genève</h3>
+          <p><strong>Distance :</strong> ~400 km | <strong>Durée :</strong> ~4h</p>
+          <p>Centre financier mondial. Passage par Grenoble et Annecy possible pour un itinéraire plus scénique. Sièges aménagés pour le travail.</p>
+          <p><em>À partir de 520€</em></p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- CAS D'USAGE -->
+    <SectionImageText
+      title="Cas d'Usage : Qui Utilise ce Service ?"
+      image="/assets/img/hero/hero-business.webp"
+      alt="Voyage affaires VTC"
+      imageSide="left"
+      ctaText="Réserver maintenant"
+      ctaLink="/reservation"
+    >
+      <ul>
+        <li><strong>Cadres & Entrepreneurs :</strong> Réunions multi-villes, road shows, rendez-vous clients sans perdre de temps aux aéroports.</li>
+        <li><strong>Familles :</strong> Évitez le stress des valises à traîner dans les gares. Les enfants voyagent confortablement.</li>
+        <li><strong>VIP & Célébrités :</strong> Discrétion absolue, pas de fans ou de paparazzi dans les aéroports. Teinture des vitres disponible.</li>
+        <li><strong>Médical :</strong> Transferts vers des cliniques spécialisées (Genève, Milan) dans un véhicule confortable et sécurisé.</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- INFOS PRATIQUES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Informations Pratiques</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🧳 Bagages</h3>
+          <p>Nos berlines accueillent 3 grandes valises + bagages cabine. Pour plus de bagages, optez pour notre Van Mercedes Class V.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⏱️ Pauses</h3>
+          <p>Pause café/repas incluse sur les trajets > 3h. Choix du lieu avec le chauffeur (aires d'autoroute premium ou restaurants locaux).</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">📋 Devis & Facturation</h3>
+          <p>Prix forfaitaire annoncé à l'avance, pas de surprise. Facturation entreprise possible avec TVA. Paiement CB, virement ou cash.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Prêt à Voyager en Toute Sérénité ?</h2>
+        <p class="lead mb-4">
+          Demandez un devis personnalisé pour votre trajet longue distance. Réponse sous 2 heures.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/contact" class="btn btn-primary">Demander un Devis</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">Contact WhatsApp</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
 

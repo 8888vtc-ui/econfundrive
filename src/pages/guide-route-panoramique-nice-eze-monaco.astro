@@ -1,72 +1,144 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Route Panoramique Nice Eze Monaco | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Route Panoramique Nice - Èze - Monaco | Guide VTC Scenic Drive";
+const description = "Découvrez les 3 Corniches de la Côte d'Azur : Grande, Moyenne, Basse. Les plus belles routes du monde avec votre chauffeur privé. Spots photo et arrêts secrets.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Corniche Nice Monaco',
+  'route panoramique Côte d\'Azur',
+  'scenic drive French Riviera',
+  'VTC route Eze',
+  'Grande Corniche Monaco'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-route-panoramique-nice-eze-monaco"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-route-panoramique-nice-eze-monaco"
   canonical="/guide-route-panoramique-nice-eze-monaco"
-  <main class="page-content"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Route Panoramique", url: "/guide-route-panoramique-nice-eze-monaco" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Route Panoramique Nice Eze Monaco | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-route-panoramique-nice-eze-monaco",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/guides/villages-perches.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Les Corniches : Les Plus Belles Routes du Monde</h1>
+      <p class="lead text-center mb-xl">
+        Entre Nice et Monaco, trois routes légendaires serpentent à flanc de montagne, offrant des panoramas à couper le souffle. Laissez votre chauffeur gérer les virages pendant que vous admirez la Méditerranée.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- INTRO -->
+    <SectionImageText
+      title="Pourquoi un VTC pour les Corniches ?"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Vue Corniche Nice Monaco"
+      imageSide="right"
+      ctaText="Réserver un Scenic Drive"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Ces routes sont spectaculaires... mais exigeantes.</strong> Virages serrés, précipices vertigineux, touristes distraits. Conduire soi-même signifie manquer le paysage.
+      </p>
+      <p>
+        Avec ECOFUNDRIVE, vous êtes passager. Admirez la vue, prenez des photos aux meilleurs spots, et arrêtez-vous quand vous le souhaitez. Nos chauffeurs connaissent chaque virage par cœur.
+      </p>
+    </SectionImageText>
+
+    <!-- LES 3 CORNICHES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Les 3 Corniches : Choisissez Votre Aventure</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏔️ Grande Corniche (D2564)</h3>
+          <p><strong>Altitude max : 512m</strong>. La plus haute et la plus spectaculaire. Construite par Napoléon d'après la Via Julia Augusta. Point de vue du Col d'Èze et Tête de Chien à ne pas manquer.</p>
+          <p><em>Durée : 45 min sans arrêt</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⛰️ Moyenne Corniche (D6007)</h3>
+          <p><strong>Le meilleur compromis</strong>. Traverse le village d'Èze. Parfaite pour combiner panoramas et visite du Jardin Exotique. Célèbre pour les scènes de "La Main au Collet" d'Hitchcock.</p>
+          <p><em>Durée : 30 min sans arrêt</em></p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🌊 Basse Corniche (D6098)</h3>
+          <p><strong>Au ras des flots</strong>. Longe la côte de Villefranche à Cap-d'Ail. Vues sur le Cap Ferrat et ses villas de milliardaires. Idéale pour un apéro au bord de l'eau.</p>
+          <p><em>Durée : 40 min sans arrêt</em></p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- CIRCUIT RECOMMANDE -->
+    <SectionImageText
+      title="Notre Circuit Signature : Le Grand Tour"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Vue Monaco depuis Grande Corniche"
+      imageSide="left"
+      ctaText="Réserver le Grand Tour"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Durée : 3 à 4 heures</strong>. Un itinéraire complet qui combine les 3 corniches :
+      </p>
+      <ol>
+        <li>Départ Nice → <strong>Grande Corniche</strong> (arrêt Col d'Èze pour photos)</li>
+        <li>Descente vers <strong>Moyenne Corniche</strong> → Visite <strong>Èze Village</strong> (1h30)</li>
+        <li>Poursuite vers <strong>Monaco</strong> → Tour du circuit F1, arrêt au Casino</li>
+        <li>Retour par <strong>Basse Corniche</strong> → Villefranche-sur-Mer et Cap Ferrat</li>
+      </ol>
+      <p>
+        <strong>Inclus :</strong> Pauses photo illimitées. Eau fraîche. Narration du chauffeur sur l'histoire de la région.
+      </p>
+    </SectionImageText>
+
+    <!-- SPOTS PHOTO -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">📸 Meilleurs Spots Photo</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Tête de Chien (Grande Corniche)</h3>
+          <p>Vue plongeante sur Monaco depuis 550m. Spot incontournable, surtout au lever ou coucher de soleil. Accessible uniquement en voiture.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Jardin Exotique d'Èze</h3>
+          <p>Vue à 360° depuis les ruines du château. Cactus géants au premier plan, mer turquoise en arrière-plan. L'un des plus beaux points de vue de la Côte.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Vivez l'Expérience Corniche</h2>
+        <p class="lead mb-4">
+          Une expérience unique où votre chauffeur devient votre guide. Créez des souvenirs inoubliables.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Réserver mon Scenic Drive</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">Demander un Devis</a>
+        </div>
+      </div>
     </section>
+
   </main>
 </BaseLayout>
 
