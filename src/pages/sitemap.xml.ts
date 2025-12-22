@@ -1,9 +1,9 @@
-// Sitemap dynamique pour SEO - Mis à jour avec toutes les pages
+// Sitemap dynamique pour SEO - COMPLET avec toutes les 111 pages
 import type { APIRoute } from 'astro';
 
 const site = 'https://www.ecofundrive.com';
 
-// Toutes les pages du site - COMPLETE LIST Dec 2024
+// Toutes les pages du site - LISTE COMPLETE Dec 2024
 const pages = [
   // Pages principales FR
   { url: '/', changefreq: 'weekly', priority: 1.0 },
@@ -17,15 +17,21 @@ const pages = [
   { url: '/plan-du-site', changefreq: 'monthly', priority: 0.5 },
   { url: '/mentions-legales-rgpd', changefreq: 'yearly', priority: 0.3 },
   { url: '/info', changefreq: 'monthly', priority: 0.8 },
-  
+
+  // Pages spéciales FR
+  { url: '/chauffeur-24h-nice', changefreq: 'monthly', priority: 0.8 },
+  { url: '/chauffeur-anglais-nice', changefreq: 'monthly', priority: 0.8 },
+  { url: '/comparatif-vtc-taxi-uber-nice', changefreq: 'monthly', priority: 0.8 },
+  { url: '/conseils-voyageurs-cote-azur', changefreq: 'monthly', priority: 0.7 },
+
   // Pages VTC Aéroport et Services
   { url: '/vtc-aeroport-nice-prix', changefreq: 'monthly', priority: 0.9 },
   { url: '/vtc-entreprise-cote-azur', changefreq: 'monthly', priority: 0.8 },
   { url: '/vtc-mariage-cote-azur', changefreq: 'monthly', priority: 0.8 },
   { url: '/vtc-carnaval-nice', changefreq: 'monthly', priority: 0.7 },
   { url: '/vtc-mipim-cannes', changefreq: 'monthly', priority: 0.8 },
-  
-  // Pages VTC par ville - COMPLETE
+
+  // Pages VTC par ville - COMPLETE (25 villes)
   { url: '/vtc-nice', changefreq: 'monthly', priority: 0.9 },
   { url: '/vtc-cannes', changefreq: 'monthly', priority: 0.9 },
   { url: '/vtc-monaco', changefreq: 'monthly', priority: 0.9 },
@@ -51,15 +57,15 @@ const pages = [
   { url: '/vtc-villeneuve-loubet', changefreq: 'monthly', priority: 0.7 },
   { url: '/vtc-mandelieu-la-napoule', changefreq: 'monthly', priority: 0.7 },
   { url: '/vtc-biot', changefreq: 'monthly', priority: 0.6 },
-  
+
   // Pages transferts
   { url: '/transfert-nice-aeroport-cannes', changefreq: 'monthly', priority: 0.8 },
   { url: '/transfert-nice-aeroport-monaco', changefreq: 'monthly', priority: 0.8 },
   { url: '/transfert-nice-aeroport-saint-tropez', changefreq: 'monthly', priority: 0.8 },
   { url: '/transfert-cannes-saint-tropez', changefreq: 'monthly', priority: 0.7 },
   { url: '/transferts-longue-distance-paca', changefreq: 'monthly', priority: 0.7 },
-  
-  // Pages guides FR
+
+  // Pages guides FR (16 guides)
   { url: '/guide-vtc-ou-taxi-aeroport-nice', changefreq: 'monthly', priority: 0.7 },
   { url: '/guide-vtc-longue-distance', changefreq: 'monthly', priority: 0.7 },
   { url: '/guide-vtc-festival-cannes', changefreq: 'monthly', priority: 0.7 },
@@ -76,8 +82,8 @@ const pages = [
   { url: '/guide-evenements-cote-azur', changefreq: 'monthly', priority: 0.7 },
   { url: '/guide-budget-transport-cote-azur', changefreq: 'monthly', priority: 0.6 },
   { url: '/guide-choisir-vtc-cote-azur', changefreq: 'monthly', priority: 0.7 },
-  
-  // Pages EN - COMPLETE
+
+  // Pages EN - COMPLETE (28 pages)
   { url: '/en/', changefreq: 'monthly', priority: 0.8 },
   { url: '/en/booking', changefreq: 'monthly', priority: 0.8 },
   { url: '/en/guides', changefreq: 'monthly', priority: 0.7 },
@@ -98,16 +104,28 @@ const pages = [
   { url: '/en/nice-airport-to-saint-tropez-transfer', changefreq: 'monthly', priority: 0.7 },
   { url: '/en/guide-hilltop-villages-french-riviera', changefreq: 'monthly', priority: 0.7 },
   { url: '/en/vtc-vs-taxi-uber-nice', changefreq: 'monthly', priority: 0.7 },
-  
-  // Pages IT - COMPLETE
+  { url: '/en/guide-cannes-congress-transport', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-cannes-festivals-transport', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-family-day-french-riviera', changefreq: 'monthly', priority: 0.6 },
+  { url: '/en/guide-high-season-traffic-french-riviera', changefreq: 'monthly', priority: 0.6 },
+  { url: '/en/guide-long-distance-transfers', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-monaco-grand-prix-transport', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-nice-airport-taxi-or-private-driver', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-nice-in-1-to-3-days', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-one-day-in-monaco', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-saint-tropez-and-gulf', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-scenic-road-nice-eze-monaco', changefreq: 'monthly', priority: 0.7 },
+  { url: '/en/guide-what-to-do-in-cannes', changefreq: 'monthly', priority: 0.7 },
+
+  // Pages IT - COMPLETE (6 pages)
   { url: '/it/', changefreq: 'monthly', priority: 0.7 },
   { url: '/it/ncc-nizza', changefreq: 'monthly', priority: 0.7 },
   { url: '/it/ncc-monaco', changefreq: 'monthly', priority: 0.7 },
   { url: '/it/ncc-cannes', changefreq: 'monthly', priority: 0.7 },
   { url: '/it/ncc-saint-tropez', changefreq: 'monthly', priority: 0.7 },
   { url: '/it/ncc-antibes', changefreq: 'monthly', priority: 0.6 },
-  
-  // Pages RU - COMPLETE
+
+  // Pages RU - COMPLETE (6 pages)
   { url: '/ru/', changefreq: 'monthly', priority: 0.6 },
   { url: '/ru/transfer-nizza', changefreq: 'monthly', priority: 0.6 },
   { url: '/ru/transfer-monaco', changefreq: 'monthly', priority: 0.6 },
@@ -117,9 +135,11 @@ const pages = [
 ];
 
 const getSitemap = (): string => {
+  const now = new Date().toISOString().split('T')[0];
   const urls = pages.map(page => {
     return `  <url>
     <loc>${site}${page.url}</loc>
+    <lastmod>${now}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`;
