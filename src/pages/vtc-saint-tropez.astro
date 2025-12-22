@@ -1,95 +1,251 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Saint-Tropez | ECOFUNDRIVE";
-const description = "Service de VTC Saint-Tropez sur la Côte d'Azur. VTC Saint-Tropez Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs expérimentés.";
+const title = "VTC Saint-Tropez – Chauffeur Privé Pampelonne & Golf | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Saint-Tropez. Plages Pampelonne, Club 55, Nikki Beach, port, Place des Lices. Transferts Nice, Cannes. Service premium 24h/24.";
 const keywords = [
   'VTC Saint-Tropez',
-  "VTC Côte d'Azur",
-  'chauffeur privé',
-  'transport premium'
+  'chauffeur privé Saint-Tropez',
+  'VTC Pampelonne',
+  'transfert Nice Saint-Tropez',
+  'VTC Club 55',
+  'chauffeur Nikki Beach',
+  'VTC golfe Saint-Tropez'
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour aller de Nice à Saint-Tropez ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le transfert Nice Aéroport → Saint-Tropez prend environ 1h30 à 2h en VTC (110 km). En été, comptez jusqu'à 2h30 en raison du trafic intense sur la côte varoise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proposez-vous des transferts vers les plages de Pampelonne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous desservons toutes les plages de Pampelonne : Club 55, Nikki Beach, La Voile Rouge, Tahiti Beach. Nous pouvons vous attendre ou revenir vous chercher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que vous récupérez les clients après les soirées ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument ! Service VTC disponible 24h/24. Nous récupérons régulièrement nos clients après les soirées dans les clubs et restaurants de Saint-Tropez, même très tard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je réserver un VTC à la journée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous proposons des formules de mise à disposition à la journée (8-12h) idéales pour explorer Saint-Tropez, Ramatuelle, Gassin et le golfe sans vous soucier de rien."
+      }
+    }
+  ]
+};
 ---
 
-<!-- Mots-clés SEO: VTC Saint-Tropez -->
-
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
   currentPage="vtc-saint-tropez"
   canonical="/vtc-saint-tropez"
+  schema={faqSchema}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Saint-Tropez", url: "/vtc-saint-tropez" }
+  ]}
 >
   <main id="main-content">
     <div class="container py-lg">
-      <h1 class="text-center mb-xl">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
+      <h1 class="text-center mb-lg">VTC Saint-Tropez – Le Mythe de la Côte d'Azur</h1>
+      <p class="lead text-center mb-xl">
+        Chauffeur privé premium à Saint-Tropez. Plages de Pampelonne, port mythique, Place des Lices, 
+        vie nocturne légendaire. Transferts depuis Nice et Cannes.
+      </p>
     </div>
 
     <SectionImageText
       title="Votre Chauffeur Privé à Saint-Tropez"
       image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="Vue panoramique de Saint-Tropez"
+      alt="VTC chauffeur privé Saint-Tropez port"
       imageSide="right"
       ctaText="Réserver votre VTC"
       ctaLink="/reservation"
     >
-      <p>
-        Saint-Tropez, joyau de la Côte d'Azur, est synonyme de glamour, de fêtes et de détente. Pour profiter pleinement de votre séjour dans ce village mythique, ECOFUNDRIVE vous propose un service de chauffeur privé VTC haut de gamme. Que vous arriviez en hélicoptère, en yacht ou que vous veniez de Nice ou Cannes, nous assurons vos déplacements avec élégance et discrétion.
+      <p class="fade-in-section">
+        <strong>Saint-Tropez</strong> est la légende vivante de la Côte d'Azur. Ce petit village de pêcheurs devenu destination jet-set mondiale a su conserver son charme provençal tout en attirant les célébrités du monde entier. Le <strong>port mythique</strong>, la <strong>Place des Lices</strong> et ses parties de pétanque, les <strong>plages de Pampelonne</strong> – chaque recoin respire le glamour à la française.
       </p>
-      <p>
-        Oubliez les difficultés de circulation et de stationnement en été. Votre chauffeur vous dépose directement devant votre hôtel, votre villa, les plages de Pampelonne ou le port, et reste à votre disposition pour vos soirées.
+      <p class="fade-in-section">
+        Mais Saint-Tropez rime aussi avec trafic et stationnement impossible, surtout en été. ECOFUNDRIVE vous offre la <strong>solution parfaite</strong> : un chauffeur privé vous dépose exactement où vous le souhaitez et vous récupère quand vous voulez, même après minuit.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Transferts Nice - Saint-Tropez"
-      image="/assets/img/destinations/saint-tropez-port.webp"
-      alt="Le port de Saint-Tropez"
-      imageSide="left"
-      ctaText="Voir les tarifs"
-      ctaLink="/transfert-nice-aeroport-saint-tropez"
-    >
-      <p>
-        Le trajet entre l'aéroport de Nice et Saint-Tropez peut être long et fatiguant, surtout en haute saison. Avec ECOFUNDRIVE, transformez ce transfert en un moment de détente. Nos véhicules confortables et climatisés vous permettent de voyager sereinement.
-      </p>
-      <ul>
-        <li>Transfert direct depuis l'aéroport de Nice</li>
-        <li>Liaisons vers Cannes et Monaco</li>
-        <li>Mise à disposition pour la journée ou la soirée</li>
-        <li>Service de nuit pour vos sorties</li>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (1h30-2h)</li>
+        <li>Transferts depuis Cannes (1h15)</li>
+        <li>Navettes plages Pampelonne (Club 55, Nikki Beach)</li>
+        <li>Service de nuit et récupération après soirées</li>
+        <li>Mise à disposition journée complète</li>
+        <li>Yacht et héliport de Saint-Tropez</li>
       </ul>
     </SectionImageText>
 
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tarifs VTC Saint-Tropez</h2>
+      <p class="text-center mb-md">Tarifs indicatifs vers/depuis Saint-Tropez :</p>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destination</th><th>Distance</th><th>Durée</th><th>Tarif estimé</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aéroport Nice → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
+          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>320€</td></tr>
+          <tr><td>Saint-Tropez → Pampelonne (Club 55, Nikki)</td><td>8 km</td><td>15-25 min</td><td>35€</td></tr>
+          <tr><td>Mise à disposition demi-journée (5h)</td><td>-</td><td>5h</td><td>300€</td></tr>
+          <tr><td>Mise à disposition journée (10h)</td><td>-</td><td>10h</td><td>550€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Tarifs haute saison (juillet-août) : +20%. Réservez à l'avance !</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Découvrez Saint-Tropez</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Plages Pampelonne"
+          title="Plages de Pampelonne"
+          description="5 km de sable doré, clubs légendaires : Club 55, Nikki Beach, Bagatelle. L'essence même du glamour tropézien."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Port Saint-Tropez"
+          title="Le Port Mythique"
+          description="Yachts de rêve, terrasses animées, façades colorées. Le décor de Brigitte Bardot inchangé depuis 60 ans."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Place des Lices"
+          title="Place des Lices"
+          description="Marché provençal le mardi et samedi, parties de pétanque, café Sénéquier. Le cœur authentique de Saint-Tropez."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
     <SectionImageText
-      title="Plages Privées et Vie Nocturne"
-      image="/assets/img/destinations/club-55-saint-tropez.jpg"
-      alt="Ambiance plage privée à Saint-Tropez"
-      imageSide="right"
-      ctaText="Réserver une mise à disposition"
+      title="Service Plages & Beach Clubs"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="VTC plages Pampelonne Club 55"
+      imageSide="left"
+      ctaText="Réserver un transfert plage"
       ctaLink="/reservation"
     >
-      <p>
-        Saint-Tropez est célèbre pour ses plages privées de Pampelonne (Club 55, Nikki Beach...) et sa vie nocturne effervescente. Profitez de vos journées et de vos soirées sans vous soucier du retour. Votre chauffeur privé vous accompagne et vous attend, assurant votre sécurité et votre confort jusqu'au bout de la nuit.
+      <p class="fade-in-section">
+        Les <strong>plages de Pampelonne</strong> sont situées à environ 5 km du village de Saint-Tropez. Le stationnement y est limité et cher en été. Avec notre service VTC, vous êtes déposé directement à l'entrée de votre beach club.
       </p>
-      <p>
-        Nous connaissons les meilleurs itinéraires pour rejoindre les plages et les clubs, vous évitant ainsi un maximum de stress lié au trafic estival.
+      <h3 class="fade-in-section">Les Beach Clubs que nous desservons :</h3>
+      <ul class="fade-in-section">
+        <li><strong>Club 55</strong> – L'institution depuis 1955, repas méditerranéen les pieds dans le sable</li>
+        <li><strong>Nikki Beach</strong> – L'ambiance internationale et festive</li>
+        <li><strong>Bagatelle</strong> – Déjeuners dansants légendaires</li>
+        <li><strong>La Voile Rouge</strong> – L'esprit Saint-Tropez des années 80</li>
+        <li><strong>Tahiti Beach</strong> – Pour les familles et les groupes</li>
+      </ul>
+      <p class="fade-in-section">
+        <strong>Formule idéale :</strong> Aller + Retour avec heure de reprise convenue. Ou mise à disposition pour la journée.
       </p>
     </SectionImageText>
 
-    <div class="container py-xl">
-      <section class="mb-xl">
-        <h2 class="text-center mb-lg">Pourquoi choisir ECOFUNDRIVE ?</h2>
-        <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-        <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-        <div class="text-center mt-md">
-          <a href="/services" class="btn-primary">Découvrir nos services</a>
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Le Golfe de Saint-Tropez</h2>
+      <p class="text-center mb-lg">Saint-Tropez n'est que la partie la plus célèbre d'un golfe magnifique. Découvrez les villages voisins :</p>
+      <div class="grid-2-cols">
+        <div class="village-card">
+          <h3>🏘️ Ramatuelle</h3>
+          <p>Village perché authentique surplombant Pampelonne. Ruelles fleuries, marché le jeudi. Festival de jazz l'été.</p>
         </div>
-      </section>
-    
-      <section class="mb-xl">
-        <h2 class="text-center mb-lg">Pages connexes</h2>
-        <p class="text-center">Découvrez nos autres services : <a href="/services">services</a> | <a href="/reservation">reservation</a> | <a href="/contact">contact</a></p>
-      </section>
-    </div>
+        <div class="village-card">
+          <h3>⛪ Gassin</h3>
+          <p>L'un des "plus beaux villages de France", vue panoramique sur le golfe. Ruelles pavées, restaurants gastronomiques.</p>
+        </div>
+        <div class="village-card">
+          <h3>🌊 Port Grimaud</h3>
+          <p>"La Venise provençale". Cité lacustre unique avec canaux et ponts. Promenade en bateau possible.</p>
+        </div>
+        <div class="village-card">
+          <h3>🏖️ Sainte-Maxime</h3>
+          <p>Station balnéaire familiale en face de Saint-Tropez. Plages, promenade, casino. Alternative plus accessible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps pour aller de Nice à Saint-Tropez ?</h3>
+          <div class="faq-answer">
+            <p>Le transfert <strong>Nice Aéroport → Saint-Tropez</strong> prend environ <strong>1h30 à 2h</strong> en VTC (110 km). En été (juillet-août), comptez jusqu'à 2h30 en raison du trafic intense. Nous recommandons de partir tôt le matin ou en fin d'après-midi.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous des transferts vers les plages de Pampelonne ?</h3>
+          <div class="faq-answer">
+            <p>Oui, nous desservons <strong>toutes les plages de Pampelonne</strong> : Club 55, Nikki Beach, Bagatelle, La Voile Rouge, Tahiti Beach. Nous pouvons vous attendre ou revenir vous chercher à l'heure convenue.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Est-ce que vous récupérez les clients après les soirées ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Notre <strong>service VTC 24h/24</strong> est particulièrement apprécié pour les retours après les soirées à Saint-Tropez. Nous récupérons régulièrement nos clients devant les clubs et restaurants, même très tard (2h-4h du matin).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Puis-je réserver un VTC à la journée ?</h3>
+          <div class="faq-answer">
+            <p>Oui, nous proposons des <strong>formules de mise à disposition</strong> à la journée (8-12h), idéales pour explorer Saint-Tropez, les plages, Ramatuelle, Gassin et Port Grimaud sans vous soucier de rien. C'est souvent plus économique que plusieurs trajets individuels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">VTC Fréjus</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/transfert-nice-aeroport-saint-tropez" class="text-dark hover-gold">Nice→St-Tropez</a>
+        <a href="/transfert-cannes-saint-tropez" class="text-dark hover-gold">Cannes→St-Tropez</a>
+        <a href="/guide-decouvrir-saint-tropez-golfe" class="text-dark hover-gold">Guide Saint-Tropez</a>
+        <a href="/en/saint-tropez-private-driver" class="text-dark hover-gold">English Version</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .village-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; border-left: 3px solid #d4af37; }
+  .village-card h3 { margin-bottom: 0.5rem; }
+</style>
