@@ -1,73 +1,200 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Guide Hilltop Villages French Riviera | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "French Riviera Hilltop Villages Tour – Private Driver | ECOFUNDRIVE";
+const description = "Private driver tour of the hilltop villages of the French Riviera. Eze, Saint-Paul-de-Vence, Gourdon, Tourrettes-sur-Loup. Medieval charm, art galleries, panoramas.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'hilltop villages French Riviera',
+  'perched villages Cote d Azur',
+  'Eze village tour',
+  'Saint-Paul-de-Vence private driver',
+  'Gourdon tour',
+  'medieval villages Provence'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-hilltop-villages-french-riviera"
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-guide-hilltop-villages"
   canonical="/en/guide-hilltop-villages-french-riviera"
-  <main class="page-content"
-  schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Hilltop Villages French Riviera | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/en/guide-hilltop-villages-french-riviera",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Guides", url: "/en/guides" },
+    { name: "Hilltop Villages", url: "/en/guide-hilltop-villages-french-riviera" }
+  ]}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">Hilltop Villages of the French Riviera</h1>
+      <p class="lead text-center mb-xl">
+        Discover the enchanting perched villages of the Côte d'Azur. Medieval streets, artisan boutiques, 
+        panoramic views. A unique experience with your private driver.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <SectionImageText
+      title="Explore Medieval Villages with a Private Driver"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="French Riviera hilltop village tour"
+      imageSide="right"
+      ctaText="Book Your Village Tour"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        The French Riviera isn't just about beaches and glamour – the <strong>hinterland (arrière-pays)</strong> hides some of the most beautiful villages in France. Perched on hilltops and cliffs, these <strong>villages perchés</strong> offer a glimpse into medieval Provence with stunning Mediterranean panoramas.
+      </p>
+      <p class="fade-in-section">
+        Reaching these villages by public transport is nearly impossible. With a <strong>private driver</strong>, you can explore multiple villages in one day, stopping for photos, artisan boutiques, and leisurely lunches with views.
+      </p>
+      <ul class="fade-in-section">
+        <li>Flexible half-day or full-day tours</li>
+        <li>Customized itineraries based on your interests</li>
+        <li>Photo stops at the best viewpoints</li>
+        <li>Recommendations for authentic restaurants</li>
+        <li>Art galleries and artisan workshops</li>
+        <li>Pickup from Nice, Cannes, Monaco or your hotel</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">The Most Beautiful Hilltop Villages</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Eze Village"
+          title="Eze"
+          description="The most famous! Perched 429m above the sea. Exotic Garden, Fragonard perfumery, breathtaking views of Cap Ferrat."
+          link="/en/eze-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Saint-Paul-de-Vence"
+          title="Saint-Paul-de-Vence"
+          description="The artists' village. Fondation Maeght, La Colombe d'Or, winding streets filled with galleries and boutiques."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Gourdon Village"
+          title="Gourdon"
+          description="'The eagle's nest' at 760m. Dramatic views over the entire Riviera. Medieval castle, artisan shops."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Tourrettes-sur-Loup"
+          title="Tourrettes-sur-Loup"
+          description="'Village of violets'. Artisan workshops, medieval ramparts, violet candies. Less touristy, very authentic."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Vence"
+          title="Vence"
+          description="Historic town with Matisse's Chapel (Chapelle du Rosaire). Charming Old Town, provençal markets."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Mougins Village"
+          title="Mougins"
+          description="Gourmet village where Picasso lived. Michelin-starred restaurants, Photography Museum, art galleries."
+          link="/en/booking"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Suggested Tour Itineraries</h2>
+      <div class="tour-options">
+        <div class="tour-card">
+          <h3>🌅 Classic Half-Day (4 hours)</h3>
+          <p class="tour-route">Nice → Eze Village → Scenic Corniche → Monaco (or return Nice)</p>
+          <ul>
+            <li>Visit Eze Exotic Garden</li>
+            <li>Free perfumery tour (Fragonard)</li>
+            <li>Photo stops on Grande Corniche</li>
+            <li>Optional: Continue to Monaco</li>
+          </ul>
+          <p class="tour-price">From <strong>280€</strong></p>
+        </div>
+        <div class="tour-card">
+          <h3>🎨 Art & Villages Full Day (7-8 hours)</h3>
+          <p class="tour-route">Nice → Vence → Saint-Paul-de-Vence → Lunch → Tourrettes → Nice</p>
+          <ul>
+            <li>Matisse Chapel in Vence</li>
+            <li>Fondation Maeght (modern art)</li>
+            <li>Lunch at La Colombe d'Or or village bistro</li>
+            <li>Violet village of Tourrettes</li>
+          </ul>
+          <p class="tour-price">From <strong>450€</strong></p>
+        </div>
+        <div class="tour-card">
+          <h3>🏔️ Mountain Villages Full Day (7-8 hours)</h3>
+          <p class="tour-route">Nice → Tourrettes → Gourdon → Grasse → Mougins → Nice</p>
+          <ul>
+            <li>Dramatic views from Gourdon (760m)</li>
+            <li>Perfume factory in Grasse</li>
+            <li>Gourmet lunch in Mougins</li>
+            <li>Wolf Gorge scenic drive</li>
+          </ul>
+          <p class="tour-price">From <strong>480€</strong></p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Which village is best if I only have time for one?</h3>
+          <div class="faq-answer">
+            <p><strong>Eze</strong> is the classic choice – the most spectacular setting, easy to visit in 2 hours, and you can combine it with Monaco. <strong>Saint-Paul-de-Vence</strong> is best for art lovers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Are the villages accessible for elderly or mobility-impaired visitors?</h3>
+          <div class="faq-answer">
+            <p>The villages have <strong>cobblestone streets and stairs</strong>. Eze is challenging (steep climb to the garden). Saint-Paul-de-Vence is more accessible. We can recommend the best options based on mobility.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">When is the best time to visit?</h3>
+          <div class="faq-answer">
+            <p><strong>Early morning or late afternoon</strong> is best to avoid crowds and enjoy the light. The villages are busiest from 10am-4pm in summer. We recommend starting at 9am.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can we stop for lunch in one of the villages?</h3>
+          <div class="faq-answer">
+            <p>Absolutely! We can recommend authentic restaurants with views. <strong>Mougins</strong> is particularly famous for its gourmet restaurants (some Michelin-starred).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Related Tours & Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze Private Driver</a>
+        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse Perfume Tour</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Tour</a>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .tour-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .tour-card { background: #f9f9f9; padding: 1.5rem; border-radius: 12px; border-top: 4px solid #d4af37; }
+  .tour-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
+  .tour-route { font-style: italic; color: #666; margin-bottom: 1rem; font-size: 0.9rem; }
+  .tour-card ul { padding-left: 1.2rem; margin-bottom: 1rem; }
+  .tour-price { font-size: 1.2rem; color: #d4af37; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

@@ -1,51 +1,210 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Nice Private Driver | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Nice Private Driver – Airport Transfers & Riviera Tours | ECOFUNDRIVE";
+const description = "Private driver VTC service in Nice. Nice Airport transfers, Old Town, Promenade des Anglais. Premium chauffeur service 24/7 for all French Riviera destinations.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'Nice private driver',
+  'VTC Nice',
+  'Nice Airport transfer',
+  'Nice chauffeur service',
+  'Promenade des Anglais driver',
+  'French Riviera tour'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="nice-private-driver"
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-nice-private-driver"
   canonical="/en/nice-private-driver"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Nice Private Driver", url: "/en/nice-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far is Nice Airport from the city center?","acceptedAnswer":{"@type":"Answer","text":"Nice Airport is only 7 km from Nice city center, about 15-20 minutes by VTC. We offer fixed-price transfers with meet & greet at arrivals."}},{"@type":"Question","name":"What's included in your Nice Airport transfer?","acceptedAnswer":{"@type":"Answer","text":"Our transfers include personal meet & greet with name board at arrivals, flight tracking, luggage assistance, bottled water, and a fixed all-inclusive price."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <SectionImageText
+      title="Your Private Driver in Nice"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Private driver VTC Nice Promenade des Anglais"
+      imageSide="right"
+      ctaText="Book Your Nice Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Nice</strong> is the vibrant capital of the French Riviera, combining Mediterranean beauty with rich cultural heritage. From the iconic <strong>Promenade des Anglais</strong> to the colorful <strong>Old Town (Vieux Nice)</strong> and the <strong>Castle Hill</strong> panorama, Nice offers an unforgettable experience.
+      </p>
+      <p class="fade-in-section">
+        <strong>Nice Côte d'Azur Airport</strong> is the gateway to the entire Riviera, serving over 14 million passengers annually. ECOFUNDRIVE provides <strong>premium private driver services from Nice Airport</strong> to any destination on the coast.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport transfers with meet & greet</li>
+        <li>Nice city tours and sightseeing</li>
+        <li>Transfers to Monaco, Cannes, Saint-Tropez</li>
+        <li>Scenic Corniche road tours</li>
+        <li>Business and corporate transportation</li>
+        <li>Multilingual professional chauffeurs</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Nice Airport Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>From Nice Airport to</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice City Center</td><td>7 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Nice Hotels (Negresco, etc.)</td><td>6-10 km</td><td>15-25 min</td><td>35-45€</td></tr>
+          <tr><td>Monaco</td><td>30 km</td><td>30-45 min</td><td>80€</td></tr>
+          <tr><td>Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Antibes</td><td>20 km</td><td>20-30 min</td><td>45€</td></tr>
+          <tr><td>Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Eze Village</td><td>15 km</td><td>20-30 min</td><td>40€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>All prices include meet & greet, flight tracking, and luggage assistance.</em></p>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Discover Nice with Your Private Driver</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Promenade des Anglais Nice"
+          title="Promenade des Anglais"
+          description="The iconic 7km seafront promenade. Azure waters, Belle Époque architecture, perfect for a scenic drive."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Old Town Nice"
+          title="Vieux Nice (Old Town)"
+          description="Colorful baroque buildings, bustling markets, authentic restaurants. The heart and soul of Nice."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Castle Hill Nice"
+          title="Castle Hill (Colline du Château)"
+          description="Panoramic views over the Bay of Angels, the port, and the Old Town. A must-see viewpoint."
+          link="/en/booking"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <SectionImageText
+      title="Nice Airport Meet & Greet"
+      image="/assets/img/hero/hero-aeroport-nice.png"
+      alt="Nice Airport VTC transfer"
+      imageSide="left"
+      ctaText="Book Airport Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        Arriving at <strong>Nice Côte d'Azur Airport</strong>? We make your arrival seamless with our premium meet & greet service.
+      </p>
+      <h3 class="fade-in-section">What's Included:</h3>
+      <ul class="fade-in-section">
+        <li><strong>Personal welcome</strong> at arrivals with your name on a board</li>
+        <li><strong>Flight tracking</strong> – we adjust pickup time if your flight is delayed</li>
+        <li><strong>Free waiting time</strong> – up to 1 hour after landing</li>
+        <li><strong>Luggage assistance</strong> – we help you to the vehicle</li>
+        <li><strong>Bottled water</strong> in the vehicle</li>
+        <li><strong>Child seats</strong> available free on request</li>
+        <li><strong>Fixed price</strong> – no surprises from traffic or delays</li>
+      </ul>
+      <p class="fade-in-section">
+        We operate at both <strong>Terminal 1</strong> and <strong>Terminal 2</strong>. Just share your flight number when booking!
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Popular Tours from Nice</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Nice Eze Monaco Tour"
+          title="Nice - Eze - Monaco"
+          description="Our most popular tour! Scenic Corniche drive, Eze village, perfumery visit, then Monaco. 4-6 hours."
+          link="/en/eze-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Nice to Saint-Tropez"
+          title="Day Trip to Saint-Tropez"
+          description="Explore the legendary jet-set destination. Beach clubs, charming port, Place des Lices. Full day."
+          link="/en/saint-tropez-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="French Riviera Villages"
+          title="Hilltop Villages Tour"
+          description="Discover Eze, Saint-Paul-de-Vence, Gourdon. Medieval charm, art galleries, stunning views."
+          link="/en/guide-hilltop-villages-french-riviera"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How far is Nice Airport from the city center?</h3>
+          <div class="faq-answer">
+            <p>Nice Airport is only <strong>7 km from Nice city center</strong>, about 15-20 minutes by VTC. We offer fixed-price transfers with meet & greet at arrivals.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What's included in your Nice Airport transfer?</h3>
+          <div class="faq-answer">
+            <p>Our transfers include: <strong>personal meet & greet</strong> with name board at arrivals, flight tracking, luggage assistance, bottled water, and a <strong>fixed all-inclusive price</strong> with no hidden fees.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you pick me up from my hotel in Nice?</h3>
+          <div class="faq-answer">
+            <p>Absolutely! We pick up from all Nice hotels – from the legendary <strong>Hôtel Negresco</strong> on the Promenade to boutique hotels in the Old Town. We also serve private addresses and Airbnb locations.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What if my flight is delayed?</h3>
+          <div class="faq-answer">
+            <p>No problem! We <strong>track all flights</strong> in real-time and adjust pickup time automatically. You also have up to 1 hour of free waiting time after landing – no extra charge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Explore the French Riviera</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco</a>
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">Cannes</a>
+        <a href="/en/saint-tropez-private-driver" class="text-dark hover-gold">Saint-Tropez</a>
+        <a href="/en/antibes-private-driver" class="text-dark hover-gold">Antibes</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze</a>
+        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse</a>
+        <a href="/en/menton-private-driver" class="text-dark hover-gold">Menton</a>
+        <a href="/en" class="text-dark hover-gold">All Destinations</a>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

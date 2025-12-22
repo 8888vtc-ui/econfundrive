@@ -1,54 +1,185 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Cannes Private Driver | ECOFUNDRIVE";
-const description = "Private driver service in Cannes. Professional VTC chauffeur for transfers, events, and business trips in Cannes and the French Riviera.";
+const title = "Cannes Private Driver – Festival, Croisette & Events | ECOFUNDRIVE";
+const description = "Private driver VTC service in Cannes. Cannes Film Festival, MIPIM, La Croisette, Palais des Festivals. Premium chauffeur 24/7 from Nice Airport.";
 const keywords = [
   'Cannes private driver',
   'VTC Cannes',
-  'chauffeur Cannes',
-  'private driver French Riviera',
-  'Cannes transport'
+  'Cannes Film Festival transport',
+  'Nice Airport to Cannes transfer',
+  'MIPIM Cannes driver',
+  'Croisette chauffeur'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
-  currentPage="cannes-private-driver"
-
+  currentPage="en-cannes-private-driver"
   canonical="/en/cannes-private-driver"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      
-      <section>
-        <h2>Booking</h2>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">+33 6 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Cannes Private Driver", url: "/en/cannes-private-driver" }
+  ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is the transfer from Nice Airport to Cannes?","acceptedAnswer":{"@type":"Answer","text":"The Nice Airport to Cannes transfer takes approximately 35-45 minutes depending on traffic (about 35 km via the A8 motorway)."}},{"@type":"Question","name":"Do you provide service during the Cannes Film Festival?","acceptedAnswer":{"@type":"Answer","text":"Yes, we offer premium VTC service during the Cannes Film Festival. We recommend booking weeks in advance due to extremely high demand."}}]}}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <SectionImageText
+      title="Your Private Driver in Cannes"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="Private driver VTC Cannes Croisette"
+      imageSide="right"
+      ctaText="Book Your Cannes Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        <strong>Cannes</strong> is synonymous with glamour, luxury and international events. Home to the legendary <strong>Cannes Film Festival</strong>, the city attracts celebrities, business leaders and discerning travelers year-round. The famous <strong>Boulevard de la Croisette</strong>, luxury boutiques and pristine beaches make Cannes an iconic Riviera destination.
+      </p>
+      <p class="fade-in-section">
+        Beyond the Festival, Cannes hosts major international events including <strong>MIPIM</strong> (real estate), <strong>MIPTV</strong> (television), <strong>Cannes Lions</strong> (advertising) and numerous other congresses at the Palais des Festivals.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE provides <strong>premium private driver services in Cannes</strong>, perfect for airport transfers, event transportation, and exploring the Riviera.
+      </p>
+      <ul class="fade-in-section">
+        <li>Nice Airport to Cannes transfers (35-45 min)</li>
+        <li>Cannes Film Festival dedicated service</li>
+        <li>MIPIM, MIPTV, Cannes Lions transport</li>
+        <li>La Croisette hotel transfers</li>
+        <li>Day trips to Monaco, Saint-Tropez</li>
+        <li>Evening & red carpet events</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Cannes Transfer Rates</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Route</th><th>Distance</th><th>Duration</th><th>Price from</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nice Airport → Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Nice City Center → Cannes</td><td>33 km</td><td>35-40 min</td><td>70€</td></tr>
+          <tr><td>Cannes → Monaco</td><td>55 km</td><td>55-70 min</td><td>130€</td></tr>
+          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Cannes → Antibes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Cannes → Mougins (restaurants)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
+          <tr><td>Half-day disposal (4h)</td><td>-</td><td>4h</td><td>280€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prices may vary during major events. Book early for Festival periods.</em></p>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Major Events in Cannes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Cannes Film Festival"
+          title="Cannes Film Festival"
+          description="The world's most prestigious film festival. Red carpet transfers, after-parties, yacht events. Book months ahead."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="MIPIM Cannes"
+          title="MIPIM Real Estate"
+          description="The world's leading real estate conference. Airport transfers, client meetings, networking events throughout March."
+          link="/en/booking"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Cannes Lions"
+          title="Cannes Lions"
+          description="Global creativity festival for advertising. Executive transport, party transfers, hotel pickups during June."
+          link="/en/booking"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <SectionImageText
+      title="Event & Congress Transportation"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="Cannes Palais des Festivals VTC"
+      imageSide="left"
+      ctaText="Get a Quote"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        The <strong>Palais des Festivals et des Congrès</strong> hosts over 50 international events per year. ECOFUNDRIVE is your ideal partner for all your transportation needs during these busy periods.
+      </p>
+      <h3 class="fade-in-section">Our Event Services:</h3>
+      <ul class="fade-in-section">
+        <li>Airport transfers for delegates and VIPs</li>
+        <li>Shuttle services between hotels and venue</li>
+        <li>Evening transfers to restaurants and parties</li>
+        <li>Hourly disposal for executives</li>
+        <li>Multi-day packages with dedicated driver</li>
+        <li>Group transportation (up to 7 passengers)</li>
+      </ul>
+      <p class="fade-in-section">
+        <strong>Pro tip:</strong> Book your Cannes transport at least 2-4 weeks before major events. During the Film Festival, book 2-3 months ahead!
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How long is the transfer from Nice Airport to Cannes?</h3>
+          <div class="faq-answer">
+            <p>The Nice Airport to Cannes transfer takes approximately <strong>35-45 minutes</strong> depending on traffic (about 35 km via the A8 motorway). During rush hour or events, it may take up to 1 hour.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you provide service during the Cannes Film Festival?</h3>
+          <div class="faq-answer">
+            <p>Yes, we offer <strong>premium VTC service during the Cannes Film Festival</strong> (usually mid-May). We recommend booking <strong>2-3 months in advance</strong> due to extremely high demand. Rates are higher during this period.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can you take us to restaurants in Mougins?</h3>
+          <div class="faq-answer">
+            <p>Absolutely! <strong>Mougins</strong> is the gourmet village near Cannes with many Michelin-starred restaurants. We provide transfers with optional return pickup after dinner.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Is there a train from Nice to Cannes?</h3>
+          <div class="faq-answer">
+            <p>Yes, but trains can be crowded and don't offer the convenience of door-to-door service. With VTC, you're picked up at your hotel or the airport and dropped exactly where you need to be – perfect with luggage or in formal attire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Nearby Destinations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Private Driver</a>
+        <a href="/en/saint-tropez-private-driver" class="text-dark hover-gold">St-Tropez Driver</a>
+        <a href="/en/antibes-private-driver" class="text-dark hover-gold">Antibes Driver</a>
+        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse Perfume Tour</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze Tour</a>
+        <a href="/en/nice-airport-to-cannes-transfer" class="text-dark hover-gold">NCE→Cannes</a>
+        <a href="/en" class="text-dark hover-gold">All Destinations</a>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>
