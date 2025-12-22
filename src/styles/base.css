@@ -4,7 +4,9 @@
    ============================================ */
 
 /* === RESET & BASE === */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,6 +37,49 @@ body {
     padding: 0 1.5rem;
 }
 
+/* === GRID SYSTEM === */
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-4-cols-responsive {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 992px) {
+    .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4-cols-responsive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-3-cols,
+    .grid-2-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-4-cols-responsive {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* === IMAGES - Core Web Vitals LCP === */
 img {
     max-width: 100%;
@@ -48,7 +93,9 @@ img[loading="lazy"] {
 }
 
 /* === CORE WEB VITALS - CLS Prevention === */
-img, video, iframe {
+img,
+video,
+iframe {
     aspect-ratio: attr(width) / attr(height);
 }
 
@@ -82,29 +129,29 @@ img, video, iframe {
     html {
         font-size: 16px;
     }
-    
+
     body {
         font-size: 1rem;
         line-height: 1.5;
     }
-    
+
     .container {
         padding: 0 1rem;
     }
-    
+
     /* Touch targets minimum 44x44px */
-    button, 
-    a, 
-    input, 
-    select, 
+    button,
+    a,
+    input,
+    select,
     textarea {
         min-height: 44px;
         min-width: 44px;
     }
-    
+
     /* Prevent zoom on input focus */
-    input, 
-    select, 
+    input,
+    select,
     textarea {
         font-size: 16px !important;
     }
@@ -112,12 +159,15 @@ img, video, iframe {
 
 /* === PERFORMANCE === */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     html {
         scroll-behavior: auto;
     }
@@ -137,9 +187,17 @@ img, video, iframe {
 }
 
 /* Staggered delay for grid items */
-.grid-3-cols .category-card:nth-child(1) { transition-delay: 0.1s; }
-.grid-3-cols .category-card:nth-child(2) { transition-delay: 0.2s; }
-.grid-3-cols .category-card:nth-child(3) { transition-delay: 0.3s; }
+.grid-3-cols .category-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.grid-3-cols .category-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.grid-3-cols .category-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
 
 /* Smooth Image Loading */
 img {
@@ -155,12 +213,15 @@ img.loaded {
 }
 
 /* Enhanced Hover Effects */
-a, button, .category-card {
+a,
+button,
+.category-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* === PRINT STYLES === */
 @media print {
+
     .chatbot-container,
     .whatsapp-button,
     .nav-toggle,
@@ -168,7 +229,7 @@ a, button, .category-card {
     .nav-links-mobile {
         display: none !important;
     }
-    
+
     body {
         background: white;
         color: black;

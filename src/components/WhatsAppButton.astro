@@ -39,13 +39,10 @@
     box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
   }
 
-  /* Version Mobile : En bas à GAUCHE pour éviter le chatbot à droite */
+  /* Version Mobile : Masqué pour éviter doublon avec le bouton du header */
   @media (max-width: 768px) {
     .whatsapp-btn {
-      bottom: 20px;
-      left: 20px;
-      width: 55px;
-      height: 55px;
+      display: none !important;
     }
   }
 
