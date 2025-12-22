@@ -458,28 +458,46 @@
 }
 
 /* --- GLOBAL IMAGE CONSTRAINTS --- */
-/* Consolidate image behavior for articles and content pages */
-article img,
-.page-content img:not(.hero-background-image),
-.img-responsive {
+/* Mobile First: Images are full width and responsive */
+img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
+  object-fit: cover;
 }
 
+/* DESKTOP SPECIFIC CONSTRAINTS */
 @media (min-width: 992px) {
 
-  /* Prevent huge images on desktop content */
-  article img,
-  .page-content img:not(.hero-background-image):not(.trust-logo),
-  .img-responsive {
-    max-height: 500px;
-    /* Cap height to keep visible on one screen */
-    object-fit: cover;
-    /* Crop nicely */
+  /* 1. Constraint specifically for "Section Image Text" components (the ones causing issues) */
+  .section-image-text img {
     width: 100%;
-    /* Fill width of the column/container */
+    height: 100%;
+    /* Fill the grid cell */
+    max-height: 450px;
+    /* Force a reasonable maximum height */
+    object-fit: cover;
+    /* Crop nicely to fit the box without distortion */
+    border-radius: 12px;
   }
 
-  /* Exception for small icons/logos if needed, though :not(.trust-logo) helps */
+  /* 2. Constraint for standard content images within articles */
+  article img:not(.hero-background-image),
+  .page-content>.container img:not(.hero-background-image) {
+    max-height: 500px;
+    /* Keep inline images from being posters */
+    width: auto;
+    /* Allow width to adjust naturally up to max-width */
+    max-width: 100%;
+    margin: 0 auto;
+    /* Center them if they are smaller */
+    display: block;
+  }
+
+  /* 3. Ensure Hero Backgrounds are NEVER constrained */
+  .hero-background-image {
+    max-height: none !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute;
+  }
 }
