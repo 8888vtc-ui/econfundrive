@@ -44,6 +44,7 @@ netlify-token.txt
 *.txt
 !public/llms.txt
 !public/robots.txt
+!public/ecofundrive2024.txt
 !public/.well-known/*
 *.md
 !README.md
