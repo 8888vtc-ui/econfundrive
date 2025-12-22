@@ -1,51 +1,139 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Guides | ECOFUNDRIVE – Chauffeur Privé VTC Côte d'Azur";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Travel Guides & Tips | ECOFUNDRIVE French Riviera Chauffeur";
+const description = "Plan your trip to the French Riviera with our expert guides. Itineraries for Nice, Cannes, Monaco, transport tips, family activities, and event guides.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'French Riviera travel guides',
+  'Nice travel tips',
+  'Cannes congress guide',
+  'family trip Cote d Azur',
+  'Monaco sightseeing guide',
+  'luxury transport tips'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guides"
+<BaseLayout 
+  title={title} 
+  description={description} 
+  keywords={keywords}
+  currentPage="guides"
   canonical="/en/guides"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  lang="en"
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">French Riviera Travel Guides & Tips</h1>
+      <p class="lead text-center mb-xl">Prepare your stay with our expert insights: itineraries, practical tips, and local secrets to discover the Côte d'Azur in style.</p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <SectionImageText
+      title="Explore the Riviera with a Local Expert"
+      image="/assets/img/guides/villages-perches.jpg"
+      alt="Hilltop village French Riviera"
+      imageSide="right"
+      ctaText="Book Your Tour"
+      ctaLink="/en/booking"
+    >
+      <p>
+        Beyond providing premium transport, we love sharing our passion for this beautiful region. Whether you're looking for the best restaurants, hidden gems, or advice on optimizing your schedule, our chauffeurs are here to help.
+      </p>
+      <p>
+        Browse our comprehensive guides for visiting Nice, Cannes, Monaco, and navigating the busy summer season with ease.
+      </p>
+    </SectionImageText>
+
+    <!-- Destination Guides -->
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Destination Guides</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/nice-vieux-nice.jpg"
+          alt="Nice Guide"
+          title="What to do in Nice?"
+          description="Complete itinerary for visiting Nice in 1 to 3 days: Old Town, Promenade des Anglais, Castle Hill."
+          link="/en/guide-nice-in-1-to-3-days"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-cannes.png"
+          alt="Cannes Guide"
+          title="Visit Cannes"
+          description="Must-see spots in Cannes: La Croisette, Le Suquet, Lérins Islands."
+          link="/en/guide-what-to-do-in-cannes"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Monaco Guide"
+          title="Monaco in One Day"
+          description="The perfect 1-day itinerary: Prince's Palace, Casino, Oceanographic Museum."
+          link="/en/guide-one-day-in-monaco"
+        />
+        <CategoryCard
+          image="/assets/img/guides/villages-perches.jpg"
+          alt="Hilltop Villages"
+          title="Hilltop Villages"
+          description="Discover the charm of Eze, Saint-Paul-de-Vence, and Gourdon."
+          link="/en/guide-hilltop-villages-french-riviera"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a> | <a href="/contact">contact</a></p>
+
+    <!-- Events & Professional -->
+    <section class="container py-xl bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Events & Business</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Cannes Congress"
+          title="Cannes Congress Transport"
+          description="Essential guide for MIPIM, Cannes Lions, and Film Festival attendees."
+          link="/en/guide-cannes-congress-transport"
+        />
+        <CategoryCard
+          image="/assets/img/guides/grand-prix-monaco.jpg"
+          alt="Monaco Grand Prix"
+          title="Monaco Grand Prix"
+          description="How to navigate Monaco during the F1 Grand Prix weekend."
+          link="/en/guide-monaco-grand-prix-transport"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.webp"
+          alt="Long Distance Transfer"
+          title="Long Distance Transfers"
+          description="Comfortable travel to Milan, Geneva, or Saint-Tropez."
+          link="/en/guide-long-distance-transfers"
+        />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- Family & Practical -->
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Practical Advice & Family</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/hero/hero-family.jpg"
+          alt="Family Day Riviera"
+          title="Family Day Guide"
+          description="Best activities for kids: Marineland, Oceanographic Museum, and beaches."
+          link="/en/guide-family-day-french-riviera"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-aeroport.webp"
+          alt="Nice Airport Transfer"
+          title="Taxi vs Private Driver"
+          description="Why choose a pre-booked chauffeur over a taxi at Nice Airport."
+          link="/en/guide-nice-airport-taxi-or-private-driver"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-traffic.jpg"
+          alt="Traffic Guide"
+          title="High Season Traffic"
+          description="Tips to avoid traffic jams during summer in French Riviera."
+          link="/en/guide-high-season-traffic-french-riviera"
+        />
+      </div>
     </section>
   </main>
 </BaseLayout>
-
-
