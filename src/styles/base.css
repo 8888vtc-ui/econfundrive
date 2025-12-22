@@ -24,11 +24,20 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #ffffff;
     color: #1a1a1a;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Slightly more open line-height for readability */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    font-weight: 400;
+    /* Ensure base weight is not too thin */
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    /* Force normal weight for paragraphs, avoiding thin rendering */
 }
 
 .container {
