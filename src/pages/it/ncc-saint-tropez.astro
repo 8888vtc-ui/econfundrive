@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Saint-Tropez – Autista Privato Pampelonne & Vita Notturna | ECOFUNDRIVE";
+const description = "Servizio NCC premium a Saint-Tropez. Spiagge Pampelonne, Club 55, Nikki Beach, porto, Place des Lices. Trasferimenti da Nizza e Cannes.";
+const keywords = [
+  'NCC Saint-Tropez',
+  'autista privato Saint-Tropez',
+  'trasferimento Nizza Saint-Tropez',
+  'NCC Pampelonne',
+  'autista Club 55'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-saint-tropez"
+  canonical="/it/ncc-saint-tropez"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "NCC Saint-Tropez", url: "/it/ncc-saint-tropez" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Il Vostro Autista Privato a Saint-Tropez"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="NCC autista privato Saint-Tropez porto"
+      imageSide="right"
+      ctaText="Prenota il Tuo Trasferimento"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Tropez</strong> è la leggenda vivente della Costa Azzurra. Questo piccolo villaggio di pescatori diventato destinazione jet-set mondiale ha saputo conservare il suo charme provenzale pur attirando celebrità di tutto il mondo. Il <strong>porto mitico</strong>, la <strong>Place des Lices</strong> e le sue partite di pétanque, le <strong>spiagge di Pampelonne</strong> – ogni angolo respira glamour alla francese.
+      </p>
+      <p class="fade-in-section">
+        Ma Saint-Tropez significa anche traffico e parcheggio impossibile, soprattutto in estate. ECOFUNDRIVE vi offre la <strong>soluzione perfetta</strong>: un autista privato vi porta esattamente dove desiderate e vi riprende quando volete, anche dopo mezzanotte.
+      </p>
+      <ul class="fade-in-section">
+        <li>Trasferimenti aeroporto Nizza (1h30-2h)</li>
+        <li>Trasferimenti da Cannes (1h15)</li>
+        <li>Navette spiagge Pampelonne (Club 55, Nikki Beach)</li>
+        <li>Servizio notturno e ritorno dopo serate</li>
+        <li>Messa a disposizione giornata intera</li>
+        <li>Yacht ed eliporto Saint-Tropez</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tariffe NCC Saint-Tropez</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Destinazione</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aeroporto Nizza → Saint-Tropez</td><td>110 km</td><td>1h30-2h</td><td>250€</td></tr>
+          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Fréjus → Saint-Tropez</td><td>35 km</td><td>45-60 min</td><td>90€</td></tr>
+          <tr><td>Monaco → Saint-Tropez</td><td>130 km</td><td>2h</td><td>320€</td></tr>
+          <tr><td>Saint-Tropez → Pampelonne</td><td>8 km</td><td>15-25 min</td><td>35€</td></tr>
+          <tr><td>Mezza giornata a disposizione (5h)</td><td>-</td><td>5h</td><td>300€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Tariffe alta stagione (luglio-agosto): +20%. Prenotate in anticipo!</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Scoprite Saint-Tropez</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Spiagge Pampelonne"
+          title="Spiagge di Pampelonne"
+          description="5 km di sabbia dorata, club leggendari: Club 55, Nikki Beach, Bagatelle. L'essenza del glamour tropeziano."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Porto Saint-Tropez"
+          title="Il Porto Mitico"
+          description="Yacht da sogno, terrazze animate, facciate colorate. Lo scenario di Brigitte Bardot immutato da 60 anni."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Place des Lices"
+          title="Place des Lices"
+          description="Mercato provenzale martedì e sabato, partite di pétanque, caffè Sénéquier. Il cuore autentico di Saint-Tropez."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Servizio Spiagge & Beach Club</h2>
+      <p class="fade-in-section">
+        Le <strong>spiagge di Pampelonne</strong> si trovano a circa 5 km dal villaggio di Saint-Tropez. Il parcheggio è limitato e costoso in estate. Con il nostro servizio NCC, siete portati direttamente all'ingresso del vostro beach club.
+      </p>
+      <h3 class="fade-in-section">I Beach Club che serviamo:</h3>
+      <ul class="fade-in-section">
+        <li><strong>Club 55</strong> – L'istituzione dal 1955, pranzo mediterraneo con i piedi nella sabbia</li>
+        <li><strong>Nikki Beach</strong> – L'atmosfera internazionale e festosa</li>
+        <li><strong>Bagatelle</strong> – I leggendari pranzi danzanti</li>
+        <li><strong>Tahiti Beach</strong> – Per famiglie e gruppi</li>
+      </ul>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Domande Frequenti</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Quanto tempo ci vuole da Nizza a Saint-Tropez?</h3>
+          <div class="faq-answer">
+            <p>Il trasferimento <strong>aeroporto Nizza → Saint-Tropez</strong> richiede circa <strong>1h30-2h</strong> in NCC (110 km). In estate (luglio-agosto), contate fino a 2h30 per il traffico intenso.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Offrite trasferimenti verso le spiagge di Pampelonne?</h3>
+          <div class="faq-answer">
+            <p>Sì, serviamo <strong>tutte le spiagge di Pampelonne</strong>: Club 55, Nikki Beach, Bagatelle, Tahiti Beach. Possiamo attendervi o tornare a prendervi all'ora concordata.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Recuperate i clienti dopo le serate?</h3>
+          <div class="faq-answer">
+            <p>Assolutamente! Il nostro <strong>servizio NCC 24/24</strong> è particolarmente apprezzato per i ritorni dopo le serate a Saint-Tropez, anche molto tardi (2h-4h del mattino).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinazioni Vicine</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/it" class="text-dark hover-gold">NCC Nizza</a>
+        <a href="/it/ncc-cannes" class="text-dark hover-gold">NCC Cannes</a>
+        <a href="/it/ncc-monaco" class="text-dark hover-gold">NCC Monaco</a>
+        <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">NCC Fréjus</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

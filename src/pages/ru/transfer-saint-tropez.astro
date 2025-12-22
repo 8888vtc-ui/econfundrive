@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Трансфер Сен-Тропе – Личный Водитель Пампелон & Пляжи | ECOFUNDRIVE";
+const description = "Премиум трансфер в Сен-Тропе. Пляжи Пампелон, Club 55, Nikki Beach, порт, Place des Lices. Трансферы из Ниццы и Канн.";
+const keywords = [
+  'трансфер Сен-Тропе',
+  'личный водитель Сен-Тропе',
+  'трансфер Ницца Сен-Тропе',
+  'VTC Пампелон',
+  'водитель Club 55'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-saint-tropez"
+  canonical="/ru/transfer-saint-tropez"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Трансфер Сен-Тропе", url: "/ru/transfer-saint-tropez" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Ваш Личный Водитель в Сен-Тропе"
+      image="/assets/img/destinations/destination-saint-tropez.webp"
+      alt="Трансфер личный водитель Сен-Тропе порт"
+      imageSide="right"
+      ctaText="Забронировать Трансфер"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Сен-Тропе</strong> — живая легенда Лазурного Берега. Эта маленькая рыбацкая деревня, ставшая мировой джет-сет столицей, сохранила свое провансальское очарование, привлекая знаменитостей со всего мира. <strong>Легендарный порт</strong>, <strong>Place des Lices</strong> с партиями в петанк, <strong>пляжи Пампелон</strong> — каждый уголок дышит французским гламуром.
+      </p>
+      <p class="fade-in-section">
+        Но Сен-Тропе также означает пробки и невозможную парковку, особенно летом. ECOFUNDRIVE предлагает <strong>идеальное решение</strong>: личный водитель доставит вас точно туда, куда вы хотите, и заберет когда пожелаете, даже после полуночи.
+      </p>
+      <ul class="fade-in-section">
+        <li>Трансферы из аэропорта Ниццы (1ч30-2ч)</li>
+        <li>Трансферы из Канн (1ч15)</li>
+        <li>Шаттлы на пляжи Пампелон (Club 55, Nikki Beach)</li>
+        <li>Ночной сервис и возврат после вечеринок</li>
+        <li>Аренда на весь день</li>
+        <li>Яхты и вертолетная площадка Сен-Тропе</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Тарифы на Трансферы в Сен-Тропе</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Назначение</th><th>Расстояние</th><th>Время</th><th>Цена от</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Аэропорт Ниццы → Сен-Тропе</td><td>110 км</td><td>1ч30-2ч</td><td>250€</td></tr>
+          <tr><td>Канны → Сен-Тропе</td><td>80 км</td><td>1ч15</td><td>180€</td></tr>
+          <tr><td>Фрежюс → Сен-Тропе</td><td>35 км</td><td>45-60 мин</td><td>90€</td></tr>
+          <tr><td>Монако → Сен-Тропе</td><td>130 км</td><td>2ч</td><td>320€</td></tr>
+          <tr><td>Сен-Тропе → Пампелон</td><td>8 км</td><td>15-25 мин</td><td>35€</td></tr>
+          <tr><td>Полдня в распоряжении (5ч)</td><td>-</td><td>5ч</td><td>300€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Тарифы высокого сезона (июль-август): +20%. Бронируйте заранее!</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Откройте Сен-Тропе</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Пляжи Пампелон"
+          title="Пляжи Пампелон"
+          description="5 км золотого песка, легендарные клубы: Club 55, Nikki Beach, Bagatelle. Сущность тропезианского гламура."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Порт Сен-Тропе"
+          title="Легендарный Порт"
+          description="Яхты мечты, оживленные террасы, красочные фасады. Декорации Бриджит Бардо, неизменные 60 лет."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Place des Lices"
+          title="Place des Lices"
+          description="Провансальский рынок вторник и суббота, партии в петанк, кафе Sénéquier. Подлинное сердце Сен-Тропе."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Сервис Пляжи & Beach Club</h2>
+      <p class="fade-in-section">
+        <strong>Пляжи Пампелон</strong> расположены примерно в 5 км от деревни Сен-Тропе. Парковка ограничена и дорога летом. С нашим сервисом вас доставят прямо ко входу вашего beach club.
+      </p>
+      <h3 class="fade-in-section">Beach Club, которые мы обслуживаем:</h3>
+      <ul class="fade-in-section">
+        <li><strong>Club 55</strong> — Легенда с 1955 года, средиземноморский обед с ногами в песке</li>
+        <li><strong>Nikki Beach</strong> — Международная праздничная атмосфера</li>
+        <li><strong>Bagatelle</strong> — Легендарные танцевальные обеды</li>
+        <li><strong>Tahiti Beach</strong> — Для семей и групп</li>
+      </ul>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Часто Задаваемые Вопросы</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Сколько времени от Ниццы до Сен-Тропе?</h3>
+          <div class="faq-answer">
+            <p>Трансфер <strong>аэропорт Ниццы → Сен-Тропе</strong> занимает около <strong>1ч30-2ч</strong> (110 км). Летом (июль-август) рассчитывайте до 2ч30 из-за интенсивного трафика.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Предлагаете ли вы трансферы на пляжи Пампелон?</h3>
+          <div class="faq-answer">
+            <p>Да, мы обслуживаем <strong>все пляжи Пампелон</strong>: Club 55, Nikki Beach, Bagatelle, Tahiti Beach. Мы можем подождать вас или забрать в согласованное время.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Забираете ли вы клиентов после вечеринок?</h3>
+          <div class="faq-answer">
+            <p>Конечно! Наш <strong>сервис 24/24</strong> особенно ценится для возвращения после вечеринок в Сен-Тропе, даже очень поздно (2ч-4ч утра).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Ближайшие Направления</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/ru" class="text-dark hover-gold">Трансфер Ницца</a>
+        <a href="/ru/transfer-cannes" class="text-dark hover-gold">Трансфер Канны</a>
+        <a href="/ru/transfer-monaco" class="text-dark hover-gold">Трансфер Монако</a>
+        <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">Трансфер Фрежюс</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>

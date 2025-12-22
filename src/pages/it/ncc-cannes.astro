@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Cannes – Autista Privato Festival & Croisette | ECOFUNDRIVE";
+const description = "Servizio NCC premium a Cannes. Festival del Cinema, MIPIM, La Croisette, Palais des Festivals. Autista privato italiano 24/7. Trasferimenti da Nizza.";
+const keywords = [
+  'NCC Cannes',
+  'autista privato Cannes',
+  'Festival Cannes trasferimento',
+  'NCC Croisette',
+  'autista MIPIM Cannes'
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-cannes"
+  canonical="/it/ncc-cannes"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "NCC Cannes", url: "/it/ncc-cannes" }
+  ]}
+>
+  <main id="main-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </div>
+
+    <SectionImageText
+      title="Il Vostro Autista Privato a Cannes"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="NCC autista privato Cannes Croisette"
+      imageSide="right"
+      ctaText="Prenota il Tuo Trasferimento"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Cannes</strong> è sinonimo di glamour, lusso ed eventi internazionali. Sede del leggendario <strong>Festival del Cinema di Cannes</strong>, la città attira celebrità, leader del business e viaggiatori esigenti tutto l'anno. Il famoso <strong>Boulevard de la Croisette</strong>, le boutique di lusso e le spiagge immacolate rendono Cannes una destinazione iconica della Riviera.
+      </p>
+      <p class="fade-in-section">
+        Oltre al Festival, Cannes ospita importanti eventi internazionali tra cui <strong>MIPIM</strong> (immobiliare), <strong>MIPTV</strong> (televisione), <strong>Cannes Lions</strong> (pubblicità) e numerosi altri congressi al Palais des Festivals.
+      </p>
+      <ul class="fade-in-section">
+        <li>Trasferimenti aeroporto Nizza - Cannes (35-45 min)</li>
+        <li>Servizio dedicato Festival del Cinema</li>
+        <li>Trasporti MIPIM, MIPTV, Cannes Lions</li>
+        <li>Trasferimenti hotel La Croisette</li>
+        <li>Escursioni verso Monaco, Saint-Tropez</li>
+        <li>Eventi serali e red carpet</li>
+      </ul>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Tariffe NCC Cannes</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Percorso</th><th>Distanza</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aeroporto Nizza → Cannes</td><td>35 km</td><td>35-45 min</td><td>75€</td></tr>
+          <tr><td>Nizza Centro → Cannes</td><td>33 km</td><td>35-40 min</td><td>70€</td></tr>
+          <tr><td>Cannes → Monaco</td><td>55 km</td><td>55-70 min</td><td>130€</td></tr>
+          <tr><td>Cannes → Saint-Tropez</td><td>80 km</td><td>1h15</td><td>180€</td></tr>
+          <tr><td>Cannes → Antibes</td><td>12 km</td><td>15-20 min</td><td>35€</td></tr>
+          <tr><td>Cannes → Mougins (ristoranti)</td><td>8 km</td><td>15 min</td><td>30€</td></tr>
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>I prezzi possono variare durante i grandi eventi. Prenotate in anticipo per i periodi del Festival.</em></p>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Grandi Eventi a Cannes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Festival Cinema Cannes"
+          title="Festival del Cinema"
+          description="Il festival cinematografico più prestigioso al mondo. Trasferimenti red carpet, after-party, eventi yacht."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="MIPIM Cannes"
+          title="MIPIM Immobiliare"
+          description="La principale conferenza immobiliare mondiale. Trasferimenti aeroporto, incontri clienti, networking."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/cannes-palais-festivals.png"
+          alt="Cannes Lions"
+          title="Cannes Lions"
+          description="Festival globale della creatività pubblicitaria. Trasporto executive, feste, transfer hotel."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Domande Frequenti</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Quanto tempo dura il trasferimento dall'aeroporto di Nizza a Cannes?</h3>
+          <div class="faq-answer">
+            <p>Il trasferimento dall'aeroporto di Nizza a Cannes dura circa <strong>35-45 minuti</strong> a seconda del traffico (circa 35 km via autostrada A8).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Offrite servizio durante il Festival del Cinema di Cannes?</h3>
+          <div class="faq-answer">
+            <p>Sì, offriamo servizio NCC premium durante il Festival del Cinema di Cannes (di solito a metà maggio). Consigliamo di prenotare <strong>2-3 mesi in anticipo</strong> per l'altissima domanda.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">I vostri autisti parlano italiano?</h3>
+          <div class="faq-answer">
+            <p>Sì, abbiamo autisti che parlano italiano fluentemente. Su richiesta, possiamo assicurarvi un autista che parla la vostra lingua.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinazioni Vicine</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/it" class="text-dark hover-gold">NCC Nizza</a>
+        <a href="/it/ncc-monaco" class="text-dark hover-gold">NCC Monaco</a>
+        <a href="/it/ncc-saint-tropez" class="text-dark hover-gold">NCC Saint-Tropez</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">NCC Antibes</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .tarif-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .tarif-table th, .tarif-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+  .tarif-table th { background: #f5f5f5; font-weight: 600; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+</style>
