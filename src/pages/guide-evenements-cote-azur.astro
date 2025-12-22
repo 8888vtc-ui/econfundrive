@@ -1,72 +1,145 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Evenements Cote Azur | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Calendrier des Événements Côte d'Azur 2025 | Guide VTC";
+const description = "Festival de Cannes, GP Monaco, Carnaval de Nice, Jazz à Juan... Tous les événements majeurs de la Riviera et nos conseils transport VTC.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'événements Côte d\'Azur 2025',
+  'Festival Cannes VTC',
+  'Carnaval Nice transport',
+  'Jazz Juan les Pins chauffeur',
+  'agenda Riviera'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="guide-evenements-cote-azur"
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="guide-evenements-cote-azur"
   canonical="/guide-evenements-cote-azur"
-  <main class="page-content"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Événements", url: "/guide-evenements-cote-azur" }
+  ]}
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Evenements Cote Azur | ECOFUNDRIVE",
-  "description": "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...",
-  "url": "https://www.ecofundrive.com/guide-evenements-cote-azur",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/hero/hero-cannes.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </section>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Calendrier 2025 des Événements sur la Côte d'Azur</h1>
+      <p class="lead text-center mb-xl">
+        La Riviera française est une terre de festivals, de galas et de compétitions internationales. Découvrez les rendez-vous incontournables et nos conseils pour vous y rendre sereinement.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- PRINTEMPS -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">🌸 Printemps (Mars - Mai)</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Carnaval de Nice</h3>
+          <p><strong>Février - Mars</strong>. L'un des plus grands carnavals du monde ! Bataille de fleurs et corsi carnavalesques. Réservez tôt votre VTC, les rues sont fermées.</p>
+          <a href="/vtc-carnaval-nice" class="card-link">Guide Carnaval →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">MIPIM Cannes</h3>
+          <p><strong>Mars</strong>. Le rendez-vous mondial de l'immobilier. Service business dédié avec mise à disposition.</p>
+          <a href="/vtc-mipim-cannes" class="card-link">Service MIPIM →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Festival de Cannes</h3>
+          <p><strong>Mai</strong>. 12 jours de glamour absolu. Montées des marches, soirées de gala, after-parties. Transport VIP 24h/24.</p>
+          <a href="/guide-vtc-festival-cannes" class="card-link">Guide Festival →</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- ETE -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">☀️ Été (Juin - Août)</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Grand Prix de Monaco</h3>
+          <p><strong>Fin Mai</strong>. L'événement sportif le plus exclusif. Chaos routier garanti. Indispensable de réserver votre chauffeur des semaines à l'avance.</p>
+          <a href="/guide-grand-prix-monaco-deplacements" class="card-link">Guide GP Monaco →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Cannes Lions</h3>
+          <p><strong>Juin</strong>. La créativité mondiale réunie. Agences, marques, talents... Navettes entre le Palais, les hôtels et les beach clubs.</p>
+          <a href="/guide-congres-cannes-deplacements" class="card-link">Transport Congrès →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Jazz à Juan</h3>
+          <p><strong>Juillet</strong>. Le plus ancien festival de jazz d'Europe dans la Pinède Gould. Soirées magiques sous les étoiles.</p>
+          <a href="/vtc-juan-les-pins" class="card-link">VTC Juan-les-Pins →</a>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <!-- AUTOMNE -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">🍂 Automne (Septembre - Novembre)</h2>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Les Voiles de Saint-Tropez</h3>
+          <p><strong>Fin Septembre</strong>. Régates spectaculaires de yachts de légende. La meilleure période pour Saint-Tropez : soleil, moins de foule.</p>
+          <a href="/guide-decouvrir-saint-tropez-golfe" class="card-link">Guide Saint-Tropez →</a>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">ILTM Cannes</h3>
+          <p><strong>Décembre</strong>. Le marché du voyage de luxe. Hôteliers, tour-opérateurs, clients fortunés... Service haut de gamme requis.</p>
+          <a href="/guide-congres-cannes-deplacements" class="card-link">Service Business →</a>
+        </div>
+      </div>
     </section>
+
+    <!-- VTC AVANTAGE -->
+    <SectionImageText
+      title="Pourquoi un VTC pour les Événements ?"
+      image="/assets/img/services/service-business.webp"
+      alt="Chauffeur événement VIP"
+      imageSide="right"
+      ctaText="Réserver pour un événement"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Pendant les grands événements, oubliez les taxis.</strong> Les files d'attente sont interminables, les applications de VTC saturées, et les tarifs multipliés par 3 ou 4.
+      </p>
+      <p>
+        Avec ECOFUNDRIVE, vous avez un chauffeur dédié qui vous connaît, qui vous attend, et qui vous ramène quel que soit l'heure. C'est la tranquillité d'esprit pour profiter pleinement de l'événement.
+      </p>
+    </SectionImageText>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Votre Événement Approche ?</h2>
+        <p class="lead mb-4">
+          Ne laissez pas le transport gâcher un moment exceptionnel. Réservez dès maintenant.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
 

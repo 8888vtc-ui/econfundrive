@@ -1,84 +1,139 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "Guide Grand Prix Monaco : Déplacements et Transport | ECOFUNDRIVE";
-const description = "Guide complet pour vos déplacements pendant le Grand Prix de Monaco. Chauffeur privé VTC, itinéraires, conseils pratiques pour éviter les embouteillages.";
+const title = "Grand Prix de Monaco F1 : Guide Transport VTC | ECOFUNDRIVE";
+const description = "Vivez le Grand Prix de Monaco sans stress. Chauffeur VTC pour éviter le chaos routier, accès privilégiés, et transferts depuis Nice et Cannes.";
 const keywords = [
-  'Grand Prix Monaco transport',
   'VTC Grand Prix Monaco',
-  'chauffeur Grand Prix Monaco',
-  'déplacements Grand Prix',
-  'transport Monaco F1'
+  'transport F1 Monaco',
+  'chauffeur privé GP Monaco',
+  'transfert Nice Monaco F1',
+  'parking Grand Prix Monaco'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout
+  title={title}
   description={description}
   currentPage="guide-grand-prix-monaco-deplacements"
+  canonical="/guide-grand-prix-monaco-deplacements"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Guides", url: "/guides" },
     { name: "Grand Prix Monaco", url: "/guide-grand-prix-monaco-deplacements" }
   ]}
-
-  canonical="/guide-grand-prix-monaco-deplacements"
-  <main class="guide-page"
   schema={{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Guide Grand Prix Monaco : Déplacements et Transport | ECOFUNDRIVE",
-  "description": "Guide complet pour vos déplacements pendant le Grand Prix de Monaco. Chauffeur privé VTC, itinéraires, conseils pratiques pour éviter les embouteillages.",
-  "url": "https://www.ecofundrive.com/guide-grand-prix-monaco-deplacements",
-  "author": {
-    "@type": "Person",
-    "name": "David Chemla"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo.png"
-    }
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-12-01"
-}}
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ECOFUNDRIVE",
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
+    },
+    "datePublished": "2024-03-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }}
 >
-    <div class="container">
-      <article>
-        <h1>{title}</h1>
-        <p class="guide-intro">{description}</p>
-
-        <section>
-          <h2>Transport pendant le Grand Prix</h2>
-          <p>
-            Pendant le Grand Prix de Monaco, la circulation est très dense. Un <strong>chauffeur privé VTC</strong> 
-            connaît les itinéraires alternatifs pour vous garantir ponctualité et confort.
-          </p>
-        </section>
-
-        <section>
-          <h2>Réservation</h2>
-          <div class="contact-buttons">
-            <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-            <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-        </section>
-      </article>
+  <main class="page-content">
+    <div class="container py-lg">
+      <h1 class="text-center mb-xl">Grand Prix de Monaco : Votre Guide Logistique VIP</h1>
+      <p class="lead text-center mb-xl">
+        Chaque année fin mai, la Principauté se transforme en circuit F1. Le trafic devient infernal et les tarifs explosent. Voici comment profiter du spectacle sans subir le chaos.
+      </p>
     </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+
+    <!-- 1. LE DEFI LOGISTIQUE -->
+    <SectionImageText
+      title="Le Défi : Pourquoi un VTC est Indispensable"
+      image="/assets/img/destinations/destination-monaco.webp"
+      alt="Circuit F1 Monaco"
+      imageSide="right"
+      ctaText="Réserver pour le GP"
+      ctaLink="/reservation"
+    >
+      <p>
+        <strong>Pendant le GP de Monaco, la circulation est un cauchemar absolu.</strong> Fermetures de routes, barrières de sécurité, foule immense... Les trajets habituels de 30 minutes peuvent prendre 2 à 3 heures.
+      </p>
+      <p>
+        Nos chauffeurs connaissent les itinéraires secrets par La Turbie, Beausoleil ou Roquebrune-Cap-Martin. Ils vous déposent au plus près des tribunes sans perdre de temps dans les embouteillages interminables.
+      </p>
+    </SectionImageText>
+
+    <!-- 2. CALENDRIER -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Calendrier du Week-End : Planifiez Vos Transferts</h2>
+      <div class="grid-3-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏎️ Jeudi</h3>
+          <p><strong>Essais Libres 1 & 2</strong>. Journée technique importante. Accès relativement fluide le matin, mais le trafic se densifie dès 14h.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">⏱️ Samedi</h3>
+          <p><strong>Essais Libres 3 & Qualifications</strong>. La course à la pole position ! Prévoir d'arriver avant 10h. Le retour après 18h est très chargé.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">🏆 Dimanche</h3>
+          <p><strong>La Course</strong>. Départ à 15h. Bloquez 2h avant pour l'arrivée. Après la course, patientez dans un café : la sortie de Monaco est saturée pendant 2h.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/guides">guides</a> | <a href="/services">services</a> | <a href="/vtc-nice">vtc-nice</a></p>
+
+    <!-- 3. CONSEILS D'INITIE -->
+    <SectionImageText
+      title="Conseils d'Initié : Optimiser Votre Expérience"
+      image="/assets/img/services/service-business.webp"
+      alt="Vue tribune Monaco GP"
+      imageSide="left"
+      ctaText="Demander un devis"
+      ctaLink="/contact"
+    >
+      <p>
+        <strong>Stratégie "Base Arrière" :</strong> Logez à Nice ou Villefranche plutôt qu'à Monaco. Les prix y sont 3 fois moins chers et nous vous conduisons chaque jour pour les sessions.
+      </p>
+      <p>
+        <strong>Option Hélicoptère :</strong> Pour les budgets premium, nous organisons des transferts combinés VTC + Hélico (Nice → Monaco en 7 min !). Contactez-nous pour un devis.
+      </p>
+      <p>
+        <strong>Soirées After-Race :</strong> Le port de Monaco s'anime le soir. Nous pouvons vous attendre jusqu'à tard dans la nuit pour vous ramener en toute sécurité après les célébrations.
+      </p>
+    </SectionImageText>
+
+    <!-- 4. POINTS D'ACCES -->
+    <section class="mb-xl container">
+      <h2 class="text-center mb-lg">Où Vous Déposer ?</h2>
+      <p class="text-center mb-lg">Selon votre tribune ou votre zone d'accès, nous adaptons le point de dépôt :</p>
+      <div class="grid-2-cols">
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Tribunes K, L, T (Port/Chicane)</h3>
+          <p>Dépôt : Parking des Pécheurs ou Place d'Armes. Accès par escalators/ascenseurs. Prévoir 15 min de marche.</p>
+        </div>
+        <div class="card-content bg-light p-4 rounded">
+          <h3 class="mb-3">Tribune B, Casino, Fairmont</h3>
+          <p>Dépôt : Avenue de Monte-Carlo (si autorisé) ou parking du Casino. C'est le point le plus demandé, réservez tôt !</p>
+        </div>
+      </div>
     </section>
+
+    <!-- CTA FINAL -->
+    <section class="mb-xl container">
+      <div class="text-center bg-light p-5 rounded">
+        <h2 class="mb-4">Vivez le GP de Monaco comme un VIP</h2>
+        <p class="lead mb-4">
+          Ne laissez pas la logistique gâcher votre week-end de course. Réservez votre chauffeur dédié dès maintenant.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="/reservation" class="btn btn-primary">Réserver pour le Grand Prix</a>
+          <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 </BaseLayout>
 
