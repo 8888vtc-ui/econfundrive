@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>ECOFUNDRIVE Service Areas</name>
+    <description>Private Chauffeur & VTC Service Locations on the French Riviera</description>
+    <Style id="serviceArea">
+      <LineStyle>
+        <color>ffd4af37</color>
+        <width>2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>40d4af37</color>
+      </PolyStyle>
+    </Style>
+    
+    <!-- Headquarters -->
+    <Placemark>
+      <name>ECOFUNDRIVE HQ (Nice)</name>
+      <description>Premium Private Driver & VTC Service in Nice, France.</description>
+      <Point>
+        <coordinates>7.2620,43.7102,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- Key Service Locations -->
+    <Placemark>
+      <name>Monaco / Monte-Carlo</name>
+      <description>Luxury chauffeur service in Monaco.</description>
+      <Point>
+        <coordinates>7.4246,43.7384,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Cannes</name>
+      <description>MIPIM, Film Festival & private transfers in Cannes.</description>
+      <Point>
+        <coordinates>7.0174,43.5528,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Saint-Tropez</name>
+      <description>Long distance transfers to Saint-Tropez.</description>
+      <Point>
+        <coordinates>6.6407,43.2677,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Nice Côte d'Azur Airport (NCE)</name>
+      <description>Airport transfers and meet & greet service.</description>
+      <Point>
+        <coordinates>7.2150,43.6598,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Antibes</name>
+      <description>Yacht transfers and private driver in Antibes.</description>
+      <Point>
+        <coordinates>7.1251,43.5804,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

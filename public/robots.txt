@@ -36,15 +36,15 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Block unwanted bots
+# Allow basic SEO tools for auditing (Optional - enable if you want to use these tools)
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
 
 User-agent: MJ12bot
-Disallow: /
+Allow: /
 
 # Host
 Host: https://www.ecofundrive.com
