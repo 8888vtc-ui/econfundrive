@@ -452,39 +452,37 @@ document.addEventListener('DOMContentLoaded', function() {
       dropdown.classList.add('show');
       attachClicks();
 
-      // 2. API : Toujours appeler dès 3 caractères
+      // 2. PHOTON API (ultra rapide) - dès 3 caractères
       if (q.length >= 3) {
         timer = setTimeout(() => {
-          const apiUrl = 'https://nominatim.openstreetmap.org/search?format=json&q=' + 
-            encodeURIComponent(q) + '&countrycodes=fr,mc&limit=5&addressdetails=1';
+          // Photon API - optimisé pour autocomplétion, très rapide
+          const apiUrl = 'https://photon.komoot.io/api/?q=' + 
+            encodeURIComponent(q) + '&lat=43.7&lon=7.25&limit=5&lang=fr';
           
-          fetch(apiUrl, { 
-            headers: { 
-              'Accept-Language': 'fr',
-              'User-Agent': 'EcoFunDrive-VTC/1.0'
-            } 
-          })
+          fetch(apiUrl)
             .then(r => r.json())
             .then(data => {
-              if (data && data.length > 0) {
-                const apiItems = data.map(item => {
-                  // Formater l'adresse proprement
-                  const parts = item.display_name.split(',').slice(0, 3);
-                  return '📍 ' + parts.join(',').trim();
+              if (data && data.features && data.features.length > 0) {
+                const apiItems = data.features.map(f => {
+                  const p = f.properties;
+                  // Formater: nom, ville, région
+                  let name = p.name || '';
+                  if (p.city && p.city !== p.name) name += ', ' + p.city;
+                  else if (p.county) name += ', ' + p.county;
+                  if (p.state) name += ', ' + p.state;
+                  return '📍 ' + name;
                 });
                 
                 // Ajouter section API
-                const apiSection = '<div class="dropdown-header">Résultats</div>' + renderItems(apiItems, true);
+                const apiSection = '<div class="dropdown-header">Adresses</div>' + renderItems(apiItems, true);
                 dropdown.innerHTML = (localMatches.length > 0 ? 
                   '<div class="dropdown-header">Destinations VTC</div>' + renderItems(localMatches, false) : '') 
                   + apiSection;
                 attachClicks();
               }
             })
-            .catch(err => {
-              console.log('Nominatim error:', err);
-            });
-        }, 150);
+            .catch(err => console.log('Photon error:', err));
+        }, 100); // 100ms debounce - très rapide
       }
     });
 
