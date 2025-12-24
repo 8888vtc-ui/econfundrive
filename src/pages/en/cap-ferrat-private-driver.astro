@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Cap Ferrat Private Driver – Luxury Peninsula Tour | ECOFUNDRIVE";
 const description = "Private driver to Cap Ferrat, the most exclusive peninsula on the French Riviera. Villa Ephrussi de Rothschild, luxury villas, secret beaches. Premium service.";
 const keywords = [
@@ -58,7 +57,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Cap Ferrat Transfer Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
     </section>
 
     <section class="container py-xl fade-in-section">

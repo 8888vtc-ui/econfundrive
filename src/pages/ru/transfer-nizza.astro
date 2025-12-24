@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Трансфер Ницца – Личный Водитель Аэропорт & Лазурный Берег | ECOFUNDRIVE";
 const description = "Премиум трансфер в Ницце. Аэропорт Ницца Лазурный Берег, Английская набережная, Старый город. Русскоговорящий водитель 24/7.";
 const keywords = [
@@ -58,7 +57,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы из Аэропорта Ниццы</h2>
-      <PricingRequest lang="ru" />
+      <div class="cta-box">
+        <a href="/ru/kontakt" class="btn-primary">Запросить цену</a>
+      </div>
       <p class="text-center mt-md"><em>Все цены включают встречу с табличкой, отслеживание рейса и помощь с багажом.</em></p>
     </section>
 

@@ -1,7 +1,5 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingRequest from '../../components/PricingRequest.astro';
-
 const title = "Cannes Congress Transport | Private Chauffeur & VTC Service";
 const description = "Premium private driver service for Cannes congresses: MIPIM, Cannes Lions, Film Festival. Luxury fleet, punctual chauffeurs, and seamless transfers to Palais des Festivals.";
 const keywords = [
@@ -96,7 +94,9 @@ const articleSchema = {
           <div class="sidebar-block">
             <h3>Quick Booking</h3>
             <p>Secure your driver for the congress in advance.</p>
-            <PricingRequest lang="en" />
+            <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
           </div>
         </aside>
       </div>

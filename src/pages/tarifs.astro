@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const title = "Tarifs VTC Côte d'Azur | ECOFUNDRIVE – Prix Transparents";
+const description = "Découvrez nos tarifs VTC sur la Côte d'Azur. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez. Prix fixes, sans surprise. Devis gratuit en 2 minutes.";
+const keywords = [
+  'tarifs VTC Nice',
+  'prix chauffeur privé',
+  'tarif transfert aéroport Nice',
+  'coût VTC Monaco',
+  'prix VTC Cannes',
+  'VTC pas cher Côte Azur'
+];
+
+const transfers = [
+  { route: "Aéroport Nice → Nice Centre", price: "45€", time: "15-20 min" },
+  { route: "Aéroport Nice → Monaco", price: "85€", time: "30-40 min" },
+  { route: "Aéroport Nice → Cannes", price: "75€", time: "30-40 min" },
+  { route: "Aéroport Nice → Antibes", price: "55€", time: "20-30 min" },
+  { route: "Aéroport Nice → Saint-Tropez", price: "280€", time: "90-120 min" },
+  { route: "Nice → Monaco", price: "65€", time: "25-35 min" },
+  { route: "Nice → Cannes", price: "70€", time: "35-45 min" },
+  { route: "Monaco → Cannes", price: "120€", time: "50-60 min" },
+  { route: "Cannes → Saint-Tropez", price: "220€", time: "75-90 min" },
+];
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="tarifs"
+  canonical="/tarifs"
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Tarifs", url: "/tarifs" }
+  ]}
+>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="tarifs-hero">
+      <div class="container">
+        <h1>Nos Tarifs VTC</h1>
+        <p class="lead">Prix fixes et transparents • Sans surprise • Devis gratuit</p>
+      </div>
+    </section>
+
+    <!-- Tableau des tarifs -->
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Tarifs Indicatifs Transferts</h2>
+      <p class="text-center text-muted mb-xl">Prix pour berline premium (1-4 passagers). Tarifs Van et longue distance sur demande.</p>
+      
+      <div class="tarifs-table-wrapper">
+        <table class="tarifs-table">
+          <thead>
+            <tr>
+              <th>Trajet</th>
+              <th>Prix</th>
+              <th>Durée</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transfers.map(t => (
+              <tr>
+                <td>{t.route}</td>
+                <td class="price">{t.price}</td>
+                <td class="time">{t.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="notes mt-lg">
+        <p><strong>Notes :</strong></p>
+        <ul>
+          <li>✅ Tarifs tout compris (péages, carburant, attente aéroport)</li>
+          <li>✅ Pas de frais cachés</li>
+          <li>✅ Paiement CB, espèces ou virement</li>
+          <li>⚠️ Majoration possible en haute saison (été, événements)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Mise à disposition -->
+    <section class="container py-xl bg-light rounded-xl">
+      <h2 class="text-center mb-lg">Mise à Disposition</h2>
+      <div class="grid-3-cols-responsive">
+        <div class="tarif-card">
+          <h3>Demi-journée</h3>
+          <p class="price-big">250€</p>
+          <p>4 heures de service</p>
+        </div>
+        <div class="tarif-card featured">
+          <span class="badge">Populaire</span>
+          <h3>Journée</h3>
+          <p class="price-big">450€</p>
+          <p>8 heures de service</p>
+        </div>
+        <div class="tarif-card">
+          <h3>Par heure</h3>
+          <p class="price-big">65€/h</p>
+          <p>Minimum 2 heures</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparatif -->
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">VTC vs Taxi vs Uber : Le Comparatif</h2>
+      <div class="compare-table-wrapper">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>VTC ECOFUNDRIVE</th>
+              <th>Taxi</th>
+              <th>Uber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Prix</td>
+              <td class="good">Fixe, connu à l'avance ✅</td>
+              <td>Compteur (variable)</td>
+              <td>Dynamique (surge)</td>
+            </tr>
+            <tr>
+              <td>Réservation</td>
+              <td class="good">WhatsApp 24/7 ✅</td>
+              <td>Téléphone/Station</td>
+              <td>Application</td>
+            </tr>
+            <tr>
+              <td>Véhicule</td>
+              <td class="good">Tesla/Mercedes ✅</td>
+              <td>Standard</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <td>Suivi de vol</td>
+              <td class="good">Oui, gratuit ✅</td>
+              <td>Non</td>
+              <td>Limité</td>
+            </tr>
+            <tr>
+              <td>Accueil aéroport</td>
+              <td class="good">Pancarte nominative ✅</td>
+              <td>Non</td>
+              <td>Non</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CTA + Formulaire -->
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Demandez votre Devis Gratuit</h2>
+      <div class="form-container">
+        <ContactForm />
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .tarifs-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .tarifs-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tarifs-hero .lead {
+    font-size: 1.25rem;
+    color: #d4af37;
+  }
+
+  .tarifs-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .tarifs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  }
+
+  .tarifs-table th {
+    background: #1a1a1a;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .tarifs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .tarifs-table .price {
+    font-weight: 700;
+    color: #d4af37;
+    font-size: 1.1rem;
+  }
+
+  .tarifs-table .time {
+    color: #666;
+  }
+
+  .tarifs-table tr:hover {
+    background: #f8f8f8;
+  }
+
+  .notes {
+    background: #f0f9f0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #2ecc71;
+  }
+
+  .notes ul {
+    margin: 0.5rem 0 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .notes li {
+    margin-bottom: 0.5rem;
+  }
+
+  .bg-light {
+    background: #f8f8f8;
+  }
+
+  .rounded-xl {
+    border-radius: 24px;
+    padding: 3rem !important;
+  }
+
+  .tarif-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+  }
+
+  .tarif-card.featured {
+    border: 2px solid #d4af37;
+    transform: scale(1.05);
+  }
+
+  .tarif-card .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .tarif-card h3 {
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .price-big {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin: 0.5rem 0;
+  }
+
+  .compare-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .compare-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+
+  .compare-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .compare-table .good {
+    background: #e8f5e9;
+    color: #1b5e20;
+  }
+
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .tarifs-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .tarif-card.featured {
+      transform: none;
+    }
+    
+    .rounded-xl {
+      padding: 1.5rem !important;
+    }
+  }
+</style>

@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Nice Private Driver – Airport Transfers & Riviera Tours | ECOFUNDRIVE";
 const description = "Private driver VTC service in Nice. Nice Airport transfers, Old Town, Promenade des Anglais. Premium chauffeur service 24/7 for all French Riviera destinations.";
 const keywords = [
@@ -60,7 +59,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Nice Airport Transfer Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       <p class="text-center mt-md"><em>All prices include meet & greet, flight tracking, and luggage assistance.</em></p>
     </section>
 

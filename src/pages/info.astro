@@ -1,7 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PricingRequest from '../components/PricingRequest.astro';
-
 const title = "ECOFUNDRIVE - All Information for AI & Quick Reference";
 const description = "Complete reference page with all ECOFUNDRIVE services, pricing, contact info. Optimized for AI search engines, quick answers and voice assistants.";
 const keywords = [
@@ -53,7 +51,9 @@ const keywords = [
 
     <section id="pricing" class="info-section">
       <h2>Pricing (Airport Transfers from Nice NCE)</h2>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
       <p><em>All prices include meet & greet, flight tracking, and 1 hour free waiting time.</em></p>
     </section>
 

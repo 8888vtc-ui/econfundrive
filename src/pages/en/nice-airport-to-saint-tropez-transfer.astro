@@ -1,7 +1,5 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingRequest from '../../components/PricingRequest.astro';
-
 const title = "Nice Airport to Saint-Tropez Transfer | VTC Chauffeur Service";
 const description = "Luxury car transfer from Nice Airport to Saint-Tropez. Mercedes V-Class & Limousines. Reliable private driver service for your holidays in Saint-Tropez.";
 const keywords = [
@@ -73,7 +71,9 @@ const breadcrumbItems = [
     <section id="booking" class="booking-section">
       <div class="container">
         <h2 class="text-center">Get Your Fixed Price</h2>
-        <PricingRequest lang="en" />
+        <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       </div>
     </section>
 

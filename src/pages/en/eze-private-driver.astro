@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Eze Village Private Driver – Perfumeries & Scenic Drive | ECOFUNDRIVE";
 const description = "Private driver to Eze Village from Nice. Exotic Garden, Fragonard perfumery, Grande Corniche scenic drive. Perfect half-day tour from Nice or Monaco.";
 const keywords = [
@@ -64,7 +63,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Eze Tour Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       <p class="text-center mt-md"><em>All tours include scenic route and photo stops.</em></p>
     </section>
 

@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Трансфер Канны – Личный Водитель Фестивали & Круазет | ECOFUNDRIVE";
 const description = "Премиум трансфер в Канны. Каннский кинофестиваль, MIPIM, Круазет, Дворец Фестивалей. Русскоговорящий водитель 24/7. Трансферы из Ниццы.";
 const keywords = [
@@ -58,7 +57,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы в Канны</h2>
-      <PricingRequest lang="ru" />
+      <div class="cta-box">
+        <a href="/ru/kontakt" class="btn-primary">Запросить цену</a>
+      </div>
       <p class="text-center mt-md"><em>Цены могут меняться во время крупных мероприятий. Бронируйте заранее на период Фестиваля.</em></p>
     </section>
 

@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC MIPIM Cannes 2025 – Chauffeur Privé Salon Immobilier | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC pour le MIPIM Cannes 2025. Transferts aéroport Nice, navettes Palais des Festivals, mise à disposition pour professionnels de l'immobilier. Réservez tôt !";
 const keywords = [
@@ -124,7 +123,9 @@ const schema = {
         Pendant le MIPIM, la demande de transport explose à Cannes. Pour garantir votre disponibilité et bénéficier des meilleurs tarifs, nous vous recommandons de <strong>réserver au moins 4 à 6 semaines à l'avance</strong>.
       </p>
       <h3 class="fade-in-section">Tarifs indicatifs MIPIM 2025</h3>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
       <p class="fade-in-section"><em>Tarifs indicatifs, susceptibles de varier selon la date et la disponibilité. Devis personnalisé sur demande.</em></p>
     </SectionImageText>
 

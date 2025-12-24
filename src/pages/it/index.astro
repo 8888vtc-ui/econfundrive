@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "NCC Costa Azzurra – Autista Privato Nizza Monaco Cannes | ECOFUNDRIVE";
 const description = "Servizio NCC premium in Costa Azzurra. Trasferimenti aeroporto Nizza, Monaco, Cannes, Saint-Tropez. Autista privato italiano 24/7. Veicoli di lusso.";
 const keywords = [
@@ -49,7 +48,9 @@ const tarifeIT = [
     
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <PricingRequest lang="it" />
+      <div class="cta-box">
+        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo</a>
+      </div>
     </section>
 
     <!-- Destinations -->

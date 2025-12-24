@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC ou Taxi ou Uber à Nice : Quel Transport Choisir ? | Comparatif 2025";
 const description = "Comparatif complet VTC vs Taxi vs Uber à Nice et sur la Côte d'Azur. Prix, avantages, inconvénients, disponibilité aéroport. Guide pour choisir le meilleur transport.";
 const keywords = [
@@ -47,7 +46,9 @@ const keywords = [
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tableau Comparatif : VTC vs Taxi vs Uber à Nice</h2>
       <div class="table-responsive">
-        <PricingRequest />
+        <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
       </div>
     </section>
 
@@ -152,7 +153,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section bg-light rounded-lg">
       <h2 class="text-center mb-lg">Prix Comparés : Trajets Courants à Nice</h2>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
       <p class="text-center mt-md"><em>Tarifs indicatifs, susceptibles de varier selon l'heure et la date.</em></p>
     </section>
 

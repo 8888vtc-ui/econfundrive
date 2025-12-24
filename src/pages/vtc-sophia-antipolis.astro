@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
-import PricingRequest from '../components/PricingRequest.astro';
-
 const title = "VTC Sophia Antipolis – Chauffeur Privé Technopole | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Sophia Antipolis, la première technopole d'Europe. Transferts aéroport Nice, navettes congrès Amadeus, SAP, Thales. Service business 24h/24.";
 const keywords = [
@@ -119,7 +117,9 @@ const keywords = [
       </p>
     </SectionImageText>
 
-    <PricingRequest />
+    <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Nos Services VTC pour Sophia Antipolis</h2>

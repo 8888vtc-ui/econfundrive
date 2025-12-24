@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "NCC Monaco – Autista Privato Monte-Carlo Gran Premio | ECOFUNDRIVE";
 const description = "Servizio NCC premium a Monaco. Casino Monte-Carlo, Gran Premio F1, Port Hercules, hotel 5 stelle. Autista privato italiano. Trasferimenti da Nizza.";
 const keywords = [
@@ -35,7 +34,9 @@ const keywords = [
     
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <PricingRequest lang="it" />
+      <div class="cta-box">
+        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo</a>
+      </div>
     </section>
 
     <section class="container py-xl fade-in-section">

@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Cap Ferrat – Chauffeur Privé Villa Ephrussi | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Saint-Jean-Cap-Ferrat. Villa Ephrussi de Rothschild, Grand Hôtel du Cap-Ferrat, villas de luxe. Service premium pour clientèle exigeante.";
 const keywords = [
@@ -37,7 +36,9 @@ const keywords = [
     
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
     </section>
 
     <section class="container py-xl fade-in-section">

@@ -13,24 +13,12 @@ const keywords = [
   'différence VTC taxi',
   'meilleur VTC Nice'
 ];
----
 
-<BaseLayout title={title}
-  description={description}
-  currentPage="guide-choisir-vtc-cote-azur"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: "Choisir un VTC", url: "/guide-choisir-vtc-cote-azur" }
-  ]}
-
-  canonical="/guide-choisir-vtc-cote-azur"
-  <main id="main-content" class="container py-lg"
-  schema={{
+const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Guide Complet : Comment Choisir un VTC sur la Côte d'Azur | ECOFUNDRIVE",
-  "description": "Guide expert pour choisir le meilleur VTC sur la Côte d'Azur. Critères de sélection, tarifs, services, législation. Conseils pratiques pour faire le bon choix.",
+  "headline": title,
+  "description": description,
   "url": "https://www.ecofundrive.com/guide-choisir-vtc-cote-azur",
   "author": {
     "@type": "Person",
@@ -46,8 +34,22 @@ const keywords = [
   },
   "datePublished": "2024-01-01",
   "dateModified": "2025-12-01"
-}}
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="guide-choisir-vtc-cote-azur"
+  canonical="/guide-choisir-vtc-cote-azur"
+  schema={schema}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Guides", url: "/guides" },
+    { name: "Choisir un VTC", url: "/guide-choisir-vtc-cote-azur" }
+  ]}
 >
+  <main id="main-content" class="container py-lg">
     <article>
       <h1 class="text-center mb-xl">{title}</h1>
       <p class="lead text-center mb-xl">{description}</p>

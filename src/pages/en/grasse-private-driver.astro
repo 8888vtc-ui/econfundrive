@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Grasse Private Driver – Perfume Capital Tour | ECOFUNDRIVE";
 const description = "Private driver to Grasse, the world capital of perfume. Fragonard, Galimard, Molinard factory tours. Day trips from Nice, Cannes. Premium chauffeur service.";
 const keywords = [
@@ -61,7 +60,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Grasse Tour Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       <p class="text-center mt-md"><em>Factory tours are free. Workshop fees are additional (approx. €50-100).</em></p>
     </section>
 

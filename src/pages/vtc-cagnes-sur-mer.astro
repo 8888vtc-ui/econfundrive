@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Cagnes-sur-Mer – Chauffeur Privé Hippodrome & Renoir | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Cagnes-sur-Mer. Hippodrome de la Côte d'Azur, Haut-de-Cagnes, musée Renoir, plages. Transferts aéroport Nice. Service premium 24h/24.";
 const keywords = [
@@ -37,7 +36,9 @@ const keywords = [
     
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
     </section>
 
     <section class="container py-xl fade-in-section">

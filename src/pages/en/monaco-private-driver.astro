@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Monaco Private Driver – VTC & Chauffeur Service | ECOFUNDRIVE";
 const description = "Private driver VTC service in Monaco. Monte-Carlo Casino, Grand Prix, luxury hotels, Port Hercule. Premium chauffeur service 24/7 from Nice Airport.";
 const keywords = [
@@ -61,7 +60,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Monaco Transfer Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       <p class="text-center mt-md"><em>Prices are indicative. Personal greeting with name board included.</em></p>
     </section>
 

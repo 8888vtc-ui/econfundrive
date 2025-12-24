@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Saint-Paul-de-Vence Private Driver – Artists' Village Tour | ECOFUNDRIVE";
 const description = "Private driver to Saint-Paul-de-Vence, the famous artists' village. Fondation Maeght, La Colombe d'Or, art galleries. Premium chauffeur from Nice.";
 const keywords = [
@@ -58,7 +57,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Saint-Paul Transfer Rates</h2>
-      <PricingRequest lang="en" />
+      <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
     </section>
 
     <section class="container py-xl fade-in-section">

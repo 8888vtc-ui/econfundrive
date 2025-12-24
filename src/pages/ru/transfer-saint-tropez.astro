@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-import PricingRequest from '../../components/PricingRequest.astro';
 const title = "Трансфер Сен-Тропе – Личный Водитель Пампелон & Пляжи | ECOFUNDRIVE";
 const description = "Премиум трансфер в Сен-Тропе. Пляжи Пампелон, Club 55, Nikki Beach, порт, Place des Lices. Трансферы из Ниццы и Канн.";
 const keywords = [
@@ -58,7 +57,9 @@ const keywords = [
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Тарифы на Трансферы в Сен-Тропе</h2>
-      <PricingRequest lang="ru" />
+      <div class="cta-box">
+        <a href="/ru/kontakt" class="btn-primary">Запросить цену</a>
+      </div>
       <p class="text-center mt-md"><em>Тарифы высокого сезона (июль-август): +20%. Бронируйте заранее!</em></p>
     </section>
 

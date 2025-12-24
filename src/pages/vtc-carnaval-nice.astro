@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-import PricingRequest from '../components/PricingRequest.astro';
 const title = "VTC Carnaval de Nice 2025 – Chauffeur Privé Corso & Bataille de Fleurs | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC pour le Carnaval de Nice 2025. Transferts aéroport, navettes Corso Carnavalesque, Bataille de Fleurs sur la Promenade des Anglais. Service premium 24h/24.";
 const keywords = [
@@ -123,7 +122,9 @@ const schema = {
         Vous arrivez à Nice pour le Carnaval ? Notre service de <strong>transfert aéroport VTC</strong> vous permet de rejoindre votre hôtel ou le centre-ville en toute sérénité, même pendant les périodes de forte affluence.
       </p>
       <h3 class="fade-in-section">Tarifs Transfert Aéroport Nice – Centre-Ville (Carnaval 2025)</h3>
-      <PricingRequest />
+      <div class="cta-box">
+        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      </div>
       <p class="fade-in-section"><em>Tarifs indicatifs, susceptibles de varier. Accueil personnalisé avec pancarte inclus.</em></p>
     </SectionImageText>
 

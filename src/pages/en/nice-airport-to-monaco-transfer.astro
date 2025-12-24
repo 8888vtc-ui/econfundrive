@@ -1,7 +1,5 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingRequest from '../../components/PricingRequest.astro';
-
 const title = "Nice Airport to Monaco Transfer | ECOFUNDRIVE VTC Service";
 const description = "Book your premium private driver from Nice Airport (NCE) to Monaco. Fixed prices, Tesla & Mercedes fleet, English speaking chauffeurs. Instant confirmation.";
 const keywords = [
@@ -75,7 +73,9 @@ const breadcrumbItems = [
     <section id="booking" class="booking-section">
       <div class="container">
         <h2 class="text-center">Request a Quote</h2>
-        <PricingRequest lang="en" />
+        <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       </div>
     </section>
 

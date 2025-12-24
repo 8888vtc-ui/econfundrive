@@ -1,7 +1,5 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingRequest from '../../components/PricingRequest.astro';
-
 const title = "Nice Airport to Cannes Transfer | VTC & Chauffeur Service";
 const description = "Private chauffeur from Nice Airport (NCE) to Cannes. Transfers for MIPIM, Cannes Lions & Festivals. Luxury Mercedes vans and sedans.";
 const keywords = [
@@ -74,7 +72,9 @@ const breadcrumbItems = [
     <section id="booking" class="booking-section">
       <div class="container">
         <h2 class="text-center">Get Your Fixed Quote</h2>
-        <PricingRequest lang="en" />
+        <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
       </div>
     </section>
 

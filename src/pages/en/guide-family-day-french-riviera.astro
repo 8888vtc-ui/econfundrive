@@ -1,7 +1,5 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PricingRequest from '../../components/PricingRequest.astro';
-
 const title = "Family Day Trip French Riviera | Private Driver & Tours";
 const description = "Plan the perfect family day on the French Riviera. Visit Marineland, Oceanographic Museum, and kid-friendly beaches with our safe, comfortable private chauffeured vans.";
 const keywords = [
@@ -108,7 +106,9 @@ const articleSchema = {
           <div class="sidebar-block">
             <h3>Book Your Family Van</h3>
             <p>Ensure travel comfort with our Mercedes V-Class vans.</p>
-            <PricingRequest lang="en" />
+            <div class="cta-box">
+        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+      </div>
           </div>
         </aside>
       </div>
