@@ -250,6 +250,20 @@
   .autocomplete-item:last-child { border-bottom: none; }
   .autocomplete-loading { padding: 12px; text-align: center; color: #888; }
 
+  .dropdown-header {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+  }
+
+  .autocomplete-item.local { font-weight: 500; }
+  .autocomplete-item.api { color: #666; font-size: 0.85rem; }
+
   /* Optional section */
   .optional-group details {
     background: #fafafa;
@@ -356,46 +370,131 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   if (h) h.value = '10:00';
 
-  // Autocomplete
+  // Destinations VTC populaires (instantanées)
+  const localPlaces = [
+    '✈️ Aéroport Nice Côte d\'Azur',
+    '✈️ Aéroport de Cannes-Mandelieu',
+    '🚉 Gare Nice Ville',
+    '🚉 Gare de Cannes',
+    '🚉 Gare de Monaco-Monte-Carlo',
+    '🏨 Hôtel Negresco, Nice',
+    '🏨 Hôtel Martinez, Cannes',
+    '🏨 Hôtel du Cap-Eden-Roc, Antibes',
+    '🏨 Monte-Carlo Bay Hotel',
+    '🎰 Casino de Monte-Carlo, Monaco',
+    '🎬 Palais des Festivals, Cannes',
+    '⛵ Port de Nice',
+    '⛵ Port de Monaco',
+    '⛵ Port de Saint-Tropez',
+    '🏖️ Promenade des Anglais, Nice',
+    '🏖️ La Croisette, Cannes',
+    '🏘️ Nice centre-ville',
+    '🏘️ Cannes centre-ville',
+    '🏘️ Antibes centre-ville',
+    '🏘️ Monaco centre',
+    '🏘️ Menton centre-ville',
+    '🏘️ Saint-Tropez centre',
+    '🏘️ Villefranche-sur-Mer',
+    '🏘️ Èze Village',
+    '🏘️ Saint-Jean-Cap-Ferrat',
+    '🏘️ Juan-les-Pins',
+    '🏘️ Mougins',
+    '🏘️ Grasse',
+    '🏘️ Sophia Antipolis',
+    '🏥 Hôpital Pasteur, Nice',
+    '🏥 Hôpital Princess Grace, Monaco'
+  ];
+
+  // Autocomplete hybride
   let timer;
   function setup(iid, did) {
-    const i = document.getElementById(iid);
-    const dd = document.getElementById(did);
-    if (!i || !dd) return;
+    const input = document.getElementById(iid);
+    const dropdown = document.getElementById(did);
+    if (!input || !dropdown) return;
 
-    i.addEventListener('input', function() {
-      const q = this.value.trim();
+    input.addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
       clearTimeout(timer);
-      if (q.length < 3) { dd.classList.remove('show'); return; }
-      dd.innerHTML = '<div class="autocomplete-loading">...</div>';
-      dd.classList.add('show');
+      
+      if (q.length < 2) { 
+        dropdown.classList.remove('show'); 
+        return; 
+      }
 
-      timer = setTimeout(function() {
-        fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + 
-          encodeURIComponent(q) + '&countrycodes=fr,mc,it&limit=5', 
-          { headers: { 'Accept-Language': 'fr' } })
-          .then(r => r.json())
-          .then(data => {
-            dd.innerHTML = '';
-            if (data.length) {
-              data.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'autocomplete-item';
-                div.textContent = item.display_name.split(',').slice(0,3).join(', ');
-                div.onclick = () => { i.value = div.textContent; dd.classList.remove('show'); };
-                dd.appendChild(div);
-              });
-            } else {
-              dd.innerHTML = '<div class="autocomplete-loading">Aucun résultat</div>';
-            }
-          }).catch(() => dd.classList.remove('show'));
-      }, 350);
+      // 1. D'abord : suggestions locales (instantanées)
+      const localMatches = localPlaces.filter(p => 
+        p.toLowerCase().includes(q)
+      ).slice(0, 5);
+
+      if (localMatches.length > 0) {
+        dropdown.innerHTML = localMatches.map(p => 
+          '<div class="autocomplete-item local">' + p + '</div>'
+        ).join('');
+        dropdown.classList.add('show');
+
+        dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+          item.onclick = () => {
+            input.value = item.textContent.replace(/^[^\s]+\s/, ''); // Enlever emoji
+            dropdown.classList.remove('show');
+          };
+        });
+      }
+
+      // 2. Ensuite : API Nominatim (si peu de résultats locaux)
+      if (localMatches.length < 3 && q.length >= 3) {
+        timer = setTimeout(() => {
+          fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + 
+            encodeURIComponent(q + ' Côte d\'Azur France') + '&limit=3', 
+            { headers: { 'Accept-Language': 'fr' } })
+            .then(r => r.json())
+            .then(data => {
+              if (data.length > 0) {
+                const apiResults = data.map(item => {
+                  const name = item.display_name.split(',').slice(0,2).join(', ');
+                  return '<div class="autocomplete-item api">📍 ' + name + '</div>';
+                }).join('');
+                
+                // Ajouter après les résultats locaux
+                const existing = dropdown.innerHTML;
+                if (!existing.includes('api')) {
+                  dropdown.innerHTML = existing + apiResults;
+                  
+                  dropdown.querySelectorAll('.autocomplete-item.api').forEach(item => {
+                    item.onclick = () => {
+                      input.value = item.textContent.replace('📍 ', '');
+                      dropdown.classList.remove('show');
+                    };
+                  });
+                }
+              }
+            }).catch(() => {});
+        }, 200);
+      }
+    });
+
+    // Focus = afficher suggestions populaires
+    input.addEventListener('focus', function() {
+      if (this.value.length < 2) {
+        const popular = localPlaces.slice(0, 6);
+        dropdown.innerHTML = '<div class="dropdown-header">Destinations populaires</div>' +
+          popular.map(p => '<div class="autocomplete-item local">' + p + '</div>').join('');
+        dropdown.classList.add('show');
+        
+        dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+          item.onclick = () => {
+            input.value = item.textContent.replace(/^[^\s]+\s/, '');
+            dropdown.classList.remove('show');
+          };
+        });
+      }
     });
 
     document.addEventListener('click', e => {
-      if (!i.contains(e.target) && !dd.contains(e.target)) dd.classList.remove('show');
+      if (!input.contains(e.target) && !dropdown.contains(e.target)) 
+        dropdown.classList.remove('show');
     });
   }
+  
   setup('depart', 'depart-dropdown');
   setup('arrivee', 'arrivee-dropdown');
 
