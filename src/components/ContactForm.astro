@@ -405,15 +405,32 @@ document.addEventListener('DOMContentLoaded', function() {
     '🏥 Hôpital Princess Grace, Monaco'
   ];
 
-  // Autocomplete hybride
+  // Autocomplete API-first avec fallback local
   let timer;
   function setup(iid, did) {
     const input = document.getElementById(iid);
     const dropdown = document.getElementById(did);
     if (!input || !dropdown) return;
 
+    function renderItems(items, isApi) {
+      return items.map(text => 
+        '<div class="autocomplete-item ' + (isApi ? 'api' : 'local') + '">' + text + '</div>'
+      ).join('');
+    }
+
+    function attachClicks() {
+      dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
+        item.onclick = () => {
+          // Enlever emoji au début
+          input.value = item.textContent.replace(/^[^\s]+\s/, '').trim();
+          dropdown.classList.remove('show');
+        };
+      });
+    }
+
     input.addEventListener('input', function() {
-      const q = this.value.trim().toLowerCase();
+      const q = this.value.trim();
+      const qLower = q.toLowerCase();
       clearTimeout(timer);
       
       if (q.length < 2) { 
@@ -421,54 +438,53 @@ document.addEventListener('DOMContentLoaded', function() {
         return; 
       }
 
-      // 1. D'abord : suggestions locales (instantanées)
+      // 1. INSTANT : suggestions locales
       const localMatches = localPlaces.filter(p => 
-        p.toLowerCase().includes(q)
-      ).slice(0, 5);
+        p.toLowerCase().includes(qLower)
+      ).slice(0, 4);
 
+      let html = '';
       if (localMatches.length > 0) {
-        dropdown.innerHTML = localMatches.map(p => 
-          '<div class="autocomplete-item local">' + p + '</div>'
-        ).join('');
-        dropdown.classList.add('show');
-
-        dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
-          item.onclick = () => {
-            input.value = item.textContent.replace(/^[^\s]+\s/, ''); // Enlever emoji
-            dropdown.classList.remove('show');
-          };
-        });
+        html = '<div class="dropdown-header">Destinations VTC</div>' + renderItems(localMatches, false);
       }
+      
+      dropdown.innerHTML = html || '<div class="autocomplete-loading">🔍 Recherche...</div>';
+      dropdown.classList.add('show');
+      attachClicks();
 
-      // 2. Ensuite : API Nominatim (si peu de résultats locaux)
-      if (localMatches.length < 3 && q.length >= 3) {
+      // 2. API : Toujours appeler dès 3 caractères
+      if (q.length >= 3) {
         timer = setTimeout(() => {
-          fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + 
-            encodeURIComponent(q + ' Côte d\'Azur France') + '&limit=3', 
-            { headers: { 'Accept-Language': 'fr' } })
+          const apiUrl = 'https://nominatim.openstreetmap.org/search?format=json&q=' + 
+            encodeURIComponent(q) + '&countrycodes=fr,mc&limit=5&addressdetails=1';
+          
+          fetch(apiUrl, { 
+            headers: { 
+              'Accept-Language': 'fr',
+              'User-Agent': 'EcoFunDrive-VTC/1.0'
+            } 
+          })
             .then(r => r.json())
             .then(data => {
-              if (data.length > 0) {
-                const apiResults = data.map(item => {
-                  const name = item.display_name.split(',').slice(0,2).join(', ');
-                  return '<div class="autocomplete-item api">📍 ' + name + '</div>';
-                }).join('');
+              if (data && data.length > 0) {
+                const apiItems = data.map(item => {
+                  // Formater l'adresse proprement
+                  const parts = item.display_name.split(',').slice(0, 3);
+                  return '📍 ' + parts.join(',').trim();
+                });
                 
-                // Ajouter après les résultats locaux
-                const existing = dropdown.innerHTML;
-                if (!existing.includes('api')) {
-                  dropdown.innerHTML = existing + apiResults;
-                  
-                  dropdown.querySelectorAll('.autocomplete-item.api').forEach(item => {
-                    item.onclick = () => {
-                      input.value = item.textContent.replace('📍 ', '');
-                      dropdown.classList.remove('show');
-                    };
-                  });
-                }
+                // Ajouter section API
+                const apiSection = '<div class="dropdown-header">Résultats</div>' + renderItems(apiItems, true);
+                dropdown.innerHTML = (localMatches.length > 0 ? 
+                  '<div class="dropdown-header">Destinations VTC</div>' + renderItems(localMatches, false) : '') 
+                  + apiSection;
+                attachClicks();
               }
-            }).catch(() => {});
-        }, 200);
+            })
+            .catch(err => {
+              console.log('Nominatim error:', err);
+            });
+        }, 150);
       }
     });
 
@@ -476,16 +492,9 @@ document.addEventListener('DOMContentLoaded', function() {
     input.addEventListener('focus', function() {
       if (this.value.length < 2) {
         const popular = localPlaces.slice(0, 6);
-        dropdown.innerHTML = '<div class="dropdown-header">Destinations populaires</div>' +
-          popular.map(p => '<div class="autocomplete-item local">' + p + '</div>').join('');
+        dropdown.innerHTML = '<div class="dropdown-header">Destinations populaires</div>' + renderItems(popular, false);
         dropdown.classList.add('show');
-        
-        dropdown.querySelectorAll('.autocomplete-item').forEach(item => {
-          item.onclick = () => {
-            input.value = item.textContent.replace(/^[^\s]+\s/, '');
-            dropdown.classList.remove('show');
-          };
-        });
+        attachClicks();
       }
     });
 
