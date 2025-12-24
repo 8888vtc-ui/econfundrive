@@ -83,16 +83,35 @@ const breadcrumbItems = [
                 <p>Nice, Cannes, Monaco, Antibes, Saint-Tropez et toute la Côte d'Azur.</p>
               </div>
             </div>
+
+            <div class="info-card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="card-text">
+                <h3>Disponibilité</h3>
+                <p><strong>24h/24 - 7j/7</strong></p>
+                <p class="small-text">Réservation conseillée 24h à l'avance</p>
+              </div>
+            </div>
             
-            <div class="trust-box">
-               <img src="/assets/img/logo/logo-icon-gold.svg" alt="EcoFunDrive" class="trust-logo" />
-               <p>Chauffeurs professionnels agréés et véhicules haut de gamme pour votre sécurité et confort.</p>
+            <div class="advantages-box">
+               <h3>Pourquoi ECOFUNDRIVE ?</h3>
+               <ul class="advantages-list">
+                 <li>✓ Prix fixe garanti, pas de surprise</li>
+                 <li>✓ Véhicules premium (Tesla, Mercedes)</li>
+                 <li>✓ Chauffeurs professionnels bilingues</li>
+                 <li>✓ Suivi de vol en temps réel</li>
+                 <li>✓ Annulation gratuite 24h avant</li>
+               </ul>
             </div>
 
-            <div class="trust-box" style="margin-top: 1rem; background: #fff;">
-               <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Presse & Médias</h3>
-               <p style="margin-bottom: 1rem;">Consultez nos derniers communiqués et actualités.</p>
-               <a href="/en/news/press-release-launch" class="link-arrow">Espacé Presse →</a>
+            <div class="whatsapp-box">
+               <span class="wa-icon">💬</span>
+               <div>
+                 <p><strong>Réponse en moins de 15 min</strong></p>
+                 <a href="https://wa.me/33616552811" class="btn-whatsapp">Contacter sur WhatsApp</a>
+               </div>
             </div>
           </aside>
 
@@ -345,6 +364,75 @@ const breadcrumbItems = [
     font-size: 0.9rem;
     color: #8c732b;
     font-weight: 500;
+  }
+
+  /* ADVANTAGES BOX */
+  .advantages-box {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 1.5rem;
+    border-radius: 16px;
+    color: white;
+  }
+  
+  .advantages-box h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #d4af37;
+  }
+  
+  .advantages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .advantages-list li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .advantages-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* WHATSAPP BOX */
+  .whatsapp-box {
+    background: #25D366;
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+  }
+  
+  .wa-icon {
+    font-size: 2rem;
+  }
+  
+  .whatsapp-box p {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .btn-whatsapp {
+    display: inline-block;
+    background: white;
+    color: #25D366;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  .btn-whatsapp:hover {
+    background: #f0fff4;
+    transform: translateY(-2px);
   }
 
   /* MAP SECTION */
