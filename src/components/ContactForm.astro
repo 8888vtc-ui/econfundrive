@@ -1,143 +1,89 @@
 ---
 /**
- * Formulaire de réservation VTC avec autocomplétion Nominatim
- * Envoi WhatsApp ou Netlify (email)
+ * Formulaire de réservation VTC - Version simplifiée
+ * Moins de champs = Plus de conversions
  */
 ---
 <div class="form-wrapper fade-in-section" id="formulaire">
   <div class="form-header">
-    <h2>Réservez votre Chauffeur</h2>
-    <p>Remplissez ce formulaire pour recevoir un devis gratuit sous 15 minutes.</p>
+    <span class="form-badge">⚡ Réponse en 15 min</span>
+    <h2>Réservez en 30 secondes</h2>
   </div>
   
-  <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="premium-form" id="reservation-form">
+  <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-form" id="reservation-form">
     <input type="hidden" name="form-name" value="reservation" />
-    <p class="hidden"><label>Bot Field: <input name="bot-field" /></label></p>
-
-    <!-- COORDONNEES -->
-    <div class="form-section">
-      <h3 class="section-title">📋 Vos coordonnées</h3>
-      <div class="form-grid-2">
-        <div class="input-group">
-          <label for="nom">Nom complet *</label>
-          <input type="text" id="nom" name="nom" required placeholder="Jean Dupont" />
-        </div>
-        <div class="input-group">
-          <label for="telephone">Téléphone *</label>
-          <input type="tel" id="telephone" name="telephone" required placeholder="+33 6 00 00 00 00" />
-        </div>
-      </div>
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="votre@email.com" />
-      </div>
-    </div>
+    <p class="hidden"><label>Bot: <input name="bot-field" /></label></p>
 
     <!-- TRAJET -->
-    <div class="form-section">
-      <h3 class="section-title">📍 Votre trajet</h3>
-      
-      <div class="input-group autocomplete-group">
-        <label for="depart">Adresse de départ *</label>
-        <div class="input-with-icon">
-          <span class="input-icon">🟢</span>
-          <input type="text" id="depart" name="depart" required placeholder="Ex: Aéroport Nice Côte d'Azur" autocomplete="off" />
-        </div>
+    <div class="field-group">
+      <div class="input-row autocomplete-group">
+        <span class="input-icon">🟢</span>
+        <input type="text" id="depart" name="depart" required placeholder="Adresse de départ" autocomplete="off" />
         <div class="autocomplete-dropdown" id="depart-dropdown"></div>
       </div>
+    </div>
 
-      <div class="input-group autocomplete-group">
-        <label for="arrivee">Adresse d'arrivée *</label>
-        <div class="input-with-icon">
-          <span class="input-icon">🔴</span>
-          <input type="text" id="arrivee" name="arrivee" required placeholder="Ex: Hôtel Negresco, Nice" autocomplete="off" />
-        </div>
+    <div class="field-group">
+      <div class="input-row autocomplete-group">
+        <span class="input-icon">🔴</span>
+        <input type="text" id="arrivee" name="arrivee" required placeholder="Adresse d'arrivée" autocomplete="off" />
         <div class="autocomplete-dropdown" id="arrivee-dropdown"></div>
       </div>
-
-      <!-- Raccourcis destinations -->
-      <div class="quick-destinations">
-        <span class="quick-label">Destinations fréquentes :</span>
-        <button type="button" class="quick-btn" data-dest="Aéroport Nice Côte d'Azur, Nice">✈️ Aéroport Nice</button>
-        <button type="button" class="quick-btn" data-dest="Monaco, Monte-Carlo">🎰 Monaco</button>
-        <button type="button" class="quick-btn" data-dest="Cannes, Croisette">🎬 Cannes</button>
-        <button type="button" class="quick-btn" data-dest="Saint-Tropez">⛵ St-Tropez</button>
+      <div class="quick-btns">
+        <button type="button" class="qb" data-dest="Aéroport Nice Côte d'Azur">✈️ Aéroport</button>
+        <button type="button" class="qb" data-dest="Monaco">🎰 Monaco</button>
+        <button type="button" class="qb" data-dest="Cannes">🎬 Cannes</button>
       </div>
     </div>
 
-    <!-- DATE ET HEURE -->
-    <div class="form-section">
-      <h3 class="section-title">📅 Date et heure</h3>
-      <div class="form-grid-3">
-        <div class="input-group">
-          <label for="date">Date *</label>
-          <input type="date" id="date" name="date" required />
-        </div>
-        <div class="input-group">
-          <label for="heure">Heure *</label>
-          <input type="time" id="heure" name="heure" required />
-        </div>
-        <div class="input-group">
-          <label for="retour">Retour ?</label>
-          <select id="retour" name="retour">
-            <option value="non">Aller simple</option>
-            <option value="oui">Aller-retour</option>
-          </select>
-        </div>
+    <!-- DATE / HEURE / PASSAGERS sur une ligne -->
+    <div class="inline-fields">
+      <div class="inline-field">
+        <label>📅</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+      <div class="inline-field">
+        <label>🕐</label>
+        <input type="time" id="heure" name="heure" required />
+      </div>
+      <div class="inline-field">
+        <label>👥</label>
+        <select id="passagers" name="passagers">
+          <option>1</option>
+          <option>2</option>
+          <option selected>3</option>
+          <option>4+</option>
+        </select>
       </div>
     </div>
 
-    <!-- PASSAGERS -->
-    <div class="form-section">
-      <h3 class="section-title">👥 Passagers et bagages</h3>
-      <div class="form-grid-3">
-        <div class="input-group">
-          <label for="passagers">Passagers</label>
-          <select id="passagers" name="passagers">
-            <option>1</option>
-            <option>2</option>
-            <option selected>3</option>
-            <option>4</option>
-            <option>5+</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="bagages">Bagages</label>
-          <select id="bagages" name="bagages">
-            <option>0</option>
-            <option>1</option>
-            <option selected>2</option>
-            <option>3+</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="vehicule">Véhicule</label>
-          <select id="vehicule" name="vehicule">
-            <option value="berline">Berline (1-3 pers)</option>
-            <option value="van">Van (4-7 pers)</option>
-            <option value="luxe">Luxe (Mercedes S)</option>
-          </select>
-        </div>
+    <!-- CONTACT -->
+    <div class="field-group">
+      <div class="input-row">
+        <span class="input-icon">📞</span>
+        <input type="tel" id="telephone" name="telephone" required placeholder="Votre numéro de téléphone" />
       </div>
     </div>
 
-    <!-- MESSAGE -->
-    <div class="input-group">
-      <label for="message">Informations complémentaires</label>
-      <textarea id="message" name="message" rows="3" placeholder="N° de vol, besoins spéciaux, siège enfant..."></textarea>
+    <!-- MESSAGE OPTIONNEL -->
+    <div class="field-group optional-group">
+      <details>
+        <summary>+ Ajouter des détails (optionnel)</summary>
+        <textarea id="message" name="message" rows="2" placeholder="N° de vol, siège enfant, demande spéciale..."></textarea>
+      </details>
     </div>
 
-    <!-- BOUTONS ENVOI -->
-    <div class="submit-buttons">
-      <button type="button" class="submit-btn whatsapp-btn" id="whatsapp-btn">
-        <span>💬 Envoyer sur WhatsApp</span>
-      </button>
-      <button type="submit" class="submit-btn email-btn" id="submit-btn">
-        <span>📧 Envoyer par Email</span>
-      </button>
+    <!-- BOUTON PRINCIPAL -->
+    <button type="button" class="main-btn whatsapp" id="whatsapp-btn">
+      💬 Demander un devis WhatsApp
+    </button>
+
+    <div class="alt-options">
+      <span>ou</span>
+      <button type="submit" class="link-btn" id="submit-btn">Envoyer par email</button>
+      <span>•</span>
+      <a href="tel:+33616552811" class="link-btn">Appeler directement</a>
     </div>
-    
-    <p class="form-note">* Réponse garantie sous 15 minutes par WhatsApp</p>
     
     <div id="form-message" class="form-status"></div>
   </form>
@@ -146,114 +92,134 @@
 <style>
   .form-wrapper {
     background: white;
-    padding: 2.5rem;
-    border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
   }
 
   .form-header {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-badge {
+    display: inline-block;
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
 
   .form-header h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
     color: #1a1a1a;
+    margin: 0;
   }
 
-  .form-header p {
-    color: #666;
-    font-size: 0.95rem;
-  }
-
-  .premium-form {
+  .booking-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .form-section {
-    background: #fafafa;
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid #eee;
-  }
-
-  .section-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #1a1a1a;
-  }
-
-  .form-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .form-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
   }
 
-  .input-group {
+  .field-group {
+    position: relative;
+  }
+
+  .input-row {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    position: relative;
-  }
-
-  .input-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .input-group input, 
-  .input-group select, 
-  .input-group textarea {
-    padding: 0.9rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-    background: white;
-  }
-
-  .input-group input:focus, 
-  .input-group select:focus, 
-  .input-group textarea:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
-    outline: none;
-  }
-
-  /* Autocomplete input */
-  .input-with-icon {
-    position: relative;
+    align-items: center;
   }
 
   .input-icon {
     position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8rem;
+    left: 14px;
+    font-size: 0.9rem;
+    z-index: 1;
   }
 
-  .input-with-icon input {
-    padding-left: 2.5rem;
+  .input-row input {
     width: 100%;
+    padding: 1rem 1rem 1rem 2.75rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
   }
 
-  .autocomplete-group {
-    position: relative;
+  .input-row input:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.1);
   }
+
+  /* Quick buttons */
+  .quick-btns {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .qb {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .qb:hover {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+  }
+
+  /* Inline fields */
+  .inline-fields {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .inline-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f9f9f9;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+
+  .inline-field label {
+    font-size: 1rem;
+  }
+
+  .inline-field input,
+  .inline-field select {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    font-family: inherit;
+    padding: 0.5rem 0;
+    min-width: 0;
+  }
+
+  .inline-field input:focus,
+  .inline-field select:focus {
+    outline: none;
+  }
+
+  /* Autocomplete */
+  .autocomplete-group { position: relative; }
 
   .autocomplete-dropdown {
     position: absolute;
@@ -262,119 +228,101 @@
     right: 0;
     background: white;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     display: none;
     z-index: 100;
-    max-height: 200px;
+    max-height: 180px;
     overflow-y: auto;
     margin-top: 4px;
   }
 
-  .autocomplete-dropdown.show {
-    display: block;
-  }
+  .autocomplete-dropdown.show { display: block; }
 
   .autocomplete-item {
-    padding: 10px 14px;
+    padding: 12px 16px;
     cursor: pointer;
     font-size: 0.9rem;
     border-bottom: 1px solid #f0f0f0;
   }
 
-  .autocomplete-item:hover {
-    background: #f5f5f5;
+  .autocomplete-item:hover { background: #f8f8f8; }
+  .autocomplete-item:last-child { border-bottom: none; }
+  .autocomplete-loading { padding: 12px; text-align: center; color: #888; }
+
+  /* Optional section */
+  .optional-group details {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 0;
   }
 
-  .autocomplete-item:last-child {
-    border-bottom: none;
-  }
-
-  .autocomplete-loading {
-    padding: 12px;
-    text-align: center;
-    color: #888;
+  .optional-group summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
     font-size: 0.85rem;
+    color: #666;
+    list-style: none;
   }
 
-  /* Quick destinations */
-  .quick-destinations {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    align-items: center;
-  }
+  .optional-group summary::-webkit-details-marker { display: none; }
 
-  .quick-label {
-    font-size: 0.8rem;
-    color: #888;
-  }
-
-  .quick-btn {
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    padding: 6px 12px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .quick-btn:hover {
-    background: #d4af37;
-    border-color: #d4af37;
-    color: white;
-  }
-
-  /* Submit buttons */
-  .submit-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .submit-btn {
-    padding: 1rem;
+  .optional-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
     border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: all 0.2s;
+    border-top: 1px solid #eee;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: none;
   }
 
-  .whatsapp-btn {
+  .optional-group textarea:focus { outline: none; }
+
+  /* Main button */
+  .main-btn {
     background: #25D366;
     color: white;
-  }
-
-  .whatsapp-btn:hover {
-    background: #1fbd5a;
-    transform: translateY(-2px);
-  }
-
-  .email-btn {
-    background: #1a1a1a;
-    color: white;
-  }
-
-  .email-btn:hover {
-    background: #d4af37;
-    transform: translateY(-2px);
-  }
-
-  .form-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #888;
+    border: none;
+    padding: 1.1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
     margin-top: 0.5rem;
   }
 
+  .main-btn:hover {
+    background: #1fbd5a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+  }
+
+  /* Alt options */
+  .alt-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .link-btn {
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .link-btn:hover { text-decoration: underline; }
+
+  /* Status */
   .form-status {
     margin-top: 1rem;
     padding: 1rem;
@@ -388,179 +336,127 @@
   
   .hidden { display: none; }
 
-  @media (max-width: 768px) {
-    .form-wrapper { padding: 1.5rem; }
-    .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
-    .submit-buttons { grid-template-columns: 1fr; }
-    .quick-destinations { justify-content: center; }
+  @media (max-width: 600px) {
+    .form-wrapper { padding: 1.25rem; }
+    .inline-fields { flex-wrap: wrap; }
+    .inline-field { flex: 1 1 45%; }
+    .quick-btns { flex-wrap: wrap; justify-content: center; }
   }
 </style>
 
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
-  // Date par défaut = demain
-  const dateInput = document.getElementById('date');
-  if (dateInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    dateInput.value = tomorrow.toISOString().split('T')[0];
-    dateInput.min = new Date().toISOString().split('T')[0];
+  // Date = demain, Heure = 10:00
+  const d = document.getElementById('date');
+  const h = document.getElementById('heure');
+  if (d) {
+    const t = new Date(); t.setDate(t.getDate() + 1);
+    d.value = t.toISOString().split('T')[0];
+    d.min = new Date().toISOString().split('T')[0];
   }
+  if (h) h.value = '10:00';
 
-  // Heure par défaut = 10:00
-  const heureInput = document.getElementById('heure');
-  if (heureInput) heureInput.value = '10:00';
+  // Autocomplete
+  let timer;
+  function setup(iid, did) {
+    const i = document.getElementById(iid);
+    const dd = document.getElementById(did);
+    if (!i || !dd) return;
 
-  // Autocomplétion Nominatim
-  let debounceTimer;
-  
-  function setupAutocomplete(inputId, dropdownId) {
-    const input = document.getElementById(inputId);
-    const dropdown = document.getElementById(dropdownId);
-    if (!input || !dropdown) return;
+    i.addEventListener('input', function() {
+      const q = this.value.trim();
+      clearTimeout(timer);
+      if (q.length < 3) { dd.classList.remove('show'); return; }
+      dd.innerHTML = '<div class="autocomplete-loading">...</div>';
+      dd.classList.add('show');
 
-    input.addEventListener('input', function() {
-      const query = this.value.trim();
-      clearTimeout(debounceTimer);
-      
-      if (query.length < 3) {
-        dropdown.classList.remove('show');
-        return;
-      }
-
-      dropdown.innerHTML = '<div class="autocomplete-loading">Recherche...</div>';
-      dropdown.classList.add('show');
-
-      debounceTimer = setTimeout(function() {
-        const url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + 
-          encodeURIComponent(query) + 
-          '&countrycodes=fr,mc,it&limit=5&addressdetails=1';
-        
-        fetch(url, { headers: { 'Accept-Language': 'fr' } })
-          .then(function(r) { return r.json(); })
-          .then(function(data) {
-            dropdown.innerHTML = '';
-            if (data.length > 0) {
-              data.forEach(function(item) {
+      timer = setTimeout(function() {
+        fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + 
+          encodeURIComponent(q) + '&countrycodes=fr,mc,it&limit=5', 
+          { headers: { 'Accept-Language': 'fr' } })
+          .then(r => r.json())
+          .then(data => {
+            dd.innerHTML = '';
+            if (data.length) {
+              data.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'autocomplete-item';
-                const name = item.display_name.split(',').slice(0, 3).join(', ');
-                div.textContent = name;
-                div.addEventListener('click', function() {
-                  input.value = name;
-                  dropdown.classList.remove('show');
-                });
-                dropdown.appendChild(div);
+                div.textContent = item.display_name.split(',').slice(0,3).join(', ');
+                div.onclick = () => { i.value = div.textContent; dd.classList.remove('show'); };
+                dd.appendChild(div);
               });
             } else {
-              dropdown.innerHTML = '<div class="autocomplete-loading">Aucun résultat</div>';
+              dd.innerHTML = '<div class="autocomplete-loading">Aucun résultat</div>';
             }
-          })
-          .catch(function() {
-            dropdown.classList.remove('show');
-          });
-      }, 400);
+          }).catch(() => dd.classList.remove('show'));
+      }, 350);
     });
 
-    // Fermer dropdown si click ailleurs
-    document.addEventListener('click', function(e) {
-      if (!input.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-      }
+    document.addEventListener('click', e => {
+      if (!i.contains(e.target) && !dd.contains(e.target)) dd.classList.remove('show');
     });
   }
+  setup('depart', 'depart-dropdown');
+  setup('arrivee', 'arrivee-dropdown');
 
-  setupAutocomplete('depart', 'depart-dropdown');
-  setupAutocomplete('arrivee', 'arrivee-dropdown');
-
-  // Boutons destinations rapides
-  document.querySelectorAll('.quick-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const dest = this.getAttribute('data-dest');
-      const arriveeInput = document.getElementById('arrivee');
-      if (arriveeInput) arriveeInput.value = dest;
-    });
+  // Quick buttons
+  document.querySelectorAll('.qb').forEach(b => {
+    b.onclick = () => document.getElementById('arrivee').value = b.dataset.dest;
   });
 
-  // Envoi WhatsApp
-  const waBtn = document.getElementById('whatsapp-btn');
-  if (waBtn) {
-    waBtn.addEventListener('click', function() {
-      const nom = document.getElementById('nom').value;
-      const tel = document.getElementById('telephone').value;
-      const depart = document.getElementById('depart').value;
-      const arrivee = document.getElementById('arrivee').value;
-      const date = document.getElementById('date').value;
-      const heure = document.getElementById('heure').value;
-      const passagers = document.getElementById('passagers').value;
-      const bagages = document.getElementById('bagages').value;
-      const vehicule = document.getElementById('vehicule').value;
-      const message = document.getElementById('message').value;
+  // WhatsApp
+  document.getElementById('whatsapp-btn').onclick = function() {
+    const dep = document.getElementById('depart').value;
+    const arr = document.getElementById('arrivee').value;
+    const date = document.getElementById('date').value;
+    const heure = document.getElementById('heure').value;
+    const pass = document.getElementById('passagers').value;
+    const tel = document.getElementById('telephone').value;
+    const msg = document.getElementById('message')?.value || '';
 
-      if (!nom || !tel || !depart || !arrivee || !date || !heure) {
-        alert('Veuillez remplir tous les champs obligatoires.');
-        return;
-      }
+    if (!dep || !arr || !date || !heure || !tel) {
+      alert('Merci de remplir tous les champs.');
+      return;
+    }
 
-      const dateFormatted = new Date(date).toLocaleDateString('fr-FR');
-      
-      let text = '🚗 NOUVELLE RÉSERVATION VTC\n\n';
-      text += '👤 ' + nom + '\n';
-      text += '📞 ' + tel + '\n\n';
-      text += '📍 Départ: ' + depart + '\n';
-      text += '📍 Arrivée: ' + arrivee + '\n\n';
-      text += '📅 ' + dateFormatted + ' à ' + heure + '\n';
-      text += '👥 ' + passagers + ' passager(s)\n';
-      text += '🧳 ' + bagages + ' bagage(s)\n';
-      text += '🚘 ' + vehicule + '\n';
-      if (message) text += '\n💬 ' + message;
+    const df = new Date(date).toLocaleDateString('fr-FR');
+    let t = '🚗 RÉSERVATION VTC\n\n';
+    t += '📍 ' + dep + ' → ' + arr + '\n';
+    t += '📅 ' + df + ' à ' + heure + '\n';
+    t += '👥 ' + pass + ' passager(s)\n';
+    t += '📞 ' + tel + '\n';
+    if (msg) t += '💬 ' + msg;
 
-      const waUrl = 'https://wa.me/33616552811?text=' + encodeURIComponent(text);
-      window.open(waUrl, '_blank');
-    });
-  }
+    window.open('https://wa.me/33616552811?text=' + encodeURIComponent(t), '_blank');
+  };
 
-  // Envoi email (Netlify)
+  // Email submit
   const form = document.getElementById('reservation-form');
-  const statusDiv = document.getElementById('form-message');
-  const submitBtn = document.getElementById('submit-btn');
+  const status = document.getElementById('form-message');
+  const btn = document.getElementById('submit-btn');
 
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      const originalText = submitBtn.querySelector('span').textContent;
-      submitBtn.querySelector('span').textContent = 'Envoi...';
+  form?.addEventListener('submit', async e => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = '...';
 
-      const formData = new FormData(form);
-      
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-          statusDiv.className = 'form-status success';
-          statusDiv.textContent = '✅ Demande envoyée ! Nous vous répondrons sous 15 minutes.';
-          form.reset();
-          submitBtn.querySelector('span').textContent = 'Envoyé !';
-          setTimeout(function() {
-            submitBtn.disabled = false;
-            submitBtn.querySelector('span').textContent = originalText;
-            statusDiv.className = 'form-status';
-          }, 5000);
-        } else {
-          throw new Error('Erreur réseau');
-        }
-      } catch (error) {
-        statusDiv.className = 'form-status error';
-        statusDiv.textContent = '❌ Erreur. Contactez-nous par WhatsApp ou téléphone.';
-        submitBtn.disabled = false;
-        submitBtn.querySelector('span').textContent = originalText;
-      }
-    });
-  }
+    try {
+      const r = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if (r.ok) {
+        status.className = 'form-status success';
+        status.textContent = '✅ Envoyé ! Réponse sous 15 minutes.';
+        form.reset();
+      } else throw new Error();
+    } catch {
+      status.className = 'form-status error';
+      status.textContent = '❌ Erreur - Appelez-nous ou utilisez WhatsApp.';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Envoyer par email';
+  });
 });
 </script>
