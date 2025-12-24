@@ -1,19 +1,15 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
-const title = "VTC Sophia Antipolis – Chauffeur Privé Technopole | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Sophia Antipolis, la première technopole d'Europe. Transferts aéroport Nice, navettes congrès Amadeus, SAP, Thales. Service business 24h/24.";
+
+const title = "VTC Sophia Antipolis – Chauffeur Privé Technopôle | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Sophia Antipolis. Transferts business, navettes aéroport Nice, congrès et séminaires. Service entreprise premium 24/7.";
 const keywords = [
   'VTC Sophia Antipolis',
   'chauffeur privé Sophia',
-  'transfert aéroport Sophia Antipolis',
-  'VTC technopole Sophia',
-  'chauffeur Amadeus',
-  'VTC SAP Sophia',
-  'VTC Thales Sophia',
-  'transport business Sophia Antipolis',
-  'navette Sophia Antipolis'
+  'transfert business Sophia',
+  'VTC entreprise Côte Azur',
+  'navette aéroport Sophia Antipolis'
 ];
 ---
 
@@ -27,7 +23,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Sophia Antipolis", url: "/vtc-sophia-antipolis" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quel est le tarif d'un VTC de l'aéroport de Nice à Sophia Antipolis ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des abonnements pour les entreprises de Sophia Antipolis ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des contrats entreprise avec tarifs négociés, facturation mensuelle et coordination des déplacements pour vos collaborateurs et visiteurs."}},{"@type":"Question","name":"Combien de temps faut-il pour aller de Sophia Antipolis à Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet Sophia Antipolis → Monaco prend environ 35-50 minutes en VTC selon le trafic, contre 60-90 minutes en transports en commun."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sophia Antipolis est-elle bien desservie ?","acceptedAnswer":{"@type":"Answer","text":"Sophia Antipolis est à 23 km de l'aéroport Nice (25-40 min). ECOFUNDRIVE assure des transferts réguliers pour les professionnels du technopôle."}},{"@type":"Question","name":"Proposez-vous des comptes entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous offrons des comptes entreprise avec facturation mensuelle, parfaits pour les sociétés de Sophia ayant des besoins réguliers de transport."}},{"@type":"Question","name":"Pouvez-vous assurer des navettes inter-sites ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des navettes entre les différents sites de Sophia Antipolis et vers les gares et aéroports."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -35,186 +31,111 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    <SectionImageText
-      title="Votre Chauffeur Privé à Sophia Antipolis"
-      image="/assets/img/services/service-business.png"
-      alt="VTC chauffeur privé Sophia Antipolis technopole"
-      imageSide="right"
-      ctaText="Réserver votre VTC"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        <strong>Sophia Antipolis</strong> est la première technopole d'Europe, surnommée la "Silicon Valley française". Située entre Antibes, Valbonne et Mougins, elle accueille plus de <strong>2 500 entreprises</strong> et <strong>40 000 salariés</strong> travaillant dans les secteurs de la haute technologie, de la recherche et de l'innovation.
-      </p>
-      <p class="fade-in-section">
-        Pour les professionnels de Sophia Antipolis, un <strong>service VTC fiable et professionnel</strong> est essentiel. Que vous accueilliez des visiteurs, participiez à un congrès ou ayez simplement besoin de vous rendre à l'aéroport de Nice, ECOFUNDRIVE est votre partenaire transport de confiance.
-      </p>
-      <p class="fade-in-section">
-        <strong>Nos atouts pour Sophia Antipolis :</strong>
-      </p>
-      <ul class="fade-in-section">
-        <li>Connaissance parfaite de la technopole et de ses accès</li>
-        <li>Transferts aéroport Nice optimisés (35-45 min)</li>
-        <li>Service ponctuel pour vos rendez-vous professionnels</li>
-        <li>Véhicules premium adaptés à l'image business</li>
-        <li>Chauffeurs multilingues (français, anglais, italien)</li>
-        <li>Facturation entreprise disponible</li>
-      </ul>
-    </SectionImageText>
-
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Entreprises de Sophia Antipolis que nous desservons</h2>
-      <p class="text-center mb-lg">Nous transportons régulièrement les collaborateurs et visiteurs des grandes entreprises de la technopole :</p>
-      <div class="entreprises-grid">
-        <div class="entreprise-card">
-          <h3>Amadeus</h3>
-          <p>Leader mondial des solutions IT pour le voyage</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>SAP Labs France</h3>
-          <p>Centre de R&D du géant du logiciel</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>Thales</h3>
-          <p>Électronique de défense et sécurité</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>ARM</h3>
-          <p>Processeurs et semi-conducteurs</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>NXP Semiconductors</h3>
-          <p>Technologies automobile et IoT</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>Orange Labs</h3>
-          <p>Centre de recherche télécoms</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>INRIA</h3>
-          <p>Recherche en informatique</p>
-        </div>
-        <div class="entreprise-card">
-          <h3>CNRS / Université</h3>
-          <p>Campus universitaire SophiaTech</p>
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Business à Sophia Antipolis</h2>
+        <p class="intro-text">
+          <strong>Sophia Antipolis</strong> est le premier technopôle d'Europe, abritant plus de <strong>2 500 entreprises</strong> et <strong>40 000 emplois</strong> dans les secteurs de l'innovation, l'IT, la santé et les télécommunications. Ce hub high-tech niché dans la pinède attire dirigeants, ingénieurs et chercheurs du monde entier.
+        </p>
+        <p class="intro-text">
+          ECOFUNDRIVE propose un <strong>service VTC business premium</strong> adapté aux besoins des professionnels : transferts aéroport rapides, navettes inter-sites, transport pour meetings et congrès. Nous offrons également des <strong>comptes entreprise</strong> avec facturation mensuelle pour les sociétés ayant des besoins réguliers.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Aéroport Nice (23 km, 30 min) • Antibes (12 km, 15 min) • Nice Centre (25 km, 35 min) • Cannes (18 km, 25 min)</span>
         </div>
       </div>
     </section>
 
-    <SectionImageText
-      title="Transferts Aéroport Nice ↔ Sophia Antipolis"
-      image="/assets/img/hero/hero-aeroport-nice.png"
-      alt="Transfert aéroport Nice Sophia Antipolis"
-      imageSide="left"
-      ctaText="Réserver un transfert"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        L'<strong>aéroport de Nice Côte d'Azur</strong> est situé à environ 25 km de Sophia Antipolis. En VTC, le trajet dure entre <strong>35 et 50 minutes</strong> selon le trafic (comptez plus aux heures de pointe du matin et du soir).
-      </p>
-      <p class="fade-in-section">
-        <strong>Nos tarifs sont personnalisés</strong> selon le véhicule choisi (berline, van premium), l'horaire (jour, nuit, week-end) et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement !
-      </p>
-    </SectionImageText>
-
-    <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services Business</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>✈️ Transferts Aéroport Express</h3>
+          <p>Navettes Nice Côte d'Azur ↔ Sophia. Accueil VIP, suivi de vol, véhicules premium.</p>
+        </div>
+        <div class="service-item">
+          <h3>💼 Compte Entreprise</h3>
+          <p>Facturation mensuelle, tarifs négociés, reporting détaillé. Idéal pour vos besoins réguliers.</p>
+        </div>
+        <div class="service-item">
+          <h3>🔄 Navettes Inter-Sites</h3>
+          <p>Transport entre les différents campus et bâtiments de Sophia Antipolis.</p>
+        </div>
+        <div class="service-item">
+          <h3>🏨 Transferts Hôtels</h3>
+          <p>Navettes vers les hôtels partenaires : Novotel, Mercure, et hébergements Antibes.</p>
+        </div>
       </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis entreprise</a>
+      </div>
+    </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Nos Services VTC pour Sophia Antipolis</h2>
+      <h2 class="text-center mb-lg">Pourquoi Choisir ECOFUNDRIVE pour Sophia ?</h2>
       <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/services/service-business.webp"
-          alt="Transfert aéroport Sophia"
-          title="Transfert Aéroport"
-          description="Accueil personnalisé à l'aéroport de Nice et transfert direct vers votre entreprise ou hôtel à Sophia Antipolis."
-          link="/reservation"
+          alt="VTC Business Sophia"
+          title="Expertise Business"
+          description="Chauffeurs habitués aux exigences des cadres et dirigeants. Discrétion, ponctualité, professionnalisme."
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/about/vehicule-premium.webp"
-          alt="VTC entreprise Sophia"
-          title="Contrat Entreprise"
-          description="Forfaits sur mesure pour les entreprises : tarifs négociés, facturation mensuelle, coordination logistique."
-          link="/vtc-entreprise-cote-azur"
+          alt="Flotte Premium"
+          title="Flotte Premium"
+          description="Tesla Model S, Mercedes Classe E et S. Wi-Fi embarqué, chargeurs, espace de travail mobile."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-monaco.png"
-          alt="Navette congrès Sophia"
-          title="Navettes Congrès"
-          description="Transport vers les événements, conférences et séminaires organisés à Sophia Antipolis et alentours."
-          link="/services#evenements"
+          image="/assets/img/services/service-aeroport.webp"
+          alt="Disponibilité 24/7"
+          title="Disponibilité 24/7"
+          description="Vols tôt le matin, réunions tardives, urgences... Nous sommes toujours disponibles."
+          link="/contact"
         />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Trajets Fréquents depuis Sophia Antipolis</h2>
-      <p class="text-center mb-lg">Nous assurons quotidiennement les liaisons suivantes :</p>
-      <div class="destinations-grid">
-        <div class="destination-card">
-          <h3>🛫 Aéroport Nice</h3>
-          <p>25 km • 35-50 min</p>
-        </div>
-        <div class="destination-card">
-          <h3>🏙️ Nice Centre</h3>
-          <p>20 km • 30-45 min</p>
-        </div>
-        <div class="destination-card">
-          <h3>🎬 Cannes</h3>
-          <p>15 km • 20-30 min</p>
-        </div>
-        <div class="destination-card">
-          <h3>🎰 Monaco</h3>
-          <p>40 km • 35-50 min</p>
-        </div>
-        <div class="destination-card">
-          <h3>⛵ Antibes</h3>
-          <p>10 km • 15-20 min</p>
-        </div>
-        <div class="destination-card">
-          <h3>🚂 Gare Antibes</h3>
-          <p>12 km • 20-25 min</p>
-        </div>
-      </div>
-      <p class="text-center mt-lg"><strong>Tarif sur demande</strong> – Contactez-nous pour un devis personnalisé adapté à vos besoins.</p>
-    </section>
-
-    <section class="mb-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes – VTC Sophia Antipolis</h2>
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3 class="faq-question">Quel est le tarif d'un VTC de l'aéroport de Nice à Sophia Antipolis ?</h3>
+          <h3 class="faq-question">Combien de temps pour aller de l'aéroport à Sophia ?</h3>
           <div class="faq-answer">
-            <p>
-              Nos tarifs sont <strong>personnalisés</strong> selon le véhicule choisi (berline ou van premium), l'horaire (jour, nuit, week-end) et le niveau de service (standard, business, VIP). <strong>Contactez-nous pour un devis gratuit</strong> en quelques secondes via WhatsApp ou notre formulaire.
-            </p>
+            <p>Le trajet <strong>aéroport Nice → Sophia Antipolis</strong> prend entre <strong>25 et 40 minutes</strong> selon le trafic. Nous connaissons les meilleurs itinéraires pour éviter les bouchons aux heures de pointe.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des abonnements pour les entreprises ?</h3>
+          <h3 class="faq-question">Comment fonctionne le compte entreprise ?</h3>
           <div class="faq-answer">
-            <p>
-              Oui, nous proposons des <strong>contrats entreprise</strong> avec tarifs négociés, facturation mensuelle centralisée et coordination des déplacements pour vos collaborateurs et visiteurs. Contactez-nous pour un devis personnalisé.
-            </p>
+            <p>Nous créons un compte dédié à votre entreprise. Tous les trajets sont enregistrés et facturés mensuellement. Vous recevez un reporting détaillé (dates, trajets, collaborateurs).</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Pouvez-vous accueillir des visiteurs étrangers ?</h3>
+          <h3 class="faq-question">Pouvez-vous attendre pendant une réunion ?</h3>
           <div class="faq-answer">
-            <p>
-              Absolument. Nos chauffeurs parlent <strong>français et anglais</strong>, certains parlent également italien et russe. Nous accueillons régulièrement des visiteurs internationaux pour les entreprises de Sophia Antipolis.
-            </p>
+            <p>Oui, nous proposons un service de <strong>mise à disposition</strong> : votre chauffeur reste disponible pendant vos réunions pour vous ramener ou vous emmener au prochain rendez-vous.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Combien de temps faut-il pour aller de Sophia à Monaco ?</h3>
+          <h3 class="faq-question">Desservez-vous les congrès et séminaires ?</h3>
           <div class="faq-answer">
-            <p>
-              Le trajet Sophia Antipolis → Monaco prend environ <strong>35-50 minutes</strong> en VTC selon le trafic, contre 60-90 minutes en transports en commun avec correspondances.
-            </p>
+            <p>Oui, nous assurons le transport pour les événements professionnels : congrès, séminaires, team building. Nous pouvons coordonner plusieurs véhicules si nécessaire.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre VTC Business</h2>
+      <p class="text-center mb-lg">Service premium pour les professionnels de Sophia Antipolis.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
+        <a href="tel:+33616552811" class="btn-call btn-lg">Appeler</a>
       </div>
     </section>
 
@@ -222,8 +143,10 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
-        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
         <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
       </div>
     </section>
@@ -231,70 +154,23 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .tarif-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-  }
-  .tarif-table th, .tarif-table td {
-    padding: 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-  .tarif-table th {
-    background: #f5f5f5;
-    font-weight: 600;
-  }
-  .entreprises-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  .entreprise-card {
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-  }
-  .entreprise-card h3 {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-    color: #d4af37;
-  }
-  .entreprise-card p {
-    font-size: 0.9rem;
-    margin: 0;
-  }
-  .bg-gold-light {
-    background: rgba(212, 175, 55, 0.1);
-  }
-  .destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  .destination-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
-  }
-  .destination-card:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
-  }
-  .destination-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
-  }
-  .destination-card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0;
-  }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-call { background: #333; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>

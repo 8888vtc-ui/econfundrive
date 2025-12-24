@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Beaulieu-sur-Mer – Chauffeur Privé Villa Kérylos | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Beaulieu-sur-Mer. Villa Kérylos, port de plaisance, plages privées, hôtels 5 étoiles. Transferts Nice, Monaco. Service premium 24h/24.";
+const description = "Chauffeur privé VTC à Beaulieu-sur-Mer. Villa Kérylos, port de plaisance, hôtels de luxe La Réserve. Entre Nice et Monaco. Transferts premium 24/7.";
 const keywords = [
   'VTC Beaulieu-sur-Mer',
   'chauffeur privé Beaulieu',
   'VTC Villa Kérylos',
-  'transfert Nice Beaulieu',
-  'chauffeur Beaulieu Monaco'
+  'transfert Monaco Beaulieu',
+  'VTC La Réserve Beaulieu'
 ];
 ---
 
@@ -24,7 +23,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Beaulieu-sur-Mer", url: "/vtc-beaulieu-sur-mer" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Beaulieu-sur-Mer ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Beaulieu-sur-Mer est-elle proche de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Beaulieu est à seulement 8 km de Monaco. Le trajet en VTC prend environ 15-20 minutes."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Où se trouve Beaulieu-sur-Mer ?","acceptedAnswer":{"@type":"Answer","text":"Beaulieu-sur-Mer est nichée entre Nice (10 km) et Monaco (6 km), sur la Basse Corniche. Son microclimat exceptionnel lui vaut le surnom de 'petite Afrique'."}},{"@type":"Question","name":"Qu'est-ce que la Villa Kérylos ?","acceptedAnswer":{"@type":"Answer","text":"La Villa Kérylos est une reconstitution unique d'une demeure grecque antique, construite au début du XXe siècle. Elle offre une vue sublime sur la mer et est classée monument historique."}},{"@type":"Question","name":"Proposez-vous des transferts vers La Réserve de Beaulieu ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers l'hôtel La Réserve de Beaulieu et tous les établissements de luxe de la commune."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,11 +31,44 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Privé à Beaulieu-sur-Mer</h2>
+        <p class="intro-text">
+          Surnommée <strong>"la petite Afrique"</strong> pour son microclimat exceptionnellement doux, <strong>Beaulieu-sur-Mer</strong> est une station balnéaire de prestige nichée entre Nice et Monaco. La <strong>Villa Kérylos</strong>, reconstitution unique d'une demeure grecque antique, est le joyau culturel de la commune.
+        </p>
+        <p class="intro-text">
+          ECOFUNDRIVE assure les transferts vers les établissements de luxe comme <strong>La Réserve de Beaulieu</strong>, le port de plaisance et les criques secrètes de cette perle de la Riviera. Notre connaissance de la Basse Corniche vous garantit un trajet fluide et agréable.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Nice (10 km, 15 min) • Monaco (6 km, 10 min) • Aéroport Nice (15 km, 20 min) • Èze (4 km, 8 min)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC à Beaulieu</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>🏨 Transferts Hôtels de Luxe</h3>
+          <p>La Réserve de Beaulieu, Royal Riviera et tous les établissements prestigieux de la baie.</p>
+        </div>
+        <div class="service-item">
+          <h3>⛵ Service Port de Plaisance</h3>
+          <p>Transferts pour propriétaires et équipages de yachts. Récupération sur le quai.</p>
+        </div>
+        <div class="service-item">
+          <h3>🏛️ Visite Villa Kérylos</h3>
+          <p>Excursion avec attente pour visiter ce chef-d'œuvre architectural classé monument historique.</p>
+        </div>
+        <div class="service-item">
+          <h3>🛤️ Circuit Basse Corniche</h3>
+          <p>Nice → Villefranche → Beaulieu → Èze → Monaco. Le plus beau littoral de la Méditerranée.</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
       </div>
     </section>
 
@@ -47,39 +79,90 @@ const keywords = [
           image="/assets/img/destinations/destination-monaco.png"
           alt="Villa Kérylos Beaulieu"
           title="Villa Kérylos"
-          description="Réplique unique d'une villa grecque antique, surplombant la mer. Un voyage dans le temps fascinant."
-          link="/reservation"
+          description="Reconstitution fascinante d'une demeure grecque antique avec vue imprenable sur la Méditerranée."
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
-          alt="Baie des Fourmis Beaulieu"
-          title="La Baie des Fourmis"
-          description="L'une des plus belles plages de la Côte d'Azur, avec vue sur le Cap Ferrat. Eau cristalline garantie."
-          link="/reservation"
+          alt="Port Beaulieu"
+          title="Port de Beaulieu"
+          description="Charmant port de plaisance accueillant yachts et bateaux dans un cadre préservé."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/hero/hero-business.webp"
-          alt="Port Beaulieu"
-          title="Le Port de Plaisance"
-          description="Port élégant avec yachts de luxe, restaurants et promenade le long du quai."
-          link="/reservation"
+          image="/assets/img/about/vehicule-premium.webp"
+          alt="La Réserve Beaulieu"
+          title="La Réserve de Beaulieu"
+          description="Palace mythique de la Riviera, étoilé Michelin, offrant une vue sublime sur le cap Ferrat."
+          link="/contact"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Pourquoi Beaulieu s'appelle "la petite Afrique" ?</h3>
+          <div class="faq-answer">
+            <p>Beaulieu bénéficie d'un <strong>microclimat exceptionnel</strong>, protégée des vents par les montagnes. Les hivers y sont si doux que des plantes tropicales poussent naturellement. Les Anglais du XIXe siècle l'ont surnommée ainsi.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Comment rejoindre Monaco depuis Beaulieu ?</h3>
+          <div class="faq-answer">
+            <p>Beaulieu est à seulement <strong>6 km de Monaco</strong>, soit 10-15 minutes par la Basse Corniche. Nous connaissons les meilleurs accès pour éviter le trafic.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">La Villa Kérylos vaut-elle la visite ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Cette villa unique, construite entre 1902 et 1908, est une reconstitution fidèle d'une demeure grecque du IIe siècle av. J.-C. La vue sur la mer est spectaculaire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre VTC à Beaulieu-sur-Mer</h2>
+      <p class="text-center mb-lg">Villa Kérylos, hôtels de luxe, port... Profitez du charme unique de Beaulieu.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
       </div>
     </section>
 
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap-Ferrat</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
-        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-menton" class="text-dark hover-gold">VTC Menton</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>

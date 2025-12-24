@@ -10,7 +10,8 @@ const keywords = [
   'chauffeur privé Biot',
   'VTC Marineland',
   'transfert Antibes Biot',
-  'VTC verreries Biot'
+  'VTC verreries Biot',
+  'chauffeur Sophia Antipolis Biot'
 ];
 ---
 
@@ -24,7 +25,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Biot", url: "/vtc-biot" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Biot est-elle proche de Marineland ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Marineland est situé sur le territoire de Biot, à 5 minutes du village. Nous assurons les transferts pour les familles visitant le parc."}},{"@type":"Question","name":"Proposez-vous des transferts vers les verreries de Biot ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous organisons des transferts vers la célèbre Verrerie de Biot et les ateliers d'artisans du village."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Biot est-elle proche de Marineland ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Marineland est situé sur le territoire de Biot, à 5 minutes du village. Nous assurons les transferts pour les familles visitant le parc."}},{"@type":"Question","name":"Proposez-vous des transferts vers les verreries de Biot ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous organisons des transferts vers la célèbre Verrerie de Biot et les ateliers d'artisans du village."}},{"@type":"Question","name":"Combien de temps pour aller de l'aéroport de Nice à Biot ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert aéroport Nice → Biot prend environ 25-35 minutes (20 km). Nous adaptons l'itinéraire selon le trafic."}},{"@type":"Question","name":"Desservez-vous Sophia Antipolis depuis Biot ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Sophia Antipolis est à seulement 5 km de Biot. Nous proposons des services réguliers pour les entreprises du technopôle."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,14 +33,50 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <!-- Introduction enrichie -->
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Privé à Biot</h2>
+        <p class="intro-text">
+          Situé entre Antibes et Sophia Antipolis, le village de <strong>Biot</strong> est célèbre dans le monde entier pour son artisanat verrier unique. Depuis le XVe siècle, les maîtres verriers de Biot perpétuent un savoir-faire ancestral, créant le célèbre <strong>verre bullé</strong> reconnaissable entre tous.
+        </p>
+        <p class="intro-text">
+          ECOFUNDRIVE vous propose un service de chauffeur privé premium pour découvrir ce joyau provençal, visiter <strong>Marineland</strong> en famille, ou rejoindre le parc technologique <strong>Sophia Antipolis</strong>. Que vous soyez touriste, résident ou professionnel, nous adaptons notre service à vos besoins.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Aéroport Nice (20 km, 25-35 min) • Antibes (8 km, 15 min) • Sophia Antipolis (5 km, 10 min) • Cannes (20 km, 25 min)</span>
+        </div>
       </div>
     </section>
 
+    <!-- Nos services -->
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC à Biot</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>✈️ Transferts Aéroport</h3>
+          <p>Navettes quotidiennes Nice Côte d'Azur ↔ Biot. Accueil avec pancarte, suivi de vol, aide aux bagages.</p>
+        </div>
+        <div class="service-item">
+          <h3>🐬 Navettes Marineland</h3>
+          <p>Transport familial vers le plus grand parc marin d'Europe. Sièges enfants disponibles gratuitement.</p>
+        </div>
+        <div class="service-item">
+          <h3>💼 Service Sophia Antipolis</h3>
+          <p>Transport professionnel vers le technopôle. Facturation entreprise, service récurrent possible.</p>
+        </div>
+        <div class="service-item">
+          <h3>🏛️ Excursions Artisanales</h3>
+          <p>Visite des verreries avec attente, Musée Fernand Léger, circuit villages perchés.</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
+      </div>
+    </section>
+
+    <!-- Découvrez Biot -->
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Découvrez Biot</h2>
       <div class="grid-3-cols">
@@ -48,38 +85,104 @@ const keywords = [
           alt="Verrerie Biot"
           title="La Verrerie de Biot"
           description="Assistez au travail des maîtres verriers et découvrez le célèbre verre bullé. Boutique et galerie d'exposition."
-          link="/reservation"
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Marineland Biot"
           title="Marineland"
           description="Le plus grand parc marin d'Europe. Orques, dauphins, requins et nombreuses attractions pour toute la famille."
-          link="/reservation"
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/destinations/vtc-tesla-nice.webp"
           alt="Musée Léger Biot"
           title="Musée Fernand Léger"
           description="Superbe musée dédié à l'œuvre du peintre cubiste. Architecture moderne et mosaïques monumentales."
-          link="/reservation"
+          link="/contact"
         />
       </div>
     </section>
 
+    <!-- FAQ visible -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps pour aller de l'aéroport de Nice à Biot ?</h3>
+          <div class="faq-answer">
+            <p>Le transfert <strong>aéroport Nice → Biot</strong> prend environ <strong>25-35 minutes</strong> selon le trafic (20 km). Nous connaissons les itinéraires alternatifs pour éviter les bouchons.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous des navettes pour Marineland ?</h3>
+          <div class="faq-answer">
+            <p>Oui, nous assurons le transport des familles vers <strong>Marineland</strong> et <strong>Aquasplash</strong>. Sièges enfants fournis gratuitement sur demande. Service de récupération en fin de journée possible.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Desservez-vous les entreprises de Sophia Antipolis ?</h3>
+          <div class="faq-answer">
+            <p>Oui, <strong>Sophia Antipolis</strong> est à seulement 5 km de Biot. Nous proposons des transferts business réguliers et des comptes entreprise avec facturation mensuelle.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Peut-on visiter les verreries avec le chauffeur ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Nous proposons des excursions avec <strong>temps d'attente inclus</strong> pour visiter la Verrerie de Biot, les ateliers d'artisans et le Musée Fernand Léger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réserver -->
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre VTC à Biot</h2>
+      <p class="text-center mb-lg">Devis gratuit en 2 minutes. Réponse sous 15 minutes.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Destinations proches -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
         <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia</a>
         <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes</a>
+        <a href="/vtc-villeneuve-loubet" class="text-dark hover-gold">VTC Villeneuve-Loubet</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>

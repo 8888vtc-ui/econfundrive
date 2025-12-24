@@ -1,49 +1,16 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Grasse – Chauffeur Privé Capitale du Parfum | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Grasse, capitale mondiale du parfum. Parfumeries Fragonard, Galimard, Molinard. Création de parfum, vieille ville, ateliers. Transferts Nice, Cannes. Service premium.";
+const description = "Chauffeur privé VTC à Grasse, capitale mondiale du parfum. Fragonard, Molinard, Galimard. Excursions parfumeries, Route Napoléon. Transferts premium Cannes.";
 const keywords = [
   'VTC Grasse',
   'chauffeur privé Grasse',
-  'VTC parfumerie Grasse',
-  'transfert Nice Grasse',
-  'visite Fragonard Galimard',
-  'tour parfum Côte d Azur'
+  'VTC parfumeries Grasse',
+  'transfert Cannes Grasse',
+  'excursion parfums Côte Azur'
 ];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Les visites des parfumeries de Grasse sont-elles gratuites ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tarif sur demande"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Combien de temps pour visiter Grasse ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Comptez 3-4 heures minimum pour visiter une ou deux parfumeries et la vieille ville. Pour un atelier de création de parfum, prévoyez une demi-journée complète. Votre chauffeur peut vous attendre ou revenir vous chercher."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Grasse est-elle loin de Nice ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Grasse est située à environ 40 km de Nice, soit 40-50 minutes en VTC. Depuis Cannes, c'est encore plus proche : 15 km, soit 20-30 minutes."
-      }
-    }
-  ]
-};
 ---
 
 <BaseLayout 
@@ -51,128 +18,157 @@ const faqSchema = {
   description={description}
   currentPage="vtc-grasse"
   canonical="/vtc-grasse"
-  schema={faqSchema}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Grasse", url: "/vtc-grasse" }
   ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pourquoi Grasse est-elle la capitale du parfum ?","acceptedAnswer":{"@type":"Answer","text":"Depuis le XVIIe siècle, Grasse cultive des fleurs (jasmin, rose, tubéreuse) et maîtrise l'art de l'extraction des essences. Les maisons Fragonard, Molinard et Galimard y sont nées."}},{"@type":"Question","name":"Peut-on visiter les parfumeries avec attente ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des excursions aux parfumeries avec temps d'attente inclus. Vous pouvez créer votre parfum personnalisé chez Fragonard ou Galimard."}},{"@type":"Question","name":"Grasse est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Grasse est à 17 km de Cannes, soit environ 25 minutes en VTC. C'est l'excursion parfaite depuis la Croisette."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Grasse – Capitale Mondiale du Parfum</h1>
-      <p class="lead text-center mb-xl">
-        Chauffeur privé premium à Grasse. Visitez les parfumeries légendaires, créez votre propre parfum, 
-        explorez la vieille ville provençale. Transferts depuis Nice et Cannes.
-      </p>
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Privé à Grasse</h2>
+        <p class="intro-text">
+          <strong>Grasse</strong> est la <strong>capitale mondiale du parfum</strong> depuis le XVIIe siècle. Cette ville perchée aux portes de la Provence abrite les maisons légendaires <strong>Fragonard, Molinard et Galimard</strong>, où les "nez" créent les parfums les plus prestigieux du monde.
+        </p>
+        <p class="intro-text">
+          ECOFUNDRIVE vous propose des excursions aux parfumeries avec possibilité de <strong>créer votre propre parfum</strong>, une expérience unique. Nous assurons également les transferts vers Grasse depuis Cannes pendant le Festival, Mougins, ou l'aéroport de Nice.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Cannes (17 km, 25 min) • Mougins (8 km, 15 min) • Nice (40 km, 45 min) • Aéroport Nice (45 km, 50 min)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC à Grasse</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>🌸 Circuit des Parfumeries</h3>
+          <p>Visite Fragonard, Molinard et/ou Galimard avec temps d'attente. Atelier création de parfum possible.</p>
+        </div>
+        <div class="service-item">
+          <h3>🎬 Navettes Festival Cannes</h3>
+          <p>Transferts Cannes ↔ Grasse pendant le Festival. Évadez-vous de la Croisette le temps d'une excursion.</p>
+        </div>
+        <div class="service-item">
+          <h3>🛤️ Route Napoléon</h3>
+          <p>Départ de la Route Napoléon depuis Grasse vers les Alpes. Circuit historique légendaire.</p>
+        </div>
+        <div class="service-item">
+          <h3>✈️ Transferts Aéroport</h3>
+          <p>Navettes aéroport Nice ↔ Grasse pour les voyageurs séjournant dans le Pays Grassois.</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Les Parfumeries de Grasse</h2>
+      <h2 class="text-center mb-lg">Découvrez Grasse</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/guides/villages-perches.webp"
+          image="/assets/img/destinations/destination-nice.png"
           alt="Parfumerie Fragonard Grasse"
-          title="Fragonard"
-          description="La plus célèbre des parfumeries grassoises. Usine historique, musée du parfum, boutique. Visite guidée gratuite."
-          link="/reservation"
+          title="Parfumerie Fragonard"
+          description="La plus célèbre des parfumeries grassoises. Visite gratuite, musée et boutique. Atelier création de parfum."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/about/chauffeur-professionnel.webp"
-          alt="Parfumerie Galimard Grasse"
-          title="Galimard"
-          description="Fondée en 1747. Studio des Fragrances pour créer votre parfum unique (atelier 2h). Visite gratuite."
-          link="/reservation"
+          image="/assets/img/services/service-business.webp"
+          alt="Vieille ville Grasse"
+          title="La Vieille Ville"
+          description="Ruelles médiévales, cathédrale Notre-Dame-du-Puy, places ombragées et panoramas sur la Côte d'Azur."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/hero/hero-business.webp"
-          alt="Parfumerie Molinard Grasse"
-          title="Molinard"
-          description="Maison familiale depuis 1849. Tarinologie (création de parfum), musée, jardin. Visite gratuite."
-          link="/reservation"
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Jasmin Grasse"
+          title="Les Champs de Fleurs"
+          description="Jasmin, rose de mai, tubéreuse... Les fleurs qui font la renommée mondiale des parfums de Grasse."
+          link="/contact"
         />
       </div>
     </section>
-
-    <SectionImageText
-      image="/assets/img/services/service-mise-disposition.webp"
-      alt="Atelier de création de parfum à Grasse"
-      title="Créez Votre Parfum Unique à Grasse"
-      textPosition="right"
-    >
-      <p>
-        Grasse est le berceau de la parfumerie mondiale. Profitez de votre visite pour participer à un atelier de création de parfum. 
-        Sous la houlette d'un "nez" expert, vous découvrirez les secrets de cet art ancestral et repartirez avec votre propre fragrance.
-      </p>
-      <h3 class="h4 mt-md">Au programme de l'atelier :</h3>
-      <ul class="list-disc list-inside">
-        <li>Découverte des matières premières (huiles essentielles, absolues...)</li>
-        <li>Les familles olfactives (florales, orientales, boisées...)</li>
-        <li>La pyramide des parfums (notes de tête, cœur, fond)</li>
-        <li>L'art de l'assemblage et de l'équilibre</li>
-        <li>Créer VOTRE parfum personnalisé à emporter</li>
-      </ul>
-      <p class="fade-in-section">
-        <strong>Durée :</strong> 1h30 à 2h | <strong>Prix :</strong> 50€ à 100€ selon l'atelier<br>
-        Nous vous attendons pendant l'atelier ou revenons vous chercher à l'heure convenue.
-      </p>
-    </SectionImageText>
 
     <section class="container py-xl fade-in-section">
       <h2 class="text-center mb-lg">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3 class="faq-question">Les visites des parfumeries de Grasse sont-elles gratuites ?</h3>
+          <h3 class="faq-question">Combien de temps prévoir pour visiter une parfumerie ?</h3>
           <div class="faq-answer">
-            <p>Oui, les trois grandes parfumeries (<strong>Fragonard, Galimard, Molinard</strong>) proposent des visites guidées gratuites de leurs usines et musées. Seuls les ateliers de création de parfum sont payants (environ 50-100€), mais l'expérience est inoubliable.</p>
+            <p>Comptez <strong>1h à 1h30 par parfumerie</strong> pour une visite classique. Si vous souhaitez faire un atelier de création de parfum, prévoyez 2h supplémentaires.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Combien de temps pour visiter Grasse ?</h3>
+          <h3 class="faq-question">Quelle parfumerie recommandez-vous ?</h3>
           <div class="faq-answer">
-            <p>Comptez <strong>3-4 heures minimum</strong> pour visiter une ou deux parfumeries et explorer la vieille ville. Pour un atelier de création de parfum, prévoyez une demi-journée complète (4-5h). Votre chauffeur peut vous attendre ou revenir vous chercher.</p>
+            <p><strong>Fragonard</strong> est la plus célèbre et offre une visite complète gratuite. <strong>Galimard</strong> propose les meilleurs ateliers de création. <strong>Molinard</strong> a un charme plus intimiste.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Grasse est-elle loin de Nice ou Cannes ?</h3>
+          <h3 class="faq-question">Peut-on créer son propre parfum ?</h3>
           <div class="faq-answer">
-            <p>Grasse est située à environ <strong>40 km de Nice</strong> (40-50 minutes en VTC) et seulement <strong>15 km de Cannes</strong> (20-30 minutes). C'est une excursion parfaite d'une demi-journée depuis ces deux villes.</p>
+            <p>Oui ! Plusieurs parfumeries proposent des <strong>ateliers de création</strong> où vous composez votre parfum unique guidé par un professionnel. Réservation conseillée.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Peut-on combiner Grasse avec d'autres visites ?</h3>
+          <h3 class="faq-question">C'est quoi la Route Napoléon ?</h3>
           <div class="faq-answer">
-            <p>Absolument ! Les combinaisons populaires incluent <strong>Grasse + Mougins</strong> (déjeuner gastronomique), <strong>Grasse + Gourdon</strong> (village perché spectaculaire) ou <strong>Grasse + Saint-Paul-de-Vence</strong> (art et artisanat).</p>
+            <p>La <strong>Route Napoléon</strong> relie Grasse à Grenoble en suivant le trajet de Napoléon à son retour de l'Île d'Elbe en 1815. Un itinéraire historique et panoramique de 325 km.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre Excursion Parfums</h2>
+      <p class="text-center mb-lg">Découvrez les secrets des parfumeurs de Grasse avec votre chauffeur privé.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Réserver l'excursion</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
       </div>
     </section>
 
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
-        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
         <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-vence" class="text-dark hover-gold">VTC Vence</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
-        <a href="/vtc-vence" class="text-dark hover-gold">VTC Vence</a>
-        <a href="/vtc-saint-paul-de-vence" class="text-dark hover-gold">VTC St-Paul</a>
-        <a href="/guide-villages-perches-cote-d-azur" class="text-dark hover-gold">Villages perchés</a>
-        <a href="/vtc-mandelieu-la-napoule" class="text-dark hover-gold">VTC Mandelieu</a>
+        <a href="/vtc-saint-paul-de-vence" class="text-dark hover-gold">VTC Saint-Paul</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>

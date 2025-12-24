@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Saint-Paul-de-Vence – Chauffeur Privé Village d'Art | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Saint-Paul-de-Vence. Village d'artistes, Fondation Maeght, galeries d'art, hôtels de charme. Transferts depuis Nice et Cannes. Service premium.";
+const title = "VTC Saint-Paul-de-Vence – Chauffeur Privé Village d'Artistes | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Saint-Paul-de-Vence. Fondation Maeght, galeries d'art, Colombe d'Or. Circuit villages perchés arrière-pays niçois. Transferts premium.";
 const keywords = [
   'VTC Saint-Paul-de-Vence',
   'chauffeur privé Saint-Paul',
   'VTC Fondation Maeght',
-  'transfert Saint-Paul-de-Vence',
-  'chauffeur village artistes'
+  'transfert Colombe d Or',
+  'VTC villages perchés'
 ];
 ---
 
@@ -24,7 +23,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Saint-Paul-de-Vence", url: "/vtc-saint-paul-de-vence" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des transferts pour les mariages à Saint-Paul-de-Vence ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Saint-Paul-de-Vence est une destination prisée pour les mariages. Nous proposons des services VTC premium avec véhicules décorés sur demande."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pourquoi Saint-Paul-de-Vence est-il célèbre ?","acceptedAnswer":{"@type":"Answer","text":"Saint-Paul-de-Vence est le village d'artistes le plus célèbre de France. Picasso, Matisse, Chagall et Prévert y ont séjourné. La Fondation Maeght et la Colombe d'Or en font un lieu mythique."}},{"@type":"Question","name":"Peut-on dîner à la Colombe d'Or ?","acceptedAnswer":{"@type":"Answer","text":"Oui, ce restaurant-hôtel légendaire où Picasso, Matisse et Chagall payaient en œuvres d'art est ouvert aux clients. Réservation indispensable. Nous assurons le transfert aller-retour."}},{"@type":"Question","name":"Combien de temps pour visiter Saint-Paul ?","acceptedAnswer":{"@type":"Answer","text":"Comptez 2-3 heures pour flâner dans le village et visiter quelques galeries. Ajoutez 1-2 heures pour la Fondation Maeght."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,11 +31,44 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Privé à Saint-Paul-de-Vence</h2>
+        <p class="intro-text">
+          <strong>Saint-Paul-de-Vence</strong> est le village d'artistes le plus célèbre de France. Dans les années 1920, des peintres comme <strong>Matisse, Chagall, Picasso</strong> et des écrivains comme <strong>Jacques Prévert</strong> s'y retrouvaient à la <strong>Colombe d'Or</strong>, payant parfois l'addition en œuvres d'art.
+        </p>
+        <p class="intro-text">
+          Aujourd'hui, le village abrite la prestigieuse <strong>Fondation Maeght</strong>, l'un des plus importants musées d'art moderne en Europe, et des dizaines de galeries d'art. ECOFUNDRIVE vous propose des excursions culturelles avec temps libre pour explorer ce joyau à votre rythme.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Nice (20 km, 30 min) • Vence (5 km, 10 min) • Aéroport Nice (25 km, 35 min) • Cannes (35 km, 45 min)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC à Saint-Paul</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>🎨 Excursion Fondation Maeght</h3>
+          <p>Transport avec temps d'attente pour visiter ce temple de l'art moderne (Miró, Giacometti, Chagall...).</p>
+        </div>
+        <div class="service-item">
+          <h3>🍽️ Dîner Colombe d'Or</h3>
+          <p>Transfert aller-retour vers ce restaurant mythique où les murs sont couverts d'œuvres de maîtres.</p>
+        </div>
+        <div class="service-item">
+          <h3>🏘️ Circuit Villages Perchés</h3>
+          <p>Saint-Paul + Vence + Tourettes + Gourdon. Demi-journée ou journée complète dans l'arrière-pays.</p>
+        </div>
+        <div class="service-item">
+          <h3>💒 Mariages & Événements</h3>
+          <p>Transport vers les domaines de réception. Saint-Paul est un lieu prisé pour les mariages.</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
       </div>
     </section>
 
@@ -47,23 +79,62 @@ const keywords = [
           image="/assets/img/destinations/destination-nice.png"
           alt="Fondation Maeght"
           title="Fondation Maeght"
-          description="L'un des plus importants musées d'art moderne d'Europe, avec des œuvres de Miró, Giacometti, Chagall et bien d'autres."
-          link="/reservation"
+          description="L'un des plus importants musées d'art moderne en Europe. Miró, Giacometti, Chagall dans un écrin architectural unique."
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
-          alt="Village Saint-Paul"
-          title="Le Village Médiéval"
-          description="Ruelles pavées, remparts du XVIe siècle, places ombragées et vue panoramique sur la Méditerranée."
-          link="/reservation"
+          alt="Colombe d'Or"
+          title="La Colombe d'Or"
+          description="Restaurant-hôtel légendaire où Picasso et Matisse payaient en tableaux. Terrasse mythique et cuisine provençale."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/hero/hero-home.webp"
-          alt="La Colombe d'Or"
-          title="La Colombe d'Or"
-          description="Restaurant légendaire où Picasso et Matisse payaient leurs repas avec des tableaux. Collection d'art exceptionnelle."
-          link="/reservation"
+          image="/assets/img/destinations/destination-saint-tropez.webp"
+          alt="Galeries Saint-Paul"
+          title="Le Village & les Galeries"
+          description="Ruelles pavées, remparts, fontaines et dizaines de galeries d'art contemporain à découvrir."
+          link="/contact"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">La Colombe d'Or vaut-elle vraiment le détour ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Les murs sont couverts d'œuvres originales de <strong>Picasso, Braque, Léger, Matisse, Chagall</strong>... Un restaurant où vous dînez entouré de chefs-d'œuvre. Réservation indispensable.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps pour visiter Saint-Paul ?</h3>
+          <div class="faq-answer">
+            <p>Comptez <strong>2-3 heures</strong> pour flâner dans le village et les galeries. Ajoutez <strong>1-2 heures</strong> pour la Fondation Maeght. Nous attendons pendant vos visites.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Y a-t-il un parking à Saint-Paul ?</h3>
+          <div class="faq-answer">
+            <p>Le parking est très limité et souvent complet. En VTC, vous êtes déposé à l'entrée du village et nous gérons le stationnement. C'est la solution idéale.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Peut-on combiner avec Vence ?</h3>
+          <div class="faq-answer">
+            <p>Oui, <strong>Vence</strong> et la <strong>Chapelle Matisse</strong> sont à seulement 5 km. Nous proposons un circuit demi-journée combinant les deux villages artistiques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre Excursion Artistique</h2>
+      <p class="text-center mb-lg">Fondation Maeght, Colombe d'Or, galeries... L'art vous attend à Saint-Paul.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Réserver l'excursion</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
       </div>
     </section>
 
@@ -71,15 +142,33 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-vence" class="text-dark hover-gold">VTC Vence</a>
+        <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes-sur-Mer</a>
-        <a href="/guide-villages-perches-cote-d-azur" class="text-dark hover-gold">Villages Perchés</a>
+        <a href="/guide-villages-perches-cote-d-azur" class="text-dark hover-gold">Guide Villages Perchés</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>
