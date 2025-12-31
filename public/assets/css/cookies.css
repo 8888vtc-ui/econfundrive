@@ -1,53 +1,8 @@
 /* ============================================
-   MOBILE FIXED ELEMENTS - ECOFUNDRIVE
-   WhatsApp fixe en haut, Chatbot au-dessus du menu
+   COOKIE BANNER CSS - ECOFUNDRIVE
+   Styles pour la bannière de consentement cookies
+   Compatible mobile et desktop
    ============================================ */
-
-/* === WHATSAPP FLOTTANT === */
-.whatsapp-button {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background-color: #25D366;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    min-width: 44px;
-    min-height: 44px;
-}
-
-.whatsapp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
-    background-color: #20BA5A;
-}
-
-.whatsapp-button svg {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-}
-
-.whatsapp-label {
-    white-space: nowrap;
-}
-
-/* === CHATBOT === */
-.chatbot-container {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    z-index: 9999;
-}
 
 /* === BANNIÈRE COOKIES RGPD === */
 .cookie-banner {
@@ -59,7 +14,6 @@
     color: white !important;
     padding: 1rem 1.5rem !important;
     z-index: 999999 !important;
-    /* AU-DESSUS DE TOUT */
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 1rem !important;
@@ -67,6 +21,7 @@
     justify-content: space-between !important;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3) !important;
     border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+    font-family: 'Poppins', system-ui, sans-serif !important;
 }
 
 .cookie-banner p {
@@ -99,10 +54,10 @@
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     min-height: 44px !important;
-    /* Taille tactile minimum */
     min-width: 100px !important;
     font-size: 0.9rem !important;
     border: none !important;
+    font-family: 'Poppins', system-ui, sans-serif !important;
 }
 
 .cookie-btn-accept {
@@ -129,11 +84,8 @@
 
 /* === MOBILE === */
 @media (max-width: 768px) {
-
-    /* BANNIÈRE COOKIES - MOBILE OPTIMISÉ */
     .cookie-banner {
         bottom: 70px !important;
-        /* AU-DESSUS de la barre de navigation mobile */
         padding: 1rem !important;
         flex-direction: column !important;
         gap: 0.75rem !important;
@@ -159,55 +111,10 @@
         padding: 0.875rem 1rem !important;
         font-size: 0.85rem !important;
         min-height: 48px !important;
-        /* Plus grand sur mobile */
-    }
-
-    /* WhatsApp flottant caché sur mobile (remplacé par header-whatsapp) */
-    .whatsapp-button {
-        display: none !important;
-    }
-
-    /* Chatbot - Au-dessus du menu bottom et de la bannière cookies */
-    .chatbot-container {
-        position: fixed !important;
-        bottom: 80px !important;
-        right: 10px !important;
-        left: auto !important;
-        top: auto !important;
-        z-index: 99997 !important;
-    }
-
-    .chatbot-toggle {
-        padding: 8px 12px !important;
-        font-size: 0.8rem !important;
-    }
-
-    .chatbot-toggle svg {
-        width: 18px !important;
-        height: 18px !important;
-    }
-
-    /* Fenêtre chatbot - centrée */
-    .chatbot-window {
-        position: fixed !important;
-        top: 50% !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: translate(-50%, -50%) !important;
-        width: 90vw !important;
-        max-width: 340px !important;
-        max-height: 60vh !important;
-        z-index: 100000 !important;
-    }
-
-    /* Quand la bannière cookies est affichée, remonter le chatbot */
-    body:has(.cookie-banner) .chatbot-container {
-        bottom: 180px !important;
     }
 }
 
-/* === SAFE AREA pour iPhone (notch et barre home) === */
+/* === SAFE AREA pour iPhone === */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
     .cookie-banner {
         padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;

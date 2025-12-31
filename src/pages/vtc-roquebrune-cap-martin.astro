@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Roquebrune-Cap-Martin – Chauffeur Privé Presqu'île | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Roquebrune-Cap-Martin. Cap Martin, plages, villas Belle Époque, sentier Le Corbusier. Entre Monaco et Menton. Service premium 24h/24.";
+const title = "VTC Roquebrune-Cap-Martin – Chauffeur Privé Château & Cap | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Roquebrune-Cap-Martin. Plus vieux village médiéval de France, Cap Martin luxueux, sentier Le Corbusier. Transferts Monaco premium.";
 const keywords = [
   'VTC Roquebrune-Cap-Martin',
   'chauffeur privé Roquebrune',
   'VTC Cap Martin',
   'transfert Monaco Roquebrune',
-  'chauffeur Menton Roquebrune'
+  'VTC château Roquebrune'
 ];
 ---
 
@@ -24,7 +23,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Roquebrune-Cap-Martin", url: "/vtc-roquebrune-cap-martin" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Roquebrune-Cap-Martin est-elle proche de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Roquebrune-Cap-Martin jouxte Monaco. Le Cap Martin est à 5 minutes en VTC du Casino de Monte-Carlo."}},{"@type":"Question","name":"Proposez-vous des transferts vers les hôtels de Roquebrune ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous desservons tous les hôtels et villas de Roquebrune-Cap-Martin, dont le Vista Palace et les résidences du Cap Martin."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Le château de Roquebrune est-il le plus vieux de France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le château de Roquebrune date du Xe siècle et est considéré comme le plus ancien château féodal de France. Il offre une vue spectaculaire sur Monaco."}},{"@type":"Question","name":"Qu'est-ce que le sentier Le Corbusier ?","acceptedAnswer":{"@type":"Answer","text":"C'est un sentier littoral de 3 km longeant le Cap Martin, nommé d'après l'architecte qui y avait son cabanon. Vue mer sublime et végétation méditerranéenne."}},{"@type":"Question","name":"Le Cap Martin est-il une zone résidentielle ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le Cap Martin abrite des villas luxueuses et privées. Coco Chanel et l'impératrice Eugénie y séjournaient. L'accès au littoral reste public."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -32,11 +31,44 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <section class="container py-lg fade-in-section">
+      <div class="intro-box">
+        <h2>Votre Chauffeur Privé à Roquebrune-Cap-Martin</h2>
+        <p class="intro-text">
+          <strong>Roquebrune-Cap-Martin</strong> réunit deux trésors : le <strong>plus vieux village médiéval de France</strong> avec son château du Xe siècle, et le <strong>Cap Martin</strong>, presqu'île luxueuse où séjournaient l'impératrice Eugénie et Coco Chanel. Le <strong>cabanon de Le Corbusier</strong> y est classé au patrimoine mondial.
+        </p>
+        <p class="intro-text">
+          Nichée entre Monaco et Menton, Roquebrune offre une vue imprenable sur la Principauté. ECOFUNDRIVE vous propose des excursions au château médiéval, des randonnées sur le sentier Le Corbusier, ou simplement des transferts vers les villas exclusives du Cap.
+        </p>
+        <div class="distance-info">
+          <span class="distance-icon">📍</span>
+          <span><strong>Distances :</strong> Monaco (4 km, 8 min) • Menton (3 km, 5 min) • Nice (25 km, 30 min) • Aéroport Nice (30 km, 35 min)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Nos Services VTC à Roquebrune</h2>
+      <div class="services-grid-2">
+        <div class="service-item">
+          <h3>🏰 Visite Château Médiéval</h3>
+          <p>Excursion au plus vieux château féodal de France. Vue panoramique sur Monaco incluse.</p>
+        </div>
+        <div class="service-item">
+          <h3>🚶 Sentier Le Corbusier</h3>
+          <p>Dépose au départ du sentier littoral. Récupération à Menton ou retour. Cabanon Le Corbusier.</p>
+        </div>
+        <div class="service-item">
+          <h3>🏡 Transferts Cap Martin</h3>
+          <p>Service discret pour les résidents et locataires des villas exclusives du Cap.</p>
+        </div>
+        <div class="service-item">
+          <h3>⛪ Procession Passion</h3>
+          <p>Transport pour la plus ancienne procession de France (Vendredi Saint depuis le XVe siècle).</p>
+        </div>
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
       </div>
     </section>
 
@@ -45,25 +77,64 @@ const keywords = [
       <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/destinations/destination-monaco.png"
-          alt="Village Roquebrune"
-          title="Le Village Médiéval"
-          description="Ruelles pavées, château du Xe siècle (le plus ancien de France), vue spectaculaire sur Monaco et la mer."
-          link="/reservation"
+          alt="Château Roquebrune"
+          title="Le Château Médiéval"
+          description="Forteresse du Xe siècle, la plus ancienne de France. Donjon, salles voûtées et vue vertigineuse sur Monaco."
+          link="/contact"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Cap Martin"
           title="Le Cap Martin"
-          description="Presqu'île exclusive aux villas Belle Époque. Lieu de villégiature de l'aristocratie européenne."
-          link="/reservation"
+          description="Presqu'île de rêve aux villas cachées. L'impératrice Eugénie, Coco Chanel et Le Corbusier y ont séjourné."
+          link="/contact"
         />
         <CategoryCard
-          image="/assets/img/hero/hero-mariage.webp"
-          alt="Cabanon Le Corbusier"
-          title="Cabanon Le Corbusier"
-          description="La minuscule maison-atelier de l'architecte, classée au patrimoine mondial de l'UNESCO."
-          link="/reservation"
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Sentier Le Corbusier"
+          title="Sentier Le Corbusier"
+          description="Promenade littorale de 3 km avec vue mer. Le cabanon de l'architecte est classé UNESCO."
+          link="/contact"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Le château de Roquebrune se visite-t-il ?</h3>
+          <div class="faq-answer">
+            <p>Oui, le château est ouvert au public. Comptez <strong>1 heure</strong> pour la visite. La vue sur Monaco depuis le donjon est spectaculaire.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Qu'est-ce que le cabanon Le Corbusier ?</h3>
+          <div class="faq-answer">
+            <p>C'est une minuscule cabane de <strong>3,66 x 3,66 m</strong> que l'architecte s'était construite en 1952 comme résidence d'été. Classée UNESCO, elle se visite sur réservation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Le sentier littoral est-il difficile ?</h3>
+          <div class="faq-answer">
+            <p>Non, c'est une promenade facile de <strong>3 km</strong> entre Roquebrune et Menton. Prévoir de bonnes chaussures et de l'eau. Vue sublime garantie.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">C'est quoi la Procession de la Passion ?</h3>
+          <div class="faq-answer">
+            <p>Chaque Vendredi Saint depuis le <strong>XVe siècle</strong>, les habitants rejouent la Passion du Christ dans les rues du village. C'est la plus ancienne tradition de France.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg cta-section fade-in-section">
+      <h2 class="text-center">Réservez votre VTC à Roquebrune</h2>
+      <p class="text-center mb-lg">Château médiéval, Cap Martin, sentier Le Corbusier... Entre Monaco et Menton.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
+        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
       </div>
     </section>
 
@@ -72,14 +143,32 @@ const keywords = [
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-menton" class="text-dark hover-gold">VTC Menton</a>
-        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-la-turbie" class="text-dark hover-gold">VTC La Turbie</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/guide-route-panoramique-nice-eze-monaco" class="text-dark hover-gold">Guide Corniches</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .intro-box { max-width: 900px; margin: 0 auto; }
+  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
+  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+  .distance-icon { font-size: 1.5rem; }
+  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
+  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
+  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
+  .cta-section h2 { color: #d4af37; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 </style>
