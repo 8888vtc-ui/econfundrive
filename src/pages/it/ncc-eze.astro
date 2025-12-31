@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Eze – Autista Privato Villaggio di Eze | ECOFUNDRIVE";
+const description = "Servizio NCC per Eze, il villaggio medievale più bello della Costa Azzurra. Trasferimenti e tour panoramici Nizza-Eze-Monaco. Visita delle profumerie Fragonard.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-eze"
+  canonical="/it/ncc-eze"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "Servizi", url: "/it/servizi" },
+    { name: "NCC Eze", url: "/it/ncc-eze" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </section>
+
+    <SectionImageText
+      title="Scoprite Eze con il Vostro Autista Privato"
+      image="/assets/img/services/service-business.webp"
+      alt="Villaggio di Eze Costa Azzurra"
+      imageSide="right"
+      ctaText="Prenota il Tour"
+      ctaLink="/it/contatto"
+    >
+      <p>
+        Eze è un gioiello arroccato tra Nizza e Monaco, un villaggio medievale che offre viste mozzafiato sul Mediterraneo. Con ECOFUNDRIVE, raggiungetelo comodamente e in sicurezza, evitando le strade tortuose e i parcheggi difficili.
+      </p>
+      <p>
+        Il nostro autista vi accompagnerà attraverso la corniche, fermandosi nei punti panoramici più spettacolari. Potrete visitare il Giardino Esotico, la storica fabbrica di profumi Fragonard e passeggiare tra le viuzze acciottolate del borgo.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Tour Popolari da/per Eze</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Tour Nizza Eze Monaco"
+          title="Nizza → Eze → Monaco"
+          description="Il tour classico della Riviera. 4 ore di scoperta lungo la Grande Corniche con soste panoramiche."
+          link="/it/contatto"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Monaco Eze"
+          title="Monaco → Eze"
+          description="Escursione di mezza giornata dal Principato. Perfetta dopo una visita al Casino o al Grand Prix."
+          link="/it/contatto"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-aeroport.webp"
+          alt="Aeroporto Nizza Eze"
+          title="Aeroporto Nizza → Eze"
+          description="Trasferimento diretto con possibilità di sosta a Eze durante il tragitto verso Monaco o Mentone."
+          link="/it/contatto"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Cosa Vedere a Eze</h2>
+      <div class="features-list">
+        <div class="feature">
+          <h4>🌺 Giardino Esotico</h4>
+          <p>In cima al villaggio, viste panoramiche a 360° e una collezione unica di cactus e piante succulente.</p>
+        </div>
+        <div class="feature">
+          <h4>💐 Profumeria Fragonard</h4>
+          <p>Visita gratuita della storica fabbrica di profumi. Scoprite i segreti della creazione di fragranze.</p>
+        </div>
+        <div class="feature">
+          <h4>🏰 Strada di Nietzsche</h4>
+          <p>Il sentiero che il filosofo percorreva per ispirarsi. Collegamento tra il mare e il villaggio alto.</p>
+        </div>
+        <div class="feature">
+          <h4>🍽️ Ristoranti Stellati</h4>
+          <p>Château Eza e La Chèvre d'Or, fra i ristoranti più esclusivi della Costa Azzurra.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Pronti per il Tour di Eze?</h2>
+        <p class="lead mb-lg">Contattateci per organizzare la vostra escursione personalizzata</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="/it/contatto" class="btn btn-gold">Richiedi Preventivo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .feature {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .feature h4 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+  }
+  .bg-light {
+    background: #f8fafc;
+    padding: 2rem;
+  }
+  .cta-section {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    padding: 4rem 2rem;
+    color: #000;
+    margin-top: 2rem;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-gold {
+    background: #000;
+    color: #d4af37;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+</style>

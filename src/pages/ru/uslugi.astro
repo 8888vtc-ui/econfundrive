@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+
+const title = "Премиум Услуги | Личный Водитель Лазурный Берег | ECOFUNDRIVE";
+const description = "Откройте наши премиум услуги личного водителя на Лазурном Берегу. Трансферы из аэропорта, бизнес-поездки, свадьбы, панорамные туры, почасовая аренда. Люксовые автомобили 24/7.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-uslugi"
+  canonical="/ru/uslugi"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Услуги", url: "/ru/uslugi" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">Наши Премиум Услуги</h1>
+      <p class="lead text-center mb-xl">Люксовые транспортные услуги по всему Лазурному Берегу. Профессионально, пунктуально и персонализированно.</p>
+      
+      <div class="services-grid">
+        <!-- Airport Transfers -->
+        <div class="service-detail" id="transfery">
+          <CategoryCard
+            image="/assets/img/services/service-aeroport.webp"
+            alt="Трансфер Аэропорт Ниццы"
+            title="Трансферы Аэропорт и Вокзал"
+            description="Профессиональная встреча с табличкой в аэропорту Ниццы (NCE), Канны Мандельё и на всех вокзалах."
+            link="/ru/transfer-nizza"
+          />
+          <div class="service-features">
+            <h4>Включено в каждый трансфер:</h4>
+            <ul>
+              <li>✅ Отслеживание рейсов в реальном времени</li>
+              <li>✅ 60 минут бесплатного ожидания</li>
+              <li>✅ Персональная встреча с табличкой</li>
+              <li>✅ Помощь с багажом</li>
+              <li>✅ Фиксированные цены без сюрпризов</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Business Travel -->
+        <div class="service-detail" id="biznes">
+          <CategoryCard
+            image="/assets/img/services/service-business.png"
+            alt="Бизнес Водитель"
+            title="Бизнес и Корпоративные Поездки"
+            description="Представительский транспорт для профессионалов. MIPIM, Cannes Lions, Tech конференции. Конфиденциальность и пунктуальность гарантированы."
+            link="/ru/kontakt"
+          />
+          <div class="service-features">
+            <h4>Почему бизнесмены выбирают нас:</h4>
+            <ul>
+              <li>✅ Маршруты с несколькими остановками</li>
+              <li>✅ WiFi во всех автомобилях</li>
+              <li>✅ Корпоративное выставление счетов</li>
+              <li>✅ Двуязычные водители (RU/EN/FR)</li>
+              <li>✅ Конфиденциальный сервис</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Hourly Disposal -->
+        <div class="service-detail" id="pochasovaya">
+          <CategoryCard
+            image="/assets/img/services/service-mise-disposition.webp"
+            alt="Почасовая Аренда"
+            title="Почасовая Аренда"
+            description="Ваш персональный водитель для шопинга в Монако, осмотра достопримечательностей или нескольких встреч. Минимум 4 часа."
+            link="/ru/kontakt"
+          />
+          <div class="service-features">
+            <h4>Идеально подходит для:</h4>
+            <ul>
+              <li>✅ Шопинг (Монако, Канны)</li>
+              <li>✅ Экскурсии на весь день</li>
+              <li>✅ Несколько деловых встреч</li>
+              <li>✅ Просмотр недвижимости</li>
+              <li>✅ Винные туры</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Weddings & Events -->
+        <div class="service-detail" id="svadby">
+          <CategoryCard
+            image="/assets/img/services/service-evenements.webp"
+            alt="Свадебный Сервис"
+            title="Свадьбы и Особые Мероприятия"
+            description="Сделайте ваш особенный день незабываемым. Украшенные автомобили, сервис красной дорожки, безупречная презентация."
+            link="/ru/kontakt"
+          />
+          <div class="service-features">
+            <h4>Наши услуги для мероприятий включают:</h4>
+            <ul>
+              <li>✅ Украшение автомобиля (ленты, цветы)</li>
+              <li>✅ Сервис шампанского по запросу</li>
+              <li>✅ Водитель в формальной одежде</li>
+              <li>✅ Координация трансфера гостей</li>
+              <li>✅ Остановки для фотографий</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Scenic Tours -->
+        <div class="service-detail" id="tury">
+          <CategoryCard
+            image="/assets/img/destinations/destination-saint-tropez.webp"
+            alt="Панорамный Тур Лазурный Берег"
+            title="Панорамные Туры и Экскурсии"
+            description="Откройте Ривьеру с местным экспертом. Эз, Монако, Сен-Тропе, горные деревни, парфюмерии, винодельни."
+            link="/ru/kontakt"
+          />
+          <div class="service-features">
+            <h4>Популярные туры:</h4>
+            <ul>
+              <li>✅ Ницца → Эз → Монако (4ч)</li>
+              <li>✅ Канны → Сен-Тропе (весь день)</li>
+              <li>✅ Парфюмерии Грасса (3ч)</li>
+              <li>✅ Горные деревни (5ч)</li>
+              <li>✅ Индивидуальные маршруты</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Long Distance -->
+        <div class="service-detail" id="dalniy">
+          <CategoryCard
+            image="/assets/img/services/service-transfer-longue-distance.webp"
+            alt="Трансфер на Дальние Расстояния"
+            title="Трансферы на Дальние Расстояния"
+            description="Путешествуйте с комфортом в Италию, Швейцарию, Париж или куда угодно в Европе. Идеально для тех, кто предпочитает люкс перелётам."
+            link="/ru/kontakt"
+          />
+          <div class="service-features">
+            <h4>Популярные дальние маршруты:</h4>
+            <ul>
+              <li>✅ Ницца → Милан (3ч30)</li>
+              <li>✅ Ницца → Женева (5ч30)</li>
+              <li>✅ Ницца → Портофино (3ч)</li>
+              <li>✅ Ницца → Марсель (2ч15)</li>
+              <li>✅ Ницца → Москва (по запросу)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA -->
+      <section class="cta-box mt-xl text-center">
+        <h2>Готовы Забронировать?</h2>
+        <p class="mb-lg">Свяжитесь с нами сейчас для персонального расчёта</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">Написать в WhatsApp</a>
+          <a href="/ru/kontakt" class="btn btn-gold">Форма Контакта</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  .service-detail {
+    background: #f8fafc;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .service-features {
+    padding: 1.5rem;
+  }
+  .service-features h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+  .service-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  .service-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .service-features li:last-child {
+    border-bottom: none;
+  }
+  .cta-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    color: white;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-gold {
+    background: #d4af37;
+    color: #000;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+</style>

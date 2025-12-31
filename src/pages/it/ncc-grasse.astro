@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "NCC Grasse – Autista Privato Capitale del Profumo | ECOFUNDRIVE";
+const description = "Servizio NCC per Grasse, la capitale mondiale del profumo. Tour delle profumerie Fragonard, Galimard, Molinard. Trasferimenti da Cannes, Nizza, Monaco.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-grasse"
+  canonical="/it/ncc-grasse"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "Servizi", url: "/it/servizi" },
+    { name: "NCC Grasse", url: "/it/ncc-grasse" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </section>
+
+    <SectionImageText
+      title="Grasse: La Capitale Mondiale del Profumo"
+      image="/assets/img/about/vehicule-premium.webp"
+      alt="Grasse Profumerie Costa Azzurra"
+      imageSide="right"
+      ctaText="Prenota Tour"
+      ctaLink="/it/contatto"
+    >
+      <p>
+        Grasse è una tappa imperdibile per chi visita la Costa Azzurra. Questa città collinare è il cuore dell'industria del profumo mondiale dal XVIII secolo. Le sue strade acciottolate nascondono le più prestigiose case di profumo: Fragonard, Galimard e Molinard.
+      </p>
+      <p>
+        Con ECOFUNDRIVE, raggiungete Grasse comodamente da Cannes (25 min), Nizza (40 min) o Monaco (55 min). Il nostro autista vi attenderà durante la vostra visita per accompagnarvi poi alla tappa successiva.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Tour delle Profumerie</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/services/service-mise-disposition.webp"
+          alt="Tour Fragonard"
+          title="Tour Fragonard"
+          description="La più antica maison di Grasse. Visita gratuita della fabbrica, museo e boutique."
+          link="/it/contatto"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.webp"
+          alt="Workshop Profumo"
+          title="Workshop Profumo"
+          description="Create il vostro profumo personalizzato. Esperienza guidata da un 'Nez' professionista."
+          link="/it/contatto"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Grasse Villaggi"
+          title="Grasse + Villaggi"
+          description="Combinate Grasse con Gourdon, Tourrettes-sur-Loup o Saint-Paul-de-Vence."
+          link="/it/contatto"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Le Grandi Maison di Grasse</h2>
+      <div class="features-list">
+        <div class="feature">
+          <h4>💐 Fragonard</h4>
+          <p>Fondata nel 1926, offre visite gratuite della fabbrica storica e museo dei profumi.</p>
+        </div>
+        <div class="feature">
+          <h4>🌹 Galimard</h4>
+          <p>Dal 1747, la più antica profumeria ancora in attività. Workshop di creazione disponibili.</p>
+        </div>
+        <div class="feature">
+          <h4>🌸 Molinard</h4>
+          <p>Fondata nel 1849, famosa per la sua collezione Habanita e le visite guidate.</p>
+        </div>
+        <div class="feature">
+          <h4>🏛️ Museo del Profumo</h4>
+          <p>MIP - Musée International de la Parfumerie, patrimonio UNESCO della regione.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Pronti per il Tour delle Profumerie?</h2>
+        <p class="lead mb-lg">Contattateci per organizzare la vostra giornata a Grasse</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="/it/contatto" class="btn btn-gold">Richiedi Preventivo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .features-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .feature { padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  .feature h4 { color: #d4af37; margin-bottom: 0.5rem; }
+  .bg-light { background: #f8fafc; padding: 2rem; }
+  .cta-section { background: linear-gradient(135deg, #d4af37, #b8941f); padding: 4rem 2rem; color: #000; margin-top: 2rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+  .btn-gold { background: #000; color: #d4af37; }
+  .btn-whatsapp { background: #25D366; color: white; }
+</style>

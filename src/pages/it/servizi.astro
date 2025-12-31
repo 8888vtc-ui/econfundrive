@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+
+const title = "Servizi NCC Premium | Autista Privato Costa Azzurra | ECOFUNDRIVE";
+const description = "Scoprite i nostri servizi NCC premium in Costa Azzurra. Trasferimenti aeroporto, viaggi d'affari, matrimoni, tour panoramici, noleggio a ore. Veicoli di lusso 24/7.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-servizi"
+  canonical="/it/servizi"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "Servizi", url: "/it/servizi" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">I Nostri Servizi NCC Premium</h1>
+      <p class="lead text-center mb-xl">Servizi di trasporto di lusso in tutta la Costa Azzurra. Professionali, puntuali e personalizzati.</p>
+      
+      <div class="services-grid">
+        <!-- Airport Transfers -->
+        <div class="service-detail" id="trasferimenti">
+          <CategoryCard
+            image="/assets/img/services/service-aeroport.webp"
+            alt="Trasferimento Aeroporto Nizza"
+            title="Trasferimenti Aeroporto e Stazione"
+            description="Servizio di accoglienza professionale con cartello nominativo all'aeroporto di Nizza (NCE), Cannes Mandelieu e tutte le stazioni."
+            link="/it/ncc-nizza"
+          />
+          <div class="service-features">
+            <h4>Incluso in ogni trasferimento:</h4>
+            <ul>
+              <li>✅ Monitoraggio voli in tempo reale</li>
+              <li>✅ 60 minuti di attesa gratuita</li>
+              <li>✅ Accoglienza personalizzata con cartello</li>
+              <li>✅ Assistenza bagagli</li>
+              <li>✅ Prezzi fissi, nessuna sorpresa</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Business Travel -->
+        <div class="service-detail" id="business">
+          <CategoryCard
+            image="/assets/img/services/service-business.png"
+            alt="Autista Business"
+            title="Viaggi d'Affari e Corporate"
+            description="Trasporto executive per professionisti. MIPIM, Cannes Lions, conferenze Tech. Discrezione e puntualità garantite."
+            link="/it/contatto"
+          />
+          <div class="service-features">
+            <h4>Perché i professionisti ci scelgono:</h4>
+            <ul>
+              <li>✅ Itinerari multi-tappa</li>
+              <li>✅ WiFi in tutti i veicoli</li>
+              <li>✅ Fatturazione aziendale disponibile</li>
+              <li>✅ Autisti bilingue (IT/FR/EN)</li>
+              <li>✅ Servizio riservato</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Hourly Disposal -->
+        <div class="service-detail" id="disposizione">
+          <CategoryCard
+            image="/assets/img/services/service-mise-disposition.webp"
+            alt="Noleggio a Ore"
+            title="A Disposizione"
+            description="Il vostro autista dedicato per shopping a Monaco, visite turistiche o appuntamenti multipli. Minimo 4 ore."
+            link="/it/contatto"
+          />
+          <div class="service-features">
+            <h4>Perfetto per:</h4>
+            <ul>
+              <li>✅ Shopping (Monaco, Cannes)</li>
+              <li>✅ Visite turistiche giornaliere</li>
+              <li>✅ Riunioni d'affari multiple</li>
+              <li>✅ Visite immobiliari</li>
+              <li>✅ Tour enogastronomici</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Weddings & Events -->
+        <div class="service-detail" id="matrimoni">
+          <CategoryCard
+            image="/assets/img/services/service-evenements.webp"
+            alt="Servizio Matrimoni"
+            title="Matrimoni e Eventi Speciali"
+            description="Rendete il vostro giorno speciale indimenticabile. Veicoli decorati, servizio red carpet, presentazione impeccabile."
+            link="/it/contatto"
+          />
+          <div class="service-features">
+            <h4>I nostri servizi per eventi includono:</h4>
+            <ul>
+              <li>✅ Decorazione veicolo (nastri, fiori)</li>
+              <li>✅ Servizio champagne disponibile</li>
+              <li>✅ Autista in abito formale</li>
+              <li>✅ Coordinamento navette ospiti</li>
+              <li>✅ Soste per fotografie</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Scenic Tours -->
+        <div class="service-detail" id="tour">
+          <CategoryCard
+            image="/assets/img/destinations/destination-saint-tropez.webp"
+            alt="Tour Panoramico Costa Azzurra"
+            title="Tour Panoramici ed Escursioni"
+            description="Scoprite la Riviera con un esperto locale. Eze, Monaco, Saint-Tropez, villaggi arroccati, profumerie, cantine."
+            link="/it/contatto"
+          />
+          <div class="service-features">
+            <h4>Tour popolari:</h4>
+            <ul>
+              <li>✅ Nizza → Eze → Monaco (4h)</li>
+              <li>✅ Cannes → Saint-Tropez (giornata intera)</li>
+              <li>✅ Tour profumerie Grasse (3h)</li>
+              <li>✅ Villaggi arroccati (5h)</li>
+              <li>✅ Itinerari personalizzati</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Long Distance -->
+        <div class="service-detail" id="lungadistanza">
+          <CategoryCard
+            image="/assets/img/services/service-transfer-longue-distance.webp"
+            alt="Trasferimento Lunga Distanza"
+            title="Trasferimenti Lunga Distanza"
+            description="Viaggiate in comfort verso Italia, Svizzera, Parigi o ovunque in Europa. Ideale per chi preferisce il lusso al volo."
+            link="/it/contatto"
+          />
+          <div class="service-features">
+            <h4>Tratte popolari lunga distanza:</h4>
+            <ul>
+              <li>✅ Nizza → Milano (3h30)</li>
+              <li>✅ Nizza → Ginevra (5h30)</li>
+              <li>✅ Nizza → Portofino (3h)</li>
+              <li>✅ Nizza → Marsiglia (2h15)</li>
+              <li>✅ Nizza → Roma (su richiesta)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA -->
+      <section class="cta-box mt-xl text-center">
+        <h2>Pronti a Prenotare?</h2>
+        <p class="mb-lg">Contattateci ora per un preventivo personalizzato</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">Scrivici su WhatsApp</a>
+          <a href="/it/contatto" class="btn btn-gold">Modulo Contatto</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  .service-detail {
+    background: #f8fafc;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .service-features {
+    padding: 1.5rem;
+  }
+  .service-features h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+  .service-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  .service-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .service-features li:last-child {
+    border-bottom: none;
+  }
+  .cta-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    color: white;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-gold {
+    background: #d4af37;
+    color: #000;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+</style>

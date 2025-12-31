@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Трансфер Грас – Личный Водитель в Столицу Парфюмов | ECOFUNDRIVE";
+const description = "Трансфер в Грас, мировую столицу парфюмерии. Туры по парфюмериям Фрагонар, Галимар, Молинар. Трансферы из Канн, Ниццы, Монако.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-grasse"
+  canonical="/ru/transfer-grasse"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Услуги", url: "/ru/uslugi" },
+    { name: "Трансфер Грас", url: "/ru/transfer-grasse" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </section>
+
+    <SectionImageText
+      title="Грас: Мировая Столица Парфюмерии"
+      image="/assets/img/about/vehicule-premium.webp"
+      alt="Грас Парфюмерии Лазурный Берег"
+      imageSide="right"
+      ctaText="Забронировать Тур"
+      ctaLink="/ru/kontakt"
+    >
+      <p>
+        Грас — обязательная остановка для всех, кто посещает Лазурный Берег. Этот горный город является сердцем мировой парфюмерной индустрии с XVIII века. Его мощёные улочки скрывают самые престижные парфюмерные дома: Fragonard, Galimard и Molinard.
+      </p>
+      <p>
+        С ECOFUNDRIVE вы комфортно доберётесь до Граса из Канн (25 мин), Ниццы (40 мин) или Монако (55 мин). Наш водитель подождёт вас во время визита, чтобы затем отвезти к следующей остановке.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Туры по Парфюмериям</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/services/service-mise-disposition.webp"
+          alt="Тур Фрагонар"
+          title="Тур Фрагонар"
+          description="Старейший дом Граса. Бесплатная экскурсия по фабрике, музей и бутик."
+          link="/ru/kontakt"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.webp"
+          alt="Мастер-класс Парфюм"
+          title="Мастер-класс Парфюма"
+          description="Создайте свой собственный аромат. Опыт под руководством профессионального 'Носа'."
+          link="/ru/kontakt"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-nice.png"
+          alt="Грас Деревни"
+          title="Грас + Деревни"
+          description="Совместите Грас с Гурдоном, Туррет-сюр-Лу или Сен-Поль-де-Вансом."
+          link="/ru/kontakt"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Великие Дома Граса</h2>
+      <div class="features-list">
+        <div class="feature">
+          <h4>💐 Fragonard</h4>
+          <p>Основан в 1926 году, предлагает бесплатные экскурсии по исторической фабрике и музею духов.</p>
+        </div>
+        <div class="feature">
+          <h4>🌹 Galimard</h4>
+          <p>С 1747 года, старейшая действующая парфюмерия. Доступны мастер-классы по созданию ароматов.</p>
+        </div>
+        <div class="feature">
+          <h4>🌸 Molinard</h4>
+          <p>Основан в 1849 году, знаменит коллекцией Habanita и экскурсиями с гидом.</p>
+        </div>
+        <div class="feature">
+          <h4>🏛️ Музей Парфюмерии</h4>
+          <p>MIP - Международный музей парфюмерии, часть наследия ЮНЕСКО региона.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Готовы к Туру по Парфюмериям?</h2>
+        <p class="lead mb-lg">Свяжитесь с нами для организации вашего дня в Грасе</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="/ru/kontakt" class="btn btn-gold">Запросить Расчёт</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .features-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .feature { padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  .feature h4 { color: #d4af37; margin-bottom: 0.5rem; }
+  .bg-light { background: #f8fafc; padding: 2rem; }
+  .cta-section { background: linear-gradient(135deg, #d4af37, #b8941f); padding: 4rem 2rem; color: #000; margin-top: 2rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+  .btn-gold { background: #000; color: #d4af37; }
+  .btn-whatsapp { background: #25D366; color: white; }
+</style>

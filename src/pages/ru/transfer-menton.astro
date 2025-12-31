@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Трансфер Ментон – Личный Водитель на Лазурном Берегу | ECOFUNDRIVE";
+const description = "Премиум трансфер в Ментон, жемчужину Лазурного Берега на границе с Италией. Трансферы аэропорт Ниццы, Монако и Италия. Сады, лимоны и солнце.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-menton"
+  canonical="/ru/transfer-menton"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Услуги", url: "/ru/uslugi" },
+    { name: "Трансфер Ментон", url: "/ru/transfer-menton" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">{title}</h1>
+      <p class="lead text-center mb-xl">{description}</p>
+    </section>
+
+    <SectionImageText
+      title="Ментон: Где Франция Встречает Италию"
+      image="/assets/img/destinations/destination-nice.png"
+      alt="Ментон Лазурный Берег"
+      imageSide="right"
+      ctaText="Забронировать Трансфер"
+      ctaLink="/ru/kontakt"
+    >
+      <p>
+        Ментон — самый итальянский город Франции, знаменитый своими цитрусовыми садами, ботаническими парками и самым мягким климатом на Лазурном Берегу. Всего 30 минут от Монако и 45 минут от аэропорта Ниццы — идеальное место для тех, кто ищет спокойствие и красоту.
+      </p>
+      <p>
+        С ECOFUNDRIVE ваш трансфер в и из Ментона будет комфортным и беззаботным. Проедьте по живописной прибрежной дороге с опытным водителем, который знает каждый скрытый уголок.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl">
+      <h2 class="text-center mb-lg">Популярные Трансферы</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/services/service-aeroport.webp"
+          alt="Аэропорт Ниццы Ментон"
+          title="Аэропорт Ниццы → Ментон"
+          description="45 минут живописной поездки вдоль побережья. Встреча с табличкой включена."
+          link="/ru/kontakt"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.png"
+          alt="Монако Ментон"
+          title="Монако → Ментон"
+          description="Всего 15 минут между гламуром Княжества и очарованием Ментона."
+          link="/ru/kontakt"
+        />
+        <CategoryCard
+          image="/assets/img/about/vehicule-premium.webp"
+          alt="Ментон Италия"
+          title="Ментон → Вентимилья/Италия"
+          description="Трансграничные поездки. Рынок Вентимильи, Сан-Ремо, Портофино."
+          link="/ru/kontakt"
+        />
+      </div>
+    </section>
+
+    <section class="container py-xl bg-light rounded-lg">
+      <h2 class="text-center mb-lg">Что Посмотреть в Ментоне</h2>
+      <div class="features-list">
+        <div class="feature">
+          <h4>🍋 Фестиваль Лимонов</h4>
+          <p>Знаменитый Fête du Citron в феврале с гигантскими скульптурами из цитрусовых. Уникальное событие!</p>
+        </div>
+        <div class="feature">
+          <h4>🌿 Ботанические Сады</h4>
+          <p>Serre de la Madone, Jardin Val Rahmeh — экзотические сады благодаря исключительному микроклимату.</p>
+        </div>
+        <div class="feature">
+          <h4>🎨 Музей Жана Кокто</h4>
+          <p>Впечатляющая коллекция великого художника в современном здании на набережной.</p>
+        </div>
+        <div class="feature">
+          <h4>🏖️ Песчаные Пляжи</h4>
+          <p>Единственные песчаные пляжи на Лазурном Берегу, идеальные для семей с детьми.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Готовы Открыть Ментон?</h2>
+        <p class="lead mb-lg">Свяжитесь с нами для вашего персонального трансфера</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="/ru/kontakt" class="btn btn-gold">Запросить Расчёт</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .feature {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .feature h4 { color: #d4af37; margin-bottom: 0.5rem; }
+  .bg-light { background: #f8fafc; padding: 2rem; }
+  .cta-section { background: linear-gradient(135deg, #d4af37, #b8941f); padding: 4rem 2rem; color: #000; margin-top: 2rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+  .btn-gold { background: #000; color: #d4af37; }
+  .btn-whatsapp { background: #25D366; color: white; }
+</style>
