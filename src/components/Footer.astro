@@ -17,6 +17,7 @@ const t = {
     quote: "Demander un devis",
     about: "À propos",
     contact: "Contact",
+    blog: "Blog",
     legal: "Mentions légales & RGPD",
     sitemap: "Plan du site",
     servicesTitle: "Services VTC",
@@ -39,6 +40,7 @@ const t = {
     quote: "Request a Quote",
     about: "About Us",
     contact: "Contact",
+    blog: "Blog",
     legal: "Legal Notice & Privacy",
     sitemap: "Sitemap",
     servicesTitle: "VTC Services",
@@ -61,6 +63,7 @@ const t = {
     quote: "Richiedi preventivo",
     about: "Chi siamo",
     contact: "Contatti",
+    blog: "Blog",
     legal: "Note legali & Privacy",
     sitemap: "Mappa del sito",
     servicesTitle: "Servizi NCC",
@@ -83,6 +86,7 @@ const t = {
     quote: "Запросить цену",
     about: "О нас",
     contact: "Контакты",
+    blog: "Блог",
     legal: "Правовая информация",
     sitemap: "Карта сайта",
     servicesTitle: "VTC услуги",
@@ -137,6 +141,7 @@ const basePath = lang === 'fr' ? '' : `/${lang}`;
           </>
         )}
         <a href={`${basePath}/avis-clients`}>{tr.reviews}</a>
+        <a href="/blog">{tr.blog}</a>
         <a href={`${basePath}/contact`}>{tr.quote}</a>
         <a href={`${basePath}/a-propos`}>{tr.about}</a>
         <a href={`${basePath}/contact`}>{tr.contact}</a>

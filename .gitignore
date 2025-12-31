@@ -49,3 +49,4 @@ netlify-token.txt
 *.md
 !README.md
 !AUDIT-*.md
+!src/pages/blog/*.md

@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+
+// Import des articles du blog
+const allPosts = await Astro.glob('./blog/*.md');
+const posts = allPosts
+  .filter(post => !post.frontmatter.draft)
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog' }
+];
+---
+
+<BaseLayout 
+  title="Blog VTC Côte d'Azur | Actualités & Conseils | ECOFUNDRIVE"
+  description="Découvrez nos articles sur le transport VTC, les destinations de la Côte d'Azur, conseils de voyage et actualités ECOFUNDRIVE."
+  currentPage="blog"
+  breadcrumbItems={breadcrumbItems}
+  keywords={["blog VTC", "actualités Côte d'Azur", "conseils voyage Nice", "chauffeur privé blog"]}
+>
+  <HeroBanner
+    title="Blog & Actualités"
+    subtitle="Conseils voyage, destinations et actualités VTC Côte d'Azur"
+    ctaText="Réserver un VTC"
+    ctaLink="/contact"
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.webp"
+  />
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-intro">
+        <h2>Nos derniers articles</h2>
+        <p>Explorez la Côte d'Azur à travers nos conseils, découvrez les meilleures destinations et restez informé de nos actualités.</p>
+      </div>
+
+      <div class="blog-grid">
+        {posts.length > 0 ? (
+          posts.map((post) => (
+            <article class="blog-card">
+              {post.frontmatter.image && (
+                <div class="blog-card-image">
+                  <img 
+                    src={post.frontmatter.image} 
+                    alt={post.frontmatter.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
+                </div>
+              )}
+              <div class="blog-card-content">
+                <div class="blog-card-meta">
+                  <time datetime={post.frontmatter.date}>
+                    {new Date(post.frontmatter.date).toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  {post.frontmatter.category && (
+                    <span class="blog-category">{post.frontmatter.category}</span>
+                  )}
+                </div>
+                <h3><a href={post.url}>{post.frontmatter.title}</a></h3>
+                <p>{post.frontmatter.excerpt}</p>
+                <a href={post.url} class="blog-read-more">Lire la suite →</a>
+              </div>
+            </article>
+          ))
+        ) : (
+          <div class="blog-empty">
+            <p>🚧 Les articles arrivent bientôt ! En attendant, <a href="/contact">contactez-nous</a> pour vos besoins de transport.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-section {
+    padding: 4rem 0;
+    background: #f9f9f9;
+  }
+
+  .blog-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .blog-intro h2 {
+    color: #d4af37;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-intro p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .blog-card-image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+  }
+
+  .blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-card-content {
+    padding: 1.5rem;
+  }
+
+  .blog-card-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .blog-card-meta time {
+    color: #888;
+  }
+
+  .blog-category {
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .blog-card-content h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .blog-card-content h3 a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .blog-card-content h3 a:hover {
+    color: #d4af37;
+  }
+
+  .blog-card-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .blog-read-more {
+    color: #d4af37;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+
+  .blog-read-more:hover {
+    gap: 0.75rem;
+  }
+
+  .blog-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 16px;
+    font-size: 1.1rem;
+  }
+
+  .blog-empty a {
+    color: #d4af37;
+    font-weight: 600;
+  }
+
+  @media (max-width: 992px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-intro h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
