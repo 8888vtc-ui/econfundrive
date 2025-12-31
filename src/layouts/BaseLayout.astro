@@ -391,8 +391,8 @@ if (currentLang === 'fr') {
     <main id="main-content" role="main">
       <slot />
     </main>
-    {currentPage !== "avis-clients" && <ReviewsDisplay limit={6} />}
-    <Footer />
+    {currentPage !== "avis-clients" && <ReviewsDisplay limit={6} lang={currentLang} />}
+    <Footer lang={currentLang} />
     <WhatsAppButton />
     <Chatbot lang={currentLang} />
   </body>

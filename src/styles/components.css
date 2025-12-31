@@ -336,12 +336,14 @@
 }
 
 .footer-nav a {
-  color: #ccc;
+  color: #e0e0e0;
+  /* Improved contrast for WCAG accessibility */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, padding-left 0.3s;
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-nav a:focus {
   color: #d4af37;
   padding-left: 5px;
 }

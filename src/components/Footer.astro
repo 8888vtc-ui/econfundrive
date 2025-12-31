@@ -1,8 +1,111 @@
 ---
+// Footer multilingue
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'fr' } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+// Traductions
+const t = {
+  fr: {
+    navigation: "Navigation",
+    home: "Accueil",
+    services: "Services",
+    reviews: "Avis clients",
+    quote: "Demander un devis",
+    about: "À propos",
+    contact: "Contact",
+    legal: "Mentions légales & RGPD",
+    sitemap: "Plan du site",
+    servicesTitle: "Services VTC",
+    airportTransfers: "Transferts aéroport Nice (NCE) & Cannes-Mandelieu, gares",
+    businessDriver: "Chauffeur privé business & événements",
+    weddings: "Mariages & soirées privées",
+    tours: "Circuits Côte d'Azur (Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime)",
+    disposal: "Mise à disposition demi-journée / journée",
+    trustindex: "Avis Trustindex",
+    allRights: "Tous droits réservés",
+    optimized: "Site optimisé Core Web Vitals & SEO local",
+    lastUpdate: "Dernière mise à jour",
+    areasServed: "Zones desservies : Nice, Cannes, Antibes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime, aéroport Nice (NCE) et aéroport de Cannes-Mandelieu."
+  },
+  en: {
+    navigation: "Navigation",
+    home: "Home",
+    services: "Services",
+    reviews: "Customer Reviews",
+    quote: "Request a Quote",
+    about: "About Us",
+    contact: "Contact",
+    legal: "Legal Notice & Privacy",
+    sitemap: "Sitemap",
+    servicesTitle: "VTC Services",
+    airportTransfers: "Nice Airport (NCE) & Cannes-Mandelieu transfers, train stations",
+    businessDriver: "Private business driver & events",
+    weddings: "Weddings & private parties",
+    tours: "French Riviera tours (Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime)",
+    disposal: "Half-day / full-day chauffeur service",
+    trustindex: "Trustindex Reviews",
+    allRights: "All rights reserved",
+    optimized: "Core Web Vitals & Local SEO optimized",
+    lastUpdate: "Last update",
+    areasServed: "Areas served: Nice, Cannes, Antibes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime, Nice Airport (NCE) and Cannes-Mandelieu Airport."
+  },
+  it: {
+    navigation: "Navigazione",
+    home: "Home",
+    services: "Servizi",
+    reviews: "Recensioni clienti",
+    quote: "Richiedi preventivo",
+    about: "Chi siamo",
+    contact: "Contatti",
+    legal: "Note legali & Privacy",
+    sitemap: "Mappa del sito",
+    servicesTitle: "Servizi NCC",
+    airportTransfers: "Trasferimenti aeroporto Nizza (NCE) & Cannes-Mandelieu, stazioni",
+    businessDriver: "Autista privato business & eventi",
+    weddings: "Matrimoni & feste private",
+    tours: "Tour Costa Azzurra (Nizza, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime)",
+    disposal: "Noleggio con conducente mezza giornata / giornata",
+    trustindex: "Recensioni Trustindex",
+    allRights: "Tutti i diritti riservati",
+    optimized: "Sito ottimizzato Core Web Vitals & SEO locale",
+    lastUpdate: "Ultimo aggiornamento",
+    areasServed: "Zone servite: Nizza, Cannes, Antibes, Monaco, Saint-Tropez, Fréjus, Sainte-Maxime, aeroporto di Nizza (NCE) e aeroporto di Cannes-Mandelieu."
+  },
+  ru: {
+    navigation: "Навигация",
+    home: "Главная",
+    services: "Услуги",
+    reviews: "Отзывы клиентов",
+    quote: "Запросить цену",
+    about: "О нас",
+    contact: "Контакты",
+    legal: "Правовая информация",
+    sitemap: "Карта сайта",
+    servicesTitle: "VTC услуги",
+    airportTransfers: "Трансферы аэропорт Ницца (NCE) & Канны-Мандельё, вокзалы",
+    businessDriver: "Личный водитель для бизнеса и мероприятий",
+    weddings: "Свадьбы и частные вечеринки",
+    tours: "Туры по Лазурному Побережью (Ницца, Канны, Монако, Сен-Тропе, Фрежюс, Сент-Максим)",
+    disposal: "Аренда с водителем на полдня / день",
+    trustindex: "Отзывы Trustindex",
+    allRights: "Все права защищены",
+    optimized: "Оптимизировано Core Web Vitals & локальное SEO",
+    lastUpdate: "Последнее обновление",
+    areasServed: "Зоны обслуживания: Ницца, Канны, Антиб, Монако, Сен-Тропе, Фрежюс, Сент-Максим, аэропорт Ниццы (NCE) и аэропорт Канны-Мандельё."
+  }
+};
+
+const tr = t[lang as keyof typeof t] || t.fr;
+
+// URLs selon la langue
+const basePath = lang === 'fr' ? '' : `/${lang}`;
 ---
 
-<footer class="site-footer" role="contentinfo" aria-label="Pied de page">
+<footer class="site-footer" role="contentinfo" aria-label={lang === 'en' ? 'Footer' : lang === 'it' ? 'Piè di pagina' : lang === 'ru' ? 'Подвал' : 'Pied de page'}>
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -12,52 +115,54 @@ const currentYear = new Date().getFullYear();
         1001 AVENUE DE LA BATTERIE, MARINA BAIE DES ANGES – LE DUCAL – APP<br>
         06270 VILLENEUVE-LOUBET<br>
         Tél. : <a href="tel:+33616552811">06 16 55 28 11</a><br>
-        Zones desservies : Nice, Cannes, Antibes, Monaco, Saint-Tropez, Fréjus, Sainte‑Maxime, aéroport Nice (NCE) et aéroport de Cannes‑Mandelieu.
-        <div class="badge-update">Dernière mise à jour : <span class="js-last-updated">{currentYear}</span></div>
-        <div class="footer-badges" aria-label="Informations légales et professionnelles">
+        {tr.areasServed}
+        <div class="badge-update">{tr.lastUpdate} : <span class="js-last-updated">{currentYear}</span></div>
+        <div class="footer-badges" aria-label={lang === 'en' ? 'Legal and professional information' : 'Informations légales et professionnelles'}>
           <span class="footer-badge">ECOFUNDRIVE · SASU</span>
           <span class="footer-badge">SIREN 912 244 696</span>
           <span class="footer-badge">NAF 4932Z</span>
           <span class="footer-badge">TVA FR59912244696</span>
         </div>
       </div>
-      <nav class="footer-nav" aria-label="Navigation du pied de page">
-        <strong>Navigation</strong>
-        <a href="/">Accueil</a>
-        <a href="/services">Services</a>
-        <a href="/vtc-nice">VTC Nice</a>
-        <a href="/vtc-saint-tropez">VTC Saint-Tropez</a>
-        <a href="/vtc-cannes">VTC Cannes</a>
-        <a href="/vtc-monaco">VTC Monaco</a>
-        <a href="/avis-clients">Avis clients</a>
-        <a href="/contact">Demander un devis</a>
-        <a href="/a-propos">À propos</a>
-        <a href="/contact">Contact</a>
-        <a href="/avis-clients">Avis clients</a>
-        <a href="/mentions-legales-rgpd">Mentions légales &amp; RGPD</a>
-        <a href="/plan-du-site">Plan du site</a>
+      <nav class="footer-nav" aria-label={lang === 'en' ? 'Footer navigation' : 'Navigation du pied de page'}>
+        <strong>{tr.navigation}</strong>
+        <a href={basePath || '/'}>{tr.home}</a>
+        <a href={`${basePath}/services`}>{tr.services}</a>
+        {lang === 'fr' && (
+          <>
+            <a href="/vtc-nice">VTC Nice</a>
+            <a href="/vtc-saint-tropez">VTC Saint-Tropez</a>
+            <a href="/vtc-cannes">VTC Cannes</a>
+            <a href="/vtc-monaco">VTC Monaco</a>
+          </>
+        )}
+        <a href={`${basePath}/avis-clients`}>{tr.reviews}</a>
+        <a href={`${basePath}/contact`}>{tr.quote}</a>
+        <a href={`${basePath}/a-propos`}>{tr.about}</a>
+        <a href={`${basePath}/contact`}>{tr.contact}</a>
+        <a href="/mentions-legales-rgpd">{tr.legal}</a>
+        <a href="/plan-du-site">{tr.sitemap}</a>
       </nav>
       <div>
-        <strong>Services VTC</strong><br>
-        Transferts aéroport Nice (NCE) &amp; Cannes‑Mandelieu, gares<br>
-        Chauffeur privé business & événements<br>
-        Mariages & soirées privées<br>
-        Circuits Côte d'Azur (Nice, Cannes, Monaco, Saint-Tropez, Fréjus, Sainte‑Maxime)<br>
-        Mise à disposition demi‑journée / journée<br>
+        <strong>{tr.servicesTitle}</strong><br>
+        {tr.airportTransfers}<br>
+        {tr.businessDriver}<br>
+        {tr.weddings}<br>
+        {tr.tours}<br>
+        {tr.disposal}<br>
         <div class="footer-social">
-          <a href="https://www.trustindex.io/reviews/ecofundrive.com" target="_blank" rel="noopener noreferrer" aria-label="Voir nos avis sur Trustindex">
-            ⭐ Avis Trustindex
+          <a href="https://www.trustindex.io/reviews/ecofundrive.com" target="_blank" rel="noopener noreferrer" aria-label={lang === 'en' ? 'See our reviews on Trustindex' : 'Voir nos avis sur Trustindex'}>
+            ⭐ {tr.trustindex}
           </a>
-          <a href="https://www.facebook.com/ecofundrive/" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Facebook">
+          <a href="https://www.facebook.com/ecofundrive/" target="_blank" rel="noopener noreferrer" aria-label={lang === 'en' ? 'Follow us on Facebook' : 'Suivez-nous sur Facebook'}>
             📘 Facebook
           </a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>ECOFUNDRIVE. Tous droits réservés. © {currentYear}</span>
-      <span>Site optimisé Core Web Vitals & SEO local.</span>
+      <span>ECOFUNDRIVE. {tr.allRights}. © {currentYear}</span>
+      <span>{tr.optimized}</span>
     </div>
   </div>
 </footer>
-

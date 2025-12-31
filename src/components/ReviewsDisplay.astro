@@ -4,30 +4,77 @@ import { featuredReviews, aggregateRating } from '../data/reviews.ts';
 interface Props {
   showAll?: boolean;
   limit?: number;
+  lang?: string;
 }
 
-const { showAll = false, limit = 6 } = Astro.props;
+const { showAll = false, limit = 6, lang = 'fr' } = Astro.props;
 const reviewsToShow = showAll ? featuredReviews : featuredReviews.slice(0, limit);
+
+// Traductions
+const t = {
+  fr: {
+    title: "Avis Clients",
+    reviewsCount: "avis",
+    verified: "Vérifié Trustindex",
+    seeAll: "Voir tous les avis",
+    leaveReview: "Laisser un avis",
+    ariaLabel: "Avis clients",
+    ariaSeeTrustindex: "Voir tous les avis sur Trustindex"
+  },
+  en: {
+    title: "Customer Reviews",
+    reviewsCount: "reviews",
+    verified: "Verified by Trustindex",
+    seeAll: "See all reviews",
+    leaveReview: "Leave a review",
+    ariaLabel: "Customer reviews",
+    ariaSeeTrustindex: "See all reviews on Trustindex"
+  },
+  it: {
+    title: "Recensioni Clienti",
+    reviewsCount: "recensioni",
+    verified: "Verificato Trustindex",
+    seeAll: "Vedi tutte le recensioni",
+    leaveReview: "Lascia una recensione",
+    ariaLabel: "Recensioni clienti",
+    ariaSeeTrustindex: "Vedi tutte le recensioni su Trustindex"
+  },
+  ru: {
+    title: "Отзывы Клиентов",
+    reviewsCount: "отзывов",
+    verified: "Проверено Trustindex",
+    seeAll: "Смотреть все отзывы",
+    leaveReview: "Оставить отзыв",
+    ariaLabel: "Отзывы клиентов",
+    ariaSeeTrustindex: "Смотреть все отзывы на Trustindex"
+  }
+};
+
+const tr = t[lang as keyof typeof t] || t.fr;
+
+// Locale pour les dates
+const dateLocale = lang === 'en' ? 'en-US' : lang === 'it' ? 'it-IT' : lang === 'ru' ? 'ru-RU' : 'fr-FR';
+const basePath = lang === 'fr' ? '' : `/${lang}`;
 ---
 
-<section class="reviews-section" aria-label="Avis clients">
+<section class="reviews-section" aria-label={tr.ariaLabel}>
   <div class="container">
     <div class="reviews-header">
-      <h2 class="reviews-title">Avis Clients</h2>
+      <h2 class="reviews-title">{tr.title}</h2>
       <div class="rating-badge">
         <div class="rating-stars">★★★★★</div>
         <div class="rating-info">
           <span class="rating-value">{aggregateRating.ratingValue}</span>
-          <span class="rating-count">/ {aggregateRating.reviewCount} avis</span>
+          <span class="rating-count">/ {aggregateRating.reviewCount} {tr.reviewsCount}</span>
         </div>
         <a 
           href="https://www.trustindex.io/reviews/ecofundrive.com" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="trustindex-badge"
-          aria-label="Voir tous les avis sur Trustindex"
+          aria-label={tr.ariaSeeTrustindex}
         >
-          Vérifié Trustindex
+          {tr.verified}
         </a>
       </div>
     </div>
@@ -48,7 +95,7 @@ const reviewsToShow = showAll ? featuredReviews : featuredReviews.slice(0, limit
               <strong itemprop="name">{review.author}</strong>
             </div>
             <time class="review-date" datetime={review.datePublished} itemprop="datePublished">
-              {new Date(review.datePublished).toLocaleDateString('fr-FR', { 
+              {new Date(review.datePublished).toLocaleDateString(dateLocale, { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
@@ -60,16 +107,15 @@ const reviewsToShow = showAll ? featuredReviews : featuredReviews.slice(0, limit
     </div>
 
     <div class="reviews-cta">
-      <a href="/avis-clients" class="btn btn-secondary">Voir tous les avis</a>
+      <a href={`${basePath}/avis-clients`} class="btn btn-secondary">{tr.seeAll}</a>
       <a 
         href="https://www.trustindex.io/reviews/ecofundrive.com" 
         target="_blank" 
         rel="noopener noreferrer" 
         class="btn btn-primary"
       >
-        Laisser un avis
+        {tr.leaveReview}
       </a>
     </div>
   </div>
 </section>
-
