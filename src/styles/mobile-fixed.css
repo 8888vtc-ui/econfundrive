@@ -167,12 +167,12 @@
         display: none !important;
     }
 
-    /* Chatbot - Au-dessus du menu bottom et de la bannière cookies */
+    /* Chatbot - À GAUCHE pour ne pas chevaucher WhatsApp (à droite) */
     .chatbot-container {
         position: fixed !important;
-        bottom: 80px !important;
-        right: 10px !important;
-        left: auto !important;
+        bottom: 85px !important;
+        left: 12px !important;
+        right: auto !important;
         top: auto !important;
         z-index: 99997 !important;
     }

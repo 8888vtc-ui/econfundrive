@@ -48,37 +48,41 @@
     display: none !important;
 }
 
-/* WhatsApp FIXE en haut pour mobile - Toujours visible au scroll */
+/* WhatsApp FIXE pour mobile - Position optimisée au-dessus de la nav */
 .whatsapp-fixed-top {
     display: none;
     /* Caché sur desktop */
     position: fixed !important;
-    top: 12px !important;
-    right: 60px !important;
-    /* À côté du logo, pas trop à droite */
-    z-index: 100001 !important;
-    /* Au-dessus du header */
+    top: auto !important;
+    bottom: 85px !important;
+    /* Bien au-dessus de la navigation mobile (65px + 20px marge) */
+    right: 12px !important;
+    z-index: 99998 !important;
+    /* En dessous du bottom nav mais au-dessus du contenu */
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 10px 14px;
+    /* Légèrement plus compact */
     background-color: #25D366;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 25px;
-    box-shadow: 0 3px 12px rgba(37, 211, 102, 0.5);
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
     font-weight: 600;
     font-size: 0.85rem;
     transition: all 0.2s;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .whatsapp-fixed-top:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
 .whatsapp-fixed-top svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     flex-shrink: 0;
 }
 
@@ -315,19 +319,23 @@
     font-size: 1.2rem;
 }
 
-/* Mobile: Compact language switcher */
+/* Mobile: Compact language switcher - OPTIMISÉ */
 @media (max-width: 768px) {
     .lang-switcher {
         position: fixed;
         top: 12px;
-        right: 15px;
+        right: 12px;
         z-index: 100002;
         margin-left: 0;
     }
 
     .lang-current {
-        padding: 6px 10px;
-        font-size: 0.8rem;
+        padding: 8px 12px;
+        /* Plus grand pour cibles tactiles */
+        font-size: 0.85rem;
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
     }
 
     .lang-code {
@@ -337,6 +345,21 @@
 
     .lang-dropdown {
         right: 0;
-        min-width: 140px;
+        min-width: 160px;
+        background: rgba(26, 26, 26, 0.98);
+        /* Fond plus opaque pour meilleure lisibilité */
+        backdrop-filter: blur(10px);
+    }
+
+    .lang-option {
+        padding: 0.9rem 1rem;
+        /* Espacement tactile augmenté */
+        min-height: 48px;
+        /* Cible tactile minimum 48px */
+    }
+
+    .lang-option .lang-flag {
+        font-size: 1.3rem;
+        /* Drapeaux plus grands sur mobile */
     }
 }
