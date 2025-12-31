@@ -58,10 +58,39 @@ const homeUrl = lang === 'fr' ? '/' : `/${lang}/`;
     <!-- Menu Desktop -->
     <nav class="nav-links-desktop" aria-label="Navigation principale">
       <a href={homeUrl} class={currentPage === "index" ? "active" : ""}>{t.home}</a>
-      <a href="/services" class={currentPage === "services" ? "active" : ""}>{t.services}</a>
-      <a href="/a-propos" class={currentPage === "a-propos" ? "active" : ""}>{t.about}</a>
-      <a href="/contact" class={currentPage === "contact" ? "active" : ""}>{t.contact}</a>
+      <a href={lang === 'fr' ? '/services' : lang === 'en' ? '/en/services' : lang === 'it' ? '/it/servizi' : '/ru/uslugi'} class={currentPage === "services" ? "active" : ""}>{t.services}</a>
+      <a href={lang === 'fr' ? '/a-propos' : homeUrl} class={currentPage === "a-propos" ? "active" : ""}>{t.about}</a>
+      <a href={lang === 'fr' ? '/contact' : lang === 'en' ? '/en/contact' : lang === 'it' ? '/it/contatto' : '/ru/kontakt'} class={currentPage === "contact" ? "active" : ""}>{t.contact}</a>
     </nav>
+    
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-current" aria-label="Changer de langue" aria-expanded="false">
+        <span class="lang-flag">{lang === 'fr' ? '🇫🇷' : lang === 'en' ? '🇬🇧' : lang === 'it' ? '🇮🇹' : '🇷🇺'}</span>
+        <span class="lang-code">{lang.toUpperCase()}</span>
+        <svg class="lang-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="lang-dropdown">
+        <a href="/" class={`lang-option ${lang === 'fr' ? 'active' : ''}`}>
+          <span class="lang-flag">🇫🇷</span>
+          <span>Français</span>
+        </a>
+        <a href="/en/" class={`lang-option ${lang === 'en' ? 'active' : ''}`}>
+          <span class="lang-flag">🇬🇧</span>
+          <span>English</span>
+        </a>
+        <a href="/it/" class={`lang-option ${lang === 'it' ? 'active' : ''}`}>
+          <span class="lang-flag">🇮🇹</span>
+          <span>Italiano</span>
+        </a>
+        <a href="/ru/" class={`lang-option ${lang === 'ru' ? 'active' : ''}`}>
+          <span class="lang-flag">🇷🇺</span>
+          <span>Русский</span>
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
