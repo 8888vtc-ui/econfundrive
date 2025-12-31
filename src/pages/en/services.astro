@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+
+const title = "Premium VTC Services | Private Driver French Riviera | ECOFUNDRIVE";
+const description = "Discover our premium private driver services on the French Riviera. Airport transfers, business travel, weddings, scenic tours, hourly disposal. Luxury vehicles 24/7.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-services"
+  canonical="/en/services"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Services", url: "/en/services" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">Our Premium VTC Services</h1>
+      <p class="lead text-center mb-xl">Luxury transportation services across the French Riviera. Professional, punctual, and personalized.</p>
+      
+      <div class="services-grid">
+        <!-- Airport Transfers -->
+        <div class="service-detail" id="transfers">
+          <CategoryCard
+            image="/assets/img/services/service-aeroport.webp"
+            alt="Nice Airport Transfer"
+            title="Airport & Train Station Transfers"
+            description="Professional meet & greet service with name board at Nice Airport (NCE), Cannes Mandelieu, and all train stations."
+            link="/en/nice-airport-to-monaco-transfer"
+          />
+          <div class="service-features">
+            <h4>Included in every transfer:</h4>
+            <ul>
+              <li>✅ Real-time flight tracking</li>
+              <li>✅ 60 minutes free waiting time</li>
+              <li>✅ Personal welcome with name board</li>
+              <li>✅ Luggage assistance</li>
+              <li>✅ Fixed prices, no surprises</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Business Travel -->
+        <div class="service-detail" id="business">
+          <CategoryCard
+            image="/assets/img/services/service-business.png"
+            alt="Business Travel Chauffeur"
+            title="Business & Corporate Travel"
+            description="Executive transportation for professionals. MIPIM, Cannes Lions, Tech conferences. Discretion and punctuality guaranteed."
+            link="/en/guide-cannes-congress-transport"
+          />
+          <div class="service-features">
+            <h4>Why business travelers choose us:</h4>
+            <ul>
+              <li>✅ Multi-stop itineraries</li>
+              <li>✅ WiFi in all vehicles</li>
+              <li>✅ Corporate billing available</li>
+              <li>✅ Bilingual drivers (EN/FR)</li>
+              <li>✅ Confidential service</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Hourly Disposal -->
+        <div class="service-detail" id="disposal">
+          <CategoryCard
+            image="/assets/img/services/service-mise-disposition.webp"
+            alt="Hourly Chauffeur Service"
+            title="Hourly Disposal"
+            description="Your dedicated driver for shopping in Monaco, sightseeing, or multiple appointments. 4h minimum."
+            link="/en/contact"
+          />
+          <div class="service-features">
+            <h4>Perfect for:</h4>
+            <ul>
+              <li>✅ Shopping trips (Monaco, Cannes)</li>
+              <li>✅ Full-day sightseeing</li>
+              <li>✅ Multiple business meetings</li>
+              <li>✅ Real estate viewings</li>
+              <li>✅ Wine tours</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Weddings & Events -->
+        <div class="service-detail" id="events">
+          <CategoryCard
+            image="/assets/img/services/service-evenements.webp"
+            alt="Wedding Chauffeur Service"
+            title="Weddings & Special Events"
+            description="Make your special day unforgettable. Decorated vehicles, red carpet service, impeccable presentation."
+            link="/en/contact"
+          />
+          <div class="service-features">
+            <h4>Our event services include:</h4>
+            <ul>
+              <li>✅ Vehicle decoration (ribbons, flowers)</li>
+              <li>✅ Champagne service available</li>
+              <li>✅ Formally dressed chauffeur</li>
+              <li>✅ Guest shuttle coordination</li>
+              <li>✅ Photography stops</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Scenic Tours -->
+        <div class="service-detail" id="tours">
+          <CategoryCard
+            image="/assets/img/destinations/destination-saint-tropez.webp"
+            alt="French Riviera Scenic Tour"
+            title="Scenic Tours & Day Trips"
+            description="Discover the Riviera with a local expert. Eze, Monaco, Saint-Tropez, hilltop villages, perfumeries, wine estates."
+            link="/en/guides"
+          />
+          <div class="service-features">
+            <h4>Popular tours:</h4>
+            <ul>
+              <li>✅ Nice → Eze → Monaco (4h)</li>
+              <li>✅ Cannes → Saint-Tropez (full day)</li>
+              <li>✅ Grasse perfumeries tour (3h)</li>
+              <li>✅ Hilltop villages (5h)</li>
+              <li>✅ Custom itineraries</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Long Distance -->
+        <div class="service-detail" id="longdistance">
+          <CategoryCard
+            image="/assets/img/services/service-transfer-longue-distance.webp"
+            alt="Long Distance Transfer"
+            title="Long Distance Transfers"
+            description="Travel in comfort to Italy, Switzerland, Paris, or anywhere in Europe. Ideal for those who prefer luxury over flying."
+            link="/en/guide-long-distance-transfers"
+          />
+          <div class="service-features">
+            <h4>Popular long-distance routes:</h4>
+            <ul>
+              <li>✅ Nice → Milan (3h30)</li>
+              <li>✅ Nice → Geneva (5h30)</li>
+              <li>✅ Nice → Portofino (3h)</li>
+              <li>✅ Nice → Marseille (2h15)</li>
+              <li>✅ Nice → Paris (by request)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA -->
+      <section class="cta-box mt-xl text-center">
+        <h2>Ready to Book?</h2>
+        <p class="mb-lg">Contact us now for a personalized quote</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp">WhatsApp Us</a>
+          <a href="/en/contact" class="btn btn-gold">Contact Form</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  .service-detail {
+    background: #f8fafc;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .service-features {
+    padding: 1.5rem;
+  }
+  .service-features h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+  }
+  .service-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  .service-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .service-features li:last-child {
+    border-bottom: none;
+  }
+  .cta-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    color: white;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-gold {
+    background: #d4af37;
+    color: #000;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+</style>

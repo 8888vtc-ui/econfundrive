@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Contatto & Prenotazione | Autista Privato Costa Azzurra | ECOFUNDRIVE";
+const description = "Prenota il tuo autista privato in Costa Azzurra. Contattaci per telefono, WhatsApp o email. Trasferimenti aeroporto Nizza, Monaco, Cannes, Saint-Tropez. Servizio 24/7.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="it-contatto"
+  canonical="/it/contatto"
+  lang="it"
+  breadcrumbItems={[
+    { name: "Home", url: "/it" },
+    { name: "Contatto", url: "/it/contatto" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">Contatto & Prenotazione</h1>
+      <p class="lead text-center mb-xl">Prenota il tuo autista privato o richiedi un preventivo. Rispondiamo entro 1 ora.</p>
+      
+      <div class="contact-grid">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/33616552811" class="contact-card whatsapp-card">
+          <div class="contact-icon">📱</div>
+          <h3>WhatsApp</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Risposta immediata • Invia i dettagli della prenotazione</p>
+          <span class="contact-cta">Scrivici →</span>
+        </a>
+        
+        <!-- Phone -->
+        <a href="tel:+33616552811" class="contact-card phone-card">
+          <div class="contact-icon">📞</div>
+          <h3>Telefono</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Disponibile 24/7 • Parliamo italiano</p>
+          <span class="contact-cta">Chiama ora →</span>
+        </a>
+        
+        <!-- Email -->
+        <a href="mailto:8888vtc@gmail.com" class="contact-card email-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p class="contact-value">8888vtc@gmail.com</p>
+          <p class="contact-desc">Risposta entro 2 ore</p>
+          <span class="contact-cta">Invia email →</span>
+        </a>
+      </div>
+      
+      <!-- Booking Info -->
+      <section class="booking-info mt-xl">
+        <h2 class="text-center mb-lg">Come Prenotare</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <span class="step-number">1</span>
+            <h4>Contattateci</h4>
+            <p>Inviateci i dettagli del viaggio via WhatsApp, telefono o email</p>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <h4>Ricevete il Preventivo</h4>
+            <p>Un prezzo fisso senza costi nascosti</p>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <h4>Conferma</h4>
+            <p>Confermiamo la prenotazione e inviamo i dettagli dell'autista</p>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <h4>Viaggiate con Stile</h4>
+            <p>Il vostro autista vi accoglie nel luogo concordato</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- What to Include -->
+      <section class="info-box mt-xl">
+        <h3>📋 Cosa Includere nella Richiesta di Prenotazione</h3>
+        <ul>
+          <li><strong>Luogo di partenza:</strong> Terminal aeroporto, nome hotel, indirizzo...</li>
+          <li><strong>Destinazione:</strong> Dove volete andare</li>
+          <li><strong>Data e Ora:</strong> Numero del volo se prelievo in aeroporto</li>
+          <li><strong>Numero di passeggeri:</strong> E dettagli sui bagagli</li>
+          <li><strong>Richieste speciali:</strong> Seggiolini, accoglienza personalizzata, ecc.</li>
+        </ul>
+      </section>
+      
+      <!-- Service Area -->
+      <section class="service-area mt-xl">
+        <h2 class="text-center mb-lg">Serviamo Tutta la Costa Azzurra</h2>
+        <div class="destinations-grid">
+          <a href="/it/ncc-nizza">Nizza</a>
+          <a href="/it/ncc-monaco">Monaco</a>
+          <a href="/it/ncc-cannes">Cannes</a>
+          <a href="/it/ncc-saint-tropez">Saint-Tropez</a>
+          <a href="/it/ncc-antibes">Antibes</a>
+          <a href="/vtc-eze">Eze</a>
+          <a href="/vtc-menton">Mentone</a>
+          <a href="/vtc-grasse">Grasse</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .contact-card {
+    display: block;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .whatsapp-card { border: 2px solid #25D366; }
+  .phone-card { border: 2px solid #d4af37; }
+  .email-card { border: 2px solid #60a5fa; }
+  .contact-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .contact-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
+  .contact-value { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact-desc { opacity: 0.8; font-size: 0.9rem; }
+  .contact-cta { display: inline-block; margin-top: 1rem; color: #d4af37; font-weight: 600; }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #d4af37;
+    color: #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .info-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid #d4af37;
+  }
+  .info-box ul { padding-left: 1.5rem; }
+  .info-box li { margin-bottom: 0.75rem; }
+  
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+  .destinations-grid a {
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .destinations-grid a:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

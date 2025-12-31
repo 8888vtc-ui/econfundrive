@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Контакты и Бронирование | Личный Водитель Лазурный Берег | ECOFUNDRIVE";
+const description = "Забронируйте личного водителя на Лазурном Берегу. Свяжитесь по телефону, WhatsApp или email. Трансферы аэропорт Ниццы, Монако, Канны, Сен-Тропе. Круглосуточный сервис.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="ru-kontakt"
+  canonical="/ru/kontakt"
+  lang="ru"
+  breadcrumbItems={[
+    { name: "Главная", url: "/ru" },
+    { name: "Контакты", url: "/ru/kontakt" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">Контакты и Бронирование</h1>
+      <p class="lead text-center mb-xl">Забронируйте личного водителя или запросите расчёт стоимости. Отвечаем в течение 1 часа.</p>
+      
+      <div class="contact-grid">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/33616552811" class="contact-card whatsapp-card">
+          <div class="contact-icon">📱</div>
+          <h3>WhatsApp</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Мгновенный ответ • Отправьте детали поездки</p>
+          <span class="contact-cta">Написать →</span>
+        </a>
+        
+        <!-- Phone -->
+        <a href="tel:+33616552811" class="contact-card phone-card">
+          <div class="contact-icon">📞</div>
+          <h3>Телефон</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Доступны 24/7 • Говорим по-русски</p>
+          <span class="contact-cta">Позвонить →</span>
+        </a>
+        
+        <!-- Email -->
+        <a href="mailto:8888vtc@gmail.com" class="contact-card email-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p class="contact-value">8888vtc@gmail.com</p>
+          <p class="contact-desc">Ответ в течение 2 часов</p>
+          <span class="contact-cta">Отправить письмо →</span>
+        </a>
+      </div>
+      
+      <!-- Booking Info -->
+      <section class="booking-info mt-xl">
+        <h2 class="text-center mb-lg">Как Забронировать</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <span class="step-number">1</span>
+            <h4>Свяжитесь с Нами</h4>
+            <p>Отправьте детали поездки через WhatsApp, телефон или email</p>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <h4>Получите Расчёт</h4>
+            <p>Фиксированная цена без скрытых платежей</p>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <h4>Подтверждение</h4>
+            <p>Мы подтверждаем бронирование и высылаем данные водителя</p>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <h4>Путешествуйте Стильно</h4>
+            <p>Ваш водитель встретит вас в назначенном месте</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- What to Include -->
+      <section class="info-box mt-xl">
+        <h3>📋 Что Указать в Запросе на Бронирование</h3>
+        <ul>
+          <li><strong>Место отправления:</strong> Терминал аэропорта, название отеля, адрес...</li>
+          <li><strong>Пункт назначения:</strong> Куда вы хотите поехать</li>
+          <li><strong>Дата и Время:</strong> Номер рейса при встрече в аэропорту</li>
+          <li><strong>Количество пассажиров:</strong> И информация о багаже</li>
+          <li><strong>Особые пожелания:</strong> Детские кресла, персональная встреча и т.д.</li>
+        </ul>
+      </section>
+      
+      <!-- Service Area -->
+      <section class="service-area mt-xl">
+        <h2 class="text-center mb-lg">Мы Обслуживаем Весь Лазурный Берег</h2>
+        <div class="destinations-grid">
+          <a href="/ru/transfer-nizza">Ницца</a>
+          <a href="/ru/transfer-monaco">Монако</a>
+          <a href="/ru/transfer-cannes">Канны</a>
+          <a href="/ru/transfer-saint-tropez">Сен-Тропе</a>
+          <a href="/ru/transfer-antibes">Антибы</a>
+          <a href="/vtc-eze">Эз</a>
+          <a href="/vtc-menton">Ментон</a>
+          <a href="/vtc-grasse">Грас</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .contact-card {
+    display: block;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .whatsapp-card { border: 2px solid #25D366; }
+  .phone-card { border: 2px solid #d4af37; }
+  .email-card { border: 2px solid #60a5fa; }
+  .contact-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .contact-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
+  .contact-value { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact-desc { opacity: 0.8; font-size: 0.9rem; }
+  .contact-cta { display: inline-block; margin-top: 1rem; color: #d4af37; font-weight: 600; }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #d4af37;
+    color: #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .info-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid #d4af37;
+  }
+  .info-box ul { padding-left: 1.5rem; }
+  .info-box li { margin-bottom: 0.75rem; }
+  
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+  .destinations-grid a {
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .destinations-grid a:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

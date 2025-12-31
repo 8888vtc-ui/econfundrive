@@ -45,12 +45,51 @@ const tarifeIT = [
 >
   <main id="main-content">
     <!-- Hero Section -->
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo</a>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Il Vostro Autista Privato in Costa Azzurra</h1>
+        <p class="hero-subtitle">Trasferimenti aeroporto, tour panoramici e trasporti di lusso. Nizza • Cannes • Monaco • Saint-Tropez</p>
+        <div class="hero-cta">
+          <a href="/it/contatto" class="btn btn-gold">Prenota il Trasferimento</a>
+          <a href="tel:+33616552811" class="btn btn-outline">Chiama +33 6 16 55 28 11</a>
+        </div>
       </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">I Nostri Servizi NCC Premium</h2>
+      <p class="text-center mb-xl lead">Scoprite il lusso del trasporto in Costa Azzurra con ECOFUNDRIVE</p>
+      <div class="services-grid">
+        {servicesIT.map((service) => (
+          <div class="service-card">
+            <span class="service-icon">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Popular Routes -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Tratte Popolari e Tariffe</h2>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Da</th><th>A</th><th>Durata</th><th>Prezzo da</th></tr>
+        </thead>
+        <tbody>
+          {tarifeIT.map((route) => (
+            <tr>
+              <td>{route.da}</td>
+              <td>{route.a}</td>
+              <td>{route.durata}</td>
+              <td class="price-cell">{route.prezzo}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prezzi fissi senza costi nascosti. Servizio di accoglienza incluso.</em></p>
     </section>
 
     <!-- Destinations -->
@@ -62,28 +101,28 @@ const tarifeIT = [
           alt="NCC Nizza"
           title="Nizza"
           description="Capitale della Costa Azzurra. Città Vecchia, Promenade des Anglais, Collina del Castello."
-          link="/vtc-nice"
+          link="/it/ncc-nizza"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-monaco.png"
           alt="NCC Monaco"
           title="Monaco"
           description="Il glamour della Principauté. Casino di Monte-Carlo, Gran Premio, Port Hercule."
-          link="/vtc-monaco"
+          link="/it/ncc-monaco"
         />
         <CategoryCard
           image="/assets/img/destinations/cannes-palais-festivals.png"
           alt="NCC Cannes"
           title="Cannes"
           description="Sede del famoso Festival del Cinema. La Croisette, Palais des Festivals, boutique di lusso."
-          link="/vtc-cannes"
+          link="/it/ncc-cannes"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-saint-tropez.webp"
           alt="NCC Saint-Tropez"
           title="Saint-Tropez"
           description="Destinazione jet-set leggendaria. Spiaggia di Pampelonne, Club 55, porto incantevole."
-          link="/vtc-saint-tropez"
+          link="/it/ncc-saint-tropez"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
@@ -97,7 +136,7 @@ const tarifeIT = [
           alt="NCC Antibes"
           title="Antibes e Cap d'Antibes"
           description="Città vecchia incantevole, superyacht a Port Vauban, Museo Picasso."
-          link="/vtc-antibes"
+          link="/it/ncc-antibes"
         />
       </div>
     </section>
@@ -109,7 +148,7 @@ const tarifeIT = [
       alt="Autista professionale Costa Azzurra"
       imageSide="right"
       ctaText="Prenota Ora"
-      ctaLink="/reservation"
+      ctaLink="/it/contatto"
     >
       <ul class="benefits-list fade-in-section">
         <li><strong>Prezzi Fissi</strong> – Conoscete la tariffa in anticipo, nessuna sorpresa</li>
@@ -128,7 +167,7 @@ const tarifeIT = [
         <h2>Pronti a Viaggiare con Stile?</h2>
         <p class="lead mb-lg">Prenotate il vostro autista privato e viaggiate in Costa Azzurra con eleganza</p>
         <div class="cta-buttons">
-          <a href="/reservation" class="btn btn-gold btn-lg">Prenota Online</a>
+          <a href="/it/contatto" class="btn btn-gold btn-lg">Prenota Online</a>
           <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">Contattaci su WhatsApp</a>
         </div>
       </div>
@@ -141,7 +180,7 @@ const tarifeIT = [
         <div class="faq-item">
           <h3 class="faq-question">Come prenoto un autista privato?</h3>
           <div class="faq-answer">
-            <p>Potete prenotare online tramite il nostro <a href="/reservation">modulo di prenotazione</a>, via WhatsApp al +33 6 16 55 28 11, o chiamandoci direttamente. Confermiamo tutte le prenotazioni entro 1 ora.</p>
+            <p>Potete prenotare online tramite il nostro <a href="/it/contatto">modulo di prenotazione</a>, via WhatsApp al +33 6 16 55 28 11, o chiamandoci direttamente. Confermiamo tutte le prenotazioni entro 1 ora.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -154,6 +193,12 @@ const tarifeIT = [
           <h3 class="faq-question">Fornite seggiolini per bambini?</h3>
           <div class="faq-answer">
             <p>Assolutamente. Forniamo seggiolini per neonati, bambini e rialzi gratuitamente. Basta indicare l'età dei bambini al momento della prenotazione.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Qual è il costo di un trasferimento dall'aeroporto di Nizza?</h3>
+          <div class="faq-answer">
+            <p>Le tariffe dipendono dalla destinazione. Contattateci via WhatsApp o email per un preventivo immediato e senza impegno. I prezzi sono fissi e trasparenti.</p>
           </div>
         </div>
       </div>

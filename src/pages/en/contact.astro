@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Contact & Booking | Private Driver French Riviera | ECOFUNDRIVE";
+const description = "Book your private driver on the French Riviera. Contact us by phone, WhatsApp or email. Nice Airport transfers, Monaco, Cannes, Saint-Tropez. 24/7 service.";
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="en-contact"
+  canonical="/en/contact"
+  lang="en"
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Contact", url: "/en/contact" }
+  ]}
+>
+  <main id="main-content">
+    <section class="container py-xl">
+      <h1 class="text-center mb-lg">Contact & Booking</h1>
+      <p class="lead text-center mb-xl">Book your private driver or request a quote. We respond within 1 hour.</p>
+      
+      <div class="contact-grid">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/33616552811" class="contact-card whatsapp-card">
+          <div class="contact-icon">📱</div>
+          <h3>WhatsApp</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Instant response • Send your booking details</p>
+          <span class="contact-cta">Message us →</span>
+        </a>
+        
+        <!-- Phone -->
+        <a href="tel:+33616552811" class="contact-card phone-card">
+          <div class="contact-icon">📞</div>
+          <h3>Phone</h3>
+          <p class="contact-value">+33 6 16 55 28 11</p>
+          <p class="contact-desc">Available 24/7 • English spoken</p>
+          <span class="contact-cta">Call now →</span>
+        </a>
+        
+        <!-- Email -->
+        <a href="mailto:8888vtc@gmail.com" class="contact-card email-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p class="contact-value">8888vtc@gmail.com</p>
+          <p class="contact-desc">Response within 2 hours</p>
+          <span class="contact-cta">Send email →</span>
+        </a>
+      </div>
+      
+      <!-- Booking Info -->
+      <section class="booking-info mt-xl">
+        <h2 class="text-center mb-lg">How to Book</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <span class="step-number">1</span>
+            <h4>Contact Us</h4>
+            <p>Send us your travel details via WhatsApp, phone or email</p>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <h4>Get Your Quote</h4>
+            <p>Receive a fixed price with no hidden fees</p>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <h4>Confirm</h4>
+            <p>We confirm your booking and send driver details</p>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <h4>Travel in Style</h4>
+            <p>Your driver meets you at the agreed location</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- What to Include -->
+      <section class="info-box mt-xl">
+        <h3>📋 What to Include in Your Booking Request</h3>
+        <ul>
+          <li><strong>Pickup location:</strong> Airport terminal, hotel name, address...</li>
+          <li><strong>Destination:</strong> Where you want to go</li>
+          <li><strong>Date & Time:</strong> Flight number if airport pickup</li>
+          <li><strong>Number of passengers:</strong> And any luggage details</li>
+          <li><strong>Special requests:</strong> Child seats, meet & greet, etc.</li>
+        </ul>
+      </section>
+      
+      <!-- Service Area -->
+      <section class="service-area mt-xl">
+        <h2 class="text-center mb-lg">We Serve the Entire French Riviera</h2>
+        <div class="destinations-grid">
+          <a href="/en/nice-private-driver">Nice</a>
+          <a href="/en/monaco-private-driver">Monaco</a>
+          <a href="/en/cannes-private-driver">Cannes</a>
+          <a href="/en/saint-tropez-private-driver">Saint-Tropez</a>
+          <a href="/en/antibes-private-driver">Antibes</a>
+          <a href="/en/eze-private-driver">Eze</a>
+          <a href="/en/menton-private-driver">Menton</a>
+          <a href="/en/grasse-private-driver">Grasse</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .contact-card {
+    display: block;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .whatsapp-card { border: 2px solid #25D366; }
+  .phone-card { border: 2px solid #d4af37; }
+  .email-card { border: 2px solid #60a5fa; }
+  .contact-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .contact-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
+  .contact-value { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact-desc { opacity: 0.8; font-size: 0.9rem; }
+  .contact-cta { display: inline-block; margin-top: 1rem; color: #d4af37; font-weight: 600; }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #d4af37;
+    color: #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .info-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid #d4af37;
+  }
+  .info-box ul { padding-left: 1.5rem; }
+  .info-box li { margin-bottom: 0.75rem; }
+  
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+  .destinations-grid a {
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .destinations-grid a:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>
