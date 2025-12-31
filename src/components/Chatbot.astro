@@ -1,29 +1,79 @@
 ---
-// Chatbot AI - Guide touristique expert Côte d'Azur
-const chatbotLabel = "VIP Service Guide";
+// Chatbot AI - Guide touristique expert Côte d'Azur - MULTILINGUE
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'fr' } = Astro.props;
+
+// Traductions
+const translations = {
+  fr: {
+    label: "Guide VIP",
+    ariaOpen: "Ouvrir le guide touristique",
+    ariaClose: "Fermer le guide touristique",
+    welcomeMessage: "Bonjour ! Je suis votre guide touristique expert sur la Côte d'Azur. Je peux vous conseiller sur les meilleurs endroits à visiter, les restaurants, les plages, et bien plus encore. Que souhaitez-vous découvrir ?",
+    placeholder: "Posez votre question...",
+    ariaInput: "Votre question pour le guide",
+    ariaSend: "Envoyer votre message",
+    whatsappHint: "Pour les réservations et tarifs, contactez-nous directement sur"
+  },
+  en: {
+    label: "VIP Guide",
+    ariaOpen: "Open tourist guide",
+    ariaClose: "Close tourist guide",
+    welcomeMessage: "Hello! I'm your expert tourist guide for the French Riviera. I can advise you on the best places to visit, restaurants, beaches, and much more. What would you like to discover?",
+    placeholder: "Ask your question...",
+    ariaInput: "Your question for the guide",
+    ariaSend: "Send your message",
+    whatsappHint: "For reservations and pricing, contact us directly on"
+  },
+  it: {
+    label: "Guida VIP",
+    ariaOpen: "Apri la guida turistica",
+    ariaClose: "Chiudi la guida turistica",
+    welcomeMessage: "Ciao! Sono la tua guida turistica esperta della Costa Azzurra. Posso consigliarti i posti migliori da visitare, ristoranti, spiagge e molto altro. Cosa vorresti scoprire?",
+    placeholder: "Fai la tua domanda...",
+    ariaInput: "La tua domanda per la guida",
+    ariaSend: "Invia il tuo messaggio",
+    whatsappHint: "Per prenotazioni e prezzi, contattaci direttamente su"
+  },
+  ru: {
+    label: "VIP Гид",
+    ariaOpen: "Открыть туристический гид",
+    ariaClose: "Закрыть туристический гид",
+    welcomeMessage: "Привет! Я ваш эксперт-гид по Лазурному Берегу. Я могу посоветовать лучшие места для посещения, рестораны, пляжи и многое другое. Что бы вы хотели узнать?",
+    placeholder: "Задайте ваш вопрос...",
+    ariaInput: "Ваш вопрос гиду",
+    ariaSend: "Отправить сообщение",
+    whatsappHint: "Для бронирования и цен свяжитесь с нами напрямую через"
+  }
+};
+
+const t = translations[lang as keyof typeof translations] || translations.fr;
 ---
 
-<div class="chatbot-container" id="chatbot-container">
+<div class="chatbot-container" id="chatbot-container" data-lang={lang}>
   <button 
     class="chatbot-toggle" 
     id="chatbot-toggle"
-    aria-label="Ouvrir le guide touristique"
+    aria-label={t.ariaOpen}
     aria-expanded="false"
     aria-controls="chatbot-window"
   >
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
     </svg>
-    <span class="chatbot-label">{chatbotLabel}</span>
+    <span class="chatbot-label">{t.label}</span>
   </button>
 
   <div class="chatbot-window" id="chatbot-window" aria-hidden="true" role="dialog" aria-labelledby="chatbot-title">
     <div class="chatbot-header">
-      <h3 id="chatbot-title" class="chatbot-title">{chatbotLabel}</h3>
+      <h3 id="chatbot-title" class="chatbot-title">{t.label}</h3>
       <button 
         class="chatbot-close" 
         id="chatbot-close"
-        aria-label="Fermer le guide touristique"
+        aria-label={t.ariaClose}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -34,7 +84,7 @@ const chatbotLabel = "VIP Service Guide";
     <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite">
       <div class="chatbot-message chatbot-message-bot">
         <div class="message-content">
-          <p>Bonjour ! Je suis votre guide touristique expert sur la Côte d'Azur. Je peux vous conseiller sur les meilleurs endroits à visiter, les restaurants, les plages, et bien plus encore. Que souhaitez-vous découvrir ?</p>
+          <p>{t.welcomeMessage}</p>
         </div>
       </div>
     </div>
@@ -44,14 +94,14 @@ const chatbotLabel = "VIP Service Guide";
           type="text" 
           id="chatbot-input" 
           class="chatbot-input" 
-          placeholder="Posez votre question..."
-          aria-label="Votre question pour le guide"
+          placeholder={t.placeholder}
+          aria-label={t.ariaInput}
           autocomplete="off"
         />
         <button 
           type="submit" 
           class="chatbot-send"
-          aria-label="Envoyer votre message"
+          aria-label={t.ariaSend}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -60,7 +110,7 @@ const chatbotLabel = "VIP Service Guide";
         </button>
       </form>
       <p class="chatbot-whatsapp-hint">
-        Pour les réservations et tarifs, contactez-nous directement sur <a href="https://wa.me/33616552811" target="_blank" rel="noopener">WhatsApp</a>
+        {t.whatsappHint} <a href="https://wa.me/33616552811" target="_blank" rel="noopener">WhatsApp</a>
       </p>
     </div>
   </div>
@@ -78,6 +128,7 @@ const chatbotLabel = "VIP Service Guide";
     }
 
     function initChatbot() {
+      const container = document.getElementById('chatbot-container');
       const toggle = document.getElementById('chatbot-toggle');
       const window = document.getElementById('chatbot-window');
       const close = document.getElementById('chatbot-close');
@@ -85,6 +136,9 @@ const chatbotLabel = "VIP Service Guide";
       const input = document.getElementById('chatbot-input');
       const messages = document.getElementById('chatbot-messages');
       const sendButton = form?.querySelector('.chatbot-send');
+      
+      // Récupérer la langue de la page
+      const pageLang = container?.getAttribute('data-lang') || 'fr';
 
       if (!toggle || !window || !form || !input || !messages) {
         console.error('Chatbot elements not found');
@@ -179,7 +233,10 @@ const chatbotLabel = "VIP Service Guide";
           const response = await fetch('/.netlify/functions/chatbot', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: userMessage })
+            body: JSON.stringify({ 
+              message: userMessage,
+              lang: pageLang  // Envoyer la langue de la page
+            })
           });
 
           if (!response.ok) {

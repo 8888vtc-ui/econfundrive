@@ -8,9 +8,9 @@ const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
 // Clients API
 const openai = openaiKey ? new OpenAI({ apiKey: openaiKey }) : null;
-const deepseek = deepseekKey ? new OpenAI({ 
-  apiKey: deepseekKey, 
-  baseURL: 'https://api.deepseek.com' 
+const deepseek = deepseekKey ? new OpenAI({
+  apiKey: deepseekKey,
+  baseURL: 'https://api.deepseek.com'
 }) : null;
 
 // Contexte business
@@ -30,8 +30,20 @@ const businessInfo = {
   availability: '24h/24 et 7j/7 sur réservation'
 };
 
-// System prompt
-const systemPrompt = `Tu es David Chemla, GUIDE TOURISTIQUE EXPERT sur la Côte d'Azur. Tu es passionné par cette région.
+// System prompt avec instruction de langue dynamique
+function getSystemPrompt(lang) {
+  const langInstructions = {
+    fr: 'Tu DOIS répondre UNIQUEMENT en FRANÇAIS.',
+    en: 'You MUST respond ONLY in ENGLISH.',
+    it: 'DEVI rispondere SOLO in ITALIANO.',
+    ru: 'Ты ДОЛЖЕН отвечать ТОЛЬКО на РУССКОМ ЯЗЫКЕ.'
+  };
+
+  const langInstruction = langInstructions[lang] || langInstructions.fr;
+
+  return `Tu es David Chemla, GUIDE TOURISTIQUE EXPERT sur la Côte d'Azur. Tu es passionné par cette région.
+
+⚠️ LANGUE OBLIGATOIRE: ${langInstruction}
 
 TON RÔLE:
 - GUIDE TOURISTIQUE : conseils, visites, restaurants, plages, activités
@@ -42,19 +54,28 @@ LOCALISATION: ${businessInfo.location}
 ZONES: ${businessInfo.zones.join(', ')}
 
 RÈGLES:
-1. Réponds dans la langue de l'utilisateur (FR/EN/IT/RU)
+1. ${langInstruction}
 2. Réponses courtes (2-3 phrases max)
 3. Pour réservations/tarifs → orienter vers WhatsApp: ${businessInfo.phone}
 4. Sois enthousiaste et utile !
 
-IMPORTANT: Chaque réponse doit être UNIQUE et PERSONNALISÉE selon la question.`;
+IMPORTANT: ${langInstruction} Chaque réponse doit être UNIQUE et PERSONNALISÉE selon la question.`;
+}
 
-// Détection de langue
+// Détection de langue améliorée
 function detectLanguage(text) {
   const lower = text.toLowerCase();
-  if (/[а-яё]/i.test(text)) return 'ru';
-  if (/ciao|grazie|prego|buongiorno|come|dove|quando/i.test(text)) return 'it';
-  if (/^[a-z\s]+$/.test(text) && !lower.includes('à') && !lower.includes('é') && !lower.includes('è')) return 'en';
+
+  // Russe : caractères cyrilliques
+  if (/[а-яёА-ЯЁ]/i.test(text)) return 'ru';
+
+  // Italien : mots clés italiens
+  if (/\b(ciao|grazie|prego|buongiorno|buonasera|come|dove|quando|quanto|perché|vorrei|posso|sono|siamo|italia|italiano|bene|molto|sempre|anche|oggi|domani|sera|mattina|pranzo|cena|aiuto)\b/i.test(lower)) return 'it';
+
+  // Anglais : mots clés anglais courants
+  if (/\b(hello|hi|hey|please|thank|thanks|could|would|should|what|where|when|how|why|want|need|looking|visit|trip|travel|best|good|nice|great|beach|hotel|airport|taxi|driver)\b/i.test(lower)) return 'en';
+
+  // Français : par défaut ou si accents français détectés
   return 'fr';
 }
 
@@ -62,7 +83,7 @@ function detectLanguage(text) {
 function getSmartResponse(userMessage, lang) {
   const lower = userMessage.toLowerCase();
   const random = Math.random();
-  
+
   // Salutations
   if (/bonjour|hello|hi|ciao|salut|hey|bonsoir/i.test(lower)) {
     const greetings = {
@@ -88,7 +109,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = greetings[lang] || greetings.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Nice
   if (/nice/i.test(lower)) {
     const niceResponses = {
@@ -106,7 +127,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = niceResponses[lang] || niceResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Cannes
   if (/cannes/i.test(lower)) {
     const cannesResponses = {
@@ -124,7 +145,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = cannesResponses[lang] || cannesResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Monaco
   if (/monaco/i.test(lower)) {
     const monacoResponses = {
@@ -142,7 +163,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = monacoResponses[lang] || monacoResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Saint-Tropez
   if (/saint.?tropez|st.?tropez/i.test(lower)) {
     const tropezResponses = {
@@ -160,7 +181,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = tropezResponses[lang] || tropezResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Restaurant / manger
   if (/restaurant|manger|eat|food|cuisine|déjeuner|dîner|lunch|dinner/i.test(lower)) {
     const foodResponses = {
@@ -178,7 +199,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = foodResponses[lang] || foodResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Plage
   if (/plage|beach|mer|sea|baignade|swim/i.test(lower)) {
     const beachResponses = {
@@ -196,7 +217,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = beachResponses[lang] || beachResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Réservation / tarif / prix
   if (/réserv|book|tarif|prix|price|cost|combien|how much|quanto/i.test(lower)) {
     const bookingResponses = {
@@ -214,7 +235,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = bookingResponses[lang] || bookingResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Aéroport
   if (/aéroport|airport|avion|plane|vol|flight|nce/i.test(lower)) {
     const airportResponses = {
@@ -232,7 +253,7 @@ function getSmartResponse(userMessage, lang) {
     const responses = airportResponses[lang] || airportResponses.fr;
     return responses[Math.floor(random * responses.length)];
   }
-  
+
   // Réponse par défaut variée
   const defaultResponses = {
     fr: [
@@ -261,7 +282,7 @@ function getSmartResponse(userMessage, lang) {
 }
 
 // Handler principal
-exports.handler = async function(event) {
+exports.handler = async function (event) {
   // CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -303,7 +324,14 @@ exports.handler = async function(event) {
     };
   }
 
-  const lang = detectLanguage(userMessage);
+  // Priorité : langue envoyée par le frontend > détection automatique
+  const frontendLang = body.lang;
+  const validLangs = ['fr', 'en', 'it', 'ru'];
+  const lang = (frontendLang && validLangs.includes(frontendLang))
+    ? frontendLang
+    : detectLanguage(userMessage);
+
+  console.log(`Chatbot: message="${userMessage.substring(0, 50)}...", lang=${lang} (frontend: ${frontendLang})`);
 
   // Essayer les APIs dans l'ordre : OpenAI > DeepSeek
   let answer = null;
@@ -312,6 +340,7 @@ exports.handler = async function(event) {
   // 1. Essayer OpenAI GPT-4o-mini (rapide et pas cher)
   if (openai && !answer) {
     try {
+      const systemPrompt = getSystemPrompt(lang);
       const response = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
         messages: [
@@ -331,6 +360,7 @@ exports.handler = async function(event) {
   // 2. Essayer DeepSeek
   if (deepseek && !answer) {
     try {
+      const systemPrompt = getSystemPrompt(lang);
       const response = await deepseek.chat.completions.create({
         model: process.env.DEEPSEEK_MODEL || 'deepseek-chat',
         messages: [
@@ -359,7 +389,7 @@ exports.handler = async function(event) {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
-    body: JSON.stringify({ 
+    body: JSON.stringify({
       answer,
       api: usedApi
     })
