@@ -1,18 +1,30 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = "Nice Airport to Saint-Tropez Transfer | VTC Chauffeur Service";
-const description = "Luxury car transfer from Nice Airport to Saint-Tropez. Mercedes V-Class & Limousines. Reliable private driver service for your holidays in Saint-Tropez.";
+import PageHero from '../../components/PageHero.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Nice Airport to Saint-Tropez Transfer | Premium VTC Service | ECOFUNDRIVE";
+const description = "Private chauffeur transfer from Nice Airport to Saint-Tropez. Avoid traffic with our experienced drivers. Mercedes V-Class vans for families. Fixed prices 2026.";
 const keywords = [
   'Nice airport Saint-Tropez transfer',
-  'chauffeur Saint-Tropez',
-  'taxi nice airport saint tropez',
+  'chauffeur Nice to St Tropez',
+  'taxi nice airport saint tropez price',
   'mercedes v class saint tropez'
 ];
 
-const breadcrumbItems = [
-  { name: "Home", url: "/en" },
-  { name: "Nice Airport to St-Tropez", url: "/en/nice-airport-to-saint-tropez-transfer" }
-];
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Transfer Nice Airport to Saint-Tropez",
+  "description": "Premium private driver service from Nice Airport (NCE) to Saint-Tropez.",
+  "offers": {
+    "@type": "Offer",
+    "price": "250",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+};
 ---
 
 <BaseLayout 
@@ -21,140 +33,121 @@ const breadcrumbItems = [
   keywords={keywords}
   currentPage="nice-airport-to-saint-tropez-transfer"
   canonical="/en/nice-airport-to-saint-tropez-transfer"
-  breadcrumbItems={breadcrumbItems}
+  lang="en"
+  schema={schema}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Nice to St-Tropez", url: "/en/nice-airport-to-saint-tropez-transfer" }
+  ]}
 >
-  <main id="main-content">
+  <PageHero 
+    title="Nice Airport to Saint-Tropez"
+    subtitle="The ultimate holiday destination. Start your trip in comfort with a premium private transfer."
+    backgroundImage="/assets/img/destinations/destination-st-tropez.webp"
+    badge="SUMMER • PREMIUM • TRANSFER"
+  />
+
+  <main id="main-content" class="page-content">
     
-    <!-- Hero Section -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>Nice Airport to Saint-Tropez</h1>
-        <p class="lead">The most comfortable way to reach the Gulf of Saint-Tropez.</p>
-        <div class="hero-actions">
-           <a href="#booking" class="btn-primary">Book Transfer</a>
-           <a href="https://wa.me/33616552811" class="btn-whatsapp">WhatsApp Quote</a>
+    <SectionImageText
+      title="The Challenge of Saint-Tropez"
+      image="/assets/img/destinations/destination-st-tropez.webp"
+      alt="Saint Tropez Port and Yachts"
+      imageSide="right"
+      ctaText="Check Prices"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        Saint-Tropez is a paradise, but getting there can be difficult. The only road access is often congested during summer. A standard taxi meter can run wild in traffic.
+      </p>
+      <p class="fade-in-section">
+        <strong>ECOFUNDRIVE offers a fixed-price solution.</strong> Relax in our air-conditioned Mercedes V-Class or S-Class while our experienced driver navigates the best routes to your villa, hotel, or yacht in Saint-Tropez, Ramatuelle, or Gassin.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">Fixed Price</span>
+        <span class="distance-badge">Traffic Expert</span>
+        <span class="distance-badge">Luxury Vans</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Why Choose Us?</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">❄️</span><h3>Cool Comfort</h3><p>Premium air-conditioning and free mineral water to beat the summer heat.</p></div>
+          <div class="service-card"><span class="service-icon">🚐</span><h3>Space for All</h3><p>Mercedes V-Class for up to 7 passengers and plenty of luggage space.</p></div>
+          <div class="service-card"><span class="service-icon">👶</span><h3>Family Friendly</h3><p>Free baby seats and boosters on request. Safe driving guaranteed.</p></div>
+          <div class="service-card"><span class="service-icon">🤝</span><h3>Direct Drop-off</h3><p>We take you straight to your door, even in narrow village streets.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="content-section">
-      <div class="container">
-        <div class="grid-2-cols">
-           
-           <div class="text-content">
-              <h2>Seamless Journey to Saint-Tropez</h2>
-              <p>
-                Reaching Saint-Tropez from Nice Airport can be challenging due to traffic. ECOFUNDRIVE provides a <strong>stress-free private transfer</strong> service in luxury air-conditioned vehicles.
-              </p>
-              <p>
-                Relax in our Mercedes V-Class (ideal for groups/family) or Tesla Sedan while our experienced driver navigates the best route to your villa or hotel in Saint-Tropez, Ramatuelle, or Gassin.
-              </p>
-              
-              <ul class="features-list">
-                 <li><strong>Door-to-Door:</strong> Direct drop-off at your villa/hotel.</li>
-                 <li><strong>Luxury Vans:</strong> Mercedes V-Class for up to 7 passengers + luggage.</li>
-                 <li><strong>Traffic Knowledge:</strong> We know the shortcuts to avoid summer jams.</li>
-                 <li><strong>Refreshments:</strong> Water and chargers on board.</li>
-              </ul>
-           </div>
+    <SectionImageText
+      title="Arrival at Nice Airport (NCE)"
+      image="/assets/img/hero/hero-aeroport-nice.webp"
+      alt="Nice Airport Arrivals"
+      imageSide="left"
+      ctaText="Book Transfer"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        Your chauffeur will welcome you at the arrivals hall with a name sign. We track your flight in real-time to ensure we are there when you land, even if your flight is delayed.
+      </p>
+      <p class="fade-in-section">
+        From the airport, the journey to Saint-Tropez takes approximately <strong>1h30 to 2h30</strong> depending on traffic.
+      </p>
+    </SectionImageText>
 
-           <div class="image-content">
-              <img src="/assets/img/destinations/destination-saint-tropez.webp" alt="Saint Tropez Luxury Transfer" class="rounded-img shadow-lg" />
-           </div>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Explore Saint-Tropez</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/hero/hero-ete.webp" alt="Pampelonne Beach" title="🏖️ Pampelonne" description="Legendary beach clubs like Club 55 or Nikki Beach. We can drive you there daily." link="/en/booking" />
+        <CategoryCard image="/assets/img/destinations/destination-st-tropez.webp" alt="Place des Lices" title="🌳 Place des Lices" description="The heart of the village. Market days on Tuesday & Saturday." link="/en/booking" />
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Ramatuelle" title="🏰 Ramatuelle" description="A stunning hilltop village overlooking the bay, just minutes from the beaches." link="/en/booking" />
+      </div>
+    </section>
 
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Start Your Holiday Right</h2>
+        <p>Book your transfer now and secure your ride to paradise.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book Now</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- Pricing / Booking -->
-    <section id="booking" class="booking-section">
-      <div class="container">
-        <h2 class="text-center">Get Your Fixed Price</h2>
-        <div class="cta-box">
-        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
-      </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us-section">
-      <div class="container">
-         <h2 class="text-center mb-lg">Your Best Choice for Saint-Tropez</h2>
-         <div class="grid-3-cols">
-            <div class="benefit-card">
-               <h3>Comfort & Space</h3>
-               <p>Long rides require comfort. Our vehicles offer ample legroom and luggage space for your stay.</p>
-            </div>
-            <div class="benefit-card">
-               <h3>Reliability</h3>
-               <p>No waiting at the airport. Your driver tracks your flight and welcomes you upon arrival.</p>
-            </div>
-            <div class="benefit-card">
-               <h3>Flexibility</h3>
-               <p>Plans changed? We offer free cancellation up to 24 hours before pickup.</p>
-            </div>
-         </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Popular Transfers</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-airport-to-cannes-transfer" class="text-dark hover-gold">Nice → Cannes</a>
+        <a href="/en/nice-airport-to-monaco-transfer" class="text-dark hover-gold">Nice → Monaco</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Chauffeur</a>
+        <a href="/en/contact" class="text-dark hover-gold">Contact</a>
       </div>
     </section>
-
   </main>
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: #1a1a1a;
-    color: white;
-    padding: 6rem 0;
-    text-align: center;
-    background-image: url('/assets/img/hero/hero-mariage.webp');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  
-  .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-  }
-  
-  .page-hero .container { position: relative; z-index: 2; }
-
-  .page-hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #d4af37; }
-  .page-hero .lead { font-size: 1.2rem; margin-bottom: 2rem; color: #eee; }
-
-  .hero-actions { display: flex; gap: 1rem; justify-content: center; }
-
-  .btn-primary {
-     background: #d4af37; color: black; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
-  }
-  .btn-whatsapp {
-     background: #25D366; color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold;
-  }
-
-  .content-section { padding: 4rem 0; }
-  
-  .grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-  
-  @media (max-width: 768px) {
-     .grid-2-cols { grid-template-columns: 1fr; }
-  }
-
-  .features-list { margin-top: 1.5rem; list-style: none; padding: 0; }
-  .features-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
-  .features-list li::before { content: '✓'; color: #d4af37; position: absolute; left: 0; }
-
-  .rounded-img { width: 100%; border-radius: 12px; }
-  .shadow-lg { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-
-  .booking-section { background: #f9f9f9; padding: 4rem 0; }
-  
-  .why-us-section { padding: 4rem 0; }
-  .benefit-card { padding: 2rem; border: 1px solid #eee; border-radius: 12px; text-align: center; }
-  .benefit-card h3 { color: #d4af37; margin-bottom: 1rem; }
-  
-  .text-center { text-align: center; }
-  .mb-lg { margin-bottom: 2rem; }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

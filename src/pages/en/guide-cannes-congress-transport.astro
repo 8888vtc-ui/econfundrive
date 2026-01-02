@@ -1,38 +1,26 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = "Cannes Congress Transport | Private Chauffeur & VTC Service";
-const description = "Premium private driver service for Cannes congresses: MIPIM, Cannes Lions, Film Festival. Luxury fleet, punctual chauffeurs, and seamless transfers to Palais des Festivals.";
+import PageHero from '../../components/PageHero.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Cannes Congress Transport - MIPIM, Lions, Festival | ECOFUNDRIVE";
+const description = "Private chauffeur for Cannes congresses: MIPIM, Film Festival, Cannes Lions. Luxury transfers, punctual service, and business vans available.";
 const keywords = [
   'Cannes congress transfer',
   'chauffeur service MIPIM',
   'Cannes Lions private driver',
   'Cannes Film Festival transfer',
-  'Palais des Festivals transport',
-   'corporate driver Cannes',
   'executive chauffeur Cannes'
 ];
 
-const articleSchema = {
+const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": title,
   "description": description,
   "image": "https://www.ecofundrive.com/assets/img/cannes-congress.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "url": "https://www.ecofundrive.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-    }
-  },
-  "datePublished": "2024-01-15",
-  "dateModified": new Date().toISOString().split('T')[0]
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
 };
 ---
 
@@ -43,179 +31,121 @@ const articleSchema = {
   currentPage="guide-cannes-congress-transport"
   canonical="/en/guide-cannes-congress-transport"
   lang="en"
-  schema={articleSchema}
+  schema={schema}
   breadcrumbItems={[
     { name: "Home", url: "/en" },
     { name: "Guides", url: "/en/guides" },
-    { name: "Cannes Congress Transport", url: "/en/guide-cannes-congress-transport" }
+    { name: "Cannes Congress", url: "/en/guide-cannes-congress-transport" }
   ]}
 >
-  <main class="page-content">
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container__large">
-        <div class="hero-text">
-          <h1>Business Transport for Cannes Congresses</h1>
-          <p class="subtitle">Your reliable partner for MIPIM, Cannes Lions, and the Film Festival.</p>
+  <PageHero 
+    title="Cannes Business & Congress"
+    subtitle="MIPIM, Lions, Film Festival... Your trusted transport partner for every major event in Cannes."
+    backgroundImage="/assets/img/cannes-congress.jpg"
+    badge="BUSINESS • CONGRESS • VIP"
+  />
+
+  <main id="main-content" class="page-content">
+    
+    <SectionImageText
+      title="Business Class Transport"
+      image="/assets/img/services/service-business.webp"
+      alt="Executive chauffeur Cannes"
+      imageSide="right"
+      ctaText="Book Chauffeur"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        Time is your most valuable asset during a congress. Don't waste minutes waiting for a taxi or finding parking.
+      </p>
+      <p class="fade-in-section">
+        Our professional chauffeurs master the access points to the <strong>Palais des Festivals</strong>. In our Mercedes S-Class sedans or V-Class Vans, you can work in complete serenity (Wi-Fi, chargers, privacy) or relax between tight meetings.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">Briefing</span>
+        <span class="distance-badge">Corporate Billing</span>
+        <span class="distance-badge">Event Fleet</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Congress Calendar</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🏗️</span><h3>MIPIM (March)</h3><p>Global Real Estate Market. Shuttles from Mougins villas to the Palais.</p></div>
+          <div class="service-card"><span class="service-icon">🎬</span><h3>Film Festival (May)</h3><p>24/7 Hourly Service for red carpet events and parties.</p></div>
+          <div class="service-card"><span class="service-icon">🦁</span><h3>Cannes Lions (June)</h3><p>Creativity Festival. Transfers between beaches, hotels, and talks.</p></div>
+          <div class="service-card"><span class="service-icon">⛵</span><h3>Yachting Festival (Sept)</h3><p>VIP transfers for exhibitors and buyers at the boat show.</p></div>
         </div>
       </div>
     </section>
 
-    <div class="container section-spacing">
-      <div class="grid-layout">
-        <div class="content-col">
-          <section class="mb-xl">
-            <h2>Seamless Transport for Business Events</h2>
-            <p>
-              Cannes is the world's capital for business tourism, hosting major international events at the Palais des Festivals. 
-              Whether you are attending **MIPIM**, **Cannes Lions**, or the **Cannes Film Festival**, punctuality and image are paramount.
-            </p>
-            <p>
-              EcoFunDrive provides a premium chauffeur service explicitly tailored for congress attendees. 
-              Avoid the stress of finding a taxi or parking. Our professional drivers ensure you arrive at your meetings, hotels, and gala dinners on time and in style.
-            </p>
-          </section>
+    <SectionImageText
+      title="Hourly Chauffeur Service"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="Palais des Festivals Cannes"
+      imageSide="left"
+      ctaText="Request Hourly Quote"
+      ctaLink="/en/contact"
+    >
+      <p class="fade-in-section">
+        For total flexibility, choose our <strong>Hourly Service</strong> (Mise à Disposition). Your chauffeur is dedicated to you for a half-day, full-day, or the entire week.
+      </p>
+      <p class="fade-in-section">
+        They wait for you at every venue, keep your belongings safe, and adapt to last-minute schedule changes. It's the ultimate productivity booster.
+      </p>
+    </SectionImageText>
 
-          <section class="mb-xl">
-            <h2>Major Events We Cover</h2>
-            <ul class="feature-list">
-              <li><strong>MIPIM:</strong> The world's leading real estate market event.</li>
-              <li><strong>Cannes Lions:</strong> The International Festival of Creativity.</li>
-              <li><strong>Cannes Film Festival:</strong> The most prestigious film gathering globally.</li>
-              <li><strong>ILTM & TFWA:</strong> Major luxury travel and duty-free summits.</li>
-            </ul>
-            <p class="mt-4">
-              Our fleet of Mercedes and Tesla vehicles offers a quiet, comfortable environment, perfect for making calls or relaxing between intense networking sessions.
-            </p>
-          </section>
-        </div>
-        
-        <aside class="sidebar-col">
-          <div class="sidebar-block">
-            <h3>Quick Booking</h3>
-            <p>Secure your driver for the congress in advance.</p>
-            <div class="cta-box">
-        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Additional Services</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/hero/hero-aeroport-nice.webp" alt="Nice Airport" title="✈️ Airport Transfer" description="Meet & Greet at Nice (NCE) or Cannes Mandelieu (CEQ). Flight tracking included." link="/en/booking" />
+        <CategoryCard image="/assets/img/destinations/destination-monaco.png" alt="Business Dinners" title="🍽️ Business Dinners" description="Transport to Michelin-starred restaurants for your client meetings." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Roadshows" title="📈 Roadshows" description="Complex logistics for your presentation tours." link="/en/contact" />
       </div>
-          </div>
-        </aside>
-      </div>
-    </div>
+    </section>
 
-    <!-- Why Choose Us -->
-    <section class="bg-light section-spacing">
-      <div class="container">
-        <h2 class="text-center mb-lg">Why Choose EcoFunDrive?</h2>
-        <div class="grid-3">
-          <div class="feature-card">
-            <h3>Punctuality First</h3>
-            <p>We understand that every minute counts during a congress. We guarantee timely pick-ups and efficient routes.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Premium Fleet</h3>
-            <p>Travel in high-end electric and hybrid vehicles (Tesla, Mercedes) that combine luxury with eco-responsibility.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Professional Chauffeurs</h3>
-            <p>Our drivers are bilingual, discreet, and knowledgeable about Cannes traffic patterns and shortcuts.</p>
-          </div>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Congress Ready?</h2>
+        <p>Book your transport logistics well in advance.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book Now</a>
+          <a href="/en/contact" class="btn-outline">Corporate Quote</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section for SEO -->
-    <section class="container section-spacing">
-      <h2 class="mb-lg">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3>Do you offer transfers from Nice Airport to Cannes?</h3>
-          <p>Yes, we specialize in transfers from Nice Côte d'Azur Airport (NCE) to all hotels and locations in Cannes. We monitor flights to ensure we are there when you land.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I book a driver for the whole day?</h3>
-          <p>Absolutely. We offer hourly hire services, allowing you to have a driver at your disposal for multiple meetings, dinners, or parties throughout the day and night.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Do you provide invoices for business expenses?</h3>
-          <p>Yes, we provide automatic, professional digital invoices for all rides, simplifying your expense reporting.</p>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">See Also</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Chauffeur</a>
+        <a href="/en/booking" class="text-dark hover-gold">Book Online</a>
+        <a href="/en/nice-airport-to-cannes-transfer" class="text-dark hover-gold">Nice → Cannes</a>
+        <a href="/en/contact" class="text-dark hover-gold">Contact Us</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/img/cannes-congress.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 6rem 0;
-    text-align: center;
-    border-radius: 0 0 20px 20px;
-    margin-bottom: 3rem;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-gold);
-  }
-  
-  .grid-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  @media (min-width: 992px) {
-    .grid-layout {
-      grid-template-columns: 2fr 1fr;
-    }
-  }
-  
-  .feature-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .feature-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-  }
-  
-  .grid-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-  
-  .feature-card h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  .sidebar-block {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 100px;
-  }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>
