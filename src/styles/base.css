@@ -199,10 +199,16 @@ iframe {
 
 /* === ANIMATIONS & FLUIDITY === */
 .fade-in-section {
+    opacity: 1;
+    /* FIXED: Always visible by default */
+    transform: none;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animation trigger - only animate if JS works */
+.fade-in-section.animate-ready {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
 }
 
 .fade-in-section.is-visible {
