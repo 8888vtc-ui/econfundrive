@@ -7,6 +7,7 @@ interface Props {
   title: string;
   subtitle?: string;
   rating?: string;
+  reviewCount?: string;
   backgroundImage: string;
   badge?: string;
 }
@@ -14,7 +15,8 @@ interface Props {
 const { 
   title, 
   subtitle, 
-  rating = "5.0/5",
+  rating = "5.0",
+  reviewCount = "60+ Avis",
   backgroundImage,
   badge = "SERVICE PREMIUM 24/7"
 } = Astro.props;
@@ -30,7 +32,7 @@ const {
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-value">⭐ {rating}</span>
-        <span class="stat-label">Avis clients</span>
+        <span class="stat-label">{reviewCount}</span>
       </div>
       <div class="stat">
         <span class="stat-value">24/7</span>

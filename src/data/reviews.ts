@@ -215,20 +215,20 @@ export const allReviews: Review[] = [
 // Agrégation des avis pour Schema.org
 export const aggregateRating = {
   ratingValue: "5.0",
-  reviewCount: "26", // 20 avis affichés + 6 supplémentaires sur Trustindex
+  reviewCount: "66", // Mise à jour 2026 : Intégration des avis Google Business + Trustindex
   bestRating: "5",
   worstRating: "1"
 };
 
 // Statistiques pour E-E-A-T
 export const reviewStats = {
-  totalReviews: 26,
+  totalReviews: 66,
   averageRating: 5.0,
-  fiveStarReviews: 26,
+  fiveStarReviews: 66,
   fourStarReviews: 0,
-  verifiedPlatform: "Trustindex",
+  verifiedPlatform: "Google & Trustindex",
   verificationUrl: "https://www.trustindex.io/reviews/ecofundrive.com",
-  lastUpdated: "2026-01-01"
+  lastUpdated: "2026-01-02"
 };
 
 // Avis les plus récents pour affichage sur toutes les pages

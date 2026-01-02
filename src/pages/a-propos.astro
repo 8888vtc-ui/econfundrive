@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
+import { reviewStats, featuredReviews } from '../data/reviews';
 
 const title = "À Propos d'ECOFUNDRIVE | Excellence VTC Côte d'Azur";
 const description = "Découvrez ECOFUNDRIVE, votre partenaire de confiance pour le transport privé sur la Côte d'Azur. Ponctualité, discrétion et excellence depuis 2022.";
@@ -25,6 +26,11 @@ const schema = {
     "areaServed": {
       "@type": "Place",
       "name": "French Riviera"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": reviewStats.averageRating,
+      "reviewCount": reviewStats.totalReviews
     }
   }
 };
@@ -47,6 +53,8 @@ const schema = {
     subtitle="Plus qu'un simple trajet, nous vous offrons une expérience de mobilité exclusive, fondée sur l'exigence et le détail."
     backgroundImage="/assets/img/hero/hero-business.webp"
     badge="DEPUIS 2022 • PREMIUM • CONFIANCE"
+    reviewCount={`${reviewStats.totalReviews} Avis Vérifiés`}
+    rating={`${reviewStats.averageRating}`}
   />
 
   <main id="main-content" class="page-content">
@@ -102,20 +110,17 @@ const schema = {
     <section class="container py-xl fade-in-section">
       <h2 class="section-title text-center mb-xl">Ils Nous Font Confiance</h2>
       <div class="text-center">
-        <p class="lead mb-lg">Note moyenne de <strong>5.0/5</strong> sur plus de 26 avis vérifiés Trustindex.</p>
+        <p class="lead mb-lg">Note moyenne de <strong>{reviewStats.averageRating}/5</strong> sur plus de {reviewStats.totalReviews} avis vérifiés.</p>
         <div class="grid-3-cols">
-          <div class="card p-4 border rounded">
-            <p class="italic">"Un service impeccable. Chauffeur ponctuel et très courtois. La voiture était d'une propreté clinique."</p>
-            <p class="font-bold mt-2">- Jean-Pierre M.</p>
-          </div>
-          <div class="card p-4 border rounded">
-            <p class="italic">"J'utilise ECOFUNDRIVE pour tous mes déplacements pro à Sophia. Jamais déçue. Facturation claire et rapide."</p>
-            <p class="font-bold mt-2">- Sarah L.</p>
-          </div>
-          <div class="card p-4 border rounded">
-            <p class="italic">"Merci pour le siège bébé et la patience ! Le trajet vers l'aéroport s'est passé comme sur un nuage."</p>
-            <p class="font-bold mt-2">- Famille Dubois</p>
-          </div>
+          {featuredReviews.slice(0, 3).map((review) => (
+             <div class="card p-4 border rounded">
+               <p class="italic">"{review.reviewBody}"</p>
+               <p class="font-bold mt-2">- {review.author}</p>
+             </div>
+          ))}
+        </div>
+        <div class="mt-8">
+           <a href="https://www.google.com/search?q=ecofundrive+avis" target="_blank" rel="noopener noreferrer" class="cta-link">Lire tous les avis Google →</a>
         </div>
       </div>
     </section>
@@ -155,4 +160,7 @@ const schema = {
   .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
   .italic { font-style: italic; color: #555; }
   .font-bold { font-weight: 700; color: #1a1a1a; }
+  .cta-link { color: #d4af37; font-weight: 600; text-decoration: none; }
+  .cta-link:hover { text-decoration: underline; }
+  .mt-8 { margin-top: 2rem; }
 </style>

@@ -23,7 +23,7 @@ const {
 <section class={`section-image-text ${imageSide === 'right' ? 'image-right' : ''}`} id={id}>
   <div class="container">
     <div class="grid-content">
-      <div class="image-col animate-on-scroll">
+      <div class="image-col">
         <img 
           src={image} 
           alt={alt}
@@ -33,7 +33,7 @@ const {
           decoding="async"
         />
       </div>
-      <div class="text-col animate-on-scroll">
+      <div class="text-col">
         <h2>{title}</h2>
         <div class="content">
           <slot />
@@ -95,7 +95,7 @@ const {
   }
 
   .content {
-    color: #555;
+    color: #444;
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
@@ -127,10 +127,5 @@ const {
     background: #c5a028;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-  }
-
-  /* Animation classes (handled by fade-in-section.js usually, but good to have base styles) */
-  .animate-on-scroll {
-    opacity: 1; /* Default to visible if JS fails */
   }
 </style>
