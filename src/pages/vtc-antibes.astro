@@ -1,7 +1,9 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
+
 const title = "VTC Antibes Juan-les-Pins – Chauffeur Privé Cap & Port Vauban | ECOFUNDRIVE";
 const description = "Chauffeur privé VTC à Antibes et Juan-les-Pins. Port Vauban, Cap d'Antibes, Jazz à Juan, plages, Musée Picasso. Transferts aéroport Nice, Sophia. Service premium 24h/24.";
 const keywords = [
@@ -23,7 +25,7 @@ const faqSchema = {
       "name": "Combien de temps pour aller de l'aéroport Nice à Antibes ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le transfert aéroport Nice → Antibes prend environ 20-30 minutes en VTC (environ 20 km). Antibes est idéalement située entre Nice et Cannes."
+        "text": "Le transfert aéroport Nice → Antibes prend environ 20-30 minutes en VTC (environ 20 km)."
       }
     },
     {
@@ -31,7 +33,7 @@ const faqSchema = {
       "name": "Proposez-vous des transferts vers le Port Vauban ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, nous travaillons régulièrement avec les équipages de yachts et les visiteurs du Port Vauban, le plus grand port de plaisance d'Europe pour les superyachts. Service de récupération sur le quai disponible."
+        "text": "Oui, nous travaillons régulièrement avec les équipages de yachts et les visiteurs du Port Vauban, le plus grand port de superyachts d'Europe."
       }
     },
     {
@@ -39,15 +41,7 @@ const faqSchema = {
       "name": "Y a-t-il un service VTC pour Jazz à Juan ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, nous proposons des transferts dédiés pour le festival Jazz à Juan en juillet. Service de récupération après les concerts disponible même tard le soir."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Desservez-vous les hôtels du Cap d'Antibes ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolument ! Nous desservons tous les hôtels prestigieux du Cap d'Antibes, dont l'Hôtel du Cap-Eden-Roc, le Cap d'Antibes Beach Hotel et le Grand-Hôtel du Cap-Ferrat."
+        "text": "Oui, nous proposons des transferts dédiés pour le festival Jazz à Juan en juillet. Service récupération après concerts disponible."
       }
     }
   ]
@@ -60,87 +54,110 @@ const faqSchema = {
   currentPage="vtc-antibes"
   canonical="/vtc-antibes"
   schema={faqSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Antibes", url: "/vtc-antibes" }
   ]}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Antibes & Juan-les-Pins</h1>
-      <p class="lead text-center mb-xl">
-        Chauffeur privé premium à Antibes et Juan-les-Pins. Port Vauban, Cap d'Antibes, Jazz à Juan, 
-        Musée Picasso. Transferts aéroport Nice et toutes destinations Côte d'Azur.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC Antibes & Juan-les-Pins"
+    subtitle="Port Vauban, Cap d'Antibes, Jazz à Juan, Musée Picasso. Chauffeur privé premium pour la perle de la Côte d'Azur."
+    backgroundImage="/assets/img/destinations/vtc-antibes.webp"
+    badge="PORT VAUBAN • JAZZ À JUAN"
+  />
 
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
-      </div>
-    </section>
-
+  <main id="main-content" class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
-      title="Juan-les-Pins & Jazz à Juan"
-      image="/assets/img/services/service-evenements.webp"
-      alt="Juan-les-Pins Jazz festival VTC"
-      imageSide="left"
-      ctaText="Réserver pour Jazz à Juan"
+      title="Antibes : Entre Mer et Histoire"
+      image="/assets/img/about/vehicule-premium.webp"
+      alt="Vue panoramique Antibes vieille ville"
+      imageSide="right"
+      ctaText="Réserver un transfert"
       ctaLink="/reservation"
     >
       <p class="fade-in-section">
-        <strong>Juan-les-Pins</strong>, station balnéaire jumelle d'Antibes, est célèbre dans le monde entier pour le <strong>festival Jazz à Juan</strong>, l'un des plus anciens festivals de jazz d'Europe (depuis 1960). Cette station à l'ambiance Art Déco offre des plages de sable fin, des pinèdes ombragées et une vie nocturne animée.
+        <strong>Antibes</strong> est une ville au charme unique, mêlant remparts historiques, marché provençal animé et port de yachts de luxe. Sa jumelle <strong>Juan-les-Pins</strong> offre plages de sable fin et vie nocturne animée.
       </p>
-      <h3 class="fade-in-section">Nos services pour Juan-les-Pins :</h3>
-      <ul class="fade-in-section">
-        <li>Transferts vers les hôtels de Juan-les-Pins</li>
-        <li>Navettes Festival Jazz à Juan (mi-juillet)</li>
-        <li>Service récupération après concerts (même 23h-minuit)</li>
-        <li>Accès plages privées et restaurants</li>
-        <li>Casino Eden Beach et vie nocturne</li>
-      </ul>
       <p class="fade-in-section">
-        <strong>Conseil :</strong> Réservez à l'avance pendant le festival Jazz à Juan, la demande est très forte !
+        Idéalement située entre Nice et Cannes, Antibes est le point de départ parfait pour explorer la Côte d'Azur. ECOFUNDRIVE vous propose des transferts premium et des mises à disposition pour découvrir tous ses trésors.
       </p>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice Aéroport (20-30 min)</li>
+        <li>Service Port Vauban & équipages yachts</li>
+        <li>Navettes Festival Jazz à Juan (juillet)</li>
+        <li>Excursions Cap d'Antibes & hôtels premium</li>
+      </ul>
     </SectionImageText>
 
+    <!-- HIGHLIGHTS -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Antibes</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Antibes</h2>
       <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/hero/chauffeur-luxe-background.webp"
           alt="Port Vauban Antibes"
-          title="Port Vauban"
+          title="⛵ Port Vauban"
           description="Le plus grand port de plaisance d'Europe pour superyachts. Atmosphère unique parmi les navires les plus prestigieux du monde."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/about/vehicule-premium.webp"
+          image="/assets/img/services/service-business.webp"
           alt="Cap d'Antibes"
-          title="Cap d'Antibes"
-          description="Presqu'île exclusive aux villas de milliardaires. Hôtel du Cap-Eden-Roc, criques cachées, sentier du littoral."
+          title="🏝️ Cap d'Antibes"
+          description="Presqu'île exclusive aux villas de milliardaires. Hôtel du Cap-Eden-Roc, criques cachées et sentier du littoral."
           link="/reservation"
         />
         <CategoryCard
           image="/assets/img/guides/villages-perches.webp"
           alt="Musée Picasso Antibes"
-          title="Vieille Ville & Musée Picasso"
+          title="🎨 Vieille Ville & Musée Picasso"
           description="Marché provençal, remparts, ruelles charmantes. Le château Grimaldi abrite le Musée Picasso et ses œuvres méditerranéennes."
           link="/reservation"
         />
       </div>
     </section>
 
+    <!-- JAZZ A JUAN -->
+    <SectionImageText
+      title="Juan-les-Pins & Jazz à Juan"
+      image="/assets/img/services/service-evenements.webp"
+      alt="Festival Jazz à Juan"
+      imageSide="left"
+      ctaText="Navette Jazz à Juan"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Juan-les-Pins</strong>, station balnéaire jumelle d'Antibes, est célèbre dans le monde entier pour le <strong>festival Jazz à Juan</strong>, l'un des plus anciens festivals de jazz d'Europe (depuis 1960).
+      </p>
+      <p class="fade-in-section">
+        Cette station Art Déco offre des plages de sable fin, des pinèdes ombragées et une vie nocturne animée.
+      </p>
+      <h3 class="fade-in-section">Nos services pour Juan-les-Pins :</h3>
+      <ul class="fade-in-section">
+        <li>Transferts vers les hôtels de Juan-les-Pins</li>
+        <li>Navettes Festival Jazz à Juan (mi-juillet)</li>
+        <li>Service récupération après concerts (23h-minuit)</li>
+        <li>Accès plages privées et restaurants</li>
+        <li>Casino Eden Beach et vie nocturne</li>
+      </ul>
+      <p class="fade-in-section tip">
+        💡 <strong>Conseil :</strong> Réservez à l'avance pendant le festival, la demande est très forte !
+      </p>
+    </SectionImageText>
+
+    <!-- PORT VAUBAN -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Port Vauban & Service Yachts</h2>
-      <div class="yacht-service">
-        <p>
-          Le <strong>Port Vauban</strong> d'Antibes accueille les plus grands superyachts du monde, avec des places pour des navires jusqu'à 165 mètres. ECOFUNDRIVE travaille régulièrement avec les équipages et propriétaires de yachts pour tous leurs besoins de transport.
+      <h2 class="section-title text-center mb-xl">Port Vauban & Service Yachts</h2>
+      <div class="yacht-section">
+        <p class="intro">
+          Le <strong>Port Vauban</strong> d'Antibes accueille les plus grands superyachts du monde, avec des places pour des navires jusqu'à 165 mètres. ECOFUNDRIVE travaille régulièrement avec les équipages et propriétaires pour tous leurs besoins de transport.
         </p>
-        <div class="grid-2-cols mt-lg">
-          <div class="service-box">
+        <div class="yacht-grid">
+          <div class="yacht-card">
             <h3>🛥️ Services Équipages</h3>
             <ul>
               <li>Transferts aéroport pour équipages</li>
@@ -149,10 +166,10 @@ const faqSchema = {
               <li>Mise à disposition quotidienne</li>
             </ul>
           </div>
-          <div class="service-box">
+          <div class="yacht-card">
             <h3>⚓ Services Propriétaires</h3>
             <ul>
-              <li>Accueil VIP aéroport avec name board</li>
+              <li>Accueil VIP aéroport avec pancarte</li>
               <li>Transfert direct au quai</li>
               <li>Excursions privées Côte d'Azur</li>
               <li>Facturation compte entreprise</li>
@@ -162,36 +179,50 @@ const faqSchema = {
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
           <h3 class="faq-question">Combien de temps pour aller de l'aéroport Nice à Antibes ?</h3>
           <div class="faq-answer">
-            <p>Le transfert <strong>aéroport Nice → Antibes</strong> prend environ <strong>20-30 minutes</strong> en VTC (environ 20 km). Antibes est idéalement située entre Nice et Cannes, ce qui en fait une base parfaite pour explorer la Côte d'Azur.</p>
+            <p>Le transfert <strong>aéroport Nice → Antibes</strong> prend environ <strong>20-30 minutes</strong> (environ 20 km). Antibes est idéalement située entre Nice et Cannes.</p>
           </div>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Proposez-vous des transferts vers le Port Vauban ?</h3>
           <div class="faq-answer">
-            <p>Oui, nous travaillons régulièrement avec les <strong>équipages de yachts</strong> et les visiteurs du Port Vauban, le plus grand port de plaisance d'Europe pour les superyachts. Service de récupération sur le quai disponible.</p>
+            <p>Oui, nous travaillons régulièrement avec les <strong>équipages de yachts</strong> et les visiteurs du Port Vauban. Service de récupération sur le quai disponible.</p>
           </div>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Y a-t-il un service VTC pour Jazz à Juan ?</h3>
           <div class="faq-answer">
-            <p>Oui, nous proposons des <strong>transferts dédiés pour le festival Jazz à Juan</strong> en juillet. Service de récupération après les concerts disponible même tard le soir (23h-minuit). Réservez à l'avance !</p>
+            <p>Oui, nous proposons des <strong>navettes dédiées pour Jazz à Juan</strong> en juillet. Récupération après concerts même tard le soir. Réservez à l'avance !</p>
           </div>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Desservez-vous les hôtels du Cap d'Antibes ?</h3>
           <div class="faq-answer">
-            <p>Absolument ! Nous desservons tous les hôtels prestigieux du <strong>Cap d'Antibes</strong>, dont l'Hôtel du Cap-Eden-Roc, le Cap d'Antibes Beach Hotel et l'Impérial Garoupe.</p>
+            <p>Absolument ! Nous desservons tous les hôtels prestigieux du <strong>Cap d'Antibes</strong> : Hôtel du Cap-Eden-Roc, Cap d'Antibes Beach Hotel, Impérial Garoupe...</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Découvrez Antibes Sans Contraintes</h2>
+        <p>Stationnement difficile, circulation dense... Laissez-nous vous conduire pour profiter pleinement de cette perle de la Côte d'Azur.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
@@ -202,7 +233,7 @@ const faqSchema = {
         <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
         <a href="/vtc-vallauris-golfe-juan" class="text-dark hover-gold">VTC Vallauris</a>
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
-        <a href="/vtc-saint-tropez" class="text-dark hover-gold">VTC Saint-Tropez</a>
+        <a href="/en/antibes-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
@@ -210,9 +241,150 @@ const faqSchema = {
 
 <style>
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .yacht-service { background: #f0f8ff; padding: 2rem; border-radius: 12px; border-left: 4px solid #d4af37; }
-  .service-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .service-box h3 { margin-bottom: 1rem; color: #d4af37; }
-  .service-box ul { padding-left: 1.2rem; }
-  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .tip {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #d4af37;
+    margin-top: 1rem;
+  }
+  
+  /* YACHT SECTION */
+  .yacht-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e8f4fd 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    border-left: 4px solid #d4af37;
+  }
+  
+  .yacht-section .intro {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .yacht-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .yacht-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .yacht-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  }
+  
+  .yacht-card h3 {
+    margin-bottom: 1rem;
+    color: #d4af37;
+    font-size: 1.2rem;
+  }
+  
+  .yacht-card ul {
+    padding-left: 1.2rem;
+  }
+  
+  .yacht-card li {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
 </style>

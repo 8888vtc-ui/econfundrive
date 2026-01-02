@@ -24,6 +24,7 @@ const keywords = [
     { name: "Главная", url: "/ru" },
     { name: "Трансфер Антиб", url: "/ru/transfer-antibes" }
   ]}
+  schema={{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько времени до Антиба от аэропорта Ниццы?","acceptedAnswer":{"@type":"Answer","text":"Трансфер из аэропорта Ниццы в Антиб занимает около 20-30 минут (около 20 км). Антиб расположен между Ниццей и Каннами."}},{"@type":"Question","name":"Предоставляете ли вы сервис для Порта Вобан?","acceptedAnswer":{"@type":"Answer","text":"Да, мы регулярно работаем с экипажами яхт и посетителями Порта Вобан, крупнейшего порта для суперяхт в Европе."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -37,21 +38,19 @@ const keywords = [
       alt="Трансфер личный водитель Антиб Порт Вобан"
       imageSide="right"
       ctaText="Забронировать Трансфер"
-      ctaLink="/reservation"
+      ctaLink="/ru/kontakt"
     >
       <p class="fade-in-section">
-        <strong>Антиб</strong> — очаровательный прибрежный город с богатым историческим наследием, восходящим к древнегреческим временам. Сегодня он знаменит <strong>Портом Вобан</strong>, крупнейшим портом для суперяхт в Европе, очаровательным <strong>Старым городом</strong> и <strong>Музеем Пикассо</strong>.
+        <strong>Антиб</strong> — очаровательный прибрежный город с богатым историческим наследием. Сегодня он знаменит <strong>Портом Вобан</strong>, крупнейшим портом для суперяхт в Европе, и <strong>Музеем Пикассо</strong>.
       </p>
       <p class="fade-in-section">
-        Его полуостров-близнец <strong>Кап д'Антиб</strong> является домом для красивейших вилл и самых эксклюзивных отелей Ривьеры, включая легендарный Hôtel du Cap-Eden-Roc.
+        <strong>Кап д'Антиб</strong> является домом для эксклюзивных отелей, включая легендарный Hôtel du Cap-Eden-Roc.
       </p>
       <ul class="fade-in-section">
         <li>Трансферы из аэропорта Ниццы (20-30 мин)</li>
         <li>Сервис Порт Вобан и экипажи яхт</li>
         <li>Доступ к отелям Кап д'Антиб</li>
-        <li>Трансферы София Антиполис (15 мин)</li>
         <li>Специальный сервис Jazz à Juan (июль)</li>
-        <li>Музей Пикассо и Старый город</li>
       </ul>
     </SectionImageText>
 
@@ -69,22 +68,22 @@ const keywords = [
           image="/assets/img/services/service-business.webp"
           alt="Порт Вобан Антиб"
           title="Порт Вобан"
-          description="Крупнейший порт Европы для суперяхт. Уникальная атмосфера среди самых престижных судов мира."
-          link="/reservation"
+          description="Крупнейший порт Европы для суперяхт."
+          link="/ru/kontakt"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-saint-tropez.webp"
           alt="Кап д'Антиб"
           title="Кап д'Антиб"
-          description="Эксклюзивный полуостров с виллами миллиардеров. Hôtel du Cap-Eden-Roc, скрытые бухты, прибрежная тропа."
-          link="/reservation"
+          description="Эксклюзивный полуостров с виллами миллиардеров."
+          link="/ru/kontakt"
         />
         <CategoryCard
           image="/assets/img/about/vehicule-premium.webp"
           alt="Музей Пикассо Антиб"
-          title="Старый Город & Музей Пикассо"
-          description="Провансальский рынок, бастионы, очаровательные переулки. Замок Гримальди хранит Музей Пикассо."
-          link="/reservation"
+          title="Музей Пикассо"
+          description="Замок Гримальди с коллекцией Пикассо."
+          link="/ru/kontakt"
         />
       </div>
     </section>
@@ -102,6 +101,15 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .cta-box { text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
+  .btn-primary {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+  }
 </style>

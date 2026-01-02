@@ -1,17 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Carnaval de Nice 2025 – Chauffeur Privé Corso & Bataille de Fleurs | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC pour le Carnaval de Nice 2025. Transferts aéroport, navettes Corso Carnavalesque, Bataille de Fleurs sur la Promenade des Anglais. Service premium 24h/24.";
+const description = "Chauffeur privé VTC pour le Carnaval de Nice 2025. Transferts aéroport, navettes Corso Carnavalesque, Bataille de Fleurs. Service premium 24h/24.";
 const keywords = [
   'VTC Carnaval Nice',
   'chauffeur Carnaval Nice',
   'transfert Carnaval Nice',
   'VTC Bataille de Fleurs',
-  'chauffeur Corso Nice',
-  'VTC Nice février',
   'transport Carnaval Nice 2025'
 ];
 
@@ -26,17 +25,11 @@ const schema = {
     "name": "Promenade des Anglais & Place Masséna",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Promenade des Anglais",
       "addressLocality": "Nice",
-      "postalCode": "06000",
       "addressCountry": "FR"
     }
   },
-  "description": "Le Carnaval de Nice est l'un des plus grands carnavals du monde. ECOFUNDRIVE propose des services VTC premium pour les visiteurs.",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Ville de Nice"
-  }
+  "description": "Le Carnaval de Nice est l'un des plus grands carnavals du monde. ECOFUNDRIVE propose des services VTC premium pour les visiteurs."
 };
 ---
 
@@ -52,165 +45,64 @@ const schema = {
     { name: "VTC Carnaval Nice", url: "/vtc-carnaval-nice" }
   ]}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Carnaval de Nice 2025"
+    subtitle="Vivez la magie du Roi des Océans. Corsos illuminés, batailles de fleurs et soirées festives."
+    backgroundImage="/assets/img/destinations/destination-nice.png"
+    badge="14 FÉV - 1 MARS 2025 • CORSO • BATAILLE DE FLEURS"
+  />
 
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Vivez le Carnaval de Nice avec un Chauffeur Privé"
+      title="Le Carnaval en Mode VIP"
       image="/assets/img/destinations/destination-nice.png"
-      alt="VTC Carnaval de Nice sur la Promenade des Anglais"
+      alt="VTC Carnaval de Nice"
       imageSide="right"
       ctaText="Réserver votre VTC Carnaval"
       ctaLink="/reservation"
     >
       <p class="fade-in-section">
-        Le <strong>Carnaval de Nice</strong> est l'un des plus grands carnavals du monde et le plus important de France. Chaque année, du 14 février au 1er mars 2025, la ville de Nice se transforme en un festival de couleurs, de musique et de joie avec ses célèbres <strong>Corsos Carnavalesques</strong> et la féerique <strong>Bataille de Fleurs</strong>.
+        Le <strong>Carnaval de Nice</strong> est l'événement hivernal incontournable de la Côte d'Azur. Du 14 février au 1er mars 2025, la ville vibre au rythme des chars et des parades.
       </p>
       <p class="fade-in-section">
-        Pendant cette période, Nice accueille <strong>plus d'un million de visiteurs</strong> du monde entier. Pour profiter pleinement de cet événement unique sans vous soucier du stationnement ou de la circulation, faites confiance à ECOFUNDRIVE, votre <strong>chauffeur privé VTC pour le Carnaval de Nice</strong>.
+        Pour éviter les tracas de stationnement et profiter pleinement de la fête, ECOFUNDRIVE vous dépose au plus près de la <strong>Place Masséna</strong> et de la <strong>Promenade des Anglais</strong>.
       </p>
-      <p class="fade-in-section">
-        <strong>Nos atouts pour le Carnaval :</strong>
-      </p>
-      <ul class="fade-in-section">
-        <li>Connaissance parfaite des zones de fermeture et des accès pendant le Carnaval</li>
-        <li>Dépose au plus près des tribunes et de la Promenade des Anglais</li>
-        <li>Récupération rapide après les spectacles, même tard le soir</li>
-        <li>Chauffeurs multilingues pour accueillir les touristes internationaux</li>
-        <li>Véhicules confortables pour les familles avec enfants</li>
-      </ul>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📅 Dates : 14 fév - 1 mars</span>
+        <span class="distance-badge">📍 Lieu : Masséna / Promenade</span>
+        <span class="distance-badge">🚗 Service : 24/7</span>
+      </div>
     </SectionImageText>
 
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Programme Carnaval de Nice 2025</h2>
-      <div class="programme-grid">
-        <div class="programme-card">
-          <h3>🎭 Corsos Carnavalesques</h3>
-          <p><strong>Samedi et Dimanche après-midi</strong></p>
-          <p>Défilé de chars monumentaux et de groupes musicaux sur la Place Masséna. Ambiance festive garantie !</p>
-        </div>
-        <div class="programme-card">
-          <h3>💐 Bataille de Fleurs</h3>
-          <p><strong>Mercredi après-midi</strong></p>
-          <p>Sur la Promenade des Anglais, les chars fleuris défilent et lancent des milliers de fleurs au public. Un spectacle magique !</p>
-        </div>
-        <div class="programme-card">
-          <h3>✨ Corso Illuminé</h3>
-          <p><strong>Samedi soir</strong></p>
-          <p>Version nocturne du défilé, avec chars illuminés et jeux de lumières. Ambiance féerique.</p>
-        </div>
-        <div class="programme-card">
-          <h3>🔥 Incinération du Roi</h3>
-          <p><strong>Dernier samedi</strong></p>
-          <p>Le Carnaval se termine par l'incinération du Roi et un feu d'artifice grandiose sur la Baie des Anges.</p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Programme & Services</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🎭</span><h3>Corsos Illuminés</h3><p>Transferts pour les défilés nocturnes spectaculaires.</p></div>
+          <div class="service-card"><span class="service-icon">💐</span><h3>Bataille de Fleurs</h3><p>Navettes pour le show fleuri sur la Promenade.</p></div>
+          <div class="service-card"><span class="service-icon">✈️</span><h3>Aéroport Nice</h3><p>Accueil arrivée et départ pour les festivaliers.</p></div>
+          <div class="service-card"><span class="service-icon">👨‍👩‍👧‍👦</span><h3>Familles</h3><p>Sièges enfants et vans spacieux pour tribus.</p></div>
         </div>
       </div>
     </section>
 
-    <SectionImageText
-      title="Transferts Aéroport pour le Carnaval"
-      image="/assets/img/hero/hero-aeroport-nice.png"
-      alt="Transfert aéroport Nice pour le Carnaval"
-      imageSide="left"
-      ctaText="Transfert Aéroport Nice"
-      ctaLink="/transfert-nice-aeroport-cannes"
-    >
-      <p class="fade-in-section">
-        Vous arrivez à Nice pour le Carnaval ? Notre service de <strong>transfert aéroport VTC</strong> vous permet de rejoindre votre hôtel ou le centre-ville en toute sérénité, même pendant les périodes de forte affluence.
-      </p>
-      <h3 class="fade-in-section">Tarifs Transfert Aéroport Nice – Centre-Ville (Carnaval 2025)</h3>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
-      </div>
-      <p class="fade-in-section"><em>Tarifs indicatifs, susceptibles de varier. Accueil personnalisé avec pancarte inclus.</em></p>
-    </SectionImageText>
-
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Nos Services VTC pendant le Carnaval</h2>
+      <h2 class="section-title text-center mb-xl">L'Expérience Carnaval</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/services/service-aeroport.webp"
-          alt="Transfert famille Carnaval Nice"
-          title="Transfert Famille avec Enfants"
-          description="Sièges auto disponibles sur demande. Dépose au plus près des tribunes et récupération après le spectacle."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.png"
-          alt="Mise à disposition Carnaval"
-          title="Mise à Disposition Journée"
-          description="Votre chauffeur reste disponible toute la journée pour vous emmener aux différents événements du Carnaval."
-          link="/services#disposition"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Navette soirée Carnaval"
-          title="Navette Corso Illuminé"
-          description="Service de navette pour les spectacles nocturnes. Récupération garantie même après minuit."
-          link="/services#evenements"
-        />
+        <CategoryCard image="/assets/img/destinations/destination-nice.png" alt="Corso Illuminé" title="✨ Corso Illuminé" description="La magie nocturne. Chars géants illuminés et animations visuelles incroyables." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Bataille de Fleurs" title="🌸 Bataille de Fleurs" description="L'élégance à la niçoise. Pluie de mimosas et de lys sur le public." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-aeroport.webp" alt="Transfert Aéroport" title="✈️ Arrivée à Nice" description="Commencez votre séjour sans stress. Votre chauffeur vous attend aux arrivées." link="/reservation" />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Conseils Pratiques – Carnaval de Nice 2025</h2>
-      <div class="conseils-grid">
-        <div class="conseil-card">
-          <h3>📍 Comment accéder au Carnaval en VTC ?</h3>
-          <p>Pendant les défilés, la circulation est restreinte sur la Promenade des Anglais et autour de la Place Masséna. Nos chauffeurs connaissent les zones de dépose autorisées et vous déposeront au plus près de l'entrée.</p>
-        </div>
-        <div class="conseil-card">
-          <h3>🎟️ Faut-il réserver ses places ?</h3>
-          <p>Les places debout sont gratuites, mais les tribunes assises sont payantes et très demandées. Réservez vos billets à l'avance sur le site officiel nicecarnaval.com.</p>
-        </div>
-        <div class="conseil-card">
-          <h3>🕐 Quand réserver son VTC ?</h3>
-          <p>Pendant le Carnaval, la demande de transport explose. Nous recommandons de réserver votre VTC <strong>au moins 1 semaine à l'avance</strong> pour les spectacles du week-end.</p>
-        </div>
-        <div class="conseil-card">
-          <h3>🌧️ Et s'il pleut ?</h3>
-          <p>En cas de mauvais temps, certains spectacles peuvent être annulés. Notre service reste flexible : modification de réservation gratuite en cas d'annulation officielle.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes – VTC Carnaval Nice</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Pouvez-vous nous déposer directement à l'entrée du Carnaval ?</h3>
-          <div class="faq-answer">
-            <p>
-              Oui, nos chauffeurs connaissent les points de dépose autorisés pendant le Carnaval. Nous vous déposerons au plus près de l'entrée des tribunes ou de la zone debout, généralement à moins de 100 mètres.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Comment me récupérez-vous après le spectacle ?</h3>
-          <div class="faq-answer">
-            <p>
-              Nous convenons d'un point de rendez-vous précis avant le spectacle. Votre chauffeur vous attendra à l'heure convenue, même si le spectacle se termine tard. Vous recevrez son numéro de téléphone pour le contacter en cas de besoin.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des sièges auto pour les enfants ?</h3>
-          <div class="faq-answer">
-            <p>
-              Oui, nous proposons des sièges auto adaptés à l'âge de vos enfants, gratuitement sur demande lors de la réservation. Précisez l'âge des enfants pour que nous préparions les équipements appropriés.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Quel est le meilleur moyen de profiter du Carnaval ?</h3>
-          <div class="faq-answer">
-            <p>
-              Nous recommandons de combiner un <strong>Corso Carnavalesque</strong> le samedi ou dimanche (ambiance festive en journée) et le <strong>Corso Illuminé</strong> le samedi soir (ambiance féerique). La <strong>Bataille de Fleurs</strong> le mercredi est particulièrement appréciée des familles.
-            </p>
-          </div>
+      <div class="cta-premium">
+        <h2>Réservez votre VTC Carnaval</h2>
+        <p>Les places de parking sont rares, nos chauffeurs sont là.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -219,45 +111,31 @@ const schema = {
       <h3 class="h4 mb-md text-center">Découvrez aussi</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/guide-que-faire-a-nice-1-3-jours" class="text-dark hover-gold">Que faire à Nice ?</a>
-        <a href="/transfert-nice-aeroport-monaco" class="text-dark hover-gold">Transfert Nice → Monaco</a>
-        <a href="/guide-evenements-cote-azur" class="text-dark hover-gold">Événements Côte d'Azur</a>
+        <a href="/guide-que-faire-a-nice-1-3-jours" class="text-dark hover-gold">Visiter Nice</a>
+        <a href="/transfert-nice-aeroport-monaco" class="text-dark hover-gold">Aéroport → Monaco</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .tarif-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-  }
-  .tarif-table th, .tarif-table td {
-    padding: 0.75rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-  .tarif-table th {
-    background: #f5f5f5;
-    font-weight: 600;
-  }
-  .programme-grid, .conseils-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  .programme-card, .conseil-card {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .programme-card h3, .conseil-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-  .bg-gold-light {
-    background: rgba(212, 175, 55, 0.1);
-  }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

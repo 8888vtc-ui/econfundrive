@@ -1,200 +1,133 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "French Riviera Hilltop Villages Tour – Private Driver | ECOFUNDRIVE";
-const description = "Private driver tour of the hilltop villages of the French Riviera. Eze, Saint-Paul-de-Vence, Gourdon, Tourrettes-sur-Loup. Medieval charm, art galleries, panoramas.";
+const title = "Best Hilltop Villages French Riviera – Private Driver Guide | ECOFUNDRIVE";
+const description = "Discover the most beautiful medieval villages of the French Riviera with your private driver. Èze, Saint-Paul-de-Vence, Gourdon. Panormaic tours.";
 const keywords = [
-  'hilltop villages French Riviera',
-  'perched villages Cote d Azur',
-  'Eze village tour',
-  'Saint-Paul-de-Vence private driver',
-  'Gourdon tour',
-  'medieval villages Provence'
+  'hilltop villages french riviera',
+  'visit Eze private driver',
+  'Saint-Paul-de-Vence transfer',
+  'Gourdon village tour',
+  'french riviera countryside tour'
 ];
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
-  currentPage="en-guide-hilltop-villages"
+  currentPage="guide-hilltop-villages-french-riviera"
   canonical="/en/guide-hilltop-villages-french-riviera"
   lang="en"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Home", url: "/en" },
     { name: "Guides", url: "/en/guides" },
     { name: "Hilltop Villages", url: "/en/guide-hilltop-villages-french-riviera" }
   ]}
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.ecofundrive.com/assets/img/guides/villages-perches.webp",
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+  }}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">Hilltop Villages of the French Riviera</h1>
-      <p class="lead text-center mb-xl">
-        Discover the enchanting perched villages of the Côte d'Azur. Medieval streets, artisan boutiques, 
-        panoramic views. A unique experience with your private driver.
-      </p>
-    </div>
+  <PageHero 
+    title="The Hilltop Villages"
+    subtitle="Medieval gems between sea and sky. Èze, Saint-Paul, Gourdon... Discover the authentic soul of the Riviera."
+    backgroundImage="/assets/img/guides/villages-perches.webp"
+    badge="SIGHTSEEING • HISTORY • PANORAMA"
+  />
 
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Explore Medieval Villages with a Private Driver"
-      image="/assets/img/destinations/destination-monaco.png"
-      alt="French Riviera hilltop village tour"
+      title="The Soul of the Riviera"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Eze Village Panorama"
       imageSide="right"
-      ctaText="Book Your Village Tour"
+      ctaText="Book a Tour"
       ctaLink="/en/booking"
     >
       <p class="fade-in-section">
-        The French Riviera isn't just about beaches and glamour – the <strong>hinterland (arrière-pays)</strong> hides some of the most beautiful villages in France. Perched on hilltops and cliffs, these <strong>villages perchés</strong> offer a glimpse into medieval Provence with stunning Mediterranean panoramas.
+        Far from the coastal crowds, the Nice hinterland hides suspended treasures: the <strong>hilltop villages</strong>. Medieval fortresses, "eagles' nests," or artist havens, they offer breathtaking panoramas and a deep dive into history.
       </p>
       <p class="fade-in-section">
-        Reaching these villages by public transport is nearly impossible. With a <strong>private driver</strong>, you can explore multiple villages in one day, stopping for photos, artisan boutiques, and leisurely lunches with views.
+        Access to these sites is often winding and parking is scarce. With your private driver, enjoy the <strong>scenic drive</strong> in total comfort and get dropped off right at the village gates.
       </p>
-      <ul class="fade-in-section">
-        <li>Flexible half-day or full-day tours</li>
-        <li>Customized itineraries based on your interests</li>
-        <li>Photo stops at the best viewpoints</li>
-        <li>Recommendations for authentic restaurants</li>
-        <li>Art galleries and artisan workshops</li>
-        <li>Pickup from Nice, Cannes, Monaco or your hotel</li>
-      </ul>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🏰 Èze Village</span>
+        <span class="distance-badge">🎨 Saint-Paul-de-Vence</span>
+        <span class="distance-badge">⛰️ Gourdon</span>
+      </div>
     </SectionImageText>
 
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Your Tailor-Made Tour</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">⏱️</span><h3>Half Day</h3><p>4h discovery. Ideal to combine 2 nearby villages (e.g., Èze & La Turbie).</p></div>
+          <div class="service-card"><span class="service-icon">☀️</span><h3>Full Day</h3><p>8h total immersion with a gourmet lunch in a village.</p></div>
+          <div class="service-card"><span class="service-icon">📸</span><h3>Photo Stops</h3><p>Your driver knows the best viewpoints for your memories.</p></div>
+          <div class="service-card"><span class="service-icon">🛍️</span><h3>Art & Crafts</h3><p>Free time to visit art galleries, perfumeries, and artisans.</p></div>
+        </div>
+      </div>
+    </section>
+
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">The Most Beautiful Hilltop Villages</h2>
+      <h2 class="section-title text-center mb-xl">The Must-See Top 3</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Eze Village"
-          title="Eze"
-          description="The most famous! Perched 429m above the sea. Exotic Garden, Fragonard perfumery, breathtaking views of Cap Ferrat."
-          link="/en/eze-private-driver"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
-          alt="Saint-Paul-de-Vence"
-          title="Saint-Paul-de-Vence"
-          description="The artists' village. Fondation Maeght, La Colombe d'Or, winding streets filled with galleries and boutiques."
-          link="/en/booking"
-        />
-        <CategoryCard
-          image="/assets/img/about/vehicule-premium.webp"
-          alt="Gourdon Village"
-          title="Gourdon"
-          description="'The eagle's nest' at 760m. Dramatic views over the entire Riviera. Medieval castle, artisan shops."
-          link="/en/booking"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
-          alt="Tourrettes-sur-Loup"
-          title="Tourrettes-sur-Loup"
-          description="'Village of violets'. Artisan workshops, medieval ramparts, violet candies. Less touristy, very authentic."
-          link="/en/booking"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/destination-cannes.webp"
-          alt="Vence"
-          title="Vence"
-          description="Historic town with Matisse's Chapel (Chapelle du Rosaire). Charming Old Town, provençal markets."
-          link="/en/booking"
-        />
-        <CategoryCard
-          image="/assets/img/hero/chauffeur-luxe-background.webp"
-          alt="Mougins Village"
-          title="Mougins"
-          description="Gourmet village where Picasso lived. Michelin-starred restaurants, Photography Museum, art galleries."
-          link="/en/booking"
-        />
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Èze Village" title="1. Èze Village" description="The 'Eagle's Nest'. Exotic garden at the summit, medieval alleys, and 360° sea view. An absolute must." link="/en/eze-private-driver" />
+        <CategoryCard image="/assets/img/hero/hero-mariage.webp" alt="Saint-Paul-de-Vence" title="2. Saint-Paul-de-Vence" description="The City of Artists. Chagall, Matisse... 16th-century ramparts, Maeght Foundation, and art galleries." link="/en/saint-paul-de-vence-private-driver" />
+        <CategoryCard image="/assets/img/destinations/destination-cannes.webp" alt="Gourdon" title="3. Gourdon" description="The Balcony of the Riviera. Impregnable fortress offering a unique view over 80km of coastline." link="/en/booking" />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Suggested Tour Itineraries</h2>
-      <div class="tour-options">
-        <div class="tour-card">
-          <h3>🌅 Classic Half-Day (4 hours)</h3>
-          <p class="tour-route">Nice → Eze Village → Scenic Corniche → Monaco (or return Nice)</p>
-          <ul>
-            <li>Visit Eze Exotic Garden</li>
-            <li>Free perfumery tour (Fragonard)</li>
-            <li>Photo stops on Grande Corniche</li>
-            <li>Optional: Continue to Monaco</li>
-          </ul>
-          <p class="tour-price">From <strong>280€</strong></p>
-        </div>
-        <div class="tour-card">
-          <h3>🎨 Art & Villages Full Day (7-8 hours)</h3>
-          <p class="tour-route">Nice → Vence → Saint-Paul-de-Vence → Lunch → Tourrettes → Nice</p>
-          <ul>
-            <li>Matisse Chapel in Vence</li>
-            <li>Fondation Maeght (modern art)</li>
-            <li>Lunch at La Colombe d'Or or village bistro</li>
-            <li>Violet village of Tourrettes</li>
-          </ul>
-          <p class="tour-price">From <strong>450€</strong></p>
-        </div>
-        <div class="tour-card">
-          <h3>🏔️ Mountain Villages Full Day (7-8 hours)</h3>
-          <p class="tour-route">Nice → Tourrettes → Gourdon → Grasse → Mougins → Nice</p>
-          <ul>
-            <li>Dramatic views from Gourdon (760m)</li>
-            <li>Perfume factory in Grasse</li>
-            <li>Gourmet lunch in Mougins</li>
-            <li>Wolf Gorge scenic drive</li>
-          </ul>
-          <p class="tour-price">From <strong>480€</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Which village is best if I only have time for one?</h3>
-          <div class="faq-answer">
-            <p><strong>Eze</strong> is the classic choice – the most spectacular setting, easy to visit in 2 hours, and you can combine it with Monaco. <strong>Saint-Paul-de-Vence</strong> is best for art lovers.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Are the villages accessible for elderly or mobility-impaired visitors?</h3>
-          <div class="faq-answer">
-            <p>The villages have <strong>cobblestone streets and stairs</strong>. Eze is challenging (steep climb to the garden). Saint-Paul-de-Vence is more accessible. We can recommend the best options based on mobility.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">When is the best time to visit?</h3>
-          <div class="faq-answer">
-            <p><strong>Early morning or late afternoon</strong> is best to avoid crowds and enjoy the light. The villages are busiest from 10am-4pm in summer. We recommend starting at 9am.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Can we stop for lunch in one of the villages?</h3>
-          <div class="faq-answer">
-            <p>Absolutely! We can recommend authentic restaurants with views. <strong>Mougins</strong> is particularly famous for its gourmet restaurants (some Michelin-starred).</p>
-          </div>
+      <div class="cta-premium">
+        <h2>Escape to the Countryside</h2>
+        <p>Create your custom itinerary. Our chauffeurs are at your service.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book My Excursion</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp Advice</a>
         </div>
       </div>
     </section>
 
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
-      <h3 class="h4 mb-md text-center">Related Tours & Destinations</h3>
+      <h3 class="h4 mb-md text-center">More Discovery Guides</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
-        <a href="/en/eze-private-driver" class="text-dark hover-gold">Eze Private Driver</a>
-        <a href="/en/grasse-private-driver" class="text-dark hover-gold">Grasse Perfume Tour</a>
-        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Private Driver</a>
-        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco Tour</a>
+        <a href="/en/guide-scenic-road-nice-eze-monaco" class="text-dark hover-gold">The 3 Corniches</a>
+        <a href="/en/guide-one-day-in-monaco" class="text-dark hover-gold">Monaco in 1 Day</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Guide</a>
+        <a href="/en/guides" class="text-dark hover-gold">All Guides</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .tour-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-  .tour-card { background: #f9f9f9; padding: 1.5rem; border-radius: 12px; border-top: 4px solid #d4af37; }
-  .tour-card h3 { color: #d4af37; margin-bottom: 0.5rem; }
-  .tour-route { font-style: italic; color: #666; margin-bottom: 1rem; font-size: 0.9rem; }
-  .tour-card ul { padding-left: 1.2rem; margin-bottom: 1rem; }
-  .tour-price { font-size: 1.2rem; color: #d4af37; }
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

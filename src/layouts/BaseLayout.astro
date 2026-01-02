@@ -5,6 +5,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Chatbot from '../components/Chatbot.astro';
 import ReviewsDisplay from '../components/ReviewsDisplay.astro';
+import RecentBooking from '../components/RecentBooking.astro';
+import { ViewTransitions } from 'astro:transitions';
 import { allReviews, aggregateRating } from '../data/reviews.ts';
 
 import '../styles/base.css';
@@ -381,6 +383,7 @@ if (currentLang === 'fr') {
         initAnimations();
       }
     </script>
+  <ViewTransitions />
   </head>
   <body data-page={currentPage}>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -395,6 +398,7 @@ if (currentLang === 'fr') {
     <Footer lang={currentLang} />
     <WhatsAppButton />
     <Chatbot lang={currentLang} />
+    <RecentBooking lang={currentLang} />
   </body>
 </html>
 

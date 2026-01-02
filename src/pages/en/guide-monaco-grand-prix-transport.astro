@@ -1,16 +1,27 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Monaco Grand Prix Transport Guide | ECOFUNDRIVE";
-const description = "Survive the Monaco GP chaos: private driver for transfers, access tips, parking nightmares solved. VIP service from Nice & Cannes to the Principality.";
+const title = "Monaco Grand Prix – F1 Transport Guide VTC | ECOFUNDRIVE";
+const description = "Complete guide to getting around the Monaco F1 Grand Prix. Avoid traffic jams, access VIP stands with a private driver. Transfers Nice-Monaco.";
 const keywords = [
-  'Monaco Grand Prix transfer',
-  'F1 Monaco private driver',
-  'Monaco GP transport',
-  'Nice to Monaco F1',
-  'Grand Prix VIP access'
+  'VTC Monaco Grand Prix',
+  'transport F1 Monaco',
+  'private driver GP Monaco',
+  'transfer Nice Monaco F1',
+  'VIP access F1'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
 <BaseLayout
@@ -23,117 +34,101 @@ const keywords = [
   breadcrumbItems={[
     { name: "Home", url: "/en" },
     { name: "Guides", url: "/en/guides" },
-    { name: "Monaco GP", url: "/en/guide-monaco-grand-prix-transport" }
+    { name: "Monaco Grand Prix", url: "/en/guide-monaco-grand-prix-transport" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Monaco Grand Prix: Your VIP Logistics Guide</h1>
-      <p class="lead text-center mb-xl">
-        Every May, the Principality transforms into the world's most glamorous racetrack. Traffic becomes a nightmare and prices skyrocket. Here's how to enjoy the spectacle without the chaos.
-      </p>
-    </div>
+  <PageHero 
+    title="Monaco Grand Prix"
+    subtitle="The Jewel of the F1 Crown. Logistics guide for a stress-free race weekend."
+    backgroundImage="/assets/img/destinations/destination-monaco.webp"
+    badge="F1 • VIP • LOGISTICS"
+  />
 
-    <!-- THE CHALLENGE -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="The Challenge: Why a Private Driver is Essential"
+      title="The Logistics Challenge"
       image="/assets/img/destinations/destination-monaco.webp"
-      alt="Monaco F1 Circuit"
+      alt="F1 Circuit Monaco"
       imageSide="right"
-      ctaText="Book for GP Weekend"
+      ctaText="Book My Driver"
       ctaLink="/en/booking"
     >
-      <p>
-        <strong>During the Monaco GP, traffic is an absolute nightmare.</strong> Road closures, security barriers, massive crowds... A usual 30-minute journey can take 2-3 hours.
+      <p class="fade-in-section">
+        The <strong>Monaco Grand Prix</strong> is legendary, but accessing it is a challenge. Road closures, huge crowds, saturated parking... Getting around can quickly turn into a nightmare.
       </p>
-      <p>
-        Our chauffeurs know the secret routes through La Turbie, Beausoleil, and Roquebrune-Cap-Martin. They'll drop you as close as possible to the grandstands without wasting hours in traffic jams.
+      <p class="fade-in-section">
+        The secret to a successful GP? Impeccable logistics. Our private drivers master alternative routes and strategic drop-off points to save you precious time.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🏎️ Street Circuit</span>
+        <span class="distance-badge">🚦 Heavy Traffic</span>
+        <span class="distance-badge">🤵 Premium Service</span>
+      </div>
     </SectionImageText>
 
-    <!-- SCHEDULE -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Race Weekend Schedule: Plan Your Transfers</h2>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Planning & Strategy</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">📅</span><h3>Thu & Fri</h3><p>Practice sessions. Heavy but manageable traffic. Arrive early to enjoy the atmosphere.</p></div>
+          <div class="service-card"><span class="service-icon">⏱️</span><h3>Saturday Quali</h3><p>Crucial day. Dense crowds. Recommended departure from Nice before 9:00 AM.</p></div>
+          <div class="service-card"><span class="service-icon">🏆</span><h3>Sunday Race</h3><p>The Big Day. Access almost impossible without accreditation or VTC. <strong>Book 1 month ahead.</strong></p></div>
+          <div class="service-card"><span class="service-icon">🌙</span><h3>Amber Lounge</h3><p>Night service for the season's most exclusive after-parties.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Strategic Drop-off Points</h2>
       <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏎️ Thursday</h3>
-          <p><strong>Practice 1 & 2</strong>. Important technical sessions. Access is relatively smooth in the morning but traffic builds from 2 PM.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">⏱️ Saturday</h3>
-          <p><strong>Practice 3 & Qualifying</strong>. The battle for pole position! Plan to arrive before 10 AM. Return after 6 PM is very congested.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏆 Sunday</h3>
-          <p><strong>Race Day</strong>. Start at 3 PM. Allow 2 hours for arrival. After the race, wait in a café – Monaco exit is jammed for 2 hours.</p>
+        <CategoryCard image="/assets/img/destinations/destination-monaco.png" alt="Fontvieille" title="📍 Fontvieille" description="Ideal for grandstands K, L, M, O, P and The Rock. Access via tunnel." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Casino" title="📍 Casino / Beausoleil" description="For VIP terraces, Hotel de Paris and grandstand B (Casino)." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-aeroport.webp" alt="Port" title="📍 La Condamine" description="Access grandstands T, V, X (Start line) and Rascasse sector." link="/en/booking" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Secure Your F1 Transport</h2>
+        <p>Availability for the Grand Prix weekend goes very fast.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book Now</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp Quote</a>
         </div>
       </div>
     </section>
 
-    <!-- INSIDER TIPS -->
-    <SectionImageText
-      title="Insider Tips: Optimize Your Experience"
-      image="/assets/img/services/service-business.webp"
-      alt="Monaco GP grandstand"
-      imageSide="left"
-      ctaText="Request Quote"
-      ctaLink="/en/booking"
-    >
-      <p>
-        <strong>"Base Camp" Strategy:</strong> Stay in Nice or Villefranche rather than Monaco. Prices are 3x lower and we'll drive you to each session.
-      </p>
-      <p>
-        <strong>Helicopter Option:</strong> For premium budgets, we arrange combined VTC + Helicopter transfers (Nice → Monaco in 7 min!). Contact us for a quote.
-      </p>
-      <p>
-        <strong>After-Race Parties:</strong> Monaco's port comes alive in the evening. We can wait until late at night to take you safely back after the celebrations.
-      </p>
-    </SectionImageText>
-
-    <!-- DROP-OFF POINTS -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Where We Can Drop You</h2>
-      <p class="text-center mb-lg">Depending on your grandstand or access zone, we adapt the drop-off point:</p>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Grandstands K, L, T (Port/Chicane)</h3>
-          <p>Drop-off: Parking des Pécheurs or Place d'Armes. Access via escalators/elevators. Allow 15 min walk.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Grandstand B, Casino, Fairmont</h3>
-          <p>Drop-off: Avenue de Monte-Carlo (if permitted) or Casino parking. Most requested location – book early!</p>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">See Also</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">Monaco VTC</a>
+        <a href="/en/nice-airport-to-monaco-transfer" class="text-dark hover-gold">Nice → Monaco</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice Accommodation</a>
       </div>
     </section>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Experience the GP Like a VIP</h2>
-        <p class="lead mb-4">
-          Don't let logistics ruin your race weekend. Book your dedicated driver now.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/en/booking" class="btn btn-primary">Book for Grand Prix</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Quote</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 </BaseLayout>
+
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

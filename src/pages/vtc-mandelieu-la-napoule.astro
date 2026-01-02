@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Mandelieu-la-Napoule – Chauffeur Privé Golf & Château | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Mandelieu-la-Napoule. Château de la Napoule, Golf Old Course, aéroport Cannes-Mandelieu, port. Proche Cannes. Service premium 24h/24.";
+const description = "Chauffeur privé VTC à Mandelieu. Château de la Napoule, Golf Old Course, aéroport Cannes-Mandelieu. Service premium aviation privée 24/7.";
 const keywords = [
   'VTC Mandelieu-la-Napoule',
   'chauffeur privé Mandelieu',
@@ -19,51 +20,73 @@ const keywords = [
   description={description}
   currentPage="vtc-mandelieu-la-napoule"
   canonical="/vtc-mandelieu-la-napoule"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Mandelieu-la-Napoule", url: "/vtc-mandelieu-la-napoule" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts depuis l'aéroport de Cannes-Mandelieu ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts depuis l'aéroport privé de Cannes-Mandelieu vers toutes destinations : hôtels, villas, yachts. Service aviation privée."}},{"@type":"Question","name":"Mandelieu est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mandelieu-la-Napoule est la porte d'entrée de Cannes, à seulement 8 km (10-15 minutes en VTC)."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts aéroport privé ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts depuis l'aéroport Cannes-Mandelieu vers hôtels et villas."}},{"@type":"Question","name":"Mandelieu est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mandelieu est la porte d'entrée de Cannes, à seulement 8 km (10-15 min)."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Mandelieu-la-Napoule"
+    subtitle="Golfs, château et aviation privée. La porte d'entrée de Cannes et de l'Estérel."
+    backgroundImage="/assets/img/destinations/destination-cannes.webp"
+    badge="GOLF • AVIATION PRIVÉE • CHÂTEAU"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <SectionImageText
+      title="Golfs & Aviation Privée"
+      image="/assets/img/destinations/cannes-palais-festivals.png"
+      alt="VTC Mandelieu"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Mandelieu-la-Napoule</strong> est une destination privilégiée entre mer et golfs. Son aéroport d'aviation d'affaires <strong>Cannes-Mandelieu</strong> en fait un hub majeur pour la clientèle VIP.
+      </p>
+      <p class="fade-in-section">
+        Le <strong>Château de la Napoule</strong> et les golfs historiques comme le <strong>Old Course</strong> attirent visiteurs et événements de prestige. ECOFUNDRIVE assure vos liaisons en toute discrétion.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Cannes : 15 min</span>
+        <span class="distance-badge">📍 Nice : 35 min</span>
+        <span class="distance-badge">📍 Saint-Tropez : 50 min</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Services Premium</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">✈️</span><h3>Aviation Privée</h3><p>Transferts tarmac aéroport Cannes-Mandelieu.</p></div>
+          <div class="service-card"><span class="service-icon">⛳</span><h3>Golfs</h3><p>Navettes Old Course et Riviera Golf avec sacs.</p></div>
+          <div class="service-card"><span class="service-icon">🏰</span><h3>Mariages</h3><p>Service voiture mariés et navettes au Château.</p></div>
+          <div class="service-card"><span class="service-icon">🛥️</span><h3>Yachting</h3><p>Accès direct aux ports de la Napoule et Cannes Marina.</p></div>
+        </div>
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Mandelieu-la-Napoule</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Mandelieu</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/cannes-palais-festivals.png"
-          alt="Château de la Napoule"
-          title="Château de la Napoule"
-          description="Château médiéval restauré au style fantaisiste, lieu emblématique pour mariages et événements face à la mer."
-          link="/vtc-mariage-cote-azur"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Golf Old Course Mandelieu"
-          title="Golf Old Course"
-          description="L'un des plus anciens parcours de golf de la Riviera, fondé en 1891. 18 trous dans un cadre exceptionnel."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/vtc-tesla-nice.webp"
-          alt="Aéroport Cannes Mandelieu"
-          title="Aéroport Privé"
-          description="Aéroport d'aviation privée de Cannes-Mandelieu. Service VTC dédié pour jets privés et hélicoptères."
-          link="/reservation"
-        />
+        <CategoryCard image="/assets/img/destinations/cannes-palais-festivals.png" alt="Château Napoule" title="🏰 Château de la Napoule" description="Forteresse médiévale restaurée par des artistes américains. Lieu magique face à la mer." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Old Course Golf" title="⛳ Golf Old Course" description="Fondé en 1891, l'un des plus anciens golfs d'Europe aux pins parasols centenaires." link="/reservation" />
+        <CategoryCard image="/assets/img/destinations/vtc-tesla-nice.webp" alt="Aéroport Cannes Mandelieu" title="✈️ Aviation d'Affaires" description="Deuxième aéroport d'aviation d'affaires de France. Hub VIP pour la Côte d'Azur." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Mandelieu</h2>
+        <p>Aviation privée, golf ou événement au château... Voyagez en première classe.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
+        </div>
       </div>
     </section>
 
@@ -71,15 +94,32 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
-        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
         <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">VTC Fréjus</a>
         <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

@@ -1,16 +1,27 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Grand Prix de Monaco F1 : Guide Transport VTC | ECOFUNDRIVE";
-const description = "Vivez le Grand Prix de Monaco sans stress. Chauffeur VTC pour éviter le chaos routier, accès privilégiés, et transferts depuis Nice et Cannes.";
+const title = "Grand Prix de Monaco – Guide Transport VTC F1 | ECOFUNDRIVE";
+const description = "Guide complet pour se déplacer au Grand Prix F1 de Monaco. Évitez les bouchons, accédez aux tribunes VIP en chauffeur privé. Transferts Nice-Monaco.";
 const keywords = [
   'VTC Grand Prix Monaco',
   'transport F1 Monaco',
   'chauffeur privé GP Monaco',
   'transfert Nice Monaco F1',
-  'parking Grand Prix Monaco'
+  'accès VIP F1'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
 <BaseLayout
@@ -24,117 +35,99 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Grand Prix Monaco", url: "/guide-grand-prix-monaco-deplacements" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Grand Prix de Monaco : Votre Guide Logistique VIP</h1>
-      <p class="lead text-center mb-xl">
-        Chaque année fin mai, la Principauté se transforme en circuit F1. Le trafic devient infernal et les tarifs explosent. Voici comment profiter du spectacle sans subir le chaos.
-      </p>
-    </div>
+  <PageHero 
+    title="Grand Prix de Monaco"
+    subtitle="Le joyau de la Couronne F1. Guide logistique pour un week-end de course sans stress."
+    backgroundImage="/assets/img/destinations/destination-monaco.webp"
+    badge="F1 • VIP • LOGISTIQUE"
+  />
 
-    <!-- 1. LE DEFI LOGISTIQUE -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Le Défi : Pourquoi un VTC est Indispensable"
+      title="Le Défi Logistique"
       image="/assets/img/destinations/destination-monaco.webp"
       alt="Circuit F1 Monaco"
       imageSide="right"
-      ctaText="Réserver pour le GP"
+      ctaText="Réserver mon Chauffeur"
       ctaLink="/reservation"
     >
-      <p>
-        <strong>Pendant le GP de Monaco, la circulation est un cauchemar absolu.</strong> Fermetures de routes, barrières de sécurité, foule immense... Les trajets habituels de 30 minutes peuvent prendre 2 à 3 heures.
+      <p class="fade-in-section">
+        Le <strong>Grand Prix de Monaco</strong> est mythique, mais son accès est un défi. Routes barrées, foule immense, parkings saturés... Se déplacer peut vite tourner au cauchemar.
       </p>
-      <p>
-        Nos chauffeurs connaissent les itinéraires secrets par La Turbie, Beausoleil ou Roquebrune-Cap-Martin. Ils vous déposent au plus près des tribunes sans perdre de temps dans les embouteillages interminables.
+      <p class="fade-in-section">
+        Le secret d'un GP réussi ? Une logistique impeccable. Nos chauffeurs VTC maîtrisent les itinéraires alternatifs et les points de dépose stratégiques pour vous faire gagner un temps précieux.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🏎️ Circuit Urbain</span>
+        <span class="distance-badge">🚦 Trafic Intense</span>
+        <span class="distance-badge">🤵 Service Premium</span>
+      </div>
     </SectionImageText>
 
-    <!-- 2. CALENDRIER -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Calendrier du Week-End : Planifiez Vos Transferts</h2>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Planning & Stratégie</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">📅</span><h3>Jeudi & Vendredi</h3><p>Essais libres. Trafic dense mais gérable. Arrivez tôt pour profiter de l'ambiance.</p></div>
+          <div class="service-card"><span class="service-icon">⏱️</span><h3>Samedi Qualifs</h3><p>Journée cruciale. La foule est dense. Départ recommandé de Nice avant 9h00.</p></div>
+          <div class="service-card"><span class="service-icon">🏆</span><h3>Dimanche Course</h3><p>Le Grand Jour. Accès quasi impossible sans accréditation ou VTC. <strong>Réservez 1 mois avant.</strong></p></div>
+          <div class="service-card"><span class="service-icon">🌙</span><h3>Soirées Amber Lounge</h3><p>Service de nuit pour les after-parties les plus exclusives de la saison.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Points de Dépose Stratégiques</h2>
       <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏎️ Jeudi</h3>
-          <p><strong>Essais Libres 1 & 2</strong>. Journée technique importante. Accès relativement fluide le matin, mais le trafic se densifie dès 14h.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">⏱️ Samedi</h3>
-          <p><strong>Essais Libres 3 & Qualifications</strong>. La course à la pole position ! Prévoir d'arriver avant 10h. Le retour après 18h est très chargé.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏆 Dimanche</h3>
-          <p><strong>La Course</strong>. Départ à 15h. Bloquez 2h avant pour l'arrivée. Après la course, patientez dans un café : la sortie de Monaco est saturée pendant 2h.</p>
+        <CategoryCard image="/assets/img/destinations/destination-monaco.png" alt="Fontvieille" title="📍 Fontvieille" description="Idéal pour les tribunes K, L, M, O, P et le Rocher. Accès via tunnel." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Casino" title="📍 Casino / Beausoleil" description="Pour les terrasses VIP, l'Hôtel de Paris et la tribune B (Casino)." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-aeroport.webp" alt="Gare / Port" title="📍 La Condamine" description="Accès tribunes T, V, X (Ligne départ) et secteur Rascasse." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Sécurisez votre Transport F1</h2>
+        <p>Les disponibilités pour le week-end du Grand Prix partent très vite.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver Maintenant</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- 3. CONSEILS D'INITIE -->
-    <SectionImageText
-      title="Conseils d'Initié : Optimiser Votre Expérience"
-      image="/assets/img/services/service-business.webp"
-      alt="Vue tribune Monaco GP"
-      imageSide="left"
-      ctaText="Demander un devis"
-      ctaLink="/contact"
-    >
-      <p>
-        <strong>Stratégie "Base Arrière" :</strong> Logez à Nice ou Villefranche plutôt qu'à Monaco. Les prix y sont 3 fois moins chers et nous vous conduisons chaque jour pour les sessions.
-      </p>
-      <p>
-        <strong>Option Hélicoptère :</strong> Pour les budgets premium, nous organisons des transferts combinés VTC + Hélico (Nice → Monaco en 7 min !). Contactez-nous pour un devis.
-      </p>
-      <p>
-        <strong>Soirées After-Race :</strong> Le port de Monaco s'anime le soir. Nous pouvons vous attendre jusqu'à tard dans la nuit pour vous ramener en toute sécurité après les célébrations.
-      </p>
-    </SectionImageText>
-
-    <!-- 4. POINTS D'ACCES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Où Vous Déposer ?</h2>
-      <p class="text-center mb-lg">Selon votre tribune ou votre zone d'accès, nous adaptons le point de dépôt :</p>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Tribunes K, L, T (Port/Chicane)</h3>
-          <p>Dépôt : Parking des Pécheurs ou Place d'Armes. Accès par escalators/ascenseurs. Prévoir 15 min de marche.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Tribune B, Casino, Fairmont</h3>
-          <p>Dépôt : Avenue de Monte-Carlo (si autorisé) ou parking du Casino. C'est le point le plus demandé, réservez tôt !</p>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Voir aussi</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/transfert-nice-aeroport-monaco" class="text-dark hover-gold">Transfert Nice → Monaco</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">Hébergement Nice</a>
       </div>
     </section>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Vivez le GP de Monaco comme un VIP</h2>
-        <p class="lead mb-4">
-          Ne laissez pas la logistique gâcher votre week-end de course. Réservez votre chauffeur dédié dès maintenant.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/reservation" class="btn btn-primary">Réserver pour le Grand Prix</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

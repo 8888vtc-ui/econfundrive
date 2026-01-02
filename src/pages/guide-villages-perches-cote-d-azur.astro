@@ -1,15 +1,17 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Villages Perchés de la Côte d'Azur | Guide VTC ECOFUNDRIVE";
-const description = "Explorez les plus beaux villages médiévaux de la Côte d'Azur : Èze, Saint-Paul-de-Vence, Gourdon. Visite privée avec chauffeur VTC.";
+const title = "Villages Perchés de la Côte d'Azur – Guide Visite Privée | ECOFUNDRIVE";
+const description = "Explorez les plus beaux villages médiévaux de la Côte d'Azur avec votre chauffeur privé. Èze, Saint-Paul-de-Vence, Gourdon. Circuit panoramique.";
 const keywords = [
   'villages perchés côte d\'azur',
   'visiter Eze chauffeur',
   'Saint-Paul-de-Vence VTC',
   'Gourdon village',
-  'transport touristique Nice'
+  'tourisme arrière-pays niçois'
 ];
 ---
 
@@ -33,93 +35,101 @@ const keywords = [
     "author": {
       "@type": "Organization",
       "name": "ECOFUNDRIVE"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-      }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
+    }
   }}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Les Plus Beaux Villages Perchés de la Côte d'Azur</h1>
-      <p class="lead text-center mb-xl">
-        Loin du tumulte du littoral, l'arrière-pays niçois cache des trésors médiévaux suspendus entre ciel et mer. Découvrez notre sélection des villages incontournables à visiter avec votre chauffeur privé.
-      </p>
-    </div>
+  <PageHero 
+    title="Les Villages Perchés"
+    subtitle="Joyaux médiévaux entre ciel et mer. Èze, Saint-Paul, Gourdon... Découvrez l'authenticité de la Riviera."
+    backgroundImage="/assets/img/guides/villages-perches.webp"
+    badge="VISITE GUIDÉE • HISTOIRE • PANORAMA"
+  />
 
-    <!-- 1. EZE VILLAGE -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Èze : Le Nid d'Aigle"
+      title="L'Âme de la Côte d'Azur"
       image="/assets/img/guides/villages-perches.webp"
       alt="Vue panoramique Village Eze"
       imageSide="right"
-      ctaText="Réserver un tour à Èze"
+      ctaText="Réserver un Circuit"
       ctaLink="/reservation"
     >
-      <p>
-        Perché à 429 mètres au-dessus de la Méditerranée, <strong>Èze</strong> est sans doute le village le plus spectaculaire de la Côte d'Azur. Ses ruelles médiévales serpentent jusqu'au sommet où se niche le célèbre Jardin Exotique.
+      <p class="fade-in-section">
+        Loin du tumulte du littoral, l'arrière-pays niçois cache des trésors suspendus : les <strong>villages perchés</strong>. Forteresses médiévales, nids d'aigles ou cités d'artistes, ils offrent des panoramas époustouflants et une plongée dans l'histoire.
       </p>
-      <p>
-        <strong>L'expérience VTC :</strong> L'accès à Èze est sinueux et le stationnement y est très difficile. Votre chauffeur vous déposera au plus près de l'entrée du village historique et vous attendra pendant votre visite des parfumeries Fragonard ou Galimard, situées au pied du village.
+      <p class="fade-in-section">
+        L'accès à ces sites est souvent sinueux. Avec votre chauffeur privé, profitez de la <strong>route panoramique</strong> en tout confort et accédez directement au cœur des villages sans souci de stationnement.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🏰 Èze Village</span>
+        <span class="distance-badge">🎨 Saint-Paul-de-Vence</span>
+        <span class="distance-badge">⛰️ Gourdon</span>
+      </div>
     </SectionImageText>
 
-    <!-- 2. SAINT-PAUL-DE-VENCE -->
-    <SectionImageText
-      title="Saint-Paul-de-Vence : La Cité des Artistes"
-      image="/assets/img/hero/hero-mariage.webp"
-      alt="Saint-Paul-de-Vence remparts"
-      imageSide="left"
-      ctaText="Visiter Saint-Paul"
-      ctaLink="/reservation"
-    >
-      <p>
-        Entouré de ses remparts du XVIe siècle, <strong>Saint-Paul-de-Vence</strong> est un musée à ciel ouvert qui a inspiré Chagall, Matisse et Picasso. Flânez dans les galeries d'art, visitez la Fondation Maeght, et jouez à la pétanque sur la célèbre place de l'entrée du village.
-      </p>
-      <p>
-        Pour le déjeuner, nous pouvons vous déposer devant la mythique Colombe d'Or. Profitez de votre journée artistique sans vous soucier de la logistique du retour.
-      </p>
-    </SectionImageText>
-
-    <!-- 3. GOURDON -->
-    <SectionImageText
-      title="Gourdon : Le Balcon de la Côte d'Azur"
-      image="/assets/img/destinations/destination-cannes.webp"
-      alt="Vue depuis Gourdon"
-      imageSide="right"
-      ctaText="Excursion à Gourdon"
-      ctaLink="/reservation"
-    >
-      <p>
-        Classé parmi les "Plus Beaux Villages de France", <strong>Gourdon</strong> est une forteresse imprenable offrant une vue panoramique époustouflante sur 80km de côte, de Nice à Théoule-sur-Mer.
-      </p>
-      <p>
-        La route des Gorges du Loup pour y accéder est magnifique mais technique. Installez-vous confortablement dans nos véhicules premium et laissez votre chauffeur expert gérer les virages pendant que vous admirez le paysage grandiose.
-      </p>
-    </SectionImageText>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-        <div class="text-center bg-light p-5 rounded">
-            <h2 class="mb-4">Envie d'une Excursion Sur-Mesure ?</h2>
-            <p class="lead mb-4">
-                Nous créons votre itinéraire personnalisé pour découvrir ces joyaux de l'arrière-pays. Demi-journée ou journée complète, évadez-vous en toute liberté avec ECOFUNDRIVE.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/reservation" class="btn btn-primary">Réserver mon Excursion</a>
-                <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
-            </div>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Votre Circuit Sur-Mesure</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">⏱️</span><h3>Demi-Journée</h3><p>4h de découverte. Idéal pour combiner 2 villages proches (ex: Èze & La Turbie).</p></div>
+          <div class="service-card"><span class="service-icon">☀️</span><h3>Journée Complète</h3><p>8h d'immersion totale avec déjeuner gastronomique dans un village.</p></div>
+          <div class="service-card"><span class="service-icon">📸</span><h3>Arrêts Photos</h3><p>Votre chauffeur connaît les meilleurs belvédères pour vos souvenirs.</p></div>
+          <div class="service-card"><span class="service-icon">🛍️</span><h3>Shopping Artisanat</h3><p>Temps libre pour visiter galeries d'art, parfumeries et artisans.</p></div>
         </div>
+      </div>
     </section>
 
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Le Top 3 des Incontournables</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Èze Village" title="1. Èze Village" description="Le 'nid d'aigle'. Jardin exotique au sommet, ruelles médiévales et vue mer à 360°. Un must absolu." link="/vtc-eze" />
+        <CategoryCard image="/assets/img/hero/hero-mariage.webp" alt="Saint-Paul-de-Vence" title="2. Saint-Paul-de-Vence" description="La cité des artistes. Chagall, Matisse... Remparts du XVIe siècle, Fondation Maeght et galeries d'art." link="/vtc-saint-paul-de-vence" />
+        <CategoryCard image="/assets/img/destinations/destination-cannes.webp" alt="Gourdon" title="3. Gourdon" description="Le balcon de la Côte d'Azur. Forteresse imprenable offrant une vue unique sur 80km de littoral." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Évadez-vous dans l'Arrière-Pays</h2>
+        <p>Créez votre itinéraire personnalisé. Nos chauffeurs sont à votre écoute.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Excursion</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Conseil WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Plus de Guides Découverte</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/guide-route-panoramique-nice-eze-monaco" class="text-dark hover-gold">Les 3 Corniches</a>
+        <a href="/guide-monaco-en-une-journee" class="text-dark hover-gold">Visiter Monaco</a>
+        <a href="/guide-vtc-ou-taxi-aeroport-nice" class="text-dark hover-gold">Guide Aéroport</a>
+        <a href="/guides" class="text-dark hover-gold">Tous nos Guides</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

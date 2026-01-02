@@ -1,8 +1,9 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 
-const title = "VTC ou Taxi à l'Aéroport de Nice ? Le Guide Comparatif | ECOFUNDRIVE";
+const title = "VTC ou Taxi à l'Aéroport de Nice ? Le Guide Comparatif 2026 | ECOFUNDRIVE";
 const description = "Taxi, VTC, Uber ou bus à l'aéroport de Nice ? Comparatif complet des prix, avantages et inconvénients. Faites le bon choix pour votre transfert.";
 const keywords = [
   'taxi aéroport Nice',
@@ -40,172 +41,602 @@ const keywords = [
     "dateModified": new Date().toISOString().split('T')[0]
   }}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">VTC, Taxi ou Uber à l'Aéroport de Nice ?</h1>
-      <p class="lead text-center mb-xl">
-        Vous atterrissez à Nice Côte d'Azur et vous ne savez pas comment rejoindre votre hôtel ? Ce guide compare toutes les options pour vous aider à choisir intelligemment.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC ou Taxi à Nice ?"
+    subtitle="Le guide comparatif ultime pour choisir le meilleur transport depuis l'aéroport Nice Côte d'Azur."
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.webp"
+    badge="GUIDE COMPARATIF 2026"
+  />
 
-    <!-- COMPARATIF -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Comparatif : Taxi vs VTC vs Uber vs Bus</h2>
-      <div class="overflow-x-auto">
-        <table class="comparison-table" style="width: 100%; border-collapse: collapse;">
-          <thead>
-            <tr style="background: #f9f9f9;">
-              <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #ddd;">Critère</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚕 Taxi</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd; background: #d4af3710;">🚘 VTC Pro</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">📱 Uber/Bolt</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚌 Bus</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Prix centre Nice</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~32€ fixe</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">À partir de 35€</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">15-40€ variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">1,50€</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Prix Monaco</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~95€ fixe</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">À partir de 90€</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">50-120€ variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">22€ (2 bus)</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Accueil en zone arrivée</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ File d'attente</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Avec pancarte nominative</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Point de RDV fixe</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Arrêt de bus</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Aide aux bagages</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Toujours inclus</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ DIY</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Véhicule garanti</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Standard</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Premium</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Aléatoire</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Bus</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Suivi du vol</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Non</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Gratuit</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Non</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Non</td>
-            </tr>
-          </tbody>
-        </table>
+  <main class="page-content">
+    
+    <!-- INTRO -->
+    <section class="container py-xl fade-in-section">
+      <div class="intro-box">
+        <p class="lead text-center">
+          Vous atterrissez à <strong>Nice Côte d'Azur</strong> et vous ne savez pas quel transport choisir ? Ce guide compare objectivement toutes les options pour vous aider à faire le <strong>bon choix selon votre situation</strong>.
+        </p>
       </div>
     </section>
 
-    <!-- TAXI -->
+    <!-- COMPARATIF -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Comparatif Complet</h2>
+      <div class="comparison-grid">
+        <!-- HEADER -->
+        <div class="comp-header"></div>
+        <div class="comp-header">🚕 Taxi</div>
+        <div class="comp-header featured">🚘 VTC Pro</div>
+        <div class="comp-header">📱 Uber/Bolt</div>
+        <div class="comp-header">🚌 Bus/Tram</div>
+        
+        <!-- Prix Nice -->
+        <div class="comp-row-label">Prix → Nice Centre</div>
+        <div class="comp-cell">~32€ fixe</div>
+        <div class="comp-cell featured">~35€ fixe</div>
+        <div class="comp-cell warning">15-60€ variable</div>
+        <div class="comp-cell good">1,50€</div>
+        
+        <!-- Prix Monaco -->
+        <div class="comp-row-label">Prix → Monaco</div>
+        <div class="comp-cell">~95€ fixe</div>
+        <div class="comp-cell featured">~80€ fixe</div>
+        <div class="comp-cell warning">50-150€ variable</div>
+        <div class="comp-cell">22€ (2 bus)</div>
+        
+        <!-- Accueil -->
+        <div class="comp-row-label">Accueil en arrivée</div>
+        <div class="comp-cell bad">❌ File d'attente</div>
+        <div class="comp-cell featured good">✅ Pancarte nominative</div>
+        <div class="comp-cell bad">❌ Point de RDV fixe</div>
+        <div class="comp-cell bad">❌ Arrêt de bus</div>
+        
+        <!-- Bagages -->
+        <div class="comp-row-label">Aide bagages</div>
+        <div class="comp-cell">⚪ Variable</div>
+        <div class="comp-cell featured good">✅ Toujours inclus</div>
+        <div class="comp-cell">⚪ Variable</div>
+        <div class="comp-cell bad">❌ DIY</div>
+        
+        <!-- Véhicule -->
+        <div class="comp-row-label">Qualité véhicule</div>
+        <div class="comp-cell">⚪ Standard</div>
+        <div class="comp-cell featured good">✅ Premium garanti</div>
+        <div class="comp-cell warning">⚠️ Aléatoire</div>
+        <div class="comp-cell">⚪ Bus</div>
+        
+        <!-- Suivi vol -->
+        <div class="comp-row-label">Suivi de vol</div>
+        <div class="comp-cell bad">❌ Non</div>
+        <div class="comp-cell featured good">✅ Gratuit</div>
+        <div class="comp-cell bad">❌ Non</div>
+        <div class="comp-cell bad">❌ Non</div>
+        
+        <!-- Siège bébé -->
+        <div class="comp-row-label">Siège bébé</div>
+        <div class="comp-cell bad">❌ Jamais</div>
+        <div class="comp-cell featured good">✅ Gratuit sur demande</div>
+        <div class="comp-cell bad">❌ Jamais</div>
+        <div class="comp-cell bad">❌ Jamais</div>
+        
+        <!-- Facture -->
+        <div class="comp-row-label">Facture entreprise</div>
+        <div class="comp-cell">✅ Oui</div>
+        <div class="comp-cell featured good">✅ Oui</div>
+        <div class="comp-cell">✅ Oui</div>
+        <div class="comp-cell">⚪ Ticket</div>
+      </div>
+    </section>
+
+    <!-- DÉTAILS PAR OPTION -->
     <SectionImageText
       title="🚕 Le Taxi : L'Option Officielle"
       image="/assets/img/hero/hero-aeroport-nice.webp"
       alt="Taxi aéroport Nice"
       imageSide="left"
-      ctaText="Comparer avec VTC"
+      ctaText="Voir l'alternative VTC"
       ctaLink="#vtc-section"
     >
-      <p>
-        <strong>Avantages :</strong> Tarifs officiels fixés par la préfecture. Stations directement aux terminaux. Pas besoin de réserver.
-      </p>
-      <p>
-        <strong>Inconvénients :</strong> Files d'attente en haute saison (parfois 20-30 min). Véhicule standard. Pas d'accueil personnalisé. Qualité de service variable.
-      </p>
-      <p>
-        <strong>Tarifs officiels 2025 :</strong> Nice centre ~32€, Monaco ~95€, Cannes ~78€, Saint-Tropez ~200€+ (tarif horaire au-delà de 50km).
-      </p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Avantages</h4>
+          <ul>
+            <li>Tarifs officiels fixés par la préfecture</li>
+            <li>Stations directement aux terminaux</li>
+            <li>Pas besoin de réserver</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Inconvénients</h4>
+          <ul>
+            <li>Files d'attente (20-30 min en été)</li>
+            <li>Véhicule standard</li>
+            <li>Pas d'accueil personnalisé</li>
+            <li>Qualité de service variable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="price-info">
+        <strong>Tarifs officiels 2026 :</strong> Nice centre ~32€ • Monaco ~95€ • Cannes ~78€
+      </div>
     </SectionImageText>
 
     <!-- VTC -->
     <section id="vtc-section">
       <SectionImageText
-        title="🚘 Le VTC Professionnel : L'Expérience Premium"
+        title="🚘 Le VTC : L'Expérience Premium"
         image="/assets/img/about/chauffeur-professionnel.webp"
         alt="Chauffeur VTC Nice"
         imageSide="right"
         ctaText="Réserver un VTC"
         ctaLink="/reservation"
       >
-        <p>
-          <strong>Avantages :</strong> Accueil en zone d'arrivée avec pancarte nominative. Véhicules haut de gamme (Mercedes, Tesla). Suivi de vol inclus. Chauffeur professionnel formé.
-        </p>
-        <p>
-          <strong>Inconvénients :</strong> Réservation nécessaire à l'avance. Parfois légèrement plus cher que le taxi (mais pas toujours !).
-        </p>
-        <p>
-          <strong>Idéal pour :</strong> Voyageurs premium, familles avec enfants (sièges bébé gratuits), voyages d'affaires, personnes avec beaucoup de bagages.
-        </p>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>✅ Avantages</h4>
+            <ul>
+              <li><strong>Accueil en zone d'arrivée</strong> avec pancarte</li>
+              <li>Véhicules haut de gamme (Mercedes, Tesla)</li>
+              <li>Suivi de vol en temps réel inclus</li>
+              <li>Chauffeur professionnel formé</li>
+              <li>Sièges bébé gratuits sur demande</li>
+              <li>Prix fixe garanti</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>⚠️ Points d'attention</h4>
+            <ul>
+              <li>Réservation nécessaire à l'avance</li>
+              <li>Légèrement plus cher pour Nice centre</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ideal-for">
+          <strong>Idéal pour :</strong> Voyageurs premium • Familles avec enfants • Business travelers • Groupes
+        </div>
       </SectionImageText>
     </section>
 
     <!-- UBER -->
     <SectionImageText
-      title="📱 Uber/Bolt : Le Piège des Économies"
+      title="📱 Uber/Bolt : Le Piège du Surge Pricing"
       image="/assets/img/services/service-business.webp"
       alt="Application VTC Nice"
       imageSide="left"
       ctaText="Éviter les surprises"
       ctaLink="/reservation"
     >
-      <p>
-        <strong>Avantages :</strong> Application familière. Prix parfois attractifs en heures creuses.
-      </p>
-      <p>
-        <strong>Inconvénients :</strong> <strong>Tarification dynamique !</strong> En juillet-août ou lors d'un retard de vol, les prix peuvent tripler (120€ pour Monaco au lieu de 40€). Pas d'accueil en zone arrivée. Véhicule aléatoire (parfois une Clio).
-      </p>
-      <p>
-        <strong>Notre conseil :</strong> Vérifiez le prix sur l'app AVANT d'atterrir. Si c'est en surge pricing, vous auriez dû réserver un VTC à prix fixe.
-      </p>
+      <div class="warning-box">
+        <span class="warning-icon">⚠️</span>
+        <div>
+          <strong>Attention au surge pricing !</strong>
+          <p>En juillet-août ou lors d'un retard de vol, les prix peuvent <strong>tripler</strong> : 120€ pour Monaco au lieu de 40€ !</p>
+        </div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Avantages</h4>
+          <ul>
+            <li>Application familière</li>
+            <li>Prix parfois attractifs en heures creuses</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Inconvénients</h4>
+          <ul>
+            <li><strong>Tarification dynamique imprévisible</strong></li>
+            <li>Pas d'accueil en zone arrivée</li>
+            <li>Véhicule aléatoire (parfois une Clio)</li>
+            <li>Annulations fréquentes</li>
+          </ul>
+        </div>
+      </div>
     </SectionImageText>
 
-    <!-- LE VERDICT -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Notre Verdict : Quel Choix pour Vous ?</h2>
-      <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🎒 Routard Solo</h3>
-          <p><strong>Bus → 1,50€</strong>. Le tram 2 vous dépose en centre-ville en 30 min. Économique mais pas de confort bagages.</p>
+    <!-- VERDICT -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Notre Verdict : Quel Choix pour Vous ?</h2>
+      <div class="verdict-grid">
+        <div class="verdict-card">
+          <span class="verdict-icon">🎒</span>
+          <h3>Routard Solo</h3>
+          <p class="verdict-choice">→ Bus/Tram (1,50€)</p>
+          <p>Le tram 2 vous dépose en centre-ville en 30 min. Économique mais pas de confort bagages.</p>
         </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">👨‍👩‍👧‍👦 Famille avec Enfants</h3>
-          <p><strong>VTC Premium</strong>. Sièges bébé gratuits, aide aux bagages, véhicule spacieux. Arrivée sans stress.</p>
-          <a href="/reservation" class="card-link">Réserver →</a>
+        <div class="verdict-card featured">
+          <span class="verdict-badge">Recommandé</span>
+          <span class="verdict-icon">👨‍👩‍👧‍👦</span>
+          <h3>Famille avec Enfants</h3>
+          <p class="verdict-choice">→ VTC Premium</p>
+          <p>Sièges bébé gratuits, aide aux bagages, véhicule spacieux. Arrivée sans stress.</p>
+          <a href="/reservation" class="btn-gold-small">Réserver →</a>
         </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">💼 Business Traveler</h3>
-          <p><strong>VTC Premium</strong>. Accueil VIP, début du voyage productif (Wi-Fi, calme), facture pour note de frais.</p>
-          <a href="/reservation" class="card-link">Réserver →</a>
+        <div class="verdict-card featured">
+          <span class="verdict-badge">Recommandé</span>
+          <span class="verdict-icon">💼</span>
+          <h3>Business Traveler</h3>
+          <p class="verdict-choice">→ VTC Premium</p>
+          <p>Accueil VIP, voyage productif (Wi-Fi, calme), facture pour note de frais.</p>
+          <a href="/reservation" class="btn-gold-small">Réserver →</a>
+        </div>
+        <div class="verdict-card">
+          <span class="verdict-icon">🎉</span>
+          <h3>Groupe d'Amis</h3>
+          <p class="verdict-choice">→ VTC Van (7-8 places)</p>
+          <p>Plus économique par personne qu'un taxi ! Bagages faciles, arrivée groupée.</p>
+          <a href="/reservation" class="btn-gold-small">Demander un devis →</a>
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Évitez les Surprises : Réservez un VTC à Prix Fixe</h2>
-        <p class="lead mb-4">
-          Connaissez le prix avant de voyager. C'est le début d'un séjour réussi sur la Côte d'Azur.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/reservation" class="btn btn-primary">Réserver mon Transfert</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Évitez les Surprises : Réservez à Prix Fixe</h2>
+        <p>Connaissez le prix avant de voyager. C'est le début d'un séjour réussi sur la Côte d'Azur.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Transfert</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
         </div>
       </div>
     </section>
 
+    <!-- RELATED -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Guides Connexes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/transfert-nice-aeroport-monaco" class="text-dark hover-gold">Nice→Monaco</a>
+        <a href="/guide-choisir-vtc-cote-azur" class="text-dark hover-gold">Choisir son VTC</a>
+        <a href="/en/guide-nice-airport-taxi-or-private-driver" class="text-dark hover-gold">English Version</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
+
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .intro-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 16px;
+    border-left: 4px solid #d4af37;
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+  }
+  
+  /* COMPARISON GRID */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 1px;
+    background: #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 900px) {
+    .comparison-grid {
+      display: block;
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    .comp-header, .comp-row-label, .comp-cell {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    
+    .comp-header {
+      display: none;
+    }
+    
+    .comp-row-label {
+      background: #1a1a1a !important;
+      color: white !important;
+      font-weight: 700;
+      border-radius: 8px 8px 0 0;
+      margin-top: 1rem;
+    }
+    
+    .comp-cell {
+      border-radius: 0;
+      padding: 0.75rem 1rem !important;
+    }
+    
+    .comp-cell::before {
+      content: attr(data-label);
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+  }
+  
+  .comp-header {
+    background: #f9f9f9;
+    padding: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .comp-header.featured {
+    background: rgba(212, 175, 55, 0.2);
+    color: #8b7b2a;
+  }
+  
+  .comp-row-label {
+    background: #fff;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: left;
+    color: #1a1a1a;
+  }
+  
+  .comp-cell {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .comp-cell.featured {
+    background: rgba(212, 175, 55, 0.1);
+  }
+  
+  .comp-cell.good {
+    color: #2e7d32;
+  }
+  
+  .comp-cell.bad {
+    color: #c62828;
+  }
+  
+  .comp-cell.warning {
+    color: #e65100;
+    font-weight: 600;
+  }
+  
+  /* PROS CONS */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  @media (max-width: 600px) {
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .pros h4 {
+    color: #2e7d32;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cons h4 {
+    color: #c62828;
+    margin-bottom: 0.75rem;
+  }
+  
+  .pros-cons ul {
+    padding-left: 1rem;
+    margin: 0;
+  }
+  
+  .pros-cons li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .price-info, .ideal-for {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .warning-box {
+    display: flex;
+    gap: 1rem;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .warning-icon {
+    font-size: 2rem;
+  }
+  
+  .warning-box p {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+  }
+  
+  /* VERDICT GRID */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .verdict-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .verdict-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .verdict-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+    position: relative;
+  }
+  
+  .verdict-card.featured {
+    border: 2px solid #d4af37;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, white 100%);
+  }
+  
+  .verdict-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .verdict-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .verdict-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+  
+  .verdict-choice {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .verdict-card p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .btn-gold-small {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold-small:hover {
+    background: #b8941f;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

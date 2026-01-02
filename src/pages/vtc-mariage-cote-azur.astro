@@ -1,51 +1,124 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Vtc Mariage Cote Azur | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "VTC Mariage Côte d'Azur – Chauffeur Privé & Voiture de Luxe | ECOFUNDRIVE";
+const description = "Service de voiture avec chauffeur pour mariage sur la Côte d'Azur. Berlines de luxe décorées, navettes invités, chauffeur en costume. Nice, Cannes, Monaco.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC, Mariage',
+  'voiture mariage avec chauffeur',
+  'VTC mariage Côte d\'Azur',
+  'navette mariage invités',
+  'chauffeur cérémonie'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="vtc-mariage-cote-azur"
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-mariage-cote-azur"
   canonical="/vtc-mariage-cote-azur"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "VTC Mariage Côte d'Azur", url: "/vtc-mariage-cote-azur" }
+  ]}
+>
+  <PageHero 
+    title="VTC Mariage Côte d'Azur"
+    subtitle="Une voiture d'exception pour le plus beau jour de votre vie. Service sur-mesure pour mariés et invités."
+    backgroundImage="/assets/img/hero/hero-mariage.webp"
+    badge="MARIAGE • CÉRÉMONIE • NAVETTE"
+  />
+
+  <main id="main-content" class="page-content">
+    
+    <SectionImageText
+      title="L'Excellence pour votre Jour J"
+      image="/assets/img/hero/hero-mariage.webp"
+      alt="Voiture mariage VTC"
+      imageSide="right"
+      ctaText="Devis Mariage Gratuit"
+      ctaLink="/contact"
+    >
+      <p class="fade-in-section">
+        Parce que chaque détail compte, ECOFUNDRIVE vous propose un service de <strong>chauffeur privé pour mariage</strong> à la hauteur de l'événement. De l'arrivée spectaculaire des mariés à la mairie jusqu'au transport sécurisé de vos invités en fin de soirée.
+      </p>
+      <p class="fade-in-section">
+        Nos chauffeurs, élégants et discrets (costume, cravate), conduisent des véhicules premium immaculés (Mercedes Classe V ou Berline de luxe). Décoration florale possible sur demande.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">💍 Voiture Mariés</span>
+        <span class="distance-badge">🚌 Navettes Invités</span>
+        <span class="distance-badge">🌙 Retour Soirée</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Formules Mariage</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">👰</span><h3>Voiture des Mariés</h3><p>Berline de luxe avec chauffeur en tenue de cérémonie.</p></div>
+          <div class="service-card"><span class="service-icon">🚌</span><h3>Navettes Invités</h3><p>Vans Mercedes pour acheminer vos proches (église, mairie, domaine).</p></div>
+          <div class="service-card"><span class="service-icon">🌙</span><h3>Retour Sécurisé</h3><p>Raccompagnement des invités après la fête (service de nuit).</p></div>
+          <div class="service-card"><span class="service-icon">💐</span><h3>Décoration</h3><p>Option décoration florale du véhicule selon votre thème.</p></div>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/reservation">reservation</a> | <a href="/contact">contact</a></p>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Lieux de Réception Prestige</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/destinations/cannes-palais-festivals.png" alt="Château de la Napoule" title="🏰 Châteaux" description="Nous desservons les plus beaux domaines : Château de la Napoule, Château de Crémat..." link="/contact" />
+        <CategoryCard image="/assets/img/destinations/destination-st-tropez.webp" alt="Domaines Viticoles" title="🍇 Domaines" description="Transport vers les domaines viticoles du Var et de l'arrière-pays niçois." link="/contact" />
+        <CategoryCard image="/assets/img/destinations/destination-monaco.png" alt="Hôtels de Luxe" title="🏨 Palaces" description="Arrivée remarquée devant les palaces de la Croisette ou de Monaco." link="/contact" />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Obtenir un Devis Mariage</h2>
+        <p>Décrivez-nous votre programme, nous nous occupons de la logistique transport.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-gold">Demander un Devis</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Inspirations</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">Mariage à Cannes</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">Mariage à Nice</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">Mariage à Monaco</a>
+        <a href="/vtc-saint-tropez" class="text-dark hover-gold">Mariage St-Tropez</a>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

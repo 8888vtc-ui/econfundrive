@@ -1,49 +1,18 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Villeneuve-Loubet – Chauffeur Privé Marina & Plages | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Villeneuve-Loubet. Marina Baie des Anges, plages, Marineland, Fondation Escoffier. Entre Nice et Cannes. Transferts aéroport. Service premium 24h/24.";
+const description = "Chauffeur privé VTC à Villeneuve-Loubet. Marina Baie des Anges, plages, Marineland, Fondation Escoffier. Entre Nice et Cannes. Service premium 24h/24.";
 const keywords = [
   'VTC Villeneuve-Loubet',
   'chauffeur privé Villeneuve-Loubet',
   'VTC Marina Baie des Anges',
   'transfert Marineland',
-  'VTC plages Villeneuve-Loubet',
-  'chauffeur aéroport Nice Villeneuve'
+  'VTC plages Villeneuve-Loubet'
 ];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Où se situe Villeneuve-Loubet par rapport à l'aéroport de Nice ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Villeneuve-Loubet est située à seulement 15 km de l'aéroport de Nice, soit 15-25 minutes en VTC selon le trafic. C'est l'une des communes les plus accessibles depuis l'aéroport."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Proposez-vous des transferts vers Marineland ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, Marineland est situé sur le territoire de Villeneuve-Loubet/Biot. Nous proposons des transferts aller-retour avec possibilité d'attente ou de reprise à l'heure convenue."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "La Marina Baie des Anges est-elle desservie ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolument ! La Marina Baie des Anges, avec son architecture emblématique, est l'un de nos points de prise en charge réguliers. Nous desservons toutes les résidences de la Marina."
-      }
-    }
-  ]
-};
 ---
 
 <BaseLayout 
@@ -51,105 +20,72 @@ const faqSchema = {
   description={description}
   currentPage="vtc-villeneuve-loubet"
   canonical="/vtc-villeneuve-loubet"
-  schema={faqSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Villeneuve-Loubet", url: "/vtc-villeneuve-loubet" }
   ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Proposez-vous des transferts Marineland ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers Marineland, Aquasplash et tous les parcs de la zone."}},{"@type":"Question","name":"Desservez-vous la Marina ?","acceptedAnswer":{"@type":"Answer","text":"Absolument, nous effectuons des prises en charge dans toutes les résidences de la Marina Baie des Anges."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Villeneuve-Loubet – Votre Chauffeur Privé</h1>
-      <p class="lead text-center mb-xl">
-        Service de chauffeur privé premium à Villeneuve-Loubet. Marina Baie des Anges, plages, Marineland, gastronomie. 
-        Transferts aéroport Nice et toutes destinations Côte d'Azur.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC Villeneuve-Loubet"
+    subtitle="Entre mer et parc naturel. Marina Baie des Anges, plages et Musée Escoffier de l'Art Culinaire."
+    backgroundImage="/assets/img/destinations/destination-nice.png"
+    badge="MARINA • MARINELAND • ESCOFFIER"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <SectionImageText
+      title="Architecture & Gastronomie"
+      image="/assets/img/services/service-business.webp"
+      alt="VTC Villeneuve-Loubet"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Villeneuve-Loubet</strong> est célèbre pour son architecture audacieuse, la <strong>Marina Baie des Anges</strong>, et pour le <strong>Musée Escoffier</strong>, dédié au roi des cuisiniers né dans le village.
+      </p>
+      <p class="fade-in-section">
+        Idéalement située entre Nice et Antibes, la ville offre aussi de vastes parcs naturels et plages de galets. ECOFUNDRIVE vous accompagne pour tous vos déplacements.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Aéroport : 15 min</span>
+        <span class="distance-badge">📍 Antibes : 10 min</span>
+        <span class="distance-badge">📍 Nice : 20 min</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Services Villeneuve</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">⛵</span><h3>Marina</h3><p>Prise en charge au pied des célèbres pyramides de la Marina.</p></div>
+          <div class="service-card"><span class="service-icon">🐬</span><h3>Marineland</h3><p>Navettes pour le parc marin situé à la limite de Biot.</p></div>
+          <div class="service-card"><span class="service-icon">👨‍🍳</span><h3>Musée Escoffier</h3><p>Visite de la maison natale d'Auguste Escoffier.</p></div>
+          <div class="service-card"><span class="service-icon">🌳</span><h3>Parc Vaugrenier</h3><p>Accès au grand parc départemental naturel.</p></div>
+        </div>
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Villeneuve-Loubet</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Villeneuve</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
-          alt="Marina Baie des Anges"
-          title="Marina Baie des Anges"
-          description="Architecture emblématique en forme de vagues surplombant la Méditerranée. Appartements, restaurants et promenade de bord de mer."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Marineland Villeneuve-Loubet"
-          title="Marineland & Parcs"
-          description="Le plus grand parc marin d'Europe est à quelques minutes. Aquasplash, Kid's Island et Adventure Golf complètent l'offre familiale."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-evenements.webp"
-          alt="Musée Escoffier"
-          title="Musée Escoffier"
-          description="Musée de l'Art Culinaire dans la maison natale du célèbre chef. 2000 objets retraçant l'histoire de la gastronomie française."
-          link="/reservation"
-        />
+        <CategoryCard image="/assets/img/destinations/destination-nice.png" alt="Marina Baie des Anges" title="⛵ Marina Baie des Anges" description="Architecture iconique classée Patrimoine du XXe siècle. Port et restaurants." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Musée Escoffier" title="👨‍🍳 Musée Escoffier" description="Temple de l'art culinaire français. Une visite savoureuse au village." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-mise-disposition.webp" alt="Plages" title="🏖️ Plages Naturelles" description="4 km de littoral préservé. Idéal pour la promenade et la baignade." link="/reservation" />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Pourquoi Choisir ECOFUNDRIVE à Villeneuve-Loubet ?</h2>
-      <div class="grid-2-cols">
-        <div class="feature-card">
-          <h3>🎯 Position Centrale</h3>
-          <p>Villeneuve-Loubet est idéalement située entre Nice et Cannes, à 15 minutes de l'aéroport et 10 minutes de Sophia Antipolis. Notre service VTC vous connecte à toute la Côte d'Azur.</p>
-        </div>
-        <div class="feature-card">
-          <h3>👨‍👩‍👧‍👦 Service Famille</h3>
-          <p>Transferts vers Marineland avec sièges enfants gratuits. Nous nous adaptons aux horaires des familles et proposons des formules flexibles.</p>
-        </div>
-        <div class="feature-card">
-          <h3>💼 Business Sophia</h3>
-          <p>Nombreux cadres résidant à Villeneuve-Loubet travaillent à Sophia Antipolis. Nous proposons des formules régulières et comptes entreprise.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🌅 Marina & Plages</h3>
-          <p>Prise en charge directe à la Marina Baie des Anges. Accès aux plages et restaurants de bord de mer pour vos soirées d'été.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Où se situe Villeneuve-Loubet par rapport à l'aéroport de Nice ?</h3>
-          <div class="faq-answer">
-            <p>Villeneuve-Loubet est située à seulement <strong>15 km de l'aéroport de Nice</strong>, soit 15-25 minutes en VTC selon le trafic. C'est l'une des communes les plus accessibles depuis l'aéroport, idéale pour les voyageurs fréquents.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des transferts vers Marineland ?</h3>
-          <div class="faq-answer">
-            <p>Oui, <strong>Marineland</strong> est situé sur le territoire de Villeneuve-Loubet/Biot. Nous proposons des transferts aller-retour avec possibilité d'attente durant votre visite ou de reprise à l'heure convenue. Sièges enfants disponibles gratuitement.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">La Marina Baie des Anges est-elle desservie ?</h3>
-          <div class="faq-answer">
-            <p>Absolument ! La <strong>Marina Baie des Anges</strong>, avec son architecture emblématique en forme de vagues, est l'un de nos points de prise en charge réguliers. Nous desservons toutes les résidences de la Marina (Amiral, Ducal, Baronnet, Commodore).</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des trajets réguliers vers Sophia Antipolis ?</h3>
-          <div class="faq-answer">
-            <p>Oui, de nombreux professionnels résidant à Villeneuve-Loubet travaillent à <strong>Sophia Antipolis</strong>. Nous proposons des formules de navettes régulières et des comptes entreprise pour vos déplacements quotidiens.</p>
-          </div>
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Villeneuve-Loubet</h2>
+        <p>Marina, village ou bord de mer. Un chauffeur privé pour tous vos trajets.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -157,23 +93,33 @@ const faqSchema = {
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
-        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
         <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes</a>
-        <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia</a>
-        <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
         <a href="/vtc-saint-laurent-du-var" class="text-dark hover-gold">VTC St-Laurent</a>
-        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .feature-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
-  .feature-card h3 { margin-bottom: 0.5rem; }
-  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

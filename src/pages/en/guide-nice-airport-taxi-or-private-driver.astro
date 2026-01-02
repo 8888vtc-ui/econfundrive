@@ -1,9 +1,11 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Nice Airport: Taxi vs Private Driver Comparison | ECOFUNDRIVE";
-const description = "Should you take a taxi, Uber, VTC or bus from Nice Airport? Complete comparison of prices, pros, cons. Make the right choice for your transfer.";
+const title = "Nice Airport: Taxi, Uber or Private Driver? 2025 Guide | ECOFUNDRIVE";
+const description = "Complete comparison for your transfer from Nice Airport (NCE). Taxi, Uber, Bus or Private Driver (VTC)? Prices, pros, cons and best choice for 2025.";
 const keywords = [
   'Nice airport taxi',
   'Nice airport private driver',
@@ -31,182 +33,101 @@ const keywords = [
     "headline": title,
     "description": description,
     "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
   }}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Nice Airport: Taxi, VTC, Uber or Bus?</h1>
-      <p class="lead text-center mb-xl">
-        You've just landed at Nice Côte d'Azur Airport and need to reach your hotel. This guide compares every option to help you make the smart choice.
-      </p>
-    </div>
+  <PageHero 
+    title="Nice Airport Transfer Guide"
+    subtitle="Taxi, Uber, Bus or Private Driver? We compare every option to help you start your Riviera trip stress-free."
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.webp"
+    badge="2025 GUIDE • PRICES • TIPS"
+  />
 
-    <!-- COMPARISON TABLE -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">At-a-Glance Comparison</h2>
-      <div class="overflow-x-auto">
-        <table style="width: 100%; border-collapse: collapse;">
-          <thead>
-            <tr style="background: #f9f9f9;">
-              <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #ddd;">Criteria</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚕 Taxi</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd; background: #d4af3710;">🚘 VTC Pro</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">📱 Uber/Bolt</th>
-              <th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd;">🚌 Bus/Tram</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Nice Center</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~€32 fixed</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">From €35</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€15-40 variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€1.50</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Monaco</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">~€95 fixed</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">From €90</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€50-120 variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">€22 (2 buses)</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Arrivals Meet & Greet</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Queue outside</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ With name sign</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Pickup point</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Bus stop</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Luggage Help</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Always included</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Variable</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ DIY</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Vehicle Quality</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Standard</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Premium</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ Random</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">⚪ Bus</td>
-            </tr>
-            <tr>
-              <td style="padding: 1rem; border-bottom: 1px solid #eee;"><strong>Flight Tracking</strong></td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; background: #d4af3710;">✅ Free</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
-              <td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">❌ No</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- TAXI -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="🚕 Taxi: The Official Option"
+      title="The Airport Dilemma"
       image="/assets/img/hero/hero-aeroport-nice.webp"
-      alt="Nice Airport Taxi"
-      imageSide="left"
-      ctaText="Compare with VTC"
-      ctaLink="#vtc-section"
-    >
-      <p>
-        <strong>Pros:</strong> Fixed prices set by prefecture. Taxi ranks right at the terminals. No booking needed.
-      </p>
-      <p>
-        <strong>Cons:</strong> Long queues in high season (sometimes 20-30 min wait). Standard vehicles. No personalized welcome. Service quality varies.
-      </p>
-      <p>
-        <strong>2025 Official Prices:</strong> Nice center ~€32, Monaco ~€95, Cannes ~€78, Saint-Tropez from €200 (hourly rate beyond 50km).
-      </p>
-    </SectionImageText>
-
-    <!-- VTC -->
-    <section id="vtc-section">
-      <SectionImageText
-        title="🚘 Professional VTC: The Premium Experience"
-        image="/assets/img/about/chauffeur-professionnel.webp"
-        alt="VTC Chauffeur Nice"
-        imageSide="right"
-        ctaText="Book a VTC"
-        ctaLink="/en/booking"
-      >
-        <p>
-          <strong>Pros:</strong> Meet & greet in arrivals hall with name sign. Premium vehicles (Mercedes, Tesla). Free flight tracking. Trained professional chauffeur.
-        </p>
-        <p>
-          <strong>Cons:</strong> Requires advance booking. Sometimes slightly more than taxi (but not always!).
-        </p>
-        <p>
-          <strong>Ideal for:</strong> Premium travelers, families with children (free baby seats), business trips, passengers with lots of luggage.
-        </p>
-      </SectionImageText>
-    </section>
-
-    <!-- UBER -->
-    <SectionImageText
-      title="📱 Uber/Bolt: The Gamble"
-      image="/assets/img/services/service-business.webp"
-      alt="Uber Nice Airport"
-      imageSide="left"
-      ctaText="Avoid Surprises"
+      alt="Nice Airport Arrivals"
+      imageSide="right"
+      ctaText="Check VTC Prices"
       ctaLink="/en/booking"
     >
-      <p>
-        <strong>Pros:</strong> Familiar app. Sometimes attractive prices in off-peak hours.
+      <p class="fade-in-section">
+        Landing at <strong>Nice Côte d'Azur (NCE)</strong> is just the beginning. The real challenge is reaching your hotel in Nice, Cannes, or Monaco smoothly.
       </p>
-      <p>
-        <strong>Cons:</strong> <strong>Surge pricing!</strong> In July-August or during flight delays, prices can triple (€120 for Monaco instead of €40). No arrivals meet & greet. Random vehicle quality (sometimes a Renault Clio).
+      <p class="fade-in-section">
+        You have 4 main options: the <strong>Official Taxi</strong> queue, app-based <strong>Uber/Bolt</strong>, the public <strong>Tram/Bus</strong>, or a pre-booked <strong>Private Driver (VTC)</strong>. Each has its pros and cons depending on your budget and needs.
       </p>
-      <p>
-        <strong>Our advice:</strong> Check the app price BEFORE you land. If it's surging, you should have booked a fixed-price VTC.
-      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🚕 Taxi: Fixed Price</span>
+        <span class="distance-badge">📱 Uber: Variable</span>
+        <span class="distance-badge">🤵 VTC: Premium</span>
+      </div>
     </SectionImageText>
 
-    <!-- VERDICT -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Our Verdict: Which One for You?</h2>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">At-a-Glance Comparison</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🚕</span><h3>Taxi</h3><p><strong>Pros:</strong> No booking needed.<br><strong>Cons:</strong> Long queues, standard cars, no meet & greet.</p></div>
+          <div class="service-card"><span class="service-icon">📱</span><h3>Uber</h3><p><strong>Pros:</strong> App convenience.<br><strong>Cons:</strong> <strong>Surge pricing</strong>, erratic quality, no airport pickup at gate.</p></div>
+          <div class="service-card"><span class="service-icon">🤵</span><h3>VTC Pro</h3><p><strong>Pros:</strong> Fixed price, name board at gate, luxury car.<br><strong>Cons:</strong> Must book in advance.</p></div>
+          <div class="service-card"><span class="service-icon">🚌</span><h3>Tram</h3><p><strong>Pros:</strong> Cheap (€1.50).<br><strong>Cons:</strong> Crowded, slow, DIY luggage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Why Choose a Private Driver?</h2>
       <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🎒 Solo Backpacker</h3>
-          <p><strong>Bus/Tram → €1.50</strong>. Tram line 2 gets you to city center in 30 min. Cheap but no luggage comfort.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">👨‍👩‍👧‍👦 Family with Kids</h3>
-          <p><strong>Premium VTC</strong>. Free child seats, luggage help, spacious vehicle. Stress-free arrival.</p>
-          <a href="/en/booking" class="card-link">Book Now →</a>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">💼 Business Traveler</h3>
-          <p><strong>Premium VTC</strong>. VIP welcome, productive start to your trip (Wi-Fi, quiet), invoice for expenses.</p>
-          <a href="/en/booking" class="card-link">Book Now →</a>
+        <CategoryCard image="/assets/img/services/service-aeroport.webp" alt="Meet and Greet" title="👋 Meet & Greet" description="Don't look for your driver. We wait for you at the arrivals gate with a name sign. Even if your flight is late." link="/en/booking" />
+        <CategoryCard image="/assets/img/about/vehicule-premium.webp" alt="Premium Comfort" title="✨ Premium Comfort" description="Travel in a pristine Mercedes E-Class or V-Class Van. Water, chargers, and Wi-Fi on board." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Fixed Price" title="💎 Fixed Price" description="Know the cost before you fly. No meter anxiety, no surge pricing, no hidden fees." link="/en/booking" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Start Your Trip with Excellence</h2>
+        <p>Book your professional driver for the price of a standard taxi.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book Transfer</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp Quote</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Avoid Surprises: Book a Fixed-Price VTC</h2>
-        <p class="lead mb-4">
-          Know the price before you travel. That's how a great Riviera trip starts.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/en/booking" class="btn btn-primary">Book My Transfer</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Quote</a>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Popular Transfers</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/nice-airport-to-cannes-transfer" class="text-dark hover-gold">Nice to Cannes</a>
+        <a href="/en/nice-airport-to-monaco-transfer" class="text-dark hover-gold">Nice to Monaco</a>
+        <a href="/en/nice-airport-to-saint-tropez-transfer" class="text-dark hover-gold">Nice to St-Tropez</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice City</a>
       </div>
     </section>
-
   </main>
 </BaseLayout>
+
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

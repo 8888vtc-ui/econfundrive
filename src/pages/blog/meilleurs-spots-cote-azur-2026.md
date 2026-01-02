@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: "Les meilleurs spots de la Côte d'Azur à découvrir en 2025"
+title: "Les meilleurs spots de la Côte d'Azur à découvrir en 2026"
 excerpt: "Notre sélection des lieux incontournables de la French Riviera : plages secrètes, villages perchés et restaurants étoilés."
-date: "2025-01-02"
+date: "2026-01-02"
 category: "Destinations"
 image: "/assets/img/destinations/destination-nice.webp"
 author: "David Chemla"
@@ -10,7 +10,7 @@ readingTime: 5
 tags: ["Côte d'Azur", "tourisme", "Nice", "Cannes", "Monaco"]
 ---
 
-La Côte d'Azur est une destination mythique qui attire des millions de visiteurs chaque année. Mais au-delà des spots touristiques classiques, cette région regorge de trésors cachés. Voici notre sélection pour 2025.
+La Côte d'Azur est une destination mythique qui attire des millions de visiteurs chaque année. Mais au-delà des spots touristiques classiques, cette région regorge de trésors cachés. Voici notre sélection pour 2026.
 
 ## Nice : Au-delà de la Promenade des Anglais
 

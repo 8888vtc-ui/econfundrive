@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Villefranche-sur-Mer – Chauffeur Privé Rade & Cocteau | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Villefranche-sur-Mer. Rade légendaire, Chapelle Cocteau, vieille ville colorée. Transferts croisières et excursions. Service premium 24/7.";
+const description = "Chauffeur privé VTC à Villefranche-sur-Mer. Rade légendaire, Chapelle Cocteau, escale croisières. Transferts Monaco, Nice. Service premium 24/7.";
 const keywords = [
   'VTC Villefranche-sur-Mer',
   'chauffeur privé Villefranche',
@@ -18,123 +20,107 @@ const keywords = [
   description={description}
   currentPage="vtc-villefranche-sur-mer"
   canonical="/vtc-villefranche-sur-mer"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Villefranche-sur-Mer", url: "/vtc-villefranche-sur-mer" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Villefranche est-elle une escale de croisière ?","acceptedAnswer":{"@type":"Answer","text":"Oui, la rade de Villefranche est l'une des plus belles du monde et accueille les navires de croisière. Nous assurons les transferts vers Monaco, Nice et les villages de la Côte d'Azur."}},{"@type":"Question","name":"Qu'est-ce que la Chapelle Cocteau ?","acceptedAnswer":{"@type":"Answer","text":"La Chapelle Saint-Pierre, décorée par Jean Cocteau en 1957, est un joyau artistique sur le port. Cocteau y a peint des scènes de la vie de Saint-Pierre et des pêcheurs."}},{"@type":"Question","name":"La rue Obscura existe-t-elle vraiment ?","acceptedAnswer":{"@type":"Answer","text":"Oui, cette rue couverte du XIIIe siècle, longue de 130 mètres, servait d'abri aux pêcheurs. C'est l'une des curiosités les plus fascinantes de Villefranche."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Villefranche est-elle une escale de croisière ?","acceptedAnswer":{"@type":"Answer","text":"Oui, la rade de Villefranche accueille les navires de croisière. Nous assurons les transferts vers Monaco, Nice et les villages."}},{"@type":"Question","name":"Qu'est-ce que la Chapelle Cocteau ?","acceptedAnswer":{"@type":"Answer","text":"La Chapelle Saint-Pierre, décorée par Jean Cocteau en 1957, est un joyau artistique sur le port."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Villefranche-sur-Mer"
+    subtitle="La plus belle rade du monde. Chapelle Cocteau, escale croisières, vieille ville colorée aux ruelles médiévales."
+    backgroundImage="/assets/img/destinations/destination-nice.webp"
+    badge="RADE LÉGENDAIRE • CROISIÈRES"
+  />
 
-    <section class="container py-lg fade-in-section">
-      <div class="intro-box">
-        <h2>Votre Chauffeur Privé à Villefranche-sur-Mer</h2>
-        <p class="intro-text">
-          <strong>Villefranche-sur-Mer</strong> possède l'une des plus belles rades du monde, si profonde qu'elle accueille les navires de croisière et même les porte-avions américains. Sa vieille ville aux couleurs ocres et roses, ses ruelles médiévales et sa <strong>Chapelle Cocteau</strong> en font un joyau de la Côte d'Azur.
-        </p>
-        <p class="intro-text">
-          ECOFUNDRIVE est le partenaire idéal des <strong>croisiéristes</strong> débarquant à Villefranche. Nous proposons des excursions vers Monaco, Èze, Nice ou les villages perchés pendant votre escale. Notre connaissance de la Moyenne Corniche garantit des paysages exceptionnels.
-        </p>
-        <div class="distance-info">
-          <span class="distance-icon">📍</span>
-          <span><strong>Distances :</strong> Nice (6 km, 10 min) • Monaco (10 km, 15 min) • Aéroport Nice (12 km, 15 min) • Èze (6 km, 10 min)</span>
-        </div>
+  <main id="main-content" class="page-content">
+    
+    <SectionImageText
+      title="La Perle de la Rade"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="VTC Villefranche rade"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Villefranche-sur-Mer</strong> possède l'une des plus belles rades du monde, si profonde qu'elle accueille navires de croisière et même porte-avions américains. Sa vieille ville aux couleurs ocres et roses, la <strong>Chapelle Cocteau</strong> et la mystérieuse <strong>Rue Obscura</strong> en font un joyau.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE est le partenaire idéal des <strong>croisiéristes</strong> débarquant à Villefranche. Excursions vers Monaco, Èze, Nice ou les villages perchés pendant votre escale.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Nice : 10 min</span>
+        <span class="distance-badge">📍 Monaco : 15 min</span>
+        <span class="distance-badge">📍 Èze : 10 min</span>
       </div>
-    </section>
+    </SectionImageText>
 
-    <section class="container py-lg bg-light rounded-lg fade-in-section">
-      <h2 class="text-center mb-lg">Nos Services VTC à Villefranche</h2>
-      <div class="services-grid-2">
-        <div class="service-item">
-          <h3>🚢 Transferts Croisières</h3>
-          <p>Excursions sur mesure depuis le port : Monaco, Èze, Nice, villages perchés. Retour garanti à l'heure.</p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Nos Services à Villefranche</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-icon">🚢</span>
+            <h3>Transferts Croisières</h3>
+            <p>Excursions sur mesure depuis le port : Monaco, Èze, Nice. Retour garanti à l'heure.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🛤️</span>
+            <h3>Circuit Corniche</h3>
+            <p>Villefranche → Èze → La Turbie → Monaco. Route panoramique par excellence.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🏖️</span>
+            <h3>Navettes Plages</h3>
+            <p>Paloma Beach, Passable et criques secrètes du Cap-Ferrat.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🍽️</span>
+            <h3>Transferts Restaurants</h3>
+            <p>Tables du port et de la Darse. Service aller-retour soirées.</p>
+          </div>
         </div>
-        <div class="service-item">
-          <h3>🛤️ Circuit Moyenne Corniche</h3>
-          <p>Villefranche → Èze → La Turbie → Monaco. La route panoramique par excellence.</p>
-        </div>
-        <div class="service-item">
-          <h3>🏖️ Navettes Plages</h3>
-          <p>Transport vers Paloma Beach, Passable et les criques secrètes du Cap-Ferrat.</p>
-        </div>
-        <div class="service-item">
-          <h3>🍽️ Transferts Restaurants</h3>
-          <p>Les tables du port et de la Darse. Service aller-retour pour vos soirées.</p>
-        </div>
-      </div>
-      <div class="text-center mt-lg">
-        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Villefranche-sur-Mer</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Villefranche</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/hero/hero-ete.webp"
           alt="Rade Villefranche"
-          title="La Rade Légendaire"
-          description="L'une des plus belles et profondes rades du monde. Escale des croisières et de la marine américaine."
-          link="/contact"
+          title="⛵ La Rade Légendaire"
+          description="L'une des plus profondes du monde. Escale des croisières et de la marine américaine."
+          link="/reservation"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Chapelle Cocteau"
-          title="Chapelle Cocteau"
-          description="La Chapelle Saint-Pierre, entièrement décorée par Jean Cocteau en 1957. Un chef-d'œuvre intime."
-          link="/contact"
+          title="🎨 Chapelle Cocteau"
+          description="Chapelle Saint-Pierre, décorée par Jean Cocteau en 1957. Chef-d'œuvre intime."
+          link="/reservation"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-monaco.webp"
-          alt="Vieille ville Villefranche"
-          title="La Rue Obscura"
-          description="Rue couverte médiévale de 130 mètres, témoignage unique du passé de pêcheurs de Villefranche."
-          link="/contact"
+          alt="Rue Obscura"
+          title="🏛️ Rue Obscura"
+          description="Rue couverte médiévale de 130 mètres. Témoignage unique du passé de pêcheurs."
+          link="/reservation"
         />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Comment rejoindre Monaco depuis la croisière ?</h3>
-          <div class="faq-answer">
-            <p>Nous vous récupérons au <strong>port de Villefranche</strong> et vous emmenons à Monaco en <strong>15-20 minutes</strong>. Excursion guidée possible avec visite du Rocher, Casino et Port Hercule.</p>
-          </div>
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Villefranche</h2>
+        <p>Croisière, excursion, plage... Profitez de la perle de la rade avec votre chauffeur privé.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Combien de temps pour visiter Villefranche ?</h3>
-          <div class="faq-answer">
-            <p>Le village se visite en <strong>1-2 heures</strong> : Chapelle Cocteau, rue Obscura, port, citadelle. Idéal en combinaison avec Èze ou Nice.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">La Chapelle Cocteau vaut-elle la visite ?</h3>
-          <div class="faq-answer">
-            <p>Absolument ! Cette petite chapelle de pêcheurs, décorée par <strong>Jean Cocteau</strong>, est un joyau méconnu. Les fresques représentent la vie de Saint-Pierre et des pêcheurs.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Y a-t-il de belles plages à Villefranche ?</h3>
-          <div class="faq-answer">
-            <p>Oui ! La plage de la Darse et surtout <strong>Paloma Beach</strong> et <strong>Passable</strong> sur le Cap-Ferrat voisin sont magnifiques. Nous assurons les navettes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-lg cta-section fade-in-section">
-      <h2 class="text-center">Réservez votre VTC à Villefranche</h2>
-      <p class="text-center mb-lg">Croisière, excursion, plage... Profitez de la perle de la rade.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
-        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
       </div>
     </section>
 
@@ -154,21 +140,26 @@ const keywords = [
 
 <style>
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .bg-light { background: #f9f9f9; padding: 2rem; }
-  .intro-box { max-width: 900px; margin: 0 auto; }
-  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
-  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
-  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
-  .distance-icon { font-size: 1.5rem; }
-  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
-  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
-  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
-  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
-  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
-  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
-  .cta-section h2 { color: #d4af37; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s; }
+  .service-card:hover { transform: translateY(-5px); border-color: #d4af37; }
+  .service-icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; position: relative; }
+  .cta-premium::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #d4af37, transparent); }
+  .cta-premium h2 { color: white; font-size: 2rem; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+  .btn-outline:hover { background: #d4af37; color: #000; }
 </style>

@@ -1,294 +1,409 @@
 {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.ecofundrive.com/#organization",
-    "name": "ECOFUNDRIVE",
-    "alternateName": [
-        "EcoFunDrive",
-        "Eco Fun Drive",
-        "ECOFUNDRIVE VTC",
-        "ECOFUNDRIVE Chauffeur Privé"
-    ],
-    "description": "Service VTC (Voiture de Transport avec Chauffeur) et chauffeur privé premium sur la Côte d'Azur / French Riviera. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez. Alternative taxi privé, navette aéroport, voiture avec chauffeur.",
-    "url": "https://www.ecofundrive.com",
-    "logo": "https://www.ecofundrive.com/assets/img/logo/logo-ecofundrive.png",
-    "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
-    "telephone": "+33660152737",
-    "email": "contact@ecofundrive.com",
-    "priceRange": "€€€",
-    "currenciesAccepted": "EUR",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer, Visa, Mastercard, American Express",
-    "knowsLanguage": [
-        "French",
-        "English",
-        "Italian",
-        "Russian"
-    ],
-    "sameAs": [
-        "https://www.facebook.com/ecofundrive",
-        "https://www.instagram.com/ecofundrive",
-        "https://www.linkedin.com/company/ecofundrive",
-        "https://twitter.com/ecofundrive",
-        "https://wa.me/33660152737"
-    ],
-    "slogan": "Votre Chauffeur Privé VTC sur la Côte d'Azur",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1001 Avenue de la Batterie, Marina Baie des Anges",
-        "addressLocality": "Villeneuve-Loubet",
-        "postalCode": "06270",
-        "addressRegion": "Provence-Alpes-Côte d'Azur",
-        "addressCountry": "FR"
-    },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.642,
-        "longitude": 7.124
-    },
-    "areaServed": [
+    "@graph": [
         {
-            "@type": "City",
-            "name": "Nice",
-            "sameAs": "https://en.wikipedia.org/wiki/Nice"
+            "@type": "LocalBusiness",
+            "@id": "https://www.ecofundrive.com/#organization",
+            "name": "ECOFUNDRIVE",
+            "alternateName": [
+                "EcoFunDrive",
+                "Eco Fun Drive",
+                "ECOFUNDRIVE VTC",
+                "ECOFUNDRIVE Chauffeur Privé"
+            ],
+            "description": "Service VTC (Voiture de Transport avec Chauffeur) et chauffeur privé premium sur la Côte d'Azur / French Riviera. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez. Note 5.0/5 sur 26 avis vérifiés.",
+            "url": "https://www.ecofundrive.com",
+            "logo": "https://www.ecofundrive.com/assets/img/logo/logo-ecofundrive.png",
+            "image": "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+            "telephone": "+33616552811",
+            "email": "8888VTC@gmail.com",
+            "priceRange": "€€",
+            "currenciesAccepted": "EUR",
+            "paymentAccepted": "Cash, Credit Card, Bank Transfer, Visa, Mastercard, American Express",
+            "legalName": "ECOFUNDRIVE SAS",
+            "vatID": "FR59912244696",
+            "taxID": "912244696",
+            "foundingDate": "2022-04-07",
+            "knowsLanguage": [
+                "French",
+                "English",
+                "Italian",
+                "Russian"
+            ],
+            "sameAs": [
+                "https://www.trustindex.io/reviews/ecofundrive.com",
+                "https://www.facebook.com/ecofundrive/",
+                "https://wa.me/33616552811"
+            ],
+            "slogan": "Votre Chauffeur Privé VTC sur la Côte d'Azur",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1001 Avenue de la Batterie, Marina Baie des Anges – Le Ducal",
+                "addressLocality": "Villeneuve-Loubet",
+                "postalCode": "06270",
+                "addressRegion": "Provence-Alpes-Côte d'Azur",
+                "addressCountry": "FR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 43.642,
+                "longitude": 7.124
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Nice",
+                    "sameAs": "https://en.wikipedia.org/wiki/Nice"
+                },
+                {
+                    "@type": "City",
+                    "name": "Monaco",
+                    "sameAs": "https://en.wikipedia.org/wiki/Monaco"
+                },
+                {
+                    "@type": "City",
+                    "name": "Cannes",
+                    "sameAs": "https://en.wikipedia.org/wiki/Cannes"
+                },
+                {
+                    "@type": "City",
+                    "name": "Antibes"
+                },
+                {
+                    "@type": "City",
+                    "name": "Saint-Tropez",
+                    "sameAs": "https://en.wikipedia.org/wiki/Saint-Tropez"
+                },
+                {
+                    "@type": "City",
+                    "name": "Menton"
+                },
+                {
+                    "@type": "City",
+                    "name": "Grasse",
+                    "sameAs": "https://en.wikipedia.org/wiki/Grasse"
+                },
+                {
+                    "@type": "City",
+                    "name": "Eze"
+                },
+                {
+                    "@type": "City",
+                    "name": "Villefranche-sur-Mer"
+                },
+                {
+                    "@type": "City",
+                    "name": "Cap Ferrat"
+                },
+                {
+                    "@type": "City",
+                    "name": "Mougins"
+                },
+                {
+                    "@type": "City",
+                    "name": "Saint-Paul-de-Vence"
+                },
+                {
+                    "@type": "City",
+                    "name": "Vence"
+                },
+                {
+                    "@type": "City",
+                    "name": "Beaulieu-sur-Mer"
+                },
+                {
+                    "@type": "City",
+                    "name": "Roquebrune-Cap-Martin"
+                },
+                {
+                    "@type": "City",
+                    "name": "La Turbie"
+                },
+                {
+                    "@type": "City",
+                    "name": "Juan-les-Pins"
+                },
+                {
+                    "@type": "City",
+                    "name": "Sophia Antipolis"
+                },
+                {
+                    "@type": "City",
+                    "name": "Cagnes-sur-Mer"
+                },
+                {
+                    "@type": "City",
+                    "name": "Saint-Laurent-du-Var"
+                },
+                {
+                    "@type": "City",
+                    "name": "Fréjus"
+                },
+                {
+                    "@type": "City",
+                    "name": "Saint-Raphaël"
+                },
+                {
+                    "@type": "City",
+                    "name": "Mandelieu-la-Napoule"
+                },
+                {
+                    "@type": "City",
+                    "name": "Vallauris"
+                },
+                {
+                    "@type": "City",
+                    "name": "Golfe-Juan"
+                },
+                {
+                    "@type": "City",
+                    "name": "Biot"
+                },
+                {
+                    "@type": "City",
+                    "name": "Villeneuve-Loubet"
+                }
+            ],
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "26",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Karim Bouda"
+                    },
+                    "datePublished": "2024-03-05",
+                    "reviewBody": "Un chauffeur exceptionnel, ponctuel, attentionné, prévenant, efficace et très intelligent. Probablement un des meilleurs chauffeur de la Côte d'Azur. Merci encore !",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Jule Verne"
+                    },
+                    "datePublished": "2024-03-05",
+                    "reviewBody": "Incroyablement professionnel, David est en plus très sympa et serviable, je recommande vivement",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Laura Sabah"
+                    },
+                    "datePublished": "2024-03-07",
+                    "reviewBody": "Tres bonne expérience avec ce VTC, David est une personne très sympathique et ses tarifs sont raisonnables, je recommande !",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Francesco Vona"
+                    },
+                    "datePublished": "2024-03-14",
+                    "reviewBody": "Excellent services and price for my journey from the Nice airport to the city center. David is also very funny and kind.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Hervé Bienvenu"
+                    },
+                    "datePublished": "2023-03-20",
+                    "reviewBody": "Je recommande vivement, ponctualité, propreté, accueil chaleureux et véhicule haut de gamme. Merci pour votre professionnalisme.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    }
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Services VTC Côte d'Azur / French Riviera Private Driver",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfert Aéroport Nice vers Monaco"
+                        },
+                        "name": "Nice Airport to Monaco Transfer",
+                        "description": "Transfert privé depuis l'aéroport Nice Côte d'Azur vers Monaco Monte-Carlo. Meet & greet, suivi de vol inclus.",
+                        "price": "80",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfert Aéroport Nice vers Cannes"
+                        },
+                        "name": "Nice Airport to Cannes Transfer",
+                        "description": "Transfert privé depuis l'aéroport Nice vers Cannes, La Croisette, Palais des Festivals.",
+                        "price": "75",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfert Aéroport Nice vers Saint-Tropez"
+                        },
+                        "name": "Nice Airport to Saint-Tropez Transfer",
+                        "description": "Transfert longue distance Nice aéroport vers Saint-Tropez, plages de Pampelonne.",
+                        "price": "250",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfert Aéroport Nice vers Antibes"
+                        },
+                        "name": "Nice Airport to Antibes Transfer",
+                        "description": "Transfert privé vers Antibes, Port Vauban, Cap d'Antibes, Juan-les-Pins.",
+                        "price": "45",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfert Aéroport Nice vers Nice Centre"
+                        },
+                        "name": "Nice Airport to Nice City Center Transfer",
+                        "description": "Transfert privé vers Nice centre-ville, Promenade des Anglais, Vieux Nice.",
+                        "price": "35",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Mise à Disposition Demi-Journée"
+                        },
+                        "name": "Half-Day Private Driver (4 hours)",
+                        "description": "Chauffeur privé à disposition pour 4 heures. Idéal pour visites, shopping, rendez-vous business.",
+                        "price": "280",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Mise à Disposition Journée Complète"
+                        },
+                        "name": "Full-Day Private Driver (8 hours)",
+                        "description": "Chauffeur privé à disposition pour journée complète. Excursions, tours, événements.",
+                        "price": "480",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "VTC Mariage Côte d'Azur"
+                        },
+                        "name": "Wedding Transport French Riviera",
+                        "description": "Transport VTC pour mariages sur la Côte d'Azur. Véhicules décorés disponibles.",
+                        "price": "350",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "VTC Festival de Cannes"
+                        },
+                        "name": "Cannes Film Festival VTC",
+                        "description": "Service VTC dédié Festival de Cannes. Red carpet, soirées, transferts hôtels.",
+                        "priceRange": "€€€",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "VTC Grand Prix Monaco"
+                        },
+                        "name": "Monaco Grand Prix Transport",
+                        "description": "Transport VTC pour le Grand Prix de Monaco F1. Accès privilégié course et paddock.",
+                        "priceRange": "€€€",
+                        "availability": "https://schema.org/InStock"
+                    }
+                ]
+            }
         },
         {
-            "@type": "City",
-            "name": "Monaco",
-            "sameAs": "https://en.wikipedia.org/wiki/Monaco"
-        },
-        {
-            "@type": "City",
-            "name": "Cannes",
-            "sameAs": "https://en.wikipedia.org/wiki/Cannes"
-        },
-        {
-            "@type": "City",
-            "name": "Antibes"
-        },
-        {
-            "@type": "City",
-            "name": "Saint-Tropez",
-            "sameAs": "https://en.wikipedia.org/wiki/Saint-Tropez"
-        },
-        {
-            "@type": "City",
-            "name": "Menton"
-        },
-        {
-            "@type": "City",
-            "name": "Grasse",
-            "sameAs": "https://en.wikipedia.org/wiki/Grasse"
-        },
-        {
-            "@type": "City",
-            "name": "Eze"
-        },
-        {
-            "@type": "City",
-            "name": "Villefranche-sur-Mer"
-        },
-        {
-            "@type": "City",
-            "name": "Cap Ferrat"
-        },
-        {
-            "@type": "City",
-            "name": "Mougins"
-        },
-        {
-            "@type": "City",
-            "name": "Saint-Paul-de-Vence"
-        },
-        {
-            "@type": "City",
-            "name": "Vence"
-        },
-        {
-            "@type": "City",
-            "name": "Beaulieu-sur-Mer"
-        },
-        {
-            "@type": "City",
-            "name": "Roquebrune-Cap-Martin"
-        },
-        {
-            "@type": "City",
-            "name": "La Turbie"
-        },
-        {
-            "@type": "City",
-            "name": "Juan-les-Pins"
-        },
-        {
-            "@type": "City",
-            "name": "Sophia Antipolis"
-        },
-        {
-            "@type": "City",
-            "name": "Cagnes-sur-Mer"
-        },
-        {
-            "@type": "City",
-            "name": "Saint-Laurent-du-Var"
-        },
-        {
-            "@type": "City",
-            "name": "Fréjus"
-        },
-        {
-            "@type": "City",
-            "name": "Saint-Raphaël"
-        },
-        {
-            "@type": "City",
-            "name": "Mandelieu-la-Napoule"
-        },
-        {
-            "@type": "City",
-            "name": "Vallauris"
-        },
-        {
-            "@type": "City",
-            "name": "Golfe-Juan"
-        },
-        {
-            "@type": "City",
-            "name": "Biot"
+            "@type": "WebSite",
+            "@id": "https://www.ecofundrive.com/#website",
+            "url": "https://www.ecofundrive.com",
+            "name": "ECOFUNDRIVE - Chauffeur Privé VTC Côte d'Azur",
+            "description": "Service VTC et chauffeur privé premium sur la Côte d'Azur. Nice, Monaco, Cannes, Saint-Tropez. Note 5.0/5.",
+            "publisher": {
+                "@id": "https://www.ecofundrive.com/#organization"
+            },
+            "inLanguage": [
+                "fr",
+                "en",
+                "it",
+                "ru"
+            ],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.ecofundrive.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
         }
     ],
-    "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-    },
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services VTC Côte d'Azur / French Riviera Private Driver",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Transfert Aéroport Nice vers Monaco"
-                },
-                "name": "Nice Airport to Monaco Transfer",
-                "description": "Transfert privé depuis l'aéroport Nice Côte d'Azur vers Monaco Monte-Carlo. Meet & greet, suivi de vol inclus.",
-                "price": "80",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Transfert Aéroport Nice vers Cannes"
-                },
-                "name": "Nice Airport to Cannes Transfer",
-                "description": "Transfert privé depuis l'aéroport Nice vers Cannes, La Croisette, Palais des Festivals.",
-                "price": "75",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Transfert Aéroport Nice vers Saint-Tropez"
-                },
-                "name": "Nice Airport to Saint-Tropez Transfer",
-                "description": "Transfert longue distance Nice aéroport vers Saint-Tropez, plages de Pampelonne.",
-                "price": "250",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Transfert Aéroport Nice vers Antibes"
-                },
-                "name": "Nice Airport to Antibes Transfer",
-                "description": "Transfert privé vers Antibes, Port Vauban, Cap d'Antibes, Juan-les-Pins.",
-                "price": "45",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Mise à Disposition Demi-Journée"
-                },
-                "name": "Half-Day Private Driver (4 hours)",
-                "description": "Chauffeur privé à disposition pour 4 heures. Idéal pour visites, shopping, rendez-vous business.",
-                "price": "280",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Mise à Disposition Journée Complète"
-                },
-                "name": "Full-Day Private Driver (8 hours)",
-                "description": "Chauffeur privé à disposition pour journée complète. Excursions, tours, événements.",
-                "price": "480",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "VTC Mariage Côte d'Azur"
-                },
-                "name": "Wedding Transport French Riviera",
-                "description": "Transport VTC pour mariages sur la Côte d'Azur. Véhicules décorés disponibles.",
-                "price": "350",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "VTC Festival de Cannes"
-                },
-                "name": "Cannes Film Festival VTC",
-                "description": "Service VTC dédié Festival de Cannes. Red carpet, soirées, transferts hôtels.",
-                "priceRange": "€€€",
-                "availability": "https://schema.org/InStock"
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "VTC Grand Prix Monaco"
-                },
-                "name": "Monaco Grand Prix Transport",
-                "description": "Transport VTC pour le Grand Prix de Monaco F1. Accès privilégié course et paddock.",
-                "priceRange": "€€€",
-                "availability": "https://schema.org/InStock"
-            }
-        ]
-    },
     "keywords": [
         "VTC Nice",
         "VTC Monaco",
@@ -321,6 +436,9 @@
         "MIPIM Cannes chauffeur",
         "transfert hôtel Nice",
         "excursion Eze Monaco",
-        "tour villages perchés"
-    ]
+        "tour villages perchés",
+        "meilleur VTC Côte d'Azur",
+        "VTC 5 étoiles Nice"
+    ],
+    "lastUpdated": "2026-01-01"
 }

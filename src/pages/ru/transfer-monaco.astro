@@ -24,6 +24,7 @@ const keywords = [
     { name: "Главная", url: "/ru" },
     { name: "Трансфер Монако", url: "/ru/transfer-monaco" }
   ]}
+  schema={{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько времени занимает трансфер из аэропорта Ниццы в Монако?","acceptedAnswer":{"@type":"Answer","text":"Трансфер из аэропорта Ниццы в Монако занимает примерно 30-45 минут в зависимости от трафика (около 30 км)."}},{"@type":"Question","name":"Вы предоставляете услуги во время Гран-При Монако?","acceptedAnswer":{"@type":"Answer","text":"Да, мы предоставляем премиум услуги во время Гран-При Монако. Рекомендуем бронировать за несколько месяцев."}},{"@type":"Question","name":"Ваши водители говорят по-русски?","acceptedAnswer":{"@type":"Answer","text":"Да, у нас есть русскоговорящие водители. По запросу мы можем предоставить водителя, владеющего русским языком."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -37,7 +38,7 @@ const keywords = [
       alt="Трансфер личный водитель Монако Монте-Карло"
       imageSide="right"
       ctaText="Забронировать Трансфер"
-      ctaLink="/reservation"
+      ctaLink="/ru/kontakt"
     >
       <p class="fade-in-section">
         <strong>Монако</strong>, гламурное княжество на Лазурном Берегу, воплощает роскошь, элегантность и престиж. Посещаете ли вы <strong>Казино Монте-Карло</strong>, участвуете в <strong>Гран-При Ф1</strong>, или остановились в одном из люксовых отелей — вы заслуживаете премиум-сервиса.
@@ -70,22 +71,46 @@ const keywords = [
           alt="Казино Монте-Карло"
           title="Казино Монте-Карло"
           description="Икона стиля Belle Époque, символ гламура Монако. Вечерние трансферы для посещения казино."
-          link="/reservation"
+          link="/ru/kontakt"
         />
         <CategoryCard
           image="/assets/img/services/service-aeroport.webp"
           alt="Гран-При Монако"
           title="Гран-При Формулы 1"
           description="Специальный сервис на самую престижную гонку мира. Бронируйте за несколько месяцев."
-          link="/reservation"
+          link="/ru/kontakt"
         />
         <CategoryCard
           image="/assets/img/about/vehicule-premium.webp"
           alt="Порт Эркюль Монако"
           title="Порт Эркюль и Яхты"
           description="Трансферы к суперяхтам и Monaco Yacht Show. Высадка прямо у причала."
-          link="/reservation"
+          link="/ru/kontakt"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Часто Задаваемые Вопросы</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Сколько времени занимает трансфер из аэропорта Ниццы в Монако?</h3>
+          <div class="faq-answer">
+            <p>Трансфер из <strong>аэропорта Ниццы в Монако</strong> занимает примерно <strong>30-45 минут</strong> в зависимости от трафика (около 30 км по живописной дороге).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Вы предоставляете услуги во время Гран-При Монако?</h3>
+          <div class="faq-answer">
+            <p>Да, мы предоставляем <strong>премиум услуги во время Гран-При Монако</strong>. Рекомендуем бронировать за 2-3 месяца из-за высокого спроса.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Ваши водители говорят по-русски?</h3>
+          <div class="faq-answer">
+            <p>Да, у нас есть <strong>русскоговорящие водители</strong>. По запросу мы можем предоставить водителя, владеющего русским языком.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -93,15 +118,26 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Ближайшие Направления</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/ru" class="text-dark hover-gold">Трансфер Ницца</a>
-        <a href="/vtc-cannes" class="text-dark hover-gold">Трансфер Канны</a>
-        <a href="/vtc-eze" class="text-dark hover-gold">Тур в Эз</a>
-        <a href="/vtc-saint-tropez" class="text-dark hover-gold">Сен-Тропе</a>
+        <a href="/ru/transfer-cannes" class="text-dark hover-gold">Трансфер Канны</a>
+        <a href="/ru/transfer-eze" class="text-dark hover-gold">Тур в Эз</a>
+        <a href="/ru/transfer-saint-tropez" class="text-dark hover-gold">Сен-Тропе</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .cta-box { text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
+  .btn-primary {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #b8941f; transform: translateY(-2px); }
 </style>

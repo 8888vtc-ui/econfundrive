@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
@@ -10,8 +11,41 @@ const keywords = [
   'chauffeur privé Eze',
   'VTC parfumerie Eze',
   'transfert Nice Eze',
-  'VTC Jardin Exotique Eze'
+  'VTC Jardin Exotique Eze',
+  'circuit Nice Eze Monaco',
+  'chauffeur Moyenne Corniche'
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour visiter Èze ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comptez environ 2-3 heures pour visiter le village, le jardin exotique et une parfumerie. Nous pouvons vous attendre ou revenir vous chercher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proposez-vous un circuit Nice - Èze - Monaco ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, c'est notre circuit le plus populaire ! Départ de Nice le matin, visite d'Èze, puis Monaco l'après-midi. Demi-journée ou journée complète."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se rendre à Èze depuis Nice en VTC ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Èze est situé à 12 km de Nice, soit environ 20-25 minutes en VTC via la Moyenne Corniche, la route la plus panoramique."
+      }
+    }
+  ]
+};
 ---
 
 <BaseLayout 
@@ -24,49 +58,154 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Èze", url: "/vtc-eze" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps pour visiter Èze ?","acceptedAnswer":{"@type":"Answer","text":"Comptez environ 2-3 heures pour visiter le village, le jardin exotique et une parfumerie. Nous pouvons vous attendre ou revenir vous chercher."}},{"@type":"Question","name":"Proposez-vous un circuit Nice - Èze - Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, c'est notre circuit le plus populaire ! Départ de Nice le matin, visite d'Èze (village + parfumerie), déjeuner, puis Monaco l'après-midi. Demi-journée ou journée complète."}}]}}
+  schema={faqSchema}
+  keywords={keywords}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Èze"
+    subtitle="Le joyau perché de la Côte d'Azur. Village médiéval, Jardin Exotique panoramique et parfumeries authentiques."
+    backgroundImage="/assets/img/destinations/destination-monaco.webp"
+    badge="CIRCUIT PANORAMIQUE • PARFUMERIES"
+  />
 
+  <main id="main-content" class="page-content">
     
+    <!-- INTRO -->
+    <SectionImageText
+      title="Un Village Suspendu entre Ciel et Mer"
+      image="/assets/img/guides/villages-perches.webp"
+      alt="Village perché Eze vue panoramique mer"
+      imageSide="right"
+      ctaText="Réserver une excursion"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        Perché à <strong>427 mètres d'altitude</strong>, Èze offre l'une des vues les plus spectaculaires de la Méditerranée. Ce nid d'aigle médiéval, accroché à la falaise, surplombe la mer de l'Italie jusqu'à Saint-Tropez par temps clair.
+      </p>
+      <p class="fade-in-section">
+        Mais Èze est difficile d'accès : ruelles piétonnes, stationnement quasi inexistant, route sinueuse. Avec ECOFUNDRIVE, vous êtes déposé directement à l'entrée du village et récupéré quand vous le souhaitez.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice (20-25 min)</li>
+        <li>Transferts depuis Monaco (15-20 min)</li>
+        <li>Circuit complet Nice → Èze → Monaco</li>
+        <li>Visite parfumeries Fragonard & Galimard</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- CIRCUIT TIMELINE -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+      <h2 class="section-title text-center mb-xl">Le Circuit Nice – Èze – Monaco</h2>
+      <p class="text-center mb-lg lead">Notre excursion la plus demandée ! Découvrez les trois corniches et les panoramas légendaires de la Riviera.</p>
+      
+      <div class="circuit-timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h3>9h00 – Départ de Nice</h3>
+            <p>Prise en charge à votre hôtel. Route panoramique par la Moyenne Corniche avec vues sur Villefranche.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h3>9h30 – Arrivée à Èze</h3>
+            <p>Visite libre du village (1h30). Jardin Exotique + ruelles + parfumerie gratuite. Votre chauffeur vous attend.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-content">
+            <h3>11h00 – Route vers Monaco</h3>
+            <p>Descente par la Basse Corniche. Arrêt photo possible au Col d'Èze (vue à 360°).</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">4</div>
+          <div class="timeline-content">
+            <h3>11h30 – Monaco</h3>
+            <p>Dépose devant le Casino, le Palais Princier ou le Port Hercule. Fin de la demi-journée ou continuation.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-xl">
+        <a href="/reservation" class="btn-gold">Réserver ce circuit</a>
       </div>
     </section>
 
+    <!-- HIGHLIGHTS -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Èze</h2>
+      <h2 class="section-title text-center mb-xl">Les Incontournables d'Èze</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-monaco.png"
-          alt="Jardin Exotique Èze"
-          title="Le Jardin Exotique"
-          description="Au sommet du village, un jardin de cactus avec vue panoramique à 360° sur la mer et les Alpes."
+          image="/assets/img/hero/hero-ete.webp"
+          alt="Jardin Exotique Eze"
+          title="🌵 Jardin Exotique"
+          description="Au sommet du village, un jardin de cactus avec vue panoramique à 360° sur la mer et les Alpes. Incontournable !"
           link="/reservation"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Parfumerie Fragonard Eze"
-          title="Parfumeries"
-          description="Visite gratuite des usines Fragonard et Galimard. Découvrez les secrets de la parfumerie provençale."
+          title="🌸 Parfumeries"
+          description="Visite gratuite des usines Fragonard et Galimard. Découvrez les secrets de la parfumerie provençale depuis 1926."
           link="/reservation"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-saint-tropez.webp"
           alt="Moyenne Corniche Eze"
-          title="La Moyenne Corniche"
-          description="Route panoramique légendaire entre Nice et Monaco, avec arrêt photo à Èze. Vues spectaculaires."
+          title="🛣️ Moyenne Corniche"
+          description="Route panoramique légendaire entre Nice et Monaco. Vues spectaculaires sur la Baie de Villefranche et le Cap Ferrat."
           link="/guide-route-panoramique-nice-eze-monaco"
         />
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps pour visiter Èze ?</h3>
+          <div class="faq-answer">
+            <p>Comptez environ <strong>2-3 heures</strong> pour une visite complète : le village médiéval, le Jardin Exotique (45 min) et une parfumerie (30 min).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Proposez-vous un circuit Nice - Èze - Monaco ?</h3>
+          <div class="faq-answer">
+            <p>Oui, c'est notre <strong>circuit le plus populaire</strong> ! Disponible en demi-journée (4h) ou journée complète (8h).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Les parfumeries sont-elles gratuites ?</h3>
+          <div class="faq-answer">
+            <p>Oui, les visites des parfumeries <strong>Fragonard</strong> et <strong>Galimard</strong> sont entièrement gratuites. Achat sur place possible.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Comment se rendre à Èze depuis Nice ?</h3>
+          <div class="faq-answer">
+            <p>Èze est à <strong>12 km de Nice</strong>, soit 20-25 minutes via la Moyenne Corniche, la route la plus panoramique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Vivez l'Expérience Èze</h2>
+        <p>Oubliez le stress du stationnement et des routes sinueuses. Profitez du panorama pendant que votre chauffeur s'occupe de tout.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Excursion</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
@@ -74,12 +213,160 @@ const keywords = [
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
         <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-la-turbie" class="text-dark hover-gold">VTC La Turbie</a>
+        <a href="/guide-route-panoramique-nice-eze-monaco" class="text-dark hover-gold">Guide Corniche</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* TIMELINE */
+  .circuit-timeline {
+    max-width: 700px;
+    margin: 2rem auto 0;
+  }
+  
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+  
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+  
+  .timeline-content {
+    flex: 1;
+    padding-bottom: 2rem;
+    border-left: 2px solid #e0e0e0;
+    padding-left: 2rem;
+    margin-left: -1.25rem;
+  }
+  
+  .timeline-item:last-child .timeline-content {
+    border-left-color: transparent;
+  }
+  
+  .timeline-content h3 {
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
 </style>

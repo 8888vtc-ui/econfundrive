@@ -1,18 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Mougins – Chauffeur Privé Village Gastronomique | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Mougins, village gastronomique et artistique. Musée de la Photographie, restaurants étoilés, golf. Service premium Cannes et Sophia Antipolis.";
-const keywords = [
-  'VTC Mougins',
-  'chauffeur privé Mougins',
-  'VTC restaurant Mougins',
-  'transfert Cannes Mougins',
-  'VTC golf Mougins',
-  'VTC gastronomie Côte Azur'
-];
+const description = "Chauffeur privé VTC à Mougins. Village gastronomique, restaurants étoilés, galeries d'art. Entre Cannes et Grasse. Transferts premium 24/7.";
+const keywords = ['VTC Mougins', 'chauffeur privé Mougins', 'transfert restaurant étoilé', 'VTC village gastronomique'];
 ---
 
 <BaseLayout 
@@ -20,132 +14,63 @@ const keywords = [
   description={description}
   currentPage="vtc-mougins"
   canonical="/vtc-mougins"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Mougins", url: "/vtc-mougins" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mougins est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mougins est située à seulement 8 km de Cannes, soit 15-20 minutes en VTC. C'est la destination gastronomique préférée des participants au Festival de Cannes."}},{"@type":"Question","name":"Proposez-vous des transferts pour les restaurants étoilés de Mougins ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers tous les restaurants de Mougins avec service de retour après le dîner inclus sur demande."}},{"@type":"Question","name":"Y a-t-il des golfs à Mougins ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Mougins compte deux parcours de golf prestigieux : le Royal Mougins Golf Resort et le Cannes-Mougins Golf. Nous assurons les transferts réguliers pour les golfeurs."}},{"@type":"Question","name":"Picasso a-t-il vécu à Mougins ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Pablo Picasso a passé les 12 dernières années de sa vie à Mougins (1961-1973). Le Musée de la Photographie expose de nombreux portraits du maître."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pourquoi Mougins est-elle célèbre ?","acceptedAnswer":{"@type":"Answer","text":"Mougins est le village gastronomique par excellence de la Riviera, avec plusieurs restaurants étoilés et un patrimoine artistique (Picasso y vécut ses dernières années)."}},{"@type":"Question","name":"Proposez-vous des transferts restaurants ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers tous les restaurants étoilés du village avec service aller-retour."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Mougins"
+    subtitle="Le village gastronomique de la Riviera. Restaurants étoilés, galeries d'art, patrimoine provençal."
+    backgroundImage="/assets/img/guides/villages-perches.webp"
+    badge="GASTRONOMIE • ART"
+  />
 
-    <!-- Introduction enrichie -->
-    <section class="container py-lg fade-in-section">
-      <div class="intro-box">
-        <h2>Votre Chauffeur Privé à Mougins</h2>
-        <p class="intro-text">
-          <strong>Mougins</strong> est le village gastronomique de la Côte d'Azur par excellence. Ce village médiéval fortifié, ancien refuge de Pablo Picasso pendant 12 ans, abrite aujourd'hui plusieurs <strong>restaurants étoilés Michelin</strong> et une concentration exceptionnelle de tables d'exception.
-        </p>
-        <p class="intro-text">
-          ECOFUNDRIVE vous accompagne pour vos dîners gastronomiques avec un service aller-retour discret. Plus besoin de vous soucier du retour après une soirée arrosée dans les meilleures caves de la région. Nous desservons également les <strong>golfs prestigieux</strong> de Mougins.
-        </p>
-        <div class="distance-info">
-          <span class="distance-icon">📍</span>
-          <span><strong>Distances :</strong> Cannes (8 km, 15 min) • Aéroport Nice (30 km, 35 min) • Grasse (8 km, 15 min) • Sophia Antipolis (12 km, 20 min)</span>
-        </div>
+  <main id="main-content" class="page-content">
+    <SectionImageText
+      title="Village Gastronomique & Artistique"
+      image="/assets/img/services/service-evenements.webp"
+      alt="VTC Mougins village"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Mougins</strong> est le paradis des gourmets sur la Côte d'Azur. Plusieurs <strong>restaurants étoilés</strong>, des galeries d'art et un charme provençal préservé. Pablo Picasso y vécut ses 12 dernières années.
+      </p>
+      <p class="fade-in-section">
+        Profitez d'un dîner gastronomique sans vous soucier du retour. Nos chauffeurs vous attendent ou reviennent vous chercher à l'heure convenue.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Cannes : 10 min</span>
+        <span class="distance-badge">📍 Grasse : 10 min</span>
+        <span class="distance-badge">📍 Nice : 30 min</span>
       </div>
-    </section>
+    </SectionImageText>
 
-    <!-- Nos services -->
-    <section class="container py-lg bg-light rounded-lg fade-in-section">
-      <h2 class="text-center mb-lg">Nos Services VTC à Mougins</h2>
-      <div class="services-grid-2">
-        <div class="service-item">
-          <h3>🍽️ Transferts Restaurants</h3>
-          <p>Service aller-retour pour les restaurants étoilés. Le Moulin de Mougins, Paloma, La Place de Mougins...</p>
-        </div>
-        <div class="service-item">
-          <h3>⛳ Navettes Golfs</h3>
-          <p>Transport vers Royal Mougins Golf Resort et Cannes-Mougins Golf. Disponibilité pour les tournois.</p>
-        </div>
-        <div class="service-item">
-          <h3>🎬 Service Festival Cannes</h3>
-          <p>Transferts Cannes ↔ Mougins pendant le Festival. Réservez tôt car la demande est forte.</p>
-        </div>
-        <div class="service-item">
-          <h3>🏛️ Visites Culturelles</h3>
-          <p>Musée de la Photographie, galeries d'art, circuit sur les traces de Picasso avec attente.</p>
-        </div>
-      </div>
-      <div class="text-center mt-lg">
-        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
-      </div>
-    </section>
-
-    <!-- Découvrez Mougins -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Mougins</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Mougins</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/cannes-palais-festivals.png"
-          alt="Restaurant gastronomique Mougins"
-          title="Gastronomie Étoilée"
-          description="Le Moulin de Mougins, Paloma, La Place de Mougins... Un concentré de restaurants d'exception."
-          link="/contact"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Musée Photo Mougins"
-          title="Musée de la Photographie"
-          description="Collection unique de portraits de Picasso par les plus grands photographes du XXe siècle."
-          link="/contact"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
-          alt="Golf Mougins"
-          title="Les Golfs de Mougins"
-          description="Royal Mougins Golf Resort et Cannes-Mougins Golf, deux parcours prestigieux dans un cadre provençal."
-          link="/contact"
-        />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Restaurant Mougins" title="⭐ Tables Étoilées" description="Paloma, L'Amandier et autres restaurants d'exception. La gastronomie au sommet." link="/reservation" />
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Vieux village" title="🏘️ Vieux Village" description="Ruelles médiévales, remparts, galeries d'art. L'esprit de la Provence." link="/reservation" />
+        <CategoryCard image="/assets/img/hero/hero-mariage.webp" alt="Festival Mougins" title="🍴 Les Étoiles de Mougins" description="Festival gastronomique annuel réunissant les plus grands chefs." link="/reservation" />
       </div>
     </section>
 
-    <!-- FAQ visible -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous un service aller-retour pour les dîners ?</h3>
-          <div class="faq-answer">
-            <p>Oui, c'est même notre spécialité à Mougins. Nous vous déposons au restaurant et revenons vous chercher à l'heure convenue. Profitez de votre repas sans vous soucier du retour.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Quels restaurants étoilés desservez-vous ?</h3>
-          <div class="faq-answer">
-            <p>Nous assurons les transferts vers tous les restaurants de Mougins : <strong>Paloma</strong> (2 étoiles), <strong>La Place de Mougins</strong>, <strong>Le Moulin de Mougins</strong>, et bien d'autres tables d'exception.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Mougins est-elle accessible pendant le Festival de Cannes ?</h3>
-          <div class="faq-answer">
-            <p>Oui, et c'est même la destination préférée des festivaliers pour dîner. Réservez votre VTC à l'avance car la demande est très forte en mai.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Picasso a-t-il vraiment vécu à Mougins ?</h3>
-          <div class="faq-answer">
-            <p>Oui, <strong>Pablo Picasso</strong> a passé les 12 dernières années de sa vie à Mougins (1961-1973), au Mas Notre-Dame-de-Vie. Le Musée de la Photographie lui rend hommage.</p>
-          </div>
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Mougins</h2>
+        <p>Dîner étoilé, visite du village... Profitez sans contrainte de conduite.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- Réserver -->
-    <section class="container py-lg cta-section fade-in-section">
-      <h2 class="text-center">Réservez votre VTC à Mougins</h2>
-      <p class="text-center mb-lg">Dîner gastronomique, golf, événement... Nous vous y emmenons.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
-        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
-      </div>
-    </section>
-
-    <!-- Destinations proches -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
@@ -153,10 +78,6 @@ const keywords = [
         <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
         <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
-        <a href="/vtc-mandelieu-la-napoule" class="text-dark hover-gold">VTC Mandelieu</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
-        <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
       </div>
     </section>
   </main>
@@ -164,25 +85,14 @@ const keywords = [
 
 <style>
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .bg-light { background: #f9f9f9; padding: 2rem; }
-  
-  .intro-box { max-width: 900px; margin: 0 auto; }
-  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
-  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
-  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
-  .distance-icon { font-size: 1.5rem; }
-  
-  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
-  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
-  
-  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
-  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
-  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
-  
-  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
-  .cta-section h2 { color: #d4af37; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; font-size: 2rem; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

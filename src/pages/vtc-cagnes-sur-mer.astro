@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Cagnes-sur-Mer – Chauffeur Privé Renoir & Hippodrome | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Cagnes-sur-Mer. Musée Renoir, Haut-de-Cagnes médiéval, hippodrome, port Cros-de-Cagnes. Transferts aéroport Nice. Service premium.";
-const keywords = [
-  'VTC Cagnes-sur-Mer',
-  'chauffeur privé Cagnes',
-  'VTC Musée Renoir',
-  'transfert hippodrome Cagnes',
-  'VTC Haut-de-Cagnes'
-];
+const title = "VTC Cagnes-sur-Mer – Chauffeur Privé Musée Renoir | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Cagnes-sur-Mer. Haut-de-Cagnes, Musée Renoir, hippodrome. Entre Nice et Antibes. Service premium 24/7.";
+const keywords = ['VTC Cagnes-sur-Mer', 'chauffeur privé Cagnes', 'VTC Musée Renoir', 'transfert hippodrome Côte Azur'];
 ---
 
 <BaseLayout 
@@ -18,135 +14,46 @@ const keywords = [
   description={description}
   currentPage="vtc-cagnes-sur-mer"
   canonical="/vtc-cagnes-sur-mer"
-  breadcrumbItems={[
-    { name: "Accueil", url: "/" },
-    { name: "Services", url: "/services" },
-    { name: "VTC Cagnes-sur-Mer", url: "/vtc-cagnes-sur-mer" }
-  ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Auguste Renoir a-t-il vécu à Cagnes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le peintre impressionniste a passé les 12 dernières années de sa vie (1907-1919) aux Collettes, sa propriété devenue musée. Son atelier et son jardin sont préservés."}},{"@type":"Question","name":"Y a-t-il un hippodrome à Cagnes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, l'hippodrome de la Côte d'Azur est l'un des plus importants de France pour les courses de galop et de trot. Nous assurons les transferts pour les événements hippiques."}},{"@type":"Question","name":"Le Haut-de-Cagnes est-il piéton ?","acceptedAnswer":{"@type":"Answer","text":"Oui, ce village médiéval perché est essentiellement piéton. Nous vous déposons à l'entrée et attendons pendant votre visite."}}]}}
+  keywords={keywords}
+  breadcrumbItems={[{ name: "Accueil", url: "/" }, { name: "Services", url: "/services" }, { name: "VTC Cagnes-sur-Mer", url: "/vtc-cagnes-sur-mer" }]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce que le Haut-de-Cagnes ?","acceptedAnswer":{"@type":"Answer","text":"Village médiéval perché avec château-musée, ruelles pittoresques et vue panoramique. L'un des plus beaux villages perchés de la Riviera."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero title="VTC Cagnes-sur-Mer" subtitle="Du village médiéval à la mer. Haut-de-Cagnes, Musée Renoir, hippodrome de la Côte d'Azur." backgroundImage="/assets/img/guides/villages-perches.webp" badge="RENOIR • HAUT-DE-CAGNES" />
 
-    <section class="container py-lg fade-in-section">
-      <div class="intro-box">
-        <h2>Votre Chauffeur Privé à Cagnes-sur-Mer</h2>
-        <p class="intro-text">
-          <strong>Cagnes-sur-Mer</strong> offre trois visages fascinants : le <strong>Haut-de-Cagnes</strong> médiéval avec son château-musée, <strong>Cros-de-Cagnes</strong> et son authentique port de pêche, et la station balnéaire moderne. Le <strong>Musée Renoir</strong>, dans la maison où le peintre vécut ses dernières années, est un trésor culturel.
-        </p>
-        <p class="intro-text">
-          Située à seulement <strong>5 km de l'aéroport Nice</strong>, Cagnes est un point d'entrée idéal sur la Côte d'Azur. ECOFUNDRIVE assure les transferts vers l'hippodrome, le Polygone Riviera, les plages et le pittoresque Haut-de-Cagnes.
-        </p>
-        <div class="distance-info">
-          <span class="distance-icon">📍</span>
-          <span><strong>Distances :</strong> Aéroport Nice (5 km, 10 min) • Nice Centre (12 km, 15 min) • Antibes (10 km, 15 min) • Saint-Paul-de-Vence (8 km, 15 min)</span>
-        </div>
+  <main id="main-content" class="page-content">
+    <SectionImageText title="Entre Village et Plage" image="/assets/img/about/vehicule-premium.webp" alt="VTC Cagnes-sur-Mer" imageSide="right" ctaText="Réserver un transfert" ctaLink="/reservation">
+      <p class="fade-in-section"><strong>Cagnes-sur-Mer</strong> offre trois visages : le <strong>Haut-de-Cagnes</strong> médiéval perché, le <strong>Cros-de-Cagnes</strong> traditionnel des pêcheurs, et le bord de mer moderne. Le <strong>Musée Renoir</strong>, dans la maison où l'artiste vécut ses 12 dernières années, est un lieu magique.</p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Nice : 15 min</span>
+        <span class="distance-badge">📍 Antibes : 10 min</span>
+        <span class="distance-badge">📍 Saint-Paul : 10 min</span>
       </div>
-    </section>
-
-    <section class="container py-lg bg-light rounded-lg fade-in-section">
-      <h2 class="text-center mb-lg">Nos Services VTC à Cagnes</h2>
-      <div class="services-grid-2">
-        <div class="service-item">
-          <h3>🎨 Visite Musée Renoir</h3>
-          <p>Excursion aux Collettes, dernière demeure du maître impressionniste. Atelier et oliviers préservés.</p>
-        </div>
-        <div class="service-item">
-          <h3>🏇 Navettes Hippodrome</h3>
-          <p>Transport vers l'hippodrome de la Côte d'Azur pour les courses de galop et de trot.</p>
-        </div>
-        <div class="service-item">
-          <h3>🏘️ Haut-de-Cagnes</h3>
-          <p>Dépose au village médiéval, visite du château-musée Grimaldi. Temps d'attente inclus.</p>
-        </div>
-        <div class="service-item">
-          <h3>🛍️ Polygone Riviera</h3>
-          <p>Navettes vers le plus grand centre commercial à ciel ouvert de la région.</p>
-        </div>
-      </div>
-      <div class="text-center mt-lg">
-        <a href="/contact" class="btn-gold">Demander un devis gratuit</a>
-      </div>
-    </section>
+    </SectionImageText>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Cagnes-sur-Mer</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Cagnes</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
-          alt="Musée Renoir Cagnes"
-          title="Musée Renoir"
-          description="La maison des Collettes où Renoir vécut de 1907 à 1919. Atelier préservé, oliviers centenaires, œuvres originales."
-          link="/contact"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Haut-de-Cagnes"
-          title="Le Haut-de-Cagnes"
-          description="Village médiéval pittoresque dominé par le château Grimaldi. Ruelles fleuries et vue sur la mer."
-          link="/contact"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
-          alt="Port Cros-de-Cagnes"
-          title="Cros-de-Cagnes"
-          description="Quartier des pêcheurs authentique avec ses barques colorées et ses restaurants de poissons frais."
-          link="/contact"
-        />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Musée Renoir" title="🎨 Musée Renoir" description="Maison-atelier du maître impressionniste. Oliviers centenaires, vue sublime, sérénité." link="/reservation" />
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Haut-de-Cagnes" title="🏰 Haut-de-Cagnes" description="Village médiéval fortifié, château Grimaldi, ruelles pittoresques, panoramas." link="/reservation" />
+        <CategoryCard image="/assets/img/hero/hero-ete.webp" alt="Hippodrome" title="🏇 Hippodrome" description="Unique hippodrome de la Côte d'Azur. Courses en bord de mer de décembre à mars." link="/reservation" />
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Le Musée Renoir vaut-il le détour ?</h3>
-          <div class="faq-answer">
-            <p>Absolument ! La maison des Collettes est restée telle que Renoir l'a laissée. Son <strong>atelier</strong>, ses <strong>oliviers centenaires</strong> et plusieurs œuvres originales créent une atmosphère unique.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Comment accéder au Haut-de-Cagnes ?</h3>
-          <div class="faq-answer">
-            <p>Le village médiéval est piéton. Nous vous déposons à l'entrée et attendons pendant votre visite. Comptez <strong>1-2 heures</strong> pour explorer les ruelles et le château.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">L'hippodrome organise-t-il beaucoup d'événements ?</h3>
-          <div class="faq-answer">
-            <p>Oui, l'hippodrome de la Côte d'Azur accueille des courses <strong>de décembre à mars</strong> (meeting d'hiver) et des événements ponctuels. Nous assurons les transferts aller-retour.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Cagnes est-elle proche de l'aéroport ?</h3>
-          <div class="faq-answer">
-            <p>Oui, <strong>5 km seulement</strong> séparent Cagnes de l'aéroport Nice. C'est l'une des communes les plus accessibles pour les voyageurs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-lg cta-section fade-in-section">
-      <h2 class="text-center">Réservez votre VTC à Cagnes-sur-Mer</h2>
-      <p class="text-center mb-lg">Musée Renoir, Haut-de-Cagnes, hippodrome... Découvrez les trésors de Cagnes.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-gold btn-lg">Demander un devis</a>
-        <a href="https://wa.me/33616552811" class="btn-whatsapp btn-lg">WhatsApp</a>
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Cagnes</h2>
+        <p>Village, musée, hippodrome ou plage. Découvrez les trois visages de Cagnes.</p>
+        <div class="cta-buttons"><a href="/reservation" class="btn-gold">Réserver</a><a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a></div>
       </div>
     </section>
 
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
-      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <h3 class="h4 mb-md text-center">Destinations VTC</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-saint-paul-de-vence" class="text-dark hover-gold">VTC Saint-Paul</a>
-        <a href="/vtc-vence" class="text-dark hover-gold">VTC Vence</a>
-        <a href="/vtc-villeneuve-loubet" class="text-dark hover-gold">VTC Villeneuve-Loubet</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
-        <a href="/vtc-biot" class="text-dark hover-gold">VTC Biot</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-vence" class="text-dark hover-gold">VTC Vence</a>
       </div>
     </section>
   </main>
@@ -154,21 +61,14 @@ const keywords = [
 
 <style>
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .bg-light { background: #f9f9f9; padding: 2rem; }
-  .intro-box { max-width: 900px; margin: 0 auto; }
-  .intro-box h2 { text-align: center; margin-bottom: 1.5rem; color: #d4af37; }
-  .intro-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; text-align: center; }
-  .distance-info { background: #e8f5e9; padding: 1rem 1.5rem; border-radius: 10px; display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
-  .distance-icon { font-size: 1.5rem; }
-  .services-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-  .service-item { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .service-item h3 { color: #d4af37; margin-bottom: 0.5rem; font-size: 1.1rem; }
-  .service-item p { color: #555; font-size: 0.95rem; margin: 0; }
-  .btn-gold { background: #d4af37; color: #000; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-  .btn-gold:hover { background: #b8941f; transform: translateY(-2px); }
-  .btn-whatsapp { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
-  .btn-lg { padding: 1.1rem 2.5rem; font-size: 1.1rem; }
-  .cta-section { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); color: white; border-radius: 20px; padding: 3rem 2rem; }
-  .cta-section h2 { color: #d4af37; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; }
 </style>

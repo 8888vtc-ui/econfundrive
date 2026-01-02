@@ -1,19 +1,30 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Nice in 1 to 3 Days: Complete Itinerary | ECOFUNDRIVE";
-const description = "Day-by-day itineraries to explore Nice: Old Town, Promenade des Anglais, Cimiez museums, and day trips to Monaco & Eze. Private driver available.";
+const title = "What to Do in Nice in 1 to 3 Days – Itineraries & Transport | ECOFUNDRIVE";
+const description = "Visit Nice in 1, 2 or 3 days. Old Nice, Promenade des Anglais, Castle Hill, excursions to Èze & Monaco. Optimized guide with private driver.";
 const keywords = [
-  'Nice itinerary 3 days',
-  'what to do Nice France',
-  'Nice sightseeing tour',
-  'private driver Nice',
-  'Nice day trips'
+  'visit Nice 1 day',
+  'Nice 3 day itinerary',
+  'what to do Nice weekend',
+  'Nice sightseeing private driver',
+  'excursion from Nice'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-nice.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
-<BaseLayout
+<BaseLayout 
   title={title}
   description={description}
   currentPage="guide-nice-in-1-to-3-days"
@@ -23,127 +34,123 @@ const keywords = [
   breadcrumbItems={[
     { name: "Home", url: "/en" },
     { name: "Guides", url: "/en/guides" },
-    { name: "Nice 1-3 Days", url: "/en/guide-nice-in-1-to-3-days" }
+    { name: "Visit Nice", url: "/en/guide-nice-in-1-to-3-days" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-nice.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Nice in 1, 2 or 3 Days: Your Perfect Itinerary</h1>
-      <p class="lead text-center mb-xl">
-        The Queen of the Riviera awaits. Azure skies, pastel-colored buildings, world-class art, and that legendary Mediterranean light that inspired Matisse and Chagall. Here's how to make the most of your time.
-      </p>
-    </div>
+  <PageHero 
+    title="Visiting Nice: The Guide"
+    subtitle="From the Promenade des Anglais to the hills of Cimiez. Optimize your 1 to 3 day stay on the French Riviera."
+    backgroundImage="/assets/img/destinations/vtc-nice.webp"
+    badge="ITINERARIES • CULTURE • RELAXATION"
+  />
 
-    <!-- DAY 1 -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Day 1: The Essentials"
+      title="Day 1: The Soul of Nissa la Bella"
       image="/assets/img/destinations/vtc-nice.webp"
-      alt="Promenade des Anglais Nice"
+      alt="Promenade des Anglais"
       imageSide="right"
-      ctaText="Airport Transfer"
+      ctaText="City Center Transfer"
       ctaLink="/en/booking"
     >
-      <p>
-        <strong>Morning:</strong> Start in <strong>Vieux Nice</strong> (Old Town). Lose yourself in the labyrinth of colorful streets. Visit the baroque Cathédrale Sainte-Réparate, browse the flower market on <strong>Cours Saleya</strong>, and try the legendary socca (chickpea pancake) at Chez Thérésa.
+      <p class="fade-in-section">
+        <strong>Morning:</strong> Dive into <strong>Old Nice</strong>. Get lost in the colorful alleys, smell the spices at the Cours Saleya market, and taste a hot socca at Thérésa's.
       </p>
-      <p>
-        <strong>Afternoon:</strong> Climb to <strong>Castle Hill</strong> (or take the free elevator) for panoramic views that will take your breath away. Descend along the Quai des États-Unis to the iconic <strong>Promenade des Anglais</strong>. Rent a blue chair and watch the world go by.
+      <p class="fade-in-section">
+        <strong>Afternoon:</strong> Climb <strong>Castle Hill</strong> for the iconic view over the Baie des Anges. Walk back down to stroll along the mythical <strong>Promenade des Anglais</strong> at sunset.
       </p>
-      <p>
-        <strong>Evening:</strong> Aperitif on a terrace overlooking the Bay of Angels. Dinner in Old Nice – try Olive et Artichaut for Michelin-starred cuisine at accessible prices.
-      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Old Nice</span>
+        <span class="distance-badge">🌊 Promenade</span>
+        <span class="distance-badge">🏰 Castle Hill</span>
+      </div>
     </SectionImageText>
 
-    <!-- DAY 2 -->
     <SectionImageText
-      title="Day 2: Art & Elegance"
+      title="Day 2: Art, Culture & Shopping"
       image="/assets/img/hero/hero-business.webp"
-      alt="Matisse Museum Nice"
+      alt="Nice Matisse Museum"
       imageSide="left"
-      ctaText="Full Day Driver"
+      ctaText="Museum Transfer"
       ctaLink="/en/booking"
     >
-      <p>
-        <strong>Morning:</strong> Head to <strong>Cimiez</strong>, Nice's elegant hill neighborhood. Visit the <strong>Matisse Museum</strong> (free entry!), stroll through the monastery gardens with their stunning views, and explore the Roman Arena ruins.
+      <p class="fade-in-section">
+        <strong>Morning:</strong> Head to the heights of <strong>Cimiez</strong>. This aristocratic district houses the Roman Arena and the superb <strong>Matisse Museum</strong>.
       </p>
-      <p>
-        <strong>Afternoon:</strong> Return to the city center for the <strong>Chagall Museum</strong> – his breathtaking biblical message paintings are a must-see. Then shop on Avenue Jean Médecin or explore the antique dealers of the Carré d'Or.
+      <p class="fade-in-section">
+        <strong>Afternoon:</strong> Chic shopping in the Golden Square (Carré d'Or) or visit the Marc Chagall Museum near the station. End with a drink on the Negresco rooftop.
       </p>
-      <p>
-        <strong>Evening:</strong> Sunset drinks at the Radisson Blu rooftop bar (free access). Dinner at the Port, watching yachts bob in the harbor.
-      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🎨 Matisse & Chagall</span>
+        <span class="distance-badge">🏛️ Cimiez</span>
+        <span class="distance-badge">🛍️ Golden Square</span>
+      </div>
     </SectionImageText>
 
-    <!-- DAY 3 -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Day 3: Day Trip Adventures</h2>
-      <p class="text-center mb-lg">
-        With a private driver, explore the Riviera's treasures without the stress of parking or timetables.
-      </p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Day 3: Private Excursions</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🏰</span><h3>Èze & Monaco</h3><p>Medieval morning in Èze, princely afternoon in Monte-Carlo.</p></div>
+          <div class="service-card"><span class="service-icon">🍷</span><h3>Wine Route</h3><p>Discover the Bellet vineyards on the Nice hills.</p></div>
+          <div class="service-card"><span class="service-icon">⛵</span><h3>Cap Ferrat</h3><p>Visit Villa Ephrussi de Rothschild and coastal walk.</p></div>
+          <div class="service-card"><span class="service-icon">🎨</span><h3>Saint-Paul</h3><p>Artistic getaway in the authentic hinterland.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">The Essentials</h2>
       <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏔️ Option 1: Eze + Monaco</h3>
-          <p>The perched village of Eze (Exotic Garden + Fragonard perfumery), then Monaco (Casino, Palace, Port). Half or full day.</p>
-          <a href="/en/guide-one-day-in-monaco" class="card-link">Monaco Guide →</a>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🎨 Option 2: Hilltop Villages</h3>
-          <p>Saint-Paul-de-Vence (art galleries), Vence (Matisse Chapel), and Tourrettes-sur-Loup. An artistic circuit.</p>
-          <a href="/en/guide-hilltop-villages-french-riviera" class="card-link">Villages Guide →</a>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🌸 Option 3: Grasse & Beyond</h3>
-          <p>World capital of perfume. Create your own fragrance at Molinard or Galimard. Lunch in charming Mougins.</p>
-          <a href="/en/grasse-private-driver" class="card-link">Grasse Transfer →</a>
+        <CategoryCard image="/assets/img/services/service-aeroport.webp" alt="Nice Airport" title="✈️ Arriving in Nice" description="Book your airport transfer in advance to avoid taxi queues." link="/en/booking" />
+        <CategoryCard image="/assets/img/destinations/destination-nice.png" alt="Nice Hotels" title="🏨 Where to Stay?" description="Our top picks: Negresco (Luxury), Radisson Blu (View), Beau Rivage (Center)." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Nice Evening" title="🍽️ Restaurants" description="From Michelin stars to Nice bistros. Ask your driver for tips." link="/en/booking" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Plan Your Nice Stay</h2>
+        <p>A private driver for your transfers and excursions.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Book Now</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- VTC ADVANTAGE -->
-    <SectionImageText
-      title="Your Private Driver in Nice"
-      image="/assets/img/services/service-business.webp"
-      alt="Private chauffeur Nice"
-      imageSide="right"
-      ctaText="Book Your Driver"
-      ctaLink="/en/booking"
-    >
-      <p>
-        <strong>Airport Transfer:</strong> Step off your flight and into comfort. VIP meet & greet, help with luggage, direct transfer to your hotel in a premium vehicle.
-      </p>
-      <p>
-        <strong>Full Day Service:</strong> For Day 3 excursions, book a chauffeur for the day. Fixed price, total flexibility, zero parking stress. Your driver becomes your local guide.
-      </p>
-    </SectionImageText>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Ready to Discover Nice?</h2>
-        <p class="lead mb-4">
-          From airport pickup to day trips, we're your trusted local partner.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/en/booking" class="btn btn-primary">Book My Transfer</a>
-          <a href="/en/nice-private-driver" class="btn btn-outline">Nice Rates</a>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Related Guides</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/guide-hilltop-villages-french-riviera" class="text-dark hover-gold">Hilltop Villages</a>
+        <a href="/en/guide-one-day-in-monaco" class="text-dark hover-gold">Monaco in 1 Day</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">Nice VTC</a>
+        <a href="/en/eze-private-driver" class="text-dark hover-gold">Èze VTC</a>
       </div>
     </section>
-
   </main>
 </BaseLayout>
+
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

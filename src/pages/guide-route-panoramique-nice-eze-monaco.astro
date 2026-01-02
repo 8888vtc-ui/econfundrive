@@ -1,15 +1,18 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Route Panoramique Nice - Èze - Monaco | Guide VTC Scenic Drive";
+const title = "Route Panoramique Nice - Èze - Monaco | Les 3 Corniches en VTC";
 const description = "Découvrez les 3 Corniches de la Côte d'Azur : Grande, Moyenne, Basse. Les plus belles routes du monde avec votre chauffeur privé. Spots photo et arrêts secrets.";
 const keywords = [
   'Corniche Nice Monaco',
   'route panoramique Côte d\'Azur',
   'scenic drive French Riviera',
   'VTC route Eze',
-  'Grande Corniche Monaco'
+  'Grande Corniche Monaco',
+  'circuit Nice Eze Monaco'
 ];
 ---
 
@@ -40,106 +43,534 @@ const keywords = [
     "dateModified": new Date().toISOString().split('T')[0]
   }}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Les Corniches : Les Plus Belles Routes du Monde</h1>
-      <p class="lead text-center mb-xl">
-        Entre Nice et Monaco, trois routes légendaires serpentent à flanc de montagne, offrant des panoramas à couper le souffle. Laissez votre chauffeur gérer les virages pendant que vous admirez la Méditerranée.
-      </p>
-    </div>
+  <PageHero 
+    title="Les 3 Corniches"
+    subtitle="Les plus belles routes du monde entre Nice et Monaco. Panoramas vertigineux, villages perchés et légendes du cinéma."
+    backgroundImage="/assets/img/guides/villages-perches.webp"
+    badge="SCENIC DRIVE • CIRCUIT SIGNATURE"
+  />
 
+  <main class="page-content">
+    
     <!-- INTRO -->
     <SectionImageText
       title="Pourquoi un VTC pour les Corniches ?"
-      image="/assets/img/guides/villages-perches.webp"
-      alt="Vue Corniche Nice Monaco"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Chauffeur VTC Corniche Nice Monaco"
       imageSide="right"
       ctaText="Réserver un Scenic Drive"
       ctaLink="/reservation"
     >
-      <p>
+      <p class="fade-in-section">
         <strong>Ces routes sont spectaculaires... mais exigeantes.</strong> Virages serrés, précipices vertigineux, touristes distraits. Conduire soi-même signifie manquer le paysage.
       </p>
-      <p>
-        Avec ECOFUNDRIVE, vous êtes passager. Admirez la vue, prenez des photos aux meilleurs spots, et arrêtez-vous quand vous le souhaitez. Nos chauffeurs connaissent chaque virage par cœur.
+      <p class="fade-in-section">
+        Avec ECOFUNDRIVE, vous êtes passager. <strong>Admirez la vue, prenez des photos</strong> aux meilleurs spots, et arrêtez-vous quand vous le souhaitez. Nos chauffeurs connaissent chaque virage par cœur.
       </p>
+      <div class="why-vtc fade-in-section">
+        <div class="why-item">✅ Pauses photo illimitées</div>
+        <div class="why-item">✅ Narration historique</div>
+        <div class="why-item">✅ Spots secrets</div>
+        <div class="why-item">✅ Sécurité maximale</div>
+      </div>
     </SectionImageText>
 
     <!-- LES 3 CORNICHES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Les 3 Corniches : Choisissez Votre Aventure</h2>
-      <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🏔️ Grande Corniche (D2564)</h3>
-          <p><strong>Altitude max : 512m</strong>. La plus haute et la plus spectaculaire. Construite par Napoléon d'après la Via Julia Augusta. Point de vue du Col d'Èze et Tête de Chien à ne pas manquer.</p>
-          <p><em>Durée : 45 min sans arrêt</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">⛰️ Moyenne Corniche (D6007)</h3>
-          <p><strong>Le meilleur compromis</strong>. Traverse le village d'Èze. Parfaite pour combiner panoramas et visite du Jardin Exotique. Célèbre pour les scènes de "La Main au Collet" d'Hitchcock.</p>
-          <p><em>Durée : 30 min sans arrêt</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🌊 Basse Corniche (D6098)</h3>
-          <p><strong>Au ras des flots</strong>. Longe la côte de Villefranche à Cap-d'Ail. Vues sur le Cap Ferrat et ses villas de milliardaires. Idéale pour un apéro au bord de l'eau.</p>
-          <p><em>Durée : 40 min sans arrêt</em></p>
+    <section class="corniches-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Les 3 Corniches : Choisissez Votre Aventure</h2>
+        <div class="corniches-grid">
+          <div class="corniche-card grande">
+            <span class="corniche-badge">🏔️ 512m</span>
+            <h3>Grande Corniche</h3>
+            <span class="corniche-route">D2564</span>
+            <p>La plus haute et spectaculaire. Construite par Napoléon d'après la Via Julia Augusta. Vue plongeante sur Monaco.</p>
+            <div class="corniche-spots">
+              <strong>Spots :</strong> Col d'Èze • Tête de Chien
+            </div>
+            <span class="corniche-time">⏱️ 45 min sans arrêt</span>
+          </div>
+          <div class="corniche-card moyenne featured">
+            <span class="corniche-badge">⛰️ RECOMMANDÉ</span>
+            <h3>Moyenne Corniche</h3>
+            <span class="corniche-route">D6007</span>
+            <p>Le meilleur compromis. Traverse Èze Village. Célèbre pour "La Main au Collet" d'Hitchcock avec Grace Kelly.</p>
+            <div class="corniche-spots">
+              <strong>Spots :</strong> Èze Village • Jardin Exotique
+            </div>
+            <span class="corniche-time">⏱️ 30 min sans arrêt</span>
+          </div>
+          <div class="corniche-card basse">
+            <span class="corniche-badge">🌊 Bord de mer</span>
+            <h3>Basse Corniche</h3>
+            <span class="corniche-route">D6098</span>
+            <p>Au ras des flots. Longe Villefranche, Cap Ferrat et ses villas de milliardaires. Idéale pour apéro en terrasse.</p>
+            <div class="corniche-spots">
+              <strong>Spots :</strong> Villefranche • Cap Ferrat
+            </div>
+            <span class="corniche-time">⏱️ 40 min sans arrêt</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CIRCUIT RECOMMANDE -->
-    <SectionImageText
-      title="Notre Circuit Signature : Le Grand Tour"
-      image="/assets/img/destinations/destination-monaco.webp"
-      alt="Vue Monaco depuis Grande Corniche"
-      imageSide="left"
-      ctaText="Réserver le Grand Tour"
-      ctaLink="/reservation"
-    >
-      <p>
-        <strong>Durée : 3 à 4 heures</strong>. Un itinéraire complet qui combine les 3 corniches :
-      </p>
-      <ol>
-        <li>Départ Nice → <strong>Grande Corniche</strong> (arrêt Col d'Èze pour photos)</li>
-        <li>Descente vers <strong>Moyenne Corniche</strong> → Visite <strong>Èze Village</strong> (1h30)</li>
-        <li>Poursuite vers <strong>Monaco</strong> → Tour du circuit F1, arrêt au Casino</li>
-        <li>Retour par <strong>Basse Corniche</strong> → Villefranche-sur-Mer et Cap Ferrat</li>
-      </ol>
-      <p>
-        <strong>Inclus :</strong> Pauses photo illimitées. Eau fraîche. Narration du chauffeur sur l'histoire de la région.
-      </p>
-    </SectionImageText>
+    <!-- CIRCUIT SIGNATURE -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">🏆 Notre Circuit Signature : Le Grand Tour</h2>
+      <div class="circuit-wrapper">
+        <div class="circuit-info">
+          <div class="circuit-duration">
+            <span class="duration-label">Durée totale</span>
+            <span class="duration-value">3-4 heures</span>
+          </div>
+          <p class="circuit-desc">Un itinéraire complet qui combine les 3 corniches pour une expérience inoubliable.</p>
+        </div>
+        <div class="circuit-steps">
+          <div class="circuit-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h4>Nice → Grande Corniche</h4>
+              <p>Montée vers le Col d'Èze (512m). Arrêt photos avec vue panoramique sur la Baie des Anges.</p>
+            </div>
+          </div>
+          <div class="circuit-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h4>Visite Èze Village</h4>
+              <p>1h30 de visite libre. Jardin Exotique, ruelles médiévales, parfumeries Fragonard ou Galimard.</p>
+            </div>
+          </div>
+          <div class="circuit-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h4>Monaco</h4>
+              <p>Descente par la Moyenne Corniche. Tour du circuit F1, Casino, Palais Princier. Option déjeuner.</p>
+            </div>
+          </div>
+          <div class="circuit-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <h4>Retour Basse Corniche</h4>
+              <p>Cap Ferrat, Beaulieu, Villefranche-sur-Mer. Retour à Nice par le bord de mer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="circuit-includes">
+        <strong>✓ Inclus :</strong> Pauses photo illimitées • Eau fraîche • Narration historique par votre chauffeur
+      </div>
+      <div class="text-center mt-lg">
+        <a href="/reservation" class="btn-gold">Réserver le Grand Tour</a>
+      </div>
+    </section>
 
     <!-- SPOTS PHOTO -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">📸 Meilleurs Spots Photo</h2>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Tête de Chien (Grande Corniche)</h3>
-          <p>Vue plongeante sur Monaco depuis 550m. Spot incontournable, surtout au lever ou coucher de soleil. Accessible uniquement en voiture.</p>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">📸 Les Meilleurs Spots Photo</h2>
+      <div class="spots-grid">
+        <div class="spot-card">
+          <span class="spot-icon">🦁</span>
+          <h3>Tête de Chien</h3>
+          <p class="spot-location">Grande Corniche • 550m</p>
+          <p>Vue plongeante sur Monaco depuis le rocher. Spot incontournable au lever ou coucher de soleil. Accessible uniquement en voiture.</p>
+          <span class="spot-tip">💡 Meilleur moment : lever de soleil</span>
         </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Jardin Exotique d'Èze</h3>
-          <p>Vue à 360° depuis les ruines du château. Cactus géants au premier plan, mer turquoise en arrière-plan. L'un des plus beaux points de vue de la Côte.</p>
+        <div class="spot-card">
+          <span class="spot-icon">🌵</span>
+          <h3>Jardin Exotique d'Èze</h3>
+          <p class="spot-location">Moyenne Corniche • 427m</p>
+          <p>Vue à 360° depuis les ruines du château. Cactus géants au premier plan, mer turquoise en arrière-plan.</p>
+          <span class="spot-tip">💡 Prévoir 45 min de visite</span>
+        </div>
+        <div class="spot-card">
+          <span class="spot-icon">⛵</span>
+          <h3>Baie de Villefranche</h3>
+          <p class="spot-location">Basse Corniche</p>
+          <p>L'une des plus belles baies du monde. Vue sur la citadelle et les paquebots de croisière.</p>
+          <span class="spot-tip">💡 Pause café recommandée</span>
+        </div>
+        <div class="spot-card">
+          <span class="spot-icon">🏰</span>
+          <h3>Col d'Èze</h3>
+          <p class="spot-location">Grande Corniche • 512m</p>
+          <p>Panorama du Cap Ferrat à l'Italie. Table d'orientation pour identifier les sites.</p>
+          <span class="spot-tip">💡 Parking facile</span>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Vivez l'Expérience Corniche</h2>
-        <p class="lead mb-4">
-          Une expérience unique où votre chauffeur devient votre guide. Créez des souvenirs inoubliables.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/reservation" class="btn btn-primary">Réserver mon Scenic Drive</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">Demander un Devis</a>
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Vivez l'Expérience Corniche</h2>
+        <p>Une expérience unique où votre chauffeur devient votre guide. Créez des souvenirs inoubliables sur les plus belles routes du monde.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Scenic Drive</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Demander un Devis</a>
         </div>
+        <p class="cta-price">Grand Tour à partir de <strong>150€</strong></p>
       </div>
     </section>
 
+    <!-- RELATED -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Guides Connexes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/guide-monaco-en-une-journee" class="text-dark hover-gold">Monaco en 1 jour</a>
+        <a href="/en/guide-scenic-road-nice-eze-monaco" class="text-dark hover-gold">English Version</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  /* WHY VTC */
+  .why-vtc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .why-item {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* CORNICHES SECTION */
+  .corniches-section {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    margin: 3rem 0;
+  }
+  
+  .corniches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .corniches-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .corniche-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+  }
+  
+  .corniche-card.featured {
+    border: 2px solid #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
+  }
+  
+  .corniche-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.3);
+  }
+  
+  .corniche-card.featured:hover {
+    border-color: #d4af37;
+    transform: scale(1.02) translateY(-5px);
+  }
+  
+  .corniche-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .corniche-card h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .corniche-route {
+    color: #888;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .corniche-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .corniche-spots {
+    background: rgba(255,255,255,0.05);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .corniche-time {
+    color: #d4af37;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  /* CIRCUIT */
+  .circuit-wrapper {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border-left: 4px solid #d4af37;
+  }
+  
+  .circuit-info {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .circuit-duration {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .duration-label {
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+  }
+  
+  .duration-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  
+  .circuit-desc {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .circuit-steps {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .circuit-step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: #d4af37;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step-content h4 {
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+  }
+  
+  .step-content p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .circuit-includes {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 8px;
+    color: #555;
+  }
+  
+  /* SPOTS GRID */
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .spots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .spots-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .spot-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+  }
+  
+  .spot-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  .spot-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .spot-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+  }
+  
+  .spot-location {
+    color: #d4af37;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .spot-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .spot-tip {
+    display: block;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-price {
+    margin-top: 1.5rem;
+    color: #d4af37 !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

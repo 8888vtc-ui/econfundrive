@@ -1,5 +1,6 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
@@ -23,7 +24,7 @@ const faqSchema = {
       "name": "Quand a lieu la Fête du Citron à Menton ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La Fête du Citron se déroule chaque année en février pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes et ses corsos. Nous proposons des transferts dédiés pour cet événement."
+        "text": "La Fête du Citron se déroule chaque année en février pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes et ses corsos."
       }
     },
     {
@@ -41,14 +42,6 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Menton est à seulement 10 km de Monaco, soit 15-20 minutes en VTC. Nous assurons les navettes quotidiennes entre Menton et la Principauté."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Les jardins de Menton valent-ils le détour ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolument ! Menton possède plusieurs jardins exceptionnels : Serre de la Madone, Val Rahmeh, Jardin Fontana Rosa. Le climat particulièrement doux permet une végétation subtropicale unique en France."
-      }
     }
   ]
 };
@@ -60,126 +53,233 @@ const faqSchema = {
   currentPage="vtc-menton"
   canonical="/vtc-menton"
   schema={faqSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Menton", url: "/vtc-menton" }
   ]}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Menton – La Perle de la France</h1>
-      <p class="lead text-center mb-xl">
-        Chauffeur privé premium à Menton. Fête du Citron, jardins exceptionnels, frontière italienne. 
-        Transferts Monaco, Nice, Vintimille. Service 24h/24 multilingue.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC Menton"
+    subtitle="La Perle de la France. Chauffeur privé premium pour la Fête du Citron, les jardins exceptionnels et les excursions en Italie."
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.webp"
+    badge="FRONTIÈRE ITALIENNE • 24/7"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
-      </div>
-    </section>
-
+    <!-- INTRO SECTION -->
     <SectionImageText
-      title="La Porte de l'Italie"
-      image="/assets/img/destinations/destination-monaco.png"
-      alt="Menton frontière Italie Vintimille"
-      imageSide="left"
-      ctaText="Réserver une excursion"
+      title="Menton : Climat Unique & Art de Vivre"
+      image="/assets/img/destinations/destination-cannes.webp"
+      alt="Vue panoramique Menton vieille ville"
+      imageSide="right"
+      ctaText="Réserver un transfert"
       ctaLink="/reservation"
     >
       <p class="fade-in-section">
-        Menton est située à seulement <strong>2 km de la frontière italienne</strong>. Cette position unique permet des excursions faciles vers la Riviera dei Fiori (Riviera des Fleurs) italienne.
+        <strong>Menton</strong> bénéficie du microclimat le plus doux de France. Nichée entre mer et montagne, à la frontière italienne, cette "Perle de la France" séduit par ses ruelles colorées, ses jardins subtropicaux et sa douceur de vivre.
       </p>
-      <h3 class="fade-in-section">Destinations italiennes populaires :</h3>
-      <ul class="fade-in-section">
-        <li><strong>Vintimille (Ventimiglia)</strong> – Célèbre marché du vendredi, vieille ville médiévale (15 min)</li>
-        <li><strong>Bordighera</strong> – Palmiers, vieille ville, jardin Pallanca (25 min)</li>
-        <li><strong>San Remo</strong> – Casino, festival de la chanson, marché aux fleurs (45 min)</li>
-        <li><strong>Dolceacqua</strong> – Village médiéval, château, vin Rossese (30 min)</li>
-      </ul>
       <p class="fade-in-section">
-        Nous proposons des <strong>excursions à la journée</strong> combinant plusieurs de ces destinations, avec possibilité de déjeuner typique italien.
+        Avec ECOFUNDRIVE, accédez facilement à cette destination unique. Nous vous déposons au coeur de la vieille ville ou directement devant les jardins, sans les contraintes du stationnement limité.
       </p>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice Aéroport (45-50 min)</li>
+        <li>Transferts depuis Monaco (15-20 min)</li>
+        <li>Excursions Italie (Vintimille, San Remo)</li>
+        <li>Service Fête du Citron (février)</li>
+      </ul>
     </SectionImageText>
 
+    <!-- HIGHLIGHTS -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Menton</h2>
+      <h2 class="section-title text-center mb-xl">Les Incontournables de Menton</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/services/service-business.webp"
+          image="/assets/img/services/service-evenements.webp"
           alt="Fête du Citron Menton"
-          title="Fête du Citron"
-          description="Chaque février, sculptures géantes d'agrumes et corsos attirent 250.000 visiteurs. Réservez votre transport à l'avance !"
+          title="🍋 Fête du Citron"
+          description="Chaque février, des sculptures géantes d'agrumes et des corsos féeriques attirent 250.000 visiteurs. Un spectacle unique au monde !"
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-cannes.webp"
+          image="/assets/img/hero/hero-mariage.webp"
           alt="Jardins Menton"
-          title="Jardins Exceptionnels"
-          description="Serre de la Madone, Val Rahmeh, Fontana Rosa... Des jardins subtropicaux uniques en France grâce au microclimat."
+          title="🌴 Jardins Exceptionnels"
+          description="Serre de la Madone, Val Rahmeh, Fontana Rosa... Des jardins subtropicaux uniques grâce au microclimat mentonnais."
           link="/reservation"
         />
         <CategoryCard
           image="/assets/img/about/vehicule-premium.webp"
           alt="Vieille ville Menton"
-          title="Vieille Ville Baroque"
-          description="Ruelles colorées, basilique Saint-Michel, marché couvert, cimetière du Vieux-Château avec vue panoramique."
+          title="🏛️ Vieille Ville Baroque"
+          description="Façades ocres, basilique Saint-Michel, marché provençal. Une atmosphère italienne à quelques pas de la France."
           link="/reservation"
         />
       </div>
     </section>
 
+    <!-- ITALY SECTION -->
+    <SectionImageText
+      title="La Porte de l'Italie"
+      image="/assets/img/about/chauffeur-professionnel.webp"
+      alt="Excursion Italie Vintimille San Remo"
+      imageSide="left"
+      ctaText="Excursion Italie"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        Menton est située à seulement <strong>2 km de la frontière italienne</strong>. Profitez de notre service pour explorer la <strong>Riviera dei Fiori</strong> (Riviera des Fleurs) italienne.
+      </p>
+      <h3 class="fade-in-section">Destinations italiennes populaires :</h3>
+      <ul class="fade-in-section">
+        <li><strong>Vintimille</strong> – Célèbre marché du vendredi (15 min)</li>
+        <li><strong>Bordighera</strong> – Palmiers et charme Belle Époque (25 min)</li>
+        <li><strong>San Remo</strong> – Casino, festival de la chanson (45 min)</li>
+        <li><strong>Dolceacqua</strong> – Village médiéval et vin Rossese (30 min)</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- FAQ -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
           <h3 class="faq-question">Quand a lieu la Fête du Citron à Menton ?</h3>
           <div class="faq-answer">
-            <p>La <strong>Fête du Citron</strong> se déroule chaque année en <strong>février</strong> pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes et ses corsos. Réservez votre VTC à l'avance, la demande est très forte !</p>
+            <p>La <strong>Fête du Citron</strong> se déroule chaque année en <strong>février</strong> pendant 2-3 semaines. C'est l'événement majeur de Menton avec ses sculptures d'agrumes géantes. Réservez votre VTC à l'avance !</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Faites-vous des transferts vers l'Italie depuis Menton ?</h3>
+          <h3 class="faq-question">Faites-vous des transferts vers l'Italie ?</h3>
           <div class="faq-answer">
-            <p>Oui, Menton est à la frontière italienne. Nous proposons des excursions vers <strong>Vintimille</strong> (célèbre marché du vendredi), <strong>Bordighera</strong>, <strong>San Remo</strong> et toute la Riviera des Fleurs italienne. Aucune formalité particulière pour les citoyens UE.</p>
+            <p>Oui ! Menton est à la frontière italienne. Nous proposons des excursions vers <strong>Vintimille</strong>, <strong>San Remo</strong>, et toute la Riviera dei Fiori. Aucune formalité pour les citoyens UE.</p>
           </div>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Combien de temps entre Menton et Monaco ?</h3>
           <div class="faq-answer">
-            <p>Menton est à seulement <strong>10 km de Monaco</strong>, soit 15-20 minutes en VTC. Nous assurons les navettes quotidiennes entre Menton et la Principauté pour les résidents et travailleurs.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Les jardins de Menton valent-ils le détour ?</h3>
-          <div class="faq-answer">
-            <p>Absolument ! Menton possède plusieurs <strong>jardins exceptionnels</strong> : Serre de la Madone (classé Monument Historique), Val Rahmeh (jardin botanique remarquable), Jardin Fontana Rosa. Le climat particulièrement doux (le plus chaud de France) permet une végétation subtropicale unique.</p>
+            <p>Menton est à seulement <strong>10 km de Monaco</strong>, soit 15-20 minutes en VTC. Navettes quotidiennes disponibles.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CTA FINAL -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Découvrez Menton Sans Stress</h2>
+        <p>Stationnement difficile ? Routes sinueuses ? Laissez-nous vous conduire et profitez pleinement de la Perle de la France.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-roquebrune-cap-martin" class="text-dark hover-gold">VTC Roquebrune</a>
-        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
         <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
-        <a href="/vtc-la-turbie" class="text-dark hover-gold">VTC La Turbie</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
         <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
         <a href="/vtc-villefranche-sur-mer" class="text-dark hover-gold">VTC Villefranche</a>
+        <a href="/vtc-la-turbie" class="text-dark hover-gold">VTC La Turbie</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
 </style>

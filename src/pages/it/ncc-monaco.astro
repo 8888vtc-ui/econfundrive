@@ -4,7 +4,7 @@ import SectionImageText from '../../components/SectionImageText.astro';
 import CategoryCard from '../../components/CategoryCard.astro';
 
 const title = "NCC Monaco – Autista Privato Monte-Carlo Gran Premio | ECOFUNDRIVE";
-const description = "Servizio NCC premium a Monaco. Casino Monte-Carlo, Gran Premio F1, Port Hercules, hotel 5 stelle. Autista privato italiano. Trasferimenti da Nizza.";
+const description = "Servizio NCC premium a Monaco. Casino Monte-Carlo, Gran Premio F1, Port Hercule, hotel 5 stelle. Autista privato italiano. Trasferimenti da Nizza.";
 const keywords = [
   'NCC Monaco',
   'autista privato Monaco',
@@ -24,6 +24,7 @@ const keywords = [
     { name: "Home", url: "/it" },
     { name: "NCC Monaco", url: "/it/ncc-monaco" }
   ]}
+  schema={{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quanto tempo dura il trasferimento dall'aeroporto di Nizza a Monaco?","acceptedAnswer":{"@type":"Answer","text":"Il trasferimento dall'aeroporto di Nizza a Monaco dura circa 30-45 minuti a seconda del traffico. Durante il Gran Premio o in alta stagione potrebbe essere più lungo."}},{"@type":"Question","name":"Offrite servizio durante il Gran Premio di Monaco?","acceptedAnswer":{"@type":"Answer","text":"Sì, offriamo servizio NCC dedicato durante il Gran Premio di Monaco. Consigliamo di prenotare diversi mesi in anticipo per l'altissima domanda."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -31,11 +32,34 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
+    <SectionImageText
+      title="Il Vostro Autista Privato a Monaco"
+      image="/assets/img/destinations/destination-monaco.png"
+      alt="NCC autista privato Monaco Monte-Carlo"
+      imageSide="right"
+      ctaText="Prenota il Trasferimento"
+      ctaLink="/it/contatto"
+    >
+      <p class="fade-in-section">
+        <strong>Monaco</strong>, il principato glamour sulla Costa Azzurra, incarna lusso, eleganza e prestigio. Che visitiate il <strong>Casino di Monte-Carlo</strong>, partecipiate al <strong>Gran Premio F1</strong>, o soggiorniate in un hotel di lusso, meritate un servizio premium.
+      </p>
+      <p class="fade-in-section">
+        ECOFUNDRIVE offre <strong>servizi NCC premium a Monaco</strong>, perfetti per trasferimenti dall'aeroporto di Nizza, incontri di lavoro, eventi speciali e tour della costa mediterranea.
+      </p>
+      <ul class="fade-in-section">
+        <li>Trasferimento Nizza aeroporto - Monaco (30-45 min)</li>
+        <li>Servizio dedicato Gran Premio Monaco</li>
+        <li>Trasferimenti hotel di lusso e yacht</li>
+        <li>Trasporti business e corporate</li>
+        <li>Autisti professionali che parlano italiano</li>
+        <li>Veicoli premium (Tesla, Mercedes Classe S)</li>
+      </ul>
+    </SectionImageText>
+
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <h2 class="text-center mb-lg">Tariffe e Preventivi</h2>
       <div class="cta-box">
-        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo</a>
+        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo gratuito</a>
       </div>
     </section>
 
@@ -47,22 +71,46 @@ const keywords = [
           alt="Casino Monte-Carlo"
           title="Casino di Monte-Carlo"
           description="L'iconico casino Belle Époque, simbolo del glamour di Monaco. Trasferimenti serali per serate al casino."
-          link="/reservation"
+          link="/it/contatto"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Gran Premio Monaco"
           title="Gran Premio Formula 1"
           description="Servizio NCC dedicato per la gara più prestigiosa del mondo. Prenotate mesi in anticipo."
-          link="/reservation"
+          link="/it/contatto"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
+          image="/assets/img/about/vehicule-premium.webp"
           alt="Port Hercule Monaco"
           title="Port Hercule e Yacht"
           description="Trasferimenti verso superyacht e il famoso Monaco Yacht Show. Servizio banchina disponibile."
-          link="/reservation"
+          link="/it/contatto"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Domande Frequenti</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Quanto tempo dura il trasferimento dall'aeroporto di Nizza a Monaco?</h3>
+          <div class="faq-answer">
+            <p>Il trasferimento dall'aeroporto di Nizza a Monaco dura circa <strong>30-45 minuti</strong> a seconda del traffico. Durante il Gran Premio o in alta stagione potrebbe essere più lungo.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Offrite servizio durante il Gran Premio di Monaco?</h3>
+          <div class="faq-answer">
+            <p>Sì, offriamo <strong>servizio NCC dedicato</strong> durante il Gran Premio di Monaco. Consigliamo di prenotare diversi mesi in anticipo per l'altissima domanda.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">I vostri autisti conoscono gli hotel di lusso di Monaco?</h3>
+          <div class="faq-answer">
+            <p>Assolutamente. I nostri autisti conoscono tutti gli hotel di lusso di Monaco (Hôtel de Paris, Hermitage, Fairmont, Métropole) e possono lasciarvi direttamente all'ingresso principale.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -70,15 +118,26 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Destinazioni Vicine</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/it" class="text-dark hover-gold">NCC Nizza</a>
-        <a href="/vtc-cannes" class="text-dark hover-gold">NCC Cannes</a>
-        <a href="/vtc-eze" class="text-dark hover-gold">Tour Eze</a>
-        <a href="/vtc-saint-tropez" class="text-dark hover-gold">Saint-Tropez</a>
+        <a href="/it/ncc-cannes" class="text-dark hover-gold">NCC Cannes</a>
+        <a href="/it/ncc-saint-tropez" class="text-dark hover-gold">NCC Saint-Tropez</a>
+        <a href="/it/ncc-antibes" class="text-dark hover-gold">NCC Antibes</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .cta-box { text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
+  .btn-primary {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #b8941f; transform: translateY(-2px); }
 </style>

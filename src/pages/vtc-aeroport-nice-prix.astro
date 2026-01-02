@@ -1,51 +1,117 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Vtc Aeroport Nice Prix | ECOFUNDRIVE";
-const description = "Service VTC sur la Côte d'Azur. Chauffeur privé professionnel pour vos déplacements. Service ECOFUNDRIVE professionnel 24h/24. Véhicules premium, chauffeurs ...";
+const title = "Tarifs & Réservation VTC Aéroport Nice | ECOFUNDRIVE";
+const description = "Consultez nos tarifs VTC transparents au départ de l'aéroport de Nice. Transferts Monaco, Cannes, Saint-Tropez. Prix fixes, sans surprise. Devis immédiat.";
 const keywords = [
-  'VTC',
-  'chauffeur privé',
-  "Côte d\'Azur",
-  "VTC Côte d'Azur",
-  'transport premium'
+  'VTC, tarif aéroport nice',
+  'prix VTC nice',
+  'devis VTC côte d\'azur',
+  'réservation chauffeur nice',
+  'coût transfert monaco'
 ];
 ---
 
-<BaseLayout title={title} description={description} currentPage="vtc-aeroport-nice-prix"
+<BaseLayout 
+  title={title}
+  description={description}
+  currentPage="vtc-aeroport-nice-prix"
   canonical="/vtc-aeroport-nice-prix"
-  <main class="page-content">
-    <div class="container">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <section>
-        <h2>Réservation</h2>
-        <p>Pour réserver votre chauffeur privé VTC :</p>
-        <div class="contact-buttons">
-          <a href="tel:+33616552811" class="btn btn-primary">06 16 55 28 11</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "Tarifs & Devis", url: "/vtc-aeroport-nice-prix" }
+  ]}
+>
+  <PageHero 
+    title="Tarifs & Réservations"
+    subtitle="La transparence et l'excellence. Prix fixes, convenus à l'avance, pour une sérénité totale."
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.png"
+    badge="PRIX FIXES • SANS SURPRISE • PREMIUM"
+  />
+
+  <main id="main-content" class="page-content">
+    
+    <SectionImageText
+      title="Une Tarification Claire"
+      image="/assets/img/hero/hero-aeroport-nice.png"
+      alt="Chauffeur VTC Nice"
+      imageSide="right"
+      ctaText="Calculer mon Tarif"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        Chez ECOFUNDRIVE, nous croyons en la transparence. Fini les compteurs qui tournent dans les embouteillages. Nous vous proposons des <strong>tarifs forfaitaires fixes</strong>, communiqués avant la course.
+      </p>
+      <p class="fade-in-section">
+        Que vous voyagiez seul en Berline Business ou en groupe en Van Mercedes Classe V, vous bénéficiez du même niveau d'excellence : accueil pancarte, bouteilles d'eau, attente gratuite à l'aéroport.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">✅ Prix Fixe Garanti</span>
+        <span class="distance-badge">✅ Attente Incluse (60 min aéroport)</span>
+        <span class="distance-badge">✅ Annulation Flexible</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Tarifs Indicatifs (Départ Nice)</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🇲🇨</span><h3>Monaco</h3><p>À partir de <strong>80€</strong><br>Transfert direct et rapide.</p></div>
+          <div class="service-card"><span class="service-icon">🎬</span><h3>Cannes</h3><p>À partir de <strong>70€</strong><br>Dépose Croisette ou Congrès.</p></div>
+          <div class="service-card"><span class="service-icon">🏖️</span><h3>Antibes</h3><p>À partir de <strong>60€</strong><br>Cap d'Antibes ou Juan-les-Pins.</p></div>
+          <div class="service-card"><span class="service-icon">☀️</span><h3>Saint-Tropez</h3><p>À partir de <strong>200€</strong><br>Berline confort long trajet.</p></div>
         </div>
-      </section>
-    </div>
-  
-    <section class="mb-xl">
-      <h2>Pourquoi choisir ECOFUNDRIVE ?</h2>
-      <p>ECOFUNDRIVE est votre partenaire de confiance pour tous vos déplacements sur la Côte d'Azur. Avec des années d'expérience, nous offrons un service premium, ponctuel et professionnel. Nos chauffeurs experts connaissent parfaitement la région et vous garantissent un voyage confortable et sans stress.</p>
-      <p>Que vous ayez besoin d'un transfert aéroport, d'un service business ou d'une mise à disposition pour vos visites touristiques, ECOFUNDRIVE répond à tous vos besoins de transport avec excellence.</p>
-      <a href="/services" class="btn-primary">Découvrir nos services</a>
+        <div class="text-center mt-lg">
+            <p style="color: #aaa; margin-top: 1rem; font-style: italic;">* Tarifs "à partir de", variables selon véhicule, horaire et saison. Demandez votre devis précis.</p>
+        </div>
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Pages connexes</h2>
-      <p>Découvrez nos autres services : <a href="/services">services</a> | <a href="/reservation">reservation</a> | <a href="/contact">contact</a></p>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Modes de Paiement</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Carte Bancaire" title="💳 Carte Bancaire" description="Nous acceptons toutes les cartes (Visa, Amex, Mastercard) à bord ou en lien sécurisé." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Virement" title="🏦 Virement / Lien" description="Paiement à distance sécurisé pour prépayer votre course ou pour les entreprises." link="/reservation" />
+        <CategoryCard image="/assets/img/hero/hero-mariage.webp" alt="Espèces" title="💶 Espèces" description="Paiement direct au chauffeur possible (dans la limite légale)." link="/reservation" />
+      </div>
     </section>
-  
-    <section class="mb-xl">
-      <h2>Nos services sur la Côte d'Azur</h2>
-      <p>ECOFUNDRIVE propose une gamme complète de services VTC pour répondre à tous vos besoins de transport. Découvrez nos solutions adaptées à chaque situation.</p>
-      <a href="/services" class="btn-primary">Voir tous nos services</a>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Obtenez votre Tarif Immédiat</h2>
+        <p>Réponse rapide par WhatsApp ou formulaire. Sans engagement.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Devis Express</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

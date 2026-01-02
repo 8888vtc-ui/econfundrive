@@ -1,18 +1,41 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Cap Ferrat – Chauffeur Privé Villa Ephrussi | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Saint-Jean-Cap-Ferrat. Villa Ephrussi de Rothschild, Grand Hôtel du Cap-Ferrat, villas de luxe. Service premium pour clientèle exigeante.";
+const description = "Chauffeur privé VTC à Saint-Jean-Cap-Ferrat. Villa Ephrussi de Rothschild, Grand Hôtel Four Seasons, villas de milliardaires. Service premium pour clientèle exigeante.";
 const keywords = [
   'VTC Cap Ferrat',
   'chauffeur privé Cap Ferrat',
   'VTC Villa Ephrussi',
   'transfert Saint-Jean-Cap-Ferrat',
-  'VTC Grand Hotel Cap Ferrat',
-  'chauffeur presqu ile Cap Ferrat'
+  'VTC Grand Hotel Cap Ferrat'
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps pour Nice → Cap Ferrat ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le transfert Nice → Saint-Jean-Cap-Ferrat prend environ 20-25 minutes en VTC (environ 10 km)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proposez-vous des transferts vers le Grand Hôtel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous desservons le Grand Hôtel du Cap-Ferrat Four Seasons et toutes les villas de luxe."
+      }
+    }
+  ]
+};
 ---
 
 <BaseLayout 
@@ -20,51 +43,98 @@ const keywords = [
   description={description}
   currentPage="vtc-cap-ferrat"
   canonical="/vtc-cap-ferrat"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Cap Ferrat", url: "/vtc-cap-ferrat" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de Nice à Cap Ferrat ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des transferts vers le Grand Hôtel du Cap-Ferrat ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous desservons régulièrement le Grand Hôtel du Cap-Ferrat Four Seasons ainsi que tous les hôtels et villas de la presqu'île."}}]}}
+  schema={faqSchema}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Cap Ferrat"
+    subtitle="La presqu'île des milliardaires. Villa Ephrussi, Grand Hôtel Four Seasons, villas de luxe et criques secrètes."
+    backgroundImage="/assets/img/hero/hero-home.webp"
+    badge="PRESQU'ÎLE EXCLUSIVE • FOUR SEASONS"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
-      </div>
-    </section>
+    <SectionImageText
+      title="La Presqu'île la Plus Exclusive"
+      image="/assets/img/about/vehicule-premium.webp"
+      alt="VTC Cap Ferrat presqu'île"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Jean-Cap-Ferrat</strong> est l'une des presqu'îles les plus exclusives de la Méditerranée. Surnommée "la presqu'île des milliardaires", elle abrite certaines des propriétés les plus chères au monde.
+      </p>
+      <p class="fade-in-section">
+        Avec ECOFUNDRIVE, accédez facilement à ce joyau. Nous desservons le <strong>Grand Hôtel du Cap-Ferrat Four Seasons</strong>, la <strong>Villa Ephrussi</strong>, les villas privées et les plages exclusives.
+      </p>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice (20-25 min)</li>
+        <li>Transferts depuis Monaco (15-20 min)</li>
+        <li>Accès hôtels de luxe et villas privées</li>
+        <li>Plages Passable et Paloma</li>
+      </ul>
+    </SectionImageText>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Cap Ferrat</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Cap Ferrat</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/destinations/destination-monaco.png"
+          image="/assets/img/hero/hero-mariage.webp"
           alt="Villa Ephrussi Rothschild"
-          title="Villa Ephrussi de Rothschild"
-          description="Palais de style Renaissance italienne aux 9 jardins thématiques. Vue imprenable sur les deux baies de la presqu'île."
+          title="🏛️ Villa Ephrussi"
+          description="Palais Renaissance, 9 jardins thématiques. Vue imprenable sur les deux baies. Classée monument historique."
           link="/reservation"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="Grand Hotel Cap Ferrat"
-          title="Grand Hôtel du Cap-Ferrat"
-          description="Palace Four Seasons mythique, ses plages privées et son restaurant étoilé face à la mer."
+          title="⭐ Grand Hôtel Four Seasons"
+          description="Palace mythique, plages privées, restaurant étoilé. L'excellence absolue sur la Riviera."
           link="/reservation"
         />
         <CategoryCard
-          image="/assets/img/hero/hero-home.webp"
+          image="/assets/img/hero/hero-ete.webp"
           alt="Sentier Cap Ferrat"
-          title="Le Sentier du Littoral"
-          description="Promenade de 11 km autour de la presqu'île, entre criques cachées et vues spectaculaires."
+          title="🥾 Sentier du Littoral"
+          description="11 km de promenade autour de la presqu'île. Criques cachées et vues spectaculaires."
           link="/reservation"
         />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps Nice → Cap Ferrat ?</h3>
+          <div class="faq-answer">
+            <p>Le transfert prend environ <strong>20-25 minutes</strong> (10 km via la Basse Corniche).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Quelles sont les meilleures plages ?</h3>
+          <div class="faq-answer">
+            <p><strong>Plage de Passable</strong> (vue sur Villefranche) et <strong>Paloma Beach</strong> (restaurant chic, ambiance exclusive).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Découvrez Cap Ferrat en VTC</h2>
+        <p>La presqu'île la plus exclusive de la Côte d'Azur mérite un service à la hauteur.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
       </div>
     </section>
 
@@ -75,12 +145,24 @@ const keywords = [
         <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Eze</a>
+        <a href="/en/cap-ferrat-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; position: relative; }
+  .cta-premium::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #d4af37, transparent); }
+  .cta-premium h2 { color: white; font-size: 2rem; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+  .btn-outline:hover { background: #d4af37; color: #000; }
 </style>

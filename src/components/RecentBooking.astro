@@ -1,0 +1,161 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'fr' } = Astro.props;
+
+// Demo content - in a real app this would call an API or use randomness better
+const cities = [
+  'Nice', 'Monaco', 'Cannes', 'Saint-Tropez', 'Antibes', 'Eze', 'Villefranche', 'Menton', 'Mougins', 'Valbonne'
+];
+
+const destinations = [
+  'Aéroport Nice Côte d\'Azur', 'Monte-Carlo', 'La Croisette', 'Place des Lices', 'Cap d\'Antibes', 'Château Eza', 'Port Vauban'
+];
+
+// Messages localized
+const messages = {
+  fr: { title: "Nouvelle réservation", ago: "il y a" },
+  en: { title: "New Booking", ago: "ago" },
+  it: { title: "Nuova prenotazione", ago: "fa" },
+  ru: { title: "Новое бронирование", ago: "назад" }
+};
+
+const t = messages[lang as keyof typeof messages] || messages.fr;
+---
+
+<div id="recent-booking-toast" class="booking-toast">
+  <div class="booking-toast-content">
+    <div class="booking-icon">🚗</div>
+    <div class="booking-details">
+      <span class="booking-title">{t.title} <span class="booking-time">2 min {t.ago}</span></span>
+      <p class="booking-route" id="booking-route-text">Nice → Cannes</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .booking-toast {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-left: 3px solid #d4af37;
+    border-radius: 12px;
+    padding: 12px 16px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 320px;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none; /* Let clicks pass through if covered */
+  }
+
+  .booking-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .booking-toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .booking-icon {
+    font-size: 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .booking-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-title {
+    font-size: 0.75rem;
+    color: #d4af37;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .booking-time {
+    color: #888;
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: none;
+  }
+
+  .booking-route {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0; /* Reset global p margin */
+  }
+
+  @media (max-width: 768px) {
+    .booking-toast {
+      bottom: auto;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-150%);
+      width: 90%;
+    }
+    .booking-toast.show {
+        transform: translateX(-50%) translateY(0);
+    }
+  }
+</style>
+
+<script is:inline define:vars={{ cities, destinations }}>
+  // Wait a bit before showing to not overwhelm
+  const showToast = () => {
+    const toast = document.getElementById('recent-booking-toast');
+    const routeText = document.getElementById('booking-route-text');
+    
+    if(!toast || !routeText) return;
+
+    // Randomize content
+    const city = cities[Math.floor(Math.random() * cities.length)];
+    const dest = destinations[Math.floor(Math.random() * destinations.length)];
+    // Sometimes swap direction
+    const route = Math.random() > 0.5 ? `${city} ➜ ${dest}` : `${dest} ➜ ${city}`;
+    
+    routeText.textContent = route;
+
+    // Show
+    setTimeout(() => {
+        toast.classList.add('show');
+        
+        // Hide after 5 seconds
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 5000);
+        
+    }, 4000); // 4 seconds initial delay
+  };
+
+  // Run on load
+  document.addEventListener('astro:page-load', showToast);
+  // Also run on initial load if view transitions not fully active yet
+  if (document.readyState === 'complete') {
+    showToast();
+  } else {
+    window.addEventListener('load', showToast);
+  }
+</script>

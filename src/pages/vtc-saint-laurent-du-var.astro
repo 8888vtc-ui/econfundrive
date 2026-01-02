@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Saint-Laurent-du-Var – Chauffeur Privé Cap 3000 | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Saint-Laurent-du-Var. Centre commercial Cap 3000, port de plaisance, plages. Transferts aéroport Nice en 10 min. Service premium 24h/24.";
+const description = "Chauffeur privé VTC à Saint-Laurent-du-Var. Porte de Nice. Cap 3000, port de plaisance, plages. Transferts aéroport Nice en 5 min. Service premium.";
 const keywords = [
   'VTC Saint-Laurent-du-Var',
   'chauffeur privé Saint-Laurent',
@@ -19,68 +20,72 @@ const keywords = [
   description={description}
   currentPage="vtc-saint-laurent-du-var"
   canonical="/vtc-saint-laurent-du-var"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Saint-Laurent-du-Var", url: "/vtc-saint-laurent-du-var" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un VTC de l'aéroport de Nice à Saint-Laurent-du-Var ?","acceptedAnswer":{"@type":"Answer","text":"Nos tarifs sont personnalisés selon le véhicule choisi, l'horaire et le niveau de service. Contactez-nous pour un devis gratuit et sans engagement."}},{"@type":"Question","name":"Proposez-vous des navettes pour Cap 3000 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous assurons les transferts vers le centre commercial Cap 3000 depuis Nice, Cannes ou l'aéroport. Idéal pour une journée shopping."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps depuis l'aéroport ?","acceptedAnswer":{"@type":"Answer","text":"Saint-Laurent est la ville voisine de l'aéroport. Le transfert prend seulement 5-10 minutes."}},{"@type":"Question","name":"Desservez-vous Cap 3000 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous effectuons des déposes et récupérations aux entrées principales du centre commercial Cap 3000."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Saint-Laurent-du-Var"
+    subtitle="La porte de Nice. Shopping à Cap 3000, port de plaisance animé et proximité immédiate de l'aéroport."
+    backgroundImage="/assets/img/destinations/destination-nice.png"
+    badge="CAP 3000 • PORT • AÉROPORT"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <SectionImageText
+      title="Shopping & Plaisance"
+      image="/assets/img/services/service-business.webp"
+      alt="VTC Saint-Laurent-du-Var"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Saint-Laurent-du-Var</strong> est dynamique et idéalement située. Elle abrite <strong>Cap 3000</strong>, élu meilleur centre commercial du monde, et un grand port de plaisance bordé de restaurants.
+      </p>
+      <p class="fade-in-section">
+        À 5 minutes de l'aéroport de Nice, c'est une étape pratique et agréable. ECOFUNDRIVE facilite vos transferts shopping ou vos soirées au port.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Aéroport : 5 min</span>
+        <span class="distance-badge">📍 Nice Centre : 15 min</span>
+        <span class="distance-badge">📍 Antibes : 15 min</span>
       </div>
-    </section>
+    </SectionImageText>
 
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Lieux d'intérêt à Saint-Laurent-du-Var</h2>
-      <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
-          alt="Cap 3000 shopping"
-          title="Cap 3000"
-          description="L'un des plus grands centres commerciaux de la Côte d'Azur avec vue sur mer. 180 boutiques, restaurants et cinéma."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Port Saint-Laurent-du-Var"
-          title="Le Port de Plaisance"
-          description="Port moderne avec restaurants les pieds dans l'eau. Ambiance méditerranéenne pour dîners et apéritifs."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-mise-disposition.webp"
-          alt="Plages Saint-Laurent"
-          title="Les Plages"
-          description="Plages de galets et de sable fin, idéales pour les familles. Nombreuses activités nautiques."
-          link="/reservation"
-        />
-      </div>
-    </section>
-
-    <section class="mb-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Saint-Laurent-du-Var est-elle proche de l'aéroport de Nice ?</h3>
-          <div class="faq-answer">
-            <p>Oui, Saint-Laurent-du-Var est la <strong>ville la plus proche de l'aéroport de Nice</strong>, à seulement 5 km. Le transfert en VTC prend 8-12 minutes.</p>
-          </div>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Services Saint-Laurent</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🛍️</span><h3>Shopping Cap 3000</h3><p>Dépose VIP pour une journée shopping face à la mer.</p></div>
+          <div class="service-card"><span class="service-icon">✈️</span><h3>Transfert Express</h3><p>La liaison la plus rapide vers/depuis l'aéroport de Nice.</p></div>
+          <div class="service-card"><span class="service-icon">🍽️</span><h3>Port de Plaisance</h3><p>Soirées restaurants et bars sur la promenade du port.</p></div>
+          <div class="service-card"><span class="service-icon">🏢</span><h3>Zone Industrielle</h3><p>Transferts professionnels vers la zone d'activité.</p></div>
         </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des navettes vers Cap 3000 ?</h3>
-          <div class="faq-answer">
-            <p>Oui, nous proposons des transferts vers le centre commercial Cap 3000 depuis Nice, Cannes, l'aéroport ou toute autre destination. Parfait pour une journée shopping.</p>
-          </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Découvrez Saint-Laurent</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/destinations/destination-nice.png" alt="Cap 3000" title="🛍️ Cap 3000" description="Le centre commercial iconique de la Riviera. Luxe, mode et gastronomie face à la mer." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Port Saint-Laurent" title="⛵ Port de Plaisance" description="L'un des plus grands ports de la Côte. Promenade animée jour et nuit." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-mise-disposition.webp" alt="Plages Saint-Laurent" title="🏖️ Plages & Loisirs" description="Plages de galets aménagées, clubs nautiques et beach volley." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Saint-Laurent</h2>
+        <p>Shopping, business ou détente. Un chauffeur à votre service.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -89,8 +94,8 @@ const keywords = [
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
-        <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes-sur-Mer</a>
-        <a href="/vtc-villeneuve-loubet" class="text-dark hover-gold">VTC Villeneuve-Loubet</a>
+        <a href="/vtc-cagnes-sur-mer" class="text-dark hover-gold">VTC Cagnes</a>
+        <a href="/vtc-villeneuve-loubet" class="text-dark hover-gold">VTC Villeneuve</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
       </div>
     </section>
@@ -98,6 +103,23 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

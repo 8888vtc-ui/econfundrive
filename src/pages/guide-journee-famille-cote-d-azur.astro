@@ -1,5 +1,6 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
@@ -31,116 +32,315 @@ const keywords = [
     "headline": title,
     "description": description,
     "image": "https://www.ecofundrive.com/assets/img/hero/hero-mariage.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE"
-    },
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
     "publisher": {
       "@type": "Organization",
       "name": "ECOFUNDRIVE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-      }
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
     },
     "datePublished": "2024-03-01",
     "dateModified": new Date().toISOString().split('T')[0]
   }}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">La Côte d'Azur en Famille : Voyagez Sereinement</h1>
-      <p class="lead text-center mb-xl">
-        Voyager avec des enfants demande de l'organisation. Simplifiez-vous la vie avec notre service VTC "Spécial Famille" : sièges auto gratuits, espace pour poussettes et conduite douce garantie.
-      </p>
-    </div>
+  <PageHero 
+    title="La Côte d'Azur en Famille"
+    subtitle="Voyagez sereinement avec vos enfants. Sièges auto gratuits, véhicules spacieux et itinéraires adaptés."
+    backgroundImage="/assets/img/hero/hero-mariage.webp"
+    badge="SIÈGES BÉBÉ GRATUITS • VAN 7 PLACES"
+  />
 
-    <!-- 1. INTRO VTC FAMILLE -->
+  <main class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
       title="Votre Chauffeur Privé Family Friendly"
-      image="/assets/img/hero/hero-mariage.webp"
-      alt="VTC Famille spacieux"
+      image="/assets/img/about/vehicule-premium.webp"
+      alt="VTC Mercedes V-Class famille"
       imageSide="right"
       ctaText="Réserver un Van Familial"
       ctaLink="/reservation"
     >
-      <p>
-        Oubliez la galère des transports en commun bondés ou la fatigue de la conduite. Nos Vans Mercedes Class V peuvent accueillir confortablement jusqu'à 7 passagers et tous vos bagages.
+      <p class="fade-in-section">
+        Oubliez la galère des transports en commun bondés ou la fatigue de la conduite. Nos <strong>Vans Mercedes Classe V</strong> peuvent accueillir confortablement jusqu'à 7 passagers et tous vos bagages.
       </p>
-      <p>
-        <strong>La sécurité avant tout :</strong> Sur simple demande, nous équipons le véhicule de sièges bébé et de rehausseurs adaptés à l'âge de vos enfants, sans aucun supplément. Profitez de la climatisation, de nos prises USB pour les tablettes, et de l'espace nécessaire pour un voyage apaisé.
+      <p class="fade-in-section">
+        <strong>La sécurité avant tout :</strong> Sur simple demande, nous équipons le véhicule de sièges bébé et de rehausseurs adaptés à l'âge de vos enfants, <strong>sans aucun supplément</strong>.
       </p>
+      <div class="family-features fade-in-section">
+        <div class="feature">✅ Sièges bébé gratuits</div>
+        <div class="feature">✅ Rehausseurs disponibles</div>
+        <div class="feature">✅ Climatisation individuelle</div>
+        <div class="feature">✅ Prises USB pour tablettes</div>
+        <div class="feature">✅ Espace poussettes</div>
+        <div class="feature">✅ Conduite douce garantie</div>
+      </div>
     </SectionImageText>
 
-    <!-- 2. MARINELAND & ANTIBES -->
+    <!-- TOP ACTIVITIES -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">🎢 Les Meilleures Activités Famille</h2>
+      <div class="grid-3-cols">
+        <CategoryCard
+          image="/assets/img/destinations/vtc-antibes.webp"
+          alt="Marineland Antibes"
+          title="Marineland"
+          description="Le plus grand parc marin d'Europe ! Orques, dauphins, otaries... Un spectacle inoubliable pour petits et grands. Aquasplash juste à côté."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/destinations/destination-monaco.webp"
+          alt="Musée Océanographique Monaco"
+          title="Musée Océanographique"
+          description="Un temple de la mer accroché à la falaise. Lagon aux requins, bassin tactile pour toucher les étoiles de mer, et vue panoramique."
+          link="/reservation"
+        />
+        <CategoryCard
+          image="/assets/img/hero/hero-ete.webp"
+          alt="Plages surveillées Nice"
+          title="Plages & Baignades"
+          description="Des plages surveillées l'été, des criques secrètes, des parcs aquatiques... La Méditerranée à 26°C pour des baignades inoubliables."
+          link="/reservation"
+        />
+      </div>
+    </section>
+
+    <!-- MARINELAND SECTION -->
     <SectionImageText
       title="Journée Parc à Marineland (Antibes)"
-      image="/assets/img/destinations/vtc-antibes.webp"
-      alt="Parc Marineland Antibes"
+      image="/assets/img/services/service-evenements.webp"
+      alt="Marineland parc marin Antibes"
       imageSide="left"
       ctaText="Navette Marineland"
       ctaLink="/reservation"
     >
-      <p>
-        Vivez une journée magique au plus grand parc marin d'Europe. Orques, dauphins, otaries... Un spectacle inoubliable pour les petits comme pour les grands.
+      <p class="fade-in-section">
+        Vivez une journée magique au plus grand parc marin d'Europe. <strong>Orques, dauphins, otaries</strong>... Un spectacle inoubliable pour les petits comme pour les grands.
       </p>
-      <p>
-        Pour éviter le stress du parking (souvent complet en été), nous vous déposons juste devant l'entrée du parc et nous revenons vous chercher à l'heure qui vous convient, même après le spectacle nocturne. Profitez aussi d'Aquasplash juste à côté !
+      <p class="fade-in-section">
+        Pour éviter le stress du parking (souvent complet en été), nous vous déposons <strong>juste devant l'entrée</strong> du parc et nous revenons vous chercher à l'heure qui vous convient, même après le spectacle nocturne.
+      </p>
+      <p class="fade-in-section">
+        Profitez aussi d'<strong>Aquasplash</strong> juste à côté pour une journée 100% aquatique !
       </p>
     </SectionImageText>
 
-    <!-- 3. MUSEE OCEANOGRAPHIQUE MONACO -->
+    <!-- MONACO AVEC ENFANTS -->
     <SectionImageText
-      title="Plongée au Musée Océanographique de Monaco"
-      image="/assets/img/destinations/destination-monaco.webp"
-      alt="Musée Océanographique Monaco"
+      title="Monaco avec les Enfants"
+      image="/assets/img/destinations/destination-mont-carlo.webp"
+      alt="Musée Océanographique Monaco famille"
       imageSide="right"
       ctaText="Excursion Monaco Famille"
       ctaLink="/reservation"
     >
-      <p>
-        Construit à même la falaise, ce "Temple de la Mer" est fascinant. Ne manquez pas le lagon aux requins, le bassin tactile où les enfants peuvent toucher des étoiles de mer, et l'Île aux Tortues sur le toit-terrasse.
+      <p class="fade-in-section">
+        Monaco n'est pas que glamour et casinos ! Le <strong>Musée Océanographique</strong> est fascinant pour les enfants : lagon aux requins, bassin tactile où ils peuvent toucher des étoiles de mer, et l'Île aux Tortues sur le toit-terrasse.
       </p>
-      <p>
-        Monaco étant difficile d'accès en poussette à cause des nombreux escaliers, notre chauffeur vous déposera au niveau le plus pratique, le parking des Pécheurs, qui offre un accès direct par ascenseur au musée.
+      <p class="fade-in-section">
+        Monaco étant difficile d'accès en poussette (nombreux escaliers), notre chauffeur vous déposera au <strong>Parking des Pêcheurs</strong>, qui offre un accès direct par ascenseur au musée et au Rocher.
       </p>
     </SectionImageText>
 
-    <!-- 4. IDEES ACTIVITES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Autres Idées de Sorties en Famille</h2>
-      <div class="grid-3-cols">
-         <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Parc Phœnix (Nice)</h3>
-          <p>Un immense jardin botanique et zoologique à l'entrée de Nice. Idéal pour une balade tranquille au milieu des plantes exotiques et des animaux.</p>
+    <!-- OTHER IDEAS -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Autres Idées de Sorties</h2>
+      <div class="ideas-grid">
+        <div class="idea-card">
+          <h3>🌴 Parc Phoenix (Nice)</h3>
+          <p>Un immense jardin botanique et zoologique à l'entrée de Nice. Idéal pour une balade tranquille au milieu des plantes exotiques et des animaux. <strong>Entrée gratuite pour les enfants !</strong></p>
         </div>
-        <div class="card-content bg-light p-4 rounded">
-            <h3 class="mb-3">Île Sainte-Marguerite (Cannes)</h3>
-            <p>Prenez le bateau pour une aventure à la Robinson Crusoé. Pique-nique, baignade dans les criques et visite du Fort Royal.</p>
+        <div class="idea-card">
+          <h3>🏝️ Île Sainte-Marguerite (Cannes)</h3>
+          <p>Prenez le bateau pour une aventure à la Robinson Crusoé. Pique-nique, baignade dans les criques et visite du Fort Royal où fut emprisonné le Masque de Fer.</p>
         </div>
-        <div class="card-content bg-light p-4 rounded">
-            <h3 class="mb-3">Parfumerie Galimard (Grasse)</h3>
-            <p>Participez à un atelier "Apprenti Parfumeur" accessible aux enfants pour créer leur propre eau de toilette.</p>
+        <div class="idea-card">
+          <h3>🌸 Parfumerie Galimard (Grasse)</h3>
+          <p>Participez à un atelier "Apprenti Parfumeur" accessible aux enfants dès 4 ans ! Ils créent leur propre eau de toilette et repartent avec leur flacon.</p>
+        </div>
+        <div class="idea-card">
+          <h3>🚂 Train des Pignes</h3>
+          <p>Le train touristique entre Nice et Digne traverse des paysages spectaculaires. Une aventure ferroviaire que les enfants adorent !</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-        <div class="text-center bg-light p-5 rounded">
-            <h2 class="mb-4">Prêts pour des Vacances Zen ?</h2>
-            <p class="lead mb-4">
-                Réservez dès maintenant votre transport familial et assurez-vous de la disponibilité des sièges auto.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/reservation" class="btn btn-primary">Réserver mon Van Familial</a>
-                <a href="https://wa.me/33616552811" class="btn btn-outline">Question WhatsApp</a>
-            </div>
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Prêts pour des Vacances Zen ?</h2>
+        <p>Réservez dès maintenant votre transport familial et assurez-vous de la disponibilité des sièges auto adaptés à l'âge de vos enfants.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Van Familial</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Question WhatsApp</a>
         </div>
+        <p class="cta-tip">💡 Précisez l'âge de vos enfants lors de la réservation pour les sièges adaptés.</p>
+      </div>
     </section>
 
+    <!-- RELATED -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Guides Connexes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/guides" class="text-dark hover-gold">Tous nos Guides</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/guide-monaco-en-une-journee" class="text-dark hover-gold">Monaco en 1 jour</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/en/guide-family-day-french-riviera" class="text-dark hover-gold">English Version</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .family-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .feature {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 600px) {
+    .family-features {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .ideas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .idea-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+  }
+  
+  .idea-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  .idea-card h3 {
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+  }
+  
+  .idea-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-tip {
+    margin-top: 1.5rem;
+    color: #d4af37 !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

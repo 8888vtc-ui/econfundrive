@@ -1,149 +1,224 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
-import CategoryCard from '../components/CategoryCard.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 
-const title = "VTC Nice – Chauffeur Privé à Nice | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Nice. Aéroport, Vieux-Nice, Promenade des Anglais, hôtels 5*, gare SNCF, port Lympia. Service professionnel 24h/24.";
+const title = "VTC Nice – Chauffeur Privé Aéroport & Centre-Ville | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Nice. Aéroport Nice Côte d'Azur, Vieux-Nice, Promenade des Anglais, hôtels 5 étoiles. Service professionnel 24h/24. Note 5.0/5.";
 const keywords = [
-  'VTC pas cher Nice aéroport',
-  'chauffeur VTC 24h/24 Nice',
   'VTC Nice',
-  'transfert aéroport Nice',
   'chauffeur privé Nice',
-  'VTC centre-ville Nice',
-  'transport Nice Promenade des Anglais',
+  'VTC aéroport Nice',
+  'transfert aéroport Nice centre-ville',
+  'VTC Promenade des Anglais',
+  'chauffeur Nice hôtel luxe',
   'VTC Vieux-Nice',
-  'chauffeur Nice hôtel 5 étoiles'
+  'taxi privé Nice'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
   currentPage="vtc-nice"
   canonical="/vtc-nice"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Nice", url: "/vtc-nice" }
   ]}
-
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quel est le prix d'un VTC de l'aéroport de Nice au centre-ville ?","acceptedAnswer":{"@type":"Answer","text":"Le tarif est fixe et dépend du véhicule choisi et de l'heure. Contactez-nous via WhatsApp pour obtenir un devis précis et sans surprise."}},{"@type":"Question","name":"Puis-je réserver un VTC à Nice pour une longue distance ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des services de VTC longue distance depuis Nice vers d'autres villes de France ou d'Europe. N'hésitez pas à nous consulter pour votre projet de voyage."}},{"@type":"Question","name":"Comment reconnaître mon chauffeur à l'aéroport de Nice ?","acceptedAnswer":{"@type":"Answer","text":"Votre chauffeur vous attendra à la sortie des arrivées avec une pancarte affichant votre nom ou le nom de votre entreprise. Vous recevrez également ses coordonnées avant votre prise en charge."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quel est le prix d'un VTC de l'aéroport de Nice au centre-ville ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert aéroport Nice → centre-ville coûte environ 35€ en berline. Prix fixe, pas de surprise. Contactez-nous pour un devis précis."}},{"@type":"Question","name":"Comment réserver un VTC à Nice ?","acceptedAnswer":{"@type":"Answer","text":"Réservez via WhatsApp (+33 6 16 55 28 11), notre site web ou par téléphone. Réponse sous 15 minutes, 24h/24."}},{"@type":"Question","name":"Comment reconnaître mon chauffeur à l'aéroport ?","acceptedAnswer":{"@type":"Answer","text":"Votre chauffeur vous attend à la sortie des arrivées avec une pancarte à votre nom. Vous recevez ses coordonnées avant l'atterrissage."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Nice"
+    subtitle="La capitale de la Côte d'Azur. Chauffeur privé pour aéroport, Promenade des Anglais, Vieux-Nice et hôtels de luxe."
+    backgroundImage="/assets/img/hero/hero-aeroport-nice.webp"
+    badge="AÉROPORT NCE • 24/7 • 5.0★"
+  />
 
+  <main id="main-content" class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
-      title="Votre Chauffeur Privé à Nice : Confort et Sérénité"
-      image="/assets/img/destinations/vtc-tesla-nice.jpg"
-      alt="Voiture VTC Tesla sur la Promenade des Anglais à Nice"
+      title="Votre Chauffeur Privé à Nice"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Tesla VTC sur la Promenade des Anglais Nice"
       imageSide="right"
-      ctaText="Réserver votre VTC à Nice"
+      ctaText="Réserver mon chauffeur"
       ctaLink="/reservation"
     >
-      <p>
-        Découvrez Nice, la perle de la Côte d'Azur, avec ECOFUNDRIVE. Que vous soyez en voyage d'affaires ou en vacances, notre service VTC à Nice vous assure des déplacements fluides, confortables et sans stress. De l'aéroport de Nice Côte d'Azur à la Promenade des Anglais, en passant par le Vieux-Nice et les hôtels de luxe, votre chauffeur privé est à votre disposition 24h/24.
+      <p class="fade-in-section">
+        Découvrez <strong>Nice</strong>, la perle de la Côte d'Azur, avec ECOFUNDRIVE. Que vous soyez en voyage d'affaires ou en vacances, notre service VTC à Nice vous assure des déplacements fluides, confortables et sans stress.
       </p>
-      <p>
-        Nous connaissons Nice et ses environs comme notre poche. Évitez les tracas des transports en commun, les files d'attente des taxis et les problèmes de stationnement. Avec ECOFUNDRIVE, vous bénéficiez d'un service porte-à-porte, d'une ponctualité irréprochable et d'une discrétion absolue.
+      <p class="fade-in-section">
+        De l'<strong>aéroport Nice Côte d'Azur</strong> à la Promenade des Anglais, en passant par le Vieux-Nice et les hôtels de luxe, votre chauffeur privé est disponible <strong>24h/24</strong>.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="Transferts Aéroport Nice Côte d'Azur (NCE)"
-      image="/assets/img/hero/hero-aeroport-nice.png"
-      alt="Chauffeur VTC à l'aéroport de Nice"
-      imageSide="left"
-      ctaText="Transfert Nice Aéroport Monaco"
-      ctaLink="/transfert-nice-aeroport-monaco"
-    >
-      <p>
-        Votre vol arrive ou part de l'aéroport de Nice ? Nos chauffeurs sont spécialisés dans les transferts aéroportuaires. Nous suivons l'état de votre vol en temps réel pour anticiper tout retard ou avance, et nous vous attendons avec une pancarte nominative à votre arrivée. Voyagez sans souci vers votre hôtel, votre domicile ou toute autre destination sur la Côte d'Azur.
-      </p>
-      <ul>
-        <li>Accueil personnalisé et aide aux bagages</li>
-        <li>Tarif fixe connu à l'avance, sans surprise</li>
-        <li>Disponibilité 24h/24 pour tous les vols</li>
-        <li>Liaisons vers Cannes, Monaco, Antibes, Saint-Tropez...</li>
+      <ul class="fade-in-section">
+        <li>Transferts aéroport Nice (Terminal 1 & 2)</li>
+        <li>Service gare SNCF Nice-Ville</li>
+        <li>Dépose hôtels Promenade des Anglais</li>
+        <li>Circuits touristiques personnalisés</li>
+        <li>Mise à disposition demi-journée/journée</li>
       </ul>
     </SectionImageText>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Découvrez Nice avec votre Chauffeur Privé</h2>
-      <p class="text-center">
-        Profitez de nos services pour explorer les incontournables de Nice et ses environs.
+    <!-- AIRPORT -->
+    <SectionImageText
+      title="Transferts Aéroport Nice Côte d'Azur"
+      image="/assets/img/services/service-aeroport.webp"
+      alt="Accueil VTC aéroport Nice"
+      imageSide="left"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        Votre vol arrive ou part de l'<strong>aéroport de Nice</strong> ? Nos chauffeurs sont spécialisés dans les transferts aéroportuaires.
       </p>
-      <div class="grid-3-cols-responsive mt-lg">
+      <div class="airport-features fade-in-section">
+        <div class="feature-item">
+          <span class="feature-icon">✈️</span>
+          <div>
+            <strong>Suivi de vol en temps réel</strong>
+            <p>Nous anticipons retards et avances</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">👋</span>
+          <div>
+            <strong>Accueil pancarte nominative</strong>
+            <p>Votre chauffeur vous attend à la sortie</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🧳</span>
+          <div>
+            <strong>Aide aux bagages</strong>
+            <p>Service porte-à-porte complet</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">💰</span>
+          <div>
+            <strong>Prix fixe garanti</strong>
+            <p>Pas de surprise liée au trafic</p>
+          </div>
+        </div>
+      </div>
+    </SectionImageText>
+
+    <!-- HIGHLIGHTS -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Découvrez Nice avec Votre Chauffeur</h2>
+      <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/destinations/nice-vieux-nice.webp"
           alt="Vieux Nice"
-          title="Le Vieux-Nice et son marché"
-          description="Flânez dans les ruelles colorées du Vieux-Nice, découvrez le Cours Saleya et son célèbre marché aux fleurs."
+          title="🏛️ Le Vieux-Nice"
+          description="Flânez dans les ruelles colorées, découvrez le Cours Saleya et son marché aux fleurs, dégustez une socca."
           link="/guide-que-faire-a-nice-1-3-jours"
         />
         <CategoryCard
-          image="/assets/img/destinations/destination-nice.png"
+          image="/assets/img/destinations/destination-nice.webp"
           alt="Colline du Château Nice"
-          title="La Colline du Château"
-          description="Admirez une vue panoramique imprenable sur la Baie des Anges, le port et le Vieux-Nice."
+          title="🏰 Colline du Château"
+          description="Vue panoramique imprenable sur la Baie des Anges, le port Lympia et les toits du Vieux-Nice. Incontournable !"
           link="/guide-que-faire-a-nice-1-3-jours"
         />
         <CategoryCard
-          image="/assets/img/destinations/plage-beau-rivage-nice.jpg"
-          alt="Promenade des Anglais Nice Plage"
-          title="La Promenade des Anglais"
-          description="Profitez d'une balade le long de la mer, emblème de Nice et lieu de détente."
+          image="/assets/img/hero/hero-home.webp"
+          alt="Promenade des Anglais Nice"
+          title="🌴 Promenade des Anglais"
+          description="L'emblème de Nice ! 7 km de front de mer, chaises bleues, palaces Belle Époque et plages de galets."
           link="/guide-que-faire-a-nice-1-3-jours"
         />
       </div>
     </section>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Questions Fréquentes sur les VTC à Nice</h2>
+    <!-- PRICES CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="price-section">
+        <h2>Tarifs Indicatifs depuis Nice Aéroport</h2>
+        <div class="price-grid">
+          <div class="price-item">
+            <span class="destination">Nice Centre</span>
+            <span class="price">~35€</span>
+          </div>
+          <div class="price-item">
+            <span class="destination">Monaco</span>
+            <span class="price">~80€</span>
+          </div>
+          <div class="price-item">
+            <span class="destination">Cannes</span>
+            <span class="price">~75€</span>
+          </div>
+          <div class="price-item">
+            <span class="destination">Antibes</span>
+            <span class="price">~45€</span>
+          </div>
+        </div>
+        <p class="price-note">Prix TTC en berline, toutes charges comprises. Devis exact sur demande.</p>
+        <a href="/contact" class="btn-gold">Demander un Devis Précis</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3 class="faq-question">Quel est le prix d'un VTC de l'aéroport de Nice au centre-ville ?</h3>
+          <h3 class="faq-question">Quel est le prix d'un VTC aéroport Nice → centre-ville ?</h3>
           <div class="faq-answer">
-            <p>
-              Le tarif est fixe et dépend du véhicule choisi et de l'heure. Contactez-nous via WhatsApp pour obtenir un devis précis et sans surprise.
-            </p>
+            <p>Le transfert coûte environ <strong>35€ en berline</strong>. Le prix est fixe et connu à l'avance, sans surprise liée au trafic. Contactez-nous pour un devis précis selon votre destination exacte.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Puis-je réserver un VTC à Nice pour une longue distance ?</h3>
+          <h3 class="faq-question">Comment reconnaître mon chauffeur à l'aéroport ?</h3>
           <div class="faq-answer">
-            <p>
-              Oui, nous proposons des services de VTC longue distance depuis Nice vers d'autres villes de France ou d'Europe. N'hésitez pas à nous consulter pour votre projet de voyage.
-            </p>
+            <p>Votre chauffeur vous attend à la <strong>sortie des arrivées</strong> avec une pancarte à votre nom. Vous recevez ses coordonnées (nom, téléphone) avant votre atterrissage.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Comment reconnaître mon chauffeur à l'aéroport de Nice ?</h3>
+          <h3 class="faq-question">Proposez-vous des VTC longue distance depuis Nice ?</h3>
           <div class="faq-answer">
-            <p>
-              Votre chauffeur vous attendra à la sortie des arrivées avec une pancarte affichant votre nom ou le nom de votre entreprise. Vous recevrez également ses coordonnées avant votre prise en charge.
-            </p>
+            <p>Oui ! Nous proposons des transferts vers <strong>Milan, Turin, Gênes, Marseille, Lyon</strong> et toute la France/Europe. Devis sur demande.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Puis-je réserver un VTC pour visiter la région ?</h3>
+          <div class="faq-answer">
+            <p>Absolument ! Nous proposons des <strong>mises à disposition</strong> (4h, 8h ou journée) pour découvrir Monaco, Èze, Saint-Paul-de-Vence, Grasse, etc.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="container py-lg bg-light rounded-lg">
-      <h3 class="h4 mb-md">Destinations VTC à proximité de Nice</h3>
-      <div class="grid-4-cols-responsive text-sm">
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Réservez Votre Chauffeur à Nice</h2>
+        <p>Service premium, véhicules haut de gamme, chauffeurs professionnels. Découvrez la différence ECOFUNDRIVE.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver Maintenant</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp Instantané</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC depuis Nice</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
         <a href="/vtc-saint-tropez" class="text-dark hover-gold">VTC Saint-Tropez</a>
-        <a href="/vtc-sophia-antipolis" class="text-dark hover-gold">VTC Sophia-Antipolis</a>
-        <a href="/vtc-villeneuve-loubet" class="text-dark hover-gold">VTC Villeneuve-Loubet</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
         <a href="/vtc-menton" class="text-dark hover-gold">VTC Menton</a>
-        <a href="/vtc-frejus-saint-raphael" class="text-dark hover-gold">VTC Fréjus</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/en/nice-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
@@ -157,4 +232,185 @@ const keywords = [
   />
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  /* AIRPORT FEATURES */
+  .airport-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .feature-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(212, 175, 55, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+  
+  .feature-item strong {
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .feature-item p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .airport-features {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* PRICE SECTION */
+  .price-section {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .price-section h2 {
+    color: white;
+    margin-bottom: 2rem;
+  }
+  
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .price-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .price-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .price-item .destination {
+    display: block;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .price-item .price {
+    display: block;
+    color: #d4af37;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .price-note {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

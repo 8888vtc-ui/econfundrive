@@ -1,0 +1,195 @@
+---
+/**
+ * SEO Schema Component - SEO 2026 Optimized
+ * Génère automatiquement les schémas JSON-LD pour chaque type de page
+ * E-E-A-T optimisé pour Google et GEO optimisé pour IA
+ */
+
+export interface Props {
+  type: 'LocalBusiness' | 'FAQPage' | 'Service' | 'Article' | 'Product' | 'Event' | 'TouristDestination';
+  data?: any;
+  includeAggregateRating?: boolean;
+  localBusiness?: boolean;
+}
+
+const { type, data = {}, includeAggregateRating = true, localBusiness = true } = Astro.props;
+
+// Données de l'entreprise centralisées
+const businessInfo = {
+  name: "ECOFUNDRIVE",
+  legalName: "ECOFUNDRIVE SAS",
+  alternateName: ["EcoFunDrive", "Eco Fun Drive", "ECOFUNDRIVE VTC"],
+  description: "Service VTC et chauffeur privé premium sur la Côte d'Azur. Transferts aéroport Nice, Monaco, Cannes, Saint-Tropez.",
+  url: "https://www.ecofundrive.com",
+  logo: "https://www.ecofundrive.com/assets/img/logo/logo-ecofundrive.png",
+  image: "https://www.ecofundrive.com/assets/img/hero/hero-aeroport-nice.webp",
+  telephone: "+33616552811",
+  email: "8888VTC@gmail.com",
+  vatID: "FR59912244696",
+  siren: "912244696",
+  foundingDate: "2022-04-07",
+  priceRange: "€€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: ["Cash", "Credit Card", "Bank Transfer", "Visa", "Mastercard"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1001 Avenue de la Batterie, Marina Baie des Anges – Le Ducal",
+    addressLocality: "Villeneuve-Loubet",
+    postalCode: "06270",
+    addressRegion: "Provence-Alpes-Côte d'Azur",
+    addressCountry: "FR"
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 43.642,
+    longitude: 7.124
+  },
+  areaServed: [
+    { "@type": "City", name: "Nice", sameAs: "https://en.wikipedia.org/wiki/Nice" },
+    { "@type": "City", name: "Monaco", sameAs: "https://en.wikipedia.org/wiki/Monaco" },
+    { "@type": "City", name: "Cannes", sameAs: "https://en.wikipedia.org/wiki/Cannes" },
+    { "@type": "City", name: "Antibes" },
+    { "@type": "City", name: "Saint-Tropez", sameAs: "https://en.wikipedia.org/wiki/Saint-Tropez" },
+    { "@type": "City", name: "Menton" },
+    { "@type": "City", name: "Grasse" },
+    { "@type": "City", name: "Eze" },
+    { "@type": "City", name: "Villefranche-sur-Mer" },
+    { "@type": "City", name: "Cap Ferrat" },
+    { "@type": "City", name: "Mougins" },
+    { "@type": "City", name: "Saint-Paul-de-Vence" },
+    { "@type": "City", name: "Fréjus" },
+    { "@type": "City", name: "Sophia Antipolis" }
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59"
+  },
+  sameAs: [
+    "https://www.trustindex.io/reviews/ecofundrive.com",
+    "https://www.facebook.com/ecofundrive/",
+    "https://wa.me/33616552811"
+  ],
+  knowsLanguage: ["French", "English", "Italian", "Russian"]
+};
+
+// Note de rating agrégée actualisée 2026
+const aggregateRating = {
+  "@type": "AggregateRating",
+  ratingValue: "5.0",
+  reviewCount: "26",
+  bestRating: "5",
+  worstRating: "1"
+};
+
+// Génération du schema selon le type
+let schema: any = {};
+
+if (type === 'LocalBusiness' || localBusiness) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.ecofundrive.com/#localbusiness",
+    ...businessInfo,
+    aggregateRating: includeAggregateRating ? aggregateRating : undefined,
+    ...data
+  };
+}
+
+if (type === 'FAQPage' && data.questions) {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.questions.map((q: any) => ({
+      "@type": "Question",
+      "name": q.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.answer
+      }
+    }))
+  };
+}
+
+if (type === 'Service') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": data.serviceType || "VTC Transport",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://www.ecofundrive.com/#localbusiness",
+      name: businessInfo.name
+    },
+    "areaServed": businessInfo.areaServed,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": data.catalogName || "Services VTC",
+      "itemListElement": data.offers || []
+    },
+    ...data
+  };
+}
+
+if (type === 'TouristDestination') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": data.name,
+    "description": data.description,
+    "geo": data.geo,
+    "image": data.image,
+    "touristType": data.touristType || ["Leisure", "Business"],
+    ...data
+  };
+}
+
+if (type === 'Article') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": data.title,
+    "description": data.description,
+    "image": data.image,
+    "author": {
+      "@type": "Organization",
+      "name": businessInfo.name,
+      "url": businessInfo.url
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": businessInfo.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": businessInfo.logo
+      }
+    },
+    "datePublished": data.datePublished || new Date().toISOString(),
+    "dateModified": data.dateModified || new Date().toISOString(),
+    ...data
+  };
+}
+
+if (type === 'Event') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": data.name,
+    "description": data.description,
+    "startDate": data.startDate,
+    "endDate": data.endDate,
+    "location": data.location,
+    "organizer": {
+      "@type": "Organization",
+      "name": businessInfo.name,
+      "url": businessInfo.url
+    },
+    ...data
+  };
+}
+---
+
+{schema && Object.keys(schema).length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

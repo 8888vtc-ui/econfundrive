@@ -1,134 +1,391 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
-import CategoryCard from '../components/CategoryCard.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Cannes – Chauffeur Privé à Cannes | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Cannes. Palais des Festivals, Croisette, hôtels de luxe, aéroport. Service professionnel 24h/24 pour événements et business.";
+const title = "VTC Cannes – Chauffeur Privé Festival & Croisette | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Cannes. Festival de Cannes, Palais des Festivals, Croisette, hôtels de luxe. Service professionnel 24h/24 pour événements et congrès.";
 const keywords = [
   'VTC Cannes',
   'chauffeur privé Cannes',
   'VTC Festival de Cannes',
   'transfert aéroport Cannes',
-  'VTC Palais des Festivals'
+  'VTC Palais des Festivals',
+  'VTC Croisette',
+  'VTC MIPIM Cannes Lions'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
   currentPage="vtc-cannes"
+  canonical="/vtc-cannes"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Cannes", url: "/vtc-cannes" }
   ]}
-
-  canonical="/vtc-cannes"
-
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Festival de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Nous recommandons de réserver plusieurs semaines à l'avance pour le Festival de Cannes, car la demande est très forte. Contactez-nous via WhatsApp ou téléphone pour discuter de vos besoins spécifiques et obtenir un devis personnalisé."}},{"@type":"Question","name":"Vos véhicules sont-ils adaptés aux événements prestigieux ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Nous disposons d'une flotte de véhicules haut de gamme, propres et élégants, parfaitement adaptés aux événements prestigieux comme le Festival de Cannes ou les galas."}},{"@type":"Question","name":"Puis-je réserver un VTC pour plusieurs jours à Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des services de mise à disposition à la journée ou sur plusieurs jours, idéaux pour les événements de longue durée ou les séjours à Cannes."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Festival de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Réservez plusieurs semaines à l'avance. La demande est très forte. Contactez-nous via WhatsApp pour un devis personnalisé."}},{"@type":"Question","name":"Vos véhicules sont-ils adaptés aux événements prestigieux ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Flotte haut de gamme, véhicules propres et élégants, parfaits pour le Festival, les galas et le tapis rouge."}},{"@type":"Question","name":"Proposez-vous des mises à disposition sur plusieurs jours ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous proposons des forfaits journée et multi-jours, idéaux pour les congrès (MIPIM, Cannes Lions) et le Festival."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Cannes"
+    subtitle="La capitale du cinéma et des congrès. Chauffeur privé pour Festival, Croisette, Palais des Festivals et événements VIP."
+    backgroundImage="/assets/img/destinations/cannes-palais-festivals.webp"
+    badge="FESTIVAL DE CANNES • MIPIM"
+  />
 
+  <main id="main-content" class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
-      title="Votre Chauffeur Privé à Cannes : Élégance et Professionnalisme"
+      title="Votre Chauffeur Privé à Cannes"
       image="/assets/img/destinations/destination-cannes.webp"
-      alt="Voiture VTC sur la Croisette à Cannes"
+      alt="VTC sur la Croisette Cannes"
       imageSide="right"
-      ctaText="Réserver votre VTC à Cannes"
+      ctaText="Réserver mon chauffeur"
       ctaLink="/reservation"
     >
-      <p>
-        Cannes, ville emblématique de la Côte d'Azur, mérite un service VTC à la hauteur de sa réputation. ECOFUNDRIVE vous propose un service de chauffeur privé premium à Cannes, parfaitement adapté aux exigences de cette destination prestigieuse. Que vous participiez au Festival de Cannes, à un congrès au Palais des Festivals, ou que vous profitiez simplement des charmes de la Croisette, votre chauffeur privé est à votre entière disposition.
+      <p class="fade-in-section">
+        <strong>Cannes</strong>, ville emblématique de la Côte d'Azur, mérite un service VTC à la hauteur de sa réputation. ECOFUNDRIVE vous propose un chauffeur privé premium, parfaitement adapté aux exigences de cette destination prestigieuse.
       </p>
-      <p>
-        Nos chauffeurs connaissent parfaitement Cannes et ses environs. Ils maîtrisent les itinéraires optimaux pour éviter les embouteillages, notamment pendant les événements majeurs, et vous garantissent une ponctualité irréprochable pour tous vos rendez-vous.
+      <p class="fade-in-section">
+        Que vous participiez au <strong>Festival de Cannes</strong>, à un congrès au Palais des Festivals, ou que vous profitiez des charmes de la Croisette, votre chauffeur est à votre entière disposition.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="VTC pour le Festival de Cannes et Événements"
-      image="/assets/img/destinations/cannes-palais-festivals.webp"
-      alt="Chauffeur VTC pour Festival de Cannes"
-      imageSide="left"
-      ctaText="Guide VTC Festival de Cannes"
-      ctaLink="/guide-vtc-festival-cannes"
-    >
-      <p>
-        Le Festival de Cannes, les congrès au Palais des Festivals, les soirées privées... Cannes accueille de nombreux événements prestigieux tout au long de l'année. Pour ces occasions spéciales, un service VTC professionnel est essentiel. ECOFUNDRIVE vous offre un service sur mesure, avec des véhicules élégants et des chauffeurs expérimentés qui sauront s'adapter à vos besoins spécifiques.
-      </p>
-      <ul>
-        <li>Service dédié pour le Festival de Cannes</li>
-        <li>Transport vers et depuis le Palais des Festivals</li>
-        <li>Disponibilité pendant toute la durée de votre événement</li>
-        <li>Véhicules premium adaptés aux codes vestimentaires</li>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice Aéroport (35-45 min)</li>
+        <li>Service Festival de Cannes (mai)</li>
+        <li>Transport congrès : MIPIM, Cannes Lions, MAPIC...</li>
+        <li>Accès Croisette et palaces</li>
+        <li>Navettes îles de Lérins</li>
       </ul>
     </SectionImageText>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Découvrez Cannes avec votre Chauffeur Privé</h2>
-      <p class="text-center">
-        Explorez les incontournables de Cannes et ses environs avec notre service VTC.
+    <!-- FESTIVAL -->
+    <SectionImageText
+      title="VTC Festival de Cannes"
+      image="/assets/img/destinations/cannes-palais-festivals.webp"
+      alt="Festival de Cannes tapis rouge VTC"
+      imageSide="left"
+      ctaText="Guide Festival"
+      ctaLink="/guide-vtc-festival-cannes"
+    >
+      <p class="fade-in-section">
+        Le <strong>Festival de Cannes</strong> transforme la ville en capitale mondiale du cinéma. Pendant ces deux semaines, un service VTC professionnel est <strong>indispensable</strong> pour naviguer dans l'effervescence.
       </p>
-      <div class="grid-3-cols-responsive mt-lg">
+      <div class="festival-features fade-in-section">
+        <div class="fest-feature">
+          <span>🎬</span>
+          <strong>Dépose tapis rouge</strong>
+        </div>
+        <div class="fest-feature">
+          <span>🌙</span>
+          <strong>Service after-parties 24h</strong>
+        </div>
+        <div class="fest-feature">
+          <span>🏨</span>
+          <strong>Navettes palaces</strong>
+        </div>
+        <div class="fest-feature">
+          <span>📅</span>
+          <strong>Disponible toute la durée</strong>
+        </div>
+      </div>
+      <p class="fade-in-section tip">
+        ⚠️ <strong>Fort taux de réservation</strong> – Contactez-nous dès confirmation de votre accréditation !
+      </p>
+    </SectionImageText>
+
+    <!-- CONGRES -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Congrès & Événements Professionnels</h2>
+      <div class="congress-grid">
+        <div class="congress-card">
+          <span class="congress-month">MARS</span>
+          <h3>🏗️ MIPIM</h3>
+          <p>Marché international de l'immobilier. Transport délégations et clients.</p>
+        </div>
+        <div class="congress-card">
+          <span class="congress-month">JUIN</span>
+          <h3>🦁 Cannes Lions</h3>
+          <p>Festival international de la créativité publicitaire.</p>
+        </div>
+        <div class="congress-card">
+          <span class="congress-month">NOV</span>
+          <h3>🛒 MAPIC</h3>
+          <p>Marché international de l'implantation commerciale.</p>
+        </div>
+        <div class="congress-card">
+          <span class="congress-month">TOUTE L'ANNÉE</span>
+          <h3>🎤 Palais des Festivals</h3>
+          <p>Séminaires, galas, remises de prix. Service sur mesure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Découvrez Cannes avec Votre Chauffeur</h2>
+      <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="La Croisette Cannes"
-          title="La Croisette et ses palaces"
-          description="Baladez-vous le long de la célèbre Croisette, admirez les palaces et profitez des plages privées."
+          title="🌴 La Croisette"
+          description="La célèbre promenade bordée de palaces : Carlton, Martinez, Majestic. Plages privées et boutiques de luxe."
           link="/guide-que-faire-a-cannes"
         />
         <CategoryCard
           image="/assets/img/hero/hero-mariage.webp"
-          alt="Île Sainte-Marguerite Cannes"
-          title="Les Îles de Lérins"
-          description="Découvrez l'île Sainte-Marguerite et son fort royal, ou l'île Saint-Honorat et son abbaye."
+          alt="Îles de Lérins"
+          title="🏝️ Îles de Lérins"
+          description="Escapade nature à 15 min en bateau. Île Sainte-Marguerite (Fort Royal) et Saint-Honorat (abbaye)."
           link="/guide-que-faire-a-cannes"
         />
         <CategoryCard
           image="/assets/img/guides/villages-perches.webp"
-          alt="Saint-Paul-de-Vence depuis Cannes"
-          title="Villages perchés alentours"
-          description="Visitez Mougins, Saint-Paul-de-Vence ou Grasse, à quelques minutes de Cannes."
+          alt="Villages arrière-pays"
+          title="🏔️ Arrière-Pays"
+          description="Mougins (gastronomie), Grasse (parfums), Saint-Paul-de-Vence (art). À quelques minutes de Cannes."
           link="/guide-villages-perches-cote-d-azur"
         />
       </div>
     </section>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Questions Fréquentes sur les VTC à Cannes</h2>
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
           <h3 class="faq-question">Comment réserver un VTC pour le Festival de Cannes ?</h3>
           <div class="faq-answer">
-            <p>
-              Nous recommandons de réserver plusieurs semaines à l'avance pour le Festival de Cannes, car la demande est très forte. Contactez-nous via WhatsApp ou téléphone pour discuter de vos besoins spécifiques et obtenir un devis personnalisé.
-            </p>
+            <p>Réservez <strong>plusieurs semaines à l'avance</strong>. La demande est très forte. Contactez-nous via WhatsApp dès que vous avez vos dates.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Vos véhicules sont-ils adaptés aux événements prestigieux ?</h3>
+          <h3 class="faq-question">Vos véhicules sont-ils adaptés au tapis rouge ?</h3>
           <div class="faq-answer">
-            <p>
-              Absolument. Nous disposons d'une flotte de véhicules haut de gamme, propres et élégants, parfaitement adaptés aux événements prestigieux comme le Festival de Cannes ou les galas.
-            </p>
+            <p>Absolument ! Flotte <strong>haut de gamme</strong>, véhicules impeccables. Berlines et vans premium adaptés aux codes vestimentaires des galas.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Puis-je réserver un VTC pour plusieurs jours à Cannes ?</h3>
+          <h3 class="faq-question">Proposez-vous des forfaits multi-jours ?</h3>
           <div class="faq-answer">
-            <p>
-              Oui, nous proposons des services de mise à disposition à la journée ou sur plusieurs jours, idéaux pour les événements de longue durée ou les séjours à Cannes.
-            </p>
+            <p>Oui, nous proposons des <strong>forfaits demi-journée, journée et multi-jours</strong>, idéaux pour les congrès et le Festival.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Brillez à Cannes avec Votre Chauffeur</h2>
+        <p>Arrivez aux événements comme une star. Nos chauffeurs connaissent parfaitement les accès VIP et les itinéraires optimaux.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+        <p class="cta-price">À partir de <strong>75€</strong> depuis Nice Aéroport</p>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/vtc-mandelieu-la-napoule" class="text-dark hover-gold">VTC Mandelieu</a>
+        <a href="/vtc-juan-les-pins" class="text-dark hover-gold">VTC Juan-les-Pins</a>
+        <a href="/guide-vtc-festival-cannes" class="text-dark hover-gold">Guide Festival</a>
+        <a href="/en/cannes-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  /* FESTIVAL FEATURES */
+  .festival-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .fest-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .fest-feature span {
+    font-size: 1.5rem;
+  }
+  
+  .tip {
+    background: #fff3cd;
+    border-left: 4px solid #d4af37;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* CONGRESS GRID */
+  .congress-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .congress-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .congress-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .congress-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+  }
+  
+  .congress-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  .congress-month {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  
+  .congress-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  .congress-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-price {
+    margin-top: 1.5rem;
+    color: #d4af37 !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

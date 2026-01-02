@@ -1,5 +1,6 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
@@ -32,122 +33,328 @@ const keywords = [
     "headline": title,
     "description": description,
     "image": "https://www.ecofundrive.com/assets/img/destinations/destination-monaco.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE"
-    },
+    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
     "publisher": {
       "@type": "Organization",
       "name": "ECOFUNDRIVE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-      }
+      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
     },
     "datePublished": "2024-03-01",
     "dateModified": new Date().toISOString().split('T')[0]
   }}
 >
+  <PageHero 
+    title="Monaco en Une Journée"
+    subtitle="L'itinéraire VIP pour découvrir le meilleur de la Principauté avec votre chauffeur privé."
+    backgroundImage="/assets/img/destinations/destination-monaco.webp"
+    badge="GUIDE EXCLUSIF • MONACO"
+  />
+
   <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Monaco en Une Journée : L'Itinéraire VIP</h1>
-      <p class="lead text-center mb-xl">
-        La Principauté de Monaco est un concentré de luxe, d'histoire et de beauté. Pour en profiter pleinement sans les contraintes de stationnement, optez pour une visite guidée avec chauffeur privé.
-      </p>
-    </div>
+    
+    <!-- INTRO -->
+    <section class="container py-xl fade-in-section">
+      <div class="intro-box">
+        <p class="lead text-center">
+          <strong>Monaco</strong> est un concentré de luxe, d'histoire et de beauté. Pour en profiter pleinement sans les contraintes de stationnement (très cher et limité), optez pour une visite avec chauffeur privé.
+        </p>
+      </div>
+    </section>
 
-    <!-- 1. LE ROCHER & PALAIS -->
-    <SectionImageText
-      title="Le Rocher et le Palais Princier"
-      image="/assets/img/destinations/destination-monaco.webp"
-      alt="Palais Princier Monaco"
-      imageSide="right"
-      ctaText="Réserver mon Chauffeur"
-      ctaLink="/reservation"
-    >
-      <p>
-        Commencez votre journée par le cœur historique : <strong>Le Rocher</strong>. Assistez à la traditionnelle relève de la garde devant le Palais Princier à 11h55 précises.
-      </p>
-      <p>
-        Flânez dans les ruelles du vieux Monaco, visitez la Cathédrale où reposent la Princesse Grace et le Prince Rainier III. Votre chauffeur vous déposera au parking des Pécheurs, à quelques minutes à pied des lieux touristiques, vous évitant la montée difficile.
-      </p>
-    </SectionImageText>
+    <!-- ITINÉRAIRE -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Votre Itinéraire VIP</h2>
+      
+      <div class="itinerary-grid">
+        <!-- MATIN -->
+        <div class="itinerary-card">
+          <div class="itinerary-time">MATIN</div>
+          <h3>🏰 Le Rocher & Palais Princier</h3>
+          <p>Commencez par le cœur historique de Monaco. Assistez à la <strong>relève de la garde</strong> devant le Palais à 11h55 précises.</p>
+          <ul>
+            <li>Cathédrale de Monaco (Princesse Grace)</li>
+            <li>Ruelles du Vieux Monaco</li>
+            <li>Vue panoramique sur le port</li>
+          </ul>
+          <p class="tip">💡 <em>Votre chauffeur vous dépose au Parking des Pêcheurs, accès direct par ascenseur.</em></p>
+        </div>
+        
+        <!-- MIDI -->
+        <div class="itinerary-card">
+          <div class="itinerary-time">MIDI</div>
+          <h3>🍽️ Déjeuner avec Vue</h3>
+          <p>Plusieurs options selon votre budget et vos envies :</p>
+          <ul>
+            <li><strong>Café de Paris</strong> – Terrasse face au Casino</li>
+            <li><strong>Le Louis XV</strong> – 3 étoiles Michelin d'Alain Ducasse</li>
+            <li><strong>Marché de la Condamine</strong> – Typique et abordable</li>
+          </ul>
+          <p class="tip">💡 <em>Votre chauffeur peut vous conseiller selon vos goûts.</em></p>
+        </div>
+        
+        <!-- APRÈS-MIDI -->
+        <div class="itinerary-card featured">
+          <div class="itinerary-time">APRÈS-MIDI</div>
+          <h3>🎰 Monte-Carlo & Casino</h3>
+          <p>Direction le glamour absolu. La <strong>Place du Casino</strong> est le lieu idéal pour admirer les supercars et l'architecture Belle Époque.</p>
+          <ul>
+            <li>Casino de Monte-Carlo (entrée dès 18 ans, tenue correcte)</li>
+            <li>Boutiques de luxe du Carré d'Or</li>
+            <li>Hôtel de Paris & Café de Paris</li>
+            <li>Jardins du Casino</li>
+          </ul>
+          <p class="tip">💡 <em>Arrivez comme un VIP : dépose directement devant l'entrée du Casino.</em></p>
+        </div>
+        
+        <!-- OPTION -->
+        <div class="itinerary-card">
+          <div class="itinerary-time">OPTION</div>
+          <h3>🏎️ Sur les Traces du Grand Prix</h3>
+          <p>Demandez à votre chauffeur de parcourir le <strong>tracé mythique du circuit de F1</strong>.</p>
+          <ul>
+            <li>Virage de Sainte-Dévote</li>
+            <li>Montée vers le Casino</li>
+            <li>Tunnel sous l'hôtel Fairmont</li>
+            <li>Épingle du Fairmont</li>
+            <li>Chicane du Port</li>
+          </ul>
+          <p class="tip">💡 <em>Vivez le frisson du Grand Prix au volant de notre véhicule premium.</em></p>
+        </div>
+      </div>
+    </section>
 
-    <!-- 2. MONTE-CARLO & CASINO -->
-    <SectionImageText
-      title="Monte-Carlo et le Carré d'Or"
-      image="/assets/img/destinations/vtc-tesla-nice.webp"
-      alt="Place du Casino Monaco"
-      imageSide="left"
-      ctaText="Transfert Soirée Casino"
-      ctaLink="/reservation"
-    >
-      <p>
-        L'après-midi, direction le glamour absolu. La <strong>Place du Casino</strong> est le lieu idéal pour admirer les supercars et l'architecture Belle Époque.
-      </p>
-      <p>
-        Faites du shopping dans les boutiques de luxe du Carré d'Or ou prenez un café au Café de Paris. Avec ECOFUNDRIVE, arrivez comme un VIP directement devant l'entrée du Casino ou de l'Hôtel de Paris.
-      </p>
-    </SectionImageText>
-
-    <!-- 3. MUSEE OCEANOGRAPHIQUE & JARDINS -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Nature et Culture</h2>
-      <p class="text-center mb-lg">
-        Monaco n'est pas que béton et luxe. Découvrez ses poumons verts et son patrimoine scientifique exceptionnel.
-      </p>
-      <div class="grid-2-cols">
+    <!-- AUTRES DÉCOUVERTES -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Autres Trésors de Monaco</h2>
+      <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/hero/hero-ete.webp"
           alt="Musée Océanographique"
-          title="Musée Océanographique"
-          description="Un temple de la mer accroché à la falaise. Aquariums géants, lagon aux requins et toit-terrasse panoramique. Incontournable en famille."
+          title="🐠 Musée Océanographique"
+          description="Un temple de la mer accroché à la falaise. Aquariums géants, lagon aux requins et toit-terrasse panoramique. Incontournable !"
           link="/reservation"
-          linkText="Y aller en VTC"
         />
         <CategoryCard
           image="/assets/img/hero/hero-mariage.webp"
-          alt="Jardin Exotique"
-          title="Jardin Exotique"
-          description="Une collection incroyable de plantes succulentes et une vue imprenable sur la Principauté. Découvrez aussi la Grotte de l'Observatoire."
+          alt="Jardin Exotique Monaco"
+          title="🌵 Jardin Exotique"
+          description="Collection incroyable de plantes succulentes et vue imprenable. Découvrez aussi la Grotte de l'Observatoire."
           link="/reservation"
-          linkText="Visiter les Jardins"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-business.webp"
+          alt="Port Hercule Monaco"
+          title="⛵ Port Hercule"
+          description="Le port de Monaco accueille les plus grands yachts du monde. Promenade au bord de l'eau et restaurants."
+          link="/reservation"
         />
       </div>
     </section>
 
-    <!-- 4. CIRCUIT F1 -->
-    <SectionImageText
-      title="Sur les Traces du Grand Prix F1"
-      image="/assets/img/services/service-business.webp"
-      alt="Circuit F1 Monaco"
-      imageSide="right"
-      ctaText="Faire le tour du circuit"
-      ctaLink="/reservation"
-    >
-      <p>
-        Vivez le frisson du <strong>Grand Prix de Monaco</strong> ! Demandez à votre chauffeur de parcourir le tracé mythique du circuit de Formule 1.
-      </p>
-      <p>
-        Du virage de Sainte-Dévote à l'épingle du Fairmont, en passant par le tunnel sous l'hôtel, découvrez le circuit urbain le plus célèbre du monde confortablement installé dans votre VTC.
-      </p>
-    </SectionImageText>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-        <div class="text-center bg-light p-5 rounded">
-            <h2 class="mb-4">Une Journée Inoubliable à Monaco</h2>
-            <p class="lead mb-4">
-                L'accès à Monaco est souvent saturé et les parkings hors de prix. Choisissez la tranquillité d'un chauffeur privé pour profiter pleinement de chaque instant.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/reservation" class="btn btn-primary">Réserver ma Journée Monaco</a>
-                <a href="https://wa.me/33616552811" class="btn btn-outline">Devis WhatsApp</a>
-            </div>
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Une Journée Inoubliable à Monaco</h2>
+        <p>L'accès à Monaco est saturé et les parkings hors de prix. Choisissez la tranquillité d'un chauffeur privé pour profiter de chaque instant.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver ma Journée Monaco</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
         </div>
+        <p class="cta-price">À partir de <strong>80€</strong> depuis Nice Aéroport</p>
+      </div>
     </section>
 
+    <!-- RELATED -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Guides Connexes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
+        <a href="/guide-route-panoramique-nice-eze-monaco" class="text-dark hover-gold">Circuit Nice-Èze-Monaco</a>
+        <a href="/guide-grand-prix-monaco-deplacements" class="text-dark hover-gold">Grand Prix F1</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">English Version</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .intro-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 16px;
+    border-left: 4px solid #d4af37;
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+  }
+  
+  /* ITINERARY GRID */
+  .itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .itinerary-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .itinerary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+  }
+  
+  .itinerary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+  }
+  
+  .itinerary-card.featured {
+    border: 2px solid #d4af37;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, white 100%);
+  }
+  
+  .itinerary-time {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  
+  .itinerary-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  
+  .itinerary-card ul {
+    padding-left: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .itinerary-card li {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .tip {
+    background: #f8f8f8;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-price {
+    margin-top: 1.5rem;
+    color: #d4af37;
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

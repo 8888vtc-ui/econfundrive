@@ -24,6 +24,7 @@ const keywords = [
     { name: "Home", url: "/it" },
     { name: "NCC Cannes", url: "/it/ncc-cannes" }
   ]}
+  schema={{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quanto tempo dura il trasferimento dall'aeroporto di Nizza a Cannes?","acceptedAnswer":{"@type":"Answer","text":"Il trasferimento dall'aeroporto di Nizza a Cannes dura circa 35-45 minuti a seconda del traffico (circa 35 km via autostrada A8)."}},{"@type":"Question","name":"Offrite servizio durante il Festival del Cinema di Cannes?","acceptedAnswer":{"@type":"Answer","text":"Sì, offriamo servizio NCC premium durante il Festival del Cinema di Cannes (di solito a metà maggio). Consigliamo di prenotare 2-3 mesi in anticipo per l'altissima domanda."}},{"@type":"Question","name":"I vostri autisti parlano italiano?","acceptedAnswer":{"@type":"Answer","text":"Sì, abbiamo autisti che parlano italiano fluentemente. Su richiesta, possiamo assicurarvi un autista che parla la vostra lingua."}}]}}
 >
   <main id="main-content">
     <div class="container py-lg">
@@ -31,11 +32,10 @@ const keywords = [
       <p class="lead text-center mb-xl">{description}</p>
     </div>
 
-    
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
+      <h2 class="text-center mb-lg">Tariffe e Preventivi</h2>
       <div class="cta-box">
-        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo</a>
+        <a href="/it/contatto" class="btn-primary">Richiedi un preventivo gratuito</a>
       </div>
     </section>
 
@@ -47,21 +47,21 @@ const keywords = [
           alt="Festival Cinema Cannes"
           title="Festival del Cinema"
           description="Il festival cinematografico più prestigioso al mondo. Trasferimenti red carpet, after-party, eventi yacht."
-          link="/reservation"
+          link="/it/contatto"
         />
         <CategoryCard
           image="/assets/img/services/service-business.webp"
           alt="MIPIM Cannes"
           title="MIPIM Immobiliare"
           description="La principale conferenza immobiliare mondiale. Trasferimenti aeroporto, incontri clienti, networking."
-          link="/reservation"
+          link="/it/contatto"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-saint-tropez.webp"
           alt="Cannes Lions"
           title="Cannes Lions"
           description="Festival globale della creatività pubblicitaria. Trasporto executive, feste, transfer hotel."
-          link="/reservation"
+          link="/it/contatto"
         />
       </div>
     </section>
@@ -96,13 +96,24 @@ const keywords = [
         <a href="/it" class="text-dark hover-gold">NCC Nizza</a>
         <a href="/it/ncc-monaco" class="text-dark hover-gold">NCC Monaco</a>
         <a href="/it/ncc-saint-tropez" class="text-dark hover-gold">NCC Saint-Tropez</a>
-        <a href="/vtc-antibes" class="text-dark hover-gold">NCC Antibes</a>
+        <a href="/it/ncc-antibes" class="text-dark hover-gold">NCC Antibes</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .cta-box { text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
+  .btn-primary {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: #b8941f; transform: translateY(-2px); }
 </style>

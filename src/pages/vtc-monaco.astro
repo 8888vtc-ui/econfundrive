@@ -1,134 +1,391 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
-import CategoryCard from '../components/CategoryCard.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Monaco – Chauffeur Privé à Monaco | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Monaco. Monte-Carlo, Grand Prix, Casino, hôtels de luxe, port Hercule. Service premium 24h/24 pour événements et business.";
+const title = "VTC Monaco – Chauffeur Privé Monte-Carlo & Grand Prix | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Monaco. Monte-Carlo, Casino, Grand Prix F1, Port Hercule, hôtels de luxe. Service premium 24h/24 pour événements et business.";
 const keywords = [
   'VTC Monaco',
   'chauffeur privé Monaco',
   'VTC Grand Prix Monaco',
   'transfert Nice Monaco',
-  'VTC Monte-Carlo'
+  'VTC Monte-Carlo',
+  'VTC Casino Monaco',
+  'chauffeur Port Hercule'
 ];
 ---
 
-<BaseLayout title={title}
+<BaseLayout 
+  title={title}
   description={description}
   currentPage="vtc-monaco"
+  canonical="/vtc-monaco"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Monaco", url: "/vtc-monaco" }
   ]}
-
-  canonical="/vtc-monaco"
-
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Grand Prix de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Pour le Grand Prix de Monaco, nous recommandons de réserver plusieurs mois à l'avance, car la demande est exceptionnelle. Contactez-nous dès que possible pour discuter de vos besoins et obtenir un devis personnalisé."}},{"@type":"Question","name":"Combien de temps faut-il pour aller de Nice à Monaco en VTC ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet entre Nice et Monaco prend généralement entre 30 et 45 minutes en VTC, selon le trafic. Pendant le Grand Prix ou en haute saison, il peut être plus long, mais nos chauffeurs connaissent les itinéraires alternatifs pour optimiser le temps de trajet."}},{"@type":"Question","name":"Vos véhicules peuvent-ils accéder aux hôtels de luxe de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nos chauffeurs connaissent parfaitement les accès aux hôtels de luxe de Monaco et peuvent vous déposer directement à l'entrée principale. Nous travaillons régulièrement avec les établissements prestigieux de la principauté."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Grand Prix de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Pour le Grand Prix, réservez plusieurs mois à l'avance. La demande est exceptionnelle. Contactez-nous dès que vos dates sont confirmées."}},{"@type":"Question","name":"Combien de temps Nice → Monaco en VTC ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet Nice → Monaco prend 30-45 minutes selon le trafic. Pendant le Grand Prix, prévoir plus. Nos chauffeurs connaissent tous les itinéraires alternatifs."}},{"@type":"Question","name":"Accédez-vous aux hôtels de luxe de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous connaissons parfaitement les accès VIP. Dépose directe devant l'Hôtel de Paris, Hermitage, Fairmont, Monte-Carlo Bay..."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Monaco"
+    subtitle="La Principauté du luxe et de l'excellence. Chauffeur privé pour Casino, Grand Prix F1, Port Hercule et événements VIP."
+    backgroundImage="/assets/img/destinations/destination-monaco.webp"
+    badge="MONTE-CARLO • GRAND PRIX F1"
+  />
 
+  <main id="main-content" class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
-      title="Votre Chauffeur Privé à Monaco : Luxe et Excellence"
+      title="Votre Chauffeur Privé à Monaco"
       image="/assets/img/destinations/monaco-casino.webp"
-      alt="Voiture VTC devant le Casino de Monte-Carlo"
+      alt="VTC devant Casino Monte-Carlo"
       imageSide="right"
-      ctaText="Réserver votre VTC à Monaco"
+      ctaText="Réserver mon chauffeur"
       ctaLink="/reservation"
     >
-      <p>
-        Monaco, la principauté de la Côte d'Azur, incarne le luxe et l'excellence. Pour vos déplacements dans cette destination prestigieuse, ECOFUNDRIVE vous propose un service VTC premium à Monaco, à la hauteur des standards de cette principauté. Que vous assistiez au Grand Prix de Monaco, que vous séjourniez dans un hôtel de luxe, ou que vous participiez à un événement au Casino de Monte-Carlo, votre chauffeur privé vous garantit un service irréprochable.
+      <p class="fade-in-section">
+        <strong>Monaco</strong>, la principauté de la Côte d'Azur, incarne le luxe absolu. Pour vos déplacements dans cette destination prestigieuse, ECOFUNDRIVE vous propose un service VTC premium à la hauteur des standards monégasques.
       </p>
-      <p>
-        Nos chauffeurs connaissent parfaitement Monaco et ses spécificités. Ils maîtrisent les accès, les parkings et les itinéraires optimaux pour vous faire gagner du temps, notamment pendant les événements majeurs comme le Grand Prix.
+      <p class="fade-in-section">
+        Que vous assistiez au <strong>Grand Prix de Monaco</strong>, séjourniez dans un palace, ou participiez à un événement au Casino de Monte-Carlo, votre chauffeur privé vous garantit un service irréprochable.
       </p>
-    </SectionImageText>
-
-    <SectionImageText
-      title="VTC pour le Grand Prix de Monaco"
-      image="/assets/img/guides/grand-prix-monaco.webp"
-      alt="Chauffeur VTC pour Grand Prix de Monaco"
-      imageSide="left"
-      ctaText="Guide VTC Grand Prix Monaco"
-      ctaLink="/guide-grand-prix-monaco-deplacements"
-    >
-      <p>
-        Le Grand Prix de Monaco est l'un des événements les plus prestigieux au monde. Pendant cette période, Monaco devient le centre de l'attention internationale. Pour naviguer dans cette effervescence, un service VTC professionnel est indispensable. ECOFUNDRIVE vous offre un service dédié, avec des véhicules premium et des chauffeurs expérimentés qui connaissent parfaitement les contraintes de circulation pendant le Grand Prix.
-      </p>
-      <ul>
-        <li>Service spécialisé pour le Grand Prix de Monaco</li>
-        <li>Connaissance des accès et parkings pendant l'événement</li>
-        <li>Disponibilité pendant toute la durée du week-end</li>
-        <li>Véhicules adaptés aux codes vestimentaires</li>
+      <ul class="fade-in-section">
+        <li>Transferts depuis Nice Aéroport (30-45 min)</li>
+        <li>Service Grand Prix F1 (mai)</li>
+        <li>Accès Casino Monte-Carlo & palaces</li>
+        <li>Transport yachts Port Hercule</li>
+        <li>Événements : Monaco Yacht Show, Rolex Masters...</li>
       </ul>
     </SectionImageText>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Découvrez Monaco avec votre Chauffeur Privé</h2>
-      <p class="text-center">
-        Explorez les incontournables de Monaco et ses environs avec notre service VTC.
+    <!-- GRAND PRIX -->
+    <SectionImageText
+      title="VTC Grand Prix de Monaco"
+      image="/assets/img/guides/grand-prix-monaco.webp"
+      alt="Grand Prix F1 Monaco VTC"
+      imageSide="left"
+      ctaText="Guide Grand Prix"
+      ctaLink="/guide-grand-prix-monaco-deplacements"
+    >
+      <p class="fade-in-section">
+        Le <strong>Grand Prix de Monaco</strong> est l'un des événements les plus prestigieux au monde. Pendant ce week-end, Monaco devient le centre de l'attention internationale. Un service VTC professionnel est <strong>indispensable</strong>.
       </p>
-      <div class="grid-3-cols-responsive mt-lg">
+      <div class="gp-features fade-in-section">
+        <div class="gp-feature">
+          <span>🏎️</span>
+          <strong>Service spécialisé Grand Prix</strong>
+        </div>
+        <div class="gp-feature">
+          <span>🗺️</span>
+          <strong>Connaissance des accès fermés</strong>
+        </div>
+        <div class="gp-feature">
+          <span>📅</span>
+          <strong>Disponibilité tout le week-end</strong>
+        </div>
+        <div class="gp-feature">
+          <span>👔</span>
+          <strong>Véhicules adaptés au dress code</strong>
+        </div>
+      </div>
+      <p class="fade-in-section tip">
+        ⚠️ <strong>Réservez plusieurs mois à l'avance</strong> – La demande est exceptionnelle !
+      </p>
+    </SectionImageText>
+
+    <!-- HIGHLIGHTS -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Découvrez Monaco avec Votre Chauffeur</h2>
+      <div class="grid-3-cols">
         <CategoryCard
           image="/assets/img/services/service-business.webp"
-          alt="Casino de Monte-Carlo Monaco"
-          title="Le Casino de Monte-Carlo"
-          description="Visitez l'emblématique Casino de Monte-Carlo, symbole du luxe et du glamour monégasque."
+          alt="Casino Monte-Carlo"
+          title="🎰 Casino de Monte-Carlo"
+          description="L'emblématique Casino, symbole du glamour monégasque. Arrivez comme un VIP, dépose directe devant l'entrée."
           link="/guide-monaco-en-une-journee"
         />
         <CategoryCard
           image="/assets/img/destinations/destination-monaco.webp"
           alt="Palais Princier Monaco"
-          title="Le Palais Princier"
-          description="Découvrez la résidence officielle du Prince de Monaco et admirez la relève de la garde."
+          title="🏰 Palais Princier"
+          description="La résidence officielle du Prince. Relève de la garde à 11h55. Vue panoramique depuis le Rocher."
           link="/guide-monaco-en-une-journee"
         />
         <CategoryCard
           image="/assets/img/about/vehicule-premium.webp"
           alt="Port Hercule Monaco"
-          title="Le Port Hercule"
-          description="Admirez les superyachts amarrés dans le port de Monaco, l'un des ports les plus prestigieux au monde."
+          title="⛵ Port Hercule"
+          description="Les plus grands superyachts du monde. Atmosphère exclusive, restaurants et bars branchés."
           link="/guide-monaco-en-une-journee"
         />
       </div>
     </section>
 
-    <section class="mb-xl">
-      <h2 class="text-center mb-lg">Questions Fréquentes sur les VTC à Monaco</h2>
+    <!-- EVENTS -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Événements Majeurs à Monaco</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <span class="event-month">MAI</span>
+          <h3>🏎️ Grand Prix F1</h3>
+          <p>Le plus prestigieux des GP. Réservez 3-6 mois à l'avance.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-month">SEPT</span>
+          <h3>🛥️ Monaco Yacht Show</h3>
+          <p>Les plus beaux superyachts du monde. Transport équipages et visiteurs.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-month">AVRIL</span>
+          <h3>🎾 Rolex Monte-Carlo Masters</h3>
+          <p>Tennis de prestige au Monte-Carlo Country Club.</p>
+        </div>
+        <div class="event-card">
+          <span class="event-month">JANV</span>
+          <h3>🎪 Festival du Cirque</h3>
+          <p>Le plus grand festival de cirque au monde.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3 class="faq-question">Comment réserver un VTC pour le Grand Prix de Monaco ?</h3>
+          <h3 class="faq-question">Comment réserver un VTC pour le Grand Prix ?</h3>
           <div class="faq-answer">
-            <p>
-              Pour le Grand Prix de Monaco, nous recommandons de réserver plusieurs mois à l'avance, car la demande est exceptionnelle. Contactez-nous dès que possible pour discuter de vos besoins et obtenir un devis personnalisé.
-            </p>
+            <p>Réservez <strong>plusieurs mois à l'avance</strong>. Contactez-nous dès que vos dates sont confirmées pour garantir la disponibilité.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Combien de temps faut-il pour aller de Nice à Monaco en VTC ?</h3>
+          <h3 class="faq-question">Combien de temps Nice → Monaco ?</h3>
           <div class="faq-answer">
-            <p>
-              Le trajet entre Nice et Monaco prend généralement entre 30 et 45 minutes en VTC, selon le trafic. Pendant le Grand Prix ou en haute saison, il peut être plus long, mais nos chauffeurs connaissent les itinéraires alternatifs pour optimiser le temps de trajet.
-            </p>
+            <p>Le trajet prend <strong>30-45 minutes</strong> selon le trafic. Nos chauffeurs connaissent les itinéraires alternatifs pour optimiser le temps.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Vos véhicules peuvent-ils accéder aux hôtels de luxe de Monaco ?</h3>
+          <h3 class="faq-question">Accédez-vous aux hôtels de luxe ?</h3>
           <div class="faq-answer">
-            <p>
-              Oui, nos chauffeurs connaissent parfaitement les accès aux hôtels de luxe de Monaco et peuvent vous déposer directement à l'entrée principale. Nous travaillons régulièrement avec les établissements prestigieux de la principauté.
-            </p>
+            <p>Oui ! Dépose directe devant l'<strong>Hôtel de Paris, Hermitage, Fairmont, Monte-Carlo Bay</strong>. Nous connaissons tous les accès VIP.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Arrivez à Monaco comme un VIP</h2>
+        <p>Le stationnement à Monaco est rare et cher. Optez pour un chauffeur privé et profitez pleinement de la Principauté.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+        <p class="cta-price">À partir de <strong>80€</strong> depuis Nice Aéroport</p>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
+        <a href="/vtc-eze" class="text-dark hover-gold">VTC Èze</a>
+        <a href="/vtc-menton" class="text-dark hover-gold">VTC Menton</a>
+        <a href="/vtc-cap-ferrat" class="text-dark hover-gold">VTC Cap Ferrat</a>
+        <a href="/vtc-beaulieu-sur-mer" class="text-dark hover-gold">VTC Beaulieu</a>
+        <a href="/vtc-roquebrune-cap-martin" class="text-dark hover-gold">VTC Roquebrune</a>
+        <a href="/guide-monaco-en-une-journee" class="text-dark hover-gold">Guide Monaco</a>
+        <a href="/en/monaco-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  /* GP FEATURES */
+  .gp-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .gp-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .gp-feature span {
+    font-size: 1.5rem;
+  }
+  
+  .tip {
+    background: #fff3cd;
+    border-left: 4px solid #d4af37;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* EVENTS GRID */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .event-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  .event-month {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  
+  .event-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  .event-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-price {
+    margin-top: 1.5rem;
+    color: #d4af37 !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
+</style>

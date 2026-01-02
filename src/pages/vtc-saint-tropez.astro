@@ -1,9 +1,11 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
-const title = "VTC Saint-Tropez – Chauffeur Privé Pampelonne & Golf | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Saint-Tropez. Plages Pampelonne, Club 55, Nikki Beach, port, Place des Lices. Transferts Nice, Cannes. Service premium 24h/24.";
+
+const title = "VTC Saint-Tropez – Chauffeur Privé Pampelonne & Golfe | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Saint-Tropez. Plages Pampelonne, Club 55, Nikki Beach, port mythique, Place des Lices. Transferts Nice, Cannes. Service premium 24h/24.";
 const keywords = [
   'VTC Saint-Tropez',
   'chauffeur privé Saint-Tropez',
@@ -23,7 +25,7 @@ const faqSchema = {
       "name": "Combien de temps pour aller de Nice à Saint-Tropez ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le transfert Nice Aéroport → Saint-Tropez prend environ 1h30 à 2h en VTC (110 km). En été, comptez jusqu'à 2h30 en raison du trafic intense sur la côte varoise. Contactez-nous pour optimiser votre trajet."
+        "text": "Le transfert Nice Aéroport → Saint-Tropez prend environ 1h30 à 2h en VTC (110 km). En été, comptez jusqu'à 2h30."
       }
     },
     {
@@ -31,23 +33,15 @@ const faqSchema = {
       "name": "Proposez-vous des transferts vers les plages de Pampelonne ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, nous desservons toutes les plages de Pampelonne : Club 55, Nikki Beach, La Voile Rouge, Tahiti Beach. Nous pouvons vous attendre ou revenir vous chercher."
+        "text": "Oui, nous desservons toutes les plages : Club 55, Nikki Beach, Bagatelle, La Voile Rouge, Tahiti Beach."
       }
     },
     {
       "@type": "Question",
-      "name": "Est-ce que vous récupérez les clients après les soirées ?",
+      "name": "Récupérez-vous les clients après les soirées ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument ! Service VTC disponible 24h/24. Nous récupérons régulièrement nos clients après les soirées dans les clubs et restaurants de Saint-Tropez, même très tard."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Puis-je réserver un VTC à la journée ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, nous proposons des formules de mise à disposition à la journée (8-12h) idéales pour explorer Saint-Tropez, Ramatuelle, Gassin et le golfe sans vous soucier de rien."
+        "text": "Absolument ! Service 24h/24, récupération même à 2h-4h du matin."
       }
     }
   ]
@@ -60,156 +54,170 @@ const faqSchema = {
   currentPage="vtc-saint-tropez"
   canonical="/vtc-saint-tropez"
   schema={faqSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Saint-Tropez", url: "/vtc-saint-tropez" }
   ]}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Saint-Tropez – Le Mythe de la Côte d'Azur</h1>
-      <p class="lead text-center mb-xl">
-        Chauffeur privé premium à Saint-Tropez. Plages de Pampelonne, port mythique, Place des Lices, 
-        vie nocturne légendaire. Transferts depuis Nice et Cannes.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC Saint-Tropez"
+    subtitle="La légende de la Côte d'Azur. Chauffeur privé pour Pampelonne, Club 55, port mythique et vie nocturne légendaire."
+    backgroundImage="/assets/img/destinations/destination-saint-tropez.webp"
+    badge="PAMPELONNE • CLUB 55 • 24/7"
+  />
 
+  <main id="main-content" class="page-content">
+    
+    <!-- INTRO -->
     <SectionImageText
       title="Votre Chauffeur Privé à Saint-Tropez"
       image="/assets/img/destinations/destination-saint-tropez.webp"
-      alt="VTC chauffeur privé Saint-Tropez port"
+      alt="Port de Saint-Tropez yachts"
       imageSide="right"
-      ctaText="Réserver votre VTC"
+      ctaText="Réserver mon chauffeur"
       ctaLink="/reservation"
     >
       <p class="fade-in-section">
-        <strong>Saint-Tropez</strong> est la légende vivante de la Côte d'Azur. Ce petit village de pêcheurs devenu destination jet-set mondiale a su conserver son charme provençal tout en attirant les célébrités du monde entier. Le <strong>port mythique</strong>, la <strong>Place des Lices</strong> et ses parties de pétanque, les <strong>plages de Pampelonne</strong> – chaque recoin respire le glamour à la française.
+        <strong>Saint-Tropez</strong> est la légende vivante de la Côte d'Azur. Ce petit village de pêcheurs devenu destination jet-set mondiale a su conserver son charme provençal tout en attirant les célébrités du monde entier.
       </p>
       <p class="fade-in-section">
-        Mais Saint-Tropez rime aussi avec trafic et stationnement impossible, surtout en été. ECOFUNDRIVE vous offre la <strong>solution parfaite</strong> : un chauffeur privé vous dépose exactement où vous le souhaitez et vous récupère quand vous voulez, même après minuit.
+        Mais Saint-Tropez rime aussi avec <strong>trafic et stationnement impossible</strong>, surtout l'été. ECOFUNDRIVE vous offre la solution parfaite : un chauffeur vous dépose exactement où vous le souhaitez et vous récupère quand vous voulez.
       </p>
       <ul class="fade-in-section">
-        <li>Transferts aéroport Nice (1h30-2h)</li>
+        <li>Transferts Nice Aéroport (1h30-2h)</li>
         <li>Transferts depuis Cannes (1h15)</li>
-        <li>Navettes plages Pampelonne (Club 55, Nikki Beach)</li>
-        <li>Service de nuit et récupération après soirées</li>
+        <li>Navettes plages Pampelonne</li>
+        <li>Service de nuit 24h/24</li>
         <li>Mise à disposition journée complète</li>
-        <li>Yacht et héliport de Saint-Tropez</li>
       </ul>
     </SectionImageText>
 
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs VTC Saint-Tropez</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <!-- BEACH CLUBS -->
+    <section class="beach-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">🏖️ Beach Clubs de Pampelonne</h2>
+        <p class="text-center mb-lg" style="color: #ccc;">5 km de sable doré, clubs légendaires. Dépose directe à l'entrée de votre beach club.</p>
+        <div class="beach-grid">
+          <div class="beach-card">
+            <span class="beach-icon">🍾</span>
+            <h3>Club 55</h3>
+            <p>L'institution depuis 1955. Repas méditerranéen les pieds dans le sable, stars et yachties.</p>
+          </div>
+          <div class="beach-card">
+            <span class="beach-icon">🎉</span>
+            <h3>Nikki Beach</h3>
+            <p>L'ambiance internationale et festive. Champagne, musique et glamour.</p>
+          </div>
+          <div class="beach-card">
+            <span class="beach-icon">💃</span>
+            <h3>Bagatelle</h3>
+            <p>Déjeuners dansants légendaires. L'esprit Saint-Tropez made in NY.</p>
+          </div>
+          <div class="beach-card">
+            <span class="beach-icon">🌊</span>
+            <h3>Tahiti Beach</h3>
+            <p>Plus familial et accessible. L'original beach club depuis 1946.</p>
+          </div>
+        </div>
+        <div class="text-center mt-lg">
+          <a href="/reservation" class="btn-gold-dark">Réserver un transfert plage</a>
+        </div>
       </div>
     </section>
 
+    <!-- HIGHLIGHTS -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Saint-Tropez</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Saint-Tropez</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/club-55-saint-tropez.jpg"
-          alt="Plages Pampelonne Club 55"
-          title="Plages de Pampelonne"
-          description="5 km de sable doré, clubs légendaires : Club 55, Nikki Beach, Bagatelle. L'essence même du glamour tropézien."
-          link="/reservation"
-        />
         <CategoryCard
           image="/assets/img/destinations/saint-tropez-port.webp"
           alt="Port Saint-Tropez"
-          title="Le Port Mythique"
+          title="⛵ Le Port Mythique"
           description="Yachts de rêve, terrasses animées, façades colorées. Le décor de Brigitte Bardot inchangé depuis 60 ans."
-          link="/reservation"
+          link="/guide-decouvrir-saint-tropez-golfe"
         />
         <CategoryCard
           image="/assets/img/guides/villages-perches.webp"
-          alt="Place des Lices Saint-Tropez"
-          title="Place des Lices"
-          description="L'âme du village. Pétanque, marché provençal et terrasses ombragées pour une pause authentique."
+          alt="Place des Lices"
+          title="🎯 Place des Lices"
+          description="L'âme du village. Pétanque sous les platanes, marché provençal, terrasses authentiques."
+          link="/guide-decouvrir-saint-tropez-golfe"
+        />
+        <CategoryCard
+          image="/assets/img/services/service-evenements.webp"
+          alt="Vie nocturne Saint-Tropez"
+          title="🌙 Vie Nocturne"
+          description="Les Caves du Roy, VIP Room... La nuit tropézienne est légendaire. Service récupération 24h/24."
           link="/reservation"
         />
       </div>
     </section>
 
-    <SectionImageText
-      title="Service Plages & Beach Clubs"
-      image="/assets/img/destinations/nikki-beach-saint-tropez.jpg"
-      alt="VTC plages Pampelonne Nikki Beach"
-      imageSide="left"
-      ctaText="Réserver un transfert plage"
-      ctaLink="/reservation"
-    >
-      <p class="fade-in-section">
-        Les <strong>plages de Pampelonne</strong> sont situées à environ 5 km du village de Saint-Tropez. Le stationnement y est limité et cher en été. Avec notre service VTC, vous êtes déposé directement à l'entrée de votre beach club.
-      </p>
-      <h3 class="fade-in-section">Les Beach Clubs que nous desservons :</h3>
-      <ul class="fade-in-section">
-        <li><strong>Club 55</strong> – L'institution depuis 1955, repas méditerranéen les pieds dans le sable</li>
-        <li><strong>Nikki Beach</strong> – L'ambiance internationale et festive</li>
-        <li><strong>Bagatelle</strong> – Déjeuners dansants légendaires</li>
-        <li><strong>La Voile Rouge</strong> – L'esprit Saint-Tropez des années 80</li>
-        <li><strong>Tahiti Beach</strong> – Pour les familles et les groupes</li>
-      </ul>
-      <p class="fade-in-section">
-        <strong>Formule idéale :</strong> Aller + Retour avec heure de reprise convenue. Ou mise à disposition pour la journée.
-      </p>
-    </SectionImageText>
-
+    <!-- GOLFE -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Le Golfe de Saint-Tropez</h2>
-      <p class="text-center mb-lg">Saint-Tropez n'est que la partie la plus célèbre d'un golfe magnifique. Découvrez les villages voisins :</p>
-      <div class="grid-2-cols">
-        <div class="village-card">
+      <h2 class="section-title text-center mb-xl">Le Golfe de Saint-Tropez</h2>
+      <p class="text-center mb-lg lead">Saint-Tropez n'est que la partie la plus célèbre d'un golfe magnifique.</p>
+      <div class="golfe-grid">
+        <div class="golfe-card">
           <h3>🏘️ Ramatuelle</h3>
-          <p>Village perché authentique surplombant Pampelonne. Ruelles fleuries, marché le jeudi. Festival de jazz l'été.</p>
+          <p>Village perché surplombant Pampelonne. Ruelles fleuries, marché le jeudi, festival de jazz.</p>
         </div>
-        <div class="village-card">
+        <div class="golfe-card">
           <h3>⛪ Gassin</h3>
-          <p>L'un des "plus beaux villages de France", vue panoramique sur le golfe. Ruelles pavées, restaurants gastronomiques.</p>
+          <p>"Plus beau village de France". Vue panoramique sur le golfe, restaurants gastronomiques.</p>
         </div>
-        <div class="village-card">
+        <div class="golfe-card">
           <h3>🌊 Port Grimaud</h3>
-          <p>"La Venise provençale". Cité lacustre unique avec canaux et ponts. Promenade en bateau possible.</p>
+          <p>"La Venise provençale". Cité lacustre unique avec canaux et ponts vénitiens.</p>
         </div>
-        <div class="village-card">
+        <div class="golfe-card">
           <h3>🏖️ Sainte-Maxime</h3>
-          <p>Station balnéaire familiale en face de Saint-Tropez. Plages, promenade, casino. Alternative plus accessible.</p>
+          <p>Station balnéaire familiale face à Saint-Tropez. Alternative plus accessible.</p>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
+      <h2 class="section-title text-center mb-xl">Questions Fréquentes</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h3 class="faq-question">Combien de temps pour aller de Nice à Saint-Tropez ?</h3>
+          <h3 class="faq-question">Combien de temps pour Nice → Saint-Tropez ?</h3>
           <div class="faq-answer">
-            <p>Le transfert <strong>Nice Aéroport → Saint-Tropez</strong> prend environ <strong>1h30 à 2h</strong> en VTC (110 km). En été (juillet-août), comptez jusqu'à 2h30 en raison du trafic intense. Nous recommandons de partir tôt le matin ou en fin d'après-midi.</p>
+            <p>Le transfert prend <strong>1h30 à 2h</strong> (110 km). En été (juillet-août), comptez jusqu'à 2h30. Nous recommandons de partir tôt le matin.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des transferts vers les plages de Pampelonne ?</h3>
+          <h3 class="faq-question">Récupérez-vous les clients après les soirées ?</h3>
           <div class="faq-answer">
-            <p>Oui, nous desservons <strong>toutes les plages de Pampelonne</strong> : Club 55, Nikki Beach, Bagatelle, La Voile Rouge, Tahiti Beach. Nous pouvons vous attendre ou revenir vous chercher à l'heure convenue.</p>
+            <p>Absolument ! <strong>Service 24h/24</strong>, récupération même à 2h-4h du matin devant les clubs et restaurants.</p>
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Est-ce que vous récupérez les clients après les soirées ?</h3>
+          <h3 class="faq-question">Proposez-vous des forfaits journée ?</h3>
           <div class="faq-answer">
-            <p>Absolument ! Notre <strong>service VTC 24h/24</strong> est particulièrement apprécié pour les retours après les soirées à Saint-Tropez. Nous récupérons régulièrement nos clients devant les clubs et restaurants, même très tard (2h-4h du matin).</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Puis-je réserver un VTC à la journée ?</h3>
-          <div class="faq-answer">
-            <p>Oui, nous proposons des <strong>formules de mise à disposition</strong> à la journée (8-12h), idéales pour explorer Saint-Tropez, les plages, Ramatuelle, Gassin et Port Grimaud sans vous soucier de rien. C'est souvent plus économique que plusieurs trajets individuels.</p>
+            <p>Oui, <strong>mise à disposition 8-12h</strong> pour explorer Saint-Tropez, Pampelonne, Ramatuelle, Gassin... Souvent plus économique que plusieurs trajets.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CTA -->
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Vivez la Légende Saint-Tropez</h2>
+        <p>Oubliez le stress du trafic et du parking. Arrivez comme une star avec votre chauffeur privé.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver mon Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">Devis WhatsApp</a>
+        </div>
+        <p class="cta-price">À partir de <strong>280€</strong> depuis Nice Aéroport</p>
+      </div>
+    </section>
+
+    <!-- NEARBY -->
     <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
       <h3 class="h4 mb-md text-center">Destinations VTC à proximité</h3>
       <div class="grid-4-cols-responsive text-sm text-center">
@@ -218,8 +226,7 @@ const faqSchema = {
         <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
         <a href="/vtc-monaco" class="text-dark hover-gold">VTC Monaco</a>
         <a href="/transfert-nice-aeroport-saint-tropez" class="text-dark hover-gold">Nice→St-Tropez</a>
-        <a href="/transfert-cannes-saint-tropez" class="text-dark hover-gold">Cannes→St-Tropez</a>
-        <a href="/guide-decouvrir-saint-tropez-golfe" class="text-dark hover-gold">Guide Saint-Tropez</a>
+        <a href="/guide-decouvrir-saint-tropez-golfe" class="text-dark hover-gold">Guide St-Tropez</a>
         <a href="/en/saint-tropez-private-driver" class="text-dark hover-gold">English Version</a>
       </div>
     </section>
@@ -228,7 +235,204 @@ const faqSchema = {
 
 <style>
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
-  .grid-2-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-  .village-card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; border-left: 3px solid #d4af37; }
-  .village-card h3 { margin-bottom: 0.5rem; }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 1rem auto 0;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* BEACH SECTION */
+  .beach-section {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    margin: 3rem 0;
+  }
+  
+  .beach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .beach-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .beach-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .beach-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  
+  .beach-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+  }
+  
+  .beach-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .beach-card h3 {
+    color: #d4af37;
+    margin-bottom: 0.75rem;
+  }
+  
+  .beach-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .btn-gold-dark {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  /* GOLFE GRID */
+  .golfe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .golfe-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .golfe-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #d4af37;
+  }
+  
+  .golfe-card h3 {
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  .golfe-card p {
+    color: #555;
+    margin: 0;
+  }
+  
+  /* CTA */
+  .cta-premium {
+    background: linear-gradient(135deg, #0a0c17 0%, #1a1a2e 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  
+  .cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+  
+  .cta-premium h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-premium p {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta-price {
+    margin-top: 1.5rem;
+    color: #d4af37 !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: #d4af37;
+    color: #000;
+  }
 </style>

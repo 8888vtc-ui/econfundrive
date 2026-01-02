@@ -1,49 +1,12 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Fréjus Saint-Raphaël – Chauffeur Privé Var & Estérel | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Fréjus et Saint-Raphaël. Arènes romaines, Massif de l'Estérel, plages, port. Transferts aéroport Nice, Saint-Tropez. Service premium 24h/24.";
-const keywords = [
-  'VTC Fréjus',
-  'VTC Saint-Raphaël',
-  'chauffeur privé Fréjus',
-  'transfert aéroport Nice Fréjus',
-  'VTC Estérel',
-  'chauffeur Saint-Raphaël Saint-Tropez'
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Combien de temps pour aller de l'aéroport de Nice à Fréjus ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le transfert aéroport Nice → Fréjus/Saint-Raphaël prend environ 50-70 minutes en VTC (65-70 km). Le trajet peut être plus long en été ou aux heures de pointe sur l'A8."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Proposez-vous des transferts vers Saint-Tropez ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, Fréjus/Saint-Raphaël sont les villes les plus proches de Saint-Tropez (35-40 km). Nous assurons les transferts réguliers vers le golfe de Saint-Tropez."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Le Massif de l'Estérel est-il accessible en VTC ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolument ! Nous proposons des excursions panoramiques dans le Massif de l'Estérel, l'une des plus belles routes de la Côte d'Azur avec ses roches rouges plongeant dans la mer."
-      }
-    }
-  ]
-};
+const title = "VTC Fréjus Saint-Raphaël – Chauffeur Privé Var Estérel | ECOFUNDRIVE";
+const description = "Chauffeur privé VTC à Fréjus et Saint-Raphaël. Massif de l'Estérel, plages, port, arènes romaines. Transferts Nice, Cannes, Saint-Tropez. Service premium 24/7.";
+const keywords = ['VTC Fréjus', 'VTC Saint-Raphaël', 'chauffeur privé Var', 'transfert Esterel', 'VTC port Saint-Raphaël'];
 ---
 
 <BaseLayout 
@@ -51,107 +14,59 @@ const faqSchema = {
   description={description}
   currentPage="vtc-frejus-saint-raphael"
   canonical="/vtc-frejus-saint-raphael"
-  schema={faqSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Fréjus Saint-Raphaël", url: "/vtc-frejus-saint-raphael" }
   ]}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps Nice → Fréjus ?","acceptedAnswer":{"@type":"Answer","text":"Le transfert prend environ 50-60 minutes (60 km via l'autoroute A8)."}},{"@type":"Question","name":"Desservez-vous le port de Saint-Raphaël ?","acceptedAnswer":{"@type":"Answer","text":"Oui, transferts port et Vieux Port pour embarquements vers les îles de Lérins."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">VTC Fréjus & Saint-Raphaël</h1>
-      <p class="lead text-center mb-xl">
-        Chauffeur privé premium à Fréjus et Saint-Raphaël. Patrimoine romain, Massif de l'Estérel, 
-        plages de sable fin. Transferts aéroport Nice et Saint-Tropez.
-      </p>
-    </div>
+  <PageHero 
+    title="VTC Fréjus Saint-Raphaël"
+    subtitle="Porte d'entrée du Var et de l'Estérel. Arènes romaines, port de plaisance, plages de sable et massif rougeoyant."
+    backgroundImage="/assets/img/destinations/destination-saint-tropez.webp"
+    badge="ESTÉREL • VAR • PLAGES"
+  />
 
-    
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
-      </div>
-    </section>
-
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez la Région</h2>
-      <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/destination-saint-tropez.webp"
-          alt="Massif Estérel"
-          title="Massif de l'Estérel"
-          description="Roches rouges spectaculaires plongeant dans la mer turquoise. Corniche d'Or, calanques, panoramas inoubliables."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Arènes Fréjus"
-          title="Patrimoine Romain"
-          description="Fréjus possède l'un des patrimoines romains les plus riches de France : arènes, aqueduc, baptistère paléochrétien."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-aeroport.webp"
-          alt="Port Saint-Raphaël"
-          title="Ports & Plages"
-          description="Ports de plaisance animés, plages de sable fin, restaurants de bord de mer. L'art de vivre méditerranéen."
-          link="/reservation"
-        />
-      </div>
-    </section>
-
+  <main id="main-content" class="page-content">
     <SectionImageText
-      title="La Porte de Saint-Tropez"
+      title="Votre Chauffeur Privé dans le Var"
       image="/assets/img/about/vehicule-premium.webp"
-      alt="Fréjus vers Saint-Tropez"
-      imageSide="left"
+      alt="VTC Fréjus massif Estérel"
+      imageSide="right"
       ctaText="Réserver un transfert"
       ctaLink="/reservation"
     >
       <p class="fade-in-section">
-        Fréjus et Saint-Raphaël sont les <strong>villes les plus proches de Saint-Tropez</strong> accessibles par autoroute. C'est le point de départ idéal pour rejoindre le golfe de Saint-Tropez et ses plages mythiques.
+        <strong>Fréjus</strong> et <strong>Saint-Raphaël</strong> sont les portes d'entrée du Var et du spectaculaire <strong>massif de l'Estérel</strong>. Patrimoine romain, port de plaisance animé, plages de sable fin et routes panoramiques.
       </p>
-      <h3 class="fade-in-section">Nos services vers Saint-Tropez :</h3>
-      <ul class="fade-in-section">
-        <li>Transfert simple vers Saint-Tropez (45-60 min)</li>
-        <li>Journée à Saint-Tropez avec chauffeur à disposition</li>
-        <li>Transfert vers les plages de Pampelonne (Club 55, Nikki Beach)</li>
-        <li>Excursion Port Grimaud + Saint-Tropez</li>
-        <li>Service retour après soirée (même tard)</li>
-      </ul>
       <p class="fade-in-section">
-        Évitez les embouteillages estivaux vers Saint-Tropez ! Notre connaissance des itinéraires alternatifs vous fait gagner un temps précieux.
+        ECOFUNDRIVE assure les transferts depuis Nice, Cannes et l'aéroport vers cette destination prisée des vacanciers.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Nice : 60 min</span>
+        <span class="distance-badge">📍 Cannes : 35 min</span>
+        <span class="distance-badge">📍 Saint-Tropez : 45 min</span>
+      </div>
     </SectionImageText>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Questions Fréquentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3 class="faq-question">Combien de temps pour aller de l'aéroport de Nice à Fréjus ?</h3>
-          <div class="faq-answer">
-            <p>Le transfert aéroport Nice → Fréjus/Saint-Raphaël prend environ <strong>50-70 minutes</strong> en VTC (65-70 km par l'A8). En été ou aux heures de pointe, le trajet peut être plus long. Nous surveillons le trafic et adaptons l'heure de départ si nécessaire.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Proposez-vous des transferts vers Saint-Tropez ?</h3>
-          <div class="faq-answer">
-            <p>Oui, Fréjus/Saint-Raphaël sont les <strong>villes les plus proches de Saint-Tropez</strong> (35-40 km, 45-60 min). Nous assurons les transferts réguliers vers le golfe, les plages de Pampelonne et le village de Saint-Tropez.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Le Massif de l'Estérel est-il accessible en VTC ?</h3>
-          <div class="faq-answer">
-            <p>Absolument ! Nous proposons des <strong>excursions panoramiques dans le Massif de l'Estérel</strong>, l'une des plus belles routes de la Côte d'Azur. Roches rouges, calanques, points de vue spectaculaires sur la mer. Circuit de 3-4 heures recommandé.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Desservez-vous la gare TGV de Saint-Raphaël ?</h3>
-          <div class="faq-answer">
-            <p>Oui, la <strong>gare de Saint-Raphaël-Valescure</strong> est desservie par TGV depuis Paris. Nous assurons les transferts depuis/vers la gare pour tous vos déplacements dans la région.</p>
-          </div>
+      <h2 class="section-title text-center mb-xl">Découvrez la Région</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/hero/hero-ete.webp" alt="Massif Estérel" title="🏔️ Massif de l'Estérel" description="Roches rouges spectaculaires, randonnées, route de la Corniche d'Or vers Cannes." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Arènes Fréjus" title="🏛️ Arènes Romaines" description="Amphithéâtre romain du Ier siècle. Fréjus, ville d'art et d'histoire." link="/reservation" />
+        <CategoryCard image="/assets/img/destinations/destination-cannes.webp" alt="Port Saint-Raphaël" title="⛵ Port de Plaisance" description="Vieux Port animé, restaurants, départs vers les îles de Lérins et Saint-Tropez." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Réservez votre VTC</h2>
+        <p>Découvrez le Var et l'Estérel avec votre chauffeur privé.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -161,18 +76,23 @@ const faqSchema = {
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-saint-tropez" class="text-dark hover-gold">VTC Saint-Tropez</a>
         <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
         <a href="/vtc-mandelieu-la-napoule" class="text-dark hover-gold">VTC Mandelieu</a>
-        <a href="/guide-decouvrir-saint-tropez-golfe" class="text-dark hover-gold">Guide Saint-Tropez</a>
-        <a href="/transfert-cannes-saint-tropez" class="text-dark hover-gold">Cannes → St-Tropez</a>
-        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
-        <a href="/vtc-grasse" class="text-dark hover-gold">VTC Grasse</a>
+        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; font-size: 2rem; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

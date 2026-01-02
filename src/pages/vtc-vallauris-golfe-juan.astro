@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Vallauris Golfe-Juan – Chauffeur Privé Picasso & Plages | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Vallauris et Golfe-Juan. Musée Picasso, poteries, plages de sable. Entre Cannes et Antibes. Transferts aéroport Nice. Service premium.";
+const description = "Chauffeur privé VTC à Vallauris Golfe-Juan. Musée Picasso, poteries, débarquement Napoléon. Entre Cannes et Antibes. Service premium 24/7.";
 const keywords = [
   'VTC Vallauris',
   'VTC Golfe-Juan',
@@ -19,51 +20,73 @@ const keywords = [
   description={description}
   currentPage="vtc-vallauris-golfe-juan"
   canonical="/vtc-vallauris-golfe-juan"
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
     { name: "VTC Vallauris Golfe-Juan", url: "/vtc-vallauris-golfe-juan" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vallauris est-elle proche de Cannes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Vallauris est située à seulement 6 km de Cannes, soit 10-15 minutes en VTC. Golfe-Juan offre de belles plages de sable entre Cannes et Antibes."}},{"@type":"Question","name":"Proposez-vous des transferts pour les ateliers de poterie ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous organisons des transferts vers les nombreux ateliers de céramique de Vallauris, ville rendue célèbre par Picasso."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Où voir Picasso à Vallauris ?","acceptedAnswer":{"@type":"Answer","text":"Au Musée National Picasso, dans la chapelle du château, pour admirer 'La Guerre et la Paix'."}},{"@type":"Question","name":"Golfe-Juan a-t-il uen gare ?","acceptedAnswer":{"@type":"Answer","text":"Oui, mais nos VTC vous déposent directement à votre hôtel ou résidence, sans attente et avec vos bagages."}}]}}
 >
-  <main id="main-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-lg">{title}</h1>
-      <p class="lead text-center mb-xl">{description}</p>
-    </div>
+  <PageHero 
+    title="VTC Vallauris Golfe-Juan"
+    subtitle="La cité de la céramique et des peintres. Musée Picasso, plages de sable fin et histoire napoléonienne."
+    backgroundImage="/assets/img/destinations/cannes-palais-festivals.png"
+    badge="PICASSO • CÉRAMIQUE • PLAGES"
+  />
 
+  <main id="main-content" class="page-content">
     
-    <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Tarifs & Devis</h2>
-      <div class="cta-box">
-        <a href="/contact" class="btn-primary">Demander un devis gratuit</a>
+    <SectionImageText
+      title="Art & Histoire"
+      image="/assets/img/services/service-business.webp"
+      alt="VTC Vallauris"
+      imageSide="right"
+      ctaText="Réserver un transfert"
+      ctaLink="/reservation"
+    >
+      <p class="fade-in-section">
+        <strong>Vallauris</strong> est la capitale mondiale de la céramique d'art, rendue célèbre par <strong>Pablo Picasso</strong> qui y vécut et créa. En bord de mer, <strong>Golfe-Juan</strong> est le lieu historique du débarquement de Napoléon en 1815.
+      </p>
+      <p class="fade-in-section">
+        Entre culture et plages familiales, ECOFUNDRIVE vous accompagne. Visitez les ateliers de poterie ou profitez du soleil sans souci de stationnement.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">📍 Cannes : 10 min</span>
+        <span class="distance-badge">📍 Antibes : 10 min</span>
+        <span class="distance-badge">📍 Nice : 30 min</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Services Vallauris</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🎨</span><h3>Musée Picasso</h3><p>Visite de la chapelle "Guerre et Paix" et du musée.</p></div>
+          <div class="service-card"><span class="service-icon">🏺</span><h3>Poteries</h3><p>Circuit découverte des ateliers d'artisans d'art.</p></div>
+          <div class="service-card"><span class="service-icon">🏖️</span><h3>Plages Golfe-Juan</h3><p>Transport vers les plages de sable et le Vieux Port.</p></div>
+          <div class="service-card"><span class="service-icon">🎩</span><h3>Route Napoléon</h3><p>Départ de la route historique vers les Alpes.</p></div>
+        </div>
       </div>
     </section>
 
     <section class="container py-xl fade-in-section">
-      <h2 class="text-center mb-lg">Découvrez Vallauris Golfe-Juan</h2>
+      <h2 class="section-title text-center mb-xl">Découvrez Vallauris</h2>
       <div class="grid-3-cols">
-        <CategoryCard
-          image="/assets/img/destinations/cannes-palais-festivals.png"
-          alt="Musée Picasso Vallauris"
-          title="Musée Picasso"
-          description="La chapelle romane de Vallauris abrite 'La Guerre et la Paix', chef-d'œuvre monumental de Picasso."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/services/service-business.webp"
-          alt="Poteries Vallauris"
-          title="Ateliers de Céramique"
-          description="Vallauris, capitale de la poterie depuis le XVIe siècle. Ateliers d'artisans et boutiques de céramique."
-          link="/reservation"
-        />
-        <CategoryCard
-          image="/assets/img/destinations/vtc-tesla-nice.webp"
-          alt="Plage Golfe-Juan"
-          title="Plages de Golfe-Juan"
-          description="Sable fin, eau turquoise, restaurants de plage. Station balnéaire familiale entre Cannes et Antibes."
-          link="/reservation"
-        />
+        <CategoryCard image="/assets/img/destinations/cannes-palais-festivals.png" alt="Musée Picasso" title="🎨 Musée National" description="Admirez l'œuvre monumentale 'La Guerre et la Paix' dans la chapelle romane." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.webp" alt="Céramique" title="🏺 Capitale Céramique" description="Un savoir-faire unique. Des dizaines de galeries et ateliers à visiter." link="/reservation" />
+        <CategoryCard image="/assets/img/destinations/vtc-tesla-nice.webp" alt="Plages Golfe-Juan" title="🏖️ Plages du Soleil" description="Sable fin et ambiance familiale face aux îles de Lérins. Port de plaisance animé." link="/reservation" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Réservez votre VTC à Vallauris</h2>
+        <p>Sur les traces de Picasso ou de Napoléon. Voyagez avec style.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
+        </div>
       </div>
     </section>
 
@@ -72,14 +95,31 @@ const keywords = [
       <div class="grid-4-cols-responsive text-sm text-center">
         <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
         <a href="/vtc-antibes" class="text-dark hover-gold">VTC Antibes</a>
+        <a href="/vtc-juan-les-pins" class="text-dark hover-gold">VTC Juan</a>
         <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
-        <a href="/vtc-nice" class="text-dark hover-gold">VTC Nice</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  
   .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>
