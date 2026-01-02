@@ -1,233 +1,136 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = "Family Day Trip French Riviera | Private Driver & Tours";
-const description = "Plan the perfect family day on the French Riviera. Visit Marineland, Oceanographic Museum, and kid-friendly beaches with our safe, comfortable private chauffeured vans.";
+import PageHero from '../../components/PageHero.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
+
+const title = "Family Day Trip French Riviera – Private Driver & Van | ECOFUNDRIVE";
+const description = "Plan the perfect family day on the French Riviera. Marineland, Oceanographic Museum, kid-friendly customized tours. Safe Mercedes V-Class vans with car seats.";
 const keywords = [
   'family day trip Nice',
   'family driver French Riviera',
   'Marineland private transfer',
   'Oceanographic Museum Monaco transport',
-  'family van rental with driver',
-  'kid friendly activities Cote dAzur'
+  'family van rental with driver'
 ];
 
-const articleSchema = {
+const schema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": title,
   "description": description,
   "image": "https://www.ecofundrive.com/assets/img/family-riviera.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "url": "https://www.ecofundrive.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ECOFUNDRIVE",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-    }
-  },
-  "datePublished": "2024-02-10",
-  "dateModified": new Date().toISOString().split('T')[0]
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
 };
 ---
 
 <BaseLayout 
   title={title}
   description={description}
-  keywords={keywords}
   currentPage="guide-family-day-french-riviera"
   canonical="/en/guide-family-day-french-riviera"
   lang="en"
-  schema={articleSchema}
+  keywords={keywords}
   breadcrumbItems={[
     { name: "Home", url: "/en" },
     { name: "Guides", url: "/en/guides" },
     { name: "Family Day Trip", url: "/en/guide-family-day-french-riviera" }
   ]}
+  schema={schema}
 >
-  <main class="page-content">
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container__large">
-        <div class="hero-text">
-          <h1>Unforgettable Family Adventures on the Riviera</h1>
-          <p class="subtitle">Safe, comfortable, and stress-free transport for your entire family.</p>
+  <PageHero 
+    title="Riviera Family Adventures"
+    subtitle="Safe, comfortable, and tailored to your rhythm. Discover the best of the Côte d'Azur with your children."
+    backgroundImage="/assets/img/family-riviera.jpg" // Ensure this image exists, or use a fallback like hero-ete.webp
+    badge="FAMILY • KIDS • SAFETY"
+  />
+
+  <main id="main-content" class="page-content">
+    
+    <SectionImageText
+      title="Travel in Comfort & Safety"
+      image="/assets/img/family-riviera.jpg"
+      alt="Family Van Transfer"
+      imageSide="right"
+      ctaText="Book a Van"
+      ctaLink="/en/booking"
+    >
+      <p class="fade-in-section">
+        Exploring the French Riviera with children creates magical memories, but navigating public transport or parking can be a hassle. 
+        <strong>ECOFUNDRIVE</strong> offers spacious **Mercedes V-Class Vans** (up to 7 passengers), ensuring everyone travels together safely.
+      </p>
+      <p class="fade-in-section">
+        Safety is our priority: we provide **high-quality baby seats and booster seats** free of charge upon request. Our drivers are patient, friendly, and drive smoothly to ensure a relaxing journey for the little ones.
+      </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">👶 Free Car Seats</span>
+        <span class="distance-badge">🚐 Spacious 7-Seater</span>
+        <span class="distance-badge">❄️ AC & Water</span>
+      </div>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Kids' Favorites</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🐬</span><h3>Marineland</h3><p>Europe's largest marine park in Antibes. Orcas, dolphins, and sharks.</p></div>
+          <div class="service-card"><span class="service-icon">🐠</span><h3>Monaco Aquarium</h3><p>The Oceanographic Museum. A cliffside wonder with sharks and turtles.</p></div>
+          <div class="service-card"><span class="service-icon">🦜</span><h3>Phoenix Park</h3><p>Nice's giant greenhouse. Exotic animals, plants, and huge playgrounds.</p></div>
+          <div class="service-card"><span class="service-icon">🌊</span><h3>Aquasplash</h3><p>Giant water slides next to Marineland. Perfect for hot summer days.</p></div>
         </div>
       </div>
     </section>
 
-    <div class="container section-spacing">
-      <div class="grid-layout">
-        <div class="content-col">
-          <section class="mb-xl">
-            <h2>Start Your Family Adventure in Comfort</h2>
-            <p>
-              Exploring the French Riviera with children creates magical memories, but navigating public transport or parking can be a hassle. 
-              **EcoFunDrive** offers spacious, air-conditioned vans (Mercedes V-Class) perfect for families, ensuring everyone travels together safely and comfortably.
-            </p>
-            <p>
-              We provide **baby seats and booster seats** free of charge upon request, prioritizing your children's safety above all else.
-            </p>
-          </section>
-
-          <section class="mb-xl">
-            <h2>Top Family Destinations</h2>
-            <ul class="feature-list">
-              <li>
-                <strong>Marineland Antibes:</strong> Europe's largest marine park. A must-see for kids of all ages.
-              </li>
-              <li>
-                <strong>Oceanographic Museum of Monaco:</strong> Discover the wonders of the ocean in this world-famous aquarium.
-              </li>
-              <li>
-                <strong>Phoenix Park (Nice):</strong> A massive greenhouse and zoo with playgrounds, perfect for toddlers and younger kids.
-              </li>
-              <li>
-                <strong>Aquasplash:</strong> The premier water park in Antibes for cooling off on hot summer days.
-              </li>
-            </ul>
-          </section>
-          
-          <section class="mb-xl">
-             <h2>Custom Family Tours</h2>
-             <p>
-               Don't want to be stuck in one place? We can organize a full-day tour visiting multiple spots. 
-               Start with a morning at the **Nice flower market**, have lunch in the medieval village of **Eze**, and finish with an ice cream in **Monaco**. 
-               Our drivers are patient and flexible, accommodating stops whenever your little ones need a break.
-             </p>
-          </section>
-        </div>
-        
-        <aside class="sidebar-col">
-          <div class="sidebar-block">
-            <h3>Book Your Family Van</h3>
-            <p>Ensure travel comfort with our Mercedes V-Class vans.</p>
-            <div class="cta-box">
-        <a href="/en/booking" class="btn-primary">Get a Free Quote</a>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Custom Family Tours</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Eze Village" title="🏰 Medieval Magic" description="Visit Eze Village. It feels like a fairytale castle. Stop at the Fragonard perfumery." link="/en/eze-private-driver" />
+        <CategoryCard image="/assets/img/hero/hero-ete.webp" alt="Beach Day" title="🏖️ Beach Day" description="We drop you at the most kid-friendly sandy beaches (Juan-les-Pins or Villefranche)." link="/en/booking" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Sweet Treats" title="🍦 Sweet Treats" description="A tour of the best ice cream shops in Nice (Fenocchio) or Monaco." link="/en/booking" />
       </div>
-          </div>
-        </aside>
-      </div>
-    </div>
+    </section>
 
-    <!-- Why Choose Us -->
-    <section class="bg-light section-spacing">
-      <div class="container">
-        <h2 class="text-center mb-lg">Why Families Love EcoFunDrive</h2>
-        <div class="grid-3">
-          <div class="feature-card">
-            <h3>Safety First</h3>
-            <p>Free baby seats and boosters customized for your child's age and weight. Professional, cautious drivers.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Spacious Vans</h3>
-            <p>Our Mercedes V-Class vans seat up to 7 passengers with ample room for strollers, beach gear, and luggage.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Flexible Schedule</h3>
-            <p>We work around your family's rhythm. Late start? Need a nap stop? No problem, we are at your disposal.</p>
-          </div>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Ready for a Family Adventure?</h2>
+        <p>Book your spacious Van today. Don't forget to request the car seats!</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Get a Family Quote</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="container section-spacing">
-      <h2 class="mb-lg">Family Travel FAQs</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3>Do you provide car seats for infants?</h3>
-          <p>Yes, we provide high-quality infant seats and booster seats at no extra cost. Please specify the age/weight of your children when booking.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How much luggage can we bring?</h3>
-          <p>Our V-Class vans have a large trunk capable of holding 7 large suitcases plus strollers and carry-on bags.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Are your drivers patient with children?</h3>
-          <p>Absolutely. We are a family-friendly company and our drivers are trained to be courteous, patient, and helpful with families.</p>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">More Guides</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/guide-nice-in-1-to-3-days" class="text-dark hover-gold">Visit Nice</a>
+        <a href="/en/guide-one-day-in-monaco" class="text-dark hover-gold">Visit Monaco</a>
+        <a href="/en/booking" class="text-dark hover-gold">Book Online</a>
+        <a href="/en/services" class="text-dark hover-gold">Our Services</a>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/img/family-riviera.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 6rem 0;
-    text-align: center;
-    border-radius: 0 0 20px 20px;
-    margin-bottom: 3rem;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-gold);
-  }
-  
-  .grid-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  @media (min-width: 992px) {
-    .grid-layout {
-      grid-template-columns: 2fr 1fr;
-    }
-  }
-  
-  .feature-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .feature-list li {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-  }
-  
-  .grid-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-  
-  .feature-card h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  .sidebar-block {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 100px;
-  }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

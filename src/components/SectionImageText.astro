@@ -21,17 +21,21 @@ const {
 ---
 
 <section class={`section-image-text ${imageSide === 'right' ? 'image-right' : ''}`} id={id}>
-  <div>
-    <div>
-      <div>
+  <div class="container">
+    <div class="grid-content">
+      <div class="image-col animate-on-scroll">
         <img 
           src={image} 
           alt={alt}
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
         />
       </div>
-      <div>
+      <div class="text-col animate-on-scroll">
         <h2>{title}</h2>
-        <div>
+        <div class="content">
           <slot />
         </div>
         {ctaText && ctaLink && (
@@ -43,3 +47,90 @@ const {
     </div>
   </div>
 </section>
+
+<style>
+  .section-image-text {
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .grid-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .grid-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .image-right .image-col {
+      order: 2;
+    }
+  }
+
+  .image-col img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+  }
+
+  .image-col:hover img {
+    transform: translateY(-5px);
+  }
+
+  .text-col h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .content {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  /* Supports markdown content inside slot */
+  .content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .content :global(strong) {
+    color: #d4af37;
+    font-weight: 600;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #d4af37;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .cta-button:hover {
+    background: #c5a028;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+  }
+
+  /* Animation classes (handled by fade-in-section.js usually, but good to have base styles) */
+  .animate-on-scroll {
+    opacity: 1; /* Default to visible if JS fails */
+  }
+</style>

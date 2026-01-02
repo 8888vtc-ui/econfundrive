@@ -1,16 +1,27 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "VTC Longue Distance : Nice, Lyon, Milan, Genève | ECOFUNDRIVE";
-const description = "Transferts longue distance en VTC premium : Nice-Lyon, Nice-Milan, Nice-Genève. Confort absolu, prix fixes, chauffeur professionnel. Devis gratuit.";
+const title = "VTC Longue Distance Nice - Lyon, Milan, Genève | ECOFUNDRIVE";
+const description = "Transferts VTC longue distance depuis Nice. Liaisons confort business vers Lyon, Milan, Genève, Marseille. Prix fixes, véhicule premium, chauffeur dédié.";
 const keywords = [
   'VTC longue distance Nice',
-  'transfert Nice Lyon VTC',
   'chauffeur Nice Milan',
+  'transfert Nice Lyon VTC',
   'VTC Nice Genève',
-  'transfert inter-villes Côte d\'Azur'
+  'taxi longue distance Nice'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Transfert Longue Distance VTC",
+  "provider": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+  "areaServed": ["France", "Italy", "Switzerland", "Monaco"],
+  "description": "Service de chauffeur privé pour trajets interurbains et internationaux."
+};
 ---
 
 <BaseLayout
@@ -24,132 +35,107 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Longue Distance", url: "/guide-vtc-longue-distance" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Transferts Longue Distance en VTC Premium</h1>
-      <p class="lead text-center mb-xl">
-        Besoin de rejoindre Lyon, Milan, Marseille ou Genève depuis Nice ? Oubliez le stress des correspondances aériennes ou des locations de voiture. Voyagez confortablement dans nos véhicules haut de gamme.
-      </p>
-    </div>
+  <PageHero 
+    title="Voyages Longue Distance"
+    subtitle="Lyon, Milan, Genève... Parcourez l'Europe dans le confort absolu de nos véhicules premium. Une alternative first-class au train et à l'avion."
+    backgroundImage="/assets/img/services/service-business.webp"
+    badge="FRANCE • ITALIE • SUISSE"
+  />
 
-    <!-- POURQUOI VTC LONGUE DISTANCE -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Pourquoi Choisir un VTC pour la Longue Distance ?"
+      title="Pourquoi le VTC Longue Distance ?"
       image="/assets/img/services/service-business.webp"
-      alt="Berline VTC longue distance"
+      alt="Voyage affaire berline"
       imageSide="right"
-      ctaText="Demander un devis"
-      ctaLink="/contact"
+      ctaText="Calculer mon Tarif"
+      ctaLink="/reservation"
     >
-      <p>
-        <strong>Confort & Productivité :</strong> Nos véhicules premium sont équipés de Wi-Fi, prises USB, bouteilles d'eau, et d'un espace suffisant pour travailler. Arrivez reposé et prêt pour vos rendez-vous.
+      <p class="fade-in-section">
+        Oubliez les grèves, les retards de train, les contrôles de sécurité interminables et la foule des aéroports. Le <strong>VTC longue distance</strong> est la solution ultime pour voyager sereinement.
       </p>
-      <p>
-        <strong>Flexibilité :</strong> Partez à l'heure qui vous convient, faites des pauses quand vous le souhaitez, modifiez votre destination en cours de route. Aucune contrainte horaire d'avion ou de train.
-      </p>
-      <p>
-        <strong>Prix Compétitif :</strong> Pour 2 à 4 personnes avec bagages, le VTC longue distance revient souvent moins cher que 4 billets de TGV ou d'avion (surtout en dernière minute).
+      <p class="fade-in-section">
+        Votre chauffeur vous récupère à votre porte et vous dépose à destination sans rupture de charge. Profitez du trajet pour travailler (Wi-Fi à bord) ou vous reposer. Vous restez maître de votre emploi du temps : pause café quand vous voulez, ajustement de l'itinéraire, pas d'horaire imposé.
       </p>
     </SectionImageText>
 
-    <!-- DESTINATIONS POPULAIRES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Nos Trajets les Plus Demandés</h2>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇫🇷 Nice → Lyon</h3>
-          <p><strong>Distance :</strong> ~470 km | <strong>Durée :</strong> ~4h30</p>
-          <p>Objectif affaires ou connexion TGV vers Paris. Départ matinal pour arrivée avant midi. Routes A8 puis A7 (Autoroute du Soleil).</p>
-          <p><em>À partir de 550€</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇫🇷 Nice → Marseille</h3>
-          <p><strong>Distance :</strong> ~200 km | <strong>Durée :</strong> ~2h15</p>
-          <p>Idéal pour un rendez-vous à Marseille ou une correspondance à l'aéroport Marseille-Provence. Vue sur la Côte possible en passant par les Calanques.</p>
-          <p><em>À partir de 280€</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇮🇹 Nice → Milan</h3>
-          <p><strong>Distance :</strong> ~300 km | <strong>Durée :</strong> ~3h30</p>
-          <p>Traversée des Alpes par le tunnel du Fréjus ou le col de Tende (scénique). Fashion weeks, salons, connexions internationales.</p>
-          <p><em>À partir de 450€</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇨🇭 Nice → Genève</h3>
-          <p><strong>Distance :</strong> ~400 km | <strong>Durée :</strong> ~4h</p>
-          <p>Centre financier mondial. Passage par Grenoble et Annecy possible pour un itinéraire plus scénique. Sièges aménagés pour le travail.</p>
-          <p><em>À partir de 520€</em></p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Trajets Phares & Tarifs Indicatifs</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🇮🇹</span><h3>Nice → Milan</h3><p>~300 km / 3h30. Pour la Fashion Week ou les affaires. Traversée scénique des Alpes.<br><small>Dès 450€</small></p></div>
+          <div class="service-card"><span class="service-icon">🇫🇷</span><h3>Nice → Lyon</h3><p>~470 km / 4h30. Connexion TGV ou business. Départ matinal recommandé.<br><small>Dès 550€</small></p></div>
+          <div class="service-card"><span class="service-icon">🇨🇭</span><h3>Nice → Genève</h3><p>~550 km / 5h30. Centre financier. Voyagez en classe affaires sur la route.<br><small>Dès 650€</small></p></div>
+          <div class="service-card"><span class="service-icon">⚓</span><h3>Nice → Marseille</h3><p>~200 km / 2h15. Rendez-vous régional ou aéroport Marignane.<br><small>Dès 280€</small></p></div>
         </div>
       </div>
     </section>
 
-    <!-- CAS D'USAGE -->
     <SectionImageText
-      title="Cas d'Usage : Qui Utilise ce Service ?"
-      image="/assets/img/hero/hero-business.webp"
-      alt="Voyage affaires VTC"
+      title="Confort & Services à Bord"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Intérieur véhicule premium"
       imageSide="left"
-      ctaText="Réserver maintenant"
-      ctaLink="/reservation"
+      ctaText="Voir nos Véhicules"
+      ctaLink="/services"
     >
-      <ul>
-        <li><strong>Cadres & Entrepreneurs :</strong> Réunions multi-villes, road shows, rendez-vous clients sans perdre de temps aux aéroports.</li>
-        <li><strong>Familles :</strong> Évitez le stress des valises à traîner dans les gares. Les enfants voyagent confortablement.</li>
-        <li><strong>VIP & Célébrités :</strong> Discrétion absolue, pas de fans ou de paparazzi dans les aéroports. Teinture des vitres disponible.</li>
-        <li><strong>Médical :</strong> Transferts vers des cliniques spécialisées (Genève, Milan) dans un véhicule confortable et sécurisé.</li>
+      <p class="fade-in-section">
+        Nos véhicules sont conçus pour les longs trajets. Berlines Mercedes Classe E/S ou Tesla pour le silence, Vans Classe V pour l'espace.
+      </p>
+      <ul class="fade-in-section">
+        <li>Connexion Wi-Fi 4G/5G pour rester connecté.</li>
+        <li>Prises USB et chargeurs pour vos appareils.</li>
+        <li>Bouteilles d'eau minérale à disposition.</li>
+        <li>Sièges cuir confortables et climatisation multi-zone.</li>
+        <li>Grand coffre pour tous vos bagages (Van recommandé si >3 valises).</li>
       </ul>
     </SectionImageText>
 
-    <!-- INFOS PRATIQUES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Informations Pratiques</h2>
-      <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🧳 Bagages</h3>
-          <p>Nos berlines accueillent 3 grandes valises + bagages cabine. Pour plus de bagages, optez pour notre Van Mercedes Class V.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">⏱️ Pauses</h3>
-          <p>Pause café/repas incluse sur les trajets > 3h. Choix du lieu avec le chauffeur (aires d'autoroute premium ou restaurants locaux).</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">📋 Devis & Facturation</h3>
-          <p>Prix forfaitaire annoncé à l'avance, pas de surprise. Facturation entreprise possible avec TVA. Paiement CB, virement ou cash.</p>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Prêt pour le Grand Voyage ?</h2>
+        <p>Demandez un devis forfaitaire immédiat pour votre destination.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Devis Gratuit</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Prêt à Voyager en Toute Sérénité ?</h2>
-        <p class="lead mb-4">
-          Demandez un devis personnalisé pour votre trajet longue distance. Réponse sous 2 heures.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/contact" class="btn btn-primary">Demander un Devis</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">Contact WhatsApp</a>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Autres Services</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/services" class="text-dark hover-gold">Mise à Disposition</a>
+        <a href="/vtc-aeroport-nice-prix" class="text-dark hover-gold">Transfert Aéroport</a>
+        <a href="/guide-vtc-ski-auron-isola" class="text-dark hover-gold">Transfert Ski</a>
+        <a href="/contact" class="text-dark hover-gold">Nous Contacter</a>
       </div>
     </section>
-
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .service-card small { display: block; margin-top: 0.5rem; color: #fff; font-weight: 700; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

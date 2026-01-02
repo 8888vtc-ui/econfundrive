@@ -1,339 +1,158 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "À Propos d'ECOFUNDRIVE | Votre Chauffeur Privé de Confiance";
-const description = "Découvrez l'histoire et les valeurs d'ECOFUNDRIVE. Une vision du transport VTC basée sur l'excellence, la discrétion et le service sur-mesure.";
+const title = "À Propos d'ECOFUNDRIVE | Excellence VTC Côte d'Azur";
+const description = "Découvrez ECOFUNDRIVE, votre partenaire de confiance pour le transport privé sur la Côte d'Azur. Ponctualité, discrétion et excellence depuis 2022.";
 const keywords = [
-  'VTC luxe Nice',
-  'chauffeur privé Côte d\'Azur',
-  'histoire ECOFUNDRIVE',
-  'valeurs transport VTC',
+  'qui sommes nous ecofundrive',
+  'valeurs VTC Nice',
+  'chauffeur privé confiance',
+  'histoire ecofundrive',
   'service premium VTC'
 ];
 
-const breadcrumbItems = [
-  { name: "Accueil", url: "/" },
-  { name: "À Propos", url: "/a-propos" }
-];
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "ECOFUNDRIVE",
+    "description": "Service de voiture de transport avec chauffeur (VTC) premium sur la Côte d'Azur.",
+    "foundingDate": "2022",
+    "areaServed": {
+      "@type": "Place",
+      "name": "French Riviera"
+    }
+  }
+};
 ---
 
-<BaseLayout 
+<BaseLayout
   title={title}
   description={description}
   currentPage="a-propos"
   canonical="/a-propos"
-  breadcrumbItems={breadcrumbItems}
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Accueil", url: "/" },
+    { name: "À Propos", url: "/a-propos" }
+  ]}
+  schema={schema}
 >
-  <main id="main-content">
+  <PageHero 
+    title="L'Art du Service"
+    subtitle="Plus qu'un simple trajet, nous vous offrons une expérience de mobilité exclusive, fondée sur l'exigence et le détail."
+    backgroundImage="/assets/img/hero/hero-business.webp"
+    badge="DEPUIS 2022 • PREMIUM • CONFIANCE"
+  />
+
+  <main id="main-content" class="page-content">
     
-    <!-- HERO SECTION -->
-    <section class="about-hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content fade-in-section">
-        <h1>L'Art du Transport Privé</h1>
-        <p class="lead">Plus qu'un simple trajet, nous vous offrons une expérience de mobilité exclusive sur la Côte d'Azur.</p>
+    <SectionImageText
+      title="Notre Vision de l'Excellence"
+      image="/assets/img/hero/hero-business.webp"
+      alt="Chauffeur ouvrant la porte"
+      imageSide="right"
+      ctaText="Découvrir nos Services"
+      ctaLink="/services"
+    >
+      <p class="fade-in-section">
+        <strong>ECOFUNDRIVE</strong> est née d'un constat simple : sur la Côte d'Azur, terre d'élégance mondiale, le transport se doit d'être irréprochable.
+      </p>
+      <p class="fade-in-section">
+        Nous avons banni l'aléatoire. Pas de retard, pas de véhicules mal entretenus, pas de facturation surprise. Nous avons construit notre réputation sur une <strong>fiabilité absolue</strong> et une qualité de service constante, que ce soit pour un simple transfert aéroport ou pour la logistique complexe d'un événement international.
+      </p>
+    </SectionImageText>
+
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Nos Piliers de Qualité</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🔒</span><h3>Discrétion</h3><p>Le silence est d'or. Votre vie privée et vos conversations à bord restent strictement confidentielles.</p></div>
+          <div class="service-card"><span class="service-icon">⏱️</span><h3>Ponctualité</h3><p>Le temps est le luxe ultime. Nous arrivons systématiquement 15 minutes en avance. Jamais de stress.</p></div>
+          <div class="service-card"><span class="service-icon">✨</span><h3>Confort</h3><p>Véhicules immaculés, bouteilles d'eau, chargeurs, Wi-Fi. Votre confort est notre obsession.</p></div>
+          <div class="service-card"><span class="service-icon">🤝</span><h3>Sur-Mesure</h3><p>Chaque client est unique. Nous adaptons l'itinéraire, la musique et la température à vos préférences.</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- MISSION SECTION -->
-    <section class="mission-section">
-      <div class="container">
-        <div class="mission-grid">
-          <div class="mission-text fade-in-section">
-            <span class="eyebrow">NOTRE VISION</span>
-            <h2>L'Excellence comme Standard</h2>
-            <p>
-              Fondée avec la conviction que le transport privé doit allier confort absolu, fiabilité sans faille et touche humaine, ECOFUNDRIVE s'est imposée comme une référence sur la Côte d'Azur.
-            </p>
-            <p>
-              Nous ne nous contentons pas de vous conduire d'un point A à un point B. Nous anticipons vos besoins, nous connaissons les meilleurs itinéraires pour éviter le trafic, et nous veillons à ce que chaque minute passée à bord soit un moment de détente ou de productivité.
-            </p>
-            <div class="signature">
-              <p class="founder-name">L'Équipe ECOFUNDRIVE</p>
-              <p class="founder-title">Service VTC Premium</p>
-            </div>
+    <SectionImageText
+      title="Une Flotte pour Chaque Besoin"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Flotte VTC Ecofundrive"
+      imageSide="left"
+      ctaText="Voir la Flotte"
+      ctaLink="/services"
+    >
+      <p class="fade-in-section">
+        Notre flotte est composée exclusivement de véhicules récents (moins de 3 ans) et haut de gamme.
+      </p>
+      <ul class="fade-in-section">
+        <li><strong>Berline Éco/Premium :</strong> Tesla Model S, Mercedes Classe E. L'élégance discrète pour 1 à 3 passagers.</li>
+        <li><strong>Van Prestige :</strong> Mercedes Classe V. Le salon roulant pour les groupes (jusqu'à 7 pax) et les familles avec bagages.</li>
+      </ul>
+      <p class="fade-in-section">
+        Tous nos véhicules sont entretenus rigoureusement et nettoyés avant chaque course.
+      </p>
+    </SectionImageText>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Ils Nous Font Confiance</h2>
+      <div class="text-center">
+        <p class="lead mb-lg">Note moyenne de <strong>5.0/5</strong> sur plus de 26 avis vérifiés Trustindex.</p>
+        <div class="grid-3-cols">
+          <div class="card p-4 border rounded">
+            <p class="italic">"Un service impeccable. Chauffeur ponctuel et très courtois. La voiture était d'une propreté clinique."</p>
+            <p class="font-bold mt-2">- Jean-Pierre M.</p>
           </div>
-          <div class="mission-image fade-in-section">
-             <!-- Placeholder image chauffeur -->
-             <img src="/assets/img/hero/chauffeur-luxe-background.webp" alt="Chauffeur privé ouvrant la porte" loading="lazy" />
+          <div class="card p-4 border rounded">
+            <p class="italic">"J'utilise ECOFUNDRIVE pour tous mes déplacements pro à Sophia. Jamais déçue. Facturation claire et rapide."</p>
+            <p class="font-bold mt-2">- Sarah L.</p>
+          </div>
+          <div class="card p-4 border rounded">
+            <p class="italic">"Merci pour le siège bébé et la patience ! Le trajet vers l'aéroport s'est passé comme sur un nuage."</p>
+            <p class="font-bold mt-2">- Famille Dubois</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VALUES GRID -->
-    <section class="values-section">
-      <div class="container">
-        <div class="section-header text-center fade-in-section">
-          <h2>Nos Piliers de Qualité</h2>
-          <div class="divider"></div>
-        </div>
-        
-        <div class="values-grid">
-          <div class="value-card fade-in-section">
-            <div class="value-number">01</div>
-            <h3>Discrétion</h3>
-            <p>Votre vie privée est sacrée. Nos chauffeurs s'engagent à une confidentialité totale concernant vos conversations et déplacements.</p>
-          </div>
-          
-          <div class="value-card fade-in-section">
-            <div class="value-number">02</div>
-            <h3>Ponctualité</h3>
-            <p>Le temps est le luxe ultime. Nous arrivons systématiquement en avance pour que vous ne soyez jamais en retard.</p>
-          </div>
-          
-          <div class="value-card fade-in-section">
-            <div class="value-number">03</div>
-            <h3>Confort</h3>
-            <p>Véhicules récents, entretien méticuleux, conduite souple et attentions à bord (eau, chargeurs, wifi).</p>
-          </div>
-          
-          <div class="value-card fade-in-section">
-            <div class="value-number">04</div>
-            <h3>Expertise</h3>
-            <p>Parfaite connaissance de la région, de ses raccourcis et de ses lieux d'exception (hôtels, lieux événementiels).</p>
-          </div>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Rejoignez le Cercle de l'Excellence</h2>
+        <p>Réservez votre prochain trajet et découvrez la différence.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver Maintenant</a>
+          <a href="/contact" class="btn-outline">Nous Contacter</a>
         </div>
       </div>
     </section>
-
-    <!-- FLEET SHOWCASE -->
-    <section class="fleet-section">
-      <div class="container">
-         <div class="fleet-content fade-in-section">
-            <div class="fleet-text">
-               <h2>Une Flotte d'Exception</h2>
-               <p>Que vous voyagiez seul ou en groupe, nous avons le véhicule adapté. De la berline Tesla écologique et silencieuse au Van Mercedes Classe V pour vos équipes.</p>
-               <a href="/reservation" class="btn-primary">Réserver un véhicule</a>
-            </div>
-            <div class="fleet-visual">
-               <img src="/assets/img/destinations/vtc-tesla-nice.webp" alt="Flotte véhicules VTC" />
-            </div>
-         </div>
-      </div>
-    </section>
-
   </main>
 </BaseLayout>
 
 <style>
-  /* HERO */
-  .about-hero {
-    position: relative;
-    height: 50vh;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('/assets/img/hero/hero-business.webp');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.6);
-    z-index: 1;
-  }
-  
-  .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(10,10,10,0.4);
-      z-index: 2;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-  }
-
-  .about-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    color: white;
-  }
-  
-  .about-hero .lead {
-      font-size: 1.25rem;
-      color: #e0e0e0;
-      font-weight: 300;
-  }
-
-  /* MISSION SECTION */
-  .mission-section {
-    padding: 6rem 0;
-    background: white;
-  }
-
-  .mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .mission-text .eyebrow {
-    color: #d4af37;
-    font-size: 0.9rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .mission-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #1a1a1a;
-    line-height: 1.2;
-  }
-
-  .mission-text p {
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    font-size: 1.05rem;
-  }
-  
-  .signature {
-      margin-top: 2rem;
-      border-left: 3px solid #d4af37;
-      padding-left: 1rem;
-  }
-  
-  .founder-name {
-      font-family: 'Playfair Display', serif; /* Si dispo, sinon fallback */
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 0.25rem !important;
-  }
-  
-  .founder-title {
-      font-size: 0.9rem !important;
-      color: #888 !important;
-      margin-bottom: 0 !important;
-  }
-
-  .mission-image img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-  }
-
-  /* VALUES SECTION */
-  .values-section {
-    padding: 6rem 0;
-    background: #fcfcfc;
-  }
-  
-  .section-header { margin-bottom: 4rem; }
-  .section-header h2 { font-size: 2.5rem; color: #1a1a1a; margin-bottom: 1rem; }
-  .divider { width: 60px; height: 3px; background: #d4af37; margin: 0 auto; }
-
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
-  .value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: transform 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .value-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
-  }
-
-  .value-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: rgba(212, 175, 55, 0.15);
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .value-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #1a1a1a;
-    position: relative;
-  }
-
-  .value-card p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-    position: relative;
-  }
-  
-  /* FLEET SECTION */
-  .fleet-section {
-      padding: 6rem 0;
-      background: #111;
-      color: white;
-      text-align: center;
-  }
-  
-  .fleet-content {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3rem;
-  }
-  
-  .fleet-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #d4af37; }
-  .fleet-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
-  
-  .btn-primary {
-      background: #d4af37;
-      color: black;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s;
-      display: inline-block;
-  }
-  .btn-primary:hover { background: white; transform: translateY(-3px); }
-  
-  .fleet-visual img {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 992px) {
-    .mission-grid { grid-template-columns: 1fr; }
-    .values-grid { grid-template-columns: 1fr 1fr; }
-  }
-
-  @media (max-width: 576px) {
-    .values-grid { grid-template-columns: 1fr; }
-    .about-hero h1 { font-size: 2.5rem; }
-  }
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+  .italic { font-style: italic; color: #555; }
+  .font-bold { font-weight: 700; color: #1a1a1a; }
 </style>

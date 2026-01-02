@@ -1,16 +1,27 @@
 ﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import SectionImageText from '../../components/SectionImageText.astro';
+import CategoryCard from '../../components/CategoryCard.astro';
 
-const title = "Long Distance Transfers: Lyon, Milan, Geneva | ECOFUNDRIVE";
-const description = "Premium long-distance VTC transfers from Nice: Lyon, Milan, Geneva, Marseille. Fixed prices, luxury vehicles, experienced drivers. Free quote.";
+const title = "Long Distance Transfers Nice - Milan, Lyon, Geneva | ECOFUNDRIVE";
+const description = "Premium long-distance chauffeur service from Nice. Travel to Milan, Lyon, Geneva, Marseille in first-class comfort. Fixed rates, luxury vehicles.";
 const keywords = [
-  'Nice to Milan private driver',
-  'Nice to Lyon transfer',
-  'Nice to Geneva VTC',
-  'long distance chauffeur',
-  'intercity transfer French Riviera'
+  'long distance transfer Nice',
+  'chauffeur Nice to Milan',
+  'private driver Nice to Lyon',
+  'Nice Geneva private transfer',
+  'luxury car service French Riviera'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Long Distance Chauffeured Transfer",
+  "provider": { "@type": "Organization", "name": "ECOFUNDRIVE" },
+  "areaServed": ["France", "Italy", "Switzerland", "Monaco"],
+  "description": "Premium private driver service for intercity and international trips."
+};
 ---
 
 <BaseLayout
@@ -25,130 +36,107 @@ const keywords = [
     { name: "Guides", url: "/en/guides" },
     { name: "Long Distance", url: "/en/guide-long-distance-transfers" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Long-Distance Transfers in Ultimate Comfort</h1>
-      <p class="lead text-center mb-xl">
-        Need to reach Lyon, Milan, Marseille, or Geneva from Nice? Skip the stress of flights and rental cars. Travel in a mobile office with Wi-Fi, refreshments, and a professional chauffeur who knows every route.
-      </p>
-    </div>
+  <PageHero 
+    title="Long Distance Journeys"
+    subtitle="Milan, Lyon, Geneva... Travel across Europe in the absolute comfort of our premium vehicles. The first-class alternative to trains and planes."
+    backgroundImage="/assets/img/services/service-business.webp"
+    badge="FRANCE • ITALY • SWITZERLAND"
+  />
 
-    <!-- WHY LONG DISTANCE VTC -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Why Choose a Private Driver for Long Distances?"
+      title="Why Choose a Long-Distance Chauffeur?"
       image="/assets/img/services/service-business.webp"
-      alt="Luxury long distance transfer"
+      alt="Business trip sedan"
       imageSide="right"
-      ctaText="Request Quote"
+      ctaText="Get a Quote"
       ctaLink="/en/booking"
     >
-      <p>
-        <strong>Comfort & Productivity:</strong> Our premium vehicles feature Wi-Fi, USB charging, bottled water, and ample space to work or relax. Arrive refreshed and ready for your meeting.
+      <p class="fade-in-section">
+        Forget strikes, train delays, endless security checks, airport crowds, and luggage limits. <strong>Long-distance private transport</strong> is the ultimate seamless travel solution.
       </p>
-      <p>
-        <strong>Flexibility:</strong> Depart at your preferred time, take breaks wherever you like, change your destination en route. No flight schedules, no train timetables, no restrictions.
-      </p>
-      <p>
-        <strong>Cost Effective:</strong> For 2-4 passengers with luggage, a private transfer often costs less than 4 train or plane tickets – especially on short notice.
+      <p class="fade-in-section">
+        Your chauffeur picks you up at your doorstep and drops you off right at your destination. Use the travel time to work productivey (Wi-Fi on board) or simply relax. You control the schedule: stop for coffee whenever you like, route adjustments, no rigid timetables.
       </p>
     </SectionImageText>
 
-    <!-- POPULAR ROUTES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Popular Routes & Indicative Prices</h2>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇫🇷 Nice → Lyon</h3>
-          <p><strong>Distance:</strong> ~290 miles | <strong>Duration:</strong> ~4h30</p>
-          <p>Business connections or TGV link to Paris. Early departure for late morning arrival. Route: A8 then A7 (Autoroute du Soleil).</p>
-          <p><em>From €550</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇫🇷 Nice → Marseille</h3>
-          <p><strong>Distance:</strong> ~125 miles | <strong>Duration:</strong> ~2h15</p>
-          <p>Ideal for meetings or Marseille-Provence Airport connections. Optional scenic route via the Calanques.</p>
-          <p><em>From €280</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇮🇹 Nice → Milan</h3>
-          <p><strong>Distance:</strong> ~185 miles | <strong>Duration:</strong> ~3h30</p>
-          <p>Through the Alps via Fréjus Tunnel or scenic Col de Tende. Fashion weeks, trade fairs, international connections.</p>
-          <p><em>From €450</em></p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🇨🇭 Nice → Geneva</h3>
-          <p><strong>Distance:</strong> ~250 miles | <strong>Duration:</strong> ~4h</p>
-          <p>World financial center. Route via Grenoble and scenic Annecy available. Seats configured for productive work.</p>
-          <p><em>From €520</em></p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Key Routes & Estimates</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🇮🇹</span><h3>Nice → Milan</h3><p>~185 miles / 3h30. For Fashion Week or business. Scenic drive through the Alps.<br><small>From €450</small></p></div>
+          <div class="service-card"><span class="service-icon">🇫🇷</span><h3>Nice → Lyon</h3><p>~290 miles / 4h30. TGV or business hub connection. Early departure recommended.<br><small>From €550</small></p></div>
+          <div class="service-card"><span class="service-icon">🇨🇭</span><h3>Nice → Geneva</h3><p>~340 miles / 5h30. Global financial center. Travel business class on the road.<br><small>From €650</small></p></div>
+          <div class="service-card"><span class="service-icon">⚓</span><h3>Nice → Marseille</h3><p>~125 miles / 2h15. Regional meetings or Marignane airport connection.<br><small>From €280</small></p></div>
         </div>
       </div>
     </section>
 
-    <!-- WHO USES THIS -->
     <SectionImageText
-      title="Who Uses Long-Distance Transfers?"
-      image="/assets/img/hero/hero-business.webp"
-      alt="Business travel VTC"
+      title="On-Board Comfort & Amenities"
+      image="/assets/img/destinations/vtc-tesla-nice.webp"
+      alt="Premium vehicle interior"
       imageSide="left"
-      ctaText="Book Now"
-      ctaLink="/en/booking"
+      ctaText="View Fleet"
+      ctaLink="/en/services"
     >
-      <ul>
-        <li><strong>Executives & Entrepreneurs:</strong> Multi-city meetings, roadshows, client visits without airport hassle.</li>
-        <li><strong>Families:</strong> Skip the stress of dragging luggage through stations. Children travel comfortably.</li>
-        <li><strong>VIPs & Celebrities:</strong> Complete discretion, no fans or paparazzi at airports. Tinted windows available.</li>
-        <li><strong>Medical:</strong> Comfortable, safe transfers to specialized clinics in Geneva or Milan.</li>
+      <p class="fade-in-section">
+        Our vehicles are specified for long-haul comfort. Mercedes E-Class/S-Class sedans or Tesla for silence, V-Class Vans for space.
+      </p>
+      <ul class="fade-in-section">
+        <li>4G/5G Wi-Fi connection to stay online.</li>
+        <li>USB ports and chargers for all your devices.</li>
+        <li>Complimentary mineral water.</li>
+        <li>Plush leather seats and multi-zone climate control.</li>
+        <li>Large trunk capacity (V-Class recommended for >3 suitcases).</li>
       </ul>
     </SectionImageText>
 
-    <!-- PRACTICAL INFO -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Practical Information</h2>
-      <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🧳 Luggage</h3>
-          <p>Our sedans accommodate 3 large suitcases plus carry-ons. For more luggage, choose our Mercedes V-Class van.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">⏱️ Breaks</h3>
-          <p>Coffee/meal break included on journeys over 3 hours. Choose the location with your driver (premium service areas or local restaurants).</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">📋 Quotes & Billing</h3>
-          <p>Fixed price quoted in advance – no surprises. Corporate invoicing with VAT available. Pay by card, bank transfer, or cash.</p>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Ready for the Grand Tour?</h2>
+        <p>Request an immediate flat-rate quote for your destination.</p>
+        <div class="cta-buttons">
+          <a href="/en/booking" class="btn-gold">Free Quote</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Ready to Travel in Style?</h2>
-        <p class="lead mb-4">
-          Request a personalized quote for your long-distance journey. Response within 2 hours.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/en/booking" class="btn btn-primary">Request Quote</a>
-          <a href="https://wa.me/33616552811" class="btn btn-outline">WhatsApp Contact</a>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Other Services</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/en/services" class="text-dark hover-gold">Hourly Service</a>
+        <a href="/en/nice-airport-transfer" class="text-dark hover-gold">Airport Transfer</a>
+        <a href="/en/booking" class="text-dark hover-gold">Ski Transfer</a>
+        <a href="/en/contact" class="text-dark hover-gold">Contact Us</a>
       </div>
     </section>
-
   </main>
 </BaseLayout>
+
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .service-card small { display: block; margin-top: 0.5rem; color: #fff; font-weight: 700; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

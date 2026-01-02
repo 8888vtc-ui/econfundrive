@@ -1,17 +1,27 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Saint-Tropez & Le Golfe : Guide VTC Premium | ECOFUNDRIVE";
-const description = "Explorez Saint-Tropez comme une star : Place des Lices, Pampelonne, Port Grimaud. Chauffeur privé VTC pour éviter les embouteillages légendaires.";
+const title = "Saint-Tropez & Le Golfe – Guide VTC Premium | ECOFUNDRIVE";
+const description = "Découvrez Saint-Tropez, Pampelonne et Ramatuelle avec votre chauffeur privé. Services VTC premium pour éviter les bouchons et profiter du glamour azuréen.";
 const keywords = [
   'VTC Saint-Tropez',
   'chauffeur privé Pampelonne',
   'transfert Nice Saint-Tropez',
-  'Port Grimaud VTC',
-  'plages club Saint-Tropez'
+  'visiter Saint-Tropez',
+  'transport Ramatuelle'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-saint-tropez.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
 <BaseLayout
@@ -25,136 +35,116 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Saint-Tropez", url: "/guide-decouvrir-saint-tropez-golfe" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/destinations/vtc-saint-tropez.webp",
-    "author": { "@type": "Organization", "name": "ECOFUNDRIVE" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": { "@type": "ImageObject", "url": "https://www.ecofundrive.com/assets/img/logo/logo.png" }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Saint-Tropez & Le Golfe : L'Art de Vivre la Riviera</h1>
-      <p class="lead text-center mb-xl">
-        Ancien village de pêcheurs devenu symbole mondial du glamour, Saint-Tropez attire les célébrités du monde entier. Découvrez ses secrets avec un chauffeur qui connaît chaque ruelle et chaque plage cachée.
-      </p>
-    </div>
+  <PageHero 
+    title="Saint-Tropez : Le Mythe"
+    subtitle="Du village de pêcheurs aux plages de Pampelonne. Vivez l'expérience tropézienne en mode VIP avec votre chauffeur privé."
+    backgroundImage="/assets/img/destinations/vtc-saint-tropez.webp"
+    badge="GLAMOUR • PLAGES • FÊTE"
+  />
 
-    <!-- 1. POURQUOI UN VTC ? -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="Pourquoi un VTC pour Saint-Tropez ?"
+      title="Pourquoi un VTC à Saint-Tropez ?"
       image="/assets/img/destinations/vtc-saint-tropez.webp"
       alt="Port de Saint-Tropez yachts"
       imageSide="right"
-      ctaText="Réserver mon transfert"
+      ctaText="Réserver mon Transfert"
       ctaLink="/reservation"
     >
-      <p>
-        <strong>L'accès à Saint-Tropez est un défi.</strong> En haute saison, les embouteillages sur la D98 peuvent transformer un trajet de 30 minutes en 3 heures de cauchemar. Les parkings sont hors de prix et souvent complets dès 10h du matin.
+      <p class="fade-in-section">
+        <strong>L'accès à Saint-Tropez est un défi légendaire.</strong> En été, l'unique route d'accès est souvent saturée. Un trajet de 30 minutes peut se transformer en heures d'attente.
       </p>
-      <p>
-        Avec ECOFUNDRIVE, vous arrivez détendu. Votre chauffeur connaît les itinéraires alternatifs par les villages de l'arrière-pays (La Garde-Freinet, Grimaud) et peut vous déposer directement devant votre restaurant ou votre plage privée.
+      <p class="fade-in-section">
+        La solution ? Un chauffeur privé ECOFUNDRIVE. Confortablement installé dans un véhicule climatisé, profitez du Wi-Fi et de rafraîchissements pendant que votre chauffeur emprunte les itinéraires malins de l'arrière-pays varois.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🚗 Zéro Stress Trafic</span>
+        <span class="distance-badge">🅿️ Dépose Minute</span>
+        <span class="distance-badge">❄️ Confort Premium</span>
+      </div>
     </SectionImageText>
 
-    <!-- 2. PLACE DES LICES -->
     <SectionImageText
-      title="Place des Lices : L'Âme Tropézienne"
+      title="L'Âme du Village : Place des Lices"
       image="/assets/img/hero/hero-ete.webp"
-      alt="Place des Lices Saint-Tropez pétanque"
+      alt="Place des Lices pétanque"
       imageSide="left"
-      ctaText="Y aller en VTC"
+      ctaText="Aller au Marché"
       ctaLink="/reservation"
     >
-      <p>
-        C'est ici que bat le cœur de Saint-Tropez. Sous les platanes centenaires, les locaux jouent à la pétanque pendant que les touristes sirotent un rosé en terrasse au <strong>Café des Arts</strong> ou au <strong>Sénéquier</strong>.
+      <p class="fade-in-section">
+        Sous les platanes centenaires, la <strong>Place des Lices</strong> résume l'esprit tropézien. Pétanque, pastis au Café des Arts et marché provençal (mardi & samedi matin).
       </p>
-      <p>
-        <strong>Conseil insider :</strong> Le marché provençal du mardi et du samedi matin est incontournable. Arrivez tôt (avant 9h) pour profiter de l'ambiance authentique avant la foule. Votre chauffeur peut vous y déposer et vous récupérer avec vos paniers remplis de spécialités locales.
+      <p class="fade-in-section">
+        Votre chauffeur vous dépose à deux pas pour votre shopping dans les boutiques de luxe (Dior, Chanel) ou pour une glace chez Sénéquier sur le port, face aux yachts.
       </p>
     </SectionImageText>
 
-    <!-- 3. PLAGES DE PAMPELONNE -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Les Plages Mythiques de Pampelonne</h2>
-      <p class="text-center mb-lg">
-        5 km de sable fin bordés de clubs légendaires. Choisissez votre ambiance et nous vous y conduisons.
-      </p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Les Clubs de Pampelonne</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🥗</span><h3>Club 55</h3><p>Le mythe absolu. Chic, discret et authentique depuis 1955. Réservation indispensable.</p></div>
+          <div class="service-card"><span class="service-icon">🎉</span><h3>Nikki Beach</h3><p>La fête au bord de la piscine. DJ sets internationaux et champagne shower.</p></div>
+          <div class="service-card"><span class="service-icon">🏖️</span><h3>Les Jumeaux</h3><p>Familial et détendu. Idéal pour une journée plage avec des enfants.</p></div>
+          <div class="service-card"><span class="service-icon">🌙</span><h3>L'Opéra</h3><p>Dîner-spectacle sur le port pour commencer la nuit tropézienne.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Les Pépites du Golfe</h2>
       <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Club 55</h3>
-          <p>L'institution depuis 1955. Ambiance familiale chic, salade niçoise géante et clientèle VIP discrète. Réservation indispensable en été.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">Nikki Beach</h3>
-          <p>Le temple de la fête en plein jour. DJ sets, champagne, et ambiance internationale. L'endroit où voir et être vu.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">La Plage des Jumeaux</h3>
-          <p>Plus calme et familiale, avec une cuisine méditerranéenne raffinée. Idéal pour une journée détente loin de l'agitation.</p>
+        <CategoryCard image="/assets/img/guides/villages-perches.webp" alt="Port Grimaud" title="⛵ Port Grimaud" description="La Venise Provençale. Maisons colorées et canaux. Une balade hors du temps." link="/vtc-grimaud" />
+        <CategoryCard image="/assets/img/destinations/destination-st-tropez.webp" alt="Ramatuelle" title="🏰 Ramatuelle" description="Superbe village perché offrant une vue panoramique sur la baie de Pampelonne." link="/vtc-ramatuelle" />
+        <CategoryCard image="/assets/img/destinations/destination-cannes.webp" alt="Gassin" title="🌿 Gassin" description="Classé parmi les plus beaux villages de France. Dédale de ruelles fleuries." link="/vtc-gassin" />
+      </div>
+    </section>
+
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Cap sur Saint-Tropez</h2>
+        <p>Réservez votre chauffeur depuis l'aéroport de Nice ou Cannes.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver le Trajet</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- 4. VILLAGES DU GOLFE -->
-    <SectionImageText
-      title="Les Trésors Cachés du Golfe"
-      image="/assets/img/guides/villages-perches.webp"
-      alt="Port Grimaud Venise Provençale"
-      imageSide="right"
-      ctaText="Circuit Villages"
-      ctaLink="/reservation"
-    >
-      <p>
-        Ne vous limitez pas à Saint-Tropez ! Le golfe regorge de pépites à découvrir :
-      </p>
-      <ul>
-        <li><strong>Port Grimaud</strong> : La "Venise Provençale" avec ses canaux et ses maisons colorées. Balade en bateau électrique recommandée.</li>
-        <li><strong>Ramatuelle</strong> : Village perché avec une vue plongeante sur le golfe et des ruelles médiévales authentiques.</li>
-        <li><strong>Gassin</strong> : Classé parmi les plus beaux villages de France, panorama à 360°.</li>
-      </ul>
-      <p>Avec une demi-journée de mise à disposition, explorez ces joyaux à votre rythme.</p>
-    </SectionImageText>
-
-    <!-- 5. INFOS PRATIQUES -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Infos Pratiques : Quand Venir ?</h2>
-      <div class="grid-2-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🌞 Haute Saison (Juillet-Août)</h3>
-          <p>Ambiance maximale mais foule dense. Réservez votre VTC impérativement à l'avance. Privilégiez les horaires tôt le matin (arrivée 9h) ou en soirée (19h+).</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">🍷 Basse Saison (Mai-Juin, Sept-Oct)</h3>
-          <p>Notre recommandation. Temps idéal, plages accessibles, restaurants sans attente. L'expérience VIP sans la cohue. Les Voiles de Saint-Tropez fin septembre sont un must.</p>
-        </div>
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Découvrir Aussi</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-saint-tropez" class="text-dark hover-gold">Tarifs Saint-Tropez</a>
+        <a href="/nice-airport-to-saint-tropez-transfer" class="text-dark hover-gold">Nice → St-Tropez</a>
+        <a href="/guide-que-faire-a-cannes" class="text-dark hover-gold">Guide Cannes</a>
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
       </div>
     </section>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-      <div class="text-center bg-light p-5 rounded">
-        <h2 class="mb-4">Vivez Saint-Tropez sans les Contraintes</h2>
-        <p class="lead mb-4">
-          Depuis Nice ou Cannes, laissez-vous conduire jusqu'au paradis tropézien. Arrivée VIP garantie.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="/reservation" class="btn btn-primary">Réserver mon Transfert</a>
-          <a href="/vtc-saint-tropez" class="btn btn-outline">Nos Tarifs Saint-Tropez</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

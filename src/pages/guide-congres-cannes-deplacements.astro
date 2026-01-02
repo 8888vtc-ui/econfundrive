@@ -1,17 +1,27 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
+import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Transport Congrès & Événements Cannes | Guide Business VTC";
-const description = "Solutions de transport premium pour vos congrès à Cannes : MIPIM, Festival du Film, Cannes Lions, ILTM. Service chauffeur VTC professionnel.";
+const title = "Transport Congrès Cannes VTC – MIPIM, Festival, Lions | ECOFUNDRIVE";
+const description = "Chauffeur privé pour congrès à Cannes : MIPIM, Festival du Film, Cannes Lions. Transferts aéroport Nice, navettes et mise à disposition business.";
 const keywords = [
   'VTC congrès Cannes',
   'chauffeur MIPIM Cannes',
   'transport Festival Cannes',
   'VTC Cannes Lions',
-  'transfert aéroport business',
-  'mise à disposition chauffeur Cannes'
+  'chauffeur privé business Cannes'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
 <BaseLayout
@@ -25,146 +35,116 @@ const keywords = [
     { name: "Guides", url: "/guides" },
     { name: "Congrès à Cannes", url: "/guide-congres-cannes-deplacements" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-      }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Transport VTC pour Congrès & Événements à Cannes</h1>
-      <p class="lead text-center mb-xl">
-        Cannes est la deuxième ville de congrès en France après Paris. Pour vos déplacements professionnels lors du MIPIM, des Cannes Lions ou du Festival du Film, exigez l'excellence d'un service VTC premium.
-      </p>
-    </div>
+  <PageHero 
+    title="Cannes Business & Congrès"
+    subtitle="MIPIM, Festival, Lions, ILTM... Votre partenaire transport pour tous les événements majeurs de la Croisette."
+    backgroundImage="/assets/img/services/service-business.webp"
+    badge="BUSINESS • CONGRÈS • VIP"
+  />
 
-    <!-- 1. INTRO BUSINESS -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
-      title="L'Excellence pour vos Déplacements Business"
+      title="L'Excellence Business"
       image="/assets/img/services/service-business.webp"
       alt="Chauffeur privé business class"
       imageSide="right"
-      ctaText="Réserver un Chauffeur Business"
+      ctaText="Réserver un Chauffeur"
       ctaLink="/reservation"
     >
-      <p>
-        Lors d'un congrès, chaque minute compte. Ne perdez pas de temps à attendre un taxi ou à chercher une place. Nos chauffeurs professionnels connaissent parfaitement les accès au <strong>Palais des Festivals</strong> et les itinéraires alternatifs pour éviter le trafic.
+      <p class="fade-in-section">
+        À Cannes, le temps est précieux. Lors d'un congrès, chaque minute compte entre deux rendez-vous. Ne perdez pas de temps à chercher un taxi ou une place de parking.
       </p>
-      <p>
-        Nos véhicules (Berlines S-Class, Vans Mercedes) sont de véritables bureaux mobiles : Wi-Fi, chargeurs, bouteilles d'eau et discrétion absolue pour préparer vos réunions en toute sérénité.
+      <p class="fade-in-section">
+        Nos chauffeurs professionnels maîtrisent parfaitement les accès au <strong>Palais des Festivals</strong>. À bord de nos Berlines S-Class ou Vans Mercedes, travaillez en toute sérénité (Wi-Fi, chargeurs, confidentialité) ou détendez-vous entre deux meetings.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">Briefing Chauffeur</span>
+        <span class="distance-badge">Facturation Pro</span>
+        <span class="distance-badge">Flotte Événementielle</span>
+      </div>
     </SectionImageText>
 
-    <!-- 2. EVENEMENTS MAJEURS -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Les Rendez-Vous Incontournables</h2>
-      <div class="grid-3-cols">
-        <div class="card-content bg-light p-4 rounded">
-          <h3 class="mb-3">MIPIM (Mars)</h3>
-          <p>Le marché international des professionnels de l'immobilier. Nous assurons vos navettes entre les villas de Mougins/Super-Cannes et le Palais, ainsi que vos transferts aéroport.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-            <h3 class="mb-3">Festival de Cannes (Mai)</h3>
-            <p>Le sommet mondial du cinéma. Service de mise à disposition 24h/24 pour vos montées des marches, soirées de gala et rendez-vous professionnels.</p>
-        </div>
-        <div class="card-content bg-light p-4 rounded">
-            <h3 class="mb-3">Cannes Lions (Juin)</h3>
-            <p>Le festival international de la créativité. Transportez vos équipes créatives et clients VIP entre les hôtels, les plages privées et les lieux de conférence.</p>
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Calendrier des Congrès</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🏗️</span><h3>MIPIM (Mars)</h3><p>Le RDV mondial de l'immobilier. Navettes villas Mougins ↔ Palais.</p></div>
+          <div class="service-card"><span class="service-icon">🎬</span><h3>Festival de Cannes (Mai)</h3><p>Mise à disposition 24h/24 pour montées des marches et soirées.</p></div>
+          <div class="service-card"><span class="service-icon">🦁</span><h3>Cannes Lions (Juin)</h3><p>Transport créatif. Navettes entre plages, hôtels et conférences.</p></div>
+          <div class="service-card"><span class="service-icon">⛵</span><h3>Yachting Festival (Sept)</h3><p>Transferts VIP pour les acheteurs et exposants du salon nautique.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- 3. MISE A DISPOSITION -->
     <SectionImageText
-      title="Mise à Disposition : Flexibilité Totale"
+      title="La Mise à Disposition"
       image="/assets/img/destinations/cannes-palais-festivals.webp"
       alt="Palais des Festivals Cannes"
       imageSide="left"
-      ctaText="Demander un devis Mise à Disposition"
+      ctaText="Devis à la journée"
       ctaLink="/contact"
     >
-      <p>
-        Un agenda chargé et changeant ? Optez pour notre service de <strong>mise à disposition</strong>. Votre chauffeur vous est dédié pour une durée déterminée (4h, 8h, 12h ou plusieurs jours).
+      <p class="fade-in-section">
+        Pour une flexibilité totale, optez pour la <strong>mise à disposition</strong>. Votre chauffeur vous est dédié à la demi-journée, à la journée ou pour toute la durée du congrès.
       </p>
-      <p>
-        Il vous attend devant chaque lieu de rendez-vous, garde vos effets personnels en sécurité et reste joignable à tout instant. C'est la solution idéale pour enchaîner les déjeuners d'affaires, les conférences et les dîners sans stress.
-      </p>
-    </SectionImageText>
-
-    <!-- 4. TRANSFERTS AEROPORT -->
-    <SectionImageText
-      title="Accueil VIP Aéroport de Nice"
-      image="/assets/img/hero/hero-aeroport-nice.webp"
-      alt="Transfert aéroport Nice Cannes"
-      imageSide="right"
-      ctaText="Réserver transfert NCE"
-      ctaLink="/reservation"
-    >
-      <p>
-        La première impression est essentielle. Accueillez vos partenaires ou collaborateurs dès leur arrivée à l'Aéroport de Nice Côte d'Azur avec une pancarte nominative.
-      </p>
-      <p>
-        Nous suivons les vols en temps réel pour garantir une présence à l'atterrissage, même en cas de retard. Le transfert vers Cannes se fait dans un confort absolu, permettant à vos invités de se détendre ou de travailler dès leur sortie de l'avion.
+      <p class="fade-in-section">
+        Il vous attend devant chaque lieu, garde vos affaires en sécurité et s'adapte à vos changements de programme de dernière minute. C'est l'atout productivité indispensable.
       </p>
     </SectionImageText>
 
-    <!-- FAQ -->
-    <section class="mb-xl container">
-        <h2 class="mb-4 text-center">Questions Fréquentes Business</h2>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <button class="faq-question">Peut-on réserver plusieurs véhicules pour un événement ?</button>
-                <div class="faq-answer">
-                    <p>Oui, ECOFUNDRIVE gère des flottes pour les délégations. Contactez-nous à l'avance pour coordonner plusieurs vans et berlines.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Facturez-vous l'attente en cas de réunion prolongée ?</button>
-                <div class="faq-answer">
-                    <p>Dans le cadre d'une mise à disposition, l'attente est incluse. Pour un transfert simple, une période de courtoisie est offerte, puis l'attente est facturée.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Proposez-vous une facturation mensuelle ?</button>
-                <div class="faq-answer">
-                    <p>Pour les entreprises et les clients réguliers, nous pouvons mettre en place un compte client avec facturation mensuelle récapitulative.</p>
-                </div>
-            </div>
-        </div>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Services Complémentaires</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/hero/hero-aeroport-nice.webp" alt="Aéroport Nice" title="✈️ Transfert Aéroport" description="Accueil pancarte à Nice (NCE) ou Cannes Mandelieu (CEQ). Suivi de vol en temps réel." link="/reservation" />
+        <CategoryCard image="/assets/img/destinations/destination-monaco.png" alt="Dîners d'Affaires" title="🍽️ Dîners d'Affaires" description="Transport vers les restaurants étoilés de la région pour vos repas clients." link="/reservation" />
+        <CategoryCard image="/assets/img/services/service-business.png" alt="Roadshows" title="📈 Roadshows" description="Organisation logistique complexe pour vos tournées de présentation." link="/contact" />
+      </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-        <div class="text-center bg-light p-5 rounded">
-            <h2 class="mb-4">Réservez Votre Transport Business</h2>
-            <p class="lead mb-4">
-                Garantissez la réussite de votre congrès à Cannes avec un partenaire logistique fiable.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/reservation" class="btn btn-primary">Réserver un Chauffeur</a>
-                <a href="/contact" class="btn btn-outline">Contacter le Service Business</a>
-            </div>
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Optimisez votre Congrès</h2>
+        <p>Réservez votre logistique transport à l'avance.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver</a>
+          <a href="/contact" class="btn-outline">Devis Entreprise</a>
         </div>
+      </div>
     </section>
 
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Voir Aussi</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">VTC Cannes</a>
+        <a href="/vtc-entreprise-cote-azur" class="text-dark hover-gold">Offre Entreprise</a>
+        <a href="/transfert-nice-aeroport-cannes" class="text-dark hover-gold">Nice → Cannes</a>
+        <a href="/vtc-mipim-cannes" class="text-dark hover-gold">Spécial MIPIM</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>

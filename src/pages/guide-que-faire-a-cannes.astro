@@ -1,18 +1,27 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
-const title = "Que Faire à Cannes ? Guide VTC Exclusif | ECOFUNDRIVE";
-const description = "Découvrez les incontournables de Cannes avec votre chauffeur privé : La Croisette, Le Suquet, les Îles de Lérins, shopping de luxe et vie nocturne.";
+const title = "Que Faire à Cannes ? Guide Visite & Shopping VTC | ECOFUNDRIVE";
+const description = "Visitez Cannes avec votre chauffeur privé : La Croisette, Le Suquet, Îles de Lérins, shopping de luxe. Guide complet des activités incontournables.";
 const keywords = [
-  'que faire à Cannes',
-  'visiter Cannes chauffeur',
+  'visiter Cannes',
   'shopping luxe Cannes',
-  'Îles de Lérins VTC',
-  'Le Suquet Cannes',
-  'activités Cannes'
+  'Croisette Cannes VTC',
+  'Îles de Lérins',
+  'Le Suquet visite'
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": "https://www.ecofundrive.com/assets/img/destinations/destination-cannes.webp",
+  "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
+};
 ---
 
 <BaseLayout
@@ -24,130 +33,118 @@ const keywords = [
   breadcrumbItems={[
     { name: "Accueil", url: "/" },
     { name: "Guides", url: "/guides" },
-    { name: "Que faire à Cannes", url: "/guide-que-faire-a-cannes" }
+    { name: "Visiter Cannes", url: "/guide-que-faire-a-cannes" }
   ]}
-  schema={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "image": "https://www.ecofundrive.com/assets/img/destinations/destination-cannes.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ECOFUNDRIVE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ecofundrive.com/assets/img/logo/logo.png"
-      }
-    },
-    "datePublished": "2024-03-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  }}
+  schema={schema}
 >
-  <main class="page-content">
-    <div class="container py-lg">
-      <h1 class="text-center mb-xl">Que Faire à Cannes ? Les Incontournables</h1>
-      <p class="lead text-center mb-xl">
-        Capitale mondiale du cinéma, Cannes est un joyau de la Côte d'Azur qui allie glamour, histoire et nature. Laissez votre chauffeur privé VTC vous guider à travers les expériences les plus exclusives de la ville.
-      </p>
-    </div>
+  <PageHero 
+    title="Cannes : Cinéma & Glamour"
+    subtitle="De la montée des marches aux ruelles du Suquet. Découvrez la cité des festivals avec l'élégance d'un service privé."
+    backgroundImage="/assets/img/destinations/destination-cannes.webp"
+    badge="CINÉMA • LUXE • HISTOIRE"
+  />
 
-    <!-- 1. LA CROISETTE -->
+  <main id="main-content" class="page-content">
+    
     <SectionImageText
       title="La Mythique Croisette"
       image="/assets/img/destinations/destination-cannes.webp"
       alt="La Croisette Cannes"
       imageSide="right"
-      ctaText="Réserver un transfert Croisette"
+      ctaText="Réserver mon Shopping Tour"
       ctaLink="/reservation"
     >
-      <p>
-        Inscrite au patrimoine culturel, la <strong>Promenade de la Croisette</strong> est l'emblème de Cannes. Flânez à l'ombre des pins parasols, admirez les palaces légendaires comme le Carlton ou le Martinez, et profitez des plages privées au sable fin.
+      <p class="fade-in-section">
+        Boulevard des stars, la <strong>Croisette</strong> est l'emblème de Cannes. Flânez à l'ombre des pins face à la mer, admirez les palaces légendaires (Carlton, Martinez, Majestic) et profitez des plages de sable fin.
       </p>
-      <p>
-        Pour une expérience shopping ultime, la Croisette abrite les boutiques des plus grandes maisons de luxe : Chanel, Dior, Louis Vuitton, Cartier... Votre chauffeur peut rester à votre disposition pour déposer vos achats en toute sécurité pendant que vous continuez votre promenade.
+      <p class="fade-in-section">
+        C'est aussi le temple du shopping. Dior, Chanel, Louis Vuitton... Votre chauffeur vous dépose devant chaque boutique et sécurise vos achats dans le véhicule pour que vous gardiez les mains libres.
       </p>
+      <div class="distances fade-in-section">
+        <span class="distance-badge">🛍️ Shopping Luxe</span>
+        <span class="distance-badge">🏨 Palaces</span>
+        <span class="distance-badge">🌊 Plages Privées</span>
+      </div>
     </SectionImageText>
 
-    <!-- 2. LE SUQUET -->
     <SectionImageText
       title="Le Suquet : L'Âme Historique"
       image="/assets/img/guides/villages-perches.webp"
-      alt="Le Suquet Cannes Vieille Ville"
+      alt="Le Suquet Cannes"
       imageSide="left"
-      ctaText="Visiter le Suquet en VTC"
+      ctaText="Dîner au Suquet"
       ctaLink="/reservation"
     >
-      <p>
-        Perché sur une colline, le quartier du <strong>Suquet</strong> est le cœur historique de Cannes. Loin des paillettes, ses ruelles pavées et ses maisons colorées offrent un charme authentique provençal.
+      <p class="fade-in-section">
+        Perché sur sa colline, le quartier du <strong>Suquet</strong> est le berceau de Cannes. Loin des paillettes, ses ruelles pavées authentiques mènent à l'église Notre-Dame d'Espérance, offrant une vue panoramique époustouflante sur la baie.
       </p>
-      <p>
-        Ne manquez pas de monter jusqu'à l'église Notre-Dame d'Espérance et au Musée de la Castre pour une vue panoramique époustouflante sur la baie de Cannes et le massif de l'Esterel. Pour le dîner, la rue Saint-Antoine regorge de restaurants gastronomiques et traditionnels où votre chauffeur pourra vous déposer juste devant l'entrée.
+      <p class="fade-in-section">
+        Le soir, la rue Saint-Antoine s'anime de restaurants charmants. Votre chauffeur vous dépose au pied des rues piétonnes pour un dîner inoubliable.
       </p>
     </SectionImageText>
 
-    <!-- 3. ILES DE LERINS -->
-    <section class="mb-xl container">
-      <h2 class="text-center mb-lg">Évasion Nature : Les Îles de Lérins</h2>
-      <p class="text-center mb-lg">
-        À seulement 15 minutes de bateau, un archipel sauvage vous attend. Nous organisons votre transfert vers l'embarcadère du port de Cannes.
-      </p>
-      <div class="grid-2-cols">
-        <CategoryCard
-          image="/assets/img/hero/hero-ete.webp"
-          alt="Île Sainte-Marguerite"
-          title="Île Sainte-Marguerite"
-          description="Célèbre pour son Fort Royal qui aurait abrité le Masque de Fer. Idéale pour les balades en forêt et la baignade dans les criques turquoises."
-          link="/reservation"
-          linkText="Réserver transfert port"
-        />
-        <CategoryCard
-          image="/assets/img/hero/hero-mariage.webp"
-          alt="Île Saint-Honorat"
-          title="Île Saint-Honorat"
-          description="Propriété des moines cisterciens depuis le Ve siècle. Visitez l'abbaye fortifiée et dégustez les vins produits sur place par les moines."
-          link="/reservation"
-          linkText="Réserver transfert port"
-        />
+    <section class="services-section">
+      <div class="container py-xl fade-in-section">
+        <h2 class="section-title text-center mb-xl" style="color: white;">Expériences Cannoises</h2>
+        <div class="services-grid">
+          <div class="service-card"><span class="service-icon">🎬</span><h3>Palais des Festivals</h3><p>Faites votre selfie sur les célèbres 24 marches du tapis rouge.</p></div>
+          <div class="service-card"><span class="service-icon">🚤</span><h3>Îles de Lérins</h3><p>Transfert vers l'embarcadère pour une journée nature sur l'île Sainte-Marguerite.</p></div>
+          <div class="service-card"><span class="service-icon">🍸</span><h3>Rooftops</h3><p>Cocktail au coucher du soleil sur les toits du Five Seas ou du 3.14.</p></div>
+          <div class="service-card"><span class="service-icon">🎰</span><h3>Casinos</h3><p>Tentez votre chance au Casino Barrière ou au Palm Beach.</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- 4. PALAIS ET TAPIS ROUGE -->
-    <SectionImageText
-      title="Le Palais des Festivals"
-      image="/assets/img/destinations/cannes-palais-festivals.webp"
-      alt="Marches du Palais des Festivals Cannes"
-      imageSide="right"
-      ctaText="Service VTC Festival"
-      ctaLink="/guide-vtc-festival-cannes"
-    >
-      <p>
-        Impossible de visiter Cannes sans voir le célèbre <strong>Palais des Festivals et des Congrès</strong>. C'est ici que bat le cœur du cinéma mondial chaque mois de mai.
-      </p>
-      <p>
-        Prenez la pose sur les mythiques 24 marches du tapis rouge, et découvrez le "Chemin des Étoiles" où plus de 300 stars ont laissé leurs empreintes, à l'image du Walk of Fame d'Hollywood. Le Palais accueille également des congrès majeurs toute l'année (MIPIM, Cannes Lions) pour lesquels nous assurons un service de transport business dédié.
-      </p>
-    </SectionImageText>
-
-    <!-- CTA FINAL -->
-    <section class="mb-xl container">
-        <div class="text-center bg-light p-5 rounded">
-            <h2 class="mb-4">Profitez de Cannes en toute Sérénité</h2>
-            <p class="lead mb-4">
-                Ne perdez pas de temps à chercher un parking ou à attendre un taxi. Réservez votre chauffeur privé ECOFUNDRIVE pour une expérience VIP sur-mesure à Cannes.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="/reservation" class="btn btn-primary">Réserver mon Chauffeur</a>
-                <a href="https://wa.me/33616552811" class="btn btn-outline">Contact WhatsApp</a>
-            </div>
-        </div>
+    <section class="container py-xl fade-in-section">
+      <h2 class="section-title text-center mb-xl">Autour de Cannes</h2>
+      <div class="grid-3-cols">
+        <CategoryCard image="/assets/img/destinations/destination-nice.png" alt="Antibes" title="⚓ Antibes" description="À 20min. Le port Vauban et le Musée Picasso. Une vieille ville fortifiée pleine de charme." link="/vtc-antibes" />
+        <CategoryCard image="/assets/img/destinations/vtc-mougins.webp" alt="Mougins" title="🍽️ Mougins" description="Le village de la gastronomie et des artistes. Un dîner étoilé vous attend." link="/vtc-mougins" />
+        <CategoryCard image="/assets/img/destinations/destination-st-tropez.webp" alt="Estérel" title="⛰️ L'Estérel" description="La corniche d'Or et ses roches rouges plongeant dans la mer. Une route sublime." link="/vtc-mandelieu-la-napoule" />
+      </div>
     </section>
 
+    <section class="container py-xl fade-in-section">
+      <div class="cta-premium">
+        <h2>Votre Chauffeur à Cannes</h2>
+        <p>Pour le Festival, le shopping ou la plage, déplacez-vous avec style.</p>
+        <div class="cta-buttons">
+          <a href="/reservation" class="btn-gold">Réserver un Chauffeur</a>
+          <a href="https://wa.me/33616552811" class="btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-lg bg-gold-light rounded-lg fade-in-section">
+      <h3 class="h4 mb-md text-center">Guides Connexes</h3>
+      <div class="grid-4-cols-responsive text-sm text-center">
+        <a href="/vtc-cannes" class="text-dark hover-gold">Tarifs Cannes</a>
+        <a href="/guide-congres-cannes-deplacements" class="text-dark hover-gold">Guide Business</a>
+        <a href="/transfert-nice-aeroport-cannes" class="text-dark hover-gold">Aéroport → Cannes</a>
+        <a href="/vtc-mougins" class="text-dark hover-gold">VTC Mougins</a>
+      </div>
+    </section>
   </main>
 </BaseLayout>
 
-
+<style>
+  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+  .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
+  .cta-premium h2 { color: white; margin-bottom: 1rem; }
+  .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+</style>
