@@ -69,7 +69,10 @@ const breadcrumbItems = [
               </div>
               <div class="card-text">
                 <h3>Email</h3>
-                <a href="mailto:8888VTC@gmail.com" class="contact-link">8888VTC@gmail.com</a>
+                <!-- Email Obfuscation -->
+                <a href="#" class="contact-link" onclick="this.href='mailto:' + '8888VTC' + '@' + 'gmail.com'">
+                  Envoyer un email
+                </a>
                 <p class="small-text">Réponse sous 2 heures</p>
               </div>
             </div>
@@ -129,7 +132,7 @@ const breadcrumbItems = [
             <p>Nous intervenons sur toute la Côte d'Azur, de Saint-Tropez à Monaco, ainsi que pour vos transferts longue distance en Europe.</p>
          </div>
          <div class="map-visual">
-            <img src="/assets/img/destinations/vtc-tesla-nice.webp" alt="Carte VTC Côte d'Azur" class="map-img-placeholder" />
+            <img src="/assets/img/destinations/vtc-tesla-nice.webp" alt="Carte VTC Côte d'Azur" class="map-img-placeholder" width="1200" height="600" loading="lazy" />
             <div class="map-overlay">
                <span>Nice</span>
                <span>Cannes</span>
