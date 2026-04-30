@@ -10,7 +10,7 @@
     z-index: 1000;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(0, 176, 240, 0.2);
 }
 
 .navbar {
@@ -121,11 +121,11 @@
 
 .nav-links-desktop a:hover,
 .nav-links-desktop a:focus {
-    color: #d4af37;
+    color: #00b0f0;
 }
 
 .nav-links-desktop a.active {
-    color: #d4af37;
+    color: #00b0f0;
 }
 
 .nav-links-desktop a.active::after {
@@ -135,7 +135,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: #d4af37;
+    background: #00b0f0;
 }
 
 /* === BOTTOM NAVIGATION MOBILE === */
@@ -148,7 +148,7 @@
     right: 0 !important;
     height: 65px;
     background: #0a0a0a;
-    border-top: 2px solid #d4af37;
+    border-top: 2px solid #00b0f0;
     z-index: 99999 !important;
     justify-content: space-around;
     align-items: center;
@@ -195,8 +195,8 @@
 
 .bottom-nav-item:hover,
 .bottom-nav-item:focus {
-    color: #d4af37;
-    background: rgba(212, 175, 55, 0.1);
+    color: #00b0f0;
+    background: rgba(0, 176, 240, 0.1);
 }
 
 .bottom-nav-item:active {
@@ -204,8 +204,8 @@
 }
 
 .bottom-nav-item.active {
-    color: #d4af37;
-    background: rgba(212, 175, 55, 0.15);
+    color: #00b0f0;
+    background: rgba(0, 176, 240, 0.15);
 }
 
 .bottom-nav-item.active svg {
@@ -236,7 +236,7 @@
     gap: 0.4rem;
     padding: 0.5rem 0.75rem;
     background: transparent;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(0, 176, 240, 0.3);
     border-radius: 8px;
     color: #e0e0e0;
     cursor: pointer;
@@ -246,8 +246,8 @@
 }
 
 .lang-current:hover {
-    border-color: #d4af37;
-    background: rgba(212, 175, 55, 0.1);
+    border-color: #00b0f0;
+    background: rgba(0, 176, 240, 0.1);
 }
 
 .lang-flag {
@@ -257,7 +257,7 @@
 
 .lang-code {
     font-weight: 600;
-    color: #d4af37;
+    color: #00b0f0;
 }
 
 .lang-arrow {
@@ -276,7 +276,7 @@
     right: 0;
     min-width: 150px;
     background: #1a1a1a;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(0, 176, 240, 0.3);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     opacity: 0;
@@ -306,13 +306,13 @@
 }
 
 .lang-option:hover {
-    background: rgba(212, 175, 55, 0.15);
-    color: #d4af37;
+    background: rgba(0, 176, 240, 0.15);
+    color: #00b0f0;
 }
 
 .lang-option.active {
-    background: rgba(212, 175, 55, 0.2);
-    color: #d4af37;
+    background: rgba(0, 176, 240, 0.2);
+    color: #00b0f0;
 }
 
 .lang-option .lang-flag {

@@ -40,7 +40,7 @@ Avec un VTC, vous connaissez le tarif **avant** le trajet. Pas de mauvaise surpr
 
 ### 2. Le confort supérieur
 
-Les VTC utilisent généralement des véhicules premium : Mercedes Classe E, Tesla, BMW Série 5... L'intérieur est soigné, climatisé, avec souvent WiFi et chargeurs.
+Les VTC utilisent généralement des véhicules premium : Van VW ID Buzz, Volkswagen ID Buzz, BMW Série 5... L'intérieur est soigné, climatisé, avec souvent WiFi et chargeurs.
 
 ### 3. Le service personnalisé
 

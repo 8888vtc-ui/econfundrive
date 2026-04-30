@@ -19,7 +19,7 @@ const schema = {
   "@type": "Article",
   "headline": title,
   "description": description,
-  "image": "https://www.ecofundrive.com/assets/img/services/service-business.webp",
+  "image": "https://www.ecofundrive.com/assets/img/fun-buzz/espace.jpg",
   "author": { "@type": "Organization", "name": "ECOFUNDRIVE" }
 };
 ---
@@ -40,7 +40,7 @@ const schema = {
   <PageHero 
     title="Cannes Business & Congrès"
     subtitle="MIPIM, Festival, Lions, ILTM... Votre partenaire transport pour tous les événements majeurs de la Croisette."
-    backgroundImage="/assets/img/services/service-business.webp"
+    backgroundImage="/assets/img/fun-buzz/espace.jpg"
     badge="BUSINESS • CONGRÈS • VIP"
   />
 
@@ -48,7 +48,7 @@ const schema = {
     
     <SectionImageText
       title="L'Excellence Business"
-      image="/assets/img/services/service-business.webp"
+      image="/assets/img/fun-buzz/espace.jpg"
       alt="Chauffeur privé business class"
       imageSide="right"
       ctaText="Réserver un Chauffeur"
@@ -58,7 +58,7 @@ const schema = {
         À Cannes, le temps est précieux. Lors d'un congrès, chaque minute compte entre deux rendez-vous. Ne perdez pas de temps à chercher un taxi ou une place de parking.
       </p>
       <p class="fade-in-section">
-        Nos chauffeurs professionnels maîtrisent parfaitement les accès au <strong>Palais des Festivals</strong>. À bord de nos Berlines S-Class ou Vans Mercedes, travaillez en toute sérénité (Wi-Fi, chargeurs, confidentialité) ou détendez-vous entre deux meetings.
+        Nos chauffeurs professionnels maîtrisent parfaitement les accès au <strong>Palais des Festivals</strong>. À bord de nos Van ID Buzzs S-Class ou Vans Van VW ID Buzz, travaillez en toute sérénité (Wi-Fi, chargeurs, confidentialité) ou détendez-vous entre deux meetings.
       </p>
       <div class="distances fade-in-section">
         <span class="distance-badge">Briefing Chauffeur</span>
@@ -98,9 +98,9 @@ const schema = {
     <section class="container py-xl fade-in-section">
       <h2 class="section-title text-center mb-xl">Services Complémentaires</h2>
       <div class="grid-3-cols">
-        <CategoryCard image="/assets/img/hero/hero-aeroport-nice.webp" alt="Aéroport Nice" title="✈️ Transfert Aéroport" description="Accueil pancarte à Nice (NCE) ou Cannes Mandelieu (CEQ). Suivi de vol en temps réel." link="/reservation" />
+        <CategoryCard image="/assets/img/fun-buzz/OIPblack.jpg" alt="Aéroport Nice" title="✈️ Transfert Aéroport" description="Accueil pancarte à Nice (NCE) ou Cannes Mandelieu (CEQ). Suivi de vol en temps réel." link="/reservation" />
         <CategoryCard image="/assets/img/destinations/destination-monaco.webp" alt="Dîners d'Affaires" title="🍽️ Dîners d'Affaires" description="Transport vers les restaurants étoilés de la région pour vos repas clients." link="/reservation" />
-        <CategoryCard image="/assets/img/services/service-business.webp" alt="Roadshows" title="📈 Roadshows" description="Organisation logistique complexe pour vos tournées de présentation." link="/contact" />
+        <CategoryCard image="/assets/img/fun-buzz/espace.jpg" alt="Roadshows" title="📈 Roadshows" description="Organisation logistique complexe pour vos tournées de présentation." link="/contact" />
       </div>
     </section>
 
@@ -128,23 +128,23 @@ const schema = {
 </BaseLayout>
 
 <style>
-  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-gold-light { background: rgba(0, 176, 240, 0.1); }
   .section-title { font-size: 2rem; color: #1a1a1a; position: relative; }
-  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #d4af37; margin: 1rem auto 0; }
+  .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #00b0f0; margin: 1rem auto 0; }
   .distances { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-  .distance-badge { background: rgba(212, 175, 55, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
+  .distance-badge { background: rgba(0, 176, 240, 0.1); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; }
   .services-section { background: linear-gradient(135deg, #0a0c17, #1a1a2e); margin: 3rem 0; }
   .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
   @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
-  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
+  .service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(0, 176, 240, 0.3); border-radius: 16px; padding: 2rem; text-align: center; }
   .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-  .service-card h3 { color: #d4af37; margin-bottom: 0.75rem; }
+  .service-card h3 { color: #00b0f0; margin-bottom: 0.75rem; }
   .service-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
   .cta-premium { background: linear-gradient(135deg, #0a0c17, #1a1a2e); border-radius: 20px; padding: 4rem 2rem; text-align: center; color: white; }
   .cta-premium h2 { color: white; margin-bottom: 1rem; }
   .cta-premium p { color: #aaa; margin: 0 auto 2rem; }
   .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .btn-gold { background: linear-gradient(135deg, #d4af37, #f0d78c); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
-  .btn-outline { border: 2px solid #d4af37; color: #d4af37; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
+  .btn-gold { background: linear-gradient(135deg, #00b0f0, #66d0f7); color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  .btn-outline { border: 2px solid #00b0f0; color: #00b0f0; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; }
 </style>

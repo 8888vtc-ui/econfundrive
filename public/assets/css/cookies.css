@@ -33,12 +33,12 @@
 }
 
 .cookie-banner a {
-    color: #d4af37 !important;
+    color: #00b0f0 !important;
     text-decoration: underline !important;
 }
 
 .cookie-banner a:hover {
-    color: #f4d03f !important;
+    color: #ffcc00 !important;
 }
 
 .cookie-buttons {
@@ -61,12 +61,12 @@
 }
 
 .cookie-btn-accept {
-    background: linear-gradient(135deg, #d4af37 0%, #c9a85e 100%) !important;
+    background: linear-gradient(135deg, #00b0f0 0%, #008ab5 100%) !important;
     color: #0a0c17 !important;
 }
 
 .cookie-btn-accept:hover {
-    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%) !important;
+    background: linear-gradient(135deg, #ffcc00 0%, #00b0f0 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4) !important;
 }

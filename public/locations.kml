@@ -5,11 +5,11 @@
     <description>Private Chauffeur & VTC Service Locations on the French Riviera</description>
     <Style id="serviceArea">
       <LineStyle>
-        <color>ffd4af37</color>
+        <color>ff00b0f0</color>
         <width>2</width>
       </LineStyle>
       <PolyStyle>
-        <color>40d4af37</color>
+        <color>4000b0f0</color>
       </PolyStyle>
     </Style>
     

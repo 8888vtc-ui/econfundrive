@@ -5,7 +5,7 @@ import SectionImageText from '../components/SectionImageText.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 
 const title = "VTC Monaco – Chauffeur Privé Monte-Carlo & Grand Prix | ECOFUNDRIVE";
-const description = "Chauffeur privé VTC à Monaco. Monte-Carlo, Casino, Grand Prix F1, Port Hercule, hôtels de luxe. Service premium 24h/24 pour événements et business.";
+const description = "Chauffeur privé VTC à Monaco. Monte-Carlo, Casino, Grand Prix F1, Port Hercule, hôtels fun premium. Service premium 24h/24 pour événements et business.";
 const keywords = [
   'VTC Monaco',
   'chauffeur privé Monaco',
@@ -28,7 +28,7 @@ const keywords = [
     { name: "Services", url: "/services" },
     { name: "VTC Monaco", url: "/vtc-monaco" }
   ]}
-  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Grand Prix de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Pour le Grand Prix, réservez plusieurs mois à l'avance. La demande est exceptionnelle. Contactez-nous dès que vos dates sont confirmées."}},{"@type":"Question","name":"Combien de temps Nice → Monaco en VTC ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet Nice → Monaco prend 30-45 minutes selon le trafic. Pendant le Grand Prix, prévoir plus. Nos chauffeurs connaissent tous les itinéraires alternatifs."}},{"@type":"Question","name":"Accédez-vous aux hôtels de luxe de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous connaissons parfaitement les accès VIP. Dépose directe devant l'Hôtel de Paris, Hermitage, Fairmont, Monte-Carlo Bay..."}}]}}
+  schema={{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment réserver un VTC pour le Grand Prix de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Pour le Grand Prix, réservez plusieurs mois à l'avance. La demande est exceptionnelle. Contactez-nous dès que vos dates sont confirmées."}},{"@type":"Question","name":"Combien de temps Nice → Monaco en VTC ?","acceptedAnswer":{"@type":"Answer","text":"Le trajet Nice → Monaco prend 30-45 minutes selon le trafic. Pendant le Grand Prix, prévoir plus. Nos chauffeurs connaissent tous les itinéraires alternatifs."}},{"@type":"Question","name":"Accédez-vous aux hôtels fun premium de Monaco ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous connaissons parfaitement les accès VIP. Dépose directe devant l'Hôtel de Paris, Hermitage, Fairmont, Monte-Carlo Bay..."}}]}}
 >
   <PageHero 
     title="VTC Monaco"
@@ -103,7 +103,7 @@ const keywords = [
       <h2 class="section-title text-center mb-xl">Découvrez Monaco avec Votre Chauffeur</h2>
       <div class="grid-3-cols">
         <CategoryCard
-          image="/assets/img/services/service-business.webp"
+          image="/assets/img/fun-buzz/interieur.jpg"
           alt="Casino Monte-Carlo"
           title="🎰 Casino de Monte-Carlo"
           description="L'emblématique Casino, symbole du glamour monégasque. Arrivez comme un VIP, dépose directe devant l'entrée."
@@ -117,7 +117,7 @@ const keywords = [
           link="/guide-monaco-en-une-journee"
         />
         <CategoryCard
-          image="/assets/img/about/vehicule-premium.webp"
+          image="/assets/img/fun-buzz/2025-Volkswagen-ID.-Buzz_Cabana_Blue-VW-Bus.webp"
           alt="Port Hercule Monaco"
           title="⛵ Port Hercule"
           description="Les plus grands superyachts du monde. Atmosphère exclusive, restaurants et bars branchés."
@@ -170,7 +170,7 @@ const keywords = [
           </div>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">Accédez-vous aux hôtels de luxe ?</h3>
+          <h3 class="faq-question">Accédez-vous aux hôtels fun premium ?</h3>
           <div class="faq-answer">
             <p>Oui ! Dépose directe devant l'<strong>Hôtel de Paris, Hermitage, Fairmont, Monte-Carlo Bay</strong>. Nous connaissons tous les accès VIP.</p>
           </div>
@@ -209,7 +209,7 @@ const keywords = [
 </BaseLayout>
 
 <style>
-  .bg-gold-light { background: rgba(212, 175, 55, 0.1); }
+  .bg-gold-light { background: rgba(0, 176, 240, 0.1); }
   
   .section-title {
     font-size: 2rem;
@@ -222,7 +222,7 @@ const keywords = [
     display: block;
     width: 60px;
     height: 3px;
-    background: #d4af37;
+    background: #00b0f0;
     margin: 1rem auto 0;
   }
   
@@ -238,7 +238,7 @@ const keywords = [
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(0, 176, 240, 0.1);
     padding: 1rem;
     border-radius: 10px;
   }
@@ -249,7 +249,7 @@ const keywords = [
   
   .tip {
     background: #fff3cd;
-    border-left: 4px solid #d4af37;
+    border-left: 4px solid #00b0f0;
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
@@ -286,12 +286,12 @@ const keywords = [
   
   .event-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(0, 176, 240, 0.3);
   }
   
   .event-month {
     display: inline-block;
-    background: #d4af37;
+    background: #00b0f0;
     color: #000;
     padding: 0.25rem 0.75rem;
     border-radius: 50px;
@@ -330,7 +330,7 @@ const keywords = [
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    background: linear-gradient(90deg, transparent, #00b0f0, transparent);
   }
   
   .cta-premium h2 {
@@ -348,7 +348,7 @@ const keywords = [
   
   .cta-price {
     margin-top: 1.5rem;
-    color: #d4af37 !important;
+    color: #00b0f0 !important;
     font-size: 1.1rem !important;
   }
   
@@ -360,7 +360,7 @@ const keywords = [
   }
   
   .btn-gold {
-    background: linear-gradient(135deg, #d4af37, #f0d78c);
+    background: linear-gradient(135deg, #00b0f0, #66d0f7);
     color: #000;
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -371,12 +371,12 @@ const keywords = [
   
   .btn-gold:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 176, 240, 0.4);
   }
   
   .btn-outline {
-    border: 2px solid #d4af37;
-    color: #d4af37;
+    border: 2px solid #00b0f0;
+    color: #00b0f0;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -385,7 +385,7 @@ const keywords = [
   }
   
   .btn-outline:hover {
-    background: #d4af37;
+    background: #00b0f0;
     color: #000;
   }
 </style>

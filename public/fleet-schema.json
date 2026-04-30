@@ -44,8 +44,8 @@
             "@type": "Vehicle",
             "name": "Mercedes-Benz S-Class",
             "manufacturer": "Mercedes-Benz",
-            "model": "S-Class Limousine",
-            "vehicleConfiguration": "Premium Limousine",
+            "model": "S-Class Van ID Buzz",
+            "vehicleConfiguration": "Premium Van ID Buzz",
             "seatingCapacity": 3,
             "description": "The ultimate luxury standard. Executive rear seating, privacy, and supreme comfort for VIPs.",
             "image": "https://www.ecofundrive.com/assets/img/fleet/mercedes-s-class.webp"
