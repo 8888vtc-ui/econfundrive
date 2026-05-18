@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+
+const title = "Yacht Provisioning Delivery Antibes – Van Service for Crew | ECOFUNDRIVE";
+const description = "Yacht provisioning delivery service in Antibes & Port Vauban. We shop at Metro, Carrefour & local markets, then deliver directly to your yacht. Van ID Buzz, fixed prices, same-day service.";
+const keywords = [
+  'yacht provisioning Antibes',
+  'yacht provisioning delivery Port Vauban',
+  'superyacht provisioning French Riviera',
+  'grocery delivery yacht Antibes',
+  'Metro wholesale delivery yacht',
+  'yacht supply delivery Côte d Azur'
+];
+
+const services = [
+  { icon: "🛒", title: "Grocery Run & Delivery", desc: "We shop at Metro, Carrefour or local markets based on your list, then deliver everything quayside to your yacht.", price: "From €50" },
+  { icon: "📦", title: "Express Pickup & Delivery", desc: "Your order is already prepared? We collect from any supplier and deliver straight to your gangway.", price: "From €30" },
+  { icon: "⚓", title: "Equipment & Spare Parts", desc: "Pickup from chandleries, marine suppliers or courier depots (DHL, FedEx, UPS) and deliver to your yacht.", price: "From €35" },
+  { icon: "🚐", title: "Half-Day Crew Assistant", desc: "Dedicated driver for 4 hours. Unlimited runs: Metro, chandlery, laundry, errands — whatever you need.", price: "From €150" },
+  { icon: "📋", title: "Full-Day Crew Assistant", desc: "Your personal driver for 8–10 hours. Shopping, equipment runs, crew transfers, airport pickups — all included.", price: "From €250" },
+  { icon: "✈️", title: "Airport + Provisioning Combo", desc: "Crew airport transfer with a Metro/Carrefour stop en route. Arrive at the yacht with provisions already loaded.", price: "From €120" }
+];
+
+const pricing = [
+  { service: "Grocery run (Metro/Carrefour → yacht)", price: "€50–80", time: "≈ 1.5 hours" },
+  { service: "Express pickup & delivery", price: "€30–50", time: "≈ 45 min" },
+  { service: "Equipment/parts pickup", price: "€35–60", time: "≈ 1 hour" },
+  { service: "Half-day crew assistant (4h)", price: "€150–200", time: "4 hours" },
+  { service: "Full-day crew assistant (8–10h)", price: "€250–350", time: "8–10 hours" },
+  { service: "Airport transfer + Metro stop", price: "€120–180", time: "≈ 2–2.5 hours" }
+];
+
+const faqs = [
+  { q: "Which stores do you shop at for yacht provisioning?", a: "We shop at Metro (Villeneuve-Loubet), Carrefour (Antibes), local markets (Marché Provençal d'Antibes), specialty stores, and any supplier you specify. You pay retail prices — we only charge a flat delivery fee." },
+  { q: "Do you deliver directly to the yacht at Port Vauban?", a: "Yes. We deliver quayside, directly to your gangway at Port Vauban, Port Gallice, Marina Baie des Anges, Port Canto, or any marina on the Côte d'Azur." },
+  { q: "Can you handle cold chain / refrigerated items?", a: "We use insulated bags and cooler boxes for perishable items. For large volumes of frozen goods, we coordinate timing to minimize exposure. We are not a refrigerated truck, but our runs are fast enough to maintain cold chain for standard provisioning." },
+  { q: "How quickly can you do a same-day provisioning run?", a: "For urgent requests, we can have provisions at your yacht within 2–3 hours of your call. For planned runs with a detailed shopping list, we recommend booking the day before." },
+  { q: "Do I need to provide a shopping list?", a: "Yes, please send your list via WhatsApp, email or phone. Photos of products, brand preferences and quantities help us get exactly what you need. We can also advise on local alternatives." },
+  { q: "What vehicle do you use?", a: "We use a Volkswagen ID Buzz — a spacious, 100% electric van with a large cargo area. It fits multiple crates, pallets of drinks, and bulky items easily. And it's silent and eco-friendly." }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="en-yacht-provisioning"
+  canonical="/en/yacht-provisioning-delivery-antibes"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Yacht Provisioning", url: "/en/yacht-provisioning-delivery-antibes" }
+  ]}
+  schema={{"@context":"https://schema.org","@type":"Service","name":"Yacht Provisioning Delivery","provider":{"@type":"Organization","name":"ECOFUNDRIVE","telephone":"+33616552811","url":"https://www.ecofundrive.com"},"areaServed":{"@type":"Place","name":"Antibes, Port Vauban, French Riviera"},"description":"Van delivery service for yacht provisioning in Antibes. Grocery shopping at Metro and Carrefour, equipment pickup, and quayside delivery to superyachts.","serviceType":"Yacht Provisioning Delivery"}}
+>
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-badge">🚢 YACHT CREW SERVICES • ANTIBES & FRENCH RIVIERA</span>
+        <h1>Yacht Provisioning Delivery in Antibes</h1>
+        <p class="hero-subtitle">We shop at Metro, Carrefour & local markets — then deliver everything directly to your yacht at Port Vauban. Fast, reliable, fixed prices.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">💬 WhatsApp Us</a>
+          <a href="tel:+33616552811" class="btn btn-outline btn-lg">📞 Call Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="container py-xl fade-in-section">
+      <div class="intro-box">
+        <h2>How It Works</h2>
+        <p><strong>ECOFUNDRIVE provides a dedicated van delivery service for superyacht crews in Antibes and across the French Riviera.</strong> Send us your shopping list via WhatsApp, we shop at Metro (Villeneuve-Loubet), Carrefour (Antibes) or any local supplier, then deliver everything quayside to your yacht — provisions, equipment, spare parts, laundry, parcels. You pay retail prices for the goods. We charge a flat delivery fee. No markup on products.</p>
+        <div class="intro-steps">
+          <div class="step"><span class="step-num">1</span><strong>Send your list</strong><br/>WhatsApp, email or call</div>
+          <div class="step"><span class="step-num">2</span><strong>We shop & collect</strong><br/>Metro, Carrefour, chandleries</div>
+          <div class="step"><span class="step-num">3</span><strong>Quayside delivery</strong><br/>Direct to your gangway</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Our Yacht Crew Services</h2>
+      <div class="services-grid">
+        {services.map((s) => (
+          <div class="service-card">
+            <span class="service-icon">{s.icon}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <span class="service-price">{s.price}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Pricing — Fixed & Transparent</h2>
+      <p class="text-center mb-lg">All prices are for the service only. You pay retail prices for goods — we never mark up products.</p>
+      <table class="tarif-table">
+        <thead>
+          <tr><th>Service</th><th>Price</th><th>Typical Duration</th></tr>
+        </thead>
+        <tbody>
+          {pricing.map((p) => (
+            <tr>
+              <td>{p.service}</td>
+              <td class="price-cell">{p.price}</td>
+              <td>{p.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="text-center mt-md"><em>Prices may vary for locations outside Antibes. Contact us for a custom quote.</em></p>
+    </section>
+
+    <!-- Why Us vs Competitors -->
+    <SectionImageText
+      title="Why Crews Choose ECOFUNDRIVE"
+      image="/assets/img/fun-buzz/espace.jpg"
+      alt="Spacious ID Buzz van for yacht provisioning"
+      imageSide="right"
+      ctaText="WhatsApp Us"
+      ctaLink="https://wa.me/33616552811"
+    >
+      <ul class="benefits-list fade-in-section">
+        <li><strong>No markup on products</strong> — You pay Metro/Carrefour retail prices. Our fee is for delivery only.</li>
+        <li><strong>Spacious electric van</strong> — Our VW ID Buzz fits crates, pallets of water, bulky items easily.</li>
+        <li><strong>Silent & eco-friendly</strong> — 100% electric, zero emissions, whisper-quiet on the quay.</li>
+        <li><strong>Fast turnaround</strong> — Same-day provisioning runs, urgent requests within 2–3 hours.</li>
+        <li><strong>All marinas covered</strong> — Port Vauban, Port Gallice, Port Canto, Marina Baie des Anges & more.</li>
+        <li><strong>Multilingual driver</strong> — English, French, Italian. We understand crew needs.</li>
+        <li><strong>Beyond groceries</strong> — Chandlery, DHL/FedEx parcels, laundry, crew airport transfers.</li>
+      </ul>
+    </SectionImageText>
+
+    <!-- Coverage -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Marinas & Ports We Cover</h2>
+      <div class="ports-grid">
+        <div class="port-card"><strong>Port Vauban</strong><br/>Antibes — Europe's largest marina</div>
+        <div class="port-card"><strong>Port Gallice</strong><br/>Juan-les-Pins</div>
+        <div class="port-card"><strong>Marina Baie des Anges</strong><br/>Villeneuve-Loubet</div>
+        <div class="port-card"><strong>Port Canto</strong><br/>Cannes</div>
+        <div class="port-card"><strong>Port de Golfe-Juan</strong><br/>Vallauris</div>
+        <div class="port-card"><strong>Port Hercule</strong><br/>Monaco</div>
+        <div class="port-card"><strong>Port de Nice</strong><br/>Nice</div>
+        <div class="port-card"><strong>Port de Saint-Tropez</strong><br/>Saint-Tropez (on request)</div>
+      </div>
+    </section>
+
+    <!-- Suppliers -->
+    <section class="container py-xl bg-light rounded-lg fade-in-section">
+      <h2 class="text-center mb-lg">Where We Shop For You</h2>
+      <div class="suppliers-grid">
+        <div class="supplier"><strong>🏪 Metro</strong><br/>Villeneuve-Loubet — Wholesale prices, bulk buying</div>
+        <div class="supplier"><strong>🛒 Carrefour</strong><br/>Antibes — Full range, checkout #57 for yacht trade</div>
+        <div class="supplier"><strong>🥖 Marché Provençal</strong><br/>Antibes Old Town — Fresh produce, local specialties</div>
+        <div class="supplier"><strong>⚓ Accastillage Diffusion</strong><br/>Marine hardware, deck supplies, safety equipment</div>
+        <div class="supplier"><strong>📦 DHL / FedEx / UPS</strong><br/>Parcel collection from courier depots</div>
+        <div class="supplier"><strong>🧹 Cleaning & Interior</strong><br/>Professional cleaning products, linen, amenities</div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container py-xl fade-in-section">
+      <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <div class="faq-item">
+            <h3 class="faq-question">{faq.q}</h3>
+            <div class="faq-answer"><p>{faq.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section fade-in-section">
+      <div class="container text-center">
+        <h2>Need Provisions Delivered to Your Yacht?</h2>
+        <p class="lead mb-lg">Send us your shopping list now. Same-day delivery available.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">💬 WhatsApp Your List</a>
+          <a href="tel:+33616552811" class="btn btn-gold btn-lg">📞 +33 6 16 55 28 11</a>
+          <a href="/en/contact" class="btn btn-outline-dark btn-lg">📝 Contact Form</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, rgba(0,20,40,0.85), rgba(0,40,80,0.7)), url('/assets/img/fun-buzz/espace.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,176,240,0.2);
+    border: 1px solid rgba(0,176,240,0.4);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    color: #66d0f7;
+  }
+  .hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+  .btn-gold { background: #00b0f0; color: #000; }
+  .btn-gold:hover { background: #006b8c; transform: translateY(-2px); }
+  .btn-outline { border: 2px solid white; color: white; }
+  .btn-outline:hover { background: white; color: #000; }
+  .btn-outline-dark { border: 2px solid #00b0f0; color: #00b0f0; }
+  .btn-outline-dark:hover { background: #00b0f0; color: #000; }
+  .btn-whatsapp { background: #25D366; color: white; }
+  .btn-whatsapp:hover { background: #1da851; }
+  .btn-lg { padding: 1.25rem 2.5rem; font-size: 1.1rem; }
+
+  .intro-box { max-width: 800px; margin: 0 auto; text-align: center; }
+  .intro-box h2 { color: #00b0f0; margin-bottom: 1rem; }
+  .intro-box p { font-size: 1.1rem; line-height: 1.7; color: #444; margin-bottom: 2rem; }
+  .intro-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+  .step { background: #f0f9ff; border-radius: 16px; padding: 2rem 1.5rem; text-align: center; border: 2px solid #e0f2fe; }
+  .step-num { display: inline-flex; width: 40px; height: 40px; background: #00b0f0; color: white; border-radius: 50%; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card { background: #f9f9f9; padding: 2rem; border-radius: 12px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .service-card h3 { margin-bottom: 0.5rem; color: #00b0f0; }
+  .service-card p { color: #666; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
+  .service-price { display: inline-block; background: #00b0f0; color: white; padding: 0.4rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+
+  .price-cell { font-weight: 700; color: #00b0f0; }
+  .bg-light { background: #f9f9f9; padding: 2rem; }
+  .benefits-list { list-style: none; padding: 0; }
+  .benefits-list li { padding: 0.75rem 0; border-bottom: 1px solid #eee; }
+  .benefits-list li:last-child { border-bottom: none; }
+
+  .ports-grid, .suppliers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .port-card, .supplier { background: #f9f9f9; padding: 1.5rem; border-radius: 12px; text-align: center; border-left: 4px solid #00b0f0; }
+  .port-card strong, .supplier strong { color: #1a1a1a; }
+
+  .cta-section { background: linear-gradient(135deg, #001428, #002850); padding: 4rem 2rem; color: white; }
+  .cta-section h2 { color: white; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 768px) {
+    .hero-section { padding: 5rem 1rem; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .intro-steps { grid-template-columns: 1fr; }
+    .ports-grid, .suppliers-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

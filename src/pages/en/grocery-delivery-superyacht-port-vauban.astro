@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionImageText from '../../components/SectionImageText.astro';
+
+const title = "Grocery Shopping & Delivery for Superyachts – Port Vauban, French Riviera | ECOFUNDRIVE";
+const description = "Grocery shopping and delivery service for superyacht crews at Port Vauban, Antibes. We shop at Metro Villeneuve-Loubet & Carrefour Antibes, deliver quayside. No markup on products.";
+const keywords = [
+  'grocery delivery superyacht French Riviera',
+  'grocery shopping yacht crew Antibes',
+  'Metro delivery yacht Port Vauban',
+  'Carrefour delivery yacht Antibes',
+  'superyacht galley provisions',
+  'fresh food delivery yacht Côte d Azur'
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  currentPage="en-yacht-grocery"
+  canonical="/en/grocery-delivery-superyacht-port-vauban"
+  lang="en"
+  keywords={keywords}
+  breadcrumbItems={[
+    { name: "Home", url: "/en" },
+    { name: "Yacht Provisioning", url: "/en/yacht-provisioning-delivery-antibes" },
+    { name: "Grocery Delivery", url: "/en/grocery-delivery-superyacht-port-vauban" }
+  ]}
+  schema={{"@context":"https://schema.org","@type":"Article","headline":"Grocery Shopping & Delivery for Superyachts – Port Vauban","description":"Complete guide to grocery shopping and delivery for yacht crews at Port Vauban, Antibes. Metro, Carrefour, local markets.","author":{"@type":"Person","name":"David Chemla"},"publisher":{"@type":"Organization","name":"ECOFUNDRIVE"}}}
+>
+  <main id="main-content">
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-badge">🛒 YACHT CREW GUIDE • PROVISIONING</span>
+        <h1>Grocery Shopping & Delivery for Superyachts</h1>
+        <p class="hero-subtitle">Your complete guide to provisioning at Port Vauban, Antibes. Where to shop, how to get it delivered, and how ECOFUNDRIVE saves you time and money.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">💬 Send Your Shopping List</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide Content -->
+    <article class="guide-content container py-xl">
+      <div class="article-body">
+
+        <p class="lead"><strong>For yacht chefs and stewardesses provisioning at Port Vauban, Antibes, the two main options are Metro (Villeneuve-Loubet) and Carrefour (Antibes).</strong> Both offer trade accounts for yacht crew. ECOFUNDRIVE provides a van shopping and delivery service: we shop based on your list at retail prices, then deliver directly to your yacht — with zero markup on products.</p>
+
+        <h2>Where to Shop: The Best Stores for Yacht Provisioning</h2>
+
+        <div class="store-comparison">
+          <div class="store-card">
+            <h3>🏪 Metro — Villeneuve-Loubet</h3>
+            <ul>
+              <li><strong>Distance from Port Vauban:</strong> 8 km (15 min drive)</li>
+              <li><strong>Best for:</strong> Bulk buying, wholesale prices, professional-grade ingredients</li>
+              <li><strong>Strengths:</strong> Dry goods, beverages by the case, cleaning products, professional kitchen supplies</li>
+              <li><strong>Trade card:</strong> Required (professional access only)</li>
+              <li><strong>Hours:</strong> Mon–Sat 8:30–20:30</li>
+              <li><strong>Problem:</strong> No delivery service, need a vehicle with cargo space</li>
+            </ul>
+            <p class="store-verdict">✅ <strong>Best wholesale prices</strong> — but you need transport</p>
+          </div>
+
+          <div class="store-card">
+            <h3>🛒 Carrefour — Antibes</h3>
+            <ul>
+              <li><strong>Distance from Port Vauban:</strong> 2 km (5 min drive)</li>
+              <li><strong>Best for:</strong> Full range, fresh produce, branded products</li>
+              <li><strong>Strengths:</strong> Dedicated yacht checkout (#57), delivery service (09:30–17:00)</li>
+              <li><strong>Trade card:</strong> Not required (open to all)</li>
+              <li><strong>Hours:</strong> Mon–Sat 8:30–21:00</li>
+              <li><strong>Note:</strong> Can prepare orders in crates/pallets for yacht crew</li>
+            </ul>
+            <p class="store-verdict">✅ <strong>Closest to Port Vauban</strong> — has its own delivery but limited hours</p>
+          </div>
+
+          <div class="store-card">
+            <h3>🥖 Marché Provençal — Antibes Old Town</h3>
+            <ul>
+              <li><strong>Distance from Port Vauban:</strong> 500m (walk)</li>
+              <li><strong>Best for:</strong> Fresh fruit, vegetables, fish, cheese, flowers</li>
+              <li><strong>Strengths:</strong> Local, seasonal, premium quality produce</li>
+              <li><strong>Hours:</strong> Tue–Sun 6:00–13:00 (summer daily)</li>
+              <li><strong>Problem:</strong> No delivery, cash heavy, need to carry everything</li>
+            </ul>
+            <p class="store-verdict">✅ <strong>Best fresh produce</strong> — ideal for charter turnarounds</p>
+          </div>
+        </div>
+
+        <h2>Why Use ECOFUNDRIVE Instead of Shopping Yourself?</h2>
+
+        <table class="comparison-table">
+          <thead>
+            <tr><th>Criteria</th><th>Shopping Yourself</th><th>Traditional Provisioner</th><th>ECOFUNDRIVE</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Product price</strong></td><td>Retail price</td><td>Retail + 30–50% markup</td><td class="highlight">Retail price (no markup)</td></tr>
+            <tr><td><strong>Service fee</strong></td><td>Free (your time)</td><td>Included in markup</td><td class="highlight">Flat fee €50–80</td></tr>
+            <tr><td><strong>Time spent</strong></td><td>2–4 hours</td><td>0 hours</td><td class="highlight">0 hours</td></tr>
+            <tr><td><strong>Transport needed</strong></td><td>Taxi/rental car</td><td>Their truck</td><td class="highlight">Our van (included)</td></tr>
+            <tr><td><strong>Delivery to yacht</strong></td><td>You carry everything</td><td>Yes, quayside</td><td class="highlight">Yes, quayside</td></tr>
+            <tr><td><strong>Bulky items</strong></td><td>Difficult by taxi</td><td>Yes</td><td class="highlight">Yes (van with XXL cargo)</td></tr>
+            <tr><td><strong>Total cost (€500 shop)</strong></td><td>€500 + taxi ≈ €540</td><td>€650–750</td><td class="highlight">€500 + €60 fee = €560</td></tr>
+          </tbody>
+        </table>
+
+        <p>On a €500 grocery shop, you <strong>save €100–200 compared to a traditional provisioner</strong>, and you don't lose 3 hours of your day.</p>
+
+        <h2>How Our Grocery Delivery Service Works</h2>
+
+        <div class="steps-detailed">
+          <div class="step-detail">
+            <span class="step-num">1</span>
+            <div>
+              <h3>Send Your Shopping List</h3>
+              <p>WhatsApp us your list at <a href="https://wa.me/33616552811">+33 6 16 55 28 11</a>. Include quantities, brands, sizes, and any special requirements. Photos of products are helpful. We'll confirm availability and estimated cost.</p>
+            </div>
+          </div>
+          <div class="step-detail">
+            <span class="step-num">2</span>
+            <div>
+              <h3>We Shop at Metro, Carrefour or Local Markets</h3>
+              <p>Our driver heads to the store(s) of your choice. We follow your list precisely, contacting you if a product is unavailable to suggest alternatives. We handle payment at the store (you reimburse us, or use your own trade card — we can shop with it).</p>
+            </div>
+          </div>
+          <div class="step-detail">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Quayside Delivery to Your Yacht</h3>
+              <p>We deliver everything directly to your gangway at Port Vauban (or any other marina). We help unload crates, cases of water, and bulky items. You receive the store receipt for full transparency.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Typical Provisioning Runs We Handle</h2>
+
+        <div class="use-cases">
+          <div class="use-case">
+            <h3>🍽️ Charter Turnaround</h3>
+            <p>Full restock between charters: fresh produce, dairy, meats, beverages, dry goods, cleaning supplies. Typically 15–30 crates from Metro + fresh items from the local market.</p>
+            <p><strong>Service:</strong> Full-day assistant (€250–350)</p>
+          </div>
+          <div class="use-case">
+            <h3>🥩 Chef's Weekly Shop</h3>
+            <p>Regular weekly provisioning run for the galley. Shopping list from the chef, delivered every Monday or Tuesday morning.</p>
+            <p><strong>Service:</strong> Grocery run (€50–80)</p>
+          </div>
+          <div class="use-case">
+            <h3>🍷 Beverage Restock</h3>
+            <p>Cases of wine, spirits, water, soft drinks from Metro. Heavy and bulky — perfect for our van.</p>
+            <p><strong>Service:</strong> Express pickup (€30–50)</p>
+          </div>
+          <div class="use-case">
+            <h3>🚨 Last-Minute Emergency Run</h3>
+            <p>Owner arriving tonight, need specific ingredients ASAP. We drop everything and make it happen within 2–3 hours.</p>
+            <p><strong>Service:</strong> Urgent grocery run (€60–90)</p>
+          </div>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">Can you use our Metro trade card?</h3>
+            <div class="faq-answer"><p>Yes. If your yacht has a Metro card, we can shop using your card. You get your own prices and invoicing. We just need the card and a written authorization.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Do you handle special dietary requirements (kosher, halal, gluten-free, vegan)?</h3>
+            <div class="faq-answer"><p>Absolutely. We know which stores carry specialty items. For very specific dietary needs, we recommend providing exact brand names or product photos to ensure accuracy.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can you do multiple store stops in one run?</h3>
+            <div class="faq-answer"><p>Yes. A typical full provisioning run includes Metro for bulk items, the local market for fresh produce, and possibly a specialty shop. All in one trip, one flat fee.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How do you handle payment for the groceries?</h3>
+            <div class="faq-answer"><p>Three options: (1) We pay and you reimburse us on delivery with the receipt, (2) You provide your trade card and we shop on your account, (3) You pre-pay by bank transfer. All receipts are provided for full transparency.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Do you offer regular weekly provisioning?</h3>
+            <div class="faq-answer"><p>Yes. Many yachts book us for a recurring weekly run (usually Monday or Tuesday). We offer discounted rates for regular clients. Contact us to set up a standing arrangement.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="cta-section fade-in-section">
+      <div class="container text-center">
+        <h2>Ready to Save Time on Provisioning?</h2>
+        <p class="lead mb-lg">WhatsApp us your shopping list. We'll have it at your yacht today.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/33616552811" class="btn btn-whatsapp btn-lg">💬 WhatsApp Your List</a>
+          <a href="/en/yacht-provisioning-delivery-antibes" class="btn btn-outline btn-lg">All Yacht Services →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero-section { background: linear-gradient(135deg, rgba(0,20,40,0.85), rgba(0,40,80,0.7)), url('/assets/img/fun-buzz/DB2022AU00771_web_1600.jpg'); background-size: cover; background-position: center; padding: 8rem 2rem; text-align: center; color: white; }
+  .hero-badge { display: inline-block; background: rgba(0,176,240,0.2); border: 1px solid rgba(0,176,240,0.4); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.5rem; color: #66d0f7; }
+  .hero-section h1 { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  .hero-subtitle { font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; }
+  .btn-whatsapp:hover { background: #1da851; }
+  .btn-outline { border: 2px solid white; color: white; }
+  .btn-outline:hover { background: white; color: #000; }
+  .btn-lg { padding: 1.25rem 2.5rem; font-size: 1.1rem; }
+  .guide-content { max-width: 900px; margin: 0 auto; }
+  .article-body { font-size: 1.05rem; line-height: 1.8; }
+  .article-body h2 { color: #00b0f0; margin-top: 3rem; margin-bottom: 1rem; font-size: 1.8rem; }
+  .article-body h3 { color: #1a1a1a; margin-top: 1.5rem; }
+  .lead { font-size: 1.15rem; color: #444; }
+  .store-comparison { display: grid; gap: 1.5rem; margin: 2rem 0; }
+  .store-card { background: #f9f9f9; padding: 2rem; border-radius: 16px; border-left: 4px solid #00b0f0; }
+  .store-card h3 { margin-top: 0; color: #1a1a1a; }
+  .store-card ul { padding-left: 1.2rem; }
+  .store-card li { margin-bottom: 0.4rem; }
+  .store-verdict { background: #e0f7fa; padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-size: 0.95rem; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+  .comparison-table th, .comparison-table td { padding: 0.75rem 1rem; border: 1px solid #e0e0e0; text-align: left; }
+  .comparison-table th { background: #1a1a1a; color: white; }
+  .comparison-table .highlight { background: #e0f7fa; font-weight: 600; }
+  .steps-detailed { margin: 2rem 0; }
+  .step-detail { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: flex-start; }
+  .step-num { display: inline-flex; min-width: 45px; height: 45px; background: #00b0f0; color: white; border-radius: 50%; align-items: center; justify-content: center; font-weight: 700; font-size: 1.3rem; flex-shrink: 0; }
+  .step-detail h3 { margin-top: 0; color: #00b0f0; }
+  .use-cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .use-case { background: #f9f9f9; padding: 1.5rem; border-radius: 12px; }
+  .use-case h3 { margin-top: 0; }
+  .cta-section { background: linear-gradient(135deg, #001428, #002850); padding: 4rem 2rem; color: white; }
+  .cta-section h2 { color: white; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  @media (max-width: 768px) {
+    .hero-section { padding: 5rem 1rem; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .comparison-table { font-size: 0.8rem; }
+    .step-detail { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
