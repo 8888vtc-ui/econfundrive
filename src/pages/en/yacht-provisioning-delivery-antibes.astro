@@ -15,6 +15,7 @@ const keywords = [
 
 const services = [
   { icon: "🛒", title: "Grocery Run & Delivery", desc: "We shop at Metro, Carrefour or local markets based on your list, then deliver everything quayside to your yacht.", price: "From €50" },
+  { icon: "🛍️", title: "Shop Along — Ride & Shop", desc: "Prefer to choose your own products? Ride in our van to Metro or Carrefour, shop yourself, and we drive everything back to the yacht.", price: "From €60" },
   { icon: "📦", title: "Express Pickup & Delivery", desc: "Your order is already prepared? We collect from any supplier and deliver straight to your gangway.", price: "From €30" },
   { icon: "⚓", title: "Equipment & Spare Parts", desc: "Pickup from chandleries, marine suppliers or courier depots (DHL, FedEx, UPS) and deliver to your yacht.", price: "From €35" },
   { icon: "🚐", title: "Half-Day Crew Assistant", desc: "Dedicated driver for 4 hours. Unlimited runs: Metro, chandlery, laundry, errands — whatever you need.", price: "From €150" },
@@ -24,6 +25,7 @@ const services = [
 
 const pricing = [
   { service: "Grocery run (Metro/Carrefour → yacht)", price: "€50–80", time: "≈ 1.5 hours" },
+  { service: "Shop Along — ride to store & back", price: "€60–90", time: "≈ 2–3 hours" },
   { service: "Express pickup & delivery", price: "€30–50", time: "≈ 45 min" },
   { service: "Equipment/parts pickup", price: "€35–60", time: "≈ 1 hour" },
   { service: "Half-day crew assistant (4h)", price: "€150–200", time: "4 hours" },
@@ -37,7 +39,8 @@ const faqs = [
   { q: "Can you handle cold chain / refrigerated items?", a: "We use insulated bags and cooler boxes for perishable items. For large volumes of frozen goods, we coordinate timing to minimize exposure. We are not a refrigerated truck, but our runs are fast enough to maintain cold chain for standard provisioning." },
   { q: "How quickly can you do a same-day provisioning run?", a: "For urgent requests, we can have provisions at your yacht within 2–3 hours of your call. For planned runs with a detailed shopping list, we recommend booking the day before." },
   { q: "Do I need to provide a shopping list?", a: "Yes, please send your list via WhatsApp, email or phone. Photos of products, brand preferences and quantities help us get exactly what you need. We can also advise on local alternatives." },
-  { q: "What vehicle do you use?", a: "We use a Volkswagen ID Buzz — a spacious, 100% electric van with a large cargo area. It fits multiple crates, pallets of drinks, and bulky items easily. And it's silent and eco-friendly." }
+  { q: "What vehicle do you use?", a: "We use a Volkswagen ID Buzz — a spacious, 100% electric van with a large cargo area. It fits multiple crates, pallets of drinks, and bulky items easily. And it's silent and eco-friendly." },
+  { q: "Can I ride along and do the shopping myself?", a: "Yes! Our Shop Along service lets you ride in the van to Metro, Carrefour or any store. You browse and choose your own products while our driver waits, helps load everything into the van, then drives you and your shopping back to the yacht. Up to 5 crew members can ride along. From €60." }
 ];
 ---
 
@@ -115,6 +118,37 @@ const faqs = [
         </tbody>
       </table>
       <p class="text-center mt-md"><em>Prices may vary for locations outside Antibes. Contact us for a custom quote.</em></p>
+    </section>
+
+    <!-- Shop Along Section -->
+    <section class="shop-along-section fade-in-section">
+      <div class="container">
+        <div class="shop-along-box">
+          <div class="shop-along-content">
+            <span class="shop-along-badge">🛍️ NEW SERVICE</span>
+            <h2>Shop Along — Ride to the Store Yourself</h2>
+            <p>Prefer to pick your own products? <strong>Our Shop Along service is made for you.</strong> We drive you (and up to 5 crew members) to Metro, Carrefour, or any store. You shop at your own pace, choose exactly what you want, and our driver waits in the van. When you're done, we load everything and drive you back to the yacht.</p>
+            <div class="shop-along-features">
+              <div class="sa-feature"><strong>🚐 Up to 5 passengers</strong><br/>Chef, stew, bosun — everyone can come</div>
+              <div class="sa-feature"><strong>⏱️ No time pressure</strong><br/>Take as long as you need in-store</div>
+              <div class="sa-feature"><strong>💪 We help load</strong><br/>Heavy crates, cases of water — we handle it</div>
+              <div class="sa-feature"><strong>🔙 Door-to-quay</strong><br/>From the yacht to the store and back</div>
+            </div>
+            <h3>Shop Along Pricing</h3>
+            <table class="tarif-table sa-table">
+              <thead><tr><th>Destination</th><th>Price (round trip)</th><th>Drive time</th></tr></thead>
+              <tbody>
+                <tr><td>Metro Villeneuve-Loubet</td><td class="price-cell">€60–80</td><td>15 min each way</td></tr>
+                <tr><td>Carrefour Antibes</td><td class="price-cell">€50–70</td><td>5 min each way</td></tr>
+                <tr><td>Marché Provençal Antibes</td><td class="price-cell">€40–50</td><td>Walk from port</td></tr>
+                <tr><td>Any other store (Côte d'Azur)</td><td class="price-cell">On request</td><td>Varies</td></tr>
+              </tbody>
+            </table>
+            <p><em>Price includes: pickup at yacht, drive to store, waiting time (up to 2h), help loading, drive back to yacht, unloading at quayside.</em></p>
+            <a href="https://wa.me/33616552811" class="btn btn-whatsapp">💬 Book a Shop Along</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Why Us vs Competitors -->
@@ -268,10 +302,26 @@ const faqs = [
   .cta-section h2 { color: white; }
   .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+  .shop-along-section { padding: 3rem 0; }
+  .shop-along-box { background: linear-gradient(135deg, #0a2a1a, #1a3a2a); border-radius: 20px; padding: 3rem; color: white; border: 1px solid rgba(37,211,102,0.3); }
+  .shop-along-badge { display: inline-block; background: #25D366; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+  .shop-along-box h2 { color: #25D366; margin-bottom: 1rem; }
+  .shop-along-box h3 { color: #66d0f7; margin-top: 2rem; margin-bottom: 1rem; }
+  .shop-along-box p { color: #ccc; line-height: 1.7; margin-bottom: 1.5rem; }
+  .shop-along-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .sa-feature { background: rgba(255,255,255,0.08); padding: 1.25rem; border-radius: 12px; text-align: center; }
+  .sa-feature strong { color: white; display: block; margin-bottom: 0.3rem; }
+  .sa-feature br + * { color: #aaa; font-size: 0.9rem; }
+  .sa-table { margin-bottom: 1rem; }
+  .sa-table th { background: rgba(255,255,255,0.1); color: white; }
+  .sa-table td { color: #ddd; }
+
   @media (max-width: 768px) {
     .hero-section { padding: 5rem 1rem; }
     .hero-section h1 { font-size: 1.8rem; }
     .intro-steps { grid-template-columns: 1fr; }
     .ports-grid, .suppliers-grid { grid-template-columns: 1fr 1fr; }
+    .shop-along-box { padding: 2rem 1.5rem; }
+    .shop-along-features { grid-template-columns: 1fr 1fr; }
   }
 </style>
